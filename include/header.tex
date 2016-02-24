@@ -1,0 +1,116 @@
+%document information
+\documentclass[10pt,a4paper]{book}
+
+% packages
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+
+\usepackage{cmap} 
+\usepackage{indentfirst} 
+\usepackage{amsmath,amsthm,amssymb,amscd} 						
+\usepackage[margin=2.3cm, footskip = 1 cm, headheight=36pt]{geometry}
+\usepackage{emptypage}
+
+\usepackage{epigraph}
+\usepackage{tikz} 
+															
+\usepackage{xcolor}
+\definecolor{darkblue}{rgb}{0,0,.6}
+\definecolor{Purplemountainmajesty}{RGB}{150, 120, 182}
+
+\usepackage{datetime}
+\usepackage{wrapfig}
+
+
+
+\usepackage{titlesec, titletoc}
+\titleformat{\chapter}[display]
+  {\raggedright\normalfont\Large\bfseries}{\chaptertitlename\thechapter}{2ex}{}
+
+\titleformat{\section}
+  {\normalfont\Large\bfseries}{\thesection.}{1em}{}
+\renewcommand{\thesection}{\textsection\arabic{section}}
+\titlecontents{section}[2.7em]{\addvspace{0.5ex}}%
+ {\contentslabel[\thecontentslabel.]{1.25em}\hskip0.8em}%numbered
+ {}%numberless%
+ {\enspace\titlerule*[0.7pc]{.}\contentspage}%
+
+\renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}.}
+  
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyfoot[C]{\thepage}
+\fancyhead{}
+\fancyhead [CE] {\nouppercase{\slshape \large \rightmark}}
+\fancyhead [CO] {\nouppercase{\slshape \large \leftmark}}
+\renewcommand{\chaptermark}[1]{%
+ \markboth{\ifnum\value{secnumdepth}>-1 \chaptertitlename\thechapter \fi}{}%
+}
+
+\addto\captionsrussian{\renewcommand{\chaptername}{Билет №}}
+   
+% page settings 
+\parindent=1cm
+\binoppenalty=10000
+\relpenalty=10000
+
+% front page
+\author{Андрей Диденко}
+\title{Подготовка к ГОСу по МатАнализу \LaTeX
+\thanks{Спасибо всем моим друзьям за поддержку в написании этого документа}
+\date{16 Апреля 2016}}
+  
+% other settings
+\pdfcompresslevel=9
+\pdfobjcompresslevel=9
+
+%own commands
+
+\newtheoremstyle{note}%
+{3pt}% Space above1
+{3pt}% Space below1
+{}% Body font
+{}% Indent amount2
+{\bfseries}% Theorem head font
+{.}% Punctuation after theorem head
+{.5em}% Space after theorem head3
+{}% 
+
+\theoremstyle{note}
+\newtheorem{defn}{Определение}[chapter]
+\renewcommand{\thedefn}{\arabic{defn}}
+\newcommand{\theHdefn}{\thechapter.\arabic{defn}}
+
+\theoremstyle{plain}
+\newtheorem{thm}{Теорема}[chapter]
+\renewcommand{\thethm}{\arabic{thm}}
+\newcommand{\theHthm}{\thechapter.\arabic{thm}}
+
+\newtheorem{cons}{Следствие}[chapter]
+\renewcommand{\thecons}{\arabic{cons}}
+\newcommand{\theHcons}{\thechapter.\arabic{cons}}
+
+\newtheorem{lemm}{Лемма}[chapter]
+\renewcommand{\thelemm}{\arabic{lemm}}
+\newcommand{\theHlemm}{\thechapter.\arabic{lemm}}
+
+\numberwithin{equation}{chapter}
+\renewcommand{\theequation}{\arabic{equation}}
+\newcommand{\theHequation}{\thechapter.\arabic{equation}}
+%special mention
+
+\usepackage[breaklinks,pdftex,hyperindex,unicode]{hyperref}	
+\hypersetup{
+  pdftitle           = {GOS_MatAn},
+  pdfauthor          = {Didenko Andre},
+  pdfsubject         = {Matan},
+  pdfstartview       = {FitH},
+  pdfborder          = {0 0 0},
+  bookmarksopen      = true,
+  bookmarksnumbered  = true,
+  bookmarksopenlevel = 2,
+  colorlinks = true,     
+  		linkcolor  = darkblue, 
+  		urlcolor = Purplemountainmajesty
+}

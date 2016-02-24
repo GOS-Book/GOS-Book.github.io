@@ -1,0 +1,154 @@
+%% my macros
+
+%% Math fonts
+\newcommand{\bbA}{\mathbb{A}}
+\newcommand{\bbB}{\mathbb{B}}
+\newcommand{\bbC}{\mathbb{C}}
+\newcommand{\bbD}{\mathbb{D}}
+\newcommand{\bbE}{\mathbb{E}}
+\newcommand{\bbF}{\mathbb{F}}
+\newcommand{\bbG}{\mathbb{G}}
+\newcommand{\bbH}{\mathbb{H}}
+\newcommand{\bbI}{\mathbb{I}}
+\newcommand{\bbJ}{\mathbb{J}}
+\newcommand{\bbK}{\mathbb{K}}
+\newcommand{\bbL}{\mathbb{L}}
+\newcommand{\bbM}{\mathbb{M}}
+\newcommand{\bbN}{\mathbb{N}}
+\newcommand{\bbO}{\mathbb{O}}
+\newcommand{\bbP}{\mathbb{P}}
+\newcommand{\bbQ}{\mathbb{Q}}
+\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\bbS}{\mathbb{S}}
+\newcommand{\bbT}{\mathbb{T}}
+\newcommand{\bbU}{\mathbb{U}}
+\newcommand{\bbV}{\mathbb{V}}
+\newcommand{\bbW}{\mathbb{W}}
+\newcommand{\bbX}{\mathbb{X}}
+\newcommand{\bbY}{\mathbb{Y}}
+\newcommand{\bbZ}{\mathbb{Z}}
+
+% Действительная и мнимая части
+\def\Re{\mathop{\mathrm{Re}}\nolimits}
+\def\Im{\mathop{\mathrm{Im}}\nolimits}
+
+% Привычное написание букв каппа, эпсилон и фи и знаков "больше, или равно", "меньше, или равно", пустого множества
+\renewcommand{\kappa}{\varkappa }
+\renewcommand{\epsilon}{\varepsilon}
+\renewcommand{\phi}{\varphi}
+\renewcommand{\le}{\leqslant}
+\renewcommand{\ge}{\geqslant}
+\renewcommand{\emptyset}{\varnothing}
+
+%Возможно правильная расстановка пробелов в кванторах
+\newcommand{\fa}{\quad\forall}
+\newcommand{\ex}{\quad\exists}
+
+%Множества с чертой:
+\newcommand{\bboR}{\overline{\mathbb{R}}}
+\newcommand{\bboC}{\overline{\mathbb{C}}}
+
+% Частная производная
+\newcommand{\pd}[2]{\frac{\partial{#1}}{\partial{#2}}}
+
+%Проколотая окрестность
+\newcommand{\dneio}[2]{\overset{\circ}{O}_{#1}({#2})}
+\newcommand{\dnei}[1]{\overset{\circ}{O}({#1})}
+
+%Внутренность множества.
+\DeclareMathOperator{\interior}{int}
+
+%знак равно с надписью
+\newcommand{\myeq}[1]{\overset{#1}{=}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Жирный вектор
+\newcommand{\vect}[1] { \mathbf{#1} }
+\newcommand{\V}[1] { \mathbf{#1} }
+
+% Полная производная
+\newcommand{\D}[2]{\frac{d{#1}}{d{#2}}}
+
+
+% Дивергенция
+\def\Div{\mathop{\mathrm{div}}\nolimits}
+
+% Ротор
+\def\rot{\mathop{\mathrm{rot}}\nolimits}
+
+% Градиент
+\def\grad{\mathop{\mathrm{grad}}\nolimits}
+
+% Константа
+\def\const{\mathop{\mathrm{const}}\nolimits}
+
+% Оператор
+\newcommand{\op}[1]{\widehat{#1}}
+
+% Скобки (высокие)
+\newcommand{\brc}[1]{\left ( {#1} \right )}
+
+% Скобки фигурные (высокие)
+\newcommand{\brcr}[1]{\left\{ {#1} \right\}}
+
+% Скобки квадратные (высокие)
+\newcommand{\brs}[1]{\left [ {#1} \right ]}
+
+% Усреднение
+\newcommand{\avg}[1]{\langle{#1}\rangle}
+
+% Усреднение (высокое)
+\newcommand{\avgh}[1]{\left\langle{#1}\right\rangle}
+
+% Бра-вектор
+\newcommand{\bra}[1]{\left\langle{#1}\right|}
+
+% Кет-вектор
+\newcommand{\ket}[1]{\left|{#1}\right\rangle}
+
+% Скалярное произведение
+\newcommand{\bk}[2]{\langle{#1}|{#2}\rangle}
+
+% Скалярное произведение (высокое)
+\newcommand{\bkh}[2]{\left\langle{#1}|{#2}\right\rangle}
+
+% Проектор
+\newcommand{\proj}[2]{\ket{#1}\bra{#2}}
+
+% Матричный элемент
+\newcommand{\bfk}[3]{\langle{#1}|{#2}|{#3}\rangle}
+
+% Матричный элемент (высокий)
+\newcommand{\bfkh}[3]{\left\langle{#1}\left|{#2}\right|{#3}\right\rangle}
+
+% Модуль
+\providecommand{\abs}[1]{\left\lvert{#1}\right\rvert}
+
+% Норма
+\providecommand{\norm}[1]{\lVert#1\rVert}
+
+% След матрицы
+
+\def\sp{\mathop{\mathrm{sp}}\nolimits}
+
+\newcommand{\vp}{\vec{p}}
+\newcommand{\vsp}{\vec{p'}}
+\newcommand{\vr}{\vec{r}}
+\newcommand{\vsr}{\vec{r'}}
+\newcommand{\Vmn}{V_{mn}}
+\newcommand{\ommn}{\omega_{mn}}
+\newcommand{\vA}{\vec{A}}
+
+\renewcommand{\vec}{\mathbf}
+
+% Крупная хи
+\newcommand{\bigchi}{\text{\scalebox{1.5}{$\chi$}}}
+
+% Римские цифры
+\makeatletter
+\newcommand*{\rom}[1]{\expandafter\@slowromancap\romannumeral #1@}
+\makeatother
+
+%% Text fomats
+\newcommand{\tbi}[1]{\textbf{\textit{#1}}}

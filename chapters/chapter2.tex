@@ -1,0 +1,167 @@
+\chapter{Ограниченность функции, непрерывной на отрезке, достижение точных верхней и нижней граней}
+
+\section{Ограниченность функции, непрерывной на отрезке, достижение точных верхней и нижней граней}
+
+\subsection{Предельная, внутренняя, изолированная точки множества}
+Пусть $G \subset \bbR$ - множество.
+\begin{defn}
+Точка $x_0 \in G$ называется \textit{изолированной точкой множества} $G$, если $\exists \delta >0\\ O_\delta(x_0) \cap G = x_0$.
+\end{defn}
+
+\begin{defn}
+Точка $x_0 \in G$ называется \textit{внутренней точкой множества} $G$, если $\exists \delta >0\\ O_\delta(x_0) \subset G$.
+\end{defn}
+
+\begin{defn}
+Если $c \in \bbR$, то 
+\begin{enumerate}
+\item
+\textit{проколотой $\epsilon$-окрестностью числа} $c$ называется множество $\dneio{\epsilon}{c} \triangleq O_\epsilon(c)\setminus\{c\}=(c-\epsilon;c)\cup(c;c+\epsilon)$;
+\item
+\textit{проколотой окрестностью точки} $c$ называется $\dnei{c} \triangleq O(c)\setminus \{c\}$;
+\end{enumerate}
+\quad\textbullet\quad А если $c$ -- бесконечно удаленная точка, то, по определению, $\dneio{\epsilon}{c}= O (c) $.
+\end{defn}
+
+\begin{defn}
+Точка $c \in \bbR$ называется \textit{предельной точкой множества} $G$, если $\forall \epsilon >0\\ \dneio{\epsilon}{c} \cap G \ne \emptyset$.
+\end{defn}
+
+\begin{thm}
+\label{exp13}
+Пусть $G \subset \bbR$. Тогда $c \in \bbR$ является предельной точкой $G$ $\Longleftrightarrow$ $\\ \exists \{x_n\}: \fa n \in \bbN \quad x_n \in G\setminus\{c\}: \lim_{n \to \infty}\limits x_n = c$. 
+\end{thm}
+
+\subsection{Предел функций}
+\begin{defn}
+Пусть $D_f \subset \bbR$. Тогда \textit{числовой функцией}, заданной на множестве $D_f$ называется множество $F \subset D \times \bbR$ всевозможных упорядочееных пар $(x,y)$, таких что 
+\begin{enumerate}
+\item 
+$\forall x \in D_f$.
+\item
+Множество $F(x)=\{y\in\bbR:\;(x,y)\in F\}$ состоит из одной точки.
+\end{enumerate}
+\end{defn}
+
+$D_f$ называется областью определения функции $f$. Если $y=f(x)$, то $y$ называется \textit{образом} точки $x$, а $x$ -- \textit{прообразом} точки $y$. Если $M \subset X$, то множество всех $y=f(x)$, когда $x\in M$, называется \textit{образом множества} $X$ и обозначается $f(M)$. 
+
+\begin{defn}
+Функция $f$ называется \textit{ограниченной сверху (снизу) на множестве} $X\subset D_f$, если множество $f(X)$ ограничено сверху (снизу), т.е. существует число M такое, что
+$$
+\forall x \in X \quad f(x) \le M \quad (\text{соотв.}\; f(x)\ge M).
+$$
+\end{defn}
+
+\begin{defn}
+Число $M \in \bbR$ -- \textit{точная верхняя (нижняя) грань множества $G \subset \bbR$ -- $\sup G$ ($\inf G$)}, если 
+\begin{enumerate}
+\item
+$\forall x \in G:\quad x \le M \;(x\ge M)$,
+\item
+$\forall M' < M \;(M' > M) \ex x\in G: \quad x>M' \;(x<M')$.
+\end{enumerate}
+\quad\textbullet\quad Eсли множество $G \subset \bbR$ не ограничено сверху (снизу), то, по определению, $\sup G=+\infty$ ($\inf G=-\infty$).  
+\end{defn}
+
+\begin{defn}
+\label{exp12} \textit{(Определение предела функции по Коши)}
+Пусть $c\in\bboR$, $x_o \in \bboR$ и $x_0$ -- предельная точка множества $D \subset \bbR$. Тогда элемент $c$ называется \textit{пределом функции} $f$, заданной на множестве $D_f$ при $x \to x_0$ (в точке $x_0$), если
+\begin{equation*}
+\begin{aligned}
+&\forall O(c) \ex O(x_0): \fa x \in \dnei{c}\cap D_f: f(x) \in O(c)  \text{, что эквивалентно следующему}\\
+&\forall \epsilon > 0 \ex \delta >0: \fa x \in \dneio{\epsilon}{c} \cap D_f: f(x) \in O_\epsilon (c). 
+\end{aligned}
+\end{equation*}
+\end{defn}
+Если точка $x_0$ -- не предельная для множества $D_f$, то функция $f$ не может иметь предела по Коши в точке $x_0$ (ведь тогда $\dnei{c}\cap D_f=\emptyset$) 
+
+\begin{defn}
+Если $x_0$ -- предельная точка множества области определения $D$ функции $f$, то последовательность $\{x_n\}$ называется последовательностью Гейне функции $f$ в точке $x_0$ при условии, что
+\begin{enumerate}
+\item $\forall n \in \bbN:\; x_n\in D_f\setminus \{x_0\}$;
+\item $\lim_{n \to \infty}\limits x_n = x_0$.
+\end{enumerate}
+Согласно теореме \ref{exp13} у функции существует последовательность Гейне в любой точке $x_0$, являющейся предельной для $D_f$.
+\end{defn}
+
+\begin{defn}
+\label{exp11} \textit{(Определение предела функции по Гейне)}
+Пусть $c\in\bboR$, $x_0 \in \bboR$ и $x_0$ -- предельная точка множества $D \subset \bbR$. Тогда элемент $c$ называется \textit{пределом функции} $f$, заданной на множестве $D$ при $x \to x_0$ (в точке $x_0$), если для любой последовательности $\{x_n\}$ такой, что $\forall n \in \bbN: x_n\in D_f\setminus \{x_0\} \lim_{n \to \infty}\limits x_n = x_0$ выполняется условие $\lim_{n \to \infty}\limits f(x_n) = c$. 
+\end{defn}
+
+Обозначается $\lim_{n \to \infty}\limits f(x) = c$.
+
+\begin{thm}
+Определение \ref{exp12} и определение \ref{exp11} эквивалентны.
+\end{thm}
+
+\begin{defn}
+Пусть $f: D_f \to \bbR$ и $S \subset D_f$, $x_0$ -- предельная точка множества $S$, $x_0 \in \bboR$. Тогда элемент $c \in \bbR$ называется \textit{пределом функции $f$ по множеству $S$} при $x \to x_0$, если $\lim_{x \to x_0}\limits g(x) = c$, где $g(x)=\left.f\right|_S = \{(x;f(x)),x \in S\}$.
+\end{defn}
+
+\begin{defn}
+\textit{Пределом слева функции $f$} в точке $x_0 \in \bbR$ называется предел сужения функции $f$ на множество $D_f \cap (-\infty;x_0)$ (при условии, что  $x_0$ -- предельная точка $D_f \cap (-\infty;x_0)$). Обозначается $f(x_0-0)=\lim_{x \to x_0-0}\limits f(x)$.
+
+Аналогично определяется \textit{предел справа функции} $f$: $f(x_0+0)=\lim_{x \to x_0+0}\limits f(x)$. 
+\end{defn}
+
+
+
+\subsection{Непрерывность функции}
+Пусть $G \subset \bbR$. Тогда $\forall x_0 \in G$ выполняется одно и только одно из двух утверждений:
+\begin{enumerate}
+\item $x_0$ -- изолированная точка $\exists \delta>0:\quad \dneio{\delta}{x_0} \cap G = \emptyset$;
+\item $x_0$ -- предельная точка $\forall \delta > 0:\quad \dneio{\delta}{x_0}\cap G \neq \emptyset$.
+\end{enumerate}
+
+\begin{defn}
+Функция $f$ называется \textit{непрерывной в точке} $x_0 \in D_f$, предельной для $D_f$, если предел $f(x)$ при $x \to x_0$ существует и равен $f(x_0)$. В любой изолированной точке множества $D_f$ функция $f(x)$ считается \textit{непрерывной} по определению. 
+\end{defn}
+
+\begin{defn}
+Функция $f$ называется \textit{непрерывной на множестве} $X \subset \bbR$, если функция $f$ определена на множестве $X$ и непрерывна в каждой точке множества $X$. 
+\end{defn}
+\begin{lemm}
+Функция $f$ непрерывна на промежутке $[a;b)$ (отрезке $[a;b]$) $\Longleftrightarrow$ 
+$$
+\begin{cases}
+\forall x_0 \in (a;b) \ex \lim_{x \to x_0}\limits f(x) = f(x_0);\\
+\exists \lim_{x \to a+0}\limits f(x) = f(a);\\
+\bigr(\exists \lim_{x \to b-0}\limits f(x) = f(b)\bigl).\\
+\end{cases}
+$$  
+\end{lemm}
+
+\begin{thm}(Больцано-Вейерштрасса)(доказана в билете №1)
+У любой ограниченной последовательности существует сходящаяся подпоследовательность.
+\end{thm}
+
+Пусть $f(x)$ -- функция. $M = \sup_{x \in [a,b]}\limits f(x) \in \bboR$, $m = \inf_{x \in [a,b]}\limits f(x) \in \bboR$
+\begin{thm} (Вейерштрасса)
+Функция $f$, непрерывная на отрезке $[a;b]$, ограничена и достигает на нем своих точных верхней и нижней граней.
+\end{thm}
+\begin{proof}
+Докажем, что $\exists x^* \in [a;b]:\quad f(x^*)= M \in \bbR$.
+
+$M = \sup_{x \in [a;b]}\limits f(x)$, что по определению значит $\fa \epsilon > 0 \ex x\in [a;b]: \quad M-\epsilon < f(x) \le M $. Это эквивалентно тому, что $\forall n \in \bbN \ex x_n \in [a;b]: M-\frac{1}{n} < f(x_n) \le M $.
+
+Поскольку $ a\le x_n \le b \fa n \in \bbN$, то последовательность $\{x_n\}$ ограничена. По \hyperref[exp9]{теореме Больцано-Вейерштрасса} можно выделить из нее подпоследовательность ${x_{n_k}}$, сходящуюся к некоторому $x^* \in \bbR$ при $k \to \infty$.
+
+Так как $f$ непрерывна в точке $x^*$, и так как $x_{n_k}\xrightarrow{k \to \infty} x^*$, то  
+$$
+f(x_{n_k}) \xrightarrow{k \to \infty} f(x^*).
+$$ 
+
+С другой стороны $\forall k \quad M-\frac{1}{n_k} < f(x_{n_k}) \le M$. Это тоже самое, что
+$$
+f(x_{n_k}) \xrightarrow{k \to \infty} M.
+$$
+
+Из последних двух соотношений получаем $f(x^*) = M = \sup_{x \in [a,b]}\limits f(x) $. 
+
+Отсюда следует, во-первых, что  $\sup_{x \in [a,b]}\limits f(x)<+\infty$, т.е. что функция $f$ ограничена сверху, и, во-вторых, что функция $f$ достигает своей верхней грани в точке $x^*$.
+
+Аналогично можно доказать, что функция ограничена снизу и достигает своей нижней грани.
+
+Теорема доказана.   
+\end{proof}

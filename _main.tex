@@ -1,0 +1,29 @@
+\include{include/header}
+\include{include/macros}
+\begin{document}
+
+\pagestyle{plain}
+\frontmatter
+\include{frontmatter/titlepageTMB}
+\epigraph{Дорогой моей и любимой Танечке посвящается}{Диденко А.А.}
+\textcolor{darkblue}{\tableofcontents}
+
+\include{frontmatter/foreword}
+\mainmatter
+
+\hypersetup
+{linkcolor = black}
+  
+\pagestyle{fancy}
+
+\setcounter{chapter}{0}
+\foreach \n in {1,...,36}{\include{chapters/chapter\n}}
+
+\end{document}
+
+%exp 17
+%thm 2
+%abc 11
+
+%при печати изменить 2 строчки
+
