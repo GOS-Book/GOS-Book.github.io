@@ -1,5 +1,123 @@
 \chapter{Интегральная формула Коши. Разложение функции, регулярной в окрестности точки, в ряд Тейлора.}
 \section{Интегральная формула Коши}
 
+Получим представление функций, регулярных в ограниченной области, при помощи интеграла по границе этой области. С помощью этого представления покажем, что всякая регулярная в области функция бесконечно дифференцируема.
+\begin{thm} \label{T1}
+ Пусть G — ограниченная область в $\bbC$ с кусочно-гладкой положительно ориентированной границей $\Gamma$. Пусть функция $f\colon \overline{G}\to \bbC$ регулярна на G и непрерывна на $G=G\cup\Gamma$. Тогда для любой точки $z\in G$ справедлива интегральная формула Коши вида
+ \begin{equation} \label{1}
+ f(z) = \frac{1}{2\pi i}\int_\Gamma \frac{f(\zeta)}{\zeta - z}\,d\zeta.
+ \end{equation}
+\end{thm}
+\begin{proof}
+Фиксируем произвольную точку $z \in G$. Функция $\frac{f(\zeta)}{\zeta - z}$ регулярна по переменному $\zeta$ в области $G \setminus \{z\}$. Выберем число $r_0 > 0$ такое, что выполнено включение $\overline{B_{r_0}(z)}\subset G$. 
 
+Обозначим через $\gamma \triangleq \{ \zeta \bigl| |\zeta - z| = r \}$ окружность радиуса $r \in (0, r_0)$ ориентированную против хода часовой стрелки. Обозначим множества $G_r \triangleq G \setminus \overline{B_r(z)}$ и $\Gamma_r \triangleq \Gamma \cup \gamma_r^{-1}$. Очевидно, что множество $G_r$ есть область с кусочно-гладкой положительно ориентированной границей $\Gamma_r$ (см. рис. 1). 
+
+По теореме 3 из § 7 получаем
+
+ \begin{equation} \label{2}
+ 0 = \int_{\Gamma_r} \frac{f(\zeta)}{\zeta - z}\,d\zeta = \int_\Gamma \frac{f(\zeta)}{\zeta - z}\,d\zeta - \int_{\gamma_r} \frac{f(\zeta)}{\zeta - z}\,d\zeta.
+ \end{equation}
+Итак,
+
+\begin{equation} \label{3}
+J \triangleq \frac{1}{2\pi i} \int_\Gamma \frac{f(\zeta)}{\zeta - z}\,d\zeta \myeq{\eqref{2}} \frac{1}{2\pi i} \int_{\gamma_r} \frac{f(\zeta)}{\zeta - z}\,d\zeta,  \quad  \forall r: 0 < r < r_0
+\end{equation}
+
+Как показано в примере 1 §6, справедливо равенство $1 = \frac{1}{2\pi i} \int_{\gamma_r} \frac{1}{\zeta - z}\,d\zeta$, откуда 
+
+$$J - f(z) = \frac{1}{2\pi i} \int_{\gamma_r} \frac{f(\zeta) - f(z)}{\zeta - z}\,d\zeta, \quad  \forall r \in (0,r_0)$$
+
+Так как $f(\zeta)$ непрерывна в точке $z \in G$, то для каждого $\epsilon > 0$ существует $\delta(\epsilon) \in (0, r_0)$ такое, что $\forall \zeta : |\zeta - z| < \delta(\epsilon)$ следует $|f(\zeta) - f(z)| < \epsilon$. Поэтому выбирая $r \in (0, \delta(\epsilon))$, получаем
+
+\begin{equation} \label{4}
+|J - f(z)| \le \frac{1}{2\pi} \int_{\gamma_r} \frac{|f(\zeta) - f(z)|}{|\zeta - z|}|\,d\zeta| \le 
+\frac{\epsilon}{2 \pi r} \int_{\gamma_r} |\,d\zeta| = \epsilon.
+\end{equation}
+
+Так как $\epsilon > 0$ произвольное число, то из (3), (4) следует $J = f(z)$, т.е. формула $\eqref{1}$.
+\end{proof}
+
+\begin{defn}
+Пусть $\gamma$ — кусочно-гладкий контур в $\bbC$ и пусть $\omega = q(z)$ — непрерывная на $\gamma$ функция. Тогда интеграл вида
+
+\begin{equation} \label{5}
+I(z) \triangleq \frac{1}{2 \pi i} \int_\gamma \frac{q(\zeta)}{\zeta - z}\,d\zeta, \quad z \notin \gamma
+\end{equation}
+называется интегралом типа Коши по контуру $\gamma$ от функции $q$.
+\end{defn}
+
+\begin{thm} \label{T2}
+При сформулированных в определении 1 условиях функция $I:\bbC \setminus \gamma \to \bbC$ из $\eqref{5}$ определена и дифференцируема бесконечное число раз, причем для производных справедлива формула
+
+\begin{equation} \label{6}
+I^{(n)}(z) = \frac{n!}{2\pi i} \int_\gamma \frac{q(\zeta)}{(\zeta - z)^{n+1}}\,d\zeta, \quad n \in \bbN
+\end{equation}
+\end{thm}
+\begin{proof}
+1. Докажем формулу $\eqref{6}$ при n = 1. Так как функция $q(\zeta)$ непрерывна на контуре $\gamma$, то существует число $M < + \infty$ такое, что $|q(\zeta)| \le M$ при $\zeta \in \gamma$.
+
+Фиксируем точку $z \notin \gamma$. Пусть $d \triangleq dist(z, \gamma)$. Очевидно, что $d > 0$. Выберем число $r \in (0, \frac{d}{2})$ и возьмем произвольное число $\Delta z \in \bbC$ так, чтобы $0 < |\Delta z| < r$. Тогда для $\forall \zeta \in \gamma$ получаем
+
+\begin{equation} \label{7}
+|\zeta - (z + \Delta z)| \ge |\zeta - z| - |\Delta z| \ge d - \frac{d}{2} = \frac{d}{2}
+\end{equation}
+
+Оценим выражение
+
+\begin{equation} \label{8}
+\frac{I(z + \Delta z) - I(z)}{\Delta z} - \frac{1}{2 \pi i} \int_\gamma \frac{q(\zeta)}{(\zeta - z)^2}\,d\zeta = \frac{1}{2 \pi i} \int_\gamma q(\zeta) \left[ \left( \frac{1}{\zeta - z - \Delta z} - \frac{1}{\zeta - z} \right) \frac{1}{\Delta z} - \frac{1}{(\zeta - z)^2} \right] \,d\zeta.
+\end{equation}
+
+Упростим выражение в прмых скобках под интегралом $\eqref{8}$:
+
+$$
+[\ldots] = \frac{\zeta - z - (\zeta - z - \Delta z)}{(\zeta - z)(\zeta - z - \Delta z)} \cdot \frac{1}{\Delta z} - \frac{1}{(\zeta - z)^2} = \frac{\Delta z}{(\zeta - z)^2 (\zeta - z - \Delta z)} .
+$$
+
+Поэтому для $\eqref{8}$ получаем оценку 
+
+$$
+\left| \frac{\Delta I}{\Delta z} - \frac{1}{2\pi i} \int_\gamma \frac{q(\zeta)}{(\zeta - z)^2}\,d\zeta \right| 
+\le \frac{1}{2\pi} \int_\gamma \frac{|q(\zeta)||\Delta z||\,d\zeta|}{|\zeta - z|^2|\zeta - z - \Delta z|}
+\le \frac{|\Delta z|}{\pi d^3} \int_\gamma |q(\zeta)||\,d\zeta| 
+\le \frac{|\Delta z| \cdot M}{\pi d^3} \int_\gamma |\,d\zeta| \to 0, \quad \Delta z \to 0.
+$$
+
+Таким образом, в пределе получаем равенство
+
+\begin{equation} \label{9}
+I'(z) = \frac{1}{2\pi i} \int_\gamma \frac{q(\zeta)}{(\zeta - z)^2} \,d\zeta.
+\end{equation}
+
+2. Общий случай n-й производной получается аналогично первому случаю из формулы $\eqref{6}$ для (n - 1)-й производной и воспользовавшись равенством
+
+$$
+(\zeta - z - \Delta z)^n = (\zeta - z)^2 - n \Delta z (\zeta - z)^{n - 1} + O(\Delta z^2),
+$$
+
+которое легко проверяется, например, методом математической индукции.
+
+\end{proof}
+
+\begin{thm} \label{T3}
+
+Пусть функция $f : G \to \bbC$ регулярна в области $G \subset \bbC$. Тогда эта функция имеет в G производные всех порядков, т.е. является бесконечно дифференцируемой функцией в области G.
+
+\end{thm}
+\begin{proof}
+Фиксируем произвольную точку $z_0 \in G$, тогда существует число $r_0 > 0$ такое, что $\overline{B_{r_0}(z_0)}\subset G$. Пусть окружность $\gamma_{r_0} \triangleq \{ z \: \bigl| \: |z - z_0| = r_0 \}$ ориентирована положительно относительно внутренности круга (т.е. движением против хода часовой стрелки). Тогда по теореме 1 справедлива интегральная формула Коши
+
+\begin{equation} \label{10}
+f(z) = \frac{1}{2\pi i} \int_{\gamma_{r_0}} \frac{f(\zeta)}{\zeta - z} \,d\zeta, \quad \forall z \in B_{r_0}(z_0).
+\end{equation}
+
+Так как формула $\eqref{10}$ функция $\zeta \to f(\zeta)$ непрерывна на $\zeta_{r_0}$, то интеграл в $\eqref{10}$ есть интеграл типа Коши, и по теореме 2 он бесконечно дифференцируем в круге $B_{r_0}(z_0)$, т.е. в силу равенства $\eqref{10}$ функция f бесконечно дифференцируема в этом круге $B_{r_0}(z_0)$, при этом из $\eqref{6}$ следует формула:
+
+\begin{equation} \label{11}
+f^{n}(z) = \frac{n!}{2\pi i} \int_{\gamma_{r_0}} \frac{f(\zeta)}{(\zeta - z)^{n+1}}\,d\zeta, \quad \forall z \in B_{r_0}(z_0).
+\end{equation}
+
+Так как точка $z_0 \in G$ была произвольной, то функция f бесконечно дифференцируема во всей области G.
+\end{proof}
 \section{Разложение функции, регулярной в окрестности точки, в ряд Тейлора}
