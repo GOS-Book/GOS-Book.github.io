@@ -94,15 +94,21 @@
 \newtheorem{lemm}{Лемма}[chapter]
 \renewcommand{\thelemm}{\arabic{lemm}}
 \newcommand{\theHlemm}{\thechapter.\arabic{lemm}}
-
+  
 \newtheorem{exmpl}{Пример}[chapter]
-\renewcommand{\thelemm}{\arabic{exmple}}
-\newcommand{\theHlemm}{\thechapter.\arabic{exmple}}
+\renewcommand{\theexmpl}{\arabic{exmpl}}
+\newcommand{\theHexmpl}{\thechapter.\arabic{exmpl}}
 
 \numberwithin{equation}{chapter}
 \renewcommand{\theequation}{\arabic{equation}}
 \newcommand{\theHequation}{\thechapter.\arabic{equation}}
+
+\newenvironment{solution}
+  {\begin{proof}[Решение.]}
+  {\end{proof}}
+
 %special mention
+
 
 \usepackage[breaklinks,pdftex,hyperindex,unicode]{hyperref}	
 \hypersetup{

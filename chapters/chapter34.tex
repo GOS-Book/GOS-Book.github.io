@@ -2,9 +2,26 @@
 \section{Интегральная формула Коши}
 
 Получим представление функций, регулярных в ограниченной области, при помощи интеграла по границе этой области. С помощью этого представления покажем, что всякая регулярная в области функция бесконечно дифференцируема.
+
+
 \begin{exmpl}
-Аркадий, сюда
+\label{exmpl1}
+Вычислить интеграл 
+$$
+I_k = \int_{\gamma_r} (z-a)^k\,dz, \quad k \in \bbZ, \; a\in \bbC
+$$
+где контур $\gamma_r$ есть окружность $\{ z \bigl|\bigr. |z - a| = r>0 \}$,ориентированная движением против хода часовой стрелки.
 \end{exmpl}
+\begin{solution}
+СЮДА РЕШЕНИЕ СУКА ЗАПИСАЛ.
+В Итоге
+\begin{enumerate}
+\item
+При $k = -1$ получаем
+\item
+При $k \ne -1$ получаем
+\end{enumerate}
+\end{solution}
 
 \begin{thm} \label{T1}
  Пусть G — ограниченная область в $\bbC$ с кусочно-гладкой положительно ориентированной границей $\Gamma$. Пусть функция $f\colon \overline{G}\to \bbC$ регулярна на G и непрерывна на $G=G\cup\Gamma$. Тогда для любой точки $z\in G$ справедлива интегральная формула Коши вида
@@ -28,7 +45,7 @@
 J \triangleq \frac{1}{2\pi i} \int_\Gamma \frac{f(\zeta)}{\zeta - z}\,d\zeta \myeq{\eqref{2}} \frac{1}{2\pi i} \int_{\gamma_r} \frac{f(\zeta)}{\zeta - z}\,d\zeta,  \quad  \forall r: 0 < r < r_0
 \end{equation}
 
-Как показано в примере 1 §6, справедливо равенство $1 = \frac{1}{2\pi i} \int_{\gamma_r} \frac{1}{\zeta - z}\,d\zeta$, откуда 
+Как показано в примере \ref{exmpl1}, справедливо равенство $1 = \frac{1}{2\pi i} \int_{\gamma_r} \frac{1}{\zeta - z}\,d\zeta$, откуда 
 
 $$J - f(z) = \frac{1}{2\pi i} \int_{\gamma_r} \frac{f(\zeta) - f(z)}{\zeta - z}\,d\zeta, \quad  \forall r \in (0,r_0)$$
 
