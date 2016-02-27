@@ -2,8 +2,39 @@
 \section{Интегральная формула Коши}
 
 Получим представление функций, регулярных в ограниченной области, при помощи интеграла по границе этой области. С помощью этого представления покажем, что всякая регулярная в области функция бесконечно дифференцируема.
+
+
+\begin{exmpl}
+\label{exmpl1}
+Вычислить интеграл 
+$$
+I_k = \int_{\gamma_r} (z-a)^k\,dz, \quad k \in \bbZ, \; a\in \bbC
+$$
+где контур $\gamma_r$ есть окружность $\{ z \bigl|\bigr. |z - a| = r>0 \}$,ориентированная движением против хода часовой стрелки.
+\end{exmpl}
+\begin{solution}
+Выберем параметризацию окруности $\gamma_r$ вида $z = a + r e^{i \varphi}$, где $\varphi \in [0, 2\pi]$. Тогда
+
+$$
+I_k = \int_{0}^{2 \pi} r^k e^{i k \varphi} r i e^{i \varphi} \,d\varphi = i r^{k+1} \int_{0}^{2 \pi} e^{i (k + 1) \varphi}\,d\varphi.
+$$
+
+В Итоге
+\begin{enumerate}
+\item
+При $k = -1$ получаем $J^{-1} = i \int_{0}^{2\pi}\,d\varphi = 2 \pi i$;
+\item
+При $k \ne -1$ получаем
+$$
+J_k = i r^{k + 1} \left( \int_{0}^{2 \pi} cos(k + 1) \varphi \,d \varphi + i \int_{0}^{2 \pi} sin(k + 1) \varphi \,d\varphi \right) = 0.
+$$
+\end{enumerate}
+\end{solution}
+
 \begin{thm} \label{T1}
- Пусть $G$ — ограниченная область в $\bbC$ с кусочно-гладкой положительно ориентированной границей $\Gamma$. Пусть функция $f\colon \overline{G}\to \bbC$ регулярна на G и непрерывна на $G=G\cup\Gamma$. Тогда для любой точки $z\in G$ справедлива интегральная формула Коши вида
+
+ Пусть $G$ --- ограниченная область в $\bbC$ с кусочно-гладкой положительно ориентированной границей $\Gamma$. Пусть функция $f\colon \overline{G}\to \bbC$ регулярна на $G$ и непрерывна на $G=G\cup\Gamma$. Тогда для любой точки $z\in G$ справедлива интегральная формула Коши вида
+ 
  \begin{equation} \label{1}
  f(z) = \frac{1}{2\pi i}\int_\Gamma \frac{f(\zeta)}{\zeta - z}\,d\zeta.
  \end{equation}
@@ -13,7 +44,7 @@
 
 Обозначим через $\gamma \triangleq \{ \zeta \bigl| |\zeta - z| = r \}$ окружность радиуса $r \in (0, r_0)$ ориентированную против хода часовой стрелки. Обозначим множества $G_r \triangleq G \setminus \overline{B_r(z)}$ и $\Gamma_r \triangleq \Gamma \cup \gamma_r^{-1}$. Очевидно, что множество $G_r$ есть область с кусочно-гладкой положительно ориентированной границей $\Gamma_r$ (см. рис. 1). 
 
-По теореме 3 из § 7 получаем
+По теореме 3 из $\S$7 получаем
 
  \begin{equation} \label{2}
  0 = \int_{\Gamma_r} \frac{f(\zeta)}{\zeta - z}\,d\zeta = \int_\Gamma \frac{f(\zeta)}{\zeta - z}\,d\zeta - \int_{\gamma_r} \frac{f(\zeta)}{\zeta - z}\,d\zeta.
@@ -24,7 +55,7 @@
 J \triangleq \frac{1}{2\pi i} \int_\Gamma \frac{f(\zeta)}{\zeta - z}\,d\zeta \myeq{\eqref{2}} \frac{1}{2\pi i} \int_{\gamma_r} \frac{f(\zeta)}{\zeta - z}\,d\zeta,  \quad  \forall r: 0 < r < r_0
 \end{equation}
 
-Как показано в примере 1 §6, справедливо равенство $1 = \frac{1}{2\pi i} \int_{\gamma_r} \frac{1}{\zeta - z}\,d\zeta$, откуда 
+Как показано в примере \ref{exmpl1}, справедливо равенство $1 = \frac{1}{2\pi i} \int_{\gamma_r} \frac{1}{\zeta - z}\,d\zeta$, откуда 
 
 $$J - f(z) = \frac{1}{2\pi i} \int_{\gamma_r} \frac{f(\zeta) - f(z)}{\zeta - z}\,d\zeta, \quad  \forall r \in (0,r_0)$$
 
@@ -55,7 +86,9 @@ I^{(n)}(z) = \frac{n!}{2\pi i} \int_\gamma \frac{q(\zeta)}{(\zeta - z)^{n+1}}\,d
 \end{equation}
 \end{thm}
 \begin{proof}
-1. Докажем формулу $\eqref{6}$ при $n = 1$. Так как функция $q(\zeta)$ непрерывна на контуре $\gamma$, то существует число $M < + \infty$ такое, что $|q(\zeta)| \le M$ при $\zeta \in \gamma$.
+\begin{enumerate}
+\item 
+Докажем формулу $\eqref{6}$ при $n = 1$. Так как функция $q(\zeta)$ непрерывна на контуре $\gamma$, то существует число $M < + \infty$ такое, что $|q(\zeta)| \le M$ при $\zeta \in \gamma$.
 
 Фиксируем точку $z \notin \gamma$. Пусть $d \triangleq dist(z, \gamma)$. Очевидно, что $d > 0$. Выберем число $r \in (0, \frac{d}{2})$ и возьмем произвольное число $\Delta z \in \bbC$ так, чтобы $0 < |\Delta z| < r$. Тогда для $\forall \zeta \in \gamma$ получаем
 
@@ -90,15 +123,15 @@ $$
 I'(z) = \frac{1}{2\pi i} \int_\gamma \frac{q(\zeta)}{(\zeta - z)^2} \,d\zeta.
 \end{equation}
 
-2. Общий случай $n$-й производной получается аналогично первому случаю из формулы $\eqref{6}$ для 
-$(n - 1)$-й производной и воспользовавшись равенством
+\item 
+Общий случай $n$-й производной получается аналогично первому случаю из формулы $\eqref{6}$ для $(n - 1)$-й производной и воспользовавшись равенством
 
 $$
 (\zeta - z - \Delta z)^n = (\zeta - z)^2 - n \Delta z (\zeta - z)^{n - 1} + O(\Delta z^2),
 $$
 
 которое легко проверяется, например, методом математической индукции.
-
+\end{enumerate}
 \end{proof}
 
 \begin{thm} \label{T3}
@@ -119,7 +152,144 @@ f(z) = \frac{1}{2\pi i} \int_{\gamma_{r_0}} \frac{f(\zeta)}{\zeta - z} \,d\zeta,
 f^{n}(z) = \frac{n!}{2\pi i} \int_{\gamma_{r_0}} \frac{f(\zeta)}{(\zeta - z)^{n+1}}\,d\zeta, \quad \forall z \in B_{r_0}(z_0).
 \end{equation}
 
-Так как точка $z_0 \in G$ была произвольной, то функция $f$ бесконечно дифференцируема во всей области 
-$G$.
+
+Так как точка $z_0 \in G$ была произвольной, то функция $f$ бесконечно дифференцируема во всей области G.
 \end{proof}
 \section{Разложение функции, регулярной в окрестности точки, в ряд Тейлора}
+
+Опираясь на интегральную формулу Коши, в этом параграфе покажем, что функция регулярна в окрестности некоторой точки тогда и только тогда, когда в этой окрестности она представима в виде суммы степенного ряда.
+
+\begin{defn}
+$\textit{Степенным рядом}$ называется функциональный ряд вида
+
+\begin{equation} \label{1}
+\sum_{n = 0}^{+\infty}\limits c_n (z - a)^n,
+\end{equation}
+где точка $a \in \bbC$ и коэффициенты $c_n \in \bbC$ фиксированы.
+\end{defn}
+
+\begin{thm}[Абель] \label{T1}
+Если степенной ряд $\eqref{1}$ сходится в точке $z_0 \not= a$, то ряд $\eqref{1}$ сходится абсолютно в любой точке из круга $B_{|z_0 - a|}(a)$, а в любом замкнутом круге $\overline{B_{r}(a)}$, где $0 < r < |z_0 - a|$, этот ряд сходится равномерно.
+\end{thm}
+
+\begin{proof}
+Так как по условию числовой ряд $\sum_{n = 0}^{+\infty}\limits c_n (z - a)^n$ сходится, то из критерия Коши следует, что $\lim_{n \to \infty} |c_n(z_0 - a)^n| = 0$, поэтому существует число $\alpha > 0$ такое, что $|c_n(z_0 - a)^n| \le \alpha$ для всех $n$.
+
+1) Пусть точка $z \in B_{|z_0 - a|}(a)$. Тогда $|c_n(z_0 - a)^n| = |c_n(z_0 - a)^n \cdot \left| \frac{z - a}{z_0 - a} \right|^n \le \alpha q^{n}_z$, где $q_z \triangleq \left| \frac{z - a}{z_0 - a} \right| < 1$. Так как числовой ряд $\sum_{n = 0}^{\infty}\limits q_{z}^n$ очевидно сходится, то по признаку сравнения ряд $\eqref{1}$ сходится и абсолютно в точке $z$.
+
+2) Определим $q \triangleq \frac{r}{|z_0 - a|}$. Аналогично пункту 1 получаем оценку: $|c_n(z - a)^n| \le \alpha q^{n}_0$ очевидно сходится, то по признаку Вейештрасса (см. утверждение 6 $\S$2) ряд $\eqref{1}$ сходится равномерно на круге $\overline{B_{r}(a)}$.
+
+\end{proof}
+
+\begin{stt}[Признак Вейерштрасса]
+Пусть $|f_n(z)| \le a_n$ для $\forall n \in \bbN$ и $\forall z \in G$ и пусть числовой ряд $\sum_{n = 0}^{+\infty} a_n$ сходится. Тогда функциональный ряд $\sum_{n = 0}^{+\infty}\limits f_n(z)$ сходится абсолютно и равномерно на $G$. 
+\end{stt}
+
+Эта теорема 1 позволяет получить представление об области сходимости степенного ряда $\eqref{1}$.
+
+Определим для степенного ряда $\eqref{1}$ понятие $\textit{радиуса сходимости}$:
+
+\begin{equation} \label{2}
+R \triangleq sup \{ |z - a| \: \big| \: \sum_{n = 0}^{+\infty} c_n (z - a)^n \: \text{сходится} \}.
+\end{equation}
+
+Тогда, если $0 < R < +\infty$, то в силу теоремы 1 Абеля в каждой точке круга $B_R(a)$ ряд $\eqref{1}$ сходится, а в каждой точке $z \notin \overline{B_R(a)}$ ряд $\eqref{1}$ расходится. Круг $B_R(a)$ называется кругом сходимости ряда $\eqref{1}$.
+Радиус сходимости $R$ степенного ряда $\eqref{1}$ может быть вычислен по известной формуле Коши-Адамара
+
+\begin{equation} \label{3}
+R = \frac{1}{\overline{\lim\limits_{n \to \infty}} \sqrt[n]{|c_n|}}
+\end{equation}
+
+Доказательство этой формулы можно найти, например, в книге Яковлева Г.Н. "Лекции по математическому анализу. Часть 2".
+
+\begin{exmpl} \label{exmpl1}
+. Ряд вида $\sum\limits_{n = 0}^{+\infty} z^n$, являющийся суммой бесконечной геометрической прогрессии, очевидно сходится при $|z| < 1$ к функции $\frac{1}{1 - z}$, так как легко посчитать, что
+
+$$
+S_N(z) \triangleq \sum\limits_{n = 0}^{N} z^n = \left( \sum\limits_{n = 0}^{N} z^n \right) \frac{1 - z}{1 - z} = \frac{1 - z^{N + 1}}{1 - z} \to \frac{1}{1 - z} \quad \text{при} \quad N \to \infty
+$$
+
+\end{exmpl} 
+
+\begin{defn}
+Пусть у функции $f : B_r(a) \to \bbC$ существуют в точке $a \in \bbC$, $r > 0$, производные $f^{(n)}(a)$ любого порядка $n \in \bbN$. Тогда степенной ряд вида
+
+\begin{equation} \label{4}
+\sum\limits_{n = 0}^{+\infty} \frac{f^{(n)}(a)}{n!} (z - a)^n
+\end{equation}
+называется $\textit{рядом Тейлора функции f}$ с центром в точке $a$.
+\end{defn}
+
+\begin{thm}
+Если функция $f$ регулярна в круге $B_r(a)$, где $a \in \bbC$, $r > 0$, то она представима в этом круге $B_r(a)$ в виде суммы сходящегося ряда Тейлора, т.е.
+
+\begin{equation} \label{5}
+f(z) = \sum\limits_{n = 0}^{\infty} c_n(z - a)^n, \quad \forall z \in B_r(a),
+\end{equation}
+
+где
+
+\begin{equation} \label{6}
+c_n = \frac{f^{(n)}(a)}{n!}.
+\end{equation}
+
+\end{thm}
+
+\begin{proof}
+Фиксируем произвольную точку $z \in B_r(a)$. Тогда существует число $r_1 > 0$ такое, что $|z - a| < r_1 < r$.
+
+Пусть $\gamma_{r_1} \triangleq \{\zeta \: \big| \: |\zeta - a| = r_1 \}$ — ориентированная движением против хода часовой стрелки окружность (см. рис. 1). Запишем интегральную формулу Коши:
+
+\begin{equation} \label{7}
+f(z) = \frac{1}{2 \pi i} \int_{\gamma_{r_1}} \frac{f(\zeta)}{\zeta - z} \,d\zeta.
+\end{equation}
+
+Преобразуем функцию $\zeta \to \frac{1}{\zeta - z}$, где $\zeta \in \gamma_{r_1}$, к виду
+
+$$
+\frac{1}{\zeta - z} = \frac{1}{(\zeta - a) - (z - a)} = \frac{1}{(\zeta - a)\left( 1 - \frac{z - a}{\zeta - a}\right)}.
+$$
+
+Здесь $\left|\frac{z - a}{\zeta - a} \right| = \frac{|z - a|}{r_1} \triangleq q, q < 1$. Как в примере $\eqref{exmpl1}$, получаем разложение в сходящийся ряд
+
+$$
+\frac{1}{\zeta - z} = \frac{1}{\zeta - a} \left( 1 + \frac{z - a}{\zeta - a} + \left( \frac{z - a}{\zeta - a}\right)^2 + \ldots \right) = \sum\limits_{n = 0}^{+\infty} \frac{(z - a)^n}{(\zeta - a)^{n + 1}}.
+$$
+
+В итоге, подынтегральная функция в $\eqref{7}$ представима сходящимся на $\gamma_{r_1}$ рядом
+
+\begin{equation} \label{8}
+\frac{f(\zeta)}{\zeta - z} = \sum\limits_{n = 0}^{+\infty} \frac{(z - a)^n}{(\zeta - a)^{n + 1}} f(\zeta), \quad \forall \zeta \in \gamma_{r_1}.
+\end{equation}
+
+Так как справедлива оценка
+
+$$
+\left| \frac{(z - a)^n}{(\zeta - a)^{n + 1}} f(\zeta) \right| \le \frac{M}{r_1} \cdot q^n, \quad \text{где} \quad M = \sup_{\zeta \in \gamma_{r_1}} |f(\zeta)| < +\infty,
+$$
+
+а ряд $\sum\limits_{n = 0}^{\infty} q^n$ сходится, то по признаку Вейерштрасса функциональный ряд $\eqref{8}$ сходится равномерно на окружности $\gamma_{r_1}$. Поэтому в силу теоремы 2 из $\S$6 ряд $\eqref{8}$ можно почленно интегрировать по окружности $\gamma_{r_1}$. В результате получаем равенство
+
+\begin{equation} \label{9}
+f(z) = \sum\limits_{n = 0}^{\infty} \frac{1}{2\pi i} \int_{\gamma_{r_1}} \frac{f(\zeta)}{(\zeta - a)^{n + 1}} \,d\zeta \cdot (z - a)^n,
+\end{equation}
+
+т.е. степенной ряд вида $\eqref{1}$ с коэффициентами
+
+\begin{equation} \label{10}
+c_n = \frac{1}{2\pi i} \int_{\gamma_{r_1}} \frac{f(\zeta)}{(\zeta - a)^{n + 1}} \,d\zeta.
+\end{equation}
+
+Эти коэффициенты $c_n$ не зависят от выбора точки $z$ или окружности $\gamma_{r_1}$, так как, воспользовавшись формулой для производной 11 из $\S$8, получаем для $c_n$ формулу $\eqref{6}$. Таким образом, ряд $\eqref{9}$ есть ряд Тейлора функции $f$. В силу произвольности $z \in B_r(a)$ ряд $\eqref{9}$ сходится в круге $B_r(a)$, а поэтому его радиус сходимости $R \ge r$.
+\end{proof}
+
+\begin{cons} \label{cons1}
+Пусть функция $f$ регулярна в области $G$ и пусть выбрана точка $a \in G$. Тогда функция $f$ представима в виде ряда Тейлора
+
+$$
+f(z) = \sum\limits_{n = 0}^{+\infty} \frac{f^{(n)}(a)}{n!} (z - a)^n,
+$$
+
+который сходится по крайней мере в круге $B_R(a)$ максимального радиуса $R > 0$, при котором этот круг содержится в области $G$ (см. рис. 2).
+
+\end{cons}
