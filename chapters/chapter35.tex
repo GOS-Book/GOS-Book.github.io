@@ -1,3 +1,152 @@
 \chapter{Разложение функции, регулярной в кольце, в ряд Лорана. Изолированные особые точки однозначного характера.}
 \section{Разложение функции, регулярной в кольце, в ряд Лорана}
+
+\begin{defn}
+Рядом Лорана с центром в точке $a \in \bbC$ называется ряд вида
+
+\begin{equation} \label{ch35.1eq1}
+\sum\limits_{n = -\infty}^{+\infty} c_n (z - a)^n,
+\end{equation}
+
+понимаемый как сумма двух рядов:
+
+\begin{equation} \label{ch35.1eq2}
+\sum\limits_{n = 0}^{+\infty} c_n (z - a)^n
+\end{equation}
+
+и
+
+\begin{equation} \label{ch35.1eq3}
+\sum\limits_{n = -\infty}^{-1} c_n (z - a)^n = \sum\limits_{n = 1}^{+\infty} c_{-m} (z - a)^{-m}.
+\end{equation}
+
+\end{defn}
+
+Ряд $\eqref{ch35.1eq2}$ является обычным степенным рядом и в силу теоремы Абеля (теорема 1 \S 9) областью его сходимости является некоторый круг $B_R(a)$, где $R$ --- радиус сходимости ряда $\eqref{ch35.1eq2}$. Ряд $\eqref{ch35.1eq3}$ заменой $\frac{1}{z - a} = \zeta$ приводится к степенному ряду $\sum\limits_{m = 1}^{+\infty}c_{-m} \zeta^m$, и по той же теореме Абеля его область сходимости --- тоже некоторый круг $|\zeta| < \alpha_0$. Следовательно, ряд $\eqref{ch35.1eq3}$ сходится в области $|z - a| > \frac{1}{\alpha_0} \triangleq \rho \ge 0$. Если $\rho > R$, то суммарный ряд $\eqref{ch35.1eq1}$ не сходится ни в одной точке, если же $\rho < R$, то ряд $\eqref{ch35.1eq1}$ сходится в кольце: $\rho < |z - a| < R$.
+
+В последнем случае кольцо $\rho < |z - a| < R$, где $R$ --- радиус сходимости ряда $\eqref{ch35.1eq2}$, а $\frac{1}{\rho}$ --- радиус сходимости ряда $\sum\limits_{m = 1}^{+\infty} c_{-m} ]\zeta^m$ называется \textit{кольцом сходимости ряда Лорана} $\eqref{ch35.1eq1}$.
+
+По теореме Абеля ряд $\eqref{ch35.1eq2}$ сходится равномерно в $\overline{B_{R_1}(a)}$ при 
+$R_1 \in (0,R)$, а ряд $\eqref{ch35.1eq3}$ сходится равномерно на множестве $|z - a| \ge \rho_1$ при $\rho_1 > \rho$. Следовательно, ряд Лорана сходится равномерно в любом кольце
+
+$$
+\rho_1 \le |z - a| \le R_1, \quad \rho < \rho_1 < R_1 < R.
+$$
+
+Таким образом, по определению 3 из \S 9 ряд Лорана $\eqref{ch35.1eq1}$ сходится равномерно строго внутри его кольца сходимости. Так как к тому же каждый член ряда $\eqref{ch35.1eq1}$ в кольце сходимости является регулярной функцией, то по теореме Вейерштрасса (теорема 3 \S 9) сумма ряда Лорана в кольце сходимости также является регулярной функцией, причем ряд Лорана в этом кольце можно почленно дифференцировать любое число раз.
+Имеет место и обратное утверждение, а именно, 
+
+\begin{thm}[Лорана-Вейерштрасса] \label{ch35.1Thm1}
+Всякая функция $\omega = f(z)$, регулярная в кольце $\rho < |z - a| < R$, где $0 \le \rho < R \le +\infty$, представима в этом коьце суммой сходящегося ряда Лорана
+
+$$
+f(z) = \sum\limits_{n = -\infty}^{+\infty} c_n(z - a)^n,
+$$
+
+коэффициенты которого определяются о формулам
+
+\begin{equation} \label{ch35.1eq4}
+c_n = \frac{1}{2\pi i} \int_{\gamma_r} \frac{f(\zeta)}{(\zeta - a)^{n + 1}} \,d\zeta, \quad r \in (\rho, R), \quad n \in \bbZ,
+\end{equation}
+
+причем ориентация окружности $\gamma_r \triangleq \{\zeta \: \big| \: |\zeta - a| = r\}$ положительная, т.е. обход производится против хода часовой стрелки.
+
+\end{thm}
+
+\begin{proof}
+
+
+\begin{enumerate}
+\item
+Покажем, что каждый коэффициент $c_n$ в формуле $\eqref{ch35.1eq4}$ не зависит от выбора $r \in (\rho, R)$ . Функция $\frac{f(\zeta)}{(\zeta - a)^{n+1}}$ регулярна в кольце $\rho < |\zeta - a| < R$. Для любых чисел $r_1, r_2: \rho < r_1 < r_2 < R$ определим окружности $\gamma_k$ с центром в точке $a$ и радиуса $r_k, k \in \overline{1,2}$, ориентированные положительно. По обобщенной теореме Коши (теорема 3 \S 7) получаем равенство
+
+$$
+\int_{\gamma_2 \cup \gamma_{1}^{-1}} \frac{f(\zeta)}{(\zeta - a)^{n + 1}} \,d\zeta = 0, \text{т.е.}
+$$
+
+$$
+\int_{\gamma_2} \frac{f(\zeta)}{(\zeta - a)^{n + 1}} \,d\zeta = \int_{\gamma_1} \frac{f(\zeta)}{(\zeta - a)^{n + 1}} \,d\zeta,
+$$
+
+что и требовалось для доказательства независимости интеграла $\eqref{ch35.1eq4}$ от выбора $r \in (\rho, R)$ при каждом $n \in \bbZ$.
+
+\item
+
+Зафиксируем произвольную точку $z_0$ в кольце $\rho < |z - a| < R$. Выберем числа $r_1, r_2$ такие, что 
+$\rho < r_1 < |z_0 - a| < r_2 < R$, и окружности $\gamma_k = \{ z \: \big| \: |z - a| = r_k\}$ при $k \in \overline{1,2}$, ориентированные положительно. Тогда контур $\Gamma = \gamma_2 \cup \gamma{1}^{-1}$, является границей кольца $r_1 < |z - a| < r_2$, в котором по интегральной формуле Коши (теорема 1 \S8) получаем
+
+\begin{equation} \label{ch35.1eq5}
+f(z_0) = \frac{1}{2\pi i} \int_\Gamma \frac{f(\zeta)}{\zeta - z_0} \,d\zeta = \frac{1}{2\pi i} \int_{\gamma_2} \frac{f(\zeta)}{\zeta - z_0} \,d\zeta - \frac{1}{2\pi i} \int_{\gamma_1} \frac{f(\zeta)}{\zeta - z_0} \,d\zeta \triangleq I_2 + I_1.
+\end{equation}
+
+Рассмотрим интеграл $I_2$ из равенства $\eqref{ch35.1eq5}$. Повторяя рассуждения доказательства теоремы 2 \S 9, для всех $\zeta \in \gamma_2$ получаем сумму геометрической прогрессии (см. пример 1 \S 9) вида
+\begin{equation} \label{ch35.1eq6}
+\frac{1}{2\pi i} \frac{f(\zeta)}{\zeta - z_0} = \frac{1}{2\pi i} \frac{f(\zeta)}{(\zeta - a) \left( 1 - \frac{z_0 - a}{\zeta - a}\right)} = \frac{1}{2\pi i}\sum\limits_{n = 0}^{+\infty} \frac{(z_0 - a)^n}{(\zeta - a)^{n + 1}} f(\zeta).
+\end{equation}
+
+Из справедливости оценки
+
+$$
+\left| f(\zeta) \frac{(z_0 - a)^n}{(\zeta - a)^{n + 1}}\right| \le q_{2}^n \cdot \frac{M}{r_2}, \quad \forall \zeta \in \gamma_2,
+$$
+
+где $q_2 \triangleq \frac{|z_0 - a|}{r_2} < 1, M \triangleq \sup \{ |f(z)| \: \big| \: r_1 \le |z - a| \le r_2\} < +\infty$, и из того, что ряд $\sum\limits_{n = 0}^{+\infty} q_{2}^n$ сходится, по признаку Вейерштрасса получаем, что ряд $\eqref{ch35.1eq6}$ сходится абсолютно и равномерно на $\gamma_2$. По теореме 2 из \S 6 ряд $\eqref{ch35.1eq6}$ можно почленно интегрировать по $\gamma_2$, т.е. получим, что 
+
+\begin{equation} \label{ch35.1eq7}
+I_2 = \frac{1}{2\pi i} \int_{\gamma_2} \frac{f(\zeta)}{\zeta - z_0} \,d z \myeq{\eqref{ch35.1eq6}} \sum\limits_{n = 0}^{+\infty} \frac{1}{2\pi i} \int_{\gamma_2} \frac{f(\zeta)}{(\zeta - a)^{n + 1}} \,d\zeta \cdot (z_0 - a)^n = \sum\limits_{n = 0}^{+\infty} c_n (z_0 - a)^n,
+\end{equation}
+
+где 
+
+\begin{equation} \label{ch35.1eq8}
+c_n = \frac{1}{2\pi i} \int_{\gamma_2}  \frac{f(\zeta)}{(\zeta - a)^{n + 1}} \,d\zeta, \quad n = 0,1,2,\ldots
+\end{equation}
+
+\item
+
+Рассмотрим интеграл $I_1$ из $\eqref{ch35.1eq5}$. Представим $-\frac{1}{\zeta - z_0}$ в виде ряда (см. пример 1 \S 9)
+
+\begin{equation} \label{ch35.1eq9}
+-\frac{1}{\zeta - z_0} = \frac{1}{(z_0 - a) \left( 1 - \frac{\zeta - a}{z_0 - a}\right)} = \sum_{n = 0}^{+\infty} \frac{(\zeta - a)^n}{(z_0 - a)^{n + 1}}.
+\end{equation}
+
+По признаку Вейерштрасса ряд $\eqref{ch35.1eq9}$ сходится равномерно по $\zeta$ на $\gamma_1$, так как
+
+$$
+\left| \frac{\zeta - a}{z_0 - a}\right| = \frac{r_1}{|z_0 - a|} \triangleq q_1 < 1, \quad \forall \zeta \int \gamma_1.
+$$
+
+Так как $|f(\zeta)| \le M$ при $\zeta \in \gamma_1$, то ряд
+
+\begin{equation} \label{ch35.1eq10}
+-\frac{1}{2\pi i} \frac{f(\zeta)}{(\zeta - z_0)} = \sum\limits_{n = 0}^{+\infty} \frac{1}{2\pi i} \frac{f(\zeta)(\zeta - a)^n}{(z_0 - a)^{n + 1}}, \quad \zeta \in \gamma_1,
+\end{equation}
+
+также сходится равномерно на $\gamma_1$, и аналогично случаю вычисления $I_2$ его можно почленно интегрировать. После интегрирования равенства $\eqref{ch35.1eq10}$ получаем
+
+\begin{equation} \label{ch35.1eq11}
+I_1 = \sum\limits_{n = 0}^{+\infty} \left( \frac{1}{2\pi i} \int_{\gamma_1} f(\zeta)(\zeta - a)^n \,d\zeta\right) \frac{1}{(z_0 - a)^{n + 1}}.
+\end{equation}
+
+Заменяя в формуле $\eqref{ch35.1eq11}$ номера $(n + 1)$ на $(-m)$, получаем равенство
+
+\begin{equation} \label{ch35.1eq12}
+I_1 = \sum\limits_{m = -\infty}^{-1} c_m (z_0 - a)^m,
+\end{equation}
+
+где
+
+\begin{equation} \label{ch35.1eq13}
+c_m = \frac{1}{2\pi i} \int_{\gamma_1} \frac{f(\zeta)}{(\zeta - a)^{m + 1}} \,d\zeta, \quad m = -1,-2,\ldots
+\end{equation}
+
+В силу пункта 1. в формулах $\eqref{ch35.1eq8}$, $\eqref{ch35.1eq13}$ контуры $\gamma_1, \gamma_2$ можно заменить на любую окружность $\gamma_r = \{ z \: \big| \: |z - a| = r\}$, где $\rho < r < R$, т.е.
+верна общая формула коэффициентов $\eqref{ch35.1eq4}$. Так как точка $z_0$ была выбрана в данном кольце произвольно, то, складывая ряды $\eqref{ch35.1eq7}$ и $\eqref{ch35.1eq12}$, получаем ряд Лорана с коэффициентами $\eqref{ch35.1eq4}$, сходящийся во всем кольце $\rho < |z - a| < R$.	
+
+\end{enumerate}
+
+\end{proof}
+
+
+
 \section{Изолированные особые точки однозначного характера}
