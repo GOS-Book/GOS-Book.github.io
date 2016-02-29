@@ -147,6 +147,71 @@ c_m = \frac{1}{2\pi i} \int_{\gamma_1} \frac{f(\zeta)}{(\zeta - a)^{m + 1}} \,d\
 
 \end{proof}
 
+\begin{cons}
+Если функция $f : B_R(a) \to \bbC$ регулярна на $B_R(a)$, то ее ряд Лорана с центром в точке а совпадает с ее рядом Тейлора с центром в точке $a$.
+\end{cons}
+\begin{proof}
+В самом деле, по формуле $\eqref{ch35.1eq4}$ при $m = -1,-2, \ldots$ функция $f(\zeta)(\zeta - a)^{-m-1}$ будет регулярной в круге $B_R(a)$, и по теореме Коши интеграл от нее по замкнутому контуру равен нулю, т.е. $c_m = 0 \quad \forall m = -1,-2, \ldots$.
+\end{proof}
 
+\begin{thm}[о единственности разложения в ряд Лорана] \label{ch35.1Thm2}
+Разложение регулярной в кольце $\rho < |z - a| < R$ функции $f$ в сходящийся ряд Лорана с центром в точке $a$ единственно.
+\end{thm}
+
+\begin{proof}
+Пусть регулярная функция $f$ представлена в кольце $\rho < |z - a| < R$ в виде некоторого ряда
+
+\begin{equation} \label{ch35.1eq14}
+f(z) = \sum_{n = -\infty}^{-1} b_n (z - a)^n + \sum_{n = 0}^{+\infty} b_n (z - a)^n.
+\end{equation}
+
+Выберем число $r \in (\rho, R)$, и пусть окружность $\gamma_r = \{ z \: \big| \: |z - a| = r\}$ ориентирована положительно. Как показано в примере 1 \S 6, справедлива формула
+
+\begin{equation} \label{ch35.1eq15}
+I_k \triangleq \int_{\gamma_r} \frac{\,dz}{(z - a)^{k + 1}} = 
+\begin{cases}
+2\pi i, & k = 0, \\
+0, & k = \pm1, \pm2, \ldots
+\end{cases}
+\end{equation}
+
+Как было отмечено в начале параграфа, ряд $\eqref{ch35.1eq14}$ на окружности $\gamma_r$ сходится равномерно. Зафиксируем любое число $k \in \bbZ$. Умножив ряд $\eqref{ch35.1eq14}$ на ограниченную по модулю на кривой $\gamma_r$ функцию $\frac{1}{2\pi i(z - a)^{k + 1}}$, получаем равномерно сходящийся на окружности $\gamma_r$ ряд
+
+\begin{equation} \label{ch35.1eq16}
+\frac{1}{2\pi i} \frac{f(z)}{(z - a)^{k + 1}} = \sum_{n = -\infty}^{+\infty} \frac{1}{2\pi i} b_n \frac{(z-a)^n}{(z - a)^{k + 1}}.
+\end{equation}
+
+Следовательно, по теореме 2 из \S 6 его можно почленно интегрировать по окружности $\gamma_r$, и, учитывая формулу $\eqref{ch35.1eq4}$, получаем
+
+$$
+c_k \myeq{\eqref{ch35.1eq4}} \frac{1}{2\pi i} \int_{\gamma_r} \frac{f(z)}{(z - a)^{k + 1}} \,dz \myeq{\eqref{ch35.1eq16}} \sum_{n = -\infty}^{+\infty} \frac{1}{2\pi i} b_n \int_{\gamma_r} \frac{\,dz}{(z - a)^{k - n + 1}} \myeq{\eqref{ch35.1eq15}} b_k,
+$$
+
+т.е. ряд $\eqref{ch35.1eq14}$ совпадает с рядом Лорана $\eqref{ch35.1eq1}$, $\eqref{ch35.1eq4}$.
+
+Из следствия 1 и теоремы 2 получаем
+
+\begin{cons}
+Представление регулярной функции $f : B_R(a) \to \bbC$ в виде сходящегося степенного ряда по степеням $(z - a)$ единственно. Оно совпадает с рядом Тейлора этой функции с центром в точке $a$.
+\end{cons}
+
+\begin{cons} [неравенство Коши для коэффициентов ряда Лорана]
+Пусть функция $f$ регулярна в кольце $\rho < |z - a| < R$ и на каждой окружности $\gamma_r = \{ z \: \big| \: |z - a| = r\}$ справедлива оценка $|f(z)| \le A_r \: \forall z \in \gamma_r$. Тогда для коэффициентов $\eqref{ch35.1eq4}$ ряда Лорана $\eqref{ch35.1eq1}$ справедлива оценка
+
+\begin{equation} \label{ch35.1eq20}
+|c_n| \le \frac{A_r}{r^n}, \quad \forall n \in \bbZ.
+\end{equation}
+
+\begin{proof}
+Из формулы $\eqref{ch35.1eq4}$ сразу следует
+
+$$
+|c_n| = \left| \frac{1}{2\pi i} \int_{\gamma_r} \frac{f(\zeta)\,d\zeta}{(\zeta - a)^{n + 1}} \right| \le \frac{A_r}{2\pi r^{n + 1}} \int_{\gamma_r} |\,d\zeta| = \frac{A_r}{r^n},
+$$
+
+что и требовалось доказать.
+\end{proof}
+\end{cons}
+\end{proof}
 
 \section{Изолированные особые точки однозначного характера}
