@@ -1,13 +1,43 @@
 \chapter{Формула Грина. Потенциальные векторные поля на плоскости.}
 \section{Формула Грина} 
 
+\subsection{Криволинейные интегралы: определения, основные свойства}
+
+\subsection{Формула Грина для клетки}
+
+Пусть в плоскости $\bbR^2$ фиксирована некоторая прямоугольная систама координат $x,y$, и пусть $\Delta$ -- некоторая открытая кетка, т.е. $\Delta = (a;b)\times(c;d)$, а $\overline{\Delta}$ -- ее замыкание, т.е. $\overline{\Delta}=[a;b]\times[c;d]$. Через $\partial D$, как обычно, обозначим границу множества $\Delta$.
 
 
- формула Грина:
-\begin{equation}
-\int_\gamma P\, dx + Q\, dy = \iint_D \left(\pd{Q}{x}-\pd{P}{y}\right)\,dx\,dy ,
+\begin{lemm}
+Если функции $P(x,y)$ и $Q(x,y)$ определены и непрерывны на $\overline{\Delta}$, а их производные $P'_y$ и $Q'_x$ непрерывны и интегрируемы на $\Delta$, то справедлива формула
+
+\begin{equation} \label{yaa14e1}
+\iint\limits_{\Delta} \left( \pd{Q}{x}-\frac{\partial P}{\partial y} \right)\,dxdy = \int\limits_{\partial \Delta} P\,dx + Q\,dy
 \end{equation}
+где обход $\partial\Delta$ совершается против часовой стрелки, есди система координат $x,y$ правая (рис 14.1), и по часовой стрелке, если система координат $x,y$ левая (рис 14.2).
+\end{lemm}
 
+\begin{proof}
+По формуле сведения кратного интеграла к повторному получаем
+$$
+\iint\limits_{\Delta} \pd{Q}{x} \,dxdy = -\int_{c}^{d}\limits dy \int_a^b\limits \pd{Q}{x}\,dx = \int_c^d\limits Q(b,y)\,dy - \int_c^d\limits Q(a,y)\,dy
+$$
+В правой части стоит разность двух интегралов: первый интеграл -- это криволинейный интеграл по отрезку $BC$, а второй -- интеграл отрезку $AD$. Следовательно,
+$$
+\iint\limits_\Delta\pd{Q}{x}\,dxdy = \int_{BC}\limits Q\,dy - \int_{AD}\limits Q\,dy = \int_{BC}\limits Q\,dy + \int_{DA}\limits Q\,dy.
+$$
+А так как интегралы от $Q\,dy$ по $AB$ и $CD$ равны нулю, то
+$$
+\iint\limits_\Delta\pd{Q}{x}\,dxdy = \int\limits_{ABCDA} Q\,dy
+$$
+Аналогично доказывается, что
+$$
+\iint\limits_\Delta\pd{P}{y}\,dx\,dy = -\int\limits_{ABCDA} P\,dx.  
+$$ 
+\noindent
+Лемма доказана.
+\end{proof}
+Формула \eqref{yaa14e1} называется \textit{формулой Грина}. Таким образом, \textit{формула Грина справедлива для любого прямоугольника со сторонами, параллельными осям координат}.
 
 
 \section{Потенциальные векторные поля на плоскости}
