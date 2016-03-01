@@ -70,8 +70,8 @@
     <td>Напечатано</td>
     <td></td>
     <td><img src="http://medyk.org/colors/ffff00.png" width="30" height="30" /></td>
-    <td></td>
-    <td></td>
+    <td><img src="http://medyk.org/colors/ffff00.png" width="30" height="30" /> </td>
+    <td><img src="http://medyk.org/colors/ffff00.png" width="30" height="30" /> </td>
     <td></td>
     <td></td>
     <td><img src="http://medyk.org/colors/ffff00.png" width="30" height="30" /></td>
