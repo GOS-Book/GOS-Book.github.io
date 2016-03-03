@@ -82,18 +82,35 @@
 \renewcommand{\thedefn}{\arabic{defn}}
 \newcommand{\theHdefn}{\thechapter.\arabic{defn}}
 
+\newenvironment{defnn}[1] %MANUAL NUMBERING IN DEFINITIONS with \begin{defnn}{mynumber}
+  {\renewcommand\thedefn{#1}\defn}
+  {\enddefn}
+
+
 \theoremstyle{plain}
 \newtheorem{thm}{Теорема}[chapter]
 \renewcommand{\thethm}{\arabic{thm}}
 \newcommand{\theHthm}{\thechapter.\arabic{thm}}
 
+\newenvironment{thmn}[1]
+  {\renewcommand\thethm{#1}\thm}
+  {\endtmh}
+
 \newtheorem{cons}{Следствие}[chapter]
 \renewcommand{\thecons}{\arabic{cons}}
 \newcommand{\theHcons}{\thechapter.\arabic{cons}}
 
+\newenvironment{consn}[1]
+  {\renewcommand\thecons{#1}\cons}
+  {\endcons}
+
 \newtheorem{lemm}{Лемма}[chapter]
 \renewcommand{\thelemm}{\arabic{lemm}}
 \newcommand{\theHlemm}{\thechapter.\arabic{lemm}}
+
+\newenvironment{lemmn}[1]
+  {\renewcommand\thelemm{#1}\lemm}
+  {\endlemm}
   
 \newtheorem{exmpl}{Пример}[chapter]
 \renewcommand{\theexmpl}{\arabic{exmpl}}
@@ -115,6 +132,8 @@
 \newenvironment{solution}
   {\begin{proof}[Решение.]}
   {\end{proof}}
+
+  
 
 %special mention
 
