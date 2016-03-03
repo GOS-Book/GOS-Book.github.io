@@ -1,3 +1,215 @@
 \chapter{Вычеты. Вычисление интегралов по замкнутому контуру при помощи вычетов.}
 \section{Вычеты}
+
+\begin{defn}
+Пусть $a \in \bbC$ --- изолированная особая точка регулярной функции $f : \overset{\circ}{B}_\rho(a) \to \bbC, \: \rho > 0$. Пусть $\gamma_r \triangleq \{ z \: \big| \: |z - a| = r\}$ --- положительно ориентированная окружность, причем $0 < r < \rho$. Тогда \textit{вычетом функции $f$ в точке $a$} называется число
+
+\begin{equation} \label{ch36.1eq1}
+\res\limits_{a} f \triangleq \frac{1}{2\pi i} \int_{\gamma_r} f(z) \,dz.
+\end{equation}
+
+\end{defn}
+
+Отметим, что в формуле $\eqref{ch36.1eq1}$ интеграл не зависит от величины $r\in (0, \rho)$.
+
+Для получения более удобных выражений вычисления вычета функции, представим функцию $f : \overset{\circ}{B}_\rho(a) \to \bbC$ ее рядом Лорана с центром в точке $a$
+
+\begin{equation} \label{ch36.1eq2}
+f(z) = \sum_{n = -\infty}^{+\infty} c_n (z - a)^n.
+\end{equation}
+
+Тогда по формуле (4) \S 11 для коэффициентов $c_n$ получаем, что интеграл $\eqref{ch36.1eq1}$ равен коэффициенту $c_{-1}$, т.е.
+
+\begin{equation} \label{ch36.1eq3}
+\res\limits_{a} f = c_{-1}.
+\end{equation}
+
+Приведем некоторые правила вычисления вычетов.
+
+\begin{lemm} \label{ch36.1lemm1}
+Пусть $a$ --- полюс функции $f$ порядка $m \le m_0$. Тогда справедлива формула
+
+\begin{equation} \label{ch36.1eq4}
+\res\limits_{a} f = \frac{1}{(m_0 - 1)!} \lim_{z \to a} \frac{\,d^{m_0 -1}}{\,dz^{m_0 - 1}} [(z - a)^{m_0} f(z)].
+\end{equation}
+
+\end{lemm}
+
+\begin{proof}
+Представим функцию $f$ в виде ряда Лорана $\eqref{ch36.1eq2}$ с центром в полюсе $a$ порядка $m$. Так как число $m \ge m_0$, то в ряде $\eqref{ch36.1eq2}$ коэффициенты $c_n = 0$ при всех $n < -m_0$. Итак,
+
+\begin{equation} \label{ch36.1eq5}
+f(z) = \frac{c_{-m_0}}{(z - a)^{m_0}} + \frac{c_{-m_0 + 1}}{(z - a)^{m_0 - 1}} + \ldots + \frac{c_{-1}}{(z - a)} + c_0 + c_1 (z - a) + \ldots.
+\end{equation}
+
+Умножая ряд $\eqref{ch36.1eq5}$ на $(z - a)^{m_0}$, получаем 
+
+\begin{equation} \label{ch36.1eq6}
+(z - a)^{m_0} f(z) = c_{-m_0} + c_{-m_0 + 1} (z - a) + \ldots + c_{-1} (z - a)^{m_0 - 1} + \ldots, \quad z \in \overset{\circ}{B}_\rho(a).
+\end{equation}
+
+Так как полученный в правой части равенства $\eqref{ch36.1eq6}$ степенной ряд сходится в $B_\rho(a)$, то по теореме Абеля (теорема 1 \S 9) он сходится абсолютно и равномерно внутри области $B_\rho(a)$. Поэтому по теореме Вейерштрасса (теорема 3 \S 9) его можно почленно дифференцировать $(m_0 - 1)$ раз, после чего получаем
+
+\begin{equation} \label{ch36.1eq7}
+\frac{\,d^{m_0 - 1}}{\,dz^{m_0 - 1}} [(z - a)^{m_0} f(z)] = (m_0 - 1)! c_{-1} + m_0! c_0 (z - a) + \ldots, \quad z \in \overset{\circ}{B}_\rho(a).
+\end{equation}
+
+Левая часть равенства $\eqref{ch36.1eq7}$, очевидно, имеет предел при $z \to a$. Поэтому, переходя к пределу, в силу формулы $\eqref{ch36.1eq3}$ получаем формулу $\eqref{ch36.1eq4}$.
+
+\end{proof}
+
+\begin{lemm}
+Пусть функция $f : \overset{\circ}{B}_\rho(a) \to \bbC$ представима в виде
+
+$$
+f(z) = \frac{P(z)}{Q(z)}, \quad z \in \overset{\circ}{B}_\rho(a),
+$$
+
+где функции $P$ и $Q$ регулярны в круге $B_\rho(a)$, причем
+
+\begin{equation} \label{ch36.1eq8}
+P(a) \not= 0, \quad Q(a) = 0, \quad Q'(a) \not= 0.
+\end{equation}
+
+Тогда спаведлива формула
+
+\begin{equation} \label{ch36.1eq9}
+\res\limits_{a} f = \frac{P(a)}{Q'(a)}.
+\end{equation}
+
+\end{lemm}
+
+\begin{proof}
+В самом деле, в силу условия $\eqref{ch36.1eq8}$ точка $a$ --- полюс 1-го порядка функции $f$ и по формуле  $\eqref{ch36.1eq4}$ получаем
+
+$$
+\res_{a} f = \lim_{z \to a} \left[ \frac{P(z)(z - a)}{Q(z)}\right] = \lim_{z \to a} \frac{P(z)}{\frac{Q(z) - Q(a)}{z - a}} = \frac{P(a)}{Q'(a)}.
+$$
+
+\end{proof}
+
+\begin{defn}
+Пусть функция $f : \overset{\circ}{B}_{R_0}(\infty) \to \bbC$ регулярна (число $R_0 \ge 0$). Тогда \textit{вычетом функции $f$ в бесконечности} называется число
+
+\begin{equation} \label{ch36.1eq10}
+\res_{\infty} f \triangleq \frac{1}{2\pi i} \int_{\gamma_R^{-1}} f(z) \,dz,
+\end{equation}
+
+где число $R > R_0$, а окружность $\gamma_R^{-1} = \{ z \: \big| \: |z| = R \}$ ориентирована движением по ходу часовой стрелки (рис. 1)(т. е. отрицательно).
+\end{defn}
+
+Аналогично случаю конечной точки оценим $\res_{\infty} f$ через ряд Лорана для функции $f$ в окрестности $\overset{\circ}{B}_{R_0}(\infty)$, учитывая, что его коэффициенты имеют вид
+
+\begin{equation} \label{ch36.1eq11}
+c_n = \frac{1}{2\pi i} \int_{\gamma_R} \frac{f(\zeta)}{\zeta^{n + 1}} \,d\zeta, \quad n \in \bbZ,
+\end{equation}
+
+где окружность $\gamma_R$ при $R > R_0$ ориентирована движением против хода часовой стрелки. Сравнивая выражения $\eqref{ch36.1eq11}$ и $\eqref{ch36.1eq10}$, убеждаемся в справедливости формулы
+
+\begin{equation} \label{ch36.1eq12}
+\res_{\infty} f = -c_{-1},
+\end{equation}
+
+где $c_{-1}$ --- коэффициент разложения функции $f$ в ряд Лорана с центром в бесконечности. Здесь появился знак минус за счет различной ориентации окружности $\gamma_R$ в формулах $\eqref{ch36.1eq11}$ и $\eqref{ch36.1eq10}$.
+
+\begin{lemm} \label{ch36.1lemm3}
+Пусть $\infty$ --- устранимая точка функции $f$. Тогда $\res\limits_{\infty} f$ можно вычислить по формуле
+
+\begin{equation} \label{ch36.1eq13}
+\res_{\infty} f = \lim_{z \to \infty} [z(f(\infty) - f(z))].
+\end{equation}
+
+\end{lemm}
+
+\begin{proof}
+Из условия леммы следует, что ряд Лорана в некоторой окрестности $\overset{\circ}{B}_{R_0}(\infty)$ имеет вид
+
+$$
+f(z) = f(\infty) + \frac{c_{-1}}{z} + \frac{c_{-2}}{z^2} + \ldots,
+$$
+
+т.е.
+
+$$
+z(f(\infty) - f(z)) = -c_{-1} - \frac{c_{-2}}{z} + o\left(\frac{1}{z}\right),
+$$
+
+что в пределе при $z \to \infty$ дает формулу $\eqref{ch36.1eq13}$.	
+
+\end{proof}
+
+\begin{thm} [Коши о вычетах] \label{ch36.1T1}
+Пусть дана область $G \subset \overline{\bbC}$ с кусочно-гладкой положительно ориентированной границей $\Gamma$ (см. определения 1, 2 из \S 7). Пусть функция $f$ определена и регулярна на $G$ всюду, за исключением конечного числа изолированных особых точек $a_1,a_2,\ldots,a_n \in G$ (при этом имеется в виду, что все $a_k$ различны и если $\infty \in G$, то $\infty = a_n$) и пусть к тому же функция $f$ непрерывно продолжима на границу области $G$. Тогда справедлива формула
+
+\begin{equation} \label{ch36.1eq14}
+\int_\Gamma f(z) \,dz = 2 \pi i \sum_{k = 1}^{n} \res_{a_k} f.
+\end{equation}
+
+\end{thm}
+
+\begin{proof}
+\begin{enumerate}
+\item Пусть область $G$ ограничена. Так как число особых точек $a_1,\ldots,a_n \in \bbC$ конечно, то существует число $r > 0$ такое, что $B_r(a_k) \subset G \quad \forall k \in \overline{1,n}$, причем замыкания этих кругов попарно не пересекаются. Определим множество $\widetilde{G} \triangleq G \setminus \left( \bigcup\limits_{k = 1}^{n} \overline{B_r(a_k)}\right)$.
+
+Множество $\widetilde{G}$ тоже является областью с кусочно-гладкой границей $\widetilde{\Gamma} = \Gamma \cup \left( \bigcup\limits_{k = 1}^{n} \gamma_{k}^{-1} \right)$,	где $\gamma_r$ суть окружности $\{ z \: \big| \: |z - a_k| = r \}$, ориентированные движением против хода часовой стрелки, а $\gamma_{k}^{-1}$ --- они же, но ориентированные по ходу часовой стрелки. Получили, что $f$ регулярна на $\widetilde{G}$ и непрерывна на $\overline{\widetilde{G}} = \widetilde{G} \cup \widetilde{\Gamma}$ (см. рис. 2). Тогда по теореме 3 из \S 7 получаем
+
+$$
+0 = \int_{\widetilde{\Gamma}} f(z) \,dz = \int_{\Gamma} f(z) \,dz - \sum_{k = 1}^{n} \int_{\gamma_k} f(z) \,dz \myeq{\eqref{ch36.1eq1}} \int_{\Gamma} f(z) \,dz - \sum_{k = 1}^{n} 2\pi i \res_{a_k} f,
+$$
+
+что и дает формулу $\eqref{ch36.1eq14}$.
+
+
+\item 2.	Пусть $\infty \in G$. Тогда особые точки $a_1,\ldots,a_{n - 1} \in \bbC$ --- конечны, а $a_n = \infty$. Так как по определению 1 \S 7 граница $\Gamma$ состоит из ограниченных гладких компонент, то существует число $R > 0$ такое, что для каждого $z \in \Gamma \cup \left( \bigcup\limits_{k = 1}^{n - 1} a_k \right)$ справедливо неравенство $|z| < R$.
+
+Определим $\widetilde{G} = G \cap B_R(0)$. Тогда $G$— ограниченная область с кусочно-гладкой границей $\widetilde{\Gamma} = \Gamma \cup \gamma_R$, где $\gamma_R = \{ z \: \big| \: |z| = R\}$ --- окружность, ориентированная движением против хода часовой стрелки (см. рис. 3). Для регулярной в $\bbC \setminus B_R(0)$ функции $f$ по определению 2 справедлива формула
+
+\begin{equation} \label{ch36.1eq15}
+\res_{\infty} f = - \frac{1}{2\pi i} \int_{\gamma_R} f(z) \,dz.
+\end{equation}
+
+
+Так как область $\widetilde{G}$ ограничена, то, опираясь на результат пункта 1), получаем
+
+\begin{equation} \label{ch36.1eq16}
+\int_{\widetilde{\gamma}} f(z) \,dz = 2\pi i \sum_{k = 1}^{n - 1} \res_{a_k} f.
+\end{equation}
+ 
+С другой стороны,
+
+$$
+\int_{\widetilde{\Gamma}} f(z) \,dz = \int_{\Gamma} f(z) \,dz + \int_{\gamma_R} f(z) \,dz \myeq{\eqref{ch36.1eq15}} \int_{\Gamma} f(z) \,dz - 2\pi i\res_{\infty} f,
+$$
+
+откуда и из $\eqref{ch36.1eq16}$ следует $\eqref{ch36.1eq14}$.	
+
+\end{enumerate}
+\end{proof}
+
+\begin{cons}
+Пусть функция $f$ регулярна во всей комплексной плоскости, за исключением конечного числа изолированных особых точек $a_1,\ldots,a_n \in \overline{\bbC}$. Тогда
+
+\begin{equation} \label{ch36.1eq17}
+\sum_{k = 1}^{n} \res_{a_k} f = 0.
+\end{equation}
+\end{cons}
+
+\begin{proof}
+Так как $\infty$, очевидно, является особой точкой данной функции $f$, то без ограничения общности полагаем, что $a_n = \infty$. Рассмотрим $R > 0$ такое, что все $a_k \in B_R(0) \quad \forall k \in \overline{1, n - 1}$. Как обычно, обозначим через $\gamma_R \triangleq \{ z \: \big| \: |z| = R\}$ окружность, ориентированную движением против хода часовой стрелки.
+
+Тогда по теореме $\eqref{ch36.1T1}$ для области $B_R(0)$ получаем
+
+\begin{equation} \label{ch36.1eq18}
+\int_{\gamma_R} f(z) \,dz = 2\pi i \sum_{k = 1}^{n - 1} \res_{a_k} f.
+\end{equation}
+
+С другой стороны, по определению 2,
+
+$$
+- \int_{\gamma_R} f(z) \,dz = 2\pi i \res_{\infty} f,
+$$
+
+что вместе с $\eqref{ch36.1eq18}$ дает равенство $\eqref{ch36.1eq17}$.
+\end{proof}
+
 \section{Вычисление интегралов по замкнутому контуру при помощи вычетов}
