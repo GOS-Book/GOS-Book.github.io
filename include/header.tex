@@ -82,9 +82,9 @@
 \renewcommand{\thedefn}{\arabic{defn}}
 \newcommand{\theHdefn}{\thechapter.\arabic{defn}}
 
-\newenvironment{defnn}[1] %MANUAL NUMBERING IN DEFINITIONS with \begin{defnn}{mynumber}
-  {\renewcommand\thedefn{#1}\defn}
-  {\enddefn}
+\newtheorem{defnn}{Определение} %штрихованное.
+\renewcommand{\thedefnn}{\arabic{defn}'}
+\newcommand{\theHdefnn}{\thechapter.\arabic{defnn}'}
 
 
 \theoremstyle{plain}
@@ -92,25 +92,27 @@
 \renewcommand{\thethm}{\arabic{thm}}
 \newcommand{\theHthm}{\thechapter.\arabic{thm}}
 
-\newenvironment{thmn}[1]
-  {\renewcommand\thethm{#1}\thm}
-  {\endtmh}
+\newtheorem{thmn}{Теорема}[chapter] %штрихованное.
+\renewcommand{\thethmn}{\arabic{thm}'}
+\newcommand{\theHthmn}{\thechapter.\arabic{thmn}'}
+
 
 \newtheorem{cons}{Следствие}[chapter]
 \renewcommand{\thecons}{\arabic{cons}}
 \newcommand{\theHcons}{\thechapter.\arabic{cons}}
 
-\newenvironment{consn}[1]
-  {\renewcommand\thecons{#1}\cons}
-  {\endcons}
+\newtheorem{consn}{Cледствие}[chapter] %штрихованное.
+\renewcommand{\theconsn}{\arabic{cons}'}
+\newcommand{\theHconsn}{\thechapter.\arabic{consn}'}
+
 
 \newtheorem{lemm}{Лемма}[chapter]
 \renewcommand{\thelemm}{\arabic{lemm}}
 \newcommand{\theHlemm}{\thechapter.\arabic{lemm}}
 
-\newenvironment{lemmn}[1]
-  {\renewcommand\thelemm{#1}\lemm}
-  {\endlemm}
+\newtheorem{lemmn}{Лемма}[chapter] %штрихованное.
+\renewcommand{\thelemmn}{\arabic{lemm}'}
+\newcommand{\theHlemmn}{\thechapter.\arabic{lemmn}'}
   
 \newtheorem{exmpl}{Пример}[chapter]
 \renewcommand{\theexmpl}{\arabic{exmpl}}
