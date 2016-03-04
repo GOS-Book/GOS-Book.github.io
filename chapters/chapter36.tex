@@ -213,3 +213,175 @@ $$
 \end{proof}
 
 \section{Вычисление интегралов по замкнутому контуру при помощи вычетов}
+
+{\bf I. Вычисление интегралов вида}
+
+\begin{equation} \label{ch36.1eq19}
+J = \int_{-\infty}^{+\infty} R_{n,m} (x) dx,
+\end{equation}
+
+где $R_{n,m}(x) = \frac{P_n(x)}{Q_m(x)}$ --- рациональная функция,
+
+$$
+P_n(x) = x^n + a_{n - 1} x^{n - 1} + \ldots + a_0,
+Q_m(x) = x^m + b_{m - 1} x^{m - 1} + \ldots + b_0,
+$$
+
+причем полагаем, что $Q_m(x) \not= 0$ при всех $x \in \bbR^1$.
+
+Известно, что интеграл $J \eqref{ch36.1eq19}$ сходится при условии $m > n + 1$, что считаем выполненным.
+
+Для вычисления интеграла $\eqref{ch36.1eq19}$, как и в примере 2, определим ориентированный движением против хода часовой стрелки контур $\gamma_R \triangleq [-R, R] \cup C_R$, где $R > R_0 = max\{ |z_k^{+}| \: \big| \: k \in \overline{1,l} \}$, а $ \{ z_{k}^{+} \}^l_{k = 1}$ --- совокупность всех различных нулей многочлена $Q_m(z)$, лежащих в верхней полуплоскости $\Im z \ge 0$, полуокружность $C_R \triangleq \{ z \: \big| \: |z| = R, \: \Im z \ge 0 \}$. Чтобы воспользоваться теоремой о вычетах, определим интеграл 
+
+$$
+J_R = \int_{\gamma_R} R_{n,m}(z)\,dz.
+$$
+
+По теореме 1 о вычетах, при каждом $R > R_0$
+
+$$
+J_R = 2\pi i\left( \sum_{k = 1}^{l} \res_{z_k^+} R_{n,m}\right).
+$$
+
+С другой стороны, имеет место представление интеграла $J_R = J_R^1 + J_R^2$, где 
+
+\begin{equation} \label{ch36.1eq20}
+J_R^1 \triangleq \int_{-R}^{+R} R_{n,m}(x)\,dx, \quad J_R^2 \triangleq \int_{C_R} R_{n,m}(z)\,dz.
+\end{equation}
+
+Очевидно, что $\lim\limits_{R \to +\infty} J_R^1 = J$. Осталось показать, что $\lim\limits_{R \to +\infty}J_R^2 = 0$, откуда последует формула:
+
+\begin{equation} \label{ch36.1eq21}
+\int_{-\infty}^{+\infty}R_{n,m}(x)\,dx = 2\pi i\sum_{k = 1}^{l} \res_{z_k^+} R_{n,m}.
+\end{equation}
+
+Докажем необходимое утверждение.
+
+\begin{lemm} \label{ch36.1lemm4}
+Пусть $\Phi(z)$ --- непрерывная функция на замкнутом множестве $\{ z \: \big| \: \Im z \ge 0, \: |z| \ge R_0 > 0 \}$. Пусть $C_R \triangleq \{ z \: \big| \: |z| = R, \: \Im z \ge 0 \}, \: R > R_0$, --- семейство полуокружностей в верхней полуплоскости. Обозначим
+
+$$
+\epsilon(R) \triangleq \max\{|\Phi(z)| \: \big| \: z\in C_R \} \quad \text{при} \quad R > R_0.
+$$
+
+Если $\lim\limits_{R \to +\infty} \epsilon(R)R = 0$, то $\lim\limits_{R \to +\infty} \int_{C_R} \Phi(z)\,dz = 0$.
+\end{lemm}
+
+\begin{proof}
+Из условий леммы получаем оценки
+
+$$
+\left| \int_{C_R} \Phi(z)\,dz \right| \le \int_{C_R} |\Phi(z)||\,dz| \le \epsilon(R) \int_{C_R}|\,dz| = \epsilon(R)\pi R \to 0.
+$$
+
+\end{proof}
+
+Применим лемму $\eqref{ch36.1lemm4}$ для случая рациональной функции $\Phi(z) = R_{n,m}(z)$ из правого интеграла в $\eqref{ch36.1eq20}$ при сформулированных выше условиях (т.е. при $m > n + 1$).
+
+При достаточно больших $|z| > R_0$ очевидно справедлива оценка $|\Phi(z)| \le 2|z|^{n - m}$, т.е.
+$\epsilon(R)R \le 2R^{n - m + 1} \to 0$, откуда следует, что выполнены условия леммы $\eqref{ch36.1lemm4}$, по которой получаем равенство $\lim\limits_{R \to +\infty} J_R^2 = 0$.
+
+Таким образом, формула $\eqref{ch36.1eq21}$ обоснована полностью.
+
+{\bf II. Вычисление интегралов вида}
+
+\begin{equation} \label{ch36.1eq22}
+J = \int_{0}^{2\pi} R(cos \phi, sin\phi)\,d\phi,
+\end{equation}
+
+где $R(x,y) = \frac{P_n(x,y)}{Q_m(x,y)}; \: P_n, Q_m$ --- многочлены переменных $x$ и $y$.
+
+Сделаем замену $z = z(\phi) = e^{i \phi}, \: 0 \le \phi \le 2\pi$. Тогда 
+
+$cos\phi = \frac{1}{2} (e^{i\phi} + e^{-i\phi}) = \frac{1}{2}\left( z + \frac{1}{z}\right), \: sin\phi = \frac{1}{2i} \left(z - \frac{1}{z} \right), \,dz = i e^{i \phi} \,d\phi,$ т.е. 
+$$
+J = \int_0^{2\pi} R\left( \frac{z(\phi)}{2} + \frac{1}{2z(\phi)}, \: \frac{z(\phi)}{2i} - \frac{1}{2iz(\phi)}\right) \cdot \frac{z'(\phi)}{iz(\phi)} \,d\phi = \int_{|z| = 1} R\left( \frac{1}{2} \left( z + \frac{1}{z}\right), \frac{1}{2i}\left( z - \frac{1}{z}\right)\right)\frac{\,dz}{iz} = \int_{|z| = 1} R_1(z)\,dz.
+$$
+
+В итоге интеграл $\eqref{ch36.1eq22}$ свелся к интегралу по кругу $|z| = 1$ от рациональной функции $R_1(z)$, который легко может быть вычислен с помощью теоремы 1 о вычетах.
+
+{\bf III. Вычисление интегралов вида}
+
+\begin{equation} \label{ch36.1eq23}
+J = \int_{-\infty}^{+\infty} e^{i\alpha x} R(x) \,dx,
+\end{equation}
+
+где $R(x) = \frac{P_n(x)}{Q_m(x)}$ --- рациональная функция, причем $m - n \ge 1, \: \alpha$ --- действительное число, $\alpha > 0$ и $Q_m(x) \not= 0$ при всех $x \in \bbR^1$ (т.е. интеграл $\eqref{ch36.1eq23}$ есть преобразование Фурье рациональной функции $R$).
+
+Для получения условий сходимости интеграла $\eqref{ch36.1eq23}$ представим подынтегральную функцию в виде
+
+$$
+R(x) e^{i \alpha x} = \frac{e^{i \alpha x}}{x^{m - n}} + O \left( \frac{1}{x^{m - n + 1}} \right) \quad |x| > 1.
+$$
+
+Интеграл $\int_1^{+\infty} \frac{e^{i \alpha x}}{x^{m - n}} \,dx$ сходится при $m - n \ge 1$ (по признаку Дирихле: функция $\int_1^x e^{i\alpha t}\,dt$ ограничена по модулю, а функция $\frac{1}{x^{m - n}}$ монотонно стремится к нулю при $z \to +\infty$). Интеграл 
+$\int_1^{+\infty} O \left( \frac{1}{x^{m - n + 1}} \right)\,dx$ сходится абсолютно, так как по условию $m - n + 1 \ge 2$. Сходимость интеграла $\eqref{ch36.1eq23}$ в $-\infty$ при $m — n \ge 1$ проверяется аналогично.
+
+Рассмотрим, как и в пункте $I$, положительно ориентированный контур $\gamma_R \triangleq [-R,R] \cup C_R$. При достаточно больших $R > R_0 = \max \{ |z_k^+| \: \big| \: k \in \overline{1,l} \}$ получаем
+
+\begin{equation} \label{ch36.1eq24}
+\int_{\gamma_R} e^{i \alpha z}R(z) \,dz = 2\pi i \sum_{k = 1}^l \res_{z_k^+} (e^{i\alpha z}R(z)),
+\end{equation}
+
+где через $\{ z_k^+ \}$ обозначены все различные нули многочлена $Q_m(z)$ (знаменателя функции $R(z)$), лежащие в верхней полуплоскости.
+
+С другой стороны, справедливо представление интеграла 
+
+\begin{equation} \label{ch36.1eq25}
+\int_{\gamma_R} e^{i \alpha z}R(z)\,dz = \int_{-R}^{+R} e^{i \alpha x}R(x)\,dx + \int_{C_R} e^{i \alpha z} R(z)\,dz.
+\end{equation}
+
+Первое слагаемое справа в $\eqref{ch36.1eq25}$, очевидно, стремится к искомому значению $J$ интеграла $\eqref{ch36.1eq23}$ при $R \to +\infty$. Необходимо исследовать второе слагаемое в $\eqref{ch36.1eq25}$.
+
+\begin{lemm} [Жордана] \label{ch36.1emm5}
+Пусть $\Phi(z)$ --- непрерывная функция на замкнутом множестве $\{ z \: \big| \: \Im z \ge 0, |z| \ge R_0 > 0 \}$. Пусть число $\alpha > 0$ и $C_R \triangleq \{ z \: \big| \: |z| = R, \: \Im z \ge 0 \}, \: R > R_0$ --- семейство полуокружностей в верхней полуплоскости. Обозначим
+
+$$
+\epsilon(R) \triangleq \max \{ |\Phi(z)| \: \big| \: z \in C_R \} \quad R > R_0.
+$$
+
+Если $\lim\limits_{R \to +\infty} \epsilon(R) = 0$, то $\lim\limits_{R \to +\infty} \inf_{C_R} e^{i \alpha z} \Phi(z) \,dz = 0$.
+
+\end{lemm}
+
+\begin{proof}
+Пусть $z \in C_R$, тогда $z = Re^{i\phi} = Rcos\phi + iRsin\phi, \: 0 \le \phi \le \pi$. Поэтому при $z \in C_R$
+
+$$
+|e^{i \alpha z}| = |e^{i \alpha(x + iy)}| = e^{-\alpha y} = e^{- \alpha R sin\phi}.
+$$
+
+Воспользуемся для оценки неравенством
+
+\begin{equation} \label{ch36.1eq26}
+sin \phi \ge \frac{2}{\pi}\phi \quad \text{} \quad \phi \in \left[ 0, \frac{\pi}{2}\right].
+\end{equation}
+
+Получаем
+
+$$
+\left| \int_{C_R} e^{i \alpha z} \Phi(z)\,dz \right| \le \int_{C_R} |\Phi(z)|e^{-\alpha R sin \phi}|\,dz| \le \epsilon(R)R \int_0^\pi e^{-\alpha R sin\phi} \,d\phi = 2\epsilon(R)R \int_0^{\frac{\pi}{2}} e^{-\alpha R sin\phi} \,d\phi \le 2\epsilon(R)R \int_0^{\frac{\pi}{2}} e^{-\alpha R 2\phi / \pi} \,d\phi \le \frac{\pi}{\alpha} \epsilon(R),
+$$
+
+т.е. справедливо заключение леммы.
+\end{proof}
+
+Возвращаясь к формуле $\eqref{ch36.1eq25}$, покажем с помощью леммы Жордана, что второй интеграл в $\eqref{ch36.1eq25}$ стремится к нулю при $R \to \infty$. При достаточно больших $R > R_0$ в силу условий сходимости $m - n \ge 1$ плучаем $\epsilon(R) \le \frac{2}{R^{m - n}} \le \frac{2}{R} \to 0$. В силу леммы  $\eqref{ch36.1emm5}$ имеет место равенство $\lim\limits_{R \to +\infty} \int_{\gamma_R} e^{i \alpha z}R(z) \,dz = J$, а потому справедлива формула
+
+\begin{equation} \label{ch36.1eq27}
+\int_{-\infty}^{+\infty} e^{i \alpha x}R(x) \,dx = 2\pi i \cdot \sum_{k = 1}^l \res_{z_k^+} (e^{i \alpha z}R(z)).
+\end{equation}
+
+\begin{cons} \label{ch36.1cons2}
+Интегралы вида
+
+\begin{equation} \label{ch36.1eq28}
+J_1 = \int_{-\infty}^{+\infty} cos\alpha x \cdot R(x) \,dx \quad \text{и} \quad J_2 = \int_{-\infty}^{+\infty} sin \alpha x \cdot R(x) \,dx,
+\end{equation}
+
+где $R(x)$ --- рациональная функция, сводятся к интегралу вида $\eqref{ch36.1eq23}$, т.е.
+
+$$
+J_1 = \Re \int_{-\infty}^{+\infty} e^{i \alpha x} R(x) \,dx, \quad J_2 = \Im \int_{-\infty}^{+\infty} e^{i \alpha x}R(x) \,dx.
+$$
+\end{cons}
