@@ -33,7 +33,7 @@
     <td></td>
     <td><img src="http://medyk.org/colors/ffff00.png" width="30" height="30" /></td>
     <td></td>
-    <td></td>
+    <td><img src="http://medyk.org/colors/ffff00.png" width="30" height="30" /></td>
     <td><img src="http://medyk.org/colors/ffff00.png" width="30" height="30" /></td>
   </tr>
   <tr>
@@ -119,12 +119,12 @@
     <td></td>
     <td></td>
     <td><img src="http://medyk.org/colors/87ff00.png" width="30" height="30" /></td>
-    <td></td>
+    <td><img src="http://medyk.org/colors/87ff00.png" width="30" height="30" /></td>
     <td></td>
     <td><img src="http://medyk.org/colors/87ff00.png" width="30" height="30" /></td>
     <td><img src="http://medyk.org/colors/87ff00.png" width="30" height="30" /></td>
-    <td><img src="http://medyk.org/colors/ffff00.png" width="30" height="30" /></td>
-    <td></td>
+    <td><img src="http://medyk.org/colors/87ff00.png" width="30" height="30" /></td>
+    <td><img src="http://medyk.org/colors/87ff00.png" width="30" height="30" /></td>
   </tr>
       <tr>
     <td>Отредактировано</td>
@@ -134,7 +134,7 @@
     <td></td>
     <td></td>
     <td><img src="http://medyk.org/colors/87ff00.png" width="30" height="30" /></td>
-    <td></td>
+    <td><img src="http://medyk.org/colors/87ff00.png" width="30" height="30" /></td>
     <td></td>
     <td><img src="http://medyk.org/colors/87ff00.png" width="30" height="30" /></td>
     <td></td>
