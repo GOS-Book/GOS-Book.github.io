@@ -13,13 +13,29 @@
 \usepackage{emptypage}
 
 \usepackage{epigraph}
-\usepackage{tikz} 
+\usepackage{tikz}
+\usepackage{cancel}
 															
 \usepackage{xcolor}
 \definecolor{darkblue}{rgb}{0,0,.6}
 \definecolor{Purplemountainmajesty}{RGB}{150, 120, 182}
 
 \usepackage{datetime}
+
+\usepackage{lipsum}
+
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{microtype}
+  
+
+\input{insbox.tex}
+\usepackage{threeparttable}
+
+
+\newcommand\addpicture[3][9]{%
+\InsertBoxR{0}{\begin{threeparttable}\begin{tabular}{c@{}}\includegraphics[scale=#3]{#2}\end{tabular}\captionof{figure}{}\end{threeparttable}}[#1]}
+
 \usepackage{wrapfig}
 
 

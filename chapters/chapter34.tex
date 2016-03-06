@@ -1,9 +1,6 @@
 \chapter{Интегральная формула Коши. Разложение функции, регулярной в окрестности точки, в ряд Тейлора.}
 \section{Интегральная формула Коши}
 
-Получим представление функций, регулярных в ограниченной области, при помощи интеграла по границе этой области. С помощью этого представления покажем, что всякая регулярная в области функция бесконечно дифференцируема.
-
-
 \begin{exmpl}
 \label{exmpl1}
 Вычислить интеграл 
@@ -25,9 +22,9 @@ $$
 При $k = -1$ получаем $J_{-1} = i \int_{0}^{2\pi}\,d\varphi = 2 \pi i$;
 \item
 При $k \ne -1$ получаем
-$$
+$
 J_k = i r^{k + 1} \left( \int_{0}^{2 \pi} cos(k + 1) \varphi \,d \varphi + i \int_{0}^{2 \pi} sin(k + 1) \varphi \,d\varphi \right) = 0.
-$$
+$
 \end{enumerate}
 \end{solution}
 
@@ -42,9 +39,9 @@ $$
 \begin{proof}
 Фиксируем произвольную точку $z \in G$. Функция $\frac{f(\zeta)}{\zeta - z}$ регулярна по переменному $\zeta$ в области $G \setminus \{z\}$. Выберем число $r_0 > 0$ такое, что выполнено включение $\overline{B_{r_0}(z)}\subset G$. 
 
-Обозначим через $\gamma \triangleq \{ \zeta \bigl| |\zeta - z| = r \}$ окружность радиуса $r \in (0, r_0)$ ориентированную против хода часовой стрелки. Обозначим множества $G_r \triangleq G \setminus \overline{B_r(z)}$ и $\Gamma_r \triangleq \Gamma \cup \gamma_r^{-1}$. Очевидно, что множество $G_r$ есть область с кусочно-гладкой положительно ориентированной границей $\Gamma_r$ (см. рис. 1). 
+\addpicture{pictures/ch34pict1}{0.5} Обозначим через $\gamma \triangleq \{ \zeta \bigl| |\zeta - z| = r \}$ окружность радиуса $r \in (0, r_0)$ ориентированную против хода часовой стрелки. Обозначим множества $G_r \triangleq G \setminus \overline{B_r(z)}$ и $\Gamma_r \triangleq \Gamma \cup \gamma_r^{-1}$. Очевидно, что множество $G_r$ есть область с кусочно-гладкой положительно ориентированной границей $\Gamma_r$ (см. рис. 1). 
 
-По теореме 3 из $\S$7 получаем
+По обощенной интегральной теореме Коши \ref{abc28} из билета №33 получаем
 
  \begin{equation} \label{ch34eq2}
  0 = \int_{\Gamma_r} \frac{f(\zeta)}{\zeta - z}\,d\zeta = \int_\Gamma \frac{f(\zeta)}{\zeta - z}\,d\zeta - \int_{\gamma_r} \frac{f(\zeta)}{\zeta - z}\,d\zeta.
@@ -69,7 +66,7 @@ $$J - f(z) = \frac{1}{2\pi i} \int_{\gamma_r} \frac{f(\zeta) - f(z)}{\zeta - z}\
 Так как $\epsilon > 0$ произвольное число, то из (3), (4) следует $J = f(z)$, т.е. формула $\eqref{ch34eq1}$.
 \end{proof}
 
-\begin{defn}
+\begin{defn}\label{ch34defn1}
 Пусть $\gamma$ — кусочно-гладкий контур в $\bbC$ и пусть $\omega = q(z)$ — непрерывная на $\gamma$ функция. Тогда интеграл вида
 
 \begin{equation} \label{ch34eq5}
@@ -79,18 +76,19 @@ I(z) \triangleq \frac{1}{2 \pi i} \int_\gamma \frac{q(\zeta)}{\zeta - z}\,d\zeta
 \end{defn}
 
 \begin{thm} \label{ch34Thm2}
-При сформулированных в определении 1 условиях функция $I:\bbC \setminus \gamma \to \bbC$ из $\eqref{ch34eq5}$ определена и дифференцируема бесконечное число раз, причем для производных справедлива формула
+При сформулированных в определении \ref{ch34defn1} условиях функция $I:\bbC \setminus \gamma \to \bbC$ из $\eqref{ch34eq5}$ определена и дифференцируема бесконечное число раз, причем для производных справедлива формула
 
 \begin{equation} \label{ch34eq6}
 I^{(n)}(z) = \frac{n!}{2\pi i} \int_\gamma \frac{q(\zeta)}{(\zeta - z)^{n+1}}\,d\zeta, \quad n \in \bbN
 \end{equation}
 \end{thm}
-\begin{proof}
+\begin{proof}\leavevmode
+
 \begin{enumerate}
 \item 
 Докажем формулу $\eqref{ch34eq6}$ при $n = 1$. Так как функция $q(\zeta)$ непрерывна на контуре $\gamma$, то существует число $M < + \infty$ такое, что $|q(\zeta)| \le M$ при $\zeta \in \gamma$.
-
-Фиксируем точку $z \notin \gamma$. Пусть $d \triangleq dist(z, \gamma)$. Очевидно, что $d > 0$. Выберем число $r \in (0, \frac{d}{2})$ и возьмем произвольное число $\Delta z \in \bbC$ так, чтобы $0 < |\Delta z| < r$. Тогда для $\forall \zeta \in \gamma$ получаем
+\addpicture[6]{pictures/ch34pict2}{0.55} 
+Фиксируем точку $z \notin \gamma$. Пусть $d \triangleq \dist(z, \gamma)$. Очевидно, что $d > 0$. Выберем число $r \in (0, \frac{d}{2})$ и возьмем произвольное число $\Delta z \in \bbC$ так, чтобы $0 < |\Delta z| < r$. Тогда для $\forall \zeta \in \gamma$ получаем
 
 \begin{equation} \label{ch34eq7}
 |\zeta - (z + \Delta z)| \ge |\zeta - z| - |\Delta z| \ge d - \frac{d}{2} = \frac{d}{2}
@@ -103,18 +101,18 @@ I^{(n)}(z) = \frac{n!}{2\pi i} \int_\gamma \frac{q(\zeta)}{(\zeta - z)^{n+1}}\,d
 \end{equation}
 
 Упростим выражение в прмых скобках под интегралом $\eqref{ch34eq8}$:
-
-$$
-[\ldots] = \frac{\zeta - z - (\zeta - z - \Delta z)}{(\zeta - z)(\zeta - z - \Delta z)} \cdot \frac{1}{\Delta z} - \frac{1}{(\zeta - z)^2} = \frac{\Delta z}{(\zeta - z)^2 (\zeta - z - \Delta z)} .
-$$
-
+\begin{multline*}
+[\ldots] = \frac{{\zeta} - {z} - ({(\zeta} - {z}) - {\Delta z})}{(\zeta - z)((\zeta - z) - \Delta z)} \cdot \frac{1}{{\Delta z}} - \frac{1}{(\zeta - z)^2} = \frac{1}{(\zeta - z)(\Delta z- (\zeta-z) )} - \frac{1}{(\zeta - z)^2}=\\=
+\frac{(\zeta - z)-(\Delta z- (\zeta-z))}{(\zeta - z)^2(\Delta z- (\zeta-z) )}
+=\frac{\Delta z}{(\zeta - z)^2 (\zeta - z - \Delta z)} .
+\end{multline*}
 Поэтому для $\eqref{ch34eq8}$ получаем оценку 
 
 $$
 \left| \frac{\Delta I}{\Delta z} - \frac{1}{2\pi i} \int_\gamma \frac{q(\zeta)}{(\zeta - z)^2}\,d\zeta \right| 
 \le \frac{1}{2\pi} \int_\gamma \frac{|q(\zeta)||\Delta z||\,d\zeta|}{|\zeta - z|^2|\zeta - z - \Delta z|}
 \le \frac{|\Delta z|}{\pi d^3} \int_\gamma |q(\zeta)||\,d\zeta| 
-\le \frac{|\Delta z| \cdot M}{\pi d^3} \int_\gamma |\,d\zeta| \to 0, \quad \Delta z \to 0.
+\le \frac{|\Delta z| \cdot M}{\pi d^3} \int_\gamma |\,d\zeta| \xrightarrow{\Delta z \to 0} 0.
 $$
 
 Таким образом, в пределе получаем равенство
@@ -124,7 +122,7 @@ I'(z) = \frac{1}{2\pi i} \int_\gamma \frac{q(\zeta)}{(\zeta - z)^2} \,d\zeta.
 \end{equation}
 
 \item 
-Общий случай $n$-й производной получается аналогично первому случаю из формулы $\eqref{ch34eq6}$ для $(n - 1)$-й производной и воспользовавшись равенством
+Общий случай $n$-й производной получается аналогично первому случаю из формулы $\eqref{ch34eq6}$ для $(n - 1)$-й производной и воспользовавшись биномом Ньютона
 
 $$
 (\zeta - z - \Delta z)^n = (\zeta - z)^2 - n \Delta z (\zeta - z)^{n - 1} + O(\Delta z^2),
@@ -132,21 +130,22 @@ $$
 
 которое легко проверяется, например, методом математической индукции.
 \end{enumerate}
+\noindent
+Теорема доказана.
 \end{proof}
 
 \begin{thm} \label{ch34Thm3}
-
 Пусть функция $f : G \to \bbC$ регулярна в области $G \subset \bbC$. Тогда эта функция имеет в $G$ производные всех порядков, т.е. является бесконечно дифференцируемой функцией в области $G$.
-
 \end{thm}
+
 \begin{proof}
-Фиксируем произвольную точку $z_0 \in G$, тогда существует число $r_0 > 0$ такое, что $\overline{B_{r_0}(z_0)}\subset G$. Пусть окружность $\gamma_{r_0} \triangleq \{ z \: \bigl| \: |z - z_0| = r_0 \}$ ориентирована положительно относительно внутренности круга (т.е. движением против хода часовой стрелки). Тогда по теореме 1 справедлива интегральная формула Коши
+Фиксируем произвольную точку $z_0 \in G$, тогда существует число $r_0 > 0$ такое, что $\overline{B_{r_0}(z_0)}\subset G$. Пусть окружность $\gamma_{r_0} \triangleq \{ z \: \bigl| \: |z - z_0| = r_0 \}$ ориентирована положительно относительно внутренности круга (т.е. движением против хода часовой стрелки). Тогда по теореме \ref{ch34thm1} справедлива интегральная формула Коши
 
 \begin{equation} \label{ch34eq10}
 f(z) = \frac{1}{2\pi i} \int_{\gamma_{r_0}} \frac{f(\zeta)}{\zeta - z} \,d\zeta, \quad \forall z \in B_{r_0}(z_0).
 \end{equation}
 
-Так как формула $\eqref{ch34eq10}$ функция $\zeta \to f(\zeta)$ непрерывна на $\zeta_{r_0}$, то интеграл в $\eqref{ch34eq10}$ есть интеграл типа Коши, и по теореме 2 он бесконечно дифференцируем в круге $B_{r_0}(z_0)$, т.е. в силу равенства $\eqref{ch34eq10}$ функция $f$ бесконечно дифференцируема в этом круге $B_{r_0}(z_0)$, при этом из $\eqref{ch34eq6}$ следует формула:
+Так как формула $\eqref{ch34eq10}$ функция $\zeta \to f(\zeta)$ непрерывна на $\zeta_{r_0}$, то интеграл в $\eqref{ch34eq10}$ есть интеграл типа Коши, и по теореме \ref{ch34Thm2} он бесконечно дифференцируем в круге $B_{r_0}(z_0)$, т.е. в силу равенства $\eqref{ch34eq10}$ функция $f$ бесконечно дифференцируема в этом круге $B_{r_0}(z_0)$, при этом из $\eqref{ch34eq6}$ следует формула:
 
 \begin{equation} \label{ch34eq11}
 f^{n}(z) = \frac{n!}{2\pi i} \int_{\gamma_{r_0}} \frac{f(\zeta)}{(\zeta - z)^{n+1}}\,d\zeta, \quad \forall z \in B_{r_0}(z_0).
@@ -174,13 +173,14 @@ $\textit{Степенным рядом}$ называется функциона
 Если степенной ряд $\eqref{ch34.2eq1}$ сходится в точке $z_0 \not= a$, то ряд $\eqref{ch34.2eq1}$ сходится абсолютно в любой точке из круга $B_{|z_0 - a|}(a)$, а в любом замкнутом круге $\overline{B_{r}(a)}$, где $0 < r < |z_0 - a|$, этот ряд сходится равномерно.
 \end{thm}
 
-\begin{proof}
-Так как по условию числовой ряд $\sum_{n = 0}^{+\infty}\limits c_n (z - a)^n$ сходится, то из критерия Коши следует, что $\lim_{n \to \infty} |c_n(z_0 - a)^n| = 0$, поэтому существует число $\alpha > 0$ такое, что $|c_n(z_0 - a)^n| \le \alpha$ для всех $n$.
+\begin{proof}\leavevmode
+\addpicture{pictures/ch34pict3}{0.47}
+Так как по условию числовой ряд $\sum_{n = 0}^{+\infty}\limits c_n (z - a)^n$ сходится, то из необходимого условия сходимости рядов следует, что $\lim\limits_{n \to \infty} |c_n(z_0 - a)^n| = 0$, поэтому существует число $\alpha > 0$ такое, что $|c_n(z_0 - a)^n| \le \alpha$ для всех $n$.
+\begin{enumerate}
+\item[1)] Пусть точка $z \in B_{|z_0 - a|}(a)$. Тогда $|c_n(z_0 - a)^n| = |c_n(z_0 - a)^n \cdot \left| \frac{z - a}{z_0 - a} \right|^n \le \alpha q^{n}_z$, где $q_z \triangleq \left| \frac{z - a}{z_0 - a} \right| < 1$. Так как числовой ряд $\sum_{n = 0}^{\infty}\limits q_{z}^n$ очевидно сходится, то по признаку сравнения ряд $\eqref{ch34.2eq1}$ сходится и абсолютно в точке $z$.
 
-1) Пусть точка $z \in B_{|z_0 - a|}(a)$. Тогда $|c_n(z_0 - a)^n| = |c_n(z_0 - a)^n \cdot \left| \frac{z - a}{z_0 - a} \right|^n \le \alpha q^{n}_z$, где $q_z \triangleq \left| \frac{z - a}{z_0 - a} \right| < 1$. Так как числовой ряд $\sum_{n = 0}^{\infty}\limits q_{z}^n$ очевидно сходится, то по признаку сравнения ряд $\eqref{ch34.2eq1}$ сходится и абсолютно в точке $z$.
-
-2) Определим $q \triangleq \frac{r}{|z_0 - a|}$. Аналогично пункту 1 получаем оценку: $|c_n(z - a)^n| \le \alpha q^{n}_0$ очевидно сходится, то по признаку Вейештрасса (см. утверждение 6 $\S$2) ряд $\eqref{ch34.2eq1}$ сходится равномерно на круге $\overline{B_{r}(a)}$.
-
+\item[2)] Определим $q_0 \triangleq \frac{r}{|z_0 - a|}\ge\left|\frac{z - a}{z_0 - a}\right|$. Аналогично пункту 1 получаем оценку: $|c_n(z - a)^n| \le \alpha q^{n}_0$. Так как числовой ряд $\sum_{n = 0}^{\infty}\limits q_{0}^n$ очевидно сходится, то по признаку Вейештрасса(см. ниже) ряд $\eqref{ch34.2eq1}$ сходится равномерно на круге $\overline{B_{r}(a)}$.
+\end{enumerate}
 \end{proof}
 
 \begin{stt}[Признак Вейерштрасса]
@@ -192,23 +192,21 @@ $\textit{Степенным рядом}$ называется функциона
 Определим для степенного ряда $\eqref{ch34.2eq1}$ понятие $\textit{радиуса сходимости}$:
 
 \begin{equation} \label{ch34.2eq2}
-R \triangleq sup \{ |z - a| \: \big| \: \sum_{n = 0}^{+\infty} c_n (z - a)^n \: \text{сходится} \}.
+R \triangleq \sup \{ |z - a| \: \big| \: \sum_{n = 0}^{+\infty} c_n (z - a)^n \: \text{сходится} \}.
 \end{equation}
 
 Тогда, если $0 < R < +\infty$, то в силу теоремы 1 Абеля в каждой точке круга $B_R(a)$ ряд $\eqref{ch34.2eq1}$ сходится, а в каждой точке $z \notin \overline{B_R(a)}$ ряд $\eqref{ch34.2eq1}$ расходится. Круг $B_R(a)$ называется кругом сходимости ряда $\eqref{ch34.2eq1}$.
-Радиус сходимости $R$ степенного ряда $\eqref{ch34.2eq1}$ может быть вычислен по известной формуле Коши-Адамара
+Радиус сходимости $R$ степенного ряда $\eqref{ch34.2eq1}$ может быть вычислен по известной формуле Коши-Адамара (причем, в ней не исключено $R=\pm\infty$)
 
 \begin{equation} \label{ch34.2eq3}
 R = \frac{1}{\overline{\lim\limits_{n \to \infty}} \sqrt[n]{|c_n|}}
 \end{equation}
 
-Доказательство этой формулы можно найти, например, в книге Яковлева Г.Н. "Лекции по математическому анализу. Часть 2".
-
 \begin{exmpl} \label{exmpl2}
-. Ряд вида $\sum\limits_{n = 0}^{+\infty} z^n$, являющийся суммой бесконечной геометрической прогрессии, очевидно сходится при $|z| < 1$ к функции $\frac{1}{1 - z}$, так как легко посчитать, что
+Ряд вида $\sum\limits_{n = 0}^{+\infty} z^n$, являющийся суммой бесконечной геометрической прогрессии, очевидно сходится при $|z| < 1$ к функции $\frac{1}{1 - z}$, так как легко посчитать, что
 
 $$
-S_N(z) \triangleq \sum\limits_{n = 0}^{N} z^n = \left( \sum\limits_{n = 0}^{N} z^n \right) \frac{1 - z}{1 - z} = \frac{1 - z^{N + 1}}{1 - z} \to \frac{1}{1 - z} \quad \text{при} \quad N \to \infty
+S_N(z) \triangleq \sum\limits_{n = 0}^{N} z^n = \left( \sum\limits_{n = 0}^{N} z^n \right) \frac{1 - z}{1 - z} =\frac{1-z+z-\dots-z^N+z^N-z^{N+1}}{1-z}= \frac{1 - z^{N + 1}}{1 - z}  \xrightarrow{N \to \infty} \frac{1}{1 - z}.
 $$
 
 \end{exmpl} 
