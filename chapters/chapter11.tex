@@ -1,3 +1,94 @@
 \chapter{Свойства интеграла с переменным верхним пределом (непрерывность, дифференцируемость). Формула Ньютона-Лейбница.}
 \section{Свойства интеграла с переменным верхним пределом (непрерывность, дифференцируемость)}
+
+\begin{defn}
+\textit{Разбиением промежутка} $\Delta$ называется любое конечное множество $\tau(\Delta) = \{ \Delta_1, \ldots, \Delta_N\}$ попарно непересекающихся промежутков $\Delta_1, \ldots, \Delta_N$, объединение которых равно $\Delta$.
+
+Если $a_{i-1}$, $a_{i}$ — концы промежутка $\Delta$, то \textit{точками разбиения} $\tau(\Delta)$ промежутка $\Delta$ называется множество точек $\{a_0,a_1,\dots,a_N\}$.
+\end{defn}
+
+Пусть на конечном промежутке $\Delta$ задана функция $f(x)$, и пусть $\tau(\Delta) = \{ \Delta_1, \ldots, \Delta_N\}$ --- некоторое разбиение промежутка $\Delta$, $m_i = \inf_{x \in \Delta_i} f(x), \quad M_i = \sup_{x \in \Delta_i} f(x)$ --- точные грани функции $f$ на промежутке $\Delta_i$, а $|\Delta_i| = a_i - a_{i - 1}$ --- длина промежутка $\Delta_i$.
+
+\begin{defn}
+Для функции $f(x), \quad x \in \Delta$, и разбиения $\tau(\Delta) = \{ \Delta_1, \ldots, \Delta_N\}$ суммы 
+
+$$
+\sum_{i = 1}^{N}m_i|\Delta_i| \quad \text{и} \quad \sum_{i = 1}^{N}M_i|\Delta_i|
+$$
+
+называются \textit{интегральными суммами Дарбу} (соответственно, \textit{нижней и верхней}) и обозначаются $s(f; \tau)$ и $S(f; \tau)$.
+\end{defn}
+
+Очевидно, что для $\forall f(x), \quad x \in \Delta$, и $\forall \tau(\Delta)$ справедливо неравенство $s(f; \tau) \le S(f; \tau)$.
+
+\begin{defn}
+Пусть задана функция $f(x), \quad x \in \Delta$, и некоторое разбиение $\tau(\Delta) = \{ \Delta_1, \ldots, \Delta_N\}$ промежутка $\Delta$. Тогда сумма
+
+$$
+\sum_{i = 1}^{N} f(\xi_i)|\Delta_i|,
+$$
+
+где $\xi_i \in \Delta_i$ называется \textit{интегральной суммой Римана функции $f$} и обозначается $\sigma(f; \tau)$ или $\sigma(f; \tau; \xi)$, где $\xi = (\xi_1, \ldots, \xi_N)$ и $\xi$ будем называть вборкой точек, подчиненной разбиению $\tau$.
+\end{defn}
+
+Очевидно, для любого разбиения $\tau(\Delta) = \{ \Delta_1, \ldots, \Delta_N\}$ справедливы неравенства
+
+$$
+s(f; \tau) \le \sigma(f; \tau; \xi) \le S(f; \tau)
+$$
+
+при любом выборе точек $\xi_i \in \Delta_i$. Кроме того,
+
+$$
+s(f; \tau) = \inf_{\xi} \sigma(f; \tau; \xi), \quad S(f; \tau) = \sup_{\xi} \sigma(f; \tau; \xi).
+$$
+
+\begin{defn}
+Точные грани $\sup_{\tau} s(f; \tau)$ и $\inf_{\tau} S(f; \tau)$ называются \textit{интегралами Дарбу} (соответственно, \textit{нижним и верхним}) \textit{от функции $f$ по промежутку $\Delta$} и обозначаются $\underline{J}(f)$ и $\overline{J}(f)$. Таким образом,
+
+$$
+\underline{J}(f) = \sup_{\tau} s(f; \tau), \quad \overline{J}(f) = \inf_{\tau} S(f; \tau),
+$$
+
+причем $\underline{J}(f) \le \overline{J}(f)$ для любой функции $f$, определенной на конечном промежутке 
+$\Delta$.
+\end{defn}
+
+
+\begin{defn}
+Если интегралы Дарбу от функции $f$ по промежутку $\Delta$ конечны и равны между собой, то функция $f$ называется интегрируемой по Риману на промежутке $\Delta$, а число
+
+$$
+J(f) = \underline{J}(f) = \overline{J}(f)
+$$
+
+называется \textit{интегралом Римана от функции $f$ по промежутку $\Delta$} и обозначается $\int\limits_{\Delta} f(x) \,dx$.
+\end{defn}
+
+Из этого определения следует, что если функция $f$ интегрируема на промежутке $\Delta$, то
+
+$$
+s(f; \tau) \le \int\limits_{\Delta} f(x) \,dx \le S(f; \tau) \quad \forall \tau(\Delta).
+$$
+
+\begin{defn}
+Пусть $\tau(\Delta) = \{ \Delta_1, \ldots, \Delta_N\}$ --- некоторое разбиение конечного промежутка $\Delta$. Тогда число, равное $\max\limits_j \{ |\Delta_j|\}$, называется \textit{мелкостью разбиения $\tau$} и обозначается $|\tau|$.
+\end{defn}
+
+\begin{defn}
+Последовательность $\{\tau_k\}$ разбиений промежутка $\Delta$ называется \textit{римановой}, если $\lim\limits_{k \to +\infty}|\tau_k|=0$.
+\end{defn}
+
+\begin{thm}
+Если функция f интегрируема на промежутке $\Delta \in D_f$, то для любой римановой последовательности разбиений $\tau_k(\Delta), k\in \bbN$, имеют место равентсва
+
+\begin{equation} \label{ch11.1eq1}
+\lim_{|\tau_k| \to 0} \sigma(f, \tau, \xi) = \lim_{k \to \infty} \sigma(f, \tau_k, \xi) = \int\limits_{\Delta} f(x) \,dx.
+\end{equation}
+\end{thm}
+
+\section{Определенный интеграл как функция вержнего (нижнего) предела.}
+
+
+
 \section{Формула Ньютона-Лейбница}
