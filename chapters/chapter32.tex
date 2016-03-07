@@ -40,7 +40,7 @@ $$
 \lim_{n \to \infty} P \left( \left| \frac{\xi_1 + \xi_2 + \ldots + \xi_n}{n} - \frac{\ccM\xi_1 + \ccM\xi_2 + \ldots + \ccM\xi_n}{n} \right| < \epsilon \right) = 1
 \end{equation}
 
-\begin{thm} [теорема Маркова]
+\begin{thm} [Маркова]
 Если у случайных величин $\xi_k, \: k = 1,2,\ldots$, существуют дисперсии и если при $n \to \infty$
 
 \begin{equation} \label{ch32.2eq5}
@@ -50,7 +50,7 @@ $$
 \end{thm}
 
 \begin{proof}
-Обозначим $\eta_n = (\xi_1 + \ldots + \xi_n) / n$. Пользуясь неравенством Чебышева с $b = \epsilon, \: \xi = \eta_n$, получим
+Обозначим $\eta_n = (\xi_1 + \ldots + \xi_n) / n$. Пользуясь неравенством Чебышева, в котором положим $b = \epsilon, \: \xi = \eta_n$, получим
 
 $$
 P \left( \left| \eta_n - \ccM \eta_n \right| \ge \epsilon \right) \le \frac{1}{\epsilon^2} \ccD \eta_n.
@@ -59,20 +59,18 @@ $$
 
 $$
 \ccM \eta_n = \frac{\ccM\xi_1 + \ldots + \ccM\xi_n}{n}, \quad \ccD\eta_n = \frac{1}{n^2} \ccD \left( \sum_{k  = 1}^{n} \xi_k\right),
-$$
- 
+$$ 
 для вероятности противоположного события находим оценку
 
 $$
-P \left( \left| \frac{\xi_1 + \ldots + \xi_n}{n} - \frac{\ccM\xi_1 + \ldots + \ccM\xi_n}{n} \right| < \epsilon \right) \ge 1 - \frac{1}{n^2} \ccD \left( \sum_{k  = 1}^{n} \xi_k\right).
+P \left( \left| \frac{\xi_1 + \ldots + \xi_n}{n} - \frac{\ccM\xi_1 + \ldots + \ccM\xi_n}{n} \right| < \epsilon \right) \ge 1 - \frac{1}{\epsilon^2n^2} \ccD \left( \sum_{k  = 1}^{n} \xi_k\right).
 $$
-
 Из этого неравенства и условия $\eqref{ch32.2eq5}$ следует $\eqref{ch32.2eq4}$.
 \end{proof}
 
 Некоторые частные случаи этой теоремы.
 
-\begin{thm} [теорема Чебышева]
+\begin{thm} [Чебышёва]
 Если случайные величины $\xi_k, \: k = 1,2,\ldots$ попарно независимы, имеют равномерно ограниченные дисперсии (т.е. существует постоянная с такая, что $\ccD \xi_k < c$ при всех $k = 1, 2\ldots$),	то к случайным величинам $\xi_k, \: k = 1,2,\ldots$ применим закон больших чисел.
 \end{thm}
 
@@ -83,9 +81,8 @@ $$
 $$
 Отсюда получаем условие $\eqref{ch32.2eq5}$:
 $$
-\frac{1}{n^2} \ccD \left( \sum_{k  = 1}^{n} \xi_k\right) < \frac{c}{n} \to 0
+\frac{1}{n^2} \ccD \left( \sum_{k  = 1}^{n} \xi_k\right) < \frac{c}{n} \xrightarrow{n \to \infty} 0.
 $$
-при $n \to \infty$.
 \end{proof}
 
 \begin{thm} \label{ch32.2T4}
@@ -99,20 +96,6 @@ $$
 P \left( \left| \frac{\xi_1 + \xi_2 + \ldots + \xi_n}{n} - a \right| < \epsilon \right) \ge 1 - \delta,
 \end{equation}
 где $a = \ccM \xi_k, \: k = 1, 2, \ldots$.
-\end{proof}
-
-\begin{thm} [теорема Бернулли]
-Пусть $\mu_n$ --- число успехов в $n$ испытаниях Бернулли и $p$ --- вероятность успеха в каждом отдельном испытании. Тогда $\forall \epsilon > 0$
-
-\begin{equation} \label{ch32.2eq7}
-\lim_{n \to \infty} P \left( \left| \frac{\mu_n}{n} - p \right| < \epsilon \right) = 1.
-\end{equation}
-\end{thm}
-
-\begin{proof}
-Для доказательства этой теоремы воспользуемся представлением $\mu_n$ в виде суммы $n$ индикаторов: $\mu_n = \xi_1 + \xi_2 + \ldots + \xi_n$, где $\xi_k = 1$, если в $k$-м испытании был успех, и $\xi_k  = 0$ в противном случае.
-
-Так как $\xi_k, k = 1,2,\ldots, \: n$, независимы, одинаково распределены $(P( \xi_k = 1) = p, \quad P( \xi_k = 0) = 1 - p = q)$, дисперсии случайных величин $\xi_k$ существуют и $\ccM \xi_k = p$, то теорема Бернулли сразу следует из теоремы $\eqref{ch32.2T4}$.
 \end{proof}
 
 \section{Схема Бернулли}
@@ -131,9 +114,25 @@ P \left( \left| \frac{\xi_1 + \xi_2 + \ldots + \xi_n}{n} - a \right| < \epsilon 
 P_n(m) = C_n^m p^mq^{n - m} \quad (m = 0,1,2,\ldots,n).
 \end{equation}
 
+\begin{thm} [Бернулли]
+Пусть $\mu_n$ --- число успехов в $n$ испытаниях Бернулли и $p$ --- вероятность успеха в каждом отдельном испытании. Тогда $\forall \epsilon > 0$
+
+\begin{equation} \label{ch32.2eq7}
+\lim_{n \to \infty} P \left( \left| \frac{\mu_n}{n} - p \right| < \epsilon \right) = 1.
+\end{equation}
+\end{thm}
+
+\begin{proof}
+Для доказательства этой теоремы воспользуемся представлением $\mu_n$ в виде суммы $n$ индикаторов: $\mu_n = \xi_1 + \xi_2 + \ldots + \xi_n$, где $\xi_k = 1$, если в $k$-м испытании был успех, и $\xi_k  = 0$ в противном случае.
+
+Так как $\xi_k, k = 1,2,\ldots, \: n$, независимы, одинаково распределены $(P( \xi_k = 1) = p, \\ P( \xi_k = 0) = 1 - p = q)$, дисперсии случайных величин $\xi_k$ существуют и $\ccM \xi_k = p$, то теорема Бернулли сразу следует из теоремы $\ref{ch32.2T4}$.
+\end{proof}
+
+
+
 \section{Предельная теорема Пуассона}
 
-\begin{thm} [теорема Пуассона]
+\begin{thm} [Пуассона]
 Если $n \to \infty$ и $p \to 0$ так, что $np \to \lambda, \: 0 < \lambda < \infty$, то
 
 $$

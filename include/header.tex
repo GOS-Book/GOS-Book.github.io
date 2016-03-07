@@ -24,19 +24,61 @@
 
 \usepackage{lipsum}
 
+
+
 \usepackage{graphicx}
 \usepackage{caption}
 \usepackage{microtype}
-  
+
+%РАБОТАЮЩИЙ ВЕЗДЕ В ТЕКСТЕ СЧЕТЧИК РИСУНОЧКОВ.
+\newcounter{pictnumber}[chapter] 
+\renewcommand{\thepictnumber}{\thechapter.\arabic{pictnumber}}
 
 \input{insbox.tex}
 \usepackage{threeparttable}
 
+% IT WORKS EVERYWHERE EXCEPT LISTS! 
+%it works in lists with \rightskip, but nevermind.
 
-\newcommand\addpicture[3][9]{%
+\newcommand*\addpicture[3][9]{\refstepcounter{pictnumber}%
 \InsertBoxR{0}{\begin{threeparttable}\begin{tabular}{c@{}}\includegraphics[scale=#3]{#2}\end{tabular}\captionof{figure}{}\end{threeparttable}}[#1]}
 
-\usepackage{wrapfig}
+% IT WORKS EVERYWHERE EXCEPT LISTS!
+%it works in lists with \leftskip, but nevermind.
+
+\newcommand*\addpicturel[3][9]{\refstepcounter{pictnumber}%
+\InsertBoxL{0}{\begin{threeparttable}\begin{tabular}{c@{}}\includegraphics[scale=#3]{#2}\end{tabular}\captionof{figure}{}\end{threeparttable}}[#1]}
+
+\usepackage{wrapfig}%for ez text
+\newenvironment{mywrapfigure}
+  {\refstepcounter{pictnumber}
+	\begin{wrapfigure}}
+  	{\end{wrapfigure}}
+
+
+%SEE THE MOST POWERFUL CONSTRUCTION IN SUPERFILE.TEX
+%IT IS THE NEXT CONSTRUCTION. but in superfile without "%"
+
+% \begin{enumerate}
+% \item 
+%\refstepcounter{pictnumber}%  
+%  \parbox[t]{\dimexpr\textwidth-\leftmargin}{%
+%      \vspace{-2.5mm}
+%      \begin{wrapfigure}{r}{0.5\textwidth}
+%        \centering
+%        \vspace{-2\baselineskip}
+%        \includegraphics[scale=0.47]{ch9pict1.png}
+%        \caption{}\label{kek}
+%      \end{wrapfigure}
+%         \lipsum[1]
+%    }
+%  \item     
+%  \parbox[t]{\dimexpr\textwidth-\leftmargin}{%
+%      \vspace{-2.5mm}
+%      \begin{wrapfigure}[8]{r}{0.5\textwidth}
+%      \end{wrapfigure}
+%      \lipsum[2]
+%}
 
 
 
@@ -141,6 +183,10 @@
 \newtheorem{axiome}{Аксиома}[chapter]
 \renewcommand{\theaxiome}{\arabic{axiome}}
 \newcommand{\theHaxiome}{\thechapter.\arabic{axiome}}
+
+\newtheorem{axiomen}{Аксиома}[chapter] %штрихованное.
+\renewcommand{\theaxiomen}{\arabic{axiome}'}
+\newcommand{\theHaxiomen}{\thechapter.\arabic{axiomen}'}
 
 
 \numberwithin{equation}{chapter}

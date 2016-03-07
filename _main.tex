@@ -2,6 +2,7 @@
 \include{include/macros}
 
 %\includeonly{chapters/chapter34}
+%\usepackage{showkeys}
 
 \begin{document}
 
@@ -13,7 +14,9 @@
 \begin{figure}[h!]
 \includegraphics[scale=0.77]{pictures/progress}
 \end{figure}
-\textcolor{darkblue}{\tableofcontents}
+{\hypersetup{hidelinks}
+\tableofcontents
+}
 
 \include{frontmatter/foreword}
 \mainmatter
