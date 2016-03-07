@@ -71,6 +71,8 @@ $$
 s(f; \tau) \le \int\limits_{\Delta} f(x) \,dx \le S(f; \tau) \quad \forall \tau(\Delta).
 $$
 
+Если $\Delta = [a, b]$, интеграл обозначают $\int\limits_{a}^{b} f(x) \,dx$.
+
 \begin{defn}
 Пусть $\tau(\Delta) = \{ \Delta_1, \ldots, \Delta_N\}$ --- некоторое разбиение конечного промежутка $\Delta$. Тогда число, равное $\max\limits_j \{ |\Delta_j|\}$, называется \textit{мелкостью разбиения $\tau$} и обозначается $|\tau|$.
 \end{defn}
@@ -89,6 +91,169 @@ $$
 
 \section{Определенный интеграл как функция вержнего (нижнего) предела.}
 
+Для любой функции $f$, определенной и интегрируемой на промежутке $\Delta$, функция
 
+\begin{equation} \label{ch11.2eq1}
+F(x) = \int\limits_{c}^{x} f(t) \,dt, \quad x \in \Delta,
+\end{equation}
+
+где $c \in \Delta$, называется \textit{интегралом с переменным верхним пределом}, а функция
+
+\begin{equation} \label{ch11.2eq2}
+\Phi(x) = \int\limits_{x}^{c} f(t) \,dt, \quad x \in \Delta,
+\end{equation}
+
+--- \textit{интегралом с переменным нижним пределом}.
+
+Очевидно, $\Phi(x) = -F(x)\quad \forall x \in \Delta$. Поэтому ограничимся рассмотрением только интегралов с переменным верхним пределом.
+
+\begin{thm}
+Если функция $f$ интегрируема на промежутке $\Delta$, то функция $\eqref{ch11.2eq1}$ на $\Delta$ удовлетворяет условию
+
+$$
+|F(x_2) - F(x_1)| \le ||f|| \cdot |x_2 - x_1| \quad \forall x_1, x_2 \in \Delta,
+$$
+где $||f|| = \sup_{x \in \Delta} |f(x)|$.
+\end{thm}
+
+\begin{proof}
+Действительно, $\forall x_1, x_2$ из $\Delta$ имеем:
+
+$$
+|F(x_2) - F(x_1)| = \left| \int\limits_{c}^{x_2}f(t) \,dt - \int\limits_{c}^{x_1} f(t) \,dt\right| = \left| \int\limits_{x_1}^{x_2}f(t) \,dt \right| \le \left| \int\limits_{x_1}^{x_2}|f(t)| \,dt \right| \le ||f|| \cdot |x_2 - x_1|.
+$$
+\end{proof}
+
+\begin{cons}
+Если функция $f$ интегрируема на промежутке $\Delta$, то функции $\eqref{ch11.2eq1}$ и $\eqref{ch11.2eq2}$ непрерывны на $\Delta$.
+\end{cons}
+
+\begin{thm}
+Если функция $f$ интегрируема на промежутке $\Delta$ и непрерывна в точке $x_0 \in \Delta$, то функция $\eqref{ch11.2eq1}$ в точке $x_0$ имеет производную и $F'(x_0) = f(x_0)$.
+\end{thm}
+
+\begin{proof}
+Пусть $x \in \Delta$, $\Delta x = x - x_0$ и $\Delta F = F(x) - F(x_0)$. Тогда, если $z \not= x_0$, то 
+
+$$ 
+\frac{\Delta F}{\Delta x} = \frac{1}{\Delta x} \int_{x_0}^{x} f(t) \,dt, \quad f(x_0) = \frac{1}{\Delta x} \int_{x_0}^{x} f(x_0) \,dt,
+$$
+
+и поэтому 
+
+\begin{equation} \label{ch11.2eq3}
+\left| \frac{\Delta F}{\Delta x} - f(x_0) \right| = \frac{1}{|\Delta x|} \left| \int\limits_{x_0}^{x} \left( f(t) - f(x_0) \right) \,dt \right|.
+\end{equation}
+
+Так как функция $f$ непрерывна в точке $x_0$, то
+$$
+\forall \epsilon > 0 \quad \exists \delta > 0 : \quad \forall x \in O_\delta(x_0) \cap \Delta \quad |f(x) - f(x_0)| < \epsilon.
+$$
+
+Отсюда из равенства $\eqref{ch11.2eq3}$ следует, что 
+$$
+\left| \frac{\Delta F}{\Delta x} - f(x_0) \right| \le \frac{1}{\Delta x} \int\limits_{x_0}^{x} \epsilon \,dt = \epsilon
+$$
+
+$\forall x \in \overset{\circ}{O}_\delta(x_0) \cap \Delta$, и поэтому $F'(x_0)$  существует и $F'(x_0) = f(x_0).$
+\end{proof}
+
+\begin{defn}
+Функция $F(x)$ называется \textit{первообразной} (или \textit{точной первообразной}) для функции $f(x)$ на промежутке  $\Delta$, если $F(x)$ дифференцируема на $\Delta$ и
+$$
+F'(x) = f(x) \quad \forall x \in \Delta.
+$$
+
+Очевидно, если $F(x)$ --- первообразная для $f(x)$, то и любая функция вида $F(z) + C$,  где $C$ --- произвольная постоянная, будет первообразной для $f(x)$. 
+\end{defn}
+
+\begin{cons}
+Пусть функция $f(x)$ интегрируема по Риману и непрерывна на промежутке $\Delta$. Тогда $\forall c \in \Delta$ функция $\eqref{ch11.2eq1}$ непрерывно дифференцируема и $\forall x \in \Delta \quad \Phi'(x_0) = f(x_0)$. У  любой непрерывной, интегрируемой по Риману на промежутке $\Delta$ функции $f$ есть первообразная $\eqref{ch11.2eq1}$.
+\end{cons}
 
 \section{Формула Ньютона-Лейбница}
+
+\begin{thm}
+Если функция $f(x)$ на отрезке $[a; b]$ интегрируема и имеет первообразную $F(x)$, то
+\begin{equation} \label{ch11.3eq1}
+\int\limits_{a}^{b} f(x) \,dx = F(b) - F(a).
+\end{equation}
+\end{thm}
+
+\begin{proof}
+Пусть сначала функция $F(x)$ непрерывна на отрезке $[a;b]$, дифференцируема на интервале $(a;b)$ и $F'(x) = f(x) \quad \forall x \in (a;b)$. Тогда для любых точек $x_0, x_1, \ldots, x_N$, таких, что
+
+$$
+a = x_0 < x_1 < \ldots < x_n = b,
+$$
+
+имеем
+
+$$
+F(b) - F(a) = \sum_{i = 1}^{N} \left( F(x_i) - F(x_{i - 1}) \right).
+$$
+
+На любом отрезке $[x_{i - 1}, x_i]$ функция $F(x)$ удовлетворяет всем условиям теоремы Лагранжа о среднем, поэтому
+
+$$
+\exists \xi_i \in (x_{i - 1}; x_i): \quad F(x_i) - F(x_{i - 1}) = f(\xi_i) \Delta x_i,
+$$
+
+и, следовательно,
+
+$$
+F(b) - F(a) = \sum_{i = 1}^{N} f(\xi_i) \Delta x_i = \sigma(f;\tau;\xi),
+$$
+
+где $\tau$ --- разбиение отрезка $[a;b]$ точками $x_0, x_1, \ldots, x_N$. А так как функция $f(x)$ интегрируема на $[a;b]$, то 
+
+$$
+\lim_{|\tau| \to 0} \sigma (f;\tau; \xi) = \int\limits_{a}^{b} f(x) \,dx.
+$$
+
+Формула $\eqref{ch11.3eq1}$ доказана в случае, когда $F'(x) = f(x)$ на интервале $(a;b)$. В общем случае, пусть функция $F(x)$ непрерывна на отрезке $[a;b]$ и $F'(x) = f(x)$ всюду, кроме, может быть, конечного числа точек $c_0, c_1, \ldots, c_N$, таких, что $a = c_0 < c_1 < \ldots < c_N = b$, где $F'(x) \not= f(x)$ или $F'(x)$ не существует. Тогда, как уже доказано,
+
+$$
+\int\limits_{c_{i - 1}}^{c_i} f(x) \,dx = F(c_i) - F(c_{i - 1}),
+$$
+
+и поэтому
+
+$$
+\int\limits_{a}^{b} f(x) \,dx = \sum_{i = 1}^{N} \int\limits_{c_{i - 1}}^{c_{i}} f(x) \,dx = F(b) - F(a).
+$$
+\end{proof}
+
+
+Формула $\eqref{ch11.2eq1}$ называется \textit{формулой Ньютома-Лейбница}. В ней вместо разности $F(b) - F(a)$ иногда пишут $F(x)\big|_{a}^{b}$, и тогда она принимает вид
+
+$$
+\int\limits_{a}^{b} f(x) \,dx = F(x)\big|_{a}^{b}.
+$$
+
+\begin{cons}
+Если функция $f(z)$ на отрезке $[a;b]$ интегрируема и имеет первообразную $F(x)$ (точную или обобщенную), то
+
+$$
+F(x) = F(a) + \int\limits_{a}^{x} f(t)\,dt.
+$$
+\end{cons}
+
+\begin{cons}
+Если функция $f(x)$ на отрезке $[a;b]$ интегрируема и имеет точную первообразную, то существует $\xi \in (a;b)$ такое, что
+
+\begin{equation} \label{ch11.3eq2}
+\int\limits_{a}^{b}f(x) \,dx = f(\xi) (b - a).
+\end{equation}
+
+\end{cons}
+
+Действительно, формула $\eqref{ch11.3eq2}$ следует из формулы $\eqref{ch11.3eq1}$ и формулы Лагранжа о среднем для функции $F(x)$.
+
+В заключение доказанную теорему сформулируем как теорему об интеграле от производной: \textit{Если функция $F(x) \: x \in [a;b]$, на отрезке $[a;b]$ непрерывна и кусочно-дифференцируема, а ее производная интегрируема на $[a;b]$, то}
+
+\begin{equation} \label{ch11.3eq3}
+\int\limits_{a}^{b}F'(x) \,dx = F(b) - F(a).
+\end{equation} 
+
+Формула $\eqref{ch11.3eq3}$, как и формула $\eqref{ch11.2eq1}$, называется формулой Ньютона-Лейбница.
