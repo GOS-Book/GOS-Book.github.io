@@ -7,7 +7,7 @@
 Заметим, что если функция $f$ непрерывна и кусочно непрерывно дифференцируема, то она является обобщенной первообразной для производноцй $f'$.
 
 \begin{lemm}
-Пусть функция $f(x)$ непрерывна и кусочно непрерывно дифференцируема на $bbR$. Тогда, если $f(x)$ и $f'(x)$ абсолютно интегрируемы на $bbR$, то $f(x)\to 0$ при $x\to\pm\infty$
+Пусть функция $f(x)$ непрерывна и кусочно непрерывно дифференцируема на $\bbR$. Тогда, если $f(x)$ и $f'(x)$ абсолютно интегрируемы на $\bbR$, то $f(x)\to 0$ при $x\to\pm\infty$.
 \end{lemm}
 
 Действительно, из равенства
@@ -26,12 +26,12 @@ $$
 \begin{proof}
 По формуле интегрирования по частям получаем
 $$
-F[f']=\frac{1}{\sqrt{2\pi}}\int\limits_{-\infty}^{+\infty} f'(x)e^{-i\xi x}dx=\frac{1}{\sqrt{2\pi}}f(x)e^{-i\xi x}	
-\bigr|^{-\infty}_{+\infty} - \frac{1}{\sqrt{2\pi}}\int\limits_{-\infty}^{+\infty}f(x)(-i\xi)e^{-i\xi x}dx.
+F[f']=\frac{1}{\sqrt{2\pi}}\int\limits_{-\infty}^{+\infty} f'(x)e^{-i\xi x}dx={\frac{1}{\sqrt{2\pi}}f(x)e^{-i\xi x}}	
+\big|^{-\infty}_{+\infty} - \frac{1}{\sqrt{2\pi}}\int\limits_{-\infty}^{+\infty}f(x)(-i\xi)e^{-i\xi x}dx.
 $$
 В силу леммы, внеинтегральные члены равны нулю, поэтому
 $$
-F[f']=i\xi\widetilde{f}(\xi).
+F[f']=i\xi\widehat{f}(\xi).
 $$
 Аналогично доказывается и вторая формула.
 \end{proof}
@@ -40,6 +40,8 @@ $$
 Если $f,f',...,f^{(n)}$ непрерывны и абсолютно интегрируемы на $\bbR$, то
 $$
 F[f^{(k)}]=(i\xi)^kF[f],
+$$
+$$
 F^{-1}[g^{(k)}]=(-i\xi)^kF^{-1}[f], \quad k=0,1,...,n.
 $$
 В частности
@@ -59,11 +61,11 @@ $$
 \begin{proof}
 По признаку Вейерштрасса интегралы
 $$
-\int\limits\_{-\infty}^{+\infty}f(x)e^{-i\xi x}dx\quad \text{и} -i\int\limits\_{-\infty}^{+\infty}xf(x)e^{-i\xi x}dx
+\int\limits_{-\infty}^{+\infty}f(x)e^{-i\xi x}dx\quad \text{и} -i\int\limits_{-\infty}^{+\infty}xf(x)e^{-i\xi x}dx
 $$
 сходятся равномерно по $\xi$ на $\bbR$, поэтому они непрерывны и производная по $\xi$ от первого из них равна второму. Следовательно,
 $$
-\frac{d\widehat{f}}{\xi}=-iF[xf(x)].
+\frac{d\widehat{f}}{d\xi}=-iF[xf(x)].
 $$
 
 Аналогично доказывается и вторая формула.
