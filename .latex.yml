@@ -1,4 +1,4 @@
 # Settings for ShareLaTeX
 
 compiler: pdflatex
-root_file: main.tex
+root_file: _main.tex
