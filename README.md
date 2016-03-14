@@ -1,6 +1,8 @@
 ## GOS_book
+Загрузить последнюю редакцию книги: [![PDF Status](https://www.sharelatex.com/github/repos/DidenkoAndre/GOS_book/builds/latest/badge.svg)](https://www.sharelatex.com/github/repos/DidenkoAndre/GOS_book/builds/c0e14fc7c81d27d1206c8f73f078a8cd347bc1ec/raw/output.pdf)
+
 #### Новости
-Эй, TeX-отряд, добавляем страницы картиночек из учебников, которые надо будет потом залить, в файл todo.tex и вообще, всё, что оставляете на дальнейшее. В следующей таблице наш прогресс.
+Эй, TeX-отряд, добавляем страницы картиночек из учебников, которые надо будет потом залить, в файл todo.tex и вообще, всё, что оставляете на дальнейшее. 
 ####Таблица прогресса
 
 Легенда: 
@@ -142,3 +144,5 @@
     <td><img src="http://medyk.org/colors/87ff00.png" width="30" height="30" /> </td>
   </tr>
 </table>
+
+
