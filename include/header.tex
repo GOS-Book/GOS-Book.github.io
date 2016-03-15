@@ -1,5 +1,6 @@
 %document information
-\documentclass[10pt,a4paper]{book}
+\documentclass[a5paper,9pt]{extbook}
+%\documentclass[10pt,a4paper]{book}
 
 % packages
 \usepackage[T2A]{fontenc}
@@ -9,7 +10,10 @@
 \usepackage{cmap} 
 \usepackage{indentfirst} 
 \usepackage{amsmath,amsthm,amssymb,amscd} 						
-\usepackage[margin=2.3cm, footskip = 1 cm, headheight=36pt]{geometry}
+\usepackage[margin=1.6cm, top=1.2cm,right=1.6cm,left=2.3cm, footskip = 1 cm, headheight=20pt,headsep=0.2cm]{geometry}
+
+%FOR PRINTING OUTPUT VERSION you should uncomment next statement.
+%\usepackage[margin=1.6cm, top=1.2cm, footskip = 1 cm, headheight=11pt,headsep=0.2cm]{geometry}
 \usepackage{emptypage}
 
 \usepackage{epigraph}
@@ -21,67 +25,194 @@
 \definecolor{Purplemountainmajesty}{RGB}{150, 120, 182}
 
 \usepackage{datetime}
-
+\usepackage{forloop}
 \usepackage{lipsum}
 
+%\newcounter{ct}
+%\forloop[hstepi]{hcounter i}{hinitial valuei}{hconditioni}{hcodei}
+%\forloop{ct}{1}{\value{ct} < 10}{\arabic{ct} }
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%         WRAPPING PICTURES                 %%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{graphicx}
 \usepackage{caption}
 \usepackage{microtype}
+\input{insbox.tex}
+\usepackage{threeparttable}
+\usepackage{changepage}
+\usepackage{xargs}
+\usepackage{wrapfig}
+\usepackage{printlen}    
+\newcounter{ct}
 
+\newlength\imageheight
+
+\newcount\narrowlinect
+\narrowlinect=0\relax 
+    
 %РАБОТАЮЩИЙ ВЕЗДЕ В ТЕКСТЕ СЧЕТЧИК РИСУНОЧКОВ.
 \newcounter{pictnumber}[chapter] 
 \renewcommand{\thepictnumber}{\thechapter.\arabic{pictnumber}}
+%RULES
 
-\input{insbox.tex}
-\usepackage{threeparttable}
-
-% IT WORKS EVERYWHERE EXCEPT LISTS! 
-%it works in lists with \rightskip, but nevermind.
-
-\newcommand*\addpicture[3][9]{\refstepcounter{pictnumber}%
-\InsertBoxR{0}{\begin{threeparttable}\begin{tabular}{c@{}}\includegraphics[scale=#3]{#2}\end{tabular}\captionof{figure}{}\end{threeparttable}}[#1]}
-
-% IT WORKS EVERYWHERE EXCEPT LISTS!
-%it works in lists with \leftskip, but nevermind.
-
-\newcommand*\addpicturel[3][9]{\refstepcounter{pictnumber}%
-\InsertBoxL{0}{\begin{threeparttable}\begin{tabular}{c@{}}\includegraphics[scale=#3]{#2}\end{tabular}\captionof{figure}{}\end{threeparttable}}[#1]}
-
-\usepackage{wrapfig}%for ez text
+  %for ez text
+  %\mywrapfigure[〈number of narrow lines〉] {〈placement〉} [〈overhang〉] {〈width〉}
+  %\begin{mywrapfigure}[#1〈number of narrow lines〉]{o}{*#3*\textwidth}
+  %\includegraphics[width=*#3*\textwidth]{#2*FILE*}
+  %\end{mywrapfigure}}
+  
+%\includegraphics[width=#3\textwidth]{#2}
+%\end{mywrapfigureO}}
+  
+  % IT WORKS EVERYWHERE EXCEPT LISTS!
+  %\addpicture[〈number of narrow lines〉]{〈exactly picture〉}[〈after line〉]{〈width of \textwidth will picture occupy〉}
+ 
+  %\InsertPict[〈number of narrow lines〉]{〈exactly picture〉}[〈after line〉]{〈width of \textwidth will picture occupy〉}
+  
+  % NOW IT IS USELESS
+  %\addpictureitem[number of narrow lines]{exactly picture}{width of \textwidth will picture occupy}{text}
+  
+  %SEE THE MOST POWERFUL CONSTRUCTION
+  %\wrappicture[number of narrow lines of item]{textoffirstitem}[number of narrow lines in the second item]{ratio of textwidth}[text in the second item]{picture}[number of untouched lines]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    
 \newenvironment{mywrapfigure}
-  {\refstepcounter{pictnumber}
-	\begin{wrapfigure}}
-  	{\end{wrapfigure}}
+{\refstepcounter{pictnumber}\wrapfigure}
+{\caption*{Рис. \thepictnumber}\endwrapfigure}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  
+\newcommandx\addpictureR[4][1=0,3=0]{\refstepcounter{pictnumber}%
+\settoheight\imageheight{\includegraphics[width=#4\textwidth]{#2}}
+\narrowlinect=\imageheight\relax
+\setcounter{ct}{\numexpr((\narrowlinect)/\baselineskip+2)\relax}
+\InsertBoxR{#3}{\begin{threeparttable}%
+\begin{tabular}{c@{}}\includegraphics[width=#4\textwidth]{#2}\end{tabular}%
+\caption*{Рис. \thepictnumber}\end{threeparttable}}[\numexpr(\value{ct}/2+#1+1)]}
 
-%SEE THE MOST POWERFUL CONSTRUCTION IN SUPERFILE.TEX
-%IT IS THE NEXT CONSTRUCTION. but in superfile without "%"
+\newcommandx\addpictureL[4][1=0,3=0]{\refstepcounter{pictnumber}%
+\settoheight\imageheight{\includegraphics[width=#4\textwidth]{#2}}
+\narrowlinect=\imageheight\relax
+\setcounter{ct}{\numexpr((\narrowlinect)/\baselineskip+2)\relax}
+\InsertBoxL{#3}{\begin{threeparttable}%
+\begin{tabular}{c@{}}\includegraphics[width=#4\textwidth]{#2}\end{tabular}%
+\caption*{Рис. \thepictnumber}\end{threeparttable}}[\numexpr(\value{ct}/2+#1+1)]}
 
-% \begin{enumerate}
-% \item 
-%\refstepcounter{pictnumber}%  
-%  \parbox[t]{\dimexpr\textwidth-\leftmargin}{%
-%      \vspace{-2.5mm}
-%      \begin{wrapfigure}{r}{0.5\textwidth}
-%        \centering
-%        \vspace{-2\baselineskip}
-%        \includegraphics[scale=0.47]{ch9pict1.png}
-%        \caption{}\label{kek}
-%      \end{wrapfigure}
-%         \lipsum[1]
-%    }
-%  \item     
-%  \parbox[t]{\dimexpr\textwidth-\leftmargin}{%
-%      \vspace{-2.5mm}
-%      \begin{wrapfigure}[8]{r}{0.5\textwidth}
-%      \end{wrapfigure}
-%      \lipsum[2]
-%}
+\newcommandx{\addpicture}[4][1=0,3=0]{%
+\strictpagecheck%
+\checkoddpage%
+\ifoddpage
+\addpictureR[#1]{#2}[#3]{#4}
+\else%
+\addpictureL[#1]{#2}[#3]{#4}
+\fi%
+}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\newcommand{\addpictureitemL}[4][9]{
+\refstepcounter{pictnumber}
+  \parbox[t]{\dimexpr\textwidth-\leftmargin}{%
+      \vspace{-2.5mm}
+      \begin{wrapfigure}[#1]{l}{#3\textwidth}
+        \centering
+        \vspace{-\baselineskip}
+        \includegraphics[width=#3\textwidth]{#2}
+        \caption*{Рис. \thepictnumber}
+      \end{wrapfigure}#4}}
 
+\newcommand{\addpictureitemR}[4][9]{
+\refstepcounter{pictnumber}
+  \parbox[t]{\dimexpr\textwidth-\leftmargin}{%
+      \vspace{-2.5mm}
+      \begin{wrapfigure}[#1]{r}{#3\textwidth}
+        \centering
+        \vspace{-\baselineskip}
+        \includegraphics[width=#3\textwidth]{#2}
+        \caption*{Рис. \thepictnumber}
+      \end{wrapfigure}#4}}
+
+\newcommand{\addpictureitem}[4][9]{%
+\strictpagecheck%
+\checkoddpage%
+\ifoddpage%
+\addpictureitemR[#1]{#2}{#3}{#4}%
+\else%
+\addpictureitemL[#1]{#2}{#3}{#4}%
+\fi%
+}      
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+          
+%you can add CT-FUNCTION HERE  IF IT IS NECESSARY
+          
+\newcommandx{\wrappicture}[7][1=12,3=8,5=\mbox{},7=0]
+	{
+\refstepcounter{pictnumber}  
+  	\parbox[t]{\dimexpr\textwidth-\leftmargin}
+		{%
+      	\vspace{-2.5mm}
+     		\begin{wrapfigure}[#1]{o}{#4\textwidth}
+        	\centering
+        	\vspace{-\baselineskip}
+        		\InsertBoxL{#7}
+        			{\begin{threeparttable}%
+						\begin{tabular}{c@{}}\includegraphics[width=#4\textwidth]{#6}\end{tabular}%
+						\caption*{Рис. \arabic{pictnumber}}{}\end{threeparttable}}      	
+      		\end{wrapfigure}#2
+      \parbox[t]{\dimexpr\textwidth-\leftmargin}{%
+      \vspace{-2.5mm}
+      \begin{wrapfigure}[#3]{r}{#4\textwidth}
+      \end{wrapfigure}
+       #5}}}
+
+    \usepackage{booktabs}
+    %\usepackage{nccmath}
+    %\usepackage{etoolbox}
+      
+    \newcommand*{\wrapitem}{\apptocmd{\labelenumi}{\hskip\leftmargin}{}{}\item\apptocmd{\labelenumi}{\hskip-\leftmargin}{}{}}
+    %
+    \newcommandx{\InsertPictL}[4][1=0,3=0]{\refstepcounter{pictnumber}%
+    \setlength{\leftskip}{\leftmargin}\mbox{}\vspace*{-\baselineskip}%
+    \InsertBoxL{#1}{\begin{threeparttable}%
+\begin{tabular}{c@{}}\includegraphics[width=#4\textwidth]{#2}\end{tabular}%
+\caption*{Рис. \thepictnumber}\end{threeparttable}}[#3]\par \hspace{\itemindent}
+    }%
+    
+    \newcommandx{\InsertPictR}[4][1=0,3=0]{\refstepcounter{pictnumber}%
+    \mbox{}\vspace*{-\baselineskip}\setlength{\leftskip}{\leftmargin}%
+    \InsertBoxR{#1}{\hskip-\leftmargin\begin{threeparttable}%
+\begin{tabular}{c@{}}\includegraphics[width=#4\textwidth]{#2}\end{tabular}%
+\caption*{Рис. \thepictnumber}\end{threeparttable}\hskip\leftmargin}[#3]
+    }%
+
+\newcommandx{\InsertPict}[4][1=0,3=0]{%
+\strictpagecheck%
+\checkoddpage%
+\ifoddpage
+\InsertPictR[#1]{#2}[#3]{#4}
+\else%
+\InsertPictL[#1]{#2}[#3]{#4}
+\fi%
+}    
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%       END OF  WRAPPING PICTURES           %%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+       
 \usepackage{titlesec, titletoc}
 \titleformat{\chapter}[display]
   {\raggedright\normalfont\Large\bfseries}{\chaptertitlename\thechapter}{2ex}{}
@@ -97,11 +228,11 @@
 \renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}.}
   
 \usepackage{fancyhdr}
-\pagestyle{fancy}
+  \pagestyle{fancy}
 \fancyfoot[C]{\thepage}
 \fancyhead{}
-\fancyhead [CE] {\nouppercase{\slshape \large \rightmark}}
-\fancyhead [CO] {\nouppercase{\slshape \large \leftmark}}
+\fancyhead [CE] {\nouppercase{\slshape \small \rightmark}}
+\fancyhead [CO] {\nouppercase{\slshape \small \leftmark}}
 \renewcommand{\chaptermark}[1]{%
  \markboth{\ifnum\value{secnumdepth}>-1 \chaptertitlename\thechapter \fi}{}%
 }
@@ -109,7 +240,7 @@
 \addto\captionsrussian{\renewcommand{\chaptername}{Билет №}}
    
 % page settings 
-\parindent=1cm
+\parindent=0.6cm
 \binoppenalty=10000
 \relpenalty=10000
 
@@ -188,6 +319,7 @@
 \renewcommand{\theaxiomen}{\arabic{axiome}'}
 \newcommand{\theHaxiomen}{\thechapter.\arabic{axiomen}'}
 
+\newtheorem*{note}{Замечание}
 
 \numberwithin{equation}{chapter}
 \renewcommand{\theequation}{\arabic{equation}}

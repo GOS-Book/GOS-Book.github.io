@@ -1,7 +1,7 @@
 \include{include/header}
 \include{include/macros}
 
-%\includeonly{chapters/chapter1}
+%\includeonly{frontmatter/titlepageTMB}
 %\usepackage{showkeys}
 
 \begin{document}
@@ -9,28 +9,17 @@
 \pagestyle{plain}
 \frontmatter
 \include{frontmatter/titlepageTMB}
-\epigraph{Умереть не страшно, страшно не жить.}{Виктор Гюго}
-
-\begin{figure}[h!]
-\includegraphics[scale=0.77]{pictures/progress}
-\end{figure}
+\include{frontmatter/epigpage}
 {\hypersetup{hidelinks}
-\tableofcontents
-}
-
+\tableofcontents}
 \include{frontmatter/foreword}
 \mainmatter
 
 \hypersetup
-{linkcolor = black}
-  
+{linkcolor = black} 
 \pagestyle{fancy}
 
 \setcounter{chapter}{0}
 \foreach \n in {1,...,36}{\include{chapters/chapter\n}}
 
-
 \end{document}
-
-
-
