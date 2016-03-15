@@ -1,5 +1,5 @@
 ## GOS_book
-Загрузить последнюю редакцию книги: [![PDF Status](https://www.sharelatex.com/github/repos/DidenkoAndre/GOS_book/builds/latest/badge.svg)](https://www.sharelatex.com/github/repos/DidenkoAndre/GOS_book/builds/c0e14fc7c81d27d1206c8f73f078a8cd347bc1ec/raw/output.pdf)
+Загрузить последнюю редакцию книги: [![PDF Status](https://www.sharelatex.com/github/repos/DidenkoAndre/GOS_book/builds/latest/badge.svg)](https://www.sharelatex.com/github/repos/DidenkoAndre/GOS_book/builds/d96ff2528367753de1b8e98a4ccf5df8096e78d7/raw/output.pdf)
 
 #### Новости
 Эй, TeX-отряд, добавляем страницы картиночек из учебников, которые надо будет потом залить, в файл todo.tex и вообще, всё, что оставляете на дальнейшее. 
