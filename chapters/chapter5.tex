@@ -92,3 +92,64 @@ $$
 \end{proof}
 
 \section{Формула Тейлора с остаточным членом в форме Пеано}
+
+\begin{thm}
+Если функция $f$ дифференцируема $n$ раз в точке $x_0 \in \bbR$, то справедливо равенство
+\begin{equation} \label{ch5.2eq2}
+f(x) = \sum_{k = 0}^{n} \frac{f^{(k)}(x_0)}{k!} (x - x_0)^k + o((x - x_0)^n), \quad при x \to x_0,
+\end{equation}
+где $\psi(x) = o((x - x_0)^n), x \to x_0 \leftrightarrow \psi(x) = \alpha(x) (x - x_0)^n, \quad \text{где} \lim_{x \to x_0} \alpha(x) = 0$.
+
+Формула $\eqref{ch5.2eq2}$ называется формулой Тейлора для $f$ в точке $x_0$ порядка $n$ с остаточным членом в форме Пеано
+\end{thm}
+
+\begin{proof}
+Функция $f$ дифференцируема $n$ раз в точке $x_0$ $\quad \Rightarrow \quad f^{(n - 1)}(x)$ определена в некоторой окрестности $O(x_0)$ точки $x_0$, т.е. $\exists f^{(n)}(x_0) \in \bbR: \quad$
+$ \exists f^{(k)}(x_0) \in \bbR, \quad \text{где} \quad k \in \overline{0,n - 1}$
+
+Рассмотрим функции $r_n(x) = f(x) - P_n(x), \quad \phi(x) = (x - x_0)^n$
+$$
+r_n^{(k)}(x) = 0, \quad \forall k \in \overline{0,n}, \quad \phi^{(k)}(x_0) = 0, \quad \forall k \in \overline{0, n-1}, \quad \phi^{(k)}(x) \not= 0, \quad x \not= x_0.
+$$ 
+
+Согласно теореме Коши и следствию 5 из предыдущего билета все так же, как и в теореме 1 (про формулу Тейлора с остаточным членом в форме Лагранжа).
+
+$\forall x \in \overset{\circ}{O}(x_0) \quad x < x_0 \quad \exists \xi = \xi(x) \in (x, x_0):$
+$$
+\frac{r_n(x)}{\phi(x)} = \frac{r_n^{(n-1)}(\xi)}{\phi^{(n-1)}(\xi)}
+$$
+$\forall x \in \overset{\circ}{O}(x_0) \quad \exists \xi \not= x_0:$
+$$
+\frac{r_n(x)}{\phi(x)} = \frac{r_n^{(n-1)}(\xi) - r_n^{(n-1)}(x_0)}{n!(\xi - x_0)}, \quad r_n^{(n-1)}(x_0) = 0 \Rightarrow
+$$
+$\xi = \xi(x): \quad \xi(x) < x_0 \quad \forall x \in O(x_0) \quad x < x_0$
+$$
+\lim_{n \to x_0} \xi(x) = x_0, \quad \text{т.к.} \quad x < \xi(x) < x_0 \quad \Rightarrow
+$$
+Теорема о замене переменной под знаком $lim$ $\Rightarrow$
+$$
+\lim_{x \to x_0} \frac{r_n(x)}{\phi(x)} = \frac{1}{n!} \lim_{\xi \to x_0} \frac{r_n^{(n-1)}(\xi) - r_n^{(n-1)}(x_0)}{\xi - x_0} = \frac{1}{n!} r_n^{(n)}(x_0) = 0
+$$
+Функция $f(x) = \frac{r_n(x)}{\phi(x)}, \quad x \in \overset{\circ}{O}(x_0)$ --- бесконечно малая функция при $x \to x_0 \quad \Rightarrow r_n(x) = \phi(x)f(x) = (x - x_0)^n \cdot \alpha(x) = o((x - x_0)^n), \quad x \to x_0 \quad \Rightarrow \text{формула} \eqref{ch5.2eq2}$.
+\end{proof}
+
+\begin{thm}[о единственности разложения функции по формуле Тейлора]
+Пусть функция $f$ дифференцируема $n$ раз в точке $x_0 \in \bbR$
+\begin{equation} \label{ch5.3.eq3}
+f(x) = \sum_{k = 0}^{n}a_k (x - x_0)^k + o((x - x_0)^n), \quad x \to x_0 
+\end{equation}
+Тогда $a_k = \frac{f^{(k)}(x_0)}{k!}, \quad \forall k \in \{0, 1, 2, \ldots,n\}$
+\end{thm}
+
+\begin{proof}
+$f$ - дифференцируема $n$ раз в точке $x_0 \quad \Rightarrow$ 
+\begin{equation} \label{eq5.3eq4}
+f(x) = \sum_{k = 0}^{n} \frac{f^{(k)}(x_0)}{k!} \cdot (x - x_0)^k + o((x - x_0)^n) \quad \text{при} \quad x \to x_0 \text{(формула Тейлора с остаточным членом в форме Пеано)}
+\end{equation}
+
+$\eqref{ch5.3.eq3} - \eqref{eq5.3eq4} \quad \Rightarrow$ 
+\begin{equation} \label{eq5.3.eq5}
+\sum\limits_{k = 0}^{n} \left( \frac{f^{(k)}(x_0)}{k!} - a_k \right) (x - x_0)^k = o((x - x_0)^n)
+\end{equation}
+В $\eqref{eq5.3.eq5}$ левая и правая часть имеют пределы при $x \to x_0$, которые равны между собой.
+\end{proof}
