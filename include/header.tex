@@ -1,4 +1,5 @@
 %document information
+%\documentclass[a5paper,openany,9pt]{extbook}
 \documentclass[a5paper,9pt]{extbook}
 %\documentclass[10pt,a4paper]{book}
 
@@ -59,36 +60,80 @@
 %РАБОТАЮЩИЙ ВЕЗДЕ В ТЕКСТЕ СЧЕТЧИК РИСУНОЧКОВ.
 \newcounter{pictnumber}[chapter] 
 \renewcommand{\thepictnumber}{\thechapter.\arabic{pictnumber}}
-%RULES
+
+
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%RULES. Pls check it everytime.
 
   %for ez text
-  %\mywrapfigure[〈number of narrow lines〉] {〈placement〉} [〈overhang〉] {〈width〉}
-  %\begin{mywrapfigure}[#1〈number of narrow lines〉]{o}{*#3*\textwidth}
-  %\includegraphics[width=*#3*\textwidth]{#2*FILE*}
-  %\end{mywrapfigure}}
+  %\\mywrappict[〈number of narrow lines〉] {〈placement〉} [〈overhang〉] {〈width〉}
   
-%\includegraphics[width=#3\textwidth]{#2}
-%\end{mywrapfigureO}}
   
-  % IT WORKS EVERYWHERE EXCEPT LISTS!
-  %\addpicture[〈number of narrow lines〉]{〈exactly picture〉}[〈after line〉]{〈width of \textwidth will picture occupy〉}
+  % IT WORKS EVERYWHERE EXCEPT LISTS and beginning of theorems!
+  %\addpicture[〈number of narrow lines〉]{〈exactly picture〉}[〈after line〉]{〈width of \textwidth picture will occupy〉}
  
-  %\InsertPict[〈number of narrow lines〉]{〈exactly picture〉}[〈after line〉]{〈width of \textwidth will picture occupy〉}
+  %It is more complex and more cool variant than previous one.
+  %\InsertPict[〈number of narrow lines〉]{〈exactly picture〉}[〈after line〉]{〈width of \textwidth picture will occupy〉}
+  % do not forget about super function for lists: \wrapitem - just put it 
   
-  % NOW IT IS USELESS
-  %\addpictureitem[number of narrow lines]{exactly picture}{width of \textwidth will picture occupy}{text}
-  
-  %SEE THE MOST POWERFUL CONSTRUCTION
-  %\wrappicture[number of narrow lines of item]{textoffirstitem}[number of narrow lines in the second item]{ratio of textwidth}[text in the second item]{picture}[number of untouched lines]
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    
-\newenvironment{mywrapfigure}
-{\refstepcounter{pictnumber}\wrapfigure}
-{\caption*{Рис. \thepictnumber}\endwrapfigure}
+  %For Theorems and smth like proof. ONE PICTURE TO ONE text box
+  %\addmppict[〈this partial of 3 argument picture will occupy, correction!〉]{〈exactly picture〉}[〈width of \textwidth picture will occupy〉]{〈text of theorem〉}
 
+    %SEE THE MOST POWERFUL CONSTRUCTION, but it is hard to set.
+  %\wrappicture[number of narrow lines of item]{textoffirstitem}[number of narrow lines in the second item]{ratio of textwidth}[text in the second item]{picture}[number of untouched lines]
+  
+    % NOW IT IS USELESS, but can work if nothing helps.
+  %\addpictureitem[number of narrow lines]{exactly picture}{width of \textwidth will picture occupy}{text}
+    
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\mywrappict}[3][]{
+  \begin{wrapfigure}[#1]{o}{#3\textwidth}
+  \includegraphics[width=#3\textwidth]{#2}
+  \refstepcounter{pictnumber}
+  \caption*{Рис. \thepictnumber}
+  \end{wrapfigure}}
+  
+    
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+  
+\newcommand{\addmppictL}[4][1]{%
+\noindent
+\begin{minipage}[t]{#3\textwidth}
+\addpicture{#2}{#1}
+\end{minipage}%
+\hfill%
+\begin{minipage}[t]{\dimexpr(1\textwidth-#3\textwidth-2mm)}
+#4
+\end{minipage}}
+
+\newcommand{\addmppictR}[4][1]{%
+\noindent
+\begin{minipage}[t]{\dimexpr(1\textwidth-#3\textwidth-2mm)}
+#4
+\end{minipage}%
+\hfill%
+\begin{minipage}[t]{#3\textwidth}
+\addpicture{#2}{#1}
+\end{minipage}}
+
+\newcommand{\addmppict}[4][1]{%
+\strictpagecheck%
+\checkoddpage%
+\ifoddpage
+\addmppictR[#1]{#2}{#3}{#4}
+\else%
+\addmppictL[#1]{#2}{#3}{#4}
+\fi%
+}
+
+  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
   
 \newcommandx\addpictureR[4][1=0,3=0]{\refstepcounter{pictnumber}%
 \settoheight\imageheight{\includegraphics[width=#4\textwidth]{#2}}
@@ -175,7 +220,9 @@
       \begin{wrapfigure}[#3]{r}{#4\textwidth}
       \end{wrapfigure}
        #5}}}
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+       
     \usepackage{booktabs}
     %\usepackage{nccmath}
     %\usepackage{etoolbox}
@@ -212,7 +259,43 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-       
+ 
+\newcommand{\nopar}% obviates end-of-paragraph effects
+{\rule{\linewidth}{0pt}\vspace*{-\baselineskip}}
+ \usepackage{picins}
+\usepackage{mdwlist}
+
+%%%%%%%%%%%%%%%%%
+%\begin{enumerate}
+%\parpic[r]{\includegraphics[width=3cm]{image.jpg}}
+%\item it had line after line but didn't touch the image...
+%\item it had line after line but didn't touch the image...
+%\item it had line after line but didn't touch the image...
+%\item it had line after line but didn't touch the image...
+%\suspend{enumerate}
+%\resume{enumerate}
+%\item ...and filled the remaining space
+%\end{enumerate}
+
+\makeatletter
+\newcommand*\replicate[1]{%
+  \expandafter\replicate@aux\romannumeral\number\numexpr #1\relax000Q{}
+}
+\newcommand*\replicate@aux[1]{\csname replicate@aux@#1\endcsname}
+\newcommand\replicate@aux@m{}
+\long\def\replicate@aux@m#1Q#2#3{\replicate@aux#1Q{#2#3}{#3}}
+\newcommand\replicate@aux@Q[2]{#1}
+\DeclareRobustCommand*\MyParShape[3]{%
+    \parshape = #1
+      \replicate{#1 -1}{#2\textwidth #3\textwidth}%
+      0pt\textwidth
+}
+\newcommand*\my@parshape{}
+\makeatother
+
+%%%%%%%%%%%%  %%%%%%%%%%%%  %%%%%%%%%%%%  %%%%%%%%%%%%  %%%%%%%%%%%%  %%%%%%%%%%%%  %%%%%%%%%%%%  
+%%%%%%%%%%%%  %%%%%%%%%%%%  %%%%%%%%%%%%  %%%%%%%%%%%%  %%%%%%%%%%%%  %%%%%%%%%%%%  %%%%%%%%%%%%  
+    
 \usepackage{titlesec, titletoc}
 \titleformat{\chapter}[display]
   {\raggedright\normalfont\Large\bfseries}{\chaptertitlename\thechapter}{2ex}{}
@@ -319,7 +402,7 @@
 \renewcommand{\theaxiomen}{\arabic{axiome}'}
 \newcommand{\theHaxiomen}{\thechapter.\arabic{axiomen}'}
 
-\newtheorem*{note}{Замечание}
+\newtheorem*{notion}{Замечание}
 
 \numberwithin{equation}{chapter}
 \renewcommand{\theequation}{\arabic{equation}}
@@ -329,14 +412,13 @@
   {\begin{proof}[Решение.]}
   {\end{proof}}
 
-  
 
 %special mention
 
 
 \usepackage[breaklinks,pdftex,hyperindex,unicode]{hyperref}	
 \hypersetup{
-  pdftitle           = {GOS_MatAn},
+  pdftitle           = {GOS_Book_Matan},
   pdfauthor          = {Didenko Andre},
   pdfsubject         = {Matan},
   pdfstartview       = {FitH},

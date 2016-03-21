@@ -2,9 +2,9 @@
 \section{Дифференцируемость функций комплексного переменного}
 
 \subsection{Предел. Функции комплексного переменного}
-Пусть $\{z_n\}$ -- последовательность комплексных чисел, где $z_n=x_n+iy_n, \; n \in \bbN$. 
+Пусть $\{z_n\}$ -- последовательность чисел из $\bbC$, $z_n=x_n+iy_n, \, n \in \bbN$. 
 \begin{defn}
-Число $A = a+ib \in \bbC$ называется \textit{пределом последовательности} $\{z_n\}$, если $\\\forall \epsilon > 0\quad \exists N(\epsilon)$ такое, что $\forall n \ge N(\epsilon) $ справедливо включение $z_n \in B_\epsilon(A) \triangleq \{z \;\bigl|\; |z-A|<r \bigl.\}$.
+Число $A = a+ib \in \bbC$ называется \textit{пределом последовательности} $\{z_n\}$, если $\forall \epsilon > 0\quad \exists N(\epsilon)$ такое, что $\forall n \ge N(\epsilon) $ справедливо включение $z_n \in B_\epsilon(A) \triangleq \{z \;\bigl|\; |z-A|<r \bigl.\}$.
 \end{defn}
 \begin{defn}
 Последовательность $\{z_n\}$ \textit{сходится к бесконечности}, если 
@@ -32,7 +32,8 @@ $$
 
 \begin{thm} [о трех функциях]
 \label{exp14}
-Пусть $z_0$ -- предельная точка множества $D\in \bbC$. Пусть $D = D_f=D_g=D_h$ и $\exists \delta > 0 \forall x \in D \cap \dneio{\delta}{z_0}\quad f(x)\le g(x) \le h(x)$, тогда если $\exists \lim_{x \to x_0}\limits f(x) = A \in \bbC$ , $\exists \lim_{x \to x_0}\limits h(x) = A$, тогда и $\exists \lim_{x \to x_0}\limits g(x) = A$.
+Пусть $z_0$ -- предельная точка множества $D\in \bbC$. Пусть $D = D_f=D_g=D_h$ и $\exists \delta > 0 \fa x \in D \cap \dneio{\delta}{z_0}:$
+$$f(x)\le g(x) \le h(x),$$ тогда если $\exists \lim_{x \to x_0}\limits f(x) = A \in \bbC$ , $\exists \lim_{x \to x_0}\limits h(x) = A$, тогда и $\exists \lim_{x \to x_0}\limits g(x) = A$.
 \end{thm}
 
 \subsection{Дифференцирование функций комплексного переменного}
@@ -70,12 +71,12 @@ $$
 \end{lemm}
 
 \section{Условия Коши-Римана}  
-Пусть $f(z)=u(x,y)+iv(x,y)$, $z=x+iy$, $z_0=x_0+iy_0$, $z-z_0=\Delta z = \Delta x + i\Delta y$, где $\Delta x = x-x_0$ и $\Delta y =y-y_0$, $\Delta u = u(x,y)-u(x_0,y_0)$,  $\Delta v = v(x,y)-v(x_0,y_0)$, $\Delta f = \Delta u + i\Delta v$. 
+Пусть $f(z)=u(x,y)+iv(x,y)$, где $z=x+iy$, $z_0=x_0+iy_0$; $\Delta z=z-z_0$, или $\Delta z = \Delta x + i\Delta y$, где $\Delta x = x-x_0$ и $\Delta y =y-y_0$; $\Delta f = \Delta u + i\Delta v$, где $\Delta u = u(x,y)-u(x_0,y_0)$,  $\Delta v = v(x,y)-v(x_0,y_0)$. 
 \begin{thm} [Условия Коши-Римана]
-Для того, чтобы функция $f: G \subset \bbC \to \bbC$ была дифференцируема в точке $z_0\in \interior G$, необходимо и достаточно, чтобы
+Для того, чтобы функция $f: G  \to \bbC,\\G \subset \bbC$ была дифференцируема в точке $z_0\in \interior G$, необходимо и достаточно, чтобы
 \begin{enumerate}
 \item
-Функции $u(x,y)$ и $v(x,y)$ были дифференцируемы в точке $(x_0,y_0) \in \bbR^2$(как функции двух действительных переменных $x$ и $y$).
+Функции $u(x,y)$ и $v(x,y)$ были дифференцируемы в точке $(x_0,y_0) \in \bbR^2$ (как функции двух действительных переменных $x$ и $y$).
 \item
 В точке  $(x_0,y_0)$ были выполнены следующие условия(называемые условиями Коши-Римана):
 \begin{equation}
@@ -129,11 +130,9 @@ f'(z_0) = a+ib = u'_x(x_0,y_0) + iv'_x(x_0,y_0)= u'_y(x_0,y_0) -iv'_y(x_0,y_0)
 $$ 
 \item[$\Longleftarrow$:]
 Пусть функции $u(x,y)$, $v(x,y)$ дифференцируемы в точке $(x_0,y_0)$, выполнены условия Коши-Римана \eqref{exp17}. Тогда в точке $z_0=x_0+iy_0$
-\begin{equation*}
-\begin{split}
-&\Delta f = \Delta u + i\Delta v \myeq {u,v\;\text{дифф.}} u'_x\Delta x + \overbrace{u'_y}^{=-v'_x}\Delta y + \alpha_1(\Delta x,\Delta y) + i\bigr(v'_x\Delta x + \overbrace{v'_y}^{=u'_x}\Delta y + \alpha_2(\Delta x,\Delta y)\bigl) \myeq{\eqref{exp17}}\\&\myeq{\eqref{exp17}} (u'_x+iv'_x)(\Delta x + i \Delta y) + \alpha_1(\Delta x,\Delta y)+ i\alpha_2(\Delta x,\Delta y) = A\cdot\Delta z + \alpha(\Delta z).
-\end{split}
-\end{equation*}
+\begin{multline*}
+\Delta f = \Delta u + i\Delta v \myeq {u,v\;\text{дифф.}} u'_x\Delta x + \overbrace{u'_y}^{=-v'_x}\Delta y + \alpha_1(\Delta x,\Delta y)+ \\+ i\bigr(v'_x\Delta x + \overbrace{v'_y}^{=u'_x}\Delta y + \alpha_2(\Delta x,\Delta y)\bigl) \myeq{\eqref{exp17}}\\\myeq{\eqref{exp17}} (u'_x+iv'_x)(\Delta x + i \Delta y) + \alpha_1(\Delta x,\Delta y)+ i\alpha_2(\Delta x,\Delta y) = A\cdot\Delta z + \alpha(\Delta z).
+\end{multline*}
 где число $A = u'_x(x_0,y_0)+iv'_x(x_0,y_0)$, функция $\alpha = \alpha_1+\alpha_2$, причем, поскольку  $\exists \lim_{\substack{\Delta x \to 0\\ \Delta y \to 0}}\limits \frac{|\alpha_1(\Delta x,\Delta y)|}{\sqrt{(\Delta x)^2 + (\Delta y)^2}} = 0$, $\exists \lim_{\substack{\Delta x \to 0\\ \Delta y \to 0}}\limits \frac{|\alpha_2(\Delta x,\Delta y)|}{\sqrt{(\Delta x)^2 + (\Delta y)^2}} = 0$, то
 
 $$
@@ -187,9 +186,8 @@ $$
 Пусть дан непрерывный контур $\gamma$ в $\bbC$ с параметризацией $z =z(t)$. Пусть существует конечное разбиение $\{\theta_k\}^m_{k=0}$ отрезка $[t_0 , t_1]$, т.е. $t_0 = \theta_0 < \theta_1 < ... < \theta_m = t_1$ такое, что контуры $\gamma_k$, определяемые функциями $z = z(t)$, $t \in [\theta_{k-1}, \theta_k]$, являются гладкими контурами с той же, что и у контура $\gamma$, ориентацией. Тогда контур $\gamma$ называется \textit{кусочном-гладким контуром}, или \textit{объединением гладких контуров } $\{\gamma_k\}$, т.е. $\gamma = \gamma_1 \cup \gamma_2 \cup\dots \cup\gamma_m$. 
 \end{defn}
 
-  \begin{mywrapfigure}[12]{o}{0.25\textwidth}
-  \includegraphics[width=0.25\textwidth]{pictures/ch33pict1}
-  \end{mywrapfigure}
+
+  \mywrappict{pictures/ch33pict1}{0.25}
 Пусть дан кусочно-гладкий контур $\gamma$ с параметризацией $z=z(t)$, $t \in[t_0 , t_1]$, где $z(t_0)$ -- начало, а $z(t_1)$ -- конец контура $\gamma$. 
 
 Пусть выбрано конечное \textit{разбиение отрезка} $[t_0, t_1]$ вида
@@ -251,7 +249,7 @@ $$
 \end{cons}
 
 \subsection{Интегральная теорема Коши}
-
+\addmppict{pictures/ch33pict2}{0.2}{
 \begin{thm}[Коши]
 \label{abc2}
 Для всякой регулярной функции $f:G\to\bbC$, заданной в односвязной области G, справедливо равенство
@@ -259,8 +257,13 @@ $$
 \label{abc3}
 \int_\gamma f(z)\,dz = 0.
 \end{equation}
+
+\parshape 2 
+0pt \dimexpr\textwidth\relax
+0pt \dimexpr(\textwidth)\relax
 где интеграл берется по любому замкнутому простому кусочно-гладкому контуру $\gamma$, лежащему в области $G$.
 \end{thm}
+}
 \begin{proof}
 Для заданного в теореме контура запишем формулу \eqref{exp24}:
 \begin{equation}
@@ -285,15 +288,18 @@ $$
 \end{equation*} 
 т.е. равенство \eqref{abc3} доказано, а значит теорема доказана.
 \end{proof}
-
+\addmppict[0.8]{pictures/ch33pict3}{0.4}{
 \begin{defn}
 \textit{Областью с кусочно-гладкой границей} будем называть область $G \in \bboC$, граница $\Gamma=\partial G$ которой является объединением конечного числа гладких ограниченных кривых $\Gamma_1 , \dots , \Gamma_m$, любые две из которых могут иметь общими лишь концевые точки. 
-\end{defn}
 
 Эти кривые $\Gamma_1 , \dots , \Gamma_m$ будем называть гладкими компонентами границы $\Gamma$ области $G$. Эти компоненты бывают двух типов:
+\end{defn}
+}
+
 \begin{enumerate}
 \item
 Кривая $\Gamma_k$ --- \textit{правильной гладкой компонентой} $\Gamma$, если что в каждой окрестности каждой точки $z_0 \in \;\buildrel\circ\over\Gamma_k$ ($\buildrel\circ\over\Gamma_k$ --- кривая $\Gamma_k$ без концевых точек) находятся как точки из области $G$, так и из $\bbC \setminus G\cup\Gamma$. 
+
 \item
 Кривая $\Gamma_k$ --- \textit{разрезом}, если  для каждой точки $z_0 \in\; \buildrel\circ\over\Gamma_k$ существует окрестность $B_\epsilon(z_0)$ такая, $B_\epsilon(z_0)\setminus\Gamma_k \subset G$.
 \end{enumerate}
