@@ -262,8 +262,8 @@
  
 \newcommand{\nopar}% obviates end-of-paragraph effects
 {\rule{\linewidth}{0pt}\vspace*{-\baselineskip}}
- \usepackage{picins}
-\usepackage{mdwlist}
+% \usepackage{picins}
+%\usepackage{mdwlist}
 
 %%%%%%%%%%%%%%%%%
 %\begin{enumerate}
@@ -277,21 +277,21 @@
 %\item ...and filled the remaining space
 %\end{enumerate}
 
-\makeatletter
-\newcommand*\replicate[1]{%
-  \expandafter\replicate@aux\romannumeral\number\numexpr #1\relax000Q{}
-}
-\newcommand*\replicate@aux[1]{\csname replicate@aux@#1\endcsname}
-\newcommand\replicate@aux@m{}
-\long\def\replicate@aux@m#1Q#2#3{\replicate@aux#1Q{#2#3}{#3}}
-\newcommand\replicate@aux@Q[2]{#1}
-\DeclareRobustCommand*\MyParShape[3]{%
-    \parshape = #1
-      \replicate{#1 -1}{#2\textwidth #3\textwidth}%
-      0pt\textwidth
-}
-\newcommand*\my@parshape{}
-\makeatother
+%\makeatletter
+%\newcommand*\replicate[1]{%
+%  \expandafter\replicate@aux\romannumeral\number\numexpr #1\relax000Q{}
+%}
+%\newcommand*\replicate@aux[1]{\csname replicate@aux@#1\endcsname}
+%\newcommand\replicate@aux@m{}
+%\long\def\replicate@aux@m#1Q#2#3{\replicate@aux#1Q{#2#3}{#3}}
+%\newcommand\replicate@aux@Q[2]{#1}
+%\DeclareRobustCommand*\MyParShape[3]{%
+%    \parshape = #1
+%      \replicate{#1 -1}{#2\textwidth #3\textwidth}%
+%      0pt\textwidth
+%}
+%\newcommand*\my@parshape{}
+%\makeatother
 
 %%%%%%%%%%%%  %%%%%%%%%%%%  %%%%%%%%%%%%  %%%%%%%%%%%%  %%%%%%%%%%%%  %%%%%%%%%%%%  %%%%%%%%%%%%  
 %%%%%%%%%%%%  %%%%%%%%%%%%  %%%%%%%%%%%%  %%%%%%%%%%%%  %%%%%%%%%%%%  %%%%%%%%%%%%  %%%%%%%%%%%%  
