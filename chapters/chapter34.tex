@@ -19,13 +19,15 @@ $$
 В Итоге
 \begin{enumerate}
 \item
-При $k = -1$ получаем $J_{-1} = i \int_{0}^{2\pi}\,d\varphi = 2 \pi i$;
+При $k = -1$ получаем $$J_{-1} = i \int_{0}^{2\pi}\,d\varphi = 2 \pi i;$$
 \item
 При $k \ne -1$ получаем
-$
+$$
 J_k = i r^{k + 1} \left( \int_{0}^{2 \pi} cos(k + 1) \varphi \,d \varphi + i \int_{0}^{2 \pi} sin(k + 1) \varphi \,d\varphi \right) = 0.
-$
+$$
 \end{enumerate}
+Ответ: $J_k=\begin{cases}2\pi i, \quad &k=-1,\\0, \quad &k\ne -1. 
+\end{cases}$\qedhere
 \end{solution}
 
 \begin{thm} \label{ch34thm1}
@@ -39,7 +41,7 @@ $
 \begin{proof}
 Фиксируем произвольную точку $z \in G$. Функция $\frac{f(\zeta)}{\zeta - z}$ регулярна по переменному $\zeta$ в области $G \setminus \{z\}$. Выберем число $r_0 > 0$ такое, что выполнено включение $\overline{B_{r_0}(z)}\subset G$. 
 
-\addpicture[8]{pictures/ch34pict1}{0.25}\label{ch34pict1}
+\addpicture{pictures/ch34pict1}{0.25}\label{ch34pict1}
 Обозначим через $\gamma \triangleq \{ \zeta \bigl| |\zeta - z| = r \}$ окружность радиуса $r \in (0, r_0)$ ориентированную против хода часовой стрелки. Обозначим множества $G_r \triangleq G \setminus \overline{B_r(z)}$ и $\Gamma_r \triangleq \Gamma \cup \gamma_r^{-1}$. Очевидно, что множество $G_r$ есть область с кусочно-гладкой положительно ориентированной границей $\Gamma_r$(рис.\ref{ch34pict1}). 
 
 По обощенной интегральной теореме Коши \ref{abc28} из билета №33 получаем
@@ -86,7 +88,7 @@ I^{(n)}(z) = \frac{n!}{2\pi i} \int_\gamma \frac{q(\zeta)}{(\zeta - z)^{n+1}}\,d
 \begin{proof}\leavevmode
 
 \begin{enumerate}
-\addpictureitem{pictures/ch34pict2}{0.25}{
+\addpictureitem{pictures/ch34pict2}{0.2}{
 \item         
 Докажем формулу $\eqref{ch34eq6}$ при $n = 1$. Так как функция $q(\zeta)$ непрерывна на контуре $\gamma$, то существует число $M < + \infty$ такое, что $|q(\zeta)| \le M$ при $\zeta \in \gamma$.
       
@@ -172,17 +174,15 @@ $\textit{Степенным рядом}$ называется функциона
 \begin{thm}[Абель] \label{ch34.2Thm1}
 Если степенной ряд $\eqref{ch34.2eq1}$ сходится в точке $z_0 \not= a$, то ряд $\eqref{ch34.2eq1}$ сходится абсолютно в любой точке из круга $B_{|z_0 - a|}(a)$, а в любом замкнутом круге $\overline{B_{r}(a)}$, где $0 < r < |z_0 - a|$, этот ряд сходится равномерно.
 \end{thm}
-
-\begin{proof}\leavevmode
-\addpicture[6]{pictures/ch34pict3}{0.3}
-
+\usepict{ch34pict3}
+\begin{proof}
 Так как по условию числовой ряд $\sum_{n = 0}^{+\infty}\limits c_n (z - a)^n$ сходится, то из необходимого условия сходимости рядов следует, что $\lim\limits_{n \to \infty} |c_n(z_0 - a)^n| = 0$, поэтому существует число $\alpha > 0$ такое, что $|c_n(z_0 - a)^n| \le \alpha$ для всех $n$.
 \begin{enumerate}
-\item[1)] \rightskip=3.5cm { Пусть точка $z \in B_{|z_0 - a|}(a)$. Тогда $|c_n(z_0 - a)^n| = |c_n(z_0 - a)^n \cdot \left| \frac{z - a}{z_0 - a} \right|^n \le \alpha q^{n}_z$, где $q_z \triangleq \left| \frac{z - a}{z_0 - a} \right| < 1$. Так как числовой ряд $\sum_{n = 0}^{\infty}\limits q_{z}^n$ очевидно сходится, то по признаку сравнения ряд $\eqref{ch34.2eq1}$ сходится и абсолютно в точке $z$.
+\item[1)] {\rightskip=3.5cm} { Пусть точка $z \in B_{|z_0 - a|}(a)$. Тогда $|c_n(z_0 - a)^n| = |c_n(z_0 - a)^n \cdot \left| \frac{z - a}{z_0 - a} \right|^n \le \alpha q^{n}_z$, где $q_z \triangleq \left| \frac{z - a}{z_0 - a} \right| < 1$. Так как числовой ряд $\sum_{n = 0}^{\infty}\limits q_{z}^n$ очевидно сходится, то по признаку сравнения ряд $\eqref{ch34.2eq1}$ сходится и абсолютно в точке $z$.
 }
-\item[2)] \rightskip=0cm Определим $q_0 \triangleq \frac{r}{|z_0 - a|}\ge\left|\frac{z - a}{z_0 - a}\right|$. Аналогично пункту 1 получаем оценку: $|c_n(z - a)^n| \le \alpha q^{n}_0$. Так как числовой ряд $\sum_{n = 0}^{\infty}\limits q_{0}^n$ очевидно сходится, то по признаку Вейештрасса(см. ниже) ряд $\eqref{ch34.2eq1}$ сходится равномерно на круге $\overline{B_{r}(a)}$.
+\item[2)] {\rightskip=0cm}Определим $q_0 \triangleq \frac{r}{|z_0 - a|}\ge\left|\frac{z - a}{z_0 - a}\right|$. Аналогично пункту 1 получаем оценку: $|c_n(z - a)^n| \le \alpha q^{n}_0$. Так как числовой ряд $\sum_{n = 0}^{\infty}\limits q_{0}^n$ очевидно сходится, то по признаку Вейештрасса(см. ниже) ряд $\eqref{ch34.2eq1}$ сходится равномерно на круге $\overline{B_{r}(a)}$.
 \end{enumerate}
-\rightskip=-3.3cm Теорема доказана.
+{\rightskip=-3.3cm} Теорема доказана.
 \end{proof}
 
 \begin{stt}[Признак Вейерштрасса]
@@ -229,8 +229,8 @@ $$
 называется $\textit{рядом Тейлора функции f}$ с центром в точке $a$.
 \end{defn}
 
-\begin{thm}\leavevmode
-Если функция $f$ регулярна в круге $B_r(a)$, где $a \in \bbC$, $r > 0$, то она представима в этом\addpicture[6]{pictures/ch34pict4.png}{0.4}\label{ch34pict4} \noindent  круге $B_r(a)$ в виде суммы сходящегося ряда Тейлора, т.е.
+\begin{thm}
+Если функция $f$ регулярна в круге $B_r(a)$, где $a \in \bbC$, $r > 0$, то она представима в этом круге $B_r(a)$ в виде суммы сходящегося ряда Тейлора, т.е.
 
 \begin{equation} \label{ch34.2eq5}
 f(z) = \sum\limits_{n = 0}^{\infty} c_n(z - a)^n, \quad \forall z \in B_r(a),
@@ -243,7 +243,7 @@ c_n = \frac{f^{(n)}(a)}{n!}.
 \end{equation}
 
 \end{thm}
-
+\usepict{ch34pict4}
 \begin{proof}
 Фиксируем произвольную точку $z \in B_r(a)$. Тогда существует число $r_1 > 0$ такое, что $|z - a| < r_1 < r$.
 

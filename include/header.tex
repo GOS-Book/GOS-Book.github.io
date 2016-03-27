@@ -4,11 +4,12 @@
 %\documentclass[10pt,a4paper]{book}
 
 % packages
+\usepackage{cmap}
 \usepackage[T2A]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[russian]{babel}
 
-\usepackage{cmap} 
+ 
 \usepackage{indentfirst} 
 \usepackage{amsmath,amsthm,amssymb,amscd} 						
 \usepackage[margin=1.6cm, top=1.2cm,right=1.6cm,left=2.3cm, footskip = 1 cm, headheight=20pt,headsep=0.2cm]{geometry}
@@ -26,12 +27,15 @@
 \definecolor{Purplemountainmajesty}{RGB}{150, 120, 182}
 
 \usepackage{datetime}
-\usepackage{forloop}
 \usepackage{lipsum}
 
-%\newcounter{ct}
+%\usepackage{enumitem}
+%\setlist{nosep}
+     
 %\forloop[hstepi]{hcounter i}{hinitial valuei}{hconditioni}{hcodei}
-%\forloop{ct}{1}{\value{ct} < 10}{\arabic{ct} }
+\usepackage{forloop}
+%\newcounter{ct}
+%\forloop{ct}{1}{\value{ct} < 10}{\arabic{ct} \\}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -66,10 +70,11 @@
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %RULES. Pls check it everytime.
+  %NOT WRAPPED BUT VERY EASY.
+  %\usepict[〈height of the textheight〉]{〈picture〉}	
 
   %for ez text
-  %\\mywrappict[〈number of narrow lines〉] {〈placement〉} [〈overhang〉] {〈width〉}
-  
+  %\mywrappict[〈number of narrow lines〉] [〈overhang〉] {〈width〉}
   
   % IT WORKS EVERYWHERE EXCEPT LISTS and beginning of theorems!
   %\addpicture[〈number of narrow lines〉]{〈exactly picture〉}[〈after line〉]{〈width of \textwidth picture will occupy〉}
@@ -79,7 +84,7 @@
   % do not forget about super function for lists: \wrapitem - just put it 
   
   %For Theorems and smth like proof. ONE PICTURE TO ONE text box
-  %\addmppict[〈this partial of 3 argument picture will occupy, correction!〉]{〈exactly picture〉}[〈width of \textwidth picture will occupy〉]{〈text of theorem〉}
+  %\addmppict[〈this partial of 3 argument picture will occupy, correction!〉]{〈exactly picture〉}{〈width of \textwidth picture will occupy〉]}〈text of theorem〉}
 
     %SEE THE MOST POWERFUL CONSTRUCTION, but it is hard to set.
   %\wrappicture[number of narrow lines of item]{textoffirstitem}[number of narrow lines in the second item]{ratio of textwidth}[text in the second item]{picture}[number of untouched lines]
@@ -89,6 +94,14 @@
     
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\usepict}[2][0.2]{
+\begin{center}
+\includegraphics[height=#1\textheight]{pictures/#2}\refstepcounter{pictnumber}\label{#2} {Рис. \thepictnumber}
+\end{center}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
 \newcommand{\mywrappict}[3][]{
   \begin{wrapfigure}[#1]{o}{#3\textwidth}
@@ -412,13 +425,14 @@
   {\begin{proof}[Решение.]}
   {\end{proof}}
 
+%\renewcommand\qedsymbol{$\triangle$}
 
 %special mention
 
 
 \usepackage[breaklinks,pdftex,hyperindex,unicode]{hyperref}	
 \hypersetup{
-  pdftitle           = {GOS_Book_Matan},
+  pdftitle           = {\texorpdfstring{GOS Book Matan}{GOS Book Matan}},
   pdfauthor          = {Didenko Andre},
   pdfsubject         = {Matan},
   pdfstartview       = {FitH},
@@ -430,3 +444,6 @@
   		linkcolor  = darkblue, 
   		urlcolor = Purplemountainmajesty
 }
+
+%conflicting order of packages
+  		  		
