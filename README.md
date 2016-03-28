@@ -2,7 +2,7 @@
 Загрузить последнюю редакцию книги: [![PDF Status](https://www.sharelatex.com/github/repos/DidenkoAndre/GOS_book/builds/latest/badge.svg)](https://www.sharelatex.com/github/repos/DidenkoAndre/GOS_book/builds/latest/output.pdf)
 
 #### Новости
-Эй, TeX-отряд, добавляем страницы картиночек из учебников, которые надо будет потом залить, в файл todo.tex и вообще, всё, что оставляете на дальнейшее. 
+Эй, TeX-отряд, юзаем \usepict, не забываем!
 ####Таблица прогресса
 
 Легенда: 
