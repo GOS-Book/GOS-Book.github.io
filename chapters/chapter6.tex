@@ -105,13 +105,13 @@ $$
 \begin{thm}[достаточное условие] Пусть функция $f(x)$ непрерывно на интервале $(a;b)$ и дифференцируема на интервалах $(a;x_0)$ и $(x_0;b)$. Тогда, если $f'(x) > 0$ на $(a;x_0)$ и $f'(x) < 0$ на $(x_0;b)$, то $x_0$ --- точка строгого максимума, а если $f'(x) < 0$ на $(a;x_0)$ и $f'(x) > 0$ на $(x_0;b)$, то $x_0$ --- точка строгого минимума функции $f(x)$.
 \end{thm}
 \begin{proof}
-Пусть выполнено $f'(x) > 0$ на $(a;x_0)$ и $f'(x) < 0$ на $(x_0;b)$. Пусть $x \in (a;x_0) \Rightarrow$ на $[x;x_0]$ выполняются все условия теоремы Лагранжа. $\Rightarrow$ 
+Пусть выполнено $f'(x) > 0$ на $(a;x_0)$ и $f'(x) < 0$ на $(x_0;b)$. Пусть $x \in (a;x_0) \Rightarrow$ на $[x;x_0]$ выполняются все условия теоремы Лагранжа. $\Rightarrow \exists \xi \in (x;x_0):$ 
 $$
-\exists \xi \in (x;x_0):\quad f(x_0)-f(x) = \underbrace{f'(\xi)}_{>0} \underbrace{(x_0-x)}_{>0} >0 \Rightarrow \forall x \in (a;x_0)\quad f(x_0) < f(x).
+f(x_0)-f(x) = \underbrace{f'(\xi)}_{>0} \underbrace{(x_0-x)}_{>0} >0 \Rightarrow \forall x \in (a;x_0)\quad f(x_0) < f(x).
 $$
-Аналогично, пусть $x\in(x_0;b)$. Тогда
+Аналогично, пусть $x\in(x_0;b)$. Тогда $\exists \xi \in (x_0;x):$
 $$
-\exists \xi \in (x_0;x):\quad f(x_0)-f(x) = \underbrace{f'(\xi)}_{<0} \underbrace{(x_0-x)}_{<0} >0 \Rightarrow \forall x \in (x_0;b) \quad f(x_0) < f(x).
+f(x_0)-f(x) = \underbrace{f'(\xi)}_{<0} \underbrace{(x_0-x)}_{<0} >0 \Rightarrow \forall x \in (x_0;b) \quad f(x_0) < f(x).
 $$
 Т.е. $x_0$ --- точка строго максимума функции $f$.
 

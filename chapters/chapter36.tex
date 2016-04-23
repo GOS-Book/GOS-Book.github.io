@@ -294,9 +294,9 @@ J = \int_{0}^{2\pi} R(cos \phi, sin\phi)\,d\phi,
 Сделаем замену $z = z(\phi) = e^{i \phi}, \: 0 \le \phi \le 2\pi$. Тогда 
 
 $cos\phi = \frac{1}{2} (e^{i\phi} + e^{-i\phi}) = \frac{1}{2}\left( z + \frac{1}{z}\right), \: sin\phi = \frac{1}{2i} \left(z - \frac{1}{z} \right), \,dz = i e^{i \phi} \,d\phi,$ т.е. 
-$$
-J = \int_0^{2\pi} R\left( \frac{z(\phi)}{2} + \frac{1}{2z(\phi)}, \: \frac{z(\phi)}{2i} - \frac{1}{2iz(\phi)}\right) \cdot \frac{z'(\phi)}{iz(\phi)} \,d\phi = \int_{|z| = 1} R\left( \frac{1}{2} \left( z + \frac{1}{z}\right), \frac{1}{2i}\left( z - \frac{1}{z}\right)\right)\frac{\,dz}{iz} = \int_{|z| = 1} R_1(z)\,dz.
-$$
+\begin{multline*}
+J = \int_0^{2\pi} R\left( \frac{z(\phi)}{2} + \frac{1}{2z(\phi)}, \: \frac{z(\phi)}{2i} - \frac{1}{2iz(\phi)}\right) \cdot \frac{z'(\phi)}{iz(\phi)} \,d\phi =\\= \int_{|z| = 1} R\left( \frac{1}{2} \left( z + \frac{1}{z}\right), \frac{1}{2i}\left( z - \frac{1}{z}\right)\right)\frac{\,dz}{iz} = \int_{|z| = 1} R_1(z)\,dz.
+\end{multline*}
 
 В итоге интеграл $\eqref{ch36.1eq22}$ свелся к интегралу по кругу $|z| = 1$ от рациональной функции $R_1(z)$, который легко может быть вычислен с помощью теоремы 1 о вычетах.
 
@@ -359,9 +359,9 @@ sin \phi \ge \frac{2}{\pi}\phi \quad \text{} \quad \phi \in \left[ 0, \frac{\pi}
 
 Получаем
 
-$$
-\left| \int_{C_R} e^{i \alpha z} \Phi(z)\,dz \right| \le \int_{C_R} |\Phi(z)|e^{-\alpha R sin \phi}|\,dz| \le \epsilon(R)R \int_0^\pi e^{-\alpha R sin\phi} \,d\phi = 2\epsilon(R)R \int_0^{\frac{\pi}{2}} e^{-\alpha R sin\phi} \,d\phi \le 2\epsilon(R)R \int_0^{\frac{\pi}{2}} e^{-\alpha R 2\phi / \pi} \,d\phi \le \frac{\pi}{\alpha} \epsilon(R),
-$$
+\begin{multline*}
+\left| \int_{C_R} e^{i \alpha z} \Phi(z)\,dz \right| \le \int_{C_R} |\Phi(z)|e^{-\alpha R sin \phi}|\,dz| \le \epsilon(R)R \int_0^\pi e^{-\alpha R sin\phi} \,d\phi =\\= 2\epsilon(R)R \int_0^{\frac{\pi}{2}} e^{-\alpha R sin\phi} \,d\phi \le 2\epsilon(R)R \int_0^{\frac{\pi}{2}} e^{-\alpha R 2\phi / \pi} \,d\phi \le \frac{\pi}{\alpha} \epsilon(R),\\
+\end{multline*}
 
 т.е. справедливо заключение леммы.
 \end{proof}

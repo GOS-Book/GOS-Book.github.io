@@ -12,10 +12,10 @@
  
 \usepackage{indentfirst} 
 \usepackage{amsmath,amsthm,amssymb,amscd} 						
-\usepackage[margin=1.6cm, top=1.2cm,right=1.6cm,left=2.3cm, footskip = 1 cm, headheight=20pt,headsep=0.2cm]{geometry}
+%\usepackage[margin=1.6cm, top=1.2cm,right=1.6cm,left=2.2cm, footskip = 1 cm, headheight=20pt,headsep=0.2cm]{geometry}
 
 %FOR PRINTING OUTPUT VERSION you should uncomment next statement.
-%\usepackage[margin=1.6cm, top=1.2cm, footskip = 1 cm, headheight=11pt,headsep=0.2cm]{geometry}
+\usepackage[margin=1.6cm, top=1.2cm,right=1.9cm,left=1.9cm, footskip = 1 cm, headheight=20pt,headsep=0.2cm]{geometry}
 \usepackage{emptypage}
 
 \usepackage{epigraph}
@@ -337,8 +337,10 @@
    
 % page settings 
 \parindent=0.6cm
-\binoppenalty=10000
-\relpenalty=10000
+
+%переносы в формулах после бинарных операций и отношений, 10000 - запрет, 0 - можно.
+%\binoppenalty=10000
+%\relpenalty=10000
 
 % front page
 \author{Андрей Диденко}
@@ -446,4 +448,5 @@
 }
 
 %conflicting order of packages
-  		  		
+
+\usepackage{rmathbr}

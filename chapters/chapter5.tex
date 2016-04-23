@@ -142,12 +142,13 @@ f(x) = \sum_{k = 0}^{n}a_k (x - x_0)^k + o((x - x_0)^n), \quad x \to x_0
 \end{thm}
 
 \begin{proof}
-$f$ - дифференцируема $n$ раз в точке $x_0 \quad \Rightarrow$ 
+$f$ - дифференцируема $n$ раз в точке $x_0 \quad \Rightarrow$
+Справедлива Формула Тейлора с остаточным членом в форме Пеано:
 \begin{equation} \label{eq5.3eq4}
-f(x) = \sum_{k = 0}^{n} \frac{f^{(k)}(x_0)}{k!} \cdot (x - x_0)^k + o((x - x_0)^n) \quad \text{при} \quad x \to x_0 \text{(формула Тейлора с остаточным членом в форме Пеано)}
+f(x) = \sum_{k = 0}^{n} \frac{f^{(k)}(x_0)}{k!} \cdot (x - x_0)^k + o((x - x_0)^n) \quad \text{при} \quad x \to x_0
 \end{equation}
 
-$\eqref{ch5.3.eq3} - \eqref{eq5.3eq4} \quad \Rightarrow$ 
+Если из \eqref{ch5.3.eq3} вычесть \eqref{eq5.3eq4}, получим
 \begin{equation} \label{eq5.3.eq5}
 \sum\limits_{k = 0}^{n} \left( \frac{f^{(k)}(x_0)}{k!} - a_k \right) (x - x_0)^k = o((x - x_0)^n)
 \end{equation}

@@ -100,24 +100,24 @@ I^{(n)}(z) = \frac{n!}{2\pi i} \int_\gamma \frac{q(\zeta)}{(\zeta - z)^{n+1}}\,d
 
 Оценим выражение }
 
-\begin{equation} \label{ch34eq8}
-\frac{I(z + \Delta z) - I(z)}{\Delta z} - \frac{1}{2 \pi i} \int_\gamma \frac{q(\zeta)}{(\zeta - z)^2}\,d\zeta = \frac{1}{2 \pi i} \int_\gamma q(\zeta) \left[ \left( \frac{1}{\zeta - z - \Delta z} - \frac{1}{\zeta - z} \right) \frac{1}{\Delta z} - \frac{1}{(\zeta - z)^2} \right] \,d\zeta.
-\end{equation}
+\begin{multline} \label{ch34eq8}
+\frac{I(z + \Delta z) - I(z)}{\Delta z} - \frac{1}{2 \pi i} \int_\gamma \frac{q(\zeta)}{(\zeta - z)^2}\,d\zeta=\\ = \frac{1}{2 \pi i} \int_\gamma q(\zeta) \left[ \left( \frac{1}{\zeta - z - \Delta z} - \frac{1}{\zeta - z} \right) \frac{1}{\Delta z} - \frac{1}{(\zeta - z)^2} \right] \,d\zeta.
+\end{multline}
 
 Упростим выражение в прямых скобках под интегралом $\eqref{ch34eq8}$:
 \begin{multline*}
-[\ldots] = \frac{{\zeta} - {z} - ({(\zeta} - {z}) - {\Delta z})}{(\zeta - z)((\zeta - z) - \Delta z)} \cdot \frac{1}{{\Delta z}} - \frac{1}{(\zeta - z)^2} = \frac{1}{(\zeta - z)(\Delta z- (\zeta-z) )} - \frac{1}{(\zeta - z)^2}=\\=
+[\ldots] = \frac{{\zeta} - {z} - ({(\zeta} - {z}) - {\Delta z})}{(\zeta - z)((\zeta - z) - \Delta z)} \cdot \frac{1}{{\Delta z}} - \frac{1}{(\zeta - z)^2} = \frac{1}{(\zeta - z)(\Delta z- (\zeta-z) )} -\\- \frac{1}{(\zeta - z)^2} =
 \frac{(\zeta - z)-(\Delta z- (\zeta-z))}{(\zeta - z)^2(\Delta z- (\zeta-z) )}
 =\frac{\Delta z}{(\zeta - z)^2 (\zeta - z - \Delta z)} .
 \end{multline*}
 Поэтому для $\eqref{ch34eq8}$ получаем оценку 
 
-$$
+\begin{multline*}
 \left| \frac{\Delta I}{\Delta z} - \frac{1}{2\pi i} \int_\gamma \frac{q(\zeta)}{(\zeta - z)^2}\,d\zeta \right| 
-\le \frac{1}{2\pi} \int_\gamma \frac{|q(\zeta)||\Delta z||\,d\zeta|}{|\zeta - z|^2|\zeta - z - \Delta z|}
+\le \frac{1}{2\pi} \int_\gamma \frac{|q(\zeta)||\Delta z||\,d\zeta|}{|\zeta - z|^2|\zeta - z - \Delta z|} \le \\
 \le \frac{|\Delta z|}{\pi d^3} \int_\gamma |q(\zeta)||\,d\zeta| 
 \le \frac{|\Delta z| \cdot M}{\pi d^3} \int_\gamma |\,d\zeta| \xrightarrow{\Delta z \to 0} 0.
-$$
+\end{multline*}
 
 Таким образом, в пределе получаем равенство
 
@@ -206,10 +206,9 @@ R = \frac{1}{\overline{\lim\limits_{n \to \infty}} \sqrt[n]{|c_n|}}
 
 \begin{exmpl} \label{exmpl2}
 Ряд вида $\sum\limits_{n = 0}^{+\infty} z^n$, являющийся суммой бесконечной геометрической прогрессии, очевидно сходится при $|z| < 1$ к функции $\frac{1}{1 - z}$, так как легко посчитать, что
-
-$$
-S_N(z) \triangleq \sum\limits_{n = 0}^{N} z^n = \left( \sum\limits_{n = 0}^{N} z^n \right) \frac{1 - z}{1 - z} =\frac{1-z+z-\dots-z^N+z^N-z^{N+1}}{1-z}= \frac{1 - z^{N + 1}}{1 - z}  \xrightarrow{N \to \infty} \frac{1}{1 - z}.
-$$
+\begin{multline*}
+S_N(z) \triangleq \sum\limits_{n = 0}^{N} z^n = \left( \sum\limits_{n = 0}^{N} z^n \right) \frac{1 - z}{1 - z} =\frac{1-z+z-\dots-z^N+z^N-z^{N+1}}{1-z}=\\= \frac{1 - z^{N + 1}}{1 - z}  \xrightarrow{N \to \infty} \frac{1}{1 - z}.
+\end{multline*}
 
 \end{exmpl} 
 \begin{stt} \label{ch34stt1000}

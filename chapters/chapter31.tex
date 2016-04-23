@@ -61,7 +61,7 @@ M\xi = \sum_{w \in \Omega} \xi(w)\cdot P(w),
 \end{defn}
 Перепишем определение матожидания по-другому.
 \begin{multline*}
-M\xi=\sum_{w \in \Omega} \xi(w)\cdot P(w)=x_1\left(\textstyle\sum\limits_{w\colon \xi(w)=x_1} P(w)\right)+\dots+x_k\left(\textstyle\sum\limits_{w\colon \xi(w)=x_k} P(w)\right)+\dots=\\=x_1P(\xi=x_1)+\dots x_kP(\xi=x_k)+\dots=\sum_{k\in \bbN} x_kP(\xi=x_k)
+M\xi=\sum_{w \in \Omega} \xi(w)\cdot P(w)=x_1\left(\textstyle\sum\limits_{w\colon \xi(w)=x_1} P(w)\right)+\dots+x_k\left(\textstyle\sum\limits_{w\colon \xi(w)=x_k} P(w)\right)+\\+\dots =x_1P(\xi=x_1)+\dots x_kP(\xi=x_k)+\dots=\sum_{k\in \bbN} x_kP(\xi=x_k)
 \end{multline*}
 В силу этого равентсва, дадим аналогичное определение матожиданию:
 \begin{defnn}\label{teorver1s}
@@ -99,9 +99,9 @@ M\xi\triangleq\int_{-\infty}^{+\infty} xp(x)\,dx = \int_{-\infty}^{+\infty} x\,d
 \end{thm}
 \begin{proof}
 Из определения математического ожидания для дискретной случайной величины имеем
-$$
-\ccM (c_1\xi_1+c_2\xi_2)=\sum\limits_{w\in\Omega}(c_1\xi_1(w)+c_2\xi_2(w))P(w) = c_1\sum\limits_{w\in\Omega}\xi_1(w) P(w)+c_2\sum\limits_{w\in\Omega}\xi_2(w) P(w)=c_1\ccM\xi_1+c_2\ccM\xi_2.
-$$
+\begin{multline*}
+\ccM (c_1\xi_1+c_2\xi_2)=\sum\limits_{w\in\Omega}(c_1\xi_1(w)+c_2\xi_2(w))P(w) = c_1\sum\limits_{w\in\Omega}\xi_1(w) P(w)+\\+c_2\sum\limits_{w\in\Omega}\xi_2(w) P(w)=c_1\ccM\xi_1+c_2\ccM\xi_2.
+\end{multline*}
 \end{proof}
 
 \begin{cons} Для любых дискретных случайных величин $\xi_1\dots\xi_n$ и любых чисел $c_1\dots c_n$ справедливо
@@ -184,9 +184,9 @@ $$
 M\xi_n = \sum\limits^{\infty}_{k=-\infty} \frac{k}{2^n}\int_{\frac{k+1}{2^n}}^{\frac{k}{2^n}}p_\xi(u)\,du,
 $$
 откуда 
-$$
-0\le \ccM\xi-\ccM\xi_n=\int_{-\infty}^{+\infty}up_\xi(u)du - \ccM\xi_n = \sum\limits^{\infty}_{k=-\infty}\int_{\frac{k+1}{2^n}}^{\frac{k}{2^n}}\left(u-\frac{k}{2^n}\right)p_\xi(u)du\le \frac{1}{2^n}\int_{-\infty}^{+\infty}p_\xi(u)du=\frac{1}{2^n}
-$$
+\begin{multline*}
+0\le \ccM\xi-\ccM\xi_n=\int_{-\infty}^{+\infty}up_\xi(u)du - \ccM\xi_n = \sum\limits^{\infty}_{k=-\infty}\int_{\frac{k+1}{2^n}}^{\frac{k}{2^n}}\left(u-\frac{k}{2^n}\right)p_\xi(u)du \le \\ \le \frac{1}{2^n}\int_{-\infty}^{+\infty}p_\xi(u)du=\frac{1}{2^n}
+\end{multline*}
 
 А значит $\ccM\xi=\lim\limits_{n\to\infty}\xi_n=\int_{-\infty}^{+\infty}up_\xi(u)du$. Такое определение математического ожидания через предел позволяет перенести все свойства матожидания дискретных случайных величин на непрерывный случай, так как cправедливость этих свойств для $\xi_n$ уже установлена, и переход к предеду при $n\to\infty$ эти свойства не нарушает.
 
@@ -203,7 +203,7 @@ $$
 
 Заметим, что в силу линейности мат.ожидания и теоремы \ref{thm1}\;(Поскольку матожидание это постоянное число, то $\ccM(\ccM\xi)=\ccM\xi$:
 \begin{multline*}
-\ccD\xi = \ccM(\xi-\ccM\xi)^2=\ccM(\xi^2-2\xi \ccM\xi+(\ccM\xi)^2)=\ccM\xi^2-2\ccM\xi \ccM\xi+(\ccM\xi)^2=\ccM\xi^2-(\ccM\xi)^2
+\ccD\xi = \ccM(\xi-\ccM\xi)^2=\ccM(\xi^2-2\xi \ccM\xi+(\ccM\xi)^2)=\ccM\xi^2-2\ccM\xi \ccM\xi+(\ccM\xi)^2=\\=\ccM\xi^2-(\ccM\xi)^2
 \end{multline*}
 Так как дисперсия является неотрицательной величиной, то из последнего мы выводим одно свойство матожидания: $\ccM\xi^2\ge(\ccM\xi)^2$.
 
