@@ -14,7 +14,7 @@ $$
 \end{defn} 
 Это определение эквивалентно тому, что окрестностью бесконечности является внешность круга $\overline{B_\epsilon(0)}$, т.е. множество вида $\overset{\circ} {B}_\epsilon(\infty)\triangleq \{z \;\bigl|\; |z|>\epsilon \bigl.\}$. Обозначим $B_\epsilon(\infty)=\overset{\circ} {B}_\epsilon(\infty) \cup\{\infty\}$.
 
-Пусть $f: G\to \bbC$ - функция, где $G \subset \bboC$. Где ${\bboC =\{\infty\} \cup \{\bbC\}}$ с введенной выше системой окрестностей точки $\infty$. Заметим, что задание функции $f$ равносильно заданию двух действительных функций $u=u(x,y)$ и $v=v(x,y)$, так как $f(z)=u(x,y)+iv(x,y)$.
+Пусть $f: G\to \bbC$ - функция, где $G \subset \bboC$. Где ${\bboC =\{\infty\} \cup \{\bbC\}}$ с введенной выше системой окрестностей точки $\infty$. Заметим, что задание комплексной функции $f$ равносильно заданию двух действительных функций $u=u(x,y)$ и $v=v(x,y)$, так как $f(z)=u(x,y)+iv(x,y)$.
 \begin{defn}
 Точка $z_0 \in \bboC$ называется \textit{внутренней точкой($z_0 \in \interior G$) множества} $G \subset \bboC$, если существует число $\epsilon > 0$ такое, что справедливо включение $B_\epsilon (z_0) \subset G$.
 \end{defn} 
@@ -45,7 +45,7 @@ $$
 $$
 то этот предел называется \textit{производной функции} $f$ в точке $z_0$ и обозначается $f'(z_0)$. 
 \end{defn}
-Пусть $\Delta z = z - z_0$ и $\Delta f = f(z) - f(z_0)$. Определение \ref{exp5} означает $\forall \epsilon > 0 \ex \delta=\delta(\epsilon)>0: \\ \forall \Delta z:\quad 0 <|\Delta z| <\delta:$ 
+Пусть $\Delta z = z - z_0$ и $\Delta f = f(z) - f(z_0)$. Определение \ref{exp5} означает, что $\forall \epsilon > 0 \ex \delta=\delta(\epsilon)>0$ такое, что для $\forall \Delta z:\quad 0 <|\Delta z| <\delta$ справедливо 
 \begin{equation}
 \label{exp7}
 \left|\frac{\Delta f}{\Delta z} - f'(z_0) \right| < \epsilon.
@@ -55,7 +55,7 @@ $$
 \label{exp6}
 \Delta f = f'(z_0)\Delta z + \alpha(\Delta z),
 \end{equation}
-где функция $\alpha(\Delta z)$, определяемая из равенства \ref{exp6} в силу \ref{exp7} удовлетворяет условию $\lim_{\delta z \to 0}\limits \frac{\alpha(\Delta z)}{\Delta z} = 0$. (такая функция называется $o-$малой и обозначается $o(\Delta z)$.
+где функция $\alpha(\Delta z)$, определяемая из равенства \eqref{exp6} в силу \eqref{exp7} удовлетворяет условию $\lim_{\Delta z \to 0}\limits \frac{\alpha(\Delta z)}{\Delta z} = 0$. (такая функция называется $o-$малой и обозначается $o(\Delta z)$.
 
 \begin{defn}
 Функция $f : B_r(z_0) \to \bbC $ дифференцируема в точке $z_0 \in \bbC$, если справедливо представление 
@@ -67,18 +67,18 @@ $$
 \end{defn}
 
 \begin{lemm}
-Функция $f : B_r(z_0) \to \bbC $ дифференцируема в точке $z_0$ $\Longleftrightarrow$ существует производная $f'(z_0)$, причем в формуле \ref{exp4} число $A=f'(z_0)$.
+Функция $f : B_r(z_0) \to \bbC $ дифференцируема в точке $z_0$ $\Longleftrightarrow$ существует производная $f'(z_0)$, причем в формуле \eqref{exp4} число $A=f'(z_0)$.
 \end{lemm}
 
 \section{Условия Коши-Римана}  
 Пусть $f(z)=u(x,y)+iv(x,y)$, где $z=x+iy$, $z_0=x_0+iy_0$; $\Delta z=z-z_0$, или $\Delta z = \Delta x + i\Delta y$, где $\Delta x = x-x_0$ и $\Delta y =y-y_0$; $\Delta f = \Delta u + i\Delta v$, где $\Delta u = u(x,y)-u(x_0,y_0)$,  $\Delta v = v(x,y)-v(x_0,y_0)$. 
 \begin{thm} [Условия Коши-Римана]
-Для того, чтобы функция $f: G  \to \bbC,\\G \subset \bbC$ была дифференцируема в точке $z_0\in \interior G$, необходимо и достаточно, чтобы
+Для того, чтобы функция $f: G  \to \bbC,\, G \subset \bbC$ была дифференцируема в точке $z_0\in \interior G$, необходимо и достаточно, чтобы
 \begin{enumerate}
 \item
 Функции $u(x,y)$ и $v(x,y)$ были дифференцируемы в точке $(x_0,y_0) \in \bbR^2$ (как функции двух действительных переменных $x$ и $y$).
 \item
-В точке  $(x_0,y_0)$ были выполнены следующие условия(называемые условиями Коши-Римана):
+В точке  $(x_0,y_0)$ были выполнены следующие условия (называемые условиями Коши-Римана) \footnote{Для краткости, примем следующее обозначение для частных производных $\pd{\textstyle u}{ \textstyle x}=u'_x.$}:
 \begin{equation}
 \label{exp17}
 \begin{split}
@@ -98,9 +98,8 @@ $ $\linebreak
 \begin{itemize}
 \item[$\Longrightarrow$:]
 Пусть $\exists f'(x_0) = a+ib $. Тогда $\Delta f = f'(z_0)\Delta z + \alpha(\Delta z)$, где $\frac{\alpha(\Delta z)}{\Delta z}\xrightarrow{\Delta z \to 0}0$. Но, с другой стороны, $\Delta f = \Delta u + i \Delta v$. А значит
-\vspace*{-\baselineskip}
 $$
-\Delta u + i \Delta v = \overbrace{(a+ib)}^{f'(x_0)}(\Delta x + i \Delta y) + \overbrace{\alpha_1(\Delta x, \Delta y) + \alpha_2(\Delta x, \Delta y)}^{\alpha(\Delta z)}
+\Delta u + i \Delta v = \underbrace{(a+ib)}_{f'(x_0)}(\Delta x + i \Delta y) + \underbrace{\alpha_1(\Delta x, \Delta y) + \alpha_2(\Delta x, \Delta y)}_{\alpha(\Delta z)}
 $$
 Приравниваем действительные и мнимые части слева и справа:
 \begin{equation}
@@ -114,7 +113,8 @@ $$
 $$
 \underbrace{{{\vphantom{\frac{0}{0}}}}0}_{=0} \le \frac{|\alpha_1(\Delta x, \Delta y)|}{|\Delta z|} \le \underbrace{\frac{|\alpha(\Delta z)|}{|\Delta z|}}_{\xrightarrow{\Delta z \to 0} 0 }.
 $$
-Из теоремы \hyperref[exp14]{о трех функциях} $\exists \lim_{\substack{\Delta x \to 0\\ \Delta y \to 0}}\limits \frac{|\alpha_1(\Delta x,\Delta y)|}{\sqrt{\Delta x ^2 + \Delta y^2}} = 0$, аналогично $\exists \lim_{\substack{\Delta x \to 0\\ \Delta y \to 0}}\limits \frac{|\alpha_2(\Delta x,\Delta y)|}{\sqrt{\Delta x^2 + \Delta y^2}} = 0$. 
+Из теоремы \hyperref[exp14]{о трех функциях} следует: $\exists \lim_{\substack{\Delta x \to 0\\ \Delta y \to 0}}\limits \frac{|\alpha_1(\Delta x,\Delta y)|}{\sqrt{\Delta x ^2 + \Delta y^2}} = 0.$
+Аналогично, $\exists \lim_{\substack{\Delta x \to 0\\ \Delta y \to 0}}\limits \frac{|\alpha_2(\Delta x,\Delta y)|}{\sqrt{\Delta x^2 + \Delta y^2}} = 0$. 
 Отсюда равенства \eqref{exp15} означают дифференцируемость функций $u(x,y)$ и $v(x,y)$ в точке $(x_0,y_0) \in \bbR^2$, причем 
 \begin{equation}
 \label{exp16}
@@ -131,7 +131,7 @@ $$
 \item[$\Longleftarrow$:]
 Пусть функции $u(x,y)$, $v(x,y)$ дифференцируемы в точке $(x_0,y_0)$, выполнены условия Коши-Римана \eqref{exp17}. Тогда в точке $z_0=x_0+iy_0$
 \begin{multline*}
-\Delta f = \Delta u + i\Delta v \myeq {u,v\;\text{дифф.}} u'_x\Delta x + \overbrace{u'_y}^{=-v'_x}\Delta y + \alpha_1(\Delta x,\Delta y)+ \\+ i\bigr(v'_x\Delta x + \overbrace{v'_y}^{=u'_x}\Delta y + \alpha_2(\Delta x,\Delta y)\bigl) \myeq{\eqref{exp17}}\\\myeq{\eqref{exp17}} (u'_x+iv'_x)(\Delta x + i \Delta y) + \alpha_1(\Delta x,\Delta y)+ i\alpha_2(\Delta x,\Delta y) = A\cdot\Delta z + \alpha(\Delta z).
+\Delta f = \Delta u + i\Delta v \xlongequal{u,v\;\text{\scriptsize дифф.}} u'_x\Delta x + \overbrace{u'_y}^{-v'_x}\Delta y + \alpha_1(\Delta x,\Delta y)+ \\+ i\bigr(v'_x\Delta x + \overbrace{v'_y}^{u'_x}\Delta y + \alpha_2(\Delta x,\Delta y)\bigl) \myeq{\eqref{exp17}}\\\myeq{\eqref{exp17}} (u'_x+iv'_x)(\Delta x + i \Delta y) + \alpha_1(\Delta x,\Delta y)+ i\alpha_2(\Delta x,\Delta y) = A\cdot\Delta z + \alpha(\Delta z),
 \end{multline*}
 где число $A = u'_x(x_0,y_0)+iv'_x(x_0,y_0)$, функция $\alpha = \alpha_1+\alpha_2$, причем, поскольку  $\exists \lim_{\substack{\Delta x \to 0\\ \Delta y \to 0}}\limits \frac{|\alpha_1(\Delta x,\Delta y)|}{\sqrt{(\Delta x)^2 + (\Delta y)^2}} = 0$, $\exists \lim_{\substack{\Delta x \to 0\\ \Delta y \to 0}}\limits \frac{|\alpha_2(\Delta x,\Delta y)|}{\sqrt{(\Delta x)^2 + (\Delta y)^2}} = 0$, то
 
@@ -161,7 +161,7 @@ $$
 для любых двух точек $z_1,z_2 \in G$ существует лежащий в $G$ путь с концами $z_1$ и $z_2$ (\textit{линейная связность});
 \end{enumerate}
 \item
-\textit{односвязной областью}, если перед нами область, у которой любой простой замкнутый контур, целиком лежащий в ней, может быть непрерывной деформацией стянут в точку, оставаясь внутри области. 
+\textit{односвязной областью}, если любой простой замкнутый контур, целиком лежащий в ней, может быть непрерывной деформацией стянут в точку, постоянно оставаясь внутри области. 
 \end{itemize}
 
 \begin{defn}
@@ -244,7 +244,7 @@ $$
 где в \eqref{abc1} интеграл в правой части от комплексной функции действительного переменного определяется по формуле
 \begin{equation}
 \label{kek2}
-\int _{t_0}^{t_1}(u(t)+iv(t)) \,dt \triangleq \int _{t_0}^{t_1}u(t) \,dt + i \int _{t_0}^{t_1}iv(t) \,dt.
+\int _{t_0}^{t_1}(u(t)+iv(t)) \,dt \triangleq \int _{t_0}^{t_1}u(t) \,dt + i \int _{t_0}^{t_1}v(t) \,dt.
 \end{equation}
 \end{cons}
 
@@ -265,10 +265,10 @@ $$
 \end{thm}
 }
 \begin{proof}
-Для заданного в теореме контура запишем формулу \eqref{exp24}:
+Для заданного в теореме контура $\gamma$ запишем формулу \eqref{exp24}:
 \begin{equation}
 \label{abc4}
-\int_\Gamma f(z)\,dz = \underbrace{\int _\gamma(u(x,y)\,dx - v(x,y)\,dy)}_{\textstyle\triangleq J_1} + i\cdot\underbrace{\int_\gamma (v(x,y)\,dx +u(x,y)\,dy)}_{\textstyle\triangleq J_2},
+\int_\gamma f(z)\,dz = \int_\gamma (u+iv)\,(dx+idy) = \underbrace{\int _\gamma(u\,dx - v\,dy)}_{\textstyle\triangleq J_1} + i\cdot\underbrace{\int_\gamma (v\,dx +u\,dy)}_{\textstyle\triangleq J_2},
 \end{equation}
 
 Через $D$ обозначим односвязную область в $G$, границей которой является данный контур $\gamma$. Нам известна следующая формула Грина:
@@ -282,8 +282,8 @@ $$
 В силу непрерывной дифференцируемости функций $u$ и $v$ на односвязной области $G$, следующей из регулярности функции $f$, формула Грина \eqref{abc6} и \hyperref[exp17]{условия Коши-Римана} дают для интегралов \eqref{abc4}
 \begin{equation*}
 \begin{split}
-&J_1 \myeq{\eqref{abc6}} \iint_D \left(-\pd{v}{x}-\pd{u}{y}\right)\,dx\,dy \myeq{\text{УКР}} 0,\\
-&J_2 \myeq{\eqref{abc6}} \iint_D \left(\pd{u}{x}-\pd{v}{y}\right)\,dx\,dy \myeq{\text{УКР}} 0,
+&J_1 \myeq{\eqref{abc6}} \iint_D \left(-\pd{v}{x}-\pd{u}{y}\right)\,dx\,dy \xlongequal{\text{\scriptsize УКР}} 0,\\
+&J_2 \myeq{\eqref{abc6}} \iint_D \left(\pd{u}{x}-\pd{v}{y}\right)\,dx\,dy \xlongequal{\text{\scriptsize УКР}} 0,
 \end{split}
 \end{equation*} 
 т.е. равенство \eqref{abc3} доказано, а значит теорема доказана.
@@ -291,7 +291,7 @@ $$
 %\addmppict[0.8]{pictures/ch33pict3}{0.4}{
 \usepict[0.2]{ch33pict3}
 \begin{defn}
-\textit{Областью с кусочно-гладкой границей} будем называть область $G \in \bboC$, граница $\Gamma=\partial G$ которой является объединением конечного числа гладких ограниченных кривых $\Gamma_1 , \dots , \Gamma_m$, любые две из которых могут иметь общими лишь концевые точки. 
+\textit{Областью с кусочно-гладкой границей} будем называть область $G \in \bboC$, граница $\partial G=\Gamma$ которой является объединением конечного числа гладких ограниченных кривых $\Gamma_1 , \dots , \Gamma_m$, любые две из которых могут иметь общими лишь концевые точки. 
 
 Эти кривые $\Gamma_1 , \dots , \Gamma_m$ будем называть гладкими компонентами границы $\Gamma$ области $G$. Эти компоненты бывают двух типов:
 \end{defn}
@@ -304,12 +304,12 @@ $$
 \item
 Кривая $\Gamma_k$ --- \textit{разрезом}, если  для каждой точки $z_0 \in\; \buildrel\circ\over\Gamma_k$ существует окрестность $B_\epsilon(z_0)$ такая, $B_\epsilon(z_0)\setminus\Gamma_k \subset G$.
 \end{enumerate}
-\begin{defn} Будем считать, что кусочно-гладкая граница $)\Gamma)^{+}$ \textit{положительно ориентирована относительно области $G$}, если при обходе $\Gamma$ область $G$ остается слева (при этом считается, что разрез проходится дважды: в одну сторону, потом в противоположную).
+\begin{defn} Будем считать, что кусочно-гладкая граница $(\partial G)^{+}$ \textit{положительно ориентирована относительно области $G$}, если при обходе $(\partial G)^{+}$ область $G$ остается слева (при этом считается, что разрез проходится дважды: в одну сторону, потом в противоположную). Аналогично, определим отрицательно ориентрированную границу относительно области $G$, которую обозначим $(\partial G)^{-}.$
 \end{defn}
 
-Если $f:\overline{G}\to\bbC$ будем продолжать по непрерывности на $\Gamma$, то не исключаем, что на разрезы $f$ может продолжаться по-разному, т.е. пределы с разных берегов разреза могут отличаться. 
+Если $f:\overline{G}\to\bbC$ будем продолжать по непрерывности на $\partial G$, то не исключаем, что на разрезы $f$ может продолжаться по-разному, т.е. пределы с разных берегов разреза могут отличаться. 
 
-\begin{thm}[интегральная теорема Коши для односвязных областей]
+\begin{thm}[интегральная теорема Коши для односвязных областей]\label{abcd1}
 Пусть дана ограниченная односвязная область $G$ с кусочно-гладкой положительно ориентированной границей $\Gamma$. Пусть функция $f:\overline{G}\to\bbC$ регулярна на области $G$ и непрерывна на замыкании области $\overline{G}=G\cup\Gamma$. Тогда
 \begin{equation}
 \label{abc10}
@@ -339,9 +339,9 @@ $$
 
 Доказательство достаточно провести для случая, когда $G$ есть звездное множество с центром в точке $z_0 = 0$. Покажем это. 
 
-Допустим, что его центр $z_0 \ne 0$. Сделав  замену $\tilde z = z - z_0$ , $\partial\tilde G = \Gamma - z_0$, $G = G - z_0$ , получим звездное множество $G$ с центром в точке $0$, причем
+Допустим, что его центр $z_0 \ne 0$. Сделав  замену $\tilde z = z - z_0$ , $\tilde \Gamma = \Gamma - z_0$, $G = G - z_0$ , получим звездное множество $G$ с центром в точке $0$, причем
 $$
-\int_{\Gamma} f(z)\,dz = \int_{\partial\tilde G} f(\tilde z +z_0)\,d\tilde z = \int_{\partial\tilde G} \tilde f(\tilde z)\,d\tilde z ,
+\int_{\Gamma} f(z)\,dz = \int_{\tilde \Gamma} f(\tilde z +z_0)\,d\tilde z = \int_{\partial\tilde G} \tilde f(\tilde z)\,d\tilde z ,
 $$
 где $\tilde f(\tilde z) = f(\tilde z + z_0 )$ есть регулярная функция, и если покажем, что последний интеграл равен нулю, то и исходный равен нулю.
 
@@ -363,7 +363,7 @@ $$
 
 Так как функция $f$ непрерывна на ограниченном замкнутом множестве $G$, то она равномерно непрерывна на $G$. Это значит, что $\forall \epsilon > 0 \ex \delta = \delta (\epsilon) > 0, \forall z',z'' \in \overline{G}, |z'-z''|<\delta \Rightarrow |f(z')-f(z'')| < \epsilon$.  Поэтому $\forall z \in \Gamma$ получаем $|z-\lambda z|=(1-\lambda)|z| \le (1-\lambda)C_0$, где $C_0=\max\{|z|\bigr|\bigl. z\in \Gamma\}$.
 
-Выбрав $\lambda_\epsilon \in (0, 1)$, удовлетворяющее неравенству $(1 - \lambda_\epsilon) < \delta(\epsilon)/C_0 $, получаем $|z - \lambda_\epsilon z| < \delta(\epsilon), \fa z \in \Gamma$. Поэтому из \eqref{abc9} следует:
+Выбрав $\lambda_\epsilon \in (0, 1)$, удовлетворяющее неравенству $(1 - \lambda_\epsilon) < \delta(\epsilon)/C_0 $, получаем $|z - \lambda_\epsilon z| < \delta(\epsilon),\, \forall z \in \Gamma$. Поэтому из \eqref{abc9} следует:
 \begin{multline}
 \left|\int_{\Gamma} f(z) \,dz \right| = \left|\int_{\Gamma} f(z) \,dz - 0 \right| = \left|\int_{\Gamma} (f(z) - f(\lambda_\epsilon z))\,dz \right| \le \\
 \le \int_{\Gamma} |f(z) - f(\lambda_\epsilon z)|\,|dz| \le \epsilon \int_{\Gamma} |dz|.
@@ -374,7 +374,7 @@ $$
 Теорема доказана.
 \end{proof}
 
-\begin{thm}(обобщенная интегральная теорема Коши)\label{abc28}
+\begin{thm}[обобщенная интегральная теорема Коши]\label{abc28}
 Пусть дана ограниченная область $G$ с кусочно-гладкой положительно ориентированной границей $\Gamma$. Пусть функция $f:\overline{G}\to\bbC$ регулярна на области $G$ и непрерывна на замыкании области $\overline{G}=G\cup\Gamma$. Тогда
 \begin{equation}
 \int_{\Gamma} f(z)\,dz = 0.
@@ -384,11 +384,15 @@ $$
 \begin{proof}
 Поскольку область ограничена, то значит одна группа компонент, <<внешняя>> компонента, образует кусочно-гладкий замкнутый контур, который отделяет $G$ от бесконечности. (см. рис. \ref{ch33pict5})
 
-Добавим к каждой <<внутренней>> компоненте границы $\Gamma$ дополнительный разрез, соединяющий его с <<внешней>> компонентой. 
+Добавим к каждой <<внутренней>> компоненте границы $\partial G$ дополнительный разрез, соединяющий его с <<внешней>> компонентой. 
 Итак, мы конечным числом дополнительных непересекающихся между собой разрезов $R_1,\dots R_p$ разбили область $G$ на  подмножества $G_1,\dots, G_m$. Эти подмножества, по построению,являются ограниченными односвязными областями с кусочно-гладкими границами. Тогда по интегральной теореме Коши для односвязных множеств:
 $$
-0=\sum_{j=1}^m \int_{(\Gamma_j)^+} f(z) \,dz = \int_{(\Gamma)^+} f(z)\,dz + \sum_{k=1}^{m} \underbrace{\left( \int_{(R_k)^+}f(z)\,dz + \int_{(R_k)^-}f(z)\,dz \right)}_{\textstyle =0 \fa s}
+\underbrace{0=\sum_{j=1}^m \int_{(\partial G_j)^+} f(z) \,dz }_{\text{\scriptsizeт.к. каждый интеграл} =0} = \int_{(\partial G)^+} f(z)\,dz + \sum_{k=1}^{m} \underbrace{\left( \int_{(R_k)^+}f(z)\,dz + \int_{(R_k)^-}f(z)\,dz \right)}_{\textstyle =0 \fa s}
 $$ 
+Отсюда
+$$
+\int_{(\partial G)^+} f(z)\,dz = 0.
+$$
 \noindent 
-Теорема доказана.
+Теорема доказана.\footnote{Хочу обратить ваше внимание, что мы везде писали $\Gamma$ (следуя обозначениям Е.С.~Половинкина), однако подразумевали, что берем положительно ориентированную границу $G$ относительно области $G$. Т.е. нагляднее было бы писать $(\partial G)^{+}$. Просто не забывайте, что в Теоремах \ref{abcd1} и \ref{abc28}  нужна положительно ориентированная граница. }
 \end{proof}

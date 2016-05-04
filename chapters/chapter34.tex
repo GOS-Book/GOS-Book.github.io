@@ -5,15 +5,15 @@
 \label{exmpl1}
 Вычислить интеграл 
 $$
-I_k = \int_{\gamma_r} (z-a)^k\,dz, \quad k \in \bbZ, \; a\in \bbC
+I_k = \int_{\gamma_r^+} (z-a)^k\,dz, \quad k \in \bbZ, \; a\in \bbC
 $$
-где контур $\gamma_r$ есть окружность $\{ z \bigl|\bigr. |z - a| = r>0 \}$,ориентированная движением против хода часовой стрелки.
+где контур $\gamma_r^+$ есть окружность $\{ z \bigl|\bigr. |z - a| = r>0 \}$,ориентированная движением против хода часовой стрелки.
 \end{exmpl}
 \begin{solution}
-Выберем параметризацию окруности $\gamma_r$ вида $z = a + r e^{i \varphi}$, где $\varphi \in [0, 2\pi]$. Тогда
+Выберем параметризацию окруности $\gamma_r^+$ вида $z = a + r e^{i \varphi}$, где $\varphi \in [0, 2\pi]$. Тогда
 
 $$
-I_k = \int_{0}^{2 \pi} r^k e^{i k \varphi} r i e^{i \varphi} \,d\varphi = i r^{k+1} \int_{0}^{2 \pi} e^{i (k + 1) \varphi}\,d\varphi.
+I_k = \int_{0}^{2 \pi} r^k e^{i k \varphi} \cdot r i e^{i \varphi} \,d\varphi = i r^{k+1} \int_{0}^{2 \pi} e^{i (k + 1) \varphi}\,d\varphi.
 $$
 
 В Итоге
@@ -23,16 +23,16 @@ $$
 \item
 При $k \ne -1$ получаем
 $$
-J_k = i r^{k + 1} \left( \int_{0}^{2 \pi} cos(k + 1) \varphi \,d \varphi + i \int_{0}^{2 \pi} sin(k + 1) \varphi \,d\varphi \right) = 0.
+J_k = i r^{k + 1} \left( \int_{0}^{2 \pi} \cos(k + 1) \varphi \,d \varphi + i \int_{0}^{2 \pi} \sin(k + 1) \varphi \,d\varphi \right) = 0.
 $$
 \end{enumerate}
 Ответ: $J_k=\begin{cases}2\pi i, \quad &k=-1,\\0, \quad &k\ne -1. 
 \end{cases}$\qedhere
 \end{solution}
 
-\begin{thm} \label{ch34thm1}
+\begin{thm}[Интегральная формула Коши] \label{ch34thm1}
 
- Пусть $G$ --- ограниченная область в $\bbC$ с кусочно-гладкой положительно ориентированной границей $\Gamma$. Пусть функция $f\colon \overline{G}\to \bbC$ регулярна на $G$ и непрерывна на $G=G\cup\Gamma$. Тогда для любой точки $z\in G$ справедлива интегральная формула Коши вида
+Пусть $G$ --- ограниченная область в $\bbC$ с кусочно-гладкой положительно ориентированной границей $\Gamma= \Gp$. Пусть функция $f\colon \overline{G}\to \bbC$ регулярна на $G$ и непрерывна на $G=G\cup\Gamma$. Тогда для любой точки $z\in G$ справедлива интегральная формула Коши вида
  
  \begin{equation} \label{ch34eq1}
  f(z) = \frac{1}{2\pi i}\int_\Gamma \frac{f(\zeta)}{\zeta - z}\,d\zeta.
@@ -42,7 +42,7 @@ $$
 Фиксируем произвольную точку $z \in G$. Функция $\frac{f(\zeta)}{\zeta - z}$ регулярна по переменному $\zeta$ в области $G \setminus \{z\}$. Выберем число $r_0 > 0$ такое, что выполнено включение $\overline{B_{r_0}(z)}\subset G$. 
 
 \addpicture{pictures/ch34pict1}{0.25}\label{ch34pict1}
-Обозначим через $\gamma \triangleq \{ \zeta \bigl| |\zeta - z| = r \}$ окружность радиуса $r \in (0, r_0)$ ориентированную против хода часовой стрелки. Обозначим множества $G_r \triangleq G \setminus \overline{B_r(z)}$ и $\Gamma_r \triangleq \Gamma \cup \gamma_r^{-1}$. Очевидно, что множество $G_r$ есть область с кусочно-гладкой положительно ориентированной границей $\Gamma_r$(рис.\ref{ch34pict1}). 
+Обозначим через $\gamma_r=\gamma_r^{+} \triangleq \{ \zeta \bigl| |\zeta - z| = r \}$ окружность радиуса $r \in (0, r_0)$ ориентированную против хода часовой стрелки. Обозначим множества $G_r \triangleq G \setminus \overline{B_r(z)}$ и $\Gamma_r \triangleq \Gamma \cup \gamma_r^{-}$. Очевидно, что множество $G_r$ есть область с кусочно-гладкой положительно ориентированной границей $\Gamma_r$(рис.\ref{ch34pict1}). 
 
 По обощенной интегральной теореме Коши \ref{abc28} из билета №33 получаем
 

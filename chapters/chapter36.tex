@@ -231,7 +231,7 @@ $$
 
 Известно, что интеграл $J \eqref{ch36.1eq19}$ сходится при условии $m > n + 1$, что считаем выполненным.
 
-Для вычисления интеграла $\eqref{ch36.1eq19}$, как и в примере 2, определим ориентированный движением против хода часовой стрелки контур $\gamma_R \triangleq [-R, R] \cup C_R$, где $R > R_0 = max\{ |z_k^{+}| \: \big| \: k \in \overline{1,l} \}$, а $ \{ z_{k}^{+} \}^l_{k = 1}$ --- совокупность всех различных нулей многочлена $Q_m(z)$, лежащих в верхней полуплоскости $\Im z \ge 0$, полуокружность $C_R \triangleq \{ z \: \big| \: |z| = R, \: \Im z \ge 0 \}$. Чтобы воспользоваться теоремой о вычетах, определим интеграл 
+Для вычисления интеграла $\eqref{ch36.1eq19}$, как и в примере 2, определим ориентированный движением против хода часовой стрелки контур $\gamma_R \triangleq [-R, R] \cup C_R$, где $R > R_0 = \max\{ |z_k^{+}| \: \big| \: k \in \overline{1,l} \}$, а $ \{ z_{k}^{+} \}^l_{k = 1}$ --- совокупность всех различных нулей многочлена $Q_m(z)$, лежащих в верхней полуплоскости $\Im z \ge 0$, полуокружность $C_R \triangleq \{ z \: \big| \: |z| = R, \: \Im z \ge 0 \}$. Чтобы воспользоваться теоремой о вычетах, определим интеграл 
 
 $$
 J_R = \int_{\gamma_R} R_{n,m}(z)\,dz.
@@ -286,14 +286,14 @@ $\epsilon(R)R \le 2R^{n - m + 1} \to 0$, откуда следует, что в�
 {\bf II. Вычисление интегралов вида}
 
 \begin{equation} \label{ch36.1eq22}
-J = \int_{0}^{2\pi} R(cos \phi, sin\phi)\,d\phi,
+J = \int_{0}^{2\pi} R(\cos \phi, \sin\phi)\,d\phi,
 \end{equation}
 
 где $R(x,y) = \frac{P_n(x,y)}{Q_m(x,y)}; \: P_n, Q_m$ --- многочлены переменных $x$ и $y$.
 
 Сделаем замену $z = z(\phi) = e^{i \phi}, \: 0 \le \phi \le 2\pi$. Тогда 
 
-$cos\phi = \frac{1}{2} (e^{i\phi} + e^{-i\phi}) = \frac{1}{2}\left( z + \frac{1}{z}\right), \: sin\phi = \frac{1}{2i} \left(z - \frac{1}{z} \right), \,dz = i e^{i \phi} \,d\phi,$ т.е. 
+$\cos\phi = \frac{1}{2} (e^{i\phi} + e^{-i\phi}) = \frac{1}{2}\left( z + \frac{1}{z}\right), \: \sin\phi = \frac{1}{2i} \left(z - \frac{1}{z} \right), \,dz = i e^{i \phi} \,d\phi,$ т.е. 
 \begin{multline*}
 J = \int_0^{2\pi} R\left( \frac{z(\phi)}{2} + \frac{1}{2z(\phi)}, \: \frac{z(\phi)}{2i} - \frac{1}{2iz(\phi)}\right) \cdot \frac{z'(\phi)}{iz(\phi)} \,d\phi =\\= \int_{|z| = 1} R\left( \frac{1}{2} \left( z + \frac{1}{z}\right), \frac{1}{2i}\left( z - \frac{1}{z}\right)\right)\frac{\,dz}{iz} = \int_{|z| = 1} R_1(z)\,dz.
 \end{multline*}
@@ -348,19 +348,19 @@ $$
 Пусть $z \in C_R$, тогда $z = Re^{i\phi} = Rcos\phi + iRsin\phi, \: 0 \le \phi \le \pi$. Поэтому при $z \in C_R$
 
 $$
-|e^{i \alpha z}| = |e^{i \alpha(x + iy)}| = e^{-\alpha y} = e^{- \alpha R sin\phi}.
+|e^{i \alpha z}| = |e^{i \alpha(x + iy)}| = e^{-\alpha y} = e^{- \alpha R \sin\phi}.
 $$
 
 Воспользуемся для оценки неравенством
 
 \begin{equation} \label{ch36.1eq26}
-sin \phi \ge \frac{2}{\pi}\phi \quad \text{} \quad \phi \in \left[ 0, \frac{\pi}{2}\right].
+\sin \phi \ge \frac{2}{\pi}\phi \quad \text{} \quad \phi \in \left[ 0, \frac{\pi}{2}\right].
 \end{equation}
 
 Получаем
 
 \begin{multline*}
-\left| \int_{C_R} e^{i \alpha z} \Phi(z)\,dz \right| \le \int_{C_R} |\Phi(z)|e^{-\alpha R sin \phi}|\,dz| \le \epsilon(R)R \int_0^\pi e^{-\alpha R sin\phi} \,d\phi =\\= 2\epsilon(R)R \int_0^{\frac{\pi}{2}} e^{-\alpha R sin\phi} \,d\phi \le 2\epsilon(R)R \int_0^{\frac{\pi}{2}} e^{-\alpha R 2\phi / \pi} \,d\phi \le \frac{\pi}{\alpha} \epsilon(R),\\
+\left| \int_{C_R} e^{i \alpha z} \Phi(z)\,dz \right| \le \int_{C_R} |\Phi(z)|e^{-\alpha R \sin \phi}|\,dz| \le \epsilon(R)R \int_0^\pi e^{-\alpha R \sin\phi} \,d\phi =\\= 2\epsilon(R)R \int_0^{\frac{\pi}{2}} e^{-\alpha R \sin\phi} \,d\phi \le 2\epsilon(R)R \int_0^{\frac{\pi}{2}} e^{-\alpha R 2\phi / \pi} \,d\phi \le \frac{\pi}{\alpha} \epsilon(R),\\
 \end{multline*}
 
 т.е. справедливо заключение леммы.
@@ -376,7 +376,7 @@ sin \phi \ge \frac{2}{\pi}\phi \quad \text{} \quad \phi \in \left[ 0, \frac{\pi}
 Интегралы вида
 
 \begin{equation} \label{ch36.1eq28}
-J_1 = \int_{-\infty}^{+\infty} cos\alpha x \cdot R(x) \,dx \quad \text{и} \quad J_2 = \int_{-\infty}^{+\infty} sin \alpha x \cdot R(x) \,dx,
+J_1 = \int_{-\infty}^{+\infty} \cos\alpha x \cdot R(x) \,dx \quad \text{и} \quad J_2 = \int_{-\infty}^{+\infty} \sin \alpha x \cdot R(x) \,dx,
 \end{equation}
 
 где $R(x)$ --- рациональная функция, сводятся к интегралу вида $\eqref{ch36.1eq23}$, т.е.
