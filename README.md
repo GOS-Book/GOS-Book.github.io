@@ -113,7 +113,7 @@
   </tr>
     <tr>
     <td>Напечатано</td>
-    <td></td>%25
+    <td></td><!25>
     <td><img src="http://medyk.org/colors/ffff00.png" width="30" height="30" /></td> <!26>
     <td></td><!27>
     <td></td><!28>
