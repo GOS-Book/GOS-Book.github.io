@@ -3,9 +3,9 @@
 %% Math fonts
 \newcommand{\bbA}{\mathbb{A}}
 \newcommand{\bbB}{\mathbb{B}}
-\newcommand{\bbC}{\mathbb{C}}
+\newcommand{\bbC}{\mathbb{C}} % комплексные числа
 \newcommand{\bbD}{\mathbb{D}}
-\newcommand{\bbE}{\mathbb{E}}
+\newcommand{\bbE}{\mathbb{E}} 
 \newcommand{\bbF}{\mathbb{F}}
 \newcommand{\bbG}{\mathbb{G}}
 \newcommand{\bbH}{\mathbb{H}}
@@ -14,11 +14,11 @@
 \newcommand{\bbK}{\mathbb{K}}
 \newcommand{\bbL}{\mathbb{L}}
 \newcommand{\bbM}{\mathbb{M}}
-\newcommand{\bbN}{\mathbb{N}}
+\newcommand{\bbN}{\mathbb{N}} %натуральные числа
 \newcommand{\bbO}{\mathbb{O}}
 \newcommand{\bbP}{\mathbb{P}}
-\newcommand{\bbQ}{\mathbb{Q}}
-\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\bbQ}{\mathbb{Q}} % рациональные числа
+\newcommand{\bbR}{\mathbb{R}} % действительные числа
 \newcommand{\bbS}{\mathbb{S}}
 \newcommand{\bbT}{\mathbb{T}}
 \newcommand{\bbU}{\mathbb{U}}
@@ -26,7 +26,7 @@
 \newcommand{\bbW}{\mathbb{W}}
 \newcommand{\bbX}{\mathbb{X}}
 \newcommand{\bbY}{\mathbb{Y}}
-\newcommand{\bbZ}{\mathbb{Z}}
+\newcommand{\bbZ}{\mathbb{Z}} %целые числа
 
 
 %Матожидание и Дисперсия. 
@@ -45,7 +45,7 @@
 \renewcommand{\ge}{\geqslant}
 \renewcommand{\emptyset}{\varnothing}
 
-%Возможно правильная расстановка пробелов в кванторах
+%Возможно правильная расстановка пробелов в кванторах - НЕ ИСПОЛЬЗУЙТЕ НИ ЗА ЧТО НА СВЕТЕ, ЛУЧШЕ РУКАМИ.
 \newcommand{\fa}{\quad\forall}
 \newcommand{\ex}{\quad\exists}
 
@@ -65,8 +65,6 @@
 
 %знак равно с надписью
 \newcommand{\myeq}[1]{\overset{#1}{=}}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Жирный вектор
 \newcommand{\vect}[1] { \mathbf{#1} }
@@ -90,6 +88,41 @@
 
 % Оператор
 \newcommand{\op}[1]{\widehat{#1}}
+
+% Крупная хи
+\newcommand{\bigchi}{\text{\scalebox{1.5}{$\chi$}}}
+
+% Римские цифры
+\makeatletter
+\newcommand*{\rom}[1]{\expandafter\@slowromancap\romannumeral #1@}
+\makeatother
+
+%% Text fomats
+\newcommand{\tbi}[1]{\textbf{\textit{#1}}}
+
+%% Вычет
+\def\res{\mathop{\rm res}\limits}
+
+%% Расстояние
+\def\dist{\mathop{\rm dist}\limits}
+
+%% Сокращение для одной штуки
+
+\newcommand{\Gp}{(\partial G)^{+}}
+
+\newcommand{\Gm}{(\partial G)^{-}}
+
+
+
+
+
+
+
+
+
+
+
+%%Это перешло сюда по наследству от теорфиза, пусть будет, мало ли. 
 
 % Скобки (высокие)
 \newcommand{\brc}[1]{\left ( {#1} \right )}
@@ -146,26 +179,3 @@
 \newcommand{\vA}{\vec{A}}
 
 \renewcommand{\vec}{\mathbf}
-
-% Крупная хи
-\newcommand{\bigchi}{\text{\scalebox{1.5}{$\chi$}}}
-
-% Римские цифры
-\makeatletter
-\newcommand*{\rom}[1]{\expandafter\@slowromancap\romannumeral #1@}
-\makeatother
-
-%% Text fomats
-\newcommand{\tbi}[1]{\textbf{\textit{#1}}}
-
-%% Вычет
-\def\res{\mathop{\rm res}\limits}
-
-%% Расстояние
-\def\dist{\mathop{\rm dist}\limits}
-
-%% Сокращение для одной штуки
-
-\newcommand{\Gp}{(\partial G)^{+}}
-
-\newcommand{\Gm}{(\partial G)^{-}}
