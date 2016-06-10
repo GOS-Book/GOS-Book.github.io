@@ -23,8 +23,8 @@
 	    <td>12</td>
   <tr>
     <td>Напечатано</td>
-    <td><img src="http://medyk.org/colors/87ff00.png" width="30" height="30" /></td> %1
-    <td><img src="http://medyk.org/colors/87ff00.png" width="30" height="30" /></td> %2
+    <td><img src="http://medyk.org/colors/87ff00.png" width="30" height="30" /></td> //1
+    <td><img src="http://medyk.org/colors/87ff00.png" width="30" height="30" /></td> //2
     <td><img src="http://medyk.org/colors/87ff00.png" width="30" height="30" /></td> %3
     <td><img src="http://medyk.org/colors/87ff00.png" width="30" height="30" /></td> %4
     <td><img src="http://medyk.org/colors/ffff00.png" width="30" height="30" /></td> %5
