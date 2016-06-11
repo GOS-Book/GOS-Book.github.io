@@ -25,7 +25,7 @@ $$
 \end{defn}
 
 \begin{defn}
-Пусть $c \in \bboR$, тогда 
+Пусть $c \in \bboR = \{-\infty\}\cup\{\bbR\}\cup\{+\infty\}$, тогда 
 \begin{itemize}
 \item
 \textit{окрестностью} числа $c \in \bbR$ называется любой интервал $(a;b)\ni c,$ $(a;b) \subset \bbR$.
@@ -37,7 +37,7 @@ $$
 \end{defn}
 
 \begin{defn}
-Пусть $\epsilon > 0$ и $c \in \bboR = \{-\infty\}\cup\{\bbR\}\cup\{+\infty\}$, тогда если $c \in \bbR$, то \textit{$\epsilon$-окрестностью}~$O_\epsilon$ числа $c$ называется интервал $(c-\epsilon;c+\epsilon) = O_\epsilon$
+Пусть $\epsilon > 0$ и $c \in \bboR $, тогда если $c \in \bbR$, то \textit{$\epsilon$-окрестностью}~$O_\epsilon$ числа $c$ называется интервал $(c-\epsilon;c+\epsilon) = O_\epsilon$
 \begin{itemize}
 \item
 Если $c=+\infty$, то \textit{$\epsilon$-окрестностью} $+\infty$ называется луч $(\epsilon;+\infty)$.
@@ -134,7 +134,7 @@ $$
 & ...
 \end{aligned}
 \end{gather*}
-Так как $a_k \le x_{n_k} \le b_k \; \fa k$, то из \hyperref[exp10]{теоремы о трех последовательностях} следует, что $\lim_{k \to \infty}\limits x_{n_k} = c$.
+Так как $a_k \le x_{n_k} \le b_k \;\; \forall k$, то из \hyperref[exp10]{теоремы о трех последовательностях} следует, что $\lim_{k \to \infty}\limits x_{n_k} = c$.
 Теорема доказана.
 \end{proof}
 
@@ -146,7 +146,7 @@ $$
 Последовательность $\{x_n\}$ -- \textit{фундаментальна}, если она удовлетворяет \textit{условию Коши}:
 \begin{equation}
 \label{fuck}
-\fa \epsilon \ex M \in \bbN: \fa m,n > M: |x_n-x_m|<\epsilon  
+\fa \epsilon \;\exists M \in \bbN: \;\forall m,n > M: |x_n-x_m|<\epsilon  
 \end{equation}
 \end{defn}
 

@@ -136,32 +136,32 @@ $$
 \end{proof}
 
 
-\begin{thm}(свойство монотонности) Если ДСВ $\xi\ge\eta$, то $\ccM\xi\ge\ccM\eta$.
+\begin{thm}(свойство монотонности) Если ДСВ $\xi\ge\eta$, то $M\xi\ge M\eta$.
 \end{thm}
 \begin{proof}
-Докажем сначала, что из $\xi \ge 0$ следует $\ccM\xi\ge0$. В самом деле, так как для каждого $w\in\Omega\; \xi(w)\ge0$ и $p(w)\ge0,$ то и сумма $M\xi=\sum\limits_{w\in\Omega}\xi(w)p(w)$ будет неотрицательна. Применяя доказанное свойство к неотрицательной разности $\xi-\eta\ge0$, получаем $\ccM(\xi-\eta)=M\xi-M\eta\ge0$, что и требовалось доказать.
+Докажем сначала, что из $\xi \ge 0$ следует $\ccM\xi\ge0$. В самом деле, так как для каждого $w\in\Omega\; \xi(w)\ge0$ и $p(w)\ge0,$ то и сумма $M\xi=\sum\limits_{w\in\Omega}\xi(w)p(w)$ будет неотрицательна. Применяя доказанное свойство к неотрицательной разности $\xi-\eta\ge0$, получаем $M(\xi-\eta)=M\xi-M\eta\ge0$, что и требовалось доказать.
 \end{proof}
 
 \begin{thm}
 Для независимых ДСВ $\xi,\eta$ имеет место
 $$
-\ccM \xi\eta=\ccM\xi\cdot\ccM\eta.
+M \xi\eta=M\xi\cdot M\eta.
 $$
 \end{thm}
 \begin{proof}
 Из определения имеем
 $$
-\ccM (\xi\eta)=\sum\limits_{w\in\Omega}(\xi\eta)=\sum\limits_{i=1}^{k}\sum\limits^{m}_{j=1}x_i y_i P(\xi=x_i, \eta=y_i).
+M (\xi\eta)=\sum\limits_{w\in\Omega}(\xi\eta)=\sum\limits_{i=1}^{k}\sum\limits^{m}_{j=1}x_i y_i P(\xi=x_i, \eta=y_i).
 $$
 Для независимых $\xi$ и $\eta$ имеет место равенство $P(\xi=x_i, \eta=y_i)=P(\xi=x_i)P(\eta=y_i)$, поэтому 
 $$
-\ccM\xi\eta=\sum\limits_{i=1}^{k}\sum\limits^{m}_{j=1}x_i y_j P(\xi=x_i)P( \eta=y_j)=\sum\limits_{i=1}^{k} x_i P(\xi=x_i)\sum\limits^{m}_{j=1} y_j P( \eta=y_j)=\ccM\xi\ccM\eta
+M\xi\eta=\sum\limits_{i=1}^{k}\sum\limits^{m}_{j=1}x_i y_j P(\xi=x_i)P( \eta=y_j)=\sum\limits_{i=1}^{k} x_i P(\xi=x_i)\sum\limits^{m}_{j=1} y_j P( \eta=y_j)=M\xi \cdot M\eta
 $$
 \end{proof}
 \begin{cons}
 Для независимых ДСВ $\xi_1,\xi_2,\dots \xi_n$ имеет место
 $$
-\ccM \xi_1\dots\xi_n=\ccM\xi_1\cdot\ccM\xi_n.
+M \xi_1\dots\xi_n=M\xi_1\cdot M\xi_n.
 $$
 \end{cons}
 
@@ -177,7 +177,7 @@ $$
 \begin{equation} \label{teorver11}
 M\xi_n=\sum\limits^{\infty}_{k=-\infty} \frac{k}{2^n}P\left(\frac{k}{2^n}<\xi \le\frac{k+1}{2^n}\right);
 \end{equation}
-если ряд справа абсолютно сходится. Нетрудно видеть, что $\xi_n\le\xi_{n+1}$ при любом $n$, поэтому $\ccM\xi_n\le\ccM\xi_{n+1}$ и существует предел $M\xi_n$.
+если ряд справа абсолютно сходится. Нетрудно видеть, что $\xi_n\le\xi_{n+1}$ при любом $n$, поэтому $M\xi_n\le M\xi_{n+1}$ и существует предел $M\xi_n$.
 
 Запишем \eqref{teorver11} следующим эквивалентным способом, согласно представлению функции распределения и плотности $p_\xi$ в случае непрерывной случайной величины.
 $$
@@ -185,51 +185,51 @@ M\xi_n = \sum\limits^{\infty}_{k=-\infty} \frac{k}{2^n}\int_{\frac{k+1}{2^n}}^{\
 $$
 откуда 
 \begin{multline*}
-0\le \ccM\xi-\ccM\xi_n=\int_{-\infty}^{+\infty}up_\xi(u)du - \ccM\xi_n = \sum\limits^{\infty}_{k=-\infty}\int_{\frac{k+1}{2^n}}^{\frac{k}{2^n}}\left(u-\frac{k}{2^n}\right)p_\xi(u)du \le \\ \le \frac{1}{2^n}\int_{-\infty}^{+\infty}p_\xi(u)du=\frac{1}{2^n}
+0\le M\xi-M\xi_n=\int_{-\infty}^{+\infty}up_\xi(u)du - M\xi_n = \sum\limits^{\infty}_{k=-\infty}\int_{\frac{k+1}{2^n}}^{\frac{k}{2^n}}\left(u-\frac{k}{2^n}\right)p_\xi(u)du \le \\ \le \frac{1}{2^n}\int_{-\infty}^{+\infty}p_\xi(u)du=\frac{1}{2^n}
 \end{multline*}
 
-А значит $\ccM\xi=\lim\limits_{n\to\infty}\xi_n=\int_{-\infty}^{+\infty}up_\xi(u)du$. Такое определение математического ожидания через предел позволяет перенести все свойства матожидания дискретных случайных величин на непрерывный случай, так как cправедливость этих свойств для $\xi_n$ уже установлена, и переход к предеду при $n\to\infty$ эти свойства не нарушает.
+А значит $M\xi=\lim\limits_{n\to\infty}\xi_n=\int_{-\infty}^{+\infty}up_\xi(u)du$. Такое определение математического ожидания через предел позволяет перенести все свойства матожидания дискретных случайных величин на непрерывный случай, так как cправедливость этих свойств для $\xi_n$ уже установлена, и переход к предеду при $n\to\infty$ эти свойства не нарушает.
 
 
 \section{Дисперсия}
 \begin{defn}
-\textit{Дисперсией случайной величины $\xi$} называется математическое ожидание квадрата уклонения $\xi$ от $M\xi$. Обозначим ее $\ccD\xi$. 
+\textit{Дисперсией случайной величины $\xi$} называется математическое ожидание квадрата уклонения $\xi$ от $M\xi$. Обозначим ее $D\xi$. 
 \begin{equation} \label{ch31.4eq1}
-\ccD\xi=\ccM(\xi-\ccM\xi)^2.
+D\xi=M(\xi-M\xi)^2.
 \end{equation}
 \end{defn}
 
 Дисперсия играет роль меры рассеяния(разбросанности) значений случайной величины около математического ожидания.
 
-Заметим, что в силу линейности мат.ожидания и теоремы \ref{thm1}\;(Поскольку матожидание это постоянное число, то $\ccM(\ccM\xi)=\ccM\xi$:
+Заметим, что в силу линейности мат.ожидания и теоремы \ref{thm1}\;(Поскольку матожидание это постоянное число, то $M(M\xi)=M\xi$:
 \begin{multline*}
-\ccD\xi = \ccM(\xi-\ccM\xi)^2=\ccM(\xi^2-2\xi \ccM\xi+(\ccM\xi)^2)=\ccM\xi^2-2\ccM\xi \ccM\xi+(\ccM\xi)^2=\\=\ccM\xi^2-(\ccM\xi)^2
+D\xi = M(\xi-M\xi)^2=M(\xi^2-2\xi M\xi+(M\xi)^2)=M\xi^2-2M\xi M\xi+(M\xi)^2=\\=M\xi^2-(M\xi)^2
 \end{multline*}
-Так как дисперсия является неотрицательной величиной, то из последнего мы выводим одно свойство матожидания: $\ccM\xi^2\ge(\ccM\xi)^2$.
+Так как дисперсия является неотрицательной величиной, то из последнего мы выводим одно свойство матожидания: $M\xi^2\ge(M\xi)^2$.
 
 Отметим основные свойства дисперсии.
 
-$1^{\circ}$ \textit{Дисперсия любой случайной величины неотрицательна, причем $\ccD\xi = 0$ тогда и только тогда, когда $\xi$ --- постоянная. }
+$1^{\circ}$ \textit{Дисперсия любой случайной величины неотрицательна, причем $D\xi = 0$ тогда и только тогда, когда $\xi$ --- постоянная. }
 
-Свойство неотрицательности следует из неравенства $(\xi - \ccM \xi)^2 \ge 0$ и свойства монотонности математического ожидания: $\ccD \xi = \ccM (\xi - \ccM \xi)^2 \ge 0$. Если $\xi = c$, то $\ccD c = \ccM (c - \ccM c)^2 = 0$. 
+Свойство неотрицательности следует из неравенства $(\xi - M \xi)^2 \ge 0$ и свойства монотонности математического ожидания: $D \xi = M (\xi - M \xi)^2 \ge 0$. Если $\xi = c$, то $D c = M (c - M c)^2 = 0$. 
 
-$2^{\circ}$ \textit{Если $a$ --- постоянная, то $$\ccD(a\xi) = a^2 \ccD\xi$$.}
+$2^{\circ}$ \textit{Если $a$ --- постоянная, то $$D(a\xi) = a^2 D\xi$$.}
 
-Действительно, $\ccD(a\xi) = \ccM(a\xi - \ccM (a\xi))^2 = \ccM [a (\xi - \ccM \xi)]^2 = a^2\ccM(\xi - \ccM\xi)^2 = a^2 \ccD\xi.$
+Действительно, $D(a\xi) = M(a\xi - M (a\xi))^2 = M [a (\xi - M \xi)]^2 = a^2M(\xi - M\xi)^2 = a^2 D\xi.$
 
-$3^{\circ}$ \textit{Если случайные величины $\xi$ и $\eta$ независимы, то $$\ccD(\xi + \eta) = \ccD\xi + \ccD\eta$$.}
+$3^{\circ}$ \textit{Если случайные величины $\xi$ и $\eta$ независимы, то $$D(\xi + \eta) = D\xi + D\eta$$.}
 
 \begin{proof}
 Используя определение дисперсии $\eqref{ch31.4eq1}$ и свойство линейности математического ожидания, получим
 
 $$
-\ccD(\xi + \eta) = \ccM[(\xi + \eta) - \ccM(\xi + \eta)]^2 = \ccM(\xi - \ccM\xi)^2 + 2\ccM(\xi - \ccM\xi)(\eta - \ccM\eta) + \ccM(\eta  - \ccM\eta)^2.
+D(\xi + \eta) = M[(\xi + \eta) - M(\xi + \eta)]^2 = M(\xi - M\xi)^2 + 2M(\xi - M\xi)(\eta - M\eta) + M(\eta  - M\eta)^2.
 $$
 
 Отсюда следует формула из свойства $3^{\circ}$, так как согласно свойству мультипликативности математического ожидания
 
 $$
-\ccM(\xi - \ccM\xi)(\eta - \ccM\eta) = \ccM(\xi - \ccM\xi)\ccM(\eta - \ccM\eta) = (\ccM\xi - \ccM\xi)(\ccM\eta - \ccM\eta) = 0.
+M(\xi - M\xi)(\eta - M\eta) = M(\xi - M\xi)M(\eta - M\eta) = (M\xi - M\xi)(M\eta - M\eta) = 0.
 $$
 
 
@@ -238,5 +238,5 @@ $$
 Формула из $3^{\circ}$ по индукции распространяется на сумму $n$ попарно независимых случайных величин. Если $\xi_1,\xi_2, \ldots, \xi_n$ независимы, то 
 
 $$
-\ccD(\xi_1 + \xi_2 + \ldots + \xi_n) = \ccD(\xi_1) + \ccD(\xi_2) + \ldots + \ccD(\xi_n).
+D(\xi_1 + \xi_2 + \ldots + \xi_n) = D(\xi_1) + D(\xi_2) + \ldots + D(\xi_n).
 $$
