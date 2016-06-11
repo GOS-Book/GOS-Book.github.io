@@ -1,3 +1,120 @@
 \chapter{Формула Остроградского-Гаусса. Соленоидальные векторные поля.}
 \section{Формула Остроградского-Гаусса}
+
+\begin{defn}
+Область $G \subset \bbR^3$ называется элементарной относительно оси $z$ в прямоугольной декартовой системе координат $(O, x, y, z)$, если 
+
+\begin{equation} \label{ch15eq1}
+G = \{ (x,y,z) \in \bbR^3: \: (x,y) \in g, \: \phi_1(x,y) < z < \phi_2(x,y) \: \forall (x,y) \in g\}, 
+\end{equation}
+
+где $g$ - ограниченная область в $\bbR^2$ с кусочно-гладкой границей $\partial g$ и функции $\phi_1, \phi_2$ определены, непрерывны на замыкании области $\overline{g}$ и непрерывно-дифференцируемы на $g$.
+\end{defn}
+
+Аналогично определяется область в $\bbR^3$, элементарная относительно осей $x,y$.
+
+\begin{notion}
+Так как область $g$ ограничена и ее граница является кусочно-гладкой, то граница имеет нулевую меру Жордана, а $g$ - измеримо по Жордану, $\partial g$ - компакт.
+\end{notion}
+
+\begin{lemm} \label{ch15lemm1}
+Пусть область $G$ элементарна относительно оси $z(x,y)$. Тогда если функция $f$ определена и непрерывна на замыкании $\overline{G}$, и ее частная производная $\frac{\partial f}{\partial z}, \textit{или }\frac{\partial f}{\partial x}, \textit{или }\frac{\partial f}{\partial y}$ непрерывна и ограничена на $G$, то 
+
+\begin{equation} \label{ch15eq2z}
+\iiint\limits_{G} \frac{\partial f}{\partial z}\,dx\,dy\,dz = \iint\limits_{\partial	G_{\textit{внеш}}} f \,dx\,dy,
+\end{equation}
+
+или
+
+\begin{equation} \label{ch15eq2x}
+\iiint\limits_{G} \frac{\partial f}{\partial x}\,dx\,dy\,dz = \iint\limits_{\partial	G_{\textit{внеш}}} f \,dy\,dz,
+\end{equation}
+
+или
+
+\begin{equation} \label{ch15eq2y}
+\iiint\limits_{G} \frac{\partial f}{\partial y}\,dx\,dy\,dz = \iint\limits_{\partial	G_{\textit{внеш}}} f \,dx\,dz,
+\end{equation}
+
+где поверхностные интегралы берутся по внешней относительно $G$ стороне повехности $\partial G$.
+\end{lemm}
+
+\begin{proof}
+Область $G$ задана условием $(\ref{ch15eq1}) \; \Rightarrow \; \partial G = S_1 \cup S_2 \cup S_0$, где $S_{1,2} = \{ (x,y) \in \overline{g}, \; z = \phi_{1,2}(x,y) \}$, $S_0 = \{ (x,y) \in \partial g, \phi_1(x,y) \le z \le \phi_2(x,y) \}$ 
+
+$G = \{ (x,y,z) \in \bbR^3: \; (x,y) \in g, \; \phi_1(x,y) < z < \phi_2(x,y) \; \forall (x,y) \in g \} \; \Rightarrow \; \partial G$ -- кусочно-гладкая поверхнотсь.
+
+$\iint\limits_{S_{2_{\textit{внеш}}}} f \,dx\,dy = \iint\limits_g f(x,y,\phi_2(x,y)) \,dx\,dy$
+
+$\iint\limits_{S_{1_{\textit{внеш}}}} f \,dx\,dy = - \iint\limits_g f(x,y,\phi_1(x,y)) \,dx\,dy$
+
+$\iint\limits_{S_{0_{\textit{внеш}}}} f \,dx\,dy = 0$, так как на $S_0 \; \overset{n}{\to}_{\textit{внеш}(x,y,z) = (n_x, n_y, 0)}$
+
+$\Rightarrow$
+
+$\iint\limits_G f \,dx\,dy = \iint\limits_g (f(x,y,\phi_2(x,y)) - f(x,y,\phi_1(x,y))) \,dx \,dy$
+
+$\iiint\limits_G \frac{\partial f}{\partial z} \,dx \,dy \,dz = \iint\limits_g \,dx \,dy \int\limits_{\phi_1(x,y)}^{\phi_2(x,y)} \frac{\partial f}{\partial z}(x,y,z) \,dz = \iint\limits_g f(x,y,\phi_2) - f(x,y,\phi_1) \,dx \,dy$
+
+\end{proof}
+
+\begin{cons}
+Лемма $\ref{ch15lemm1}$ для $x$ и для $y$ доказывается аналогично.
+\end{cons}
+
+\begin{thm} [Теорема Остроградского-Гаусса]
+Пусть область $G \subset \bbR^3$ элементарна относительно всех координатных осей. Тогда если функции $P,Q,R$ определены и непрерывны на $\overline{G}$, а частные производные $P'_x, Q'_y, R'_z$ - непрерывны и ограничены на $G$, то справедлива формула Остроградского-Гаусса:
+
+\begin{equation} \label{ch15eq3}
+\iiint\limits_G (P'_x + Q'_y + R'_z) \,dx\,dy\,dz = \iint\limits_{\partial G_{\textit{внеш}}} P\,dy\,dz + Q\,dz\,dx + R\,dx\,dy,
+\end{equation}
+где $\partial G_{\textit{внеш}}$ -- внешнаяя относительно области $G$ сторона поверхности $G$.
+
+\end{thm}
+\begin{proof}
+$(\ref{ch15eq3}) \Leftarrow (\ref{ch15eq2x}), (\ref{ch15eq2y}), (\ref{ch15eq2z})$
+\end{proof}
+
+\begin{lemm}
+Пусть область $G \subset \bbR^3$ можно разрезать кусочно-гладкой поверхностью $\Sigma \subset G$ на две области $G_1$ и $G_2$, каждая из которых элементарна относительно координатной оси $z$. Тогда если функция $f$ определена и непрерывна на $\overline{G}$ и ее частная производная $f'_z$ непрерывна и ограничена на $G$, то справедлива формула ($\ref{ch15eq2z}$).
+\end{lemm}
+
+\begin{proof}
+$G = G_1 \cup G_2$
+
+$\partial G_{1_{\textit{внеш}}} = \partial G'_{\textit{внеш}} \cup \Sigma_{1_{\textit{внеш}}}$
+
+$\partial G_{2_{\textit{внеш}}} = \partial G''_{\textit{внеш}} \cup \Sigma_{2_{\textit{внеш}}}$
+
+$\partial G_{\textit{внеш}} = \partial G'_{\textit{внеш}} \cup \partial G''_{\textit{внеш}}$
+
+\begin{equation*}
+\left.\begin{aligned}
+\Sigma_{1_{\textit{внеш}}} \\ 
+ \Sigma_{2_{\textit{внеш}}}
+\end{aligned} \right\} \quad  \textit{это поверхности } \Sigma \textit{с противоположными ориентациями}.
+\end{equation*}
+
+\begin{equation} \label{ch15eqA}
+\iint\limits_{\partial G_{1_{\textit{внеш}}}} f \,dx\,dy + \iint\limits_{\partial G_{2_{\textit{внеш}}}} f \,dx\,dy = \iint\limits_{G_{\textit{внеш}}} f\,dx\,dy
+\end{equation}
+
+\begin{equation} \label{ch15eqB}
+\iiint\limits_{G_{1,2}} \frac{\partial f}{\partial z}\,dx\,dy\,dz = \iint\limits_{\partial G_{1,2_{\textit{внеш}}}} f \,dx,dy
+\end{equation}
+
+\begin{equation} \label{ch15eqC}
+\iiint\limits_{G} \frac{\partial f}{\partial z}\,dx\,dy\,dz = \iiint\limits_{G_1} \frac{\partial f}{\partial z}\,dx\,dy\,dz + \iiint\limits_{G_2} \frac{\partial f}{\partial z}\,dx\,dy\,dz 
+\end{equation}
+
+$(\ref{ch15eqA}, \ref{ch15eqB}, \ref{ch15eqC}) \; \Rightarrow \; (\ref{ch15eq2z})$
+\end{proof}
+
+\begin{thm}
+Пусть область $G \subset \bbR^3$ такая, что для каждой их трех координатных осей ее можно конечным числом кусочно-гладких поверхностей разрезать на конечное число областей, элементарных относительно соответсвующей оси. Тогда если функции $P,Q,R$ непрерывны на $\overline{G}$, а их частные производные $P'_x, Q'_y, R'_z$ непрерывны и ограничены на $G$, то справедлива формула Остроградского-Гаусса ($\ref{ch15eq3}$).
+\end{thm}
+
+\begin{thm}
+Пусть область $G$ -- ограниченная область в $\bbR^3$, граница которой состоит из конечного числа гладких поверхностей. Пусть функции $P,Q,R$ определены и непрерывны на замыкании $\overline{G}$. Тогда если она непрерывно-дифференцируема на $G$, то справедлива формула ($\ref{ch15eq3}$).
+\end{thm}
 \section{Соленоидальные векторные поля.}
