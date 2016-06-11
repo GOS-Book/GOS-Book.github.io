@@ -68,15 +68,15 @@ $\forall M' < M \;(M' > M) \ex x\in G: \quad x>M' \;(x<M')$.
 Пусть $c\in\bboR$, $x_o \in \bboR$ и $x_0$ -- предельная точка множества $D \subset \bbR$. Тогда элемент $c$ называется \textit{пределом функции} $f$, заданной на множестве $D_f$ при $x \to x_0$ (в точке $x_0$), если
 \begin{equation*}
 \begin{aligned}
-&\forall O(c) \ex O(x_0): \fa x \in \dnei{c}\cap D_f: f(x) \in O(c)  \text{, что эквивалентно}\\
-&\forall \epsilon > 0 \ex \delta >0: \fa x \in \dneio{\epsilon}{c} \cap D_f: f(x) \in O_\epsilon (c). 
+&\forall O(c) \ex O(x_0): \fa x \in \dnei{x_0}\cap D_f: f(x) \in O(c)  \text{, что эквивалентно}\\
+&\forall \epsilon > 0 \ex \delta >0: \fa x \in \dneio{\epsilon}{x_0} \cap D_f: f(x) \in O_\epsilon (c). 
 \end{aligned}
 \end{equation*}
 \end{defn}
-Если точка $x_0$ -- не предельная для множества $D_f$, то функция $f$ не может иметь предела по Коши в точке $x_0$ (ведь тогда $\dnei{c}\cap D_f=\emptyset$) 
+Если точка $x_0$ -- не предельная для множества $D_f$, то функция $f$ не может иметь предела по Коши в точке $x_0$ (ведь тогда $\dnei{x_0}\cap D_f=\emptyset$) 
 
 \begin{defn}
-Если $x_0$ -- предельная точка множества области определения $D$ функции $f$, то последовательность $\{x_n\}$ называется последовательностью Гейне функции $f$ в точке $x_0$ при условии, что
+Если $x_0$ -- предельная точка множества области определения $D_f$ функции $f$, то последовательность $\{x_n\}$ называется последовательностью Гейне функции $f$ в точке $x_0$ при условии, что
 \begin{enumerate}
 \item $\forall n \in \bbN:\; x_n\in D_f\setminus \{x_0\}$;
 \item $\lim_{n \to \infty}\limits x_n = x_0$.
@@ -86,10 +86,10 @@ $\forall M' < M \;(M' > M) \ex x\in G: \quad x>M' \;(x<M')$.
 
 \begin{defn}
 \label{exp11} \textit{(Определение предела функции по Гейне)}
-Пусть $c\in\bboR$, $x_0 \in \bboR$ и $x_0$ -- предельная точка множества $D \subset \bbR$. Тогда элемент $c$ называется \textit{пределом функции} $f$, заданной на множестве $D$ при $x \to x_0$ (в точке $x_0$), если для любой последовательности $\{x_n\}$ такой, что $\forall n \in \bbN: x_n\in D_f\setminus \{x_0\} \lim_{n \to \infty}\limits x_n = x_0$ выполняется условие $\lim_{n \to \infty}\limits f(x_n) = c$. 
+Пусть $c\in\bboR$, $x_0 \in \bboR$ и $x_0$ -- предельная точка множества $D_f \subset \bbR$. Тогда элемент $c$ называется \textit{пределом функции} $f$, заданной на множестве $D_f$ при $x \to x_0$ (в точке $x_0$), если для любой последовательности $\{x_n\}$ такой, что $\forall n \in \bbN: x_n\in D_f\setminus \{x_0\} \lim_{n \to \infty}\limits x_n = x_0$ выполняется условие $\lim_{n \to \infty}\limits f(x_n) = c$. 
 \end{defn}
 
-Обозначается $\lim_{n \to \infty}\limits f(x) = c$.
+Обозначается $\lim_{x \to x_0}\limits f(x) = c$.
 
 \begin{thm}
 Определение \ref{exp12} и определение \ref{exp11} эквивалентны.
