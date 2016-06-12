@@ -7,12 +7,12 @@
 
 Пусть теперь дано произвольное вероятностное пространство $(\Omega,\mathcal A, P)$, где $P$ --- вероятности каждого из элементарных исходов из $\Omega$. Тогда в этом общем случае:
 \begin{defn}
-\textit{Случайной величиной} называется действительная функция от элементарного события $\xi = \xi(w), \; w\in\Omega$, для которой при любом действительном $x$ множество $\{w: \xi(w) \le x\}$ принадлежит $\mathcal A$ (т. е. является событием) и для него определена вероятность $P(w: \xi(w) \le x)$, записываемая кратко $F_\xi(x)=P(\xi \le x)$. Эта вероятность, рассматриваемая как функция $x$, называется \textit{функцией распределения случайной величины $\xi$}.
+\textit{Случайной величиной $\xi$} называется действительная функция от элементарного события $w$: $\xi = \xi(w), \; w\in\Omega$, для которой при любом действительном $x$ множество $\{w: \xi(w) \le x\}$ принадлежит $\mathcal A$ (т. е. является событием) и для него определена вероятность $P(w: \xi(w) \le x)$, записываемая кратко $F_\xi(x)=P(\xi \le x)$. Эта вероятность, рассматриваемая как функция $x$, называется \textit{функцией распределения случайной величины $\xi$}.
 \end{defn}
 Отметим ее свойства:
 \begin{enumerate}
 \item 
-$0 \le F(x) \le 1 \fa x;$ 
+$0 \le F(x) \le 1 \fa x \in \bboR;$ 
 \item
 $F(x_1) \le F(x_2), \text{если}\; x_1\le x_2;$
 \item
@@ -22,19 +22,19 @@ $F(x+0)=F(x)$ -- непрерывна слева.
 \end{enumerate}
 
 
-\begin{defn} Случайные величины $\xi_1,\dots,\xi_n$ называются \textit{независимы}, если для любых числовых множеств $B_{i_1},\dots B_{i_k}\, \forall k\in\overline{1,n}$, для которых определены вероятности событий $\{\xi_{i_j}\in B_{i_j}\}$ имеет место равенство
+\begin{defn} Случайные величины $\xi_1,\dots,\xi_n$ называются \textit{независимыми}, если для любых числовых множеств $B_{i_1},\dots,  B_{i_k}\, \forall k\in\overline{1,n}$, для которых определены вероятности событий $\{\xi_{i_j}\in B_{i_j}\}$ имеет место равенство
 $$
 P(\xi_{i_1}\in B_{i_1},\dots, \xi_{i_k} \in B_{i_k})=P(\xi_{i_1}\in B_{i_1})\cdot\dots\cdot P(\xi_{i_k} \in B_{i_k}).
 $$
 \end{defn}
-Важным классом распределении вероятностей являются \textit{абсолютно непрерывные распределения}, задаваемые плотностью вероятности $p_\xi(x) = p(x)$, т. о. такой неотрицательной функцией $p(x)$, что для любого события $B\in\Omega$.
+Важным классом распределений вероятностей являются \textit{абсолютно непрерывные распределения}, задаваемые плотностью вероятности $p_\xi(x) = p(x)$, т. е. такой неотрицательной функцией $p(x)$, что для любого события $B\in\Omega$.
 $$
 P(\xi \in B)=\int_B p(x)\,dx,
 $$
-Тогда функция распределения $F_\xi(x)=\int_{-\infty}^{x}p(x)\,dx$, где $p(x)$ называют \textit{плотностью вероятности}, обладающая следующими свойствами:
+тогда функция распределения $F_\xi(x)=\int_{-\infty}^{x}p(x)\,dx$, где $p(x)$ называют \textit{плотностью вероятности}, обладающая следующими свойствами:
 \begin{enumerate}
 \item 
-$p(x)\le 0$
+$p(x)\ge 0, \fa x \in \bbR;$ 
 \item 
 $\forall x_1,x_2: P(x_1\le\xi<x_2)=\int_{x_1}^{x_2}p(x)\,dx$
 \item
@@ -61,7 +61,7 @@ M\xi = \sum_{w \in \Omega} \xi(w)\cdot P(w),
 \end{defn}
 Перепишем определение матожидания по-другому.
 \begin{multline*}
-M\xi=\sum_{w \in \Omega} \xi(w)\cdot P(w)=x_1\left(\textstyle\sum\limits_{w\colon \xi(w)=x_1} P(w)\right)+\dots+x_k\left(\textstyle\sum\limits_{w\colon \xi(w)=x_k} P(w)\right)+\\+\dots =x_1P(\xi=x_1)+\dots x_kP(\xi=x_k)+\dots=\sum_{k\in \bbN} x_kP(\xi=x_k)
+M\xi=\sum_{w \in \Omega} \xi(w)\cdot P(w)=x_1\left(\textstyle\sum\limits_{w\colon \xi(w)=x_1} P(w)\right)+\dots+x_k\left(\textstyle\sum\limits_{w\colon \xi(w)=x_k} P(w)\right)+\\+\dots =x_1P(\xi=x_1)+\dots+ x_kP(\xi=x_k)+\dots=\sum_{k\in \bbN} x_kP(\xi=x_k)
 \end{multline*}
 В силу этого равентсва, дадим аналогичное определение матожиданию:
 \begin{defnn}\label{teorver1s}
@@ -71,11 +71,11 @@ M\xi=\sum_{w \in \Omega} \xi(w)\cdot P(w)=x_1\left(\textstyle\sum\limits_{w\colo
 
 Для непрерывных случайных величин естественным будет следующее определение: 
 \begin{defn} 
-Если случайная величина $\xi$ непрерывна и $p(x)$ --- ее плотность распределения, то \textit{математическим ожиданием} \textit{случайной величины} $\xi$ называется интеграл Для произвольной случайной величины $\xi$ с функцией распределения $F(x)$ математическим ожиданием называется интеграл
+Если случайная величина $\xi$ непрерывна, $p(x)$ --- ее плотность распределения и $F_\xi(x)$ --- функция распределения,  то \textit{математическим ожиданием} \textit{случайной величины} $\xi$ называется интеграл
 \begin{equation}
 M\xi\triangleq\int_{-\infty}^{+\infty} xp(x)\,dx = \int_{-\infty}^{+\infty} x\,dF_\xi(x),
 \end{equation}
-в тех случаях, когда существует интеграл $\int |x|p(x)\,dx.$ 
+в тех случаях, когда существует интеграл $\int_{-\infty}^{+\infty} |x|p(x)\,dx.$ 
 \end{defn}
 
 
@@ -106,7 +106,7 @@ M\xi\triangleq\int_{-\infty}^{+\infty} xp(x)\,dx = \int_{-\infty}^{+\infty} x\,d
 
 \begin{cons} Для любых дискретных случайных величин $\xi_1\dots\xi_n$ и любых чисел $c_1\dots c_n$ справедливо
 $$
-\ccM(c_1\xi_1+c_2\xi_2+\dots+c_n\xi_n) = c_1\ccM\xi_1+c_2\ccM\xi_2+c_n\ccM\xi_n
+\ccM(c_1\xi_1+c_2\xi_2+\dots+c_n\xi_n) = c_1\ccM\xi_1+c_2\ccM\xi_2+\dots+c_n\ccM\xi_n
 $$
 \end{cons}
 
@@ -131,7 +131,7 @@ $$
 \begin{proof}
 Так как $P(A)=\sum\limits_{w\in A}p(w)$, то 
 $$
-\ccM\chi_A=\sum\limits_{w\in\Omega}\chi_A(w)p(w)=\sum\limits_{w\in A}1\cdot p(w)+\sum\limits_{w\notin A}0\cdot p(w)\sum\limits_{w\in A}p(w)=P(A).
+\ccM\chi_A=\sum\limits_{w\in\Omega}\chi_A(w)p(w)=\sum\limits_{w\in A}1\cdot p(w)+\sum\limits_{w\notin A}0\cdot p(w)=\sum\limits_{w\in A}p(w)=P(A).
 $$
 \end{proof}
 
@@ -139,29 +139,29 @@ $$
 \begin{thm}(свойство монотонности) Если ДСВ $\xi\ge\eta$, то $M\xi\ge M\eta$.
 \end{thm}
 \begin{proof}
-Докажем сначала, что из $\xi \ge 0$ следует $\ccM\xi\ge0$. В самом деле, так как для каждого $w\in\Omega\; \xi(w)\ge0$ и $p(w)\ge0,$ то и сумма $M\xi=\sum\limits_{w\in\Omega}\xi(w)p(w)$ будет неотрицательна. Применяя доказанное свойство к неотрицательной разности $\xi-\eta\ge0$, получаем $M(\xi-\eta)=M\xi-M\eta\ge0$, что и требовалось доказать.
+Докажем сначала, что из $\xi \ge 0$ следует $\ccM\xi\ge0$. В самом деле, так как $ \xi(w)\ge0$ и $p(w)\ge0$  для каждого $w\in\Omega\;$, то и сумма $M\xi=\sum\limits_{w\in\Omega}\xi(w)p(w)$ будет неотрицательна. Применяя доказанное свойство к неотрицательной разности $\xi-\eta\ge0$, получаем $M(\xi-\eta)=M\xi-M\eta\ge0$, что и требовалось доказать.
 \end{proof}
 
 \begin{thm}
 Для независимых ДСВ $\xi,\eta$ имеет место
 $$
-M \xi\eta=M\xi\cdot M\eta.
+M (\xi\eta)=M\xi\cdot M\eta.
 $$
 \end{thm}
 \begin{proof}
 Из определения имеем
 $$
-M (\xi\eta)=\sum\limits_{w\in\Omega}(\xi\eta)=\sum\limits_{i=1}^{k}\sum\limits^{m}_{j=1}x_i y_i P(\xi=x_i, \eta=y_i).
+M (\xi\eta)=\sum\limits_{i=1}^{\infty}\sum\limits^{\infty}_{j=1}x_i y_j P(\xi=x_i, \eta=y_j).
 $$
-Для независимых $\xi$ и $\eta$ имеет место равенство $P(\xi=x_i, \eta=y_i)=P(\xi=x_i)P(\eta=y_i)$, поэтому 
+Для независимых $\xi$ и $\eta$ имеет место равенство $P(\xi=x_i, \eta=y_j)=P(\xi=x_i)P(\eta=y_j)$, поэтому 
 $$
-M\xi\eta=\sum\limits_{i=1}^{k}\sum\limits^{m}_{j=1}x_i y_j P(\xi=x_i)P( \eta=y_j)=\sum\limits_{i=1}^{k} x_i P(\xi=x_i)\sum\limits^{m}_{j=1} y_j P( \eta=y_j)=M\xi \cdot M\eta
+M(\xi\eta)=\sum\limits_{i=1}^{\infty}\sum\limits^{\infty}_{j=1}x_i y_j P(\xi=x_i)P( \eta=y_j)=\sum\limits_{i=1}^{\infty} x_i P(\xi=x_i)\sum\limits^{\infty}_{j=1} y_j P( \eta=y_j)=M\xi \cdot M\eta
 $$
 \end{proof}
 \begin{cons}
-Для независимых ДСВ $\xi_1,\xi_2,\dots \xi_n$ имеет место
+Для независимых ДСВ $\xi_1,\xi_2,\dots, \xi_n$ имеет место
 $$
-M \xi_1\dots\xi_n=M\xi_1\cdot M\xi_n.
+M (\xi_1\dots\xi_n)=M\xi_1\cdot\dots\cdot M\xi_n.
 $$
 \end{cons}
 
@@ -173,9 +173,9 @@ $$
 $$
 \xi_n = \sum_{k=-\infty}^{+\infty}\frac{k}{2^n} \chi_{\textstyle\left\{ \frac{k}{2^n}<\xi\le\frac{k+1}{2^n}\right\}}\; ;
 $$
-Используя свойство линейности матожидания и теорему о индикаторе, получим
+Используя свойство линейности математического ожидания и теорему об индикаторе, получим
 \begin{equation} \label{teorver11}
-M\xi_n=\sum\limits^{\infty}_{k=-\infty} \frac{k}{2^n}P\left(\frac{k}{2^n}<\xi \le\frac{k+1}{2^n}\right);
+M\xi_n=\sum\limits^{\infty}_{k=-\infty} \frac{k}{2^n}P\left(\frac{k}{2^n}<\xi \le\frac{k+1}{2^n}\right),
 \end{equation}
 если ряд справа абсолютно сходится. Нетрудно видеть, что $\xi_n\le\xi_{n+1}$ при любом $n$, поэтому $M\xi_n\le M\xi_{n+1}$ и существует предел $M\xi_n$.
 
@@ -188,7 +188,7 @@ $$
 0\le M\xi-M\xi_n=\int_{-\infty}^{+\infty}up_\xi(u)du - M\xi_n = \sum\limits^{\infty}_{k=-\infty}\int_{\frac{k+1}{2^n}}^{\frac{k}{2^n}}\left(u-\frac{k}{2^n}\right)p_\xi(u)du \le \\ \le \frac{1}{2^n}\int_{-\infty}^{+\infty}p_\xi(u)du=\frac{1}{2^n}
 \end{multline*}
 
-А значит $M\xi=\lim\limits_{n\to\infty}\xi_n=\int_{-\infty}^{+\infty}up_\xi(u)du$. Такое определение математического ожидания через предел позволяет перенести все свойства матожидания дискретных случайных величин на непрерывный случай, так как cправедливость этих свойств для $\xi_n$ уже установлена, и переход к предеду при $n\to\infty$ эти свойства не нарушает.
+А значит $M\xi=\lim\limits_{n\to\infty}M\xi_n=\int_{-\infty}^{+\infty}up_\xi(u)du$. Такое определение математического ожидания через предел позволяет перенести все свойста математического ожидания дискретных случайных величин на непрерывный случай, так как cправедливость этих свойств для $\xi_n$ уже установлена, и переход к предеду при $n\to\infty$ эти свойства не нарушает.
 
 
 \section{Дисперсия}
@@ -199,9 +199,9 @@ D\xi=M(\xi-M\xi)^2.
 \end{equation}
 \end{defn}
 
-Дисперсия играет роль меры рассеяния(разбросанности) значений случайной величины около математического ожидания.
+Дисперсия играет роль меры рассеяния (разбросанности) значений случайной величины около математического ожидания.
 
-Заметим, что в силу линейности мат.ожидания и теоремы \ref{thm1}\;(Поскольку матожидание это постоянное число, то $M(M\xi)=M\xi$:
+Заметим, что в силу линейности математического ожидания и Теоремы \ref{thm1}\; и т.к. математическое ожидание это постоянное число, то $M(M\xi)=M\xi$:
 \begin{multline*}
 D\xi = M(\xi-M\xi)^2=M(\xi^2-2\xi M\xi+(M\xi)^2)=M\xi^2-2M\xi M\xi+(M\xi)^2=\\=M\xi^2-(M\xi)^2
 \end{multline*}
