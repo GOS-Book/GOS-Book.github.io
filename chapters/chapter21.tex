@@ -1,3 +1,127 @@
+\font\Large=cmr10 at 13pt
+\newcount\rowcount\rowcount=3
+\def\fudge#1{\smash{\hbox{\Large#1}}}
+\def\doublyso{\kern+2em\smash{\vrule height \rowcount em depth .2em}\hidewidth}			%for matrix
 \chapter{Общее решение системы линейных алгебраических уравнений. Теорема Кронекера-Капелли.}
-\section{Общее решение системы линейных алгебраических уравнений}
 \section{Теорема Кронекера-Капелли}
+  Рассмотрим \textit{систему линейных уравнений}
+  \begin{equation}\label{21.1.sys1}
+  \left\lbrace\begin{array}{crl}
+  a_{11}x_1+a_{12}x_2+\ldots+a_{1n}=b_1\\
+  a_{21}x_1+a_{22}x_2+\ldots+a_{2n}=b_2\\
+  \ldots \\
+  a_{m1}x_1+a_{m2}x_2+\ldots+a_{mn}=b_m\\ 
+  \end{array}\right.\end{equation}
+  Эту систему можно записать в матричном виде:
+  \begin{equation*}\tag{\ref{21.1.sys1}'}
+  AX=b^{\uparrow},
+  \end{equation*}
+  \begin{equation*}
+  A=\begin{pmatrix}
+    a_{11} & a_{12} & \cdots & a_{1n} \\
+    a_{21} & a_{22} & \cdots & a_{2n} \\
+    \hdotsfor{4} \\
+    a_{m1} & a_{m2} & \cdots & a_{mn} \\
+    \end{pmatrix},
+  b^\uparrow=\begin{pmatrix}
+    b_1 \\ b_2 \\ \vdots \\ b_m \\
+    \end{pmatrix},
+  X=\begin{pmatrix}
+    x_1 \\ x_2 \\ \vdots \\ x_m \\
+    \end{pmatrix}
+  \end{equation*}
+  $A$ называется \textit{основной матрицей системы}, $b^\uparrow$ -- \textit{столбцом свободнных членов}, $\widetilde A = (A|b^\uparrow)$ -- \textit{расширенной матрицей системы}.
+  \begin{defn}
+  Набор векторов \overrightarrow{a_1},\overrightarrow{a_2},...,\overrightarrow{a_r} называется \textit{базисом} множества векторов $V\neq \emptyset$, если
+  
+  (1) \overrightarrow{a_1},...,\overrightarrow{a_r} линейно независимы
+  
+  (2) $\fa v \in V \ex \lambda_1,...\lambda_r: v=\sum \limits_{i=1}^r\lambda_ia_i$
+  \end{defn}
+  
+  \begin{defn}
+  Упорядоченный набор чисел ($x_1, x_2, \ldots, x_n$) называется \textit{частным решением} системы \ref{21.1.sys1}, если при его подстановке в неё получается верное равенство. \textit{Общим решением} \ref{21.1.sys1} называется совокупность всех её решений. Система называется \textit{совместной}, если имеет хотя одно решение.
+  \end{defn}
+  \begin{defn}
+  \textit{Рангом конечного набора векторов} называется количество векторов в базисе этого набора. \textit{Рангами матрицы по строкам} и \textit{по столбцам} называются ранги соответсвенно набора строк и набора столбцов матрицы.
+  \end{defn}
+  \begin{lemm} [о ранге матрицы]
+  Для любой матрицы $A$ равны между собой её ранг по столбцам, ранг по строкам и количество строк в неупрощаемом виде (виде после отработки алгоритма Гаусса).
+  \end{lemm}
+  В силу этого свойства, говорят просто о \textit{ранге матрицы} $rg A$.
+  \begin{thm}[Кронекера-Капелли]
+  Система линейных уравнений \ref{21.1.sys1} совместна тогда и только тогда, когда $rg A = rg \widetilde A$.
+  \end{thm}
+  \begin{proof}
+  $\Rightarrow$: Пусть система совместна. Это означает, что
+  \begin{equation*}
+  \ex x_1,\ldots, x_n: x_1a_1^\uparrow +\ldots+x_na_n^\uparrow=b^\uparrow,
+  \end{equation*}
+  где через $a_k^\uparrow$ обозначен k-й столбец матрицы $A$. Следовательно, базис столбцов матрицы $A$  является и базисом столбцов матрицы $\widetilde A$ и $rg A = rg \widetilde A$.
+  $\Leftarrow$: Пусть $rg A = rg \widetilde A$, а столбцы $a_{j_1}^\uparrow,...,a_{j_r}^\uparrow$ образуют базис матрицы $A$. Этот набор в совокупности с $b^\uparrow$ не может образовать линейно независимый набор, т.к. это повлечёт увеличение ранга, следовательно, 
+  \begin{equation*}\\ 
+  \ex x_{j_1},...,x_{j_r}: -b^\uparrow+x_{j_1}a_{j_1}^\uparrow+\ldots+x_{j_r}a_{j_r}^\uparrow+\sum_{j \notin \{j_1,...,j_n\}}0 a_j^\uparrow = 0,
+  \end{equation*} 
+  что означает, что решение существует.
+  \end{proof}
+\section{Общее решение системы линейных алгебраических уравнений}
+  \begin{thm}
+  Общее решение совместной системы линейных уравнений \ref{21.1.sys1} имеет вид 
+  \begin{equation}\label{21.2.common}
+   Y=X_0+\sum_{j=1}^{n-r}c_jX_j, c_j \in \bbR,
+  \end{equation}
+  где $X_0$ -- частное решение, $X_1,...,X_{n-r}$ -- линейно независимые решения однородного уравнения $AX=0$, a $r=rg A=rg \widetilde A$ - ранг матрицы уравнения.
+  \end{thm}
+  \begin{proof}
+  Прямой и обратный ход алгоритм Гаусса приводят расширенную матрицу системы (возможно, с переобозначением $x_{i_1}\rightarrow x'_1,...,x_{i_r}\rightarrow x'_r,...$) к \textit{неупрощаемому виду}
+  \begin{equation}\label{21.2.simplest}
+  \bordermatrix{
+    \global\everycr{\noalign{\global\advance\rowcount by 1}}
+    & 1 &      & r & r+1       &       & n       & \cr
+    1 & 1 &      &   &a'_{1,r+1} &\cdots &a'_{1,n} & b'_1    \cr 
+      &   &\ddots&   &\vdots     &\cdots &\vdots   & \vdots  \cr
+    r &   &      & 1 &a'_{r,r+1} &\cdots &a'_{r,n} & b'_r    \cr \hline
+      &   &      &   &           &       &         &         \cr 
+      &   &      &   &\fudge 0   &       &\doublyso&\fudge 0 \cr 
+    },
+    \everycr={}
+  \end{equation}
+что соответствует системе
+
+  $\begin{cases}
+  x'_1+\sum \limits_{j=r+1}^n a'_{1j}x_j=b'_1\\
+  x'_2+\sum \limits_{j=r+1}^n a'_{2j}x_j=b'_2\\
+  \ldots \\
+  x'_r+\sum \limits_{j=r+1}^n a'_{rj}x_j=b'_r\\ 
+  \end{cases}
+  \Leftrightarrow
+  \begin{cases}
+  x'_1=b'_1-\sum \limits_{j=r+1}^n a'_{1j}x_j\\
+  x'_2=b'_2-\sum \limits_{j=r+1}^n a'_{2j}x_j\\
+  \ldots \\
+  x'_r=b'_r-\sum \limits_{j=r+1}^n a'_{rj}x_j\\ 
+  \end{cases}$
+  
+  $x'_1,...x'_r$ называются \textit{главными} неизвестными, $x'_{r+1},...,x'_n$ -- \textit{свободными}, или \textit{параметрическими}, т.к. выбор последних произволен.
+  
+  Оконательно, получаем:
+  \begin{equation}
+  X'_0=\begin{pmatrix} b'_1\\ \vdots \\b'_r \\ \hline \\ \fudge 0 \\ \\ \end{pmatrix}
+  X'_j=\bordermatrix{
+      & \cr
+      & -a'_{1j} \cr
+      & \vdots  \cr
+      & -a'_{rj} \cr \hline
+      &   \cr
+      & \fudge 0 \cr
+   r+j& 1 \cr
+      & \fudge 0 \cr
+  }, j=\overline{1,n-r}
+  \end{equation}
+  
+  Во введённых обозначениях решение имеет вид
+  \begin{equation*}
+   Y'=X'_0+\sum_{j=1}^{n-r}x'_{r+j}X'_j, x'_{r+j} \in \bbR,
+  \end{equation*}
+  Остаётся лишь перейти к исходным переменным и получить выражение \ref{21.2.common}, где $c_j=x'_{r+j}$.
+  \end{proof}
