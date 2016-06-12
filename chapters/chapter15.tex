@@ -118,3 +118,90 @@ $(\ref{ch15eqA}, \ref{ch15eqB}, \ref{ch15eqC}) \; \Rightarrow \; (\ref{ch15eq2z}
 Пусть область $G$ -- ограниченная область в $\bbR^3$, граница которой состоит из конечного числа гладких поверхностей. Пусть функции $P,Q,R$ определены и непрерывны на замыкании $\overline{G}$. Тогда если она непрерывно-дифференцируема на $G$, то справедлива формула ($\ref{ch15eq3}$).
 \end{thm}
 \section{Соленоидальные векторные поля.}
+
+\begin{defn}
+Непрерывно-дифференцируемое векторное поле $\overset{\to}{a}(M), \; M \in G$ называется соленоидальным в области $G$, если 
+\begin{equation} \label{ch15.2eq1}
+\forall M \in G \quad div \: \overset{\to}{a}(M) = 0
+\end{equation}
+\end{defn}
+
+\begin{thm}
+Непрерывно-дифференцируемое векторное поле $\overset{\to}{a}(M), \; M \in G$ является соленоидальным в области $G$ $\Leftrightarrow$ для любой замкнутой области $\overline{g}$ такой, что $\overline{g} \subset G$ и $\partial g$ - кусочно-гладкая граница области $g$, выполняется равенство:
+
+\begin{equation} \label{ch15.2eq2}
+\iint\limits_{\partial g_{\textit{внеш}}} \overset{\to}{a} \,d\overset{\to}{s} = 0
+\end{equation}
+\end{thm}
+
+\begin{proof}
+Пусть выполняется ($\ref{ch15.2eq1}$). Пусть $g$ -- область: $\overline{g} \subset G$ и $\partial g$ - кусочно-гладкая поверхность.
+
+Тогда так как $\overset{\to}{a}$ -- непрерывно-дифференциуемое векторное поле в $G$, по формуле Остроградского-Гаусса:
+
+$$
+\iint\limits_{\partial \overline{g}} \overset{\to}{a} \,d\overset{\to}{s} = \iiint\limits_g div \: \overset{\to}{a}(M) \,dg = 0, \; \textit{из } (\ref{ch15.2eq1}) 
+$$
+
+$\Rightarrow$ из ($\ref{ch15.2eq1}$) $\Rightarrow$ ($\ref{ch15.2eq2}$)
+
+Пусть выполняется ($\ref{ch15.2eq2}$), $M \in G$.
+$\Rightarrow \; \exists \delta > 0: \; O_\delta \subset G$
+
+$\Rightarrow \; div \: \overset{\to}{a}(M) = \lim\limits_{r \to +0}\left( \frac{1}{\frac{4}{3}\pi r^3}\iint\limits_{S^{+}_M(r)}a \,d\overset{\to}{s} \right) = 0,$ где $S^{+}_M(r)$ -- сфера с центром в точке $M$ радиуса $r, \: r \in (0, \delta)$.
+
+$(\ref{ch15.2eq2}) \Rightarrow (\ref{ch15.2eq1})$
+\end{proof}
+
+\begin{defn}
+Непрерывно-дифференцируемая векторная фукнция $\overset{\to}{b}(M), \; M \in G$, называется векторным потенциалом векторного поля $\overset{\to}{a}(M), \; M \in G \subset \bbR^3$, в области $G$, если 
+$$
+\forall M \in G: \; \overset{\to}{a}(M) = rot \: \overset{\to}{b}(M)
+$$
+\end{defn}
+
+\begin{lemm}
+Если непрерывно-дифференцируемое векторное поле $\overset{\to}{a}(M), \; M \in G$, имеет на области $G$ векторный потенциал, то оно соленоидально на $G$. 
+\end{lemm}
+
+\begin{proof}
+$\overset{\to}{a}(M)$ -- непрерывно-дифференцируемо по условию.
+Пусть $\forall M \in G \quad \overset{\to}{a}(M) = rot \: \overset{\to}{b}(M)$.
+$\Rightarrow \quad \exists div \: \overset{\to}{a}(M) = div(rot \: \overset{\to}{b}(M)) = 0$ в $G$.
+\end{proof}
+
+\begin{defn}
+Замкнутой кусочно-гладкой поверхностью называется ограниченная кусочно-гладкая поверхность, не имеющая края. При этом, если $S = \sum\limits_{j = 1}^m S_j, \quad \textit{где } \forall j \in \overline{1,m}, \quad S_j$ -- простая гладкая поверхность с кусочно-гладким краем $\partial S_j$, то каждый гладкий участок края $\partial S_j$ совпадает с гладким участком края $\partial S_i$, но их ориентации противоположны. Суммарный край $\partial S = \sum\limits_{j = 1}^m \partial S_j$ -- пуст.
+\end{defn}
+
+\begin{thm}
+Если непрерывно-дифференцируемое векторное поле $\overset{\to}{a}(M), \; M \in G$, имеет в области $G$ векторный потенциал $\overset{\to}{b}$, то для любой замкнутой кусочно-гладкой поверхности $S: \; S\subset G$ выполняется равенство: $\iint\limits_S \overset{\to}{a}\,d\overset{\to}{s} = 0$. (Область $\Omega$, ограниченная поверхностью $S$, может не лежать в $G$, хотя $S \subset G$.)
+\end{thm}
+
+\begin{proof}
+Пусть $S_1$ -- гладкий кусок кусочно-гладкой поверхности $S$ без края. Пусть $\gamma_1 = \partial S_1, \; \gamma_1$ -- край $S_1$. Тогда поверхность $S_2 = S \setminus S_1$ имеет край $\gamma_2 = \partial S_2 = (\gamma_1)^{-1}$.
+
+$\overset{\to}{a}$ -- непрерывно-дифференкируемая вектор функция на области $G$.
+
+$S_2, S_1 \subset G$.
+
+$\Rightarrow$ на $S_2, S_1$ справедлива формула Стокса.
+
+$\iint\limits_S \overset{\to}{a}\,d\overset{\to}{s} = \iint\limits_{S_1} \overset{\to}{a}\,d\overset{\to}{s} + \iint\limits_{S_2} \overset{\to}{a}\,d\overset{\to}{s} = \iint\limits_{S_1} rot \: \overset{\to}{b}\,d\overset{\to}{s} + \iint\limits_{S_2} rot \: \overset{\to}{b}\,d\overset{\to}{s} \myeq{\textit{Стокс}} \iint\limits_{\gamma_1} \overset{\to}{b}\,d\overset{\to}{r} + \iint\limits_{\gamma_2} \overset{\to}{b}\,d\overset{\to}{r} = \iint\limits_{\gamma_1} \overset{\to}{b}\,d\overset{\to}{r} - \iint\limits_{\gamma_1} \overset{\to}{b}\,d\overset{\to}{r} = 0$
+\end{proof}
+
+\begin{thm}
+Если непрерывно-дифференцируемое векторное поле $\overset{\to}{a}(M), \; M \in G$ соленоидально в области $G \subset \bbR^3$, то 
+
+\begin{multline}
+\forall M \in G \; \exists \delta > 0, \exists \textit{непр-дифф. вект. поле } \overset{\to}{b}(P), \; P \in O_\delta(M): \\ \quad \forall P \in O_\delta(M): \; \overset{\to}{a}(P) = rot \: \overset{\to}{b}(P) 
+\end{multline}
+\end{thm}
+
+\begin{thm}[Гельмгольц] 
+Любое непрерывно-дифференцируемое векторное поле $\overset{\to}{a}(M), \; M \in G$, $G$ -- область в $\bbR^3$, является суммой двух непрерывно-дифференцируемых векторных полей -- потенциального и соленоидального:
+
+$$
+\overset{\to}{a}(M) = grad \: u(M) + \overset{\to}{c}(M), \quad \forall M \in G, \quad div \: \overset{\to}{c}(M) = 0
+$$
+\end{thm}
