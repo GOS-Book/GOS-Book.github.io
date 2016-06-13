@@ -4,7 +4,7 @@
 \subsection{Предел. Функции комплексного переменного}
 Пусть $\{z_n\}$ -- последовательность чисел из $\bbC$, $z_n=x_n+iy_n, \, n \in \bbN$. 
 \begin{defn}
-Число $A = a+ib \in \bbC$ называется \textit{пределом последовательности} $\{z_n\}$, если $\forall \epsilon > 0\quad \exists N(\epsilon)$ такое, что $\forall n \ge N(\epsilon) $ справедливо включение $z_n \in B_\epsilon(A) \triangleq \{z \;\bigl|\; |z-A|<r \bigl.\}$.
+Число $A = a+ib \in \bbC$ называется \textit{пределом последовательности} $\{z_n\}$, если $\forall \epsilon > 0\quad \exists N(\epsilon)$ такое, что $\forall n \ge N(\epsilon) $ справедливо включение $z_n \in B_\epsilon(A) \triangleq \{z_n \;\bigl|\; |z_n-A|<\epsilon \bigl.\}$.
 \end{defn}
 \begin{defn}
 Последовательность $\{z_n\}$ \textit{сходится к бесконечности}, если 
@@ -20,11 +20,11 @@ $$
 \end{defn} 
 
 \begin{defn}
-Точка $z_0 \in \bboC$ называется \textit{предельной точкой множества} $G \subset \bboC$, если для любого числа $\epsilon$ в проколотой окрестности $\overset{\circ} {B}_\epsilon(z_0)\triangleq \{z \;\bigl|\; 0<|z-z_0|<\epsilon \bigl.\}$ имеется по крайней мере одна точка (а потому и бесконечно много точек) из $G$ (т.е. $\overset{\circ} {B}_\epsilon(z_0) \cap G \neq \emptyset,\; \epsilon > 0$).
+Точка $z_0 \in \bboC$ называется \textit{предельной точкой множества} $G \subset \bboC$, если для любого числа $\epsilon > 0$ в проколотой окрестности $\overset{\circ} {B}_\epsilon(z_0)\triangleq \{z \;\bigl|\; 0<|z-z_0|<\epsilon \bigl.\}$ имеется по крайней мере одна точка (а потому и бесконечно много точек) из $G$ (т.е. $\overset{\circ} {B}_\epsilon(z_0) \cap G \neq \emptyset,\; \forall\epsilon > 0$).
 \end{defn}
 
 \begin{defn}
-Пусть $f: G\subset \bboC \to \bbC$ -- функция и точка $z_0$ -- предельная точка для $G$. Тогда число $A \in \bboC$ называется \textit{пределом функции в точке} $z_0$, если 
+Пусть $f: G\subset \bboC \to \bboC$ -- функция и точка $z_0$ -- предельная точка для $G$. Тогда число $A \in \bboC$ называется \textit{пределом функции в точке $z_0$ по множеству $G$}, если 
 $$
 \forall \epsilon > 0 \ex \delta = \delta(\epsilon)>0:\fa z \in \overset{\circ} {B}_\delta(z_0)\cap G \quad f(z) \in B_\epsilon(A). 
 $$ 
@@ -32,8 +32,8 @@ $$
 
 \begin{thm} [о трех функциях]
 \label{exp14}
-Пусть $z_0$ -- предельная точка множества $D\in \bbC$. Пусть $D = D_f=D_g=D_h$ и $\exists \delta > 0 \fa x \in D \cap \dneio{\delta}{z_0}:$
-$$f(x)\le g(x) \le h(x),$$ тогда если $\exists \lim_{x \to x_0}\limits f(x) = A \in \bbC$ , $\exists \lim_{x \to x_0}\limits h(x) = A$, тогда и $\exists \lim_{x \to x_0}\limits g(x) = A$.
+Пусть $z_0$ -- предельная точка множества $D\subset \bbC$. Пусть $D = D_f=D_g=D_h$ и $\exists \delta > 0$ $\forall z \in D \cap \dneio{\delta}{z_0}:$
+$$f(z)\le g(z) \le h(z),$$ тогда если $\exists \lim_{z \to z_0}\limits f(z) = A \in \bbC$ , $\exists \lim_{z \to z_0}\limits h(z) = A$, тогда и $\exists \lim_{z \to z_0}\limits g(z) = A$.
 \end{thm}
 
 \subsection{Дифференцирование функций комплексного переменного}
@@ -97,9 +97,9 @@ $ $\linebreak
 \vspace*{-\baselineskip}
 \begin{itemize}
 \item[$\Longrightarrow$:]
-Пусть $\exists f'(x_0) = a+ib $. Тогда $\Delta f = f'(z_0)\Delta z + \alpha(\Delta z)$, где $\frac{\alpha(\Delta z)}{\Delta z}\xrightarrow{\Delta z \to 0}0$. Но, с другой стороны, $\Delta f = \Delta u + i \Delta v$. А значит
+Пусть $\exists f'(z_0) = a+ib $. Тогда $\Delta f = f'(z_0)\Delta z + \alpha(\Delta z)$, где $\frac{\alpha(\Delta z)}{\Delta z}\xrightarrow{\Delta z \to 0}0$. Но, с другой стороны, $\Delta f = \Delta u + i \Delta v$. А значит
 $$
-\Delta u + i \Delta v = \underbrace{(a+ib)}_{f'(x_0)}(\Delta x + i \Delta y) + \underbrace{\alpha_1(\Delta x, \Delta y) + \alpha_2(\Delta x, \Delta y)}_{\alpha(\Delta z)}
+\Delta u + i \Delta v = \underbrace{(a+ib)}_{f'(z_0)}(\Delta x + i \Delta y) + \underbrace{\alpha_1(\Delta x, \Delta y) +i \alpha_2(\Delta x, \Delta y)}_{\alpha(\Delta z)}
 $$
 Приравниваем действительные и мнимые части слева и справа:
 \begin{equation}
@@ -115,7 +115,7 @@ $$
 $$
 Из теоремы \hyperref[exp14]{о трех функциях} следует: $\exists \lim_{\substack{\Delta x \to 0\\ \Delta y \to 0}}\limits \frac{|\alpha_1(\Delta x,\Delta y)|}{\sqrt{\Delta x ^2 + \Delta y^2}} = 0.$
 Аналогично, $\exists \lim_{\substack{\Delta x \to 0\\ \Delta y \to 0}}\limits \frac{|\alpha_2(\Delta x,\Delta y)|}{\sqrt{\Delta x^2 + \Delta y^2}} = 0$. 
-Отсюда равенства \eqref{exp15} означают дифференцируемость функций $u(x,y)$ и $v(x,y)$ в точке $(x_0,y_0) \in \bbR^2$, причем 
+Отсюда и из равенства \eqref{exp15} следует дифференцируемость функций $u(x,y)$ и $v(x,y)$ в точке $(x_0,y_0) \in \bbR^2$, причем 
 \begin{equation}
 \label{exp16}
 \begin{split}
@@ -136,7 +136,7 @@ $$
 где число $A = u'_x(x_0,y_0)+iv'_x(x_0,y_0)$, функция $\alpha = \alpha_1+\alpha_2$, причем, поскольку  $\exists \lim_{\substack{\Delta x \to 0\\ \Delta y \to 0}}\limits \frac{|\alpha_1(\Delta x,\Delta y)|}{\sqrt{(\Delta x)^2 + (\Delta y)^2}} = 0$, $\exists \lim_{\substack{\Delta x \to 0\\ \Delta y \to 0}}\limits \frac{|\alpha_2(\Delta x,\Delta y)|}{\sqrt{(\Delta x)^2 + (\Delta y)^2}} = 0$, то
 
 $$
-\left| \frac{\alpha(\Delta z)}{\Delta z} \right| \le \frac{|\alpha_1(\Delta x,\Delta y)|}{(\sqrt{\Delta x)^2 + (\Delta y)^2}} + \frac{|\alpha_2(\Delta x,\Delta y)|}{\sqrt{(\Delta x)^2 + (\Delta y)^2}} \xrightarrow{(\Delta x,\Delta y) \to (0,0)} 0,
+\left| \frac{\alpha(\Delta z)}{\Delta z} \right| \le \frac{|\alpha_1(\Delta x,\Delta y)|}{\sqrt{(\Delta x)^2 + (\Delta y)^2}} + \frac{|\alpha_2(\Delta x,\Delta y)|}{\sqrt{(\Delta x)^2 + (\Delta y)^2}} \xrightarrow{(\Delta x,\Delta y) \to (0,0)} 0,
 $$
 т.е. функия $f$ дифференцируема в точке $z_0$, и верна формула \eqref{exp8}.
 \end{itemize}
@@ -151,7 +151,7 @@ $$
 \item
 \textit{открытым}, если для любой его точки $z_0$ найдется ее окрестность $B(z_0)$, принадлежащая этому множеству;
 \item
-\textit{замкнутым множеством}, если оно содержит все свои предельные точки;
+\textit{замкнутым}, если оно содержит все свои предельные точки;
 \item 
 \textit{областью}, если множество обладает следующими двумя свойствами:
 \begin{enumerate}
@@ -174,7 +174,7 @@ $$
 \textit{Непрерывной кривой} называется геометрическое место точек $z$ комплексной плоскости $\bbC$, удовлетворяющих некоторому параметрическому уравнению $z=z(t) = x(t) + iy(t)$, где $x(t)$ и $y(t)$ -- непрерывные функции действительного переменного $t$ на отрезке $[t_0,t_1]$. Непрерывная кривая~--- \textit{простая}, если $\forall t',t'' \in [t_0,t_1]: t'\ne t'' \Rightarrow z(t') \ne z(t'')  $, кроме, возможно $z(t_0) = z(t_1)$ . Непрерывная кривая --- \textit{замкнутая}, если  $z(t_0) = z(t_1)$ 
 \end{defn}
 
-При изменении параметра $t$ на отрезке $[t_0 , t_1$] в одном направлении (от $t_0$ к $t_1$ или обратно) точка $z(t)$ совершает обход кривой $\gamma$. Выбор направления обхода кривой $\gamma$ называется ориеитацией кривой, а кривая с выбранной ориентацией называется \textit{ориентированной кривой} или \textit{контуром}.
+При изменении параметра $t$ на отрезке $[t_0 , t_1$] в одном направлении (от $t_0$ к $t_1$ или наоборот) точка $z(t)$ совершает обход кривой $\gamma$. Выбор направления обхода кривой $\gamma$ называется ориентацией кривой, а кривая с выбранной ориентацией называется \textit{ориентированной кривой} или \textit{контуром}.
 
 Скажем, что на кривой $\gamma$ выбрана \textit{ориентация, индуцированная данной параметризацией} $z(t)$, $t \in[t_0 , t_1]$, если на кривой выбрано направление движения, соответствующее возрастанию $t$. 
 
@@ -217,7 +217,7 @@ $$
 которое будем называть \textit{интегральной суммой функции} $f$, соответствующей разбиению $\lambda$.
 \end{defn}
 
-Если существует конечный предел интегральных сумм \eqref{exp18} при $|\lambda| \to 0$, не зависящий от выбора разбиения $\lambda$ \eqref{exp19} и точек $\{\zeta_k\}$ \eqref{exp23}, то этот предел называется интегралом от функции f по контуру $\gamma$, который обозначается
+Если существует конечный предел интегральных сумм \eqref{exp18} при $|\lambda| \to 0$, не зависящий от выбора разбиения $\lambda$ \eqref{exp19} и точек $\{\zeta_k\}$ \eqref{exp23}, то этот предел называется интегралом от функции $f$ по контуру $\gamma$, который обозначается
 
 \begin{equation}
 \label{exp22}
@@ -229,7 +229,7 @@ $$
 Пусть дана непрерывная на кусочно-гладком контуре $\gamma$ функция $f(z)$. Тогда интеграл \eqref{exp22} существует и справедлива формула
 \begin{equation}
 \label{exp24}
-\int _\gamma f(z) \,dz = \int _\gamma(u(x,y)\,dx - v(x,y)\,dy)+i\int_\gamma (v(x,y)\,dx +u(x,y)\,dy)),
+\int _\gamma f(z) \,dz = \int _\gamma(u(x,y)\,dx - v(x,y)\,dy)+i\int_\gamma (v(x,y)\,dx +u(x,y)\,dy),
 \end{equation}
 где $f(z) = u(x, y)+ iv(x, y$), и стоящие справа в формуле \eqref{exp24} два интеграла являются криволинейными интегралами второго рода от действительных функций действительных переменных по контуру $\gamma$ на евклидовой плоскости $\bbR^2$.
 \end{thm}
@@ -291,7 +291,7 @@ $$
 %\addmppict[0.8]{pictures/ch33pict3}{0.4}{
 \usepict[0.2]{ch33pict3}
 \begin{defn}
-\textit{Областью с кусочно-гладкой границей} будем называть область $G \in \bboC$, граница $\partial G=\Gamma$ которой является объединением конечного числа гладких ограниченных кривых $\Gamma_1 , \dots , \Gamma_m$, любые две из которых могут иметь общими лишь концевые точки. 
+\textit{Областью с кусочно-гладкой границей} будем называть область $G \subset \bboC$, граница $\partial G=\Gamma$ которой является объединением конечного числа гладких ограниченных кривых $\Gamma_1 , \dots , \Gamma_m$, любые две из которых могут иметь общими лишь концевые точки. 
 
 Эти кривые $\Gamma_1 , \dots , \Gamma_m$ будем называть гладкими компонентами границы $\Gamma$ области $G$. Эти компоненты бывают двух типов:
 \end{defn}
@@ -299,10 +299,10 @@ $$
 
 \begin{enumerate}
 \item
-Кривая $\Gamma_k$ --- \textit{правильной гладкой компонентой} $\Gamma$, если что в каждой окрестности каждой точки $z_0 \in \;\buildrel\circ\over\Gamma_k$ ($\buildrel\circ\over\Gamma_k$ --- кривая $\Gamma_k$ без концевых точек) находятся как точки из области $G$, так и из $\bbC \setminus G\cup\Gamma$. 
+Кривая $\Gamma_k$ --- \textit{правильной гладкой компонентой} $\Gamma$, если в каждой окрестности каждой точки $z_0 \in \;\buildrel\circ\over\Gamma_k$ ($\buildrel\circ\over\Gamma_k$ --- кривая $\Gamma_k$ без концевых точек) находятся как точки из области $G$, так и из $\bbC \setminus G\cup\Gamma$. 
 
 \item
-Кривая $\Gamma_k$ --- \textit{разрезом}, если  для каждой точки $z_0 \in\; \buildrel\circ\over\Gamma_k$ существует окрестность $B_\epsilon(z_0)$ такая, $B_\epsilon(z_0)\setminus\Gamma_k \subset G$.
+Кривая $\Gamma_k$ --- \textit{разрезом}, если для каждой точки $z_0 \in\; \buildrel\circ\over\Gamma_k$ существует окрестность $B_\epsilon(z_0)$ такая, что $B_\epsilon(z_0)\setminus\Gamma_k \subset G$.
 \end{enumerate}
 \begin{defn} Будем считать, что кусочно-гладкая граница $(\partial G)^{+}$ \textit{положительно ориентирована относительно области $G$}, если при обходе $(\partial G)^{+}$ область $G$ остается слева (при этом считается, что разрез проходится дважды: в одну сторону, потом в противоположную). Аналогично, определим отрицательно ориентрированную границу относительно области $G$, которую обозначим $(\partial G)^{-}.$
 \end{defn}
@@ -323,12 +323,12 @@ $$
 Ограниченная область $G$ называется \textit{звездным множеством}, если граница $\Gamma$ области $G$ может быть задана в виде
 \begin{equation}
 \label{abc5}
-\Gamma = \{ z \bigr|\bigl. z = z_0+z_1(t), \alpha \le t \le \beta, z_1(\alpha) = z_1 (\beta) \},
+\Gamma = \{ z \bigr|\bigl. z = z_0+z_1(t),  \alpha \le t \le \beta, z_1(\alpha) = z_1 (\beta) \},
 \end{equation} 
 где $z_0 \in G$ называется \textit{центром звездного множества}, $z_1 :[\alpha, \beta] \to \bbC$ --- кусочно-гладкая функция, причем должны выполняться включения
 \begin{equation}
 \label{abc7}
-\Gamma_\lambda \triangleq \{ z \bigr|\bigl. z = z_0+\lambda z_1(t), \alpha \le t \le \beta\} \subset G, \fa \lambda \in [0,1).
+\Gamma_\lambda \triangleq \{ z \bigr|\bigl. z = z_0+\lambda z_1(t),  \alpha \le t \le \beta\} \subset G, \fa \lambda \in [0,1).
 \end{equation}
 
 Проще говоря, множество $G$ называется \textit{звездным}, если можно найти такую точку (\textit{центр зведного множества}), что все прямые отрезки, соединяющие ее с любой другой, целиком принадлежат $G$.
@@ -339,7 +339,7 @@ $$
 
 Доказательство достаточно провести для случая, когда $G$ есть звездное множество с центром в точке $z_0 = 0$. Покажем это. 
 
-Допустим, что его центр $z_0 \ne 0$. Сделав  замену $\tilde z = z - z_0$ , $\tilde \Gamma = \Gamma - z_0$, $G = G - z_0$ , получим звездное множество $G$ с центром в точке $0$, причем
+Допустим, что его центр $z_0 \ne 0$. Сделав  замену $\tilde z = z - z_0$ , $\tilde \Gamma = \Gamma - z_0$, $\tilde{G} = G - z_0$, получим звездное множество $G$ с центром в точке $0$, причем
 $$
 \int_{\Gamma} f(z)\,dz = \int_{\tilde \Gamma} f(\tilde z +z_0)\,d\tilde z = \int_{\partial\tilde G} \tilde f(\tilde z)\,d\tilde z ,
 $$
@@ -361,7 +361,7 @@ $$
 \int_{\Gamma} f(\lambda z)\lambda\,dz = 0, \; \text{откуда} \; \int_{\Gamma} f(\lambda z)\,dz = 0, \fa \lambda \in (0,1)
 \end{equation}
 
-Так как функция $f$ непрерывна на ограниченном замкнутом множестве $G$, то она равномерно непрерывна на $G$. Это значит, что $\forall \epsilon > 0 \ex \delta = \delta (\epsilon) > 0, \forall z',z'' \in \overline{G}, |z'-z''|<\delta \Rightarrow |f(z')-f(z'')| < \epsilon$.  Поэтому $\forall z \in \Gamma$ получаем $|z-\lambda z|=(1-\lambda)|z| \le (1-\lambda)C_0$, где $C_0=\max\{|z|\bigr|\bigl. z\in \Gamma\}$.
+Так как функция $f$ непрерывна на ограниченном замкнутом множестве $\overline{G}$, то она равномерно непрерывна на $\overline{G}$. Это значит, что $\forall \epsilon > 0 \ex \delta = \delta (\epsilon) > 0, \forall z',z'' \in \overline{G}, |z'-z''|<\delta \Rightarrow |f(z')-f(z'')| < \epsilon$.  Поэтому $\forall z \in \Gamma$ получаем $|z-\lambda z|=(1-\lambda)|z| \le (1-\lambda)C_0$, где $C_0=\max\{|z|\bigr|\bigl. z\in \Gamma\}$.
 
 Выбрав $\lambda_\epsilon \in (0, 1)$, удовлетворяющее неравенству $(1 - \lambda_\epsilon) < \delta(\epsilon)/C_0 $, получаем $|z - \lambda_\epsilon z| < \delta(\epsilon),\, \forall z \in \Gamma$. Поэтому из \eqref{abc9} следует:
 \begin{multline}
