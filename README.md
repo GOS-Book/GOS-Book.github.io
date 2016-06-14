@@ -28,13 +28,13 @@
     <td><img src="http://medyk.org/colors/87ff00.png" width="30" height="30" /></td> <!3>
     <td><img src="http://medyk.org/colors/87ff00.png" width="30" height="30" /></td> <!4>
     <td><img src="http://medyk.org/colors/87ff00.png" width="30" height="30" /></td> <!5>
-    <td><img src="http://medyk.org/colors/87ff00.png" width="30" height="30" /></td> <!6>
+    <td><img src="http://medyk.org/colors/ffff00.png" width="30" height="30" /></td> <!6>
     <td><img src="http://medyk.org/colors/87ff00.png" width="30" height="30" /></td> <!7>
     <td><img src="http://medyk.org/colors/87ff00.png" width="30" height="30" /></td> <!8>
     <td><img src="http://medyk.org/colors/87ff00.png" width="30" height="30" /></td> <!9>
-    <td><img src="http://medyk.org/colors/87ff00.png" width="30" height="30" /></td> <!10>
+    <td><img src="http://medyk.org/colors/ffff00.png" width="30" height="30" /></td> <!10>
     <td><img src="http://medyk.org/colors/87ff00.png" width="30" height="30" /></td> <!11>
-    <td><img src="http://medyk.org/colors/87ff00.png" width="30" height="30" /></td> <!12>
+    <td><img src="http://medyk.org/colors/ffff00.png" width="30" height="30" /></td> <!12>
   </tr>
   <tr>
     <td>Отредактировано</td>
@@ -68,8 +68,8 @@
   </tr>
     <tr>
     <td>Напечатано</td>
-    <td><img src="http://medyk.org/colors/87ff00.png" width="30" height="30" /></td> <!13>
-    <td><img src="http://medyk.org/colors/87ff00.png" width="30" height="30" /></td> <!14>
+    <td><img src="http://medyk.org/colors/ffff00.png" width="30" height="30" /></td> <!13>
+    <td><img src="http://medyk.org/colors/ffff00.png" width="30" height="30" /></td> <!14>
     <td><img src="http://medyk.org/colors/87ff00.png" width="30" height="30" /></td> <!15>
     <td><img src="http://medyk.org/colors/87ff00.png" width="30" height="30" /></td> <!16>
     <td><img src="http://medyk.org/colors/87ff00.png" width="30" height="30" /></td> <!17>
