@@ -40,7 +40,9 @@ G = \{ (x,y,z) \in \bbR^3: \: (x,y) \in g, \: \phi_1(x,y) < z < \phi_2(x,y) \: \
 \end{lemm}
 
 \begin{proof}
-Область $G$ задана условием $(\ref{ch15eq1}) \; \Rightarrow \; \partial G = S_1 \cup S_2 \cup S_0$, где $S_{1,2} = \{ (x,y) \in \overline{g}, \; z = \phi_{1,2}(x,y) \}$, $S_0 = \{ (x,y) \in \partial g, \phi_1(x,y) \le z \le \phi_2(x,y) \}$ 
+Область $G$ задана условием $(\ref{ch15eq1}) \; \Rightarrow \; \partial G = S_1 \cup S_2 \cup S_0$, 
+\addpicture{pictures/ch15pict1}{0.25}
+где $S_{1,2} = \{ (x,y) \in \overline{g}, \; z = \phi_{1,2}(x,y) \}$, $S_0 = \{ (x,y) \in \partial g, \phi_1(x,y) \le z \le \phi_2(x,y) \}$ 
 
 $G = \{ (x,y,z) \in \bbR^3: \; (x,y) \in g, \; \phi_1(x,y) < z < \phi_2(x,y) \; \forall (x,y) \in g \} \; \Rightarrow \; \partial G$ -- кусочно-гладкая поверхнотсь.
 
@@ -94,7 +96,7 @@ $\partial G_{\textit{внеш}} = \partial G'_{\textit{внеш}} \cup \partial 
  \Sigma_{2_{\textit{внеш}}}
 \end{aligned} \right\} \quad  \textit{это поверхности } \Sigma \textit{с противоположными ориентациями}.
 \end{equation*}
-
+\addpicture{pictures/ch15pict2}{0.12}
 \begin{equation} \label{ch15eqA}
 \iint\limits_{\partial G_{1_{\textit{внеш}}}} f \,dx\,dy + \iint\limits_{\partial G_{2_{\textit{внеш}}}} f \,dx\,dy = \iint\limits_{G_{\textit{внеш}}} f\,dx\,dy
 \end{equation}
@@ -171,7 +173,8 @@ $\Rightarrow \quad \exists \Div \: \overset{\to}{a}(M) = \Div(\rot \: \overset{\
 \end{proof}
 
 \begin{defn}
-Замкнутой кусочно-гладкой поверхностью называется ограниченная кусочно-гладкая поверхность, не имеющая края. При этом, если $S = \sum\limits_{j = 1}^m S_j, \quad \textit{где } \forall j \in \overline{1,m}, \quad S_j$ -- простая гладкая поверхность с кусочно-гладким краем $\partial S_j$, то каждый гладкий участок края $\partial S_j$ совпадает с гладким участком края $\partial S_i$, но их ориентации противоположны. Суммарный край $\partial S = \sum\limits_{j = 1}^m \partial S_j$ -- пуст.
+Замкнутой кусочно-гладкой поверхностью называется ограниченная кусочно-гладкая поверхность, не имеющая края. \addpicture{pictures/ch15pict3}{0.25} При этом, если $S = \sum\limits_{j = 1}^m S_j, \quad \textit{где } \forall j \in \overline{1,m}, \quad S_j$ -- простая гладкая поверхность с кусочно-гладким краем $\partial S_j$, то каждый гладкий участок края $\partial S_j$ совпадает с гладким участком края $\partial S_i$, но их ориентации
+ противоположны. Суммарный край $\partial S = \sum\limits_{j = 1}^m \partial S_j$ -- пуст.
 \end{defn}
 
 \begin{thm}
@@ -202,6 +205,6 @@ $\iint\limits_S \overset{\to}{a}\,d\overset{\to}{s} = \iint\limits_{S_1} \overse
 Любое непрерывно-дифференцируемое векторное поле $\overset{\to}{a}(M), \; M \in G$, $G$ -- область в $\bbR^3$, является суммой двух непрерывно-дифференцируемых векторных полей -- потенциального и соленоидального:
 
 $$
-\overset{\to}{a}(M) = grad \: u(M) + \overset{\to}{c}(M), \quad \forall M \in G, \quad \Div \: \overset{\to}{c}(M) = 0
+\overset{\to}{a}(M) = \grad \: u(M) + \overset{\to}{c}(M), \quad \forall M \in G, \quad \Div \: \overset{\to}{c}(M) = 0
 $$
 \end{thm}
