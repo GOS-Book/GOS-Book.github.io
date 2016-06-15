@@ -46,17 +46,17 @@ G = \{ (x,y,z) \in \bbR^3: \: (x,y) \in g, \: \phi_1(x,y) < z < \phi_2(x,y) \: \
 
 $G = \{ (x,y,z) \in \bbR^3: \; (x,y) \in g, \; \phi_1(x,y) < z < \phi_2(x,y) \; \forall (x,y) \in g \} \; \Rightarrow \; \partial G$ -- кусочно-гладкая поверхнотсь.
 
-$\iint\limits_{S_{2_{\textit{внеш}}}} f \,dx\,dy = \iint\limits_g f(x,y,\phi_2(x,y)) \,dx\,dy$
+$\displaystyle\iint\limits_{S_{2_{\textit{внеш}}}} f \,dx\,dy = \displaystyle\iint\limits_g f(x,y,\phi_2(x,y)) \,dx\,dy$
 
-$\iint\limits_{S_{1_{\textit{внеш}}}} f \,dx\,dy = - \iint\limits_g f(x,y,\phi_1(x,y)) \,dx\,dy$
+$\displaystyle\iint\limits_{S_{1_{\textit{внеш}}}} f \,dx\,dy = - \displaystyle\iint\limits_g f(x,y,\phi_1(x,y)) \,dx\,dy$
 
-$\iint\limits_{S_{0_{\textit{внеш}}}} f \,dx\,dy = 0$, так как на $S_0 \; \overset{n}{\to}_{\textit{внеш}(x,y,z) = (n_x, n_y, 0)}$
+$\displaystyle\iint\limits_{S_{0_{\textit{внеш}}}} f \,dx\,dy = 0$, так как на $S_0 \; \overset{\to}{n}_{\textit{внеш}(x,y,z) = (n_x, n_y, 0)}$
 
 $\Rightarrow$
 
-$\iint\limits_G f \,dx\,dy = \iint\limits_g (f(x,y,\phi_2(x,y)) - f(x,y,\phi_1(x,y))) \,dx \,dy$
+$\displaystyle\iint\limits_G f \,dx\,dy = \displaystyle\iint\limits_g (f(x,y,\phi_2(x,y)) - f(x,y,\phi_1(x,y))) \,dx \,dy$
 
-$\iiint\limits_G \frac{\partial f}{\partial z} \,dx \,dy \,dz = \iint\limits_g \,dx \,dy \int\limits_{\phi_1(x,y)}^{\phi_2(x,y)} \frac{\partial f}{\partial z}(x,y,z) \,dz = \iint\limits_g f(x,y,\phi_2) - f(x,y,\phi_1) \,dx \,dy$
+$\displaystyle\iiint\limits_G \dfrac{\partial f}{\partial z} \,dx \,dy \,dz = \displaystyle\iint\limits_g \,dx \,dy \displaystyle\int\limits_{\phi_1(x,y)}^{\phi_2(x,y)} \dfrac{\partial f}{\partial z}(x,y,z) \,dz = \displaystyle\iint\limits_g f(x,y,\phi_2) - f(x,y,\phi_1) \,dx \,dy$
 
 \end{proof}
 
