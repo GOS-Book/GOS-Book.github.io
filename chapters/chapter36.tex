@@ -345,7 +345,7 @@ $$
 \epsilon(R) \triangleq \max \{ |\Phi(z)| \: \big| \: z \in C_R \} \quad R > R_0.
 $$
 
-Если $\lim\limits_{R \to +\infty} \epsilon(R) = 0$, то $\lim\limits_{R \to +\infty} \inf_{C_R} e^{i \alpha z} \Phi(z) \,dz = 0$.
+Если $\lim\limits_{R \to +\infty} \epsilon(R) = 0$, то $\lim\limits_{R \to +\infty} \int_{C_R} e^{i \alpha z} \Phi(z) \,dz = 0$.
 
 \end{lemm}
 
@@ -371,7 +371,7 @@ $$
 т.е. справедливо заключение леммы.
 \end{proof}
 
-Возвращаясь к формуле $\eqref{ch36.1eq25}$, покажем с помощью \hyperref[ch36.1lemm5]{леммы \ref{ch36.1lemm5} Жордана}, что второй интеграл в $\eqref{ch36.1eq25}$ стремится к нулю при $R \to \infty$. При достаточно больших $R > R_0$ в силу условий сходимости $m - n \ge 1$ плучаем $\epsilon(R) \le \frac{2}{R^{m - n}} \le \frac{2}{R} \to 0$. В силу леммы  \ref{ch36.1lemm5} имеет место равенство $\lim\limits_{R \to +\infty} \int_{\gamma_R} e^{i \alpha z}R(z) \,dz = J$, а потому справедлива формула
+Возвращаясь к формуле $\eqref{ch36.1eq25}$, покажем с помощью \hyperref[ch36.1lemm5]{леммы \ref{ch36.1lemm5} Жордана}, что второй интеграл в $\eqref{ch36.1eq25}$ стремится к нулю при $R \to \infty$. При достаточно больших $R > R_0$ в силу условий сходимости $m - n \ge 1$ получаем $\epsilon(R) \le \frac{2}{R^{m - n}} \le \frac{2}{R} \to 0$. В силу леммы  \ref{ch36.1lemm5} имеет место равенство $\lim\limits_{R \to +\infty} \int_{\gamma_R} e^{i \alpha z}R(z) \,dz = J$, а потому справедлива формула
 
 \begin{equation} \label{ch36.1eq27}
 \int_{-\infty}^{+\infty} e^{i \alpha x}R(x) \,dx = 2\pi i \cdot \sum_{k = 1}^l \res_{z_k^+} (e^{i \alpha z}R(z)).
