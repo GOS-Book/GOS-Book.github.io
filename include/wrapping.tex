@@ -2,30 +2,8 @@
 %%%%%%%%%%%%         WRAPPING PICTURES                 %%%%%%%%%%%% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-\usepackage{graphicx}
-\usepackage{caption}
-\usepackage{microtype}
-\input{insbox.tex}
-\usepackage{threeparttable}
-\usepackage{changepage}
-\usepackage{xargs}
-\usepackage{wrapfig}
-\usepackage{printlen}    
-\newcounter{ct}
-
-\newlength\imageheight
-
-\newcount\narrowlinect
-\narrowlinect=0\relax 
-    
-%РАБОТАЮЩИЙ ВЕЗДЕ В ТЕКСТЕ СЧЕТЧИК РИСУНОЧКОВ.
-\newcounter{pictnumber}[chapter] 
-\renewcommand{\thepictnumber}{\thechapter.\arabic{pictnumber}}
-
-
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %RULES. Pls check it everytime.
   %NOT WRAPPED BUT VERY EASY.
@@ -50,13 +28,37 @@
     % NOW IT IS USELESS, but can work if nothing helps.
   %\addpictureitem[number of narrow lines]{exactly picture}{width of \textwidth will picture occupy}{text}
     
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{microtype}
+\input{insbox.tex}
+\usepackage{threeparttable}
+\usepackage{changepage}
+\usepackage{xargs}
+\usepackage{wrapfig}
+\usepackage{printlen}   
+ 
+\newcounter{ct}
+
+\newlength\imageheight
+
+\newcount\narrowlinect
+\narrowlinect=0\relax 
+    
+%РАБОТАЮЩИЙ ВЕЗДЕ В ТЕКСТЕ СЧЕТЧИК РИСУНОЧКОВ.
+\newcounter{pictnumber}[chapter] 
+\renewcommand{\thepictnumber}{\thechapter.\arabic{pictnumber}}
+    
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \newcommand{\usepict}[2][0.2]{
 \begin{center}
 \includegraphics[height=#1\textheight]{pictures/#2}\refstepcounter{pictnumber}\label{#2} {Рис. \thepictnumber}
 \end{center}}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -69,7 +71,7 @@
   \end{wrapfigure}}
   
     
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
   
 \newcommand{\addmppictL}[4][1]{%

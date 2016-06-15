@@ -1,4 +1,322 @@
 \chapter{Достаточные условия сходимости тригонометрического ряда Фурье в точке.}
-\section{Достаточные условия сходимости тригонометрического ряда Фурье в точке}
+\section{Тригонометрические ряды Фурье}
+Для любой функции $f$, определенной и абсолютно интегрируемой на конечном интервале $(a;b)$, определены коэффициенты Фурье по тригонометрической системе, ортогональной на интервале $(a;b)$:
+\begin{equation} \label{ch17eq1}
+1,\ \cos \frac{\pi}{l}x,\ \sin \frac{\pi}{l}x,\ldots,\cos n\frac{\pi}{l}x,\ \sin n\frac{\pi}{l}x,\ldots,
+\end{equation}
+где $l = (b - a)/2$. Соответствующий ряд Фурье обычно записывают в следующем виде:
+\begin{equation} \label{ch17eq2}
+\frac{a_0}{2} + \sum_{n = 1}^{\infty} a_{n}\,\cos n\frac{\pi}{l}x + b_{n}\, \sin n\frac{\pi}{l}x
+\end{equation}
+Из общей формулы для коэффициентов Фурье следует, что коэффициенты $a_0, a_n, b_n$ ряда ($\ref{ch17eq2}$) вычисляются по формулам:
+\begin{align} \label{ch17eq3}
+a_0 &= \frac{1}{l} \int\limits_{a}^{b} f(x)dx,\\
+a_n &= \frac{1}{l} \int\limits_{a}^{b} f(x)\,\cos n\frac{\pi}{l}x\, dx,\\
+b_n &= \frac{1}{l} \int\limits_{a}^{b} f(x)\,\sin n\frac{\pi}{l}x\, dx,
+\end{align}
 
+\begin{defn}
+Числа $a_0, a_n, b_n$, определяемые по формулам выше, называются \textit{коэффициентами Фурье функции f по тригонометрической системе} \eqref{ch17eq1}.
+\end{defn}
 
+Так как общий случай заменой $\xi = \cfrac{\pi}{l}\, x$ сводится к тригонометрической системе, ортогональной на $(-\pi;\pi)$, то в дальнейшем будем изучать в основном только ряды по тригонометрической системе
+$$
+1,\ \cos x,\ \sin x,\ldots,\cos nx,\ \text{sin}\, nx,\ldots,
+$$
+которую будем называть \textit{стандартной тригонометрической системой.}
+
+Вместо тригонометрической системы \eqref{ch17eq1} ортогональной на интервале $(-l;l)$, часто рассматривают систему комплекснозначных функций
+\begin{equation} \label{ch17eq6}
+\phi_{\nu}(x) = e^{i\nu\frac{\pi}{l}x},\quad \nu \in \bbZ,
+\end{equation}
+Ее тоже называют тригонометрической, так как
+$$
+e^{i\nu\frac{\pi}{l}x} = \cos \nu\frac{\pi}{l}x + i\, \sin \nu\frac{\pi}{l}x
+$$
+\begin{defn}
+Для любой функции $f(x) \in \overset{*}{L^{R}_1}(-l;l)$ числа
+\begin{equation}
+c_{\nu} = \frac{1}{2l} \int\limits_{-l}^{l} f(x)\, e^{-i\nu\frac{\pi}{l}x}dx,\quad \nu = 0,\pm 1, \pm 2,\ldots
+\end{equation}
+называются \textit{коэффициентами Фурье функции f по ортогональной системе} \eqref{ch17eq6}, причем
+\begin{equation}
+c_0 = a_0/2, \quad c_{k} = \cfrac{a_k - ib_k}{2}, \quad c_{-k} = \cfrac{a_k + ib_k}{2} \quad \forall\ k \in \bbN,
+\end{equation}
+где $a_0, a_n, b_n$ --- коэффициенты Фурье функции $f$ по тригонометрической системе \eqref{ch17eq1}.
+\end{defn}
+
+\begin{defn}
+Выражение
+$$
+\sum_{\nu = -\infty}^{\infty} c_{\nu}e^{i\nu\frac{\pi}{l}x},
+$$
+где $c_{\nu} = c_{\nu}(f)$, называют \textit{рядом Фурье функции f по системе} \eqref{ch17eq6}, а сумма
+$$
+T_{n}(f;x) = \sum_{\nu = -n}^{n} c_{\nu}e^{i\nu\frac{\pi}{l}x}
+$$
+называется \textit{n-й частичной суммой} этого ряда.
+\end{defn}
+
+\section{Теорема Римана об осцилляции}
+\begin{defn}
+Для любой функции $f$ замыкание множества точек $x \in D_{f}$, в которых $f(x) \neq 0$, называется \textit{носителем функции f} и обозначается $\supp f$.
+\end{defn}
+\begin{defn}
+Функция, определенная на $\bbR$, называется \textit{финитной}, если ее носитель ограничен, т.е. если она равна нулю вне некоторого отрезка.
+\end{defn}
+\begin{defn}
+Функция, определенная на некотором промежутке $\Delta$, называется \textit{ступенчатой}, если существует разбиение промежутка $\Delta$ на конечное число промежутков, на каждом из которых она постоянна.
+\end{defn}
+\begin{thm} \label{ch17thm1}
+Если функция $f(x)$ абсолютно интегрируема на промежутке $\Delta$, то для любого $\epsilon > 0$ существует финитная ступенчатая функция $\phi(x)$ такая, что $\supp\phi \subset \overline{\Delta}$ и
+\begin{equation} \label{ch17eq7}
+\int\limits_{\Delta} |f(x) - \phi(x)|dx < \epsilon.
+\end{equation}
+\end{thm}
+\begin{proof}
+Выберем некоторое $\epsilon > 0$ и построим финитную ступенчатую функцию $\phi(x)$, удовлетворяющую неравенству.
+
+Из определения абсолютно интегрируемой функции $f$ на промежутке $\Delta$ следует, что существует ограниченное измеримое множество $g_{\epsilon} \subset \Delta$, на котором функция $f$ интегрируема по Риману, причем
+$$
+\int\limits_{\Delta} |f(x)|dx - \int\limits_{g_{\epsilon}} |f(x)|dx = \int\limits_{\Delta\backslash g_{\epsilon}} |f(x)|dx
+$$
+
+Через $f_{\epsilon}(x)$ обозначим функцию, равную $f(x)$ на $g_{\epsilon}$ и нулю вне $g_{\epsilon}$. Очевидно,
+\begin{equation} \label{ch17eq8}
+\int\limits_{\Delta} |f(x) - f_{\epsilon}(x)|dx = \int\limits_{\Delta\backslash g_{\epsilon}} |f(x)|dx < \frac{\epsilon}{2}
+\end{equation}
+
+Функция $f_{\epsilon}(x)$ равна нулю вне ограниченного множества $g_{\epsilon} \subset \Delta$, поэтому ее носитель содержится в некотором отрезке $[a;b] \subset \overline{\Delta}$. На этом отрезке она интегрируема по Риману, так как она интегрируема по Риману на $g_{\epsilon}\ \text{и на}\ [a;b]\backslash g_{\epsilon}$. Поэтому существует разбиение $\tau$ отрезка $[a;b]$ на промежутки $\Delta_1,\ldots,\Delta_N$ такое, что
+$$
+\int\limits_{a}^{b} f_{\epsilon}(x)dx - s(f_{\epsilon};\tau) < \frac{\epsilon}{2},
+$$
+где $s(f_{\epsilon};\tau)$ --- нижняя сумма Дарбу функции $f_{\epsilon}(x)$, т.е.
+$$
+s(f_{\epsilon};\tau) = \sum_{j = 1}^{N} m_{j}|\Delta_j|,
+$$
+где $m_j = \inf\limits_{x \in \Delta_j}\,f_{\epsilon}(x)$. Через $\phi(x)$ обозначим ступенчатую функцию, которая равна $m_j$ на $\Delta_j,\ j = 1,\ldots,N$, и нулю вне $[a;b]$. Очевидно, $\phi(x) \le f_{\epsilon}(x)$ для любого $x \in \bbR$,
+$$
+\int\limits_{\Delta} \phi(x)dx = \int\limits_{a}^{b} \phi(x)dx = s(f_{\epsilon};\tau),
+$$
+и, следовательно,
+\begin{equation} \label{ch17eq9}
+\int\limits_{\Delta} |f(x) - \phi(x)|dx = \int\limits_{a}^{b} f_{\epsilon}(x)dx - s(f_{\epsilon};\tau) < \frac{\epsilon}{2}
+\end{equation}
+Из неравенств \eqref{ch17eq8} и \eqref{ch17eq9} следует, что финитная ступенчатая функция $\phi(x)$ удовлетворяет неравенству \eqref{ch17eq7} теоремы. Действительно:
+\begin{multline*}
+\int\limits_{\Delta} |f(x) - \phi(x)|dx \le \int\limits_{\Delta} |f(x) - f_{\epsilon}(x)|dx\\
++\ \int\limits_{\Delta} |f(x) - \phi(x)|dx < \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon
+\end{multline*}
+\end{proof}
+
+\begin{thm}[Римана об осцилляции] \label{ch17thm2}
+Если функция $f(x)$ абсолютно интегрируема на промежутке $\Delta$, то
+\begin{equation} \label{ch17eq10}
+\lim_{\lambda \to \infty}\int\limits_{\Delta} f(x)e^{i\lambda x}dx = 0
+\end{equation}
+\end{thm}
+\begin{proof}
+Для характеричстических функций любого конечного промежутка это утверждение очевидно. Действительно, если $\xi$ и $\eta$ --- концы промежутка, то
+$$
+\left|\int\limits_{\xi}^{\eta} e^{i\lambda x}dx\right| = \left|\cfrac{e^{i\lambda \eta} - e^{i\lambda \xi}}{i\lambda}\right| \le \frac{2}{|\lambda|}
+$$
+А так как любая финитная ступенчатая функция есть линейная комбинация характеристических функций конечного числа конечных промежутков, то утверждение теоремы верно для любой такой функции.
+
+Согласно теореме \eqref{ch17thm1}, для любого $\epsilon > 0$ существует финитная ступенчатая функция $\phi(x)$ такая, что
+$$
+\int\limits_{\Delta} |f(x) - \phi(x)|dx < \frac{\epsilon}{2}
+$$
+Тогда
+$$
+\left|\int\limits_{\Delta} f(x)e^{i\lambda x}dx\right| \le \int\limits_{\Delta} |f(x) - \phi(x)|dx\ +\ \left|\int\limits_{\Delta} \phi(x)e^{i\lambda x}dx\right|.
+$$
+Последний интеграл, согласно уже доказанному, стремится к нулю при $\lambda \to \infty$, поэтому
+$$
+\exists\ \lambda_{\epsilon} : \quad \forall\ \lambda, |\lambda| > \lambda_{\epsilon} : \left|\int\limits_{\Delta} \phi(x)e^{i\lambda x}dx\right| < \frac{\epsilon}{2}.
+$$
+Следовательно,
+$$
+\left|\int\limits_{\Delta} f(x)e^{i\lambda x}dx\right| < \epsilon \quad \forall\ \lambda, |\lambda| > \lambda_{\epsilon},
+$$
+что и доказывает равенство \eqref{ch17eq10}.
+\end{proof}
+
+Отметим, что здесь параметр $\lambda$ может принимать любое значение из $\bbR$ и, в частности, может стремиться как к $+\infty$, так и к $-\infty$. Следовательно, наряду с \eqref{ch17eq10} выполняется и равенство
+$$
+\lim_{\lambda \to \infty}\int\limits_{a}^{b} f(x)e^{-i\lambda x}dx = 0
+$$
+
+\begin{cons}
+Если функция $f(x)$ абсолюно интегрируема на промежутке $\Delta$, то
+\begin{align*}
+&\lim_{\lambda \to \infty}\int\limits_{\Delta} f(x)\cos{\lambda x}\,dx = 0\\
+&\lim_{\lambda \to \infty}\int\limits_{\Delta} f(x)\sin{\lambda x}\,dx = 0
+\end{align*}
+\end{cons}
+
+\section{Признаки сходимости тригонометрических рядов Фурье в точке}
+\subsection{Признак Липшица}
+
+Пусть функция $f(x)$ определена в некоторой окрестности точки $x_0$. Говорят, что она в этой точке удовлетворяет $\textit{условию Липшица порядка } \alpha > 0$, если $\exists$ постоянные $C$ и $\delta > 0$ такие, что 
+
+\begin{equation} \label{ch17eq4}
+|f(x_0 + \xi) - f(x_0)| \le C |\xi|^\alpha \quad \forall \xi \in (-\delta; \delta).
+\end{equation}
+
+\begin{thm} [Признак Липшица сходимости ряда Фурье в точке] \label{ch17thm3}
+Если функция $f(x) \in \overset{*}{L^{R}_1}(-\pi;\pi)$ в точке $x_0 \in \bbR$ удовлетворяет условию Липшица порядка $\alpha > 0$, то ее ряд Фурье в точке $x_0$ сходится к $f(x_0)$.
+\end{thm}
+
+\begin{proof}
+Напомним, что для $n$-й частичной суммы ряда Фурье функции $f$ справедлива формула
+
+$$
+T_n(f;x_0) = \frac{1}{2\pi} \int\limits_{-\pi}^{\pi} f(x_0 + \xi) D_n(\xi) \,d\xi,
+$$
+где
+
+$$
+D_n(\xi) = \frac{\sin{\lambda_n \xi}}{\sin{\frac{\xi}{2}}}, \; \frac{1}{2\pi}\int\limits_{-\pi}^{\pi} D_n(\xi) \,d\xi = 1, \; \lambda_n = n + \frac12.
+$$
+
+Поэтому 
+
+$$
+T_n(f; x_0) - f(x_0) = \frac{1}{2\pi}\int\limits_{-\pi}^{\pi}(f(x_0 + \xi) - f(x_0))D_n(\xi)\,d\xi.
+$$
+
+По условию функция $f$ в точке $x_0$ удовлетворяет условию Липшица \eqref{ch17eq4}. Не ограничивая общности, можно считать, что $\delta < \pi$. Тогда функция 
+
+$$
+F(\xi) = \frac{f(x_0 + \xi) - f(x_0)}{\sin{\frac{\xi}{2}}}
+$$
+удовлетворяет неравенству
+
+$$
+|F(\xi)| \le \frac{C|\xi|^\alpha}{\left| \sin{\frac{\xi}{2}} \right|} \quad \forall \xi \in (-\delta; \delta).
+$$
+А так как функция $\sin{\frac{\xi}{2}}$ выпукл вверх на отрезке $[0; \pi]$, то
+
+$$
+\sin{\frac{\xi}{2}} \ge \frac{\xi}{\pi} \quad \forall \xi \in [0; \pi],
+$$
+
+и поэтому 
+
+$$
+|F(\xi)| \le \pi C |\xi|^{\alpha - 1} \quad \forall \xi \in [0; \pi].
+$$
+
+Следовательно,
+\begin{multline} \label{ch17eq5}
+|T_n(f; x_0) - f(x_0)| \le \frac{1}{2} C \int\limits_{-h}^{h} |\xi|^{\alpha - 1}\,d\xi + \\
++ \frac{1}{2\pi} \left| \int\limits_{-\pi}^{h} F(\xi) \sin{\lambda_n \xi} \,d\xi \right| + \frac{1}{2\pi} \left| \int\limits_{h}^{\pi} F(\xi) \sin{\lambda_n \xi} \,d\xi \right|
+\end{multline}
+для любого $h \in (0; \delta)$ и любого $n \in \bbN$. Для каждого $h \in (0;\delta)$ функция $F(\xi)$ абсолютно интегрируема на интервалах $(-\pi; -h)$ и $(h; \pi)$. Согласно теореме Римана об осцилляции, интегралы по этим интервалам стремятся к нулю при $n \to \infty$. Поэтому из \eqref{ch17eq5} следует неравенство
+
+$$
+\overline{\lim\limits_{n \to \infty}}|T_n(f; x_0) - f(x_0)| \le C \cdot \frac{1}{\alpha}h^{\alpha}.
+$$
+А так как оно справедливо для любого $h \in (0; \delta)$, то 
+
+$$
+\overline{\lim\limits_{n \to \infty}}|T_n(f; x_0) - f(x_0)| = 0.
+$$
+
+Очевидно, если верхний предел неотрицательной последовательности равен нулю, то это последовательность сходится и ее предел равен нулю.
+\end{proof}
+
+\begin{cons}
+Если функция $f(x) \in \overset{*}{L^{R}_1}(-\pi;\pi)$ в точке $x_0 \in \bbR$ дифференцируема или непрерывна и имеет конечные односторонние призводные, то в этой точке ее ряд Фурье сходится к $f(x_0)$.
+\end{cons}
+
+\begin{cons}
+Если функция $f(x), \: x \in [a;b], \: a < b,$ на интервале $(a;b)$ непрерывна, абсолютно интегрируема и в каждой точке $x \in (a;b)$ дифференцируема или имеет конечные односторонние производные, то в любой точке $x \in (a;b)$ ее ряд Фурье сходится и 
+
+$$
+f(x) = \frac{a_0}{2} + \sum\limits_{n = 1}^{\infty} a_n \cos{n \frac{\pi}{l} x} + b_n \sin{n \frac{\pi}{l} x},
+$$
+где $l = \cfrac{b - a}{2}, \: a_0 = a_0(f), \: a_n = a_n(f), \: b_n = b_n(f)$. Если, кроме того, функция $f$ непрерывна на $[a;b], \: f(a) = f(b)$ и существуют конечные односторонние производные $f'_+(a)$ и $f'_-(b)$, то и в точках $x = a, \: x = b$ ряд Фурье сходится к $f(x)$.
+\end{cons}
+
+%TODO Нужны ли односторонние условия Липшица
+
+\subsection{Признак Дини}
+Пусть функция $f(x)$ определена в окрестности точки $x_0$ и в этой точке непрерывна. Если, кроме того, существует $\delta > 0$ такое, что разностное отношение
+$$
+\frac{f(x_0 + \xi) - f(x_0)}{\xi}
+$$
+абсолютно интегрируемо на интервале $(-\delta;\delta)$, то говорят, что функция $f(x)$ удовлетворяет \textit{условию Дини}.
+
+Очевидно, если функция $f(x)$ в точке $x_0$ удовлетворяет условию Липшица порядка $\alpha > 0$, то в этой точке она удовлетворяет и условию Дини. Обратное утверждение является неверным.
+
+\begin{thm} [Признак Дини сходимости ряда Фурье в точке] \label{ch17thm4}
+Если функция $f(x) \in \overset{*}{L^{R}_1}(-\pi;\pi)$ в точке $x_0 \in \bbR$ удовлетворяет условию Дини, то ее ряд Фурье в этой точке сходится к $f(x_0)$.
+\end{thm}
+\begin{proof}
+Как и при доказательстве теоремы \ref{ch17thm3} для $h \in (0;\delta)$ получаем неравенство
+$$
+\overline{\lim\limits_{n \to \infty}}|T_n(f; x_0) - f(x_0)| \le \frac{1}{2\pi}\int\limits_{-h}^{h}|F(\xi)|d\xi,
+$$
+где
+$$
+|F(\xi)| \le \pi\left|\frac{f(x_0 + \xi) - f(x_0)}{\xi}\right|.
+$$
+Отсюда и из условия Дини следует, что
+$$
+\overline{\lim\limits_{n \to \infty}}|T_n(f; x_0) - f(x_0)| = 0.
+$$
+\end{proof}
+
+%TODO Нужны ли односторонние условия Дини
+
+\subsection{Признак Дирихле}
+%TODO Тут дофига используется, в том числе односторонние условия и ядро Дирихле. Требует ревизии
+Будем говорить, что функция $f(x)$, определенная в некоторой окрестности точки $x_0$, в этой точке удовлетворяет \textit{условию Дирихле}, если существует $\delta > 0$ такое, что на интервалах $(x_0 - \delta;x_0)$ и $(x_0;x_0 + \delta)$ она монотонна и ограничена.
+
+Очевидно, функция $f(x)$, удовлетворяющая условию Дирихле в точке $x_0$, в этой точке имеет конечные односторонние пределы $f(x_0\pm 0)$.
+\begin{thm} \label{ch17thm5}
+Если функция $f(x) \in \overset{*}{L^{R}_1}(-\pi;\pi)$ в точке $x_0 \in \bbR$ удовлетворяет условию Дирихле, то ее ряд Фурье в этой точке сходится к $M_f(x_0)$.
+\end{thm}
+\begin{proof}
+Как известно,
+\begin{multline*}
+|T_n(f; x_0) - M_f(x_0)| \le \frac{1}{2\pi} \sum_{\pm} \left|\int\limits_{h}^{\pi} F_{\pm}(\xi) \sin{\lambda_n \xi} \,d\xi \right|\ +\\
++\ \frac{1}{2\pi} \sum_{\pm} \left|\int\limits_{0}^{h} (f(x_0\pm \xi) - f(x_0\pm 0))D_n(\xi) \,d\xi \right|
+\end{multline*}
+для любого $h \in (0;\pi)$.
+
+Согласно условию Дирихле, существует $\delta > 0$ такое, что функции $f(x_0\pm \xi)$ на интервале $(0;\delta)$ монотонны и ограничены. По второй теореме о среднем для любого $h \in (0;\delta)$ существуют $\theta_{\pm} \in [0;h]$ такие, что
+$$
+\int\limits_{0}^{h} (f(x_0\pm \xi) - f(x_0\pm 0))D_n(\xi) \,d\xi\ = (f(x_0\pm h) - f(x_0\pm 0))\, \int\limits_{\theta_{\pm}}^{h} D_n(\xi)\,d\xi
+$$
+
+Как известно, ядро Дирихле обладает следующим свойством: существует постоянная $C > 0$ такая, что
+$$
+\left|\int\limits_{\alpha}^{\beta} D_n(\xi)\,d\xi\right| \le 2C\pi
+$$
+для любых $\alpha, \beta \in (0;\pi)$ и любого $n \in \bbN$. Следовательно для любого $h \in (0;\delta)$ и любого $n \in \bbN$ справедливо неравенство
+\begin{multline*}
+|T_n(f; x_0) - M_f(x_0)| \le\\
+\le C\sum_{\pm}|f(x_0\pm h) - f(x_0\pm 0)| + \frac{1}{2\pi} \sum_{\pm} \left|\int\limits_{h}^{\pi} F_{\pm}(\xi) \sin{\lambda_n \xi} \,d\xi \right|,
+\end{multline*}
+из которого следует, что
+$$
+\overline{\lim\limits_{n \to \infty}}|T_n(f; x_0) - M_f(x_0)| \le C\sum_{\pm}|f(x_0\pm h) - f(x_0\pm 0)|
+$$
+для любого $h \in (0;\delta)$. А так как в последнем неравенстве правая часть стремится к нулю при $h \to +0$, то
+$$
+\lim\limits_{n \to \infty}|T_n(f; x_0) - M_f(x_0)| = 0.
+$$
+\end{proof}
+
+\begin{cons}
+Если функция $f(x)$ ограничена и кусочно-монотонна на интервале $(-\pi;\pi)$, то в любой точке $x \in (-\pi;\pi)$ ее ряд Фурье сходится к
+$$
+M_f(x) = \frac{f(x+0) + f(x-0)}{2},
+$$
+а в точках $-\pi$ и $\pi$ он сходится к $\cfrac{f(-\pi+0) - f(\pi-0)}{2}$. В частности, в точках $x \in (-\pi;\pi)$, где $f$ непрерывна, ряд Фурье сходится к $f(x)$.
+\end{cons}
+\begin{cons}
+Если непрерывная $2\pi$-периодическая функция $f$ кусочно-монотонна на отрезке $[-\pi;\pi]$, то в любой точке $x \in \bbR$ ее ряд Фурье сходится к $f(x)$.
+\end{cons}

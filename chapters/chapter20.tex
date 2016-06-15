@@ -58,7 +58,7 @@ B
   [\overrightarrow{r}-\overrightarrow{r_0},\overrightarrow{a}]=\overrightarrow{0}, 
   \end{equation}
   что равносильно
-  \begin{equation}\label{20.1.vect1}
+  \begin{equation}\label{20.1.vect2}
   [\overrightarrow{r},\overrightarrow{a}]=\overrightarrow{b}, \overrightarrow{b}\bot\overrightarrow{a}
   \end{equation}
   -- \textit{векторное уравнение прямой в пространстве}.
@@ -108,22 +108,22 @@ C\\
 
 \section{Углы между прямыми и плоскостями}
 
-  Пусть две прямые на плоскости заданы параметрическими уравнениями вида \ref{20.1.par1} с использованием направляющих векторов \overrightarrow{a_1} и \overrightarrow{a_2}. Поскольку $(\overrightarrow{a_1},\overrightarrow{a_2})=\abs{a_1}\abs{a_2}cos \phi$, где $\phi \in \left[0;\pi\right]$ - угол между векторами \overrightarrow{a_1} и \overrightarrow{a_2}, угол между прямыми, лежащий в интервале $\left[0;\dfrac \pi 2\right]$, находится по формуле
+  Пусть две прямые на плоскости заданы параметрическими уравнениями вида \ref{20.1.par1} с использованием направляющих векторов \overrightarrow{a_1} и \overrightarrow{a_2}. Поскольку $(\overrightarrow{a_1},\overrightarrow{a_2})=\abs{a_1}\abs{a_2}\cos \phi$, где $\phi \in \left[0;\pi\right]$ - угол между векторами \overrightarrow{a_1} и \overrightarrow{a_2}, угол между прямыми, лежащий в интервале $\left[0;\dfrac \pi 2\right]$, находится по формуле
   \begin{equation}\label{20.2.directions}
-  \widetilde\phi=arccos\dfrac{\abs{(\overrightarrow{a_1},\overrightarrow{a_2})}}{\abs{a_1}\abs{a_2}}.
+  \widetilde\phi=\arccos\dfrac{\abs{(\overrightarrow{a_1},\overrightarrow{a_2})}}{\abs{a_1}\abs{a_2}}.
   \end{equation}
   Искомый угол также равен углу между нормалями, поэтому при задании прямой нормальным уравнением \ref{20.1.norm1} имеем:
   \begin{equation}\label{20.2.normals}
-  \widetilde\phi=arccos\dfrac{\abs{(\overrightarrow{n_1},\overrightarrow{n_2})}}{\abs{n_1}\abs{n_2}}.
+  \widetilde\phi=\arccos\dfrac{\abs{(\overrightarrow{n_1},\overrightarrow{n_2})}}{\abs{n_1}\abs{n_2}}.
   \end{equation}
   
 \addpicture{pictures/ch20pict1}{0.18}
-  Пусть две прямые заданы в виде \ref{20.1.ang1} с угловыми коэффициентами $k_1$ и $k_2$. Тангенс угла с осью абцисс $tg \phi = \dfrac{a_2}{a_1}=-\dfrac{A}{B}=k$. Для угла между двумя заданными прямыми имеем:
+  Пусть две прямые заданы в виде \ref{20.1.ang1} с угловыми коэффициентами $k_1$ и $k_2$. Тангенс угла с осью абцисс $\tg \phi = \dfrac{a_2}{a_1}=-\dfrac{A}{B}=k$. Для угла между двумя заданными прямыми имеем:
   \begin{equation}
-  tg \phi=tg (\alpha-\beta)=\dfrac{tg \alpha - tg \beta}{1+tg \alpha tg \beta}=\dfrac{k_1-k_2}{1+k_1k_2}
+  \tg \phi=\tg (\alpha-\beta)=\dfrac{\tg \alpha - \tg \beta}{1+\tg \alpha \tg \beta}=\dfrac{k_1-k_2}{1+k_1k_2}
   \end{equation}
   \begin{equation}\label{20.2.angles}
-  \widetilde \phi = arctg \abs{\dfrac{k_1-k_2}{1+k_1k_2}}
+  \widetilde \phi = \arctg \abs{\dfrac{k_1-k_2}{1+k_1k_2}}
   \end{equation}
   
   Теперь перейдём в трёхмерное пространство. Угол между двумя прямыми по-прежнему можно найти по форумле \ref{20.2.directions}. 
@@ -133,8 +133,8 @@ C\\
 \addpicture{pictures/ch20pict4}{0.20}  
   Пусть теперь даны плоскость $\pi$ с нормалью \overrightarrow{n} и прямая $l$ с направляющим вектором \overrightarrow{a}. Искомый угол выражается через смежный угол между векторами \overrightarrow{a} и \overrightarrow{n}:
   \begin{equation}
-  sin  \widetilde \phi = cos  \widetilde \alpha = \dfrac{\abs{(\overrightarrow{a},\overrightarrow{n})}}{\abs{\overrightarrow{a}} \abs{\overrightarrow{n}}} \Rightarrow
-  \widetilde \phi = arcsin \dfrac{\abs{(\overrightarrow{a},\overrightarrow{n})}}{\abs{\overrightarrow{a}} \abs{\overrightarrow{n}}}
+  \sin  \widetilde \phi = \cos  \widetilde \alpha = \dfrac{\abs{(\overrightarrow{a},\overrightarrow{n})}}{\abs{\overrightarrow{a}} \abs{\overrightarrow{n}}} \Rightarrow
+  \widetilde \phi = \arcsin \dfrac{\abs{(\overrightarrow{a},\overrightarrow{n})}}{\abs{\overrightarrow{a}} \abs{\overrightarrow{n}}}
   \end{equation}
 
 
@@ -154,11 +154,11 @@ C\\
   \rho_2 (P_1,l) = \dfrac{\abs{Ax_1+By_1+C}}{\sqrt{A^2+B^2}}.
   \end{equation}
   
-  При рассмотрении точки $P_1$ и прямой l в трёхмерном пространстве удобно пользоваться векторным произведением и вычислять расстояние как модуль проекции отрезка, соединющего точку $P_1$ с произвольной точкой $P_0$ прямой, на плоскость, нормальную направляющему вектору \overrightarrow{a}:
+  При рассмотрении точки $P_1$ и прямой l в трёхмерном пространстве удобно пользоваться векторным произведением и вычислять расстояние как модуль проекции отрезка, соединющего точку $P_1$ с произвольной точкой $P$ прямой, на плоскость, нормальную направляющему вектору \overrightarrow{a}:
   \begin{equation}
-  \rho_3 (P_1,l) = \dfrac{\abs{[\overrightarrow{a},\overrightarrow{r_1}-\overrightarrow{r_0}]}}{\abs{\overrightarrow{a}}}.
+  \rho_3 (P_1,l) = \dfrac{\abs{[\overrightarrow{a},\overrightarrow{r_1}-\overrightarrow{r}]}}{\abs{\overrightarrow{a}}}.
   \end{equation}
-  Если используется представление \ref{20.1.vect1}, можно записать:
+  Если используется представление \ref{20.1.vect2}, можно записать:
   \begin{equation}
   \rho_3 (P_1,l) = \dfrac{\abs{[\overrightarrow{a},\overrightarrow{r_1}]-\overrightarrow{b}}}{\abs{\overrightarrow{a}}}.
   \end{equation}
@@ -167,7 +167,7 @@ C\\
   \begin{equation}
   \rho_3 (P_1,\pi) = \dfrac{\abs{Ax_1+By_1+Cz_1+D}}{\sqrt{A^2+B^2+C^2}},
   \end{equation}
-  если плоскость задаётся линейным общим уравнением \ref{20.1.lin3}.
+  если плоскость задаётся общим линейным уравнением \ref{20.1.lin3}.
 
   Теперь рассмотрим случай двух скреивающихся прямых в пространстве ($l_1|\cdot l_2$). Построим параллелограмм, двумя из рёбер которого являются направляющие векторы \overrightarrow{a_1} и \overrightarrow{a_2}, приложенные соответственно в точках $P_1$ и $P_2$ (см. рис.). Расстояние между ними будет равно расстоянию между гранями, параллельными обеим плоскостям, т.е., из определений скалярного и векторного произведения,
   \begin{equation}

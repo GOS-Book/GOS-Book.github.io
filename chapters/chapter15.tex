@@ -40,21 +40,23 @@ G = \{ (x,y,z) \in \bbR^3: \: (x,y) \in g, \: \phi_1(x,y) < z < \phi_2(x,y) \: \
 \end{lemm}
 
 \begin{proof}
-Область $G$ задана условием $(\ref{ch15eq1}) \; \Rightarrow \; \partial G = S_1 \cup S_2 \cup S_0$, где $S_{1,2} = \{ (x,y) \in \overline{g}, \; z = \phi_{1,2}(x,y) \}$, $S_0 = \{ (x,y) \in \partial g, \phi_1(x,y) \le z \le \phi_2(x,y) \}$ 
+Область $G$ задана условием $(\ref{ch15eq1}) \; \Rightarrow \; \partial G = S_1 \cup S_2 \cup S_0$, 
+\addpicture{pictures/ch15pict1}{0.25}
+где $S_{1,2} = \{ (x,y) \in \overline{g}, \; z = \phi_{1,2}(x,y) \}$, $S_0 = \{ (x,y) \in \partial g, \phi_1(x,y) \le z \le \phi_2(x,y) \}$ 
 
 $G = \{ (x,y,z) \in \bbR^3: \; (x,y) \in g, \; \phi_1(x,y) < z < \phi_2(x,y) \; \forall (x,y) \in g \} \; \Rightarrow \; \partial G$ -- кусочно-гладкая поверхнотсь.
 
-$\iint\limits_{S_{2_{\textit{внеш}}}} f \,dx\,dy = \iint\limits_g f(x,y,\phi_2(x,y)) \,dx\,dy$
+$\displaystyle\iint\limits_{S_{2_{\textit{внеш}}}} f \,dx\,dy = \displaystyle\iint\limits_g f(x,y,\phi_2(x,y)) \,dx\,dy$
 
-$\iint\limits_{S_{1_{\textit{внеш}}}} f \,dx\,dy = - \iint\limits_g f(x,y,\phi_1(x,y)) \,dx\,dy$
+$\displaystyle\iint\limits_{S_{1_{\textit{внеш}}}} f \,dx\,dy = - \displaystyle\iint\limits_g f(x,y,\phi_1(x,y)) \,dx\,dy$
 
-$\iint\limits_{S_{0_{\textit{внеш}}}} f \,dx\,dy = 0$, так как на $S_0 \; \overset{n}{\to}_{\textit{внеш}(x,y,z) = (n_x, n_y, 0)}$
+$\displaystyle\iint\limits_{S_{0_{\textit{внеш}}}} f \,dx\,dy = 0$, так как на $S_0 \; \overset{\to}{n}_{\textit{внеш}(x,y,z) = (n_x, n_y, 0)}$
 
 $\Rightarrow$
 
-$\iint\limits_G f \,dx\,dy = \iint\limits_g (f(x,y,\phi_2(x,y)) - f(x,y,\phi_1(x,y))) \,dx \,dy$
+$\displaystyle\iint\limits_G f \,dx\,dy = \displaystyle\iint\limits_g (f(x,y,\phi_2(x,y)) - f(x,y,\phi_1(x,y))) \,dx \,dy$
 
-$\iiint\limits_G \frac{\partial f}{\partial z} \,dx \,dy \,dz = \iint\limits_g \,dx \,dy \int\limits_{\phi_1(x,y)}^{\phi_2(x,y)} \frac{\partial f}{\partial z}(x,y,z) \,dz = \iint\limits_g f(x,y,\phi_2) - f(x,y,\phi_1) \,dx \,dy$
+$\displaystyle\iiint\limits_G \dfrac{\partial f}{\partial z} \,dx \,dy \,dz = \displaystyle\iint\limits_g \,dx \,dy \displaystyle\int\limits_{\phi_1(x,y)}^{\phi_2(x,y)} \dfrac{\partial f}{\partial z}(x,y,z) \,dz = \displaystyle\iint\limits_g f(x,y,\phi_2) - f(x,y,\phi_1) \,dx \,dy$
 
 \end{proof}
 
@@ -94,7 +96,7 @@ $\partial G_{\textit{внеш}} = \partial G'_{\textit{внеш}} \cup \partial 
  \Sigma_{2_{\textit{внеш}}}
 \end{aligned} \right\} \quad  \textit{это поверхности } \Sigma \textit{с противоположными ориентациями}.
 \end{equation*}
-
+\addpicture{pictures/ch15pict2}{0.12}
 \begin{equation} \label{ch15eqA}
 \iint\limits_{\partial G_{1_{\textit{внеш}}}} f \,dx\,dy + \iint\limits_{\partial G_{2_{\textit{внеш}}}} f \,dx\,dy = \iint\limits_{G_{\textit{внеш}}} f\,dx\,dy
 \end{equation}
@@ -122,7 +124,7 @@ $(\ref{ch15eqA}, \ref{ch15eqB}, \ref{ch15eqC}) \; \Rightarrow \; (\ref{ch15eq2z}
 \begin{defn}
 Непрерывно-дифференцируемое векторное поле $\overset{\to}{a}(M), \; M \in G$ называется соленоидальным в области $G$, если 
 \begin{equation} \label{ch15.2eq1}
-\forall M \in G \quad div \: \overset{\to}{a}(M) = 0
+\forall M \in G \quad \Div \: \overset{\to}{a}(M) = 0
 \end{equation}
 \end{defn}
 
@@ -140,7 +142,7 @@ $(\ref{ch15eqA}, \ref{ch15eqB}, \ref{ch15eqC}) \; \Rightarrow \; (\ref{ch15eq2z}
 Тогда так как $\overset{\to}{a}$ -- непрерывно-дифференциуемое векторное поле в $G$, по формуле Остроградского-Гаусса:
 
 $$
-\iint\limits_{\partial \overline{g}} \overset{\to}{a} \,d\overset{\to}{s} = \iiint\limits_g div \: \overset{\to}{a}(M) \,dg = 0, \; \textit{из } (\ref{ch15.2eq1}) 
+\iint\limits_{\partial \overline{g}} \overset{\to}{a} \,d\overset{\to}{s} = \iiint\limits_g \Div \: \overset{\to}{a}(M) \,dg = 0, \; \textit{из } (\ref{ch15.2eq1}) 
 $$
 
 $\Rightarrow$ из ($\ref{ch15.2eq1}$) $\Rightarrow$ ($\ref{ch15.2eq2}$)
@@ -148,7 +150,7 @@ $\Rightarrow$ из ($\ref{ch15.2eq1}$) $\Rightarrow$ ($\ref{ch15.2eq2}$)
 Пусть выполняется ($\ref{ch15.2eq2}$), $M \in G$.
 $\Rightarrow \; \exists \delta > 0: \; O_\delta \subset G$
 
-$\Rightarrow \; div \: \overset{\to}{a}(M) = \lim\limits_{r \to +0}\left( \frac{1}{\frac{4}{3}\pi r^3}\iint\limits_{S^{+}_M(r)}a \,d\overset{\to}{s} \right) = 0,$ где $S^{+}_M(r)$ -- сфера с центром в точке $M$ радиуса $r, \: r \in (0, \delta)$.
+$\Rightarrow \; \Div \: \overset{\to}{a}(M) = \lim\limits_{r \to +0}\left( \frac{1}{\frac{4}{3}\pi r^3}\iint\limits_{S^{+}_M(r)}a \,d\overset{\to}{s} \right) = 0,$ где $S^{+}_M(r)$ -- сфера с центром в точке $M$ радиуса $r, \: r \in (0, \delta)$.
 
 $(\ref{ch15.2eq2}) \Rightarrow (\ref{ch15.2eq1})$
 \end{proof}
@@ -156,7 +158,7 @@ $(\ref{ch15.2eq2}) \Rightarrow (\ref{ch15.2eq1})$
 \begin{defn}
 Непрерывно-дифференцируемая векторная фукнция $\overset{\to}{b}(M), \; M \in G$, называется векторным потенциалом векторного поля $\overset{\to}{a}(M), \; M \in G \subset \bbR^3$, в области $G$, если 
 $$
-\forall M \in G: \; \overset{\to}{a}(M) = rot \: \overset{\to}{b}(M)
+\forall M \in G: \; \overset{\to}{a}(M) = \rot \: \overset{\to}{b}(M)
 $$
 \end{defn}
 
@@ -166,12 +168,13 @@ $$
 
 \begin{proof}
 $\overset{\to}{a}(M)$ -- непрерывно-дифференцируемо по условию.
-Пусть $\forall M \in G \quad \overset{\to}{a}(M) = rot \: \overset{\to}{b}(M)$.
-$\Rightarrow \quad \exists div \: \overset{\to}{a}(M) = div(rot \: \overset{\to}{b}(M)) = 0$ в $G$.
+Пусть $\forall M \in G \quad \overset{\to}{a}(M) = \rot \: \overset{\to}{b}(M)$.
+$\Rightarrow \quad \exists \Div \: \overset{\to}{a}(M) = \Div(\rot \: \overset{\to}{b}(M)) = 0$ в $G$.
 \end{proof}
 
 \begin{defn}
-Замкнутой кусочно-гладкой поверхностью называется ограниченная кусочно-гладкая поверхность, не имеющая края. При этом, если $S = \sum\limits_{j = 1}^m S_j, \quad \textit{где } \forall j \in \overline{1,m}, \quad S_j$ -- простая гладкая поверхность с кусочно-гладким краем $\partial S_j$, то каждый гладкий участок края $\partial S_j$ совпадает с гладким участком края $\partial S_i$, но их ориентации противоположны. Суммарный край $\partial S = \sum\limits_{j = 1}^m \partial S_j$ -- пуст.
+Замкнутой кусочно-гладкой поверхностью называется ограниченная кусочно-гладкая поверхность, не имеющая края. \addpicture{pictures/ch15pict3}{0.25} При этом, если $S = \sum\limits_{j = 1}^m S_j, \quad \textit{где } \forall j \in \overline{1,m}, \quad S_j$ -- простая гладкая поверхность с кусочно-гладким краем $\partial S_j$, то каждый гладкий участок края $\partial S_j$ совпадает с гладким участком края $\partial S_i$, но их ориентации
+ противоположны. Суммарный край $\partial S = \sum\limits_{j = 1}^m \partial S_j$ -- пуст.
 \end{defn}
 
 \begin{thm}
@@ -187,14 +190,14 @@ $S_2, S_1 \subset G$.
 
 $\Rightarrow$ на $S_2, S_1$ справедлива формула Стокса.
 
-$\iint\limits_S \overset{\to}{a}\,d\overset{\to}{s} = \iint\limits_{S_1} \overset{\to}{a}\,d\overset{\to}{s} + \iint\limits_{S_2} \overset{\to}{a}\,d\overset{\to}{s} = \iint\limits_{S_1} rot \: \overset{\to}{b}\,d\overset{\to}{s} + \iint\limits_{S_2} rot \: \overset{\to}{b}\,d\overset{\to}{s} \myeq{\textit{Стокс}} \iint\limits_{\gamma_1} \overset{\to}{b}\,d\overset{\to}{r} + \iint\limits_{\gamma_2} \overset{\to}{b}\,d\overset{\to}{r} = \iint\limits_{\gamma_1} \overset{\to}{b}\,d\overset{\to}{r} - \iint\limits_{\gamma_1} \overset{\to}{b}\,d\overset{\to}{r} = 0$
+$\iint\limits_S \overset{\to}{a}\,d\overset{\to}{s} = \iint\limits_{S_1} \overset{\to}{a}\,d\overset{\to}{s} + \iint\limits_{S_2} \overset{\to}{a}\,d\overset{\to}{s} = \iint\limits_{S_1} \rot \: \overset{\to}{b}\,d\overset{\to}{s} + \iint\limits_{S_2} \rot \: \overset{\to}{b}\,d\overset{\to}{s} \myeq{\textit{Стокс}} \iint\limits_{\gamma_1} \overset{\to}{b}\,d\overset{\to}{r} + \iint\limits_{\gamma_2} \overset{\to}{b}\,d\overset{\to}{r} = \iint\limits_{\gamma_1} \overset{\to}{b}\,d\overset{\to}{r} - \iint\limits_{\gamma_1} \overset{\to}{b}\,d\overset{\to}{r} = 0$
 \end{proof}
 
 \begin{thm}
 Если непрерывно-дифференцируемое векторное поле $\overset{\to}{a}(M), \; M \in G$ соленоидально в области $G \subset \bbR^3$, то 
 
 \begin{multline}
-\forall M \in G \; \exists \delta > 0, \exists \textit{непр-дифф. вект. поле } \overset{\to}{b}(P), \; P \in O_\delta(M): \\ \quad \forall P \in O_\delta(M): \; \overset{\to}{a}(P) = rot \: \overset{\to}{b}(P) 
+\forall M \in G \; \exists \delta > 0, \exists \textit{непр-дифф. вект. поле } \overset{\to}{b}(P), \; P \in O_\delta(M): \\ \quad \forall P \in O_\delta(M): \; \overset{\to}{a}(P) = \rot \: \overset{\to}{b}(P) 
 \end{multline}
 \end{thm}
 
@@ -202,6 +205,6 @@ $\iint\limits_S \overset{\to}{a}\,d\overset{\to}{s} = \iint\limits_{S_1} \overse
 Любое непрерывно-дифференцируемое векторное поле $\overset{\to}{a}(M), \; M \in G$, $G$ -- область в $\bbR^3$, является суммой двух непрерывно-дифференцируемых векторных полей -- потенциального и соленоидального:
 
 $$
-\overset{\to}{a}(M) = grad \: u(M) + \overset{\to}{c}(M), \quad \forall M \in G, \quad div \: \overset{\to}{c}(M) = 0
+\overset{\to}{a}(M) = \grad \: u(M) + \overset{\to}{c}(M), \quad \forall M \in G, \quad \Div \: \overset{\to}{c}(M) = 0
 $$
 \end{thm}

@@ -32,9 +32,9 @@
   \end{equation*}
   $A$ называется \textit{основной матрицей системы}, $b^\uparrow$ -- \textit{столбцом свободнных членов}, $\widetilde A = (A|b^\uparrow)$ -- \textit{расширенной матрицей системы}.
   \begin{defn}
-  Набор векторов \overrightarrow{a_1},\overrightarrow{a_2},...,\overrightarrow{a_r} называется \textit{базисом} множества векторов $V\neq \emptyset$, если
+  Набор векторов \vv{a_1},\vv{a_2},...,\vv{a_r} называется \textit{базисом} множества векторов $V\neq \emptyset$, если
   
-  (1) \overrightarrow{a_1},...,\overrightarrow{a_r} линейно независимы
+  (1) \vv{a_1},...,\vv{a_r} линейно независимы
   
   (2) $\fa v \in V \ex \lambda_1,...\lambda_r: v=\sum \limits_{i=1}^r\lambda_ia_i$
   \end{defn}
@@ -65,7 +65,28 @@
   что означает, что решение существует.
   \end{proof}
 \section{Общее решение системы линейных алгебраических уравнений}
-  \begin{thm}
+  Напомним, что для приведения матриц к \textit{ступенчатому виду} \ref{21.2.stairs} используется прямой ход алгоритма Гаусса. 
+  \begin{equation}\label{21.2.stairs} 
+  \begin{pmatrix}
+      &a_{1,j_1}& \hdotsfor{4}          &a_{1,n}     \cr 
+ \fudge 0&&a_{2,j_1} &\hdotsfor{3}      &a_{2,n}     \cr
+      &   &     &\ddots&\hdotsfor{2}    &\vdots      \cr 
+      &\fudge 0 && & a_{r,j_r}  &\cdots &a_{r,n}   \cr \hline
+      &   &     &  &            &       &         \cr
+      &   &     &  &\fudge 0    &       &         \cr
+  \end{pmatrix}
+  \end{equation}    
+  Затем применяется обратный ход алгоритма Гаусса для приведения к \textit{неупрощаемой форме}, которая при перестановке столбцов имеет вид \ref{21.2.simplest1}.
+  \begin{equation}\label{21.2.simplest1}
+  \begin{pmatrix}
+      & 1 &     &   &a'_{1,r+1} &\cdots &a'_{1,n}   \cr 
+    \fudge 0 & &\ddots& &\vdots &\cdots &\vdots     \cr
+      &   &     & 1 &a'_{r,r+1} &\cdots &a'_{r,n}   \cr \hline
+      &   &     &   &           &       &           \cr
+      &   & &\fudge 0  &        &       &           \cr
+  \end{pmatrix}
+  \end{equation}    
+  \begin{thm} 
   Общее решение совместной системы линейных уравнений \ref{21.1.sys1} имеет вид 
   \begin{equation}\label{21.2.common}
    Y=X_0+\sum_{j=1}^{n-r}c_jX_j, c_j \in \bbR,
@@ -73,8 +94,8 @@
   где $X_0$ -- частное решение, $X_1,...,X_{n-r}$ -- линейно независимые решения однородного уравнения $AX=0$, a $r=rg A=rg \widetilde A$ - ранг матрицы уравнения.
   \end{thm}
   \begin{proof}
-  Прямой и обратный ход алгоритм Гаусса приводят расширенную матрицу системы (возможно, с переобозначением $x_{i_1}\rightarrow x'_1,...,x_{i_r}\rightarrow x'_r,...$) к \textit{неупрощаемому виду}
-  \begin{equation}\label{21.2.simplest}
+  Прямой и обратный ход алгоритм Гаусса приводят расширенную матрицу системы (возможно, с переобозначением $x_{i_1}\rightarrow x'_1,...,x_{i_r}\rightarrow x'_r,...$) к неупрощаемому виду
+  \begin{equation}\label{21.2.simplest2}
   \bordermatrix{
     \global\everycr{\noalign{\global\advance\rowcount by 1}}
     & 1 &      & r & r+1       &       & n       & \cr
