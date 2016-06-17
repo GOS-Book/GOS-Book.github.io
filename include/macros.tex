@@ -33,9 +33,7 @@
 \newcommand{\ccM}{\mathcal{M}}
 \newcommand{\ccD}{\mathcal{D}}
 
-% Действительная и мнимая части
-\def\Re{\mathop{\mathrm{Re}}\nolimits}
-\def\Im{\mathop{\mathrm{Im}}\nolimits}
+
 
 % Привычное написание букв каппа, эпсилон и фи и знаков "больше, или равно", "меньше, или равно", пустого множества
 \renewcommand{\kappa}{\varkappa }
@@ -53,26 +51,28 @@
 \newcommand{\bboR}{\overline{\mathbb{R}}}
 \newcommand{\bboC}{\overline{\mathbb{C}}}
 
-% Частная производная
-\newcommand{\pd}[2]{\frac{\partial{#1}}{\partial{#2}}}
-
 %Проколотая окрестность
 \newcommand{\dneio}[2]{\overset{\raisebox{0pt}[0pt][0pt]{$\scriptscriptstyle\circ$}}{O}_{#1}({#2})}
 \newcommand{\dnei}[1]{\overset{\raisebox{0pt}[0pt][0pt]{$\scriptscriptstyle\circ$}}{O}({#1})}
 \newcommand{\coci}[2][]{\overset{\raisebox{0pt}[0pt][0pt]{$\scriptscriptstyle\circ$}}{C^{#1}}{#2}}
 
-%Внутренность множества.
-\DeclareMathOperator{\interior}{int}
-
 %знак равно с надписью
 \newcommand{\myeq}[1]{\overset{#1}{=}}
 
-% Жирный вектор
-\newcommand{\vect}[1] { \mathbf{#1} }
-\newcommand{\V}[1] { \mathbf{#1} }
-
 % Полная производная
 \newcommand{\D}[2]{\frac{d{#1}}{d{#2}}}
+
+% Частная производная
+\newcommand{\pd}[2]{\frac{\partial{#1}}{\partial{#2}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Действительная и мнимая части
+\def\Re{\mathop{\mathrm{Re}}\nolimits}
+\def\Im{\mathop{\mathrm{Im}}\nolimits}
+
+%Внутренность множества.
+\DeclareMathOperator{\interior}{int}
 
 % Носитель
 \def\supp{\mathop{\mathrm{supp}}\nolimits}
@@ -89,8 +89,16 @@
 % Константа
 \def\const{\mathop{\mathrm{const}}\nolimits}
 
-% Оператор
-\newcommand{\op}[1]{\widehat{#1}}
+% Ранг
+\def\rg{\mathop{\mathrm{rg}}\nolimits}
+
+%% Вычет
+\def\res{\mathop{\rm res}\limits}
+
+%% Расстояние
+\def\dist{\mathop{\rm dist}\limits}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Крупная хи
 \newcommand{\bigchi}{\text{\scalebox{1.5}{$\chi$}}}
@@ -102,12 +110,6 @@
 
 %% Text fomats
 \newcommand{\tbi}[1]{\textbf{\textit{#1}}}
-
-%% Вычет
-\def\res{\mathop{\rm res}\limits}
-
-%% Расстояние
-\def\dist{\mathop{\rm dist}\limits}
 
 %% Сокращение для одной штуки
 

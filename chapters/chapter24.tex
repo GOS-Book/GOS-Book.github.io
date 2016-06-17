@@ -75,7 +75,7 @@ y_1 \\ \vdots \\ y_n
   =b_{11}(x_1+\sum\limits_{j=2}^n\dfrac{b_{1j}}{b_{11}}x_j)^2+(\sum\limits_{i=2}^nb_{ii}x_i^2+2\sum\limits_{2\le i<j\le n} b_{ij}x_ix_j-(\sum\limits_{j=2}^n\dfrac{b_{1j}}{b_{11}}x_j)^2)=\\
   =b_{11}(x_1+\sum\limits_{j=2}^n\dfrac{b_{1j}}{b_{11}}x_j)^2+k_1(x_2,\ldots, x_n)
   \end{array}\end{equation*}
-  Тогда сделаем замену $\widetilde{x_1}=x_1+\sum\limits_{j=2}^n\dfrac{b_{1j}}{b_{11}}x_j, \widetilde{x_2}=x_2,\ldots \widetilde{x_n}=x_n$. Квадратичная форма $k_1(\widetilde{x_2},\ldots, \widetilde{x_n})$ не зависит от $\widetilde{x_1}$, и к ней можно применить тот же метод, и так далее, в результате получится квадратичная форма $\sum\limits_{i=1}^r\alpha_i\widetilde{x_i}^2 (\alpha_1\alpha_2\ldots\alpha_r \neq 0, r=rg B)$. Остаётся сделать замену $y_i=\sqrt{\abs{\alpha_i}}\widetilde{x_i}, i=\overline{1,r}; y_k=\widetilde{x_k}, k=\overline{r+1,n}$.\\
+  Тогда сделаем замену $\widetilde{x_1}=x_1+\sum\limits_{j=2}^n\dfrac{b_{1j}}{b_{11}}x_j, \widetilde{x_2}=x_2,\ldots \widetilde{x_n}=x_n$. Квадратичная форма $k_1(\widetilde{x_2},\ldots, \widetilde{x_n})$ не зависит от $\widetilde{x_1}$, и к ней можно применить тот же метод, и так далее, в результате получится квадратичная форма $\sum\limits_{i=1}^r\alpha_i\widetilde{x_i}^2 (\alpha_1\alpha_2\ldots\alpha_r \neq 0, r=\rg B)$. Остаётся сделать замену $y_i=\sqrt{\abs{\alpha_i}}\widetilde{x_i}, i=\overline{1,r}; y_k=\widetilde{x_k}, k=\overline{r+1,n}$.\\
   (2) Препятствие к выделению квадратов может возникнуть, если на каком-то этапе получена форма, все диагональные элементы матрицы которой равны нулю, но есть ненулевые элементы вне диагонали. Перенумеровав при необходимости переменные, добьёмся $b_{12} \neq 0$. Тогда сделаем подготовительную замену $x_1=x'_1-x'_2,x_2=x'_1+x'_2,x_j=x'_j (j \ge 3)$:
   \begin{equation*}
   k(x')=2b_{12}({x'}_1^2-{x'}_2^2)+q'(x'),
@@ -84,6 +84,6 @@ y_1 \\ \vdots \\ y_n
   \end{proof}
   
   \begin{thm}\label{24.2.thm2}
-  Пусть невырожденная замена $X=SY$ приводит квадратичную форму $k(x)$ к каноническому виду \ref{24.2.canonical}. Если другая невырожденная замена $X=TZ$ приводит форму к каноническому виду $\widetilde q(x)=\sum\limits_{i=1}^sz_i^2-\sum\limits_{i=s+1}^{s+t}z_i^2$, то $p=s,q=t,$ причём $p+q=rg B$
+  Пусть невырожденная замена $X=SY$ приводит квадратичную форму $k(x)$ к каноническому виду \ref{24.2.canonical}. Если другая невырожденная замена $X=TZ$ приводит форму к каноническому виду $\widetilde q(x)=\sum\limits_{i=1}^sz_i^2-\sum\limits_{i=s+1}^{s+t}z_i^2$, то $p=s,q=t,$ причём $p+q=\rg B$
   \end{thm} 
-  Теорему \ref{24.2.thm2} оставим без доказательства, только заметим, что равенство $p+q=rg B$ следует из сохранения ранга матрицы $B$ при замене базиса.
+  Теорему \ref{24.2.thm2} оставим без доказательства, только заметим, что равенство $p+q=\rg B$ следует из сохранения ранга матрицы $B$ при замене базиса.

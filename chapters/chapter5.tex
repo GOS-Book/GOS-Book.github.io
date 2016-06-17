@@ -73,7 +73,7 @@ $$
 \end{defn}
 
 \begin{thm}
-Если функция $\phi(x)$ имеет предел при $x \to x_0$ и равен $y_0$, а функция $f(y)$ имеет предел при $y \to y_0$ и, кроме того, $\forall x \in D_\phi \quad \phi(x) \in D_f, \: \phi(x) \not= y_0$, сложная функция $f(\phi(x))$ имеет предел при $x \to x_0$ и
+Если функция $\phi(x)$ имеет предел при $x \to x_0$ и он равен $y_0$, а функция $f(y)$ имеет предел при $y \to y_0$ и, кроме того, $\forall x \in D_\phi \quad \phi(x) \in D_f, \: \phi(x) \not= y_0$, то сложная функция $f(\phi(x))$ имеет предел при $x \to x_0$ и
 \begin{equation} \label{ch5.1eq3}
 \lim_{x \to x_0} f(\phi(x)) = \lim_{y \to y_0} f(y).
 \end{equation}
@@ -82,14 +82,17 @@ $$
 \begin{proof}
 Пусть последовательность $\{ x_n \}$ такая, что 
 $$
-\forall n \quad x_n \in D_f, \quad x_n \not= x_0 \quad \text{и} \quad \lim_{n \to \infty} x_n = x_0.
+\forall n \quad x_n \in D_{\phi}, \quad x_n \not= x_0 \quad \text{и} \quad \lim_{n \to \infty} x_n = x_0.
 $$
-Тогда последовательность $y_n = \phi(x_0)$ сходится к $y_0$ при $n \to \infty$ и 
+Тогда последовательность $y_n = \phi(x_n)$ сходится к $y_0$ при $n \to \infty$ и 
 $$
 \lim_{n \to \infty} f(\phi(x_n)) = \lim_{n \to \infty} f(y_n) = \lim_{y \to y_0} f(y).
 $$
 Теорема доказана.
 \end{proof}
+
+Формула \eqref{ch5.1eq3} называется \textit{формулой замены переменного под знаком предела}. В ней $x_0$ и все рассматриваемые пределы могут быть как конечными, так и бесконечными.
+
 
 \section{Формула Тейлора с остаточным членом в форме Пеано}
 

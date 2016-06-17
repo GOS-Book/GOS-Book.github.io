@@ -4,13 +4,13 @@
 \begin{axiome} [Постулат Евклида]
   Через любую точку $P_0$ плоскости (пространства) можно провести единственную прямую, параллельную заданной прямой
 \end{axiome}
-  Рассмотрим точку $P_0$ на плоскости (в пространстве) и вектор $\overrightarrow{a}$. Построим уравнение, описывающее множество точек $P$, принадлежащих прямой $l$, проходящей через точку $P_0$ и параллельной вектору $\overrightarrow{a}$.
+  Рассмотрим точку $P_0$ на плоскости (в пространстве) и вектор $\vv{a}$. Построим уравнение, описывающее множество точек $P$, принадлежащих прямой $l$, проходящей через точку $P_0$ и параллельной вектору $\vv{a}$.
 
-  Заметим, что условие $P \in l$ эквивалентно $ \overrightarrow{P_0P} \parallel \overrightarrow{a} $, или, если обозначить через $\overrightarrow{r}$ и $\overrightarrow{r_0}$ радиус-векторы точек $P$ и $P_0$ соответсвенно, $\overrightarrow{r}-\overrightarrow{r_0} = t\overrightarrow{a}$, что даёт
+  Заметим, что условие $P \in l$ эквивалентно $ \vv{P_0P} \parallel \vv{a} $, или, если обозначить через $\vv{r}$ и $\vv{r_0}$ радиус-векторы точек $P$ и $P_0$ соответсвенно, $\vv{r}-\vv{r_0} = t\vv{a}$, что даёт
 \begin{equation}\label{20.1.par1}
-\overrightarrow{r}=\overrightarrow{r_0}+t\overrightarrow{a}, t \in \bbR
+\vv{r}=\vv{r_0}+t\vv{a}, t \in \bbR
 \end{equation}
--- \textit{параметрическое уравнение прямой на плоскости (в пространстве)}, которое в координатной записи для $\overrightarrow{r}(x,y,z)$ и $\overrightarrow{a}(a_1,a_2,a_3)$ принимает вид
+-- \textit{параметрическое уравнение прямой на плоскости (в пространстве)}, которое в координатной записи для $\vv{r}(x,y,z)$ и $\vv{a}(a_1,a_2,a_3)$ принимает вид
 
 \begin{equation}\label{20.1.par2}\tag{\ref{20.1.par1}'}
   \left\lbrace\begin{array}{crl}
@@ -40,26 +40,26 @@ t=\frac{x-x_0}{a_1}=\frac{y-y_0}{a_2}=\frac{z-z_0}{a_3}
   \end{equation}
   где $k=-\frac AB, b=-\frac CB$.
     
-  Пусть $P_0$ -- точка прямой на плоскости, a \overrightarrow{n} - вектор нормали. Тогда имеет место соотношение $(\overrightarrow{r}-\overrightarrow{r_0},\overrightarrow{n})=0$, или
+  Пусть $P_0$ -- точка прямой на плоскости, a \vv{n} - вектор нормали. Тогда имеет место соотношение $(\vv{r}-\vv{r_0},\vv{n})=0$, или
   \begin{equation}\label{20.1.norm1}
-  (\overrightarrow{r},\overrightarrow{n})+D=0
+  (\vv{r},\vv{n})+D=0
   \end{equation}
   -- \textit{нормальное уравнение прямой на плоскости}. Если система координат орнонормированна, раскрывая скалярное произведение, получим
   \begin{equation}
   n_1x+n_2y+D=0,
   \end{equation}
-откуда и из сравнения с \ref{20.1.lin1} видно, что $\overrightarrow{n}\parallel\left(\begin{array}{crl}
+откуда и из сравнения с \ref{20.1.lin1} видно, что $\vv{n}\parallel\left(\begin{array}{crl}
 A\\
 B
 \end{array}\right)$.   
 
   В трёхмерном пространстве условие \ref{20.1.par1} может быть переписано с использованием векторного произведения:
   \begin{equation}\label{20.1.vect1}
-  [\overrightarrow{r}-\overrightarrow{r_0},\overrightarrow{a}]=\overrightarrow{0}, 
+  [\vv{r}-\vv{r_0},\vv{a}]=\vv{0}, 
   \end{equation}
   что равносильно
   \begin{equation}\label{20.1.vect2}
-  [\overrightarrow{r},\overrightarrow{a}]=\overrightarrow{b}, \overrightarrow{b}\bot\overrightarrow{a}
+  [\vv{r},\vv{a}]=\vv{b}, \vv{b}\bot\vv{a}
   \end{equation}
   -- \textit{векторное уравнение прямой в пространстве}.
   
@@ -68,19 +68,19 @@ B
 Через любую заданную точку пространства можно провести ровно одну плоскость, параллельную заданной плоскости.
 \end{axiome}
 
-Пусть \overrightarrow{a} и \overrightarrow{b} -- два неколлинеарных направленных отрезка, лежащих в плоскости $\pi_0$, и задана точка $P_0$ в пространстве. Условием принадлежности точки $P$ плоскости $\pi$, проходящей через $P_0$ и параллельной плоскости $\pi_0$, будет $\overrightarrow{P_0P}=t_1\overrightarrow{a}+t_2\overrightarrow{b}$, или, если обозначить через $\overrightarrow{r}$ и $\overrightarrow{r_0}$ радиус-векторы точек $P$ и $P_0$ соответсвенно,
+Пусть \vv{a} и \vv{b} -- два неколлинеарных направленных отрезка, лежащих в плоскости $\pi_0$, и задана точка $P_0$ в пространстве. Условием принадлежности точки $P$ плоскости $\pi$, проходящей через $P_0$ и параллельной плоскости $\pi_0$, будет $\vv{P_0P}=t_1\vv{a}+t_2\vv{b}$, или, если обозначить через $\vv{r}$ и $\vv{r_0}$ радиус-векторы точек $P$ и $P_0$ соответсвенно,
 \begin{equation}\label{20.1.par3}
-\overrightarrow{r}=\overrightarrow{r_0}+t_1\overrightarrow{a}+t_2\overrightarrow{b}, t_1,t_2 \in \bbR
+\vv{r}=\vv{r_0}+t_1\vv{a}+t_2\vv{b}, t_1,t_2 \in \bbR
 \end{equation}
 -- \textit{параметрическое уравнение плоскости}.
 
-Иначе записать условие можно как линейную зависимость векторов \overrightarrow{P_0P}, \overrightarrow{a} и \overrightarrow{b}, или, с ипользованием смешанного произведения:
+Иначе записать условие можно как линейную зависимость векторов \vv{P_0P}, \vv{a} и \vv{b}, или, с ипользованием смешанного произведения:
 \begin{equation}\label{20.1.mix1}
-(\overrightarrow{P_0P},\overrightarrow{a}, \overrightarrow{b})=\begin{vmatrix}
+(\vv{P_0P},\vv{a}, \vv{b})=\begin{vmatrix}
 x-x_0 & a_1 & b_1 \\
 y-y_0 & a_2 & b_2 \\
 z-z_0 & a_3 & b_3 \\
-\end{vmatrix}(\overrightarrow{e_1},\overrightarrow{e_2},\overrightarrow{e_3})=0.
+\end{vmatrix}(\vv{e_1},\vv{e_2},\vv{e_3})=0.
 \end{equation}
 Раскрывая определитель по первой строке и вводя обозначения $A=\begin{vmatrix}
 a_2 & b_2 \\
@@ -100,7 +100,7 @@ Ax+By+Cz+D=0.
 \end{equation}
 Уравнение \ref{20.1.lin3} назвается \textit{общим линейным уравнением плоскости}, \ref{20.1.lin2} -- общим линейным уравнением плоскости, проходящей через $P_0(x_0,y_0,z_0)$.
 
-  Пусть $P_0$ - точка прямой в пространстве, a \overrightarrow{n} - вектор нормали. Тогда соотношение \ref{20.1.norm1} служит \textit{нормальным уравнением плоскости в пространстве}. Если система координат орнонормированна, получаем $\overrightarrow{n}\parallel\left(\begin{array}{crl}
+  Пусть $P_0$ - точка прямой в пространстве, a \vv{n} - вектор нормали. Тогда соотношение \ref{20.1.norm1} служит \textit{нормальным уравнением плоскости в пространстве}. Если система координат орнонормированна, получаем $\vv{n}\parallel\left(\begin{array}{crl}
 A\\
 B\\
 C\\
@@ -108,13 +108,13 @@ C\\
 
 \section{Углы между прямыми и плоскостями}
 
-  Пусть две прямые на плоскости заданы параметрическими уравнениями вида \ref{20.1.par1} с использованием направляющих векторов \overrightarrow{a_1} и \overrightarrow{a_2}. Поскольку $(\overrightarrow{a_1},\overrightarrow{a_2})=\abs{a_1}\abs{a_2}\cos \phi$, где $\phi \in \left[0;\pi\right]$ - угол между векторами \overrightarrow{a_1} и \overrightarrow{a_2}, угол между прямыми, лежащий в интервале $\left[0;\dfrac \pi 2\right]$, находится по формуле
+  Пусть две прямые на плоскости заданы параметрическими уравнениями вида \ref{20.1.par1} с использованием направляющих векторов \vv{a_1} и \vv{a_2}. Поскольку $(\vv{a_1},\vv{a_2})=\abs{a_1}\abs{a_2}\cos \phi$, где $\phi \in \left[0;\pi\right]$ - угол между векторами \vv{a_1} и \vv{a_2}, угол между прямыми, лежащий в интервале $\left[0;\dfrac \pi 2\right]$, находится по формуле
   \begin{equation}\label{20.2.directions}
-  \widetilde\phi=\arccos\dfrac{\abs{(\overrightarrow{a_1},\overrightarrow{a_2})}}{\abs{a_1}\abs{a_2}}.
+  \widetilde\phi=\arccos\dfrac{\abs{(\vv{a_1},\vv{a_2})}}{\abs{a_1}\abs{a_2}}.
   \end{equation}
   Искомый угол также равен углу между нормалями, поэтому при задании прямой нормальным уравнением \ref{20.1.norm1} имеем:
   \begin{equation}\label{20.2.normals}
-  \widetilde\phi=\arccos\dfrac{\abs{(\overrightarrow{n_1},\overrightarrow{n_2})}}{\abs{n_1}\abs{n_2}}.
+  \widetilde\phi=\arccos\dfrac{\abs{(\vv{n_1},\vv{n_2})}}{\abs{n_1}\abs{n_2}}.
   \end{equation}
   
 \addpicture{pictures/ch20pict1}{0.18}
@@ -128,13 +128,13 @@ C\\
   
   Теперь перейдём в трёхмерное пространство. Угол между двумя прямыми по-прежнему можно найти по форумле \ref{20.2.directions}. 
   
-  Рассмотрим угол между плоскостями $\pi_1$ и $\pi_2$. Этот угол равен углу между их нормалями \overrightarrow{n_1} и \overrightarrow{n_2} (или является смежным, если найденный угол тупой), поэтому формула повторяет выражение \ref{20.2.normals}.
+  Рассмотрим угол между плоскостями $\pi_1$ и $\pi_2$. Этот угол равен углу между их нормалями \vv{n_1} и \vv{n_2} (или является смежным, если найденный угол тупой), поэтому формула повторяет выражение \ref{20.2.normals}.
   
 \addpicture{pictures/ch20pict4}{0.20}  
-  Пусть теперь даны плоскость $\pi$ с нормалью \overrightarrow{n} и прямая $l$ с направляющим вектором \overrightarrow{a}. Искомый угол выражается через смежный угол между векторами \overrightarrow{a} и \overrightarrow{n}:
+  Пусть теперь даны плоскость $\pi$ с нормалью \vv{n} и прямая $l$ с направляющим вектором \vv{a}. Искомый угол выражается через смежный угол между векторами \vv{a} и \vv{n}:
   \begin{equation}
-  \sin  \widetilde \phi = \cos  \widetilde \alpha = \dfrac{\abs{(\overrightarrow{a},\overrightarrow{n})}}{\abs{\overrightarrow{a}} \abs{\overrightarrow{n}}} \Rightarrow
-  \widetilde \phi = \arcsin \dfrac{\abs{(\overrightarrow{a},\overrightarrow{n})}}{\abs{\overrightarrow{a}} \abs{\overrightarrow{n}}}
+  \sin  \widetilde \phi = \cos  \widetilde \alpha = \dfrac{\abs{(\vv{a},\vv{n})}}{\abs{\vv{a}} \abs{\vv{n}}} \Rightarrow
+  \widetilde \phi = \arcsin \dfrac{\abs{(\vv{a},\vv{n})}}{\abs{\vv{a}} \abs{\vv{n}}}
   \end{equation}
 
 
@@ -143,24 +143,24 @@ C\\
 \addpicture{pictures/ch20pict2}{0.25}
   Пусть заданы точка $P_1$ плоскости и прямая $l$. Расстояние между ними равно длине проекции отрезка, соединяющего $P_1$ с любой точкой прямой, на нормаль прямой:
   \begin{equation}\label{20.3.normals1}
-  \rho_2 (P_1,l) = \dfrac{ \abs{(\overrightarrow{r_1}-\overrightarrow{r},\overrightarrow{n})} }{ \abs{\overrightarrow{n}} }.
+  \rho_2 (P_1,l) = \dfrac{ \abs{(\vv{r_1}-\vv{r},\vv{n})} }{ \abs{\vv{n}} }.
   \end{equation}   
   Используя нормальное уравнение \ref{20.1.norm1}, получим:
   \begin{equation}\label{20.3.normals2}
-  \rho_2 (P_1,l) = \dfrac{\abs{(\overrightarrow{r_1},\overrightarrow{n})+D}}{\abs{\overrightarrow{n}}}.
+  \rho_2 (P_1,l) = \dfrac{\abs{(\vv{r_1},\vv{n})+D}}{\abs{\vv{n}}}.
   \end{equation}
   В ортонормированном базисе уравнение \ref{20.1.norm1} приобретает вид \ref{20.1.lin1}, а формула выглядит следующим образом:
   \begin{equation}
   \rho_2 (P_1,l) = \dfrac{\abs{Ax_1+By_1+C}}{\sqrt{A^2+B^2}}.
   \end{equation}
   
-  При рассмотрении точки $P_1$ и прямой l в трёхмерном пространстве удобно пользоваться векторным произведением и вычислять расстояние как модуль проекции отрезка, соединющего точку $P_1$ с произвольной точкой $P$ прямой, на плоскость, нормальную направляющему вектору \overrightarrow{a}:
+  При рассмотрении точки $P_1$ и прямой l в трёхмерном пространстве удобно пользоваться векторным произведением и вычислять расстояние как модуль проекции отрезка, соединющего точку $P_1$ с произвольной точкой $P$ прямой, на плоскость, нормальную направляющему вектору \vv{a}:
   \begin{equation}
-  \rho_3 (P_1,l) = \dfrac{\abs{[\overrightarrow{a},\overrightarrow{r_1}-\overrightarrow{r}]}}{\abs{\overrightarrow{a}}}.
+  \rho_3 (P_1,l) = \dfrac{\abs{[\vv{a},\vv{r_1}-\vv{r}]}}{\abs{\vv{a}}}.
   \end{equation}
   Если используется представление \ref{20.1.vect2}, можно записать:
   \begin{equation}
-  \rho_3 (P_1,l) = \dfrac{\abs{[\overrightarrow{a},\overrightarrow{r_1}]-\overrightarrow{b}}}{\abs{\overrightarrow{a}}}.
+  \rho_3 (P_1,l) = \dfrac{\abs{[\vv{a},\vv{r_1}]-\vv{b}}}{\abs{\vv{a}}}.
   \end{equation}
 
   Пусть теперь даны точка $P_1$ в пространстве и плоскость $\pi$. Повторяя рассуждения, получим формулы, аналогичные \ref{20.3.normals1} и \ref{20.3.normals2}, приобретающие в ортонормированном базисе вид
@@ -169,8 +169,8 @@ C\\
   \end{equation}
   если плоскость задаётся общим линейным уравнением \ref{20.1.lin3}.
 
-  Теперь рассмотрим случай двух скреивающихся прямых в пространстве ($l_1|\cdot l_2$). Построим параллелограмм, двумя из рёбер которого являются направляющие векторы \overrightarrow{a_1} и \overrightarrow{a_2}, приложенные соответственно в точках $P_1$ и $P_2$ (см. рис.). Расстояние между ними будет равно расстоянию между гранями, параллельными обеим плоскостям, т.е., из определений скалярного и векторного произведения,
+  Теперь рассмотрим случай двух скреивающихся прямых в пространстве ($l_1|\cdot l_2$). Построим параллелограмм, двумя из рёбер которого являются направляющие векторы \vv{a_1} и \vv{a_2}, приложенные соответственно в точках $P_1$ и $P_2$ (см. рис.). Расстояние между ними будет равно расстоянию между гранями, параллельными обеим плоскостям, т.е., из определений скалярного и векторного произведения,
   \begin{equation}
-  \rho_3(l_1,l_2)=h_{par}=\dfrac{V \lbrace \overrightarrow{a_1},\overrightarrow{a_2},\overrightarrow{P_1P_2} \rbrace}{S \lbrace \overrightarrow{a_1},\overrightarrow{a_2} \rbrace}=\dfrac{\abs{(\overrightarrow{a_1},\overrightarrow{a_2},\overrightarrow{r_2}-\overrightarrow{r_1})}}{\abs{[\overrightarrow{a_1},\overrightarrow{a_2}]}}.
+  \rho_3(l_1,l_2)=h_{par}=\dfrac{V \lbrace \vv{a_1},\vv{a_2},\vv{P_1P_2} \rbrace}{S \lbrace \vv{a_1},\vv{a_2} \rbrace}=\dfrac{\abs{(\vv{a_1},\vv{a_2},\vv{r_2}-\vv{r_1})}}{\abs{[\vv{a_1},\vv{a_2}]}}.
   \end{equation}   
 \usepict{ch20pict3.png}\label{ch20pict3}
