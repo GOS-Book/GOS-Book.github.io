@@ -1,9 +1,35 @@
 \chapter{Неравенство Чебышёва и закон больших чисел. Предельная теорема Пуассона.}
 \section{Неравенство Чебышёва}
+
+К уже доказанным свойствам математического ожидания добавим еще одно.
+\begin{defn}
+С каждым событием $A \in \mathcal{A}$ свяжем дискретную случайную величину
+$$
+\chi_A =\chi_A(w)=\begin{cases}
+1,&\text{если $w \in A$;}\\
+0,&\text{если $w \notin A$;}
+\end{cases}
+$$
+называемую \textit{индикатором события $A$} .
+\end{defn}
+\begin{thm}
+Математическое ожидание индикатора $\chi_A$ события $A$ равно вероятности этого события.
+$$
+M\chi_A=P(A).
+$$ 
+\end{thm}
+\begin{proof}
+Так как $P(A)=\sum\limits_{w\in A}p(w)$, то 
+$$
+M\chi_A=\sum\limits_{w\in\Omega}\chi_A(w)p(w)=\sum\limits_{w\in A}1\cdot p(w)+\sum\limits_{w\notin A}0\cdot p(w)=\sum\limits_{w\in A}p(w)=P(A).
+$$
+Это утверждение конечно же верно и в непрерывном случае и в самом общем случае.
+\end{proof}
+
 \begin{thm}[неравенство Маркова]
 Пусть случайная величина $\xi$ принимает неотрицательные значения. Пусть $a>0$. Тогда 
 $$
-P(\xi \ge a)\le\frac{\ccM\xi}{a}.
+P(\xi \ge a)\le\frac{M\xi}{a}.
 $$
 \end{thm}
 \begin{proof}
@@ -17,7 +43,7 @@ M \xi=M (\xi\cdot\chi_{\{\xi\ge a\}})+\underbrace{M (\xi\cdot\chi_{\{\xi< a\}})}
 $$
 Так как $\xi\cdot\chi_{\{\xi\ge a\}}\ge a\cdot\chi_{\{\xi\ge a\}}$, то применяя еще раз свойство монотонности, получаем
 $$
-M \xi\ge aM (\xi\cdot\chi_{\{\xi\ge a\}})=a\cdot P(\xi\ge a),
+M \xi\ge aM (\chi_{\{\xi\ge a\}})=a\cdot P(\xi\ge a),
 $$
 что и доказывает неравенство Маркова.
 \end{proof}
