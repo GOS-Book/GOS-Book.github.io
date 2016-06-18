@@ -133,10 +133,10 @@
     <td></td><!27>
     <td></td><!28>
     <td></td><!29>
-    <td><img src="http://medyk.org/colors/ffff00.png" width="30" height="30" /></td><!30>
-    <td><img src="http://medyk.org/colors/ffff00.png" width="30" height="30" /></td><!31>
-    <td><img src="http://medyk.org/colors/ffff00.png" width="30" height="30" /></td><!32>
-    <td><img src="http://medyk.org/colors/ffff00.png" width="30" height="30" /></td><!33>
+    <td><img src="http://medyk.org/colors/87ff00.png" width="30" height="30" /></td><!30>
+    <td><img src="http://medyk.org/colors/87ff00.png" width="30" height="30" /></td><!31>
+    <td><img src="http://medyk.org/colors/87ff00.png" width="30" height="30" /></td><!32>
+    <td><img src="http://medyk.org/colors/87ff00.png" width="30" height="30" /></td><!33>
     <td><img src="http://medyk.org/colors/ffff00.png" width="30" height="30" /></td><!34>
     <td><img src="http://medyk.org/colors/ffff00.png" width="30" height="30" /></td><!35>
     <td><img src="http://medyk.org/colors/ffff00.png" width="30" height="30" /></td><!36>
