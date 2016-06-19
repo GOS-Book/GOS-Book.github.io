@@ -19,11 +19,11 @@ $$
 В Итоге
 \begin{enumerate}
 \item
-При $k = -1$ получаем $$J_{-1} = i \int_{0}^{2\pi}\,d\varphi = 2 \pi i;$$
+При $k = -1$ получаем $$I_{-1} = i \int_{0}^{2\pi}\,d\varphi = 2 \pi i;$$
 \item
 При $k \ne -1$ получаем
 $$
-J_k = i r^{k + 1} \left( \int_{0}^{2 \pi} \cos(k + 1) \varphi \,d \varphi + i \int_{0}^{2 \pi} \sin(k + 1) \varphi \,d\varphi \right) = 0.
+I_k = i r^{k + 1} \left( \int_{0}^{2 \pi} \cos(k + 1) \varphi \,d \varphi + i \int_{0}^{2 \pi} \sin(k + 1) \varphi \,d\varphi \right) = 0.
 $$
 \end{enumerate}
 Ответ: $I_k=\begin{cases}2\pi i, \quad &k=-1,\\0, \quad &k\ne -1. 
@@ -106,7 +106,7 @@ I^{(n)}(z) = \frac{n!}{2\pi i} \int_\gamma \frac{q(\zeta)}{(\zeta - z)^{n+1}}\,d
 
 Упростим выражение в прямых скобках под интегралом $\eqref{ch34eq8}$:
 \begin{multline*}
-[\ldots] = \frac{{\zeta} - {z} - ({\zeta} - {z} - {\Delta z})}{(\zeta - z)(\zeta - z - \Delta z)} \cdot \frac{1}{{\Delta z}} - \frac{1}{(\zeta - z)^2} = \frac{1}{(\zeta - z)(\Delta z- (\zeta-z) )} -\\- \frac{1}{(\zeta - z)^2} =
+[\ldots] = \frac{{(\zeta} - {z}) - (({\zeta} - {z}) - {\Delta z})}{(\zeta - z)((\zeta - z) - \Delta z)} \cdot \frac{1}{{\Delta z}} - \frac{1}{(\zeta - z)^2} = \frac{1}{(\zeta - z)(\Delta z- (\zeta-z) )} -\\- \frac{1}{(\zeta - z)^2} =
 \frac{(\zeta - z)-(\Delta z- (\zeta-z))}{(\zeta - z)^2(\Delta z- (\zeta-z) )}
 =\frac{\Delta z}{(\zeta - z)^2 (\zeta - z - \Delta z)} .
 \end{multline*}
