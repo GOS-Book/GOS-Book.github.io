@@ -1,7 +1,7 @@
 ## GOS_book
 Загрузить последнюю редакцию книги: [![PDF Status](https://www.sharelatex.com/github/repos/DidenkoAndre/GOS_book/builds/latest/badge.svg)](https://www.sharelatex.com/github/repos/DidenkoAndre/GOS_book/builds/latest/output.pdf)
 
-####Таблица прогресса на 14.06.2016
+####Таблица прогресса на 19.06.2016
 
 Легенда: 
 <img src="http://medyk.org/colors/87ff00.png" width="30" height="30" /> - процесс закончен,
