@@ -44,7 +44,7 @@ G = \{ (x,y,z) \in \bbR^3: \: (x,y) \in g, \: \phi_1(x,y) < z < \phi_2(x,y) \: \
 \addpicture{pictures/ch15pict1}{0.25}
 где $S_{1,2} = \{ (x,y) \in \overline{g}, \; z = \phi_{1,2}(x,y) \}$, $S_0 = \{ (x,y) \in \partial g, \phi_1(x,y) \le z \le \phi_2(x,y) \}$ 
 
-$G = \{ (x,y,z) \in \bbR^3: \; (x,y) \in g, \; \phi_1(x,y) < z < \phi_2(x,y) \; \forall (x,y) \in g \} \; \Rightarrow \; \partial G$ -- кусочно-гладкая поверхнотсь.
+$G = \{ (x,y,z) \in \bbR^3: \; (x,y) \in g, \; \phi_1(x,y) < z < \phi_2(x,y) \; \forall (x,y) \in g \} \; \Rightarrow \; \partial G$ -- кусочно-гладкая поверхность.
 
 $\displaystyle\iint\limits_{S_{2_{\textit{внеш}}}} f \,dx\,dy = \displaystyle\iint\limits_g f(x,y,\phi_2(x,y)) \,dx\,dy$
 
@@ -70,7 +70,7 @@ $\displaystyle\iiint\limits_G \dfrac{\partial f}{\partial z} \,dx \,dy \,dz = \d
 \begin{equation} \label{ch15eq3}
 \iiint\limits_G (P'_x + Q'_y + R'_z) \,dx\,dy\,dz = \iint\limits_{\partial G_{\textit{внеш}}} P\,dy\,dz + Q\,dz\,dx + R\,dx\,dy,
 \end{equation}
-где $\partial G_{\textit{внеш}}$ -- внешнаяя относительно области $G$ сторона поверхности $G$.
+где $\partial G_{\textit{внеш}}$ -- внешняя относительно области $G$ сторона поверхности $G$.
 
 \end{thm}
 \begin{proof}
@@ -177,7 +177,7 @@ $\Rightarrow \quad \exists \Div \: \vv{a}(M) = \Div(\rot \: \vv{b}(M)) = 0$ в $
 \end{defn}\usepict[0.1]{ch15pict3}
 
 \begin{thm}
-Если непрерывно-дифференцируемое векторное поле $\vv{a}(M), \; M \in G$, имеет в области $G$ векторный потенциал $\vv{b}$, то для любой замкнутой кусочно-гладкой поверхности $S: \; S\subset G$ выполняется равенство: $\iint\limits_S \vv{a}\,d\vv{s} = 0$. (Область $\Omega$, ограниченная поверхностью $S$, может не лежать в $G$, хотя $S \subset G$.)
+Если непрерывно-дифференцируемое векторное поле $\vv{a}(M), \; M \in G$, имеет в области $G$ векторный потенциал $\vv{b}$, то для любой замкнутой кусочно-гладкой поверхности $S: \; S\subset G$ выполняется равенство: $\iint\limits_S \vv{a}\,d\vv{s} = 0$.
 \end{thm}
 
 \begin{proof}
