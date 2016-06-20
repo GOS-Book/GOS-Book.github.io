@@ -29,7 +29,7 @@
     b_1 \\ b_2 \\ \vdots \\ b_m \\
     \end{pmatrix},
   X=\begin{pmatrix}
-    x_1 \\ x_2 \\ \vdots \\ x_m \\
+    x_1 \\ x_2 \\ \vdots \\ x_n \\
     \end{pmatrix}
   \end{equation*}
   $A$ называется \textit{основной матрицей системы}, $b^\uparrow$ -- \textit{столбцом свободнных членов}, $\widetilde A = (A|b^\uparrow)$ -- \textit{расширенной матрицей системы}.
@@ -132,9 +132,9 @@
   X'_0=\begin{pmatrix} b'_1\\ \vdots \\b'_r \\ \hline \\ \fudge 0 \\ \\ \end{pmatrix}
   X'_j=\bordermatrix{
       & \cr
-      & -a'_{1j} \cr
+      & -a'_{1,r+j} \cr
       & \vdots  \cr
-      & -a'_{rj} \cr \hline
+      & -a'_{r,r+j} \cr \hline
       &   \cr
       & \fudge 0 \cr
    r+j& 1 \cr
@@ -144,7 +144,9 @@
   
   Во введённых обозначениях решение имеет вид
   \begin{equation*}
-   Y'=X'_0+\sum_{j=1}^{n-r}x'_{r+j}X'_j, x'_{r+j} \in \bbR,
+   Y'=X'_0+\sum_{j=1}^{n-r}x'_{r+j}X'_j,$$
+    где 
+    $$ x'_{r+j} \in \bbR, j = \overline{1,n-r}.
   \end{equation*}
   Остаётся лишь перейти к исходным переменным и получить выражение \ref{21.2.common}, где $c_j=x'_{r+j}$.
   \end{proof}
