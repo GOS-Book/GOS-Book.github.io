@@ -12,17 +12,21 @@
 \frontmatter
 \include{frontmatter/titlepageTMB}
 \include{frontmatter/epigpage}
-{\hypersetup{hidelinks}
-\tableofcontents}
+{\hypersetup{hidelinks}\tableofcontents}
 \include{frontmatter/litra}
 \include{frontmatter/foreword}
+
 \mainmatter
-
-\hypersetup
-{linkcolor = black} 
+\hypersetup{linkcolor = black} 
 \pagestyle{fancy}
-
 \setcounter{chapter}{0}
 \foreach \n in {1,...,36}{\include{chapters/chapter\n}}
 
+\appendix
+\titleformat{\chapter}[display]{\raggedright\normalfont\Large\bfseries}{\chaptertitlename\ \thechapter}{2ex}{}
+\include{appendix/formulas}
+
+\pagestyle{empty}
+\backmatter
+\include{backmatter/theend}
 \end{document}
