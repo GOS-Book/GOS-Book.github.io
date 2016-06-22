@@ -14,7 +14,8 @@
 \usepackage{indentfirst} 
 \usepackage{amsmath,amsthm,amssymb,amscd} 				
 \usepackage{blkarray}		
-%\usepackage{hhline}		
+\usepackage{multicol}		
+%\usepackage{hhline}
 
 %\usepackage[margin=1.6cm, top=1.2cm,right=1.6cm,left=2.2cm, footskip = 1 cm, headheight=20pt,headsep=0.2cm]{geometry}
 
@@ -57,7 +58,9 @@
  {\enspace\titlerule*[0.7pc]{.}\contentspage}%
 
 \renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}.}
-  
+
+\titlespacing{\subsubsection}{0pt}{0mm plus 1mm minus 1mm}{0pt plus 1mm minus 1mm}  
+
 \usepackage{fancyhdr}
   \pagestyle{fancy}
 \fancyfoot[C]{\thepage}

@@ -294,25 +294,22 @@ $$
 \end{proof}
 \begin{thm}[Неравенства Коши-Буняковского]
 Для любых двух случайных величин $\xi, \eta$
-\begin{eqnarray}
-|M(\xi\eta)| \le \sqrt{M\xi^2 \cdot M\eta^2}.\\
-|\cov(\xi,\eta)| \le \sqrt{D\xi\cdot D\eta}.\label{chHZeq17}
-\end{eqnarray}
+\begin{align}
+&|M(\xi\eta)| \le \sqrt{M\xi^2 \cdot M\eta^2}.\\
+&|\cov(\xi,\eta)| \le \sqrt{D\xi\cdot D\eta}.\label{chHZeq17}
+\end{align}
 \end{thm}
 \begin{proof}
 Для любых чисел $x, y$ по теореме \ref{ch31.2t4} о математическом ожидании 
-
 $$
 M(x\xi + y\eta)^2 \ge 0.
 $$
 
 Отсюда следует, что квадратичная формула
-
 $$
 x^2M\xi^2 + 2xyM\xi\eta + y^2M\eta^2
 $$
 неотрицательно определена, а следовательно, ее дискриминант неположителен:
-
 $$
 (M(\xi\eta))^2 - M\xi^2 \cdot M\eta^2 \le 0.
 $$
