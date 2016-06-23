@@ -1,2 +1,60 @@
 \chapter{Достаточные условия равномерной сходимости тригонометрического ряда Фурье.}
 \section{Достаточные условия равномерной сходимости тригонометрического ряда Фурье}
+Говорят, что функция $f(x), x \in (A;B)$, на интервале $(A;B)$ удовлетворяет \textit{условию Липщица порядка} $\alpha > 0$, если существует постоянная $C$ такая, что
+$$
+|f(x+\xi) - f(x)| \le C|\xi|^{\alpha}
+$$
+для любого $x \in (A;B)$ и любого $\xi$ такого, что $x + \xi \in (A;B)$.
+
+\begin{thm} [Признак Липшица] \label{ch18thm1}
+Если функция $f(x) \in \overset{*}{L^{R}_1}(-\pi;\pi)$ на интервале $(A;B)$ удовлетворяет условию Липшица порядка $\alpha > 0$, то ее ряд Фурье на любом отрезке $[a;b] \subset (A;B)$ сходится равномерно к $f(x)$.
+\end{thm}
+\begin{proof}
+При доказательстве признка Липшица (теорема \ref{ch17thm3}) в билете 15 получено равенство
+$$
+T_n(f; x) - f(x) = \frac{1}{2\pi} \int\limits_{-\pi}^{\pi} F(x,\xi) \sin{\lambda_n \xi} \,d\xi,
+$$
+где
+$$
+F(x,\xi) = \frac{f(x+\xi) - f(x)}{\sin (\xi \backslash 2)}, \lambda_{n} = n + \frac12.
+$$
+
+Пусть $\delta = \min \{a - A;B - b\}$. Тогда, как и в билете 15, получаем, что функция $F(x,\xi)$ удовлетворяет неравентсву
+$$
+|F(x,\xi)| \le \pi C |\xi|^{\alpha - 1}
+$$
+для любого $x \in [a;b]$ и любого $\xi \in (-\delta;\delta)$. Следовательно, для любого $x \in [a;b]$ и любого $h \in (0;\delta)$ справедливо неравенство
+\begin{multline} \label{ch18eq1}
+|T_n(f; x) - f(x)| \le C \frac{1}{\alpha} h^{\alpha}\ +\\
++ \frac{1}{2\pi} \left| \int\limits_{-\pi}^{-h} F(x,\xi) \sin{\lambda_n \xi} \,d\xi \right| + \frac{1}{2\pi} \left| \int\limits_{h}^{\pi} F(x,\xi) \sin{\lambda_n \xi} \,d\xi \right|.
+\end{multline}
+
+Покажем, что для любого $h \in (0;\delta)$
+\begin{equation} \label{ch18eq2}
+\sup\limits_{x \in [a;b]}\left|\int\limits_{h}^{\pi} F(x,\xi) \sin{\lambda_n \xi} \,d\xi \right| \xrightarrow{n \to \infty} 0
+\end{equation}
+
+Так как функция $\sin (\xi \backslash 2)$ на интервале $(0;\pi)$ непрерывна, неотрицательна и монотонно возрастает, то, согласно второй теореме о среднем, для любого $x \in [a;b]$ и любого $h \in (0;\pi)$ существует $\theta \in [h;\pi]$ такое, что
+$$
+\int\limits_{h}^{\pi} F(x,\xi) \sin{\lambda_n \xi}\,d\xi = \frac{1}{\sin (h \backslash 2)} \int\limits_{h}^{\theta} (f(x+\xi) - f(x)) \sin{\lambda_n \xi}\,d\xi.
+$$
+
+Легко видеть, что для любого $x \in [a;b]$
+$$
+\left| \int\limits_{h}^{\theta} f(x) \sin{\lambda_n \xi}\,d\xi \right| \le \frac{2}{\lambda_{n}}\sup\limits_{x \in [a;b]}|f(x)| \xrightarrow{n \to \infty} 0
+$$
+Далее,
+\begin{multline*}
+\left| \int\limits_{h}^{\theta} f(x + \xi) \sin{\lambda_n \xi}\,d\xi \right| \le \left| \int\limits_{h}^{\theta} f(x + \xi) e^{i\lambda_{n}y} \,d\xi \right|\ =\\
+=\ \left| \int\limits_{h + x}^{\theta + x} f(y) e^{i\lambda_{n}y}\,dy \right| \le \sup\limits_{\alpha,\beta} \left|\int\limits_{\alpha}^{\beta} f(y) e^{i\lambda_{n}y},dy \right|,
+\end{multline*}
+где супремум берется по всем $\alpha,\beta \in [a - \pi;b + \pi]$. По теореме Римана о равномерной осцилляции этот супремум стремится к нулю при $n to \infty$. Утверждение \eqref{ch18eq2} доказано. Аналогично доказывается
+\begin{equation} \label{ch18eq3}
+\sup\limits_{x \in [a;b]} \left|\int\limits_{-\pi}^{-h} F(x,\xi) \sin{\lambda_n \xi} \,d\xi \right| \xrightarrow{n \to \infty} 0
+\end{equation}
+Из всего выше следует, что
+$$
+\overline{\lim\limits_{n \to \infty}} \sup \limits_{x \in [a;b]} |T_n(f; x) - f(x)| \le C \cdot \frac{1}{\alpha}h^{\alpha}
+$$
+для любого $h \in (0;\delta)$.
+\end{proof}
