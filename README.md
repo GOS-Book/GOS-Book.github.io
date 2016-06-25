@@ -1,7 +1,7 @@
 ## GOS_book
 Загрузить последнюю редакцию книги: [![PDF Status](https://www.sharelatex.com/github/repos/DidenkoAndre/GOS_book/builds/latest/badge.svg)](https://www.sharelatex.com/github/repos/DidenkoAndre/GOS_book/builds/latest/output.pdf)
 
-####Таблица прогресса на 14.06.2016
+####Таблица прогресса на 19.06.2016
 
 Легенда: 
 <img src="http://medyk.org/colors/87ff00.png" width="30" height="30" /> - процесс закончен,
@@ -27,11 +27,11 @@
     <td><img src="http://medyk.org/colors/87ff00.png" width="30" height="30" /></td> <!2>
     <td><img src="http://medyk.org/colors/87ff00.png" width="30" height="30" /></td> <!3>
     <td><img src="http://medyk.org/colors/87ff00.png" width="30" height="30" /></td> <!4>
-    <td><img src="http://medyk.org/colors/87ff00.png" width="30" height="30" /></td> <!5>
-    <td><img src="http://medyk.org/colors/ffff00.png" width="30" height="30" /></td> <!6>
+    <td><img src="http://medyk.org/colors/ffff00.png" width="30" height="30" /></td> <!5>
+    <td><img src="http://medyk.org/colors/87ff00.png" width="30" height="30" /></td> <!6>
     <td><img src="http://medyk.org/colors/87ff00.png" width="30" height="30" /></td> <!7>
     <td><img src="http://medyk.org/colors/87ff00.png" width="30" height="30" /></td> <!8>
-    <td><img src="http://medyk.org/colors/87ff00.png" width="30" height="30" /></td> <!9>
+    <td><img src="http://medyk.org/colors/ffff00.png" width="30" height="30" /></td> <!9>
     <td><img src="http://medyk.org/colors/ffff00.png" width="30" height="30" /></td> <!10>
     <td><img src="http://medyk.org/colors/87ff00.png" width="30" height="30" /></td> <!11>
     <td><img src="http://medyk.org/colors/ffff00.png" width="30" height="30" /></td> <!12>
@@ -70,8 +70,8 @@
     <td>Напечатано</td>
     <td><img src="http://medyk.org/colors/ffff00.png" width="30" height="30" /></td> <!13>
     <td><img src="http://medyk.org/colors/ffff00.png" width="30" height="30" /></td> <!14>
-    <td><img src="http://medyk.org/colors/87ff00.png" width="30" height="30" /></td> <!15>
-    <td><img src="http://medyk.org/colors/87ff00.png" width="30" height="30" /></td> <!16>
+    <td><img src="http://medyk.org/colors/ffff00.png" width="30" height="30" /></td> <!15>
+    <td><img src="http://medyk.org/colors/ffff00.png" width="30" height="30" /></td> <!16>
     <td><img src="http://medyk.org/colors/87ff00.png" width="30" height="30" /></td> <!17>
     <td></td> <!18>
     <td><img src="http://medyk.org/colors/87ff00.png" width="30" height="30" /></td> <!19>
@@ -85,7 +85,7 @@
     <td>Отредактировано</td>
     <td></td><!13>
     <td></td><!14>
-    <td></td><!15>
+    <td></td><img src="http://medyk.org/colors/ffff00.png" width="30" height="30" /><!15>
     <td></td><!16>
     <td></td><!17>
     <td></td><!18>
@@ -116,7 +116,7 @@
     <td><img src="http://medyk.org/colors/87ff00.png" width="30" height="30" /></td><!25>
     <td><img src="http://medyk.org/colors/87ff00.png" width="30" height="30" /></td> <!26>
     <td><img src="http://medyk.org/colors/87ff00.png" width="30" height="30" /></td><!27>
-    <td></td><!28>
+    <td><img src="http://medyk.org/colors/87ff00.png" width="30" height="30" /></td><!28>
     <td><img src="http://medyk.org/colors/87ff00.png" width="30" height="30" /></td><!29>
     <td><img src="http://medyk.org/colors/87ff00.png" width="30" height="30" /></td><!30>
     <td><img src="http://medyk.org/colors/87ff00.png" width="30" height="30" /></td><!31>
@@ -137,9 +137,9 @@
     <td><img src="http://medyk.org/colors/87ff00.png" width="30" height="30" /></td><!31>
     <td><img src="http://medyk.org/colors/87ff00.png" width="30" height="30" /></td><!32>
     <td><img src="http://medyk.org/colors/87ff00.png" width="30" height="30" /></td><!33>
-    <td><img src="http://medyk.org/colors/ffff00.png" width="30" height="30" /></td><!34>
-    <td><img src="http://medyk.org/colors/ffff00.png" width="30" height="30" /></td><!35>
-    <td><img src="http://medyk.org/colors/ffff00.png" width="30" height="30" /></td><!36>
+    <td><img src="http://medyk.org/colors/87ff00.png" width="30" height="30" /></td><!34>
+    <td><img src="http://medyk.org/colors/87ff00.png" width="30" height="30" /></td><!35>
+    <td><img src="http://medyk.org/colors/87ff00.png" width="30" height="30" /></td><!36>
   </tr>
 </table>
 

@@ -1,8 +1,10 @@
-\chapter[\texorpdfstring{Дифференцируемость функций комплексного перемен-\protect\linebreak ного. Условия Коши-Римана. Интегральная теорема Коши.}{}]{Дифференцируемость функций комплексного переменного. Условия Коши-Римана. Интегральная теорема Коши.}
+\part[Теория функций комплексного переменного.]{Теория функций комплексного переменного.}%\protect\linebreak \vbox{\vspace*{5\baselineskip}}\centerline{\includegraphics[height=0.3\textheight]{pictures/Foxi/10}}}
+
+\chapter[Дифференцируемость функций комплексного переменного. Условия Коши-Римана. Интегральная теорема Коши.]{Дифференцируемость функций комплексного переменного. Условия Коши-Римана. Интегральная теорема Коши.}
 \section{Дифференцируемость функций комплексного переменного}
 
 \subsection{Предел. Функции комплексного переменного}
-Пусть $\{z_n\}$ -- последовательность чисел из $\bbC$, $z_n=x_n+iy_n, \, n \in \bbN$. 
+Пусть $\{z_n\}$ --- последовательность чисел из $\bbC$, $z_n=x_n+iy_n, \, n \in \bbN$. 
 \begin{defn}
 Число $A = a+ib \in \bbC$ называется \textit{пределом последовательности} $\{z_n\}$, если $\forall \epsilon > 0\quad \exists N(\epsilon)$ такое, что $\forall n \ge N(\epsilon) $ справедливо включение $z_n \in B_\epsilon(A) \triangleq \{z_n \;\bigl|\; |z_n-A|<\epsilon \bigl.\}$.
 \end{defn}
@@ -16,7 +18,7 @@ $$
 
 Пусть $f: G\to \bbC$ - функция, где $G \subset \bboC$. Где ${\bboC =\{\infty\} \cup \{\bbC\}}$ с введенной выше системой окрестностей точки $\infty$. Заметим, что задание комплексной функции $f$ равносильно заданию двух действительных функций $u=u(x,y)$ и $v=v(x,y)$, так как $f(z)=u(x,y)+iv(x,y)$.
 \begin{defn}
-Точка $z_0 \in \bboC$ называется \textit{внутренней точкой ($z_0 \in \interior G$) множества} $G \subset \bboC$, если существует число $\epsilon > 0$ такое, что справедливо включение $B_\epsilon (z_0) \subset G$.
+Точка $z_0 \in \bboC$ называется \textit{внутренней точкой множества} $G \subset \bboC$ ($z_0 \in \interior G$), если существует число $\epsilon > 0$ такое, что справедливо включение $B_\epsilon (z_0) \subset G$.
 \end{defn} 
 
 \begin{defn}
@@ -24,7 +26,7 @@ $$
 \end{defn}
 
 \begin{defn}
-Пусть $f: G\subset \bboC \to \bboC$ -- функция и точка $z_0$ -- предельная точка для $G$. Тогда число $A \in \bboC$ называется \textit{пределом функции в точке $z_0$ по множеству $G$}, если 
+Пусть $f: G\subset \bboC \to \bboC$ --- функция и точка $z_0$ --- предельная точка для $G$. Тогда число $A \in \bboC$ называется \textit{пределом функции в точке $z_0$ по множеству $G$}, если 
 $$
 \forall \epsilon > 0 \ex \delta = \delta(\epsilon)>0:\fa z \in \overset{\circ} {B}_\delta(z_0)\cap G \quad f(z) \in B_\epsilon(A). 
 $$ 
@@ -32,7 +34,7 @@ $$
 
 \begin{thm} [о трех функциях]
 \label{exp14}
-Пусть $z_0$ -- предельная точка множества $D\subset \bbC$. Пусть $D = D_f=D_g=D_h$ и $\exists \delta > 0$ $\forall z \in D \cap \dneio{\delta}{z_0}:$
+Пусть $z_0$ --- предельная точка множества $D\subset \bbC$. Пусть $D = D_f=D_g=D_h$ и $\exists \delta > 0$ $\forall z \in D \cap \dneio{\delta}{z_0}:$
 $$f(z)\le g(z) \le h(z),$$ тогда если $\exists \lim_{z \to z_0}\limits f(z) = A \in \bbC$ , $\exists \lim_{z \to z_0}\limits h(z) = A$, тогда и $\exists \lim_{z \to z_0}\limits g(z) = A$.
 \end{thm}
 
@@ -120,7 +122,7 @@ $$
 \label{exp16}
 \begin{split}
 &u'_x(x_0,y_0) = a, \qquad u'_y(x_0,y_0) = -b,\\
-&v'_y(x_0,y_0) = a, \qquad v'_x(x_0,y_0) = b.
+&v'_x(x_0,y_0) = b, \qquad v'_y(x_0,y_0) = a.
 \end{split}
 \end{equation}
 
@@ -133,12 +135,11 @@ $$
 \begin{multline*}
 \Delta f = \Delta u + i\Delta v \xlongequal{u,v\;\text{\scriptsize дифф.}} u'_x\Delta x + \overbrace{u'_y}^{-v'_x}\Delta y + \alpha_1(\Delta x,\Delta y)+ \\+ i\bigr(v'_x\Delta x + \overbrace{v'_y}^{u'_x}\Delta y + \alpha_2(\Delta x,\Delta y)\bigl) \myeq{\eqref{exp17}}\\\myeq{\eqref{exp17}} (u'_x+iv'_x)(\Delta x + i \Delta y) + \alpha_1(\Delta x,\Delta y)+ i\alpha_2(\Delta x,\Delta y) = A\cdot\Delta z + \alpha(\Delta z),
 \end{multline*}
-где число $A = u'_x(x_0,y_0)+iv'_x(x_0,y_0)$, функция $\alpha = \alpha_1+\alpha_2$, причем, поскольку  $\exists \lim_{\substack{\Delta x \to 0\\ \Delta y \to 0}}\limits \frac{|\alpha_1(\Delta x,\Delta y)|}{\sqrt{(\Delta x)^2 + (\Delta y)^2}} = 0$, $\exists \lim_{\substack{\Delta x \to 0\\ \Delta y \to 0}}\limits \frac{|\alpha_2(\Delta x,\Delta y)|}{\sqrt{(\Delta x)^2 + (\Delta y)^2}} = 0$, то
-
+где число $A = u'_x(x_0,y_0)+iv'_x(x_0,y_0)$, функция $\alpha = \alpha_1+i\alpha_2$, причем, поскольку  $\exists \lim_{\substack{\Delta x \to 0\\ \Delta y \to 0}}\limits \frac{|\alpha_1(\Delta x,\Delta y)|}{\sqrt{(\Delta x)^2 + (\Delta y)^2}} = 0$, $\exists \lim_{\substack{\Delta x \to 0\\ \Delta y \to 0}}\limits \frac{|\alpha_2(\Delta x,\Delta y)|}{\sqrt{(\Delta x)^2 + (\Delta y)^2}} = 0$, то
 $$
 \left| \frac{\alpha(\Delta z)}{\Delta z} \right| \le \frac{|\alpha_1(\Delta x,\Delta y)|}{\sqrt{(\Delta x)^2 + (\Delta y)^2}} + \frac{|\alpha_2(\Delta x,\Delta y)|}{\sqrt{(\Delta x)^2 + (\Delta y)^2}} \xrightarrow{(\Delta x,\Delta y) \to (0,0)} 0,
 $$
-т.е. функия $f$ дифференцируема в точке $z_0$, и верна формула \eqref{exp8}.
+(гипотенуза не длинее суммы катетов, $|\alpha|^2=|\alpha_1|^2 + |\alpha_2|^2 $). Т.е. функция $f$ дифференцируема в точке $z_0$, и верна формула \eqref{exp8}.
 \end{itemize}
 Теорема доказана.
 \end{proof}
@@ -162,16 +163,18 @@ $$
 \end{enumerate}
 \item
 \textit{односвязной областью}, если любой простой замкнутый контур, целиком лежащий в ней, может быть непрерывной деформацией стянут в точку, постоянно оставаясь внутри области. 
+
+Более удачное определение: область $G\subset \bbC$ называется \textit{односвязной}, если любая замкнутая кусочно-гладкая гривая $\Gamma \subset G$ является границей ограниченного открытого множества $D$, целиком принадлежащего $G$.
 \end{itemize}
 
 \begin{defn}
-Пусть $G$ -- область в $\bbC$. Функция $f: G \to \bbC$ называется \textit{регулярной в области G}, если она дифференцируема на $G$ и ее производная $f' : G \to \bbC$ является непрерывной функцией. Говорят, что $f : G \to \bbC$ \textit{регулярна в mочке} $z_0 \in G$, если она регулярна в некоторой окрестности этой точки. 
+Пусть $G$ --- область в $\bbC$. Функция $f: G \to \bbC$ называется \textit{регулярной в области G}, если она дифференцируема на $G$ и ее производная $f' : G \to \bbC$ является непрерывной функцией. Говорят, что $f : G \to \bbC$ \textit{регулярна в mочке} $z_0 \in G$, если она регулярна в некоторой окрестности этой точки. 
 \end{defn}
 
 
 \subsection{Интегрирование функции комплексного переменного}
 \begin{defn}
-\textit{Непрерывной кривой} называется геометрическое место точек $z$ комплексной плоскости $\bbC$, удовлетворяющих некоторому параметрическому уравнению $z=z(t) = x(t) + iy(t)$, где $x(t)$ и $y(t)$ -- непрерывные функции действительного переменного $t$ на отрезке $[t_0,t_1]$. Непрерывная кривая~--- \textit{простая}, если $\forall t',t'' \in [t_0,t_1]: t'\ne t'' \Rightarrow z(t') \ne z(t'')  $, кроме, возможно $z(t_0) = z(t_1)$ . Непрерывная кривая --- \textit{замкнутая}, если  $z(t_0) = z(t_1)$ 
+\textit{Непрерывной кривой} называется геометрическое место точек $z$ комплексной плоскости $\bbC$, удовлетворяющих некоторому параметрическому уравнению $z=z(t) = x(t) + iy(t)$, где $x(t)$ и $y(t)$ --- непрерывные функции действительного переменного $t$ на отрезке $[t_0,t_1]$. Непрерывная кривая~--- \textit{простая}, если $\forall t',t'' \in [t_0,t_1]: t'\ne t'' \Rightarrow z(t') \ne z(t'')  $, кроме, возможно $z(t_0) = z(t_1)$ . Непрерывная кривая --- \textit{замкнутая}, если  $z(t_0) = z(t_1)$ 
 \end{defn}
 
 При изменении параметра $t$ на отрезке $[t_0 , t_1$] в одном направлении (от $t_0$ к $t_1$ или наоборот) точка $z(t)$ совершает обход кривой $\gamma$. Выбор направления обхода кривой $\gamma$ называется ориентацией кривой, а кривая с выбранной ориентацией называется \textit{ориентированной кривой} или \textit{контуром}.
@@ -188,7 +191,7 @@ $$
 
 
   \mywrappict{pictures/ch33pict1}{0.25}
-Пусть дан кусочно-гладкий контур $\gamma$ с параметризацией $z=z(t)$, $t \in[t_0 , t_1]$, где $z(t_0)$ -- начало, а $z(t_1)$ -- конец контура $\gamma$. 
+Пусть дан кусочно-гладкий контур $\gamma$ с параметризацией $z=z(t)$, $t \in[t_0 , t_1]$, где $z(t_0)$ --- начало, а $z(t_1)$~--- конец контура $\gamma$. 
 
 Пусть выбрано конечное \textit{разбиение отрезка} $[t_0, t_1]$ вида
 \begin{equation}
@@ -200,7 +203,6 @@ $$
 |\lambda| = \max \{\tau_k - \tau_{k-1} \; \bigr|\bigl.\; k \in \overline{1,m_\lambda}\}.
 $$
 Пусть при каждом $k \in \overline{1,m_\lambda}$, произвольно выбрана точка
-
 \begin{equation}
 \label{exp23}
 \zeta_k \in \{z(t)\; \bigr|\bigl.\; t \in [\tau_{k-1},\tau_k]\},
@@ -218,7 +220,6 @@ $$
 \end{defn}
 
 Если существует конечный предел интегральных сумм \eqref{exp18} при $|\lambda| \to 0$, не зависящий от выбора разбиения $\lambda$ \eqref{exp19} и точек $\{\zeta_k\}$ \eqref{exp23}, то этот предел называется интегралом от функции $f$ по контуру $\gamma$, который обозначается
-
 \begin{equation}
 \label{exp22}
 \int_\gamma f(z)\,dz.
@@ -255,7 +256,7 @@ $$
 Для всякой регулярной функции $f:G\to\bbC$, заданной в односвязной области G, справедливо равенство
 \begin{equation}
 \label{abc3}
-\int_\gamma f(z)\,dz = 0.
+\int_\gamma f(z)\,dz = 0,
 \end{equation}
 
 \parshape 2 
@@ -268,7 +269,7 @@ $$
 Для заданного в теореме контура $\gamma$ запишем формулу \eqref{exp24}:
 \begin{equation}
 \label{abc4}
-\int_\gamma f(z)\,dz = \int_\gamma (u+iv)\,(dx+idy) = \underbrace{\int _\gamma(u\,dx - v\,dy)}_{\textstyle\triangleq J_1} + i\cdot\underbrace{\int_\gamma (v\,dx +u\,dy)}_{\textstyle\triangleq J_2},
+\int_\gamma f(z)\,dz = \int_\gamma (u+iv)\,(dx+idy) = \underbrace{\int _\gamma(u\,dx - v\,dy)}_{\textstyle\triangleq J_1} + i\underbrace{\int_\gamma (v\,dx +u\,dy)}_{\textstyle\triangleq J_2},
 \end{equation}
 
 Через $D$ обозначим односвязную область в $G$, границей которой является данный контур $\gamma$. Нам известна следующая формула Грина:
@@ -276,7 +277,7 @@ $$
 \label{abc6}
 \int_\gamma P\, dx + Q\, dy = \iint_D \left(\pd{Q}{x}-\pd{P}{y}\right)\,dx\,dy ,
 \end{equation}
-где $P(x, y)$ и $Q(x, y)$ - действительные функции переменных $x$, $y$, непрерывные со своими частными производными первого порядка в
+где $P(x, y)$ и $Q(x, y)$ --- действительные функции переменных $x$, $y$, непрерывные со своими частными производными первого порядка в
 замкнутой области $\overline{D} = D \cup \gamma$. 
 
 В силу непрерывной дифференцируемости функций $u$ и $v$ на односвязной области $G$, следующей из регулярности функции $f$, формула Грина \eqref{abc6} и \hyperref[exp17]{условия Коши-Римана} дают для интегралов \eqref{abc4}

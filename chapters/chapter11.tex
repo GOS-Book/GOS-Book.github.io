@@ -1,4 +1,6 @@
-\chapter[\texorpdfstring{Свойства интеграла с переменным верхним пределом \protect\newline (непрерывность, дифференцируемость).\protect\newline Формула Ньютона-Лейбница.}{}]{Свойства интеграла с переменным верхним пределом (непрерывность, дифференцируемость). Формула Ньютона-Лейбница.}
+\part[Многомерный анализ, интегралы и ряды (продолжение)]{Многомерный анализ,\protect\linebreak интегралы и ряды.\protect\linebreak(продолжение)}% \protect\linebreak \vbox{\vspace*{5\baselineskip}}\centerline{\includegraphics[height=0.3\textheight]{pictures/Foxi/3}}}
+
+\chapter[Свойства интеграла с переменным верхним пределом (непрерывность, дифференцируемость). Формула Ньютона-Лейбница.]{Свойства интеграла с переменным верхним пределом (непрерывность, дифференцируемость). Формула Ньютона-Лейбница.}
 \section{Определение интеграла Римана}
 
 \begin{defn}
@@ -20,7 +22,6 @@ $$
 
 \begin{defn}
 Для функции $f(x), \ x \in \Delta$, и разбиения $\tau(\Delta) = \{ \Delta_1, \ldots, \Delta_N\}$ суммы 
-
 $$
 \sum_{i = 1}^{N}m_i|\Delta_i| \quad \text{и} \quad \sum_{i = 1}^{N}M_i|\Delta_i|
 $$
@@ -35,7 +36,6 @@ $$
 
 \begin{defn}
 Пусть задана функция $f(x), \ x \in \Delta$, и некоторое разбиение $\tau(\Delta) = \{ \Delta_1, \ldots, \Delta_N\}$ промежутка $\Delta$. Тогда сумма
-
 $$
 \sum_{i = 1}^{N} f(\xi_i)|\Delta_i|,
 $$
@@ -44,20 +44,17 @@ $$
 \end{defn}
 
 Очевидно, для любого разбиения $\tau(\Delta) = \{ \Delta_1, \ldots, \Delta_N\}$ справедливы неравенства
-
 $$
 s(f; \tau) \le \sigma(f; \tau; \xi) \le S(f; \tau)
 $$
 
 при любом выборе точек $\xi_i \in \Delta_i$. Кроме того,
-
 $$
 s(f; \tau) = \inf_{\xi} \sigma(f; \tau; \xi), \quad S(f; \tau) = \sup_{\xi} \sigma(f; \tau; \xi).
 $$
 
 \begin{defn}
 Точные грани $\sup\limits_{\tau} s(f; \tau)$ и $\inf\limits_{\tau} S(f; \tau)$ называются \textit{интегралами Дарбу} (соответственно, \textit{нижним и верхним}) \textit{от функции $f$ по промежутку $\Delta$} и обозначаются $\underline{J}(f)$ и $\overline{J}(f)$. Таким образом,
-
 $$
 \underline{J}(f) = \sup_{\tau} s(f; \tau), \quad \overline{J}(f) = \inf_{\tau} S(f; \tau),
 $$
@@ -69,7 +66,6 @@ $\Delta$.
 
 \begin{defn}
 Если интегралы Дарбу от функции $f$ по промежутку $\Delta$ конечны и равны между собой, то функция $f$ называется \textit{интегрируемой по Риману на промежутке $\Delta$}, а число
-
 $$
 J(f) = \underline{J}(f) = \overline{J}(f)
 $$
@@ -78,7 +74,6 @@ $$
 \end{defn}
 
 Из этого определения следует, что если функция $f$ интегрируема на промежутке $\Delta$, то
-
 $$
 s(f; \tau) \le \int\limits_{\Delta} f(x) \,dx \le S(f; \tau) \quad \forall \tau(\Delta).
 $$
@@ -95,22 +90,19 @@ $$
 
 \begin{thm} \label{ch11.1thm1}
 Если функция f интегрируема на промежутке $\Delta \subset D_f$, то для любой римановой последовательности разбиений $\tau_k(\Delta),\ k\in \bbN$, имеют место равентсва
-
 \begin{equation} \label{ch11.1eq1}
 \lim_{|\tau| \to 0} \sigma(f, \tau, \xi) = \lim_{k \to \infty} \sigma(f, \tau_k, \xi) = \int\limits_{\Delta} f(x) \,dx.
 \end{equation}
 \end{thm}
 
-\section{Определенный интеграл как функция верx[него (нижнего) предела.}
+\section{Определенный интеграл как функция верxнего (нижнего) предела.}
 
 Для любой функции $f$, определенной и интегрируемой на промежутке $\Delta$, функция
-
 \begin{equation} \label{ch11.2eq1}
 F(x) = \int\limits_{c}^{x} f(t) \,dt, \quad x \in \Delta,
 \end{equation}
 
 где $c \in \Delta$, называется \textit{интегралом с переменным верхним пределом}, а функция
-
 \begin{equation} \label{ch11.2eq2}
 \Phi(x) = \int\limits_{x}^{c} f(t) \,dt, \quad x \in \Delta,
 \end{equation}
@@ -121,7 +113,6 @@ F(x) = \int\limits_{c}^{x} f(t) \,dt, \quad x \in \Delta,
 
 \begin{thm}
 Если функция $f$ интегрируема на промежутке $\Delta$, то функция $\eqref{ch11.2eq1}$ на $\Delta$ удовлетворяет условию
-
 $$
 |F(x_2) - F(x_1)| \le ||f|| \cdot |x_2 - x_1| \quad \forall x_1, x_2 \in \Delta,
 $$
@@ -130,7 +121,6 @@ $$
 
 \begin{proof}
 Действительно, $\forall x_1, x_2$ из $\Delta$ имеем:
-
 $$
 |F(x_2) - F(x_1)| = \left| \int\limits_{c}^{x_2}f(t) \,dt - \int\limits_{c}^{x_1} f(t) \,dt\right| = \left| \int\limits_{x_1}^{x_2}f(t) \,dt \right| \le \left| \int\limits_{x_1}^{x_2}|f(t)| \,dt \right| \le ||f|| \cdot |x_2 - x_1|.
 $$
@@ -146,7 +136,6 @@ $$
 
 \begin{proof}
 Пусть $x \in \Delta$, $\Delta x = x - x_0$ и $\Delta F = F(x) - F(x_0)$. Тогда, если $x \not= x_0$, то 
-
 $$ 
 \frac{\Delta F}{\Delta x} = \frac{1}{\Delta x} \int_{x_0}^{x} f(t) \,dt, \quad f(x_0) = \frac{1}{\Delta x} \int_{x_0}^{x} f(x_0) \,dt,
 $$
@@ -195,43 +184,35 @@ $$
 
 \begin{proof}
 Пусть сначала функция $F(x)$ непрерывна на отрезке $[a;b]$, дифференцируема на интервале $(a;b)$ и $F'(x) = f(x) \quad \forall x \in (a;b)$. Тогда для любых точек $x_0, x_1, \ldots, x_N$, таких, что
-
 $$
 a = x_0 < x_1 < \ldots < x_n = b,
 $$
 
 имеем
-
 $$
 F(b) - F(a) = \sum_{i = 1}^{N} \left( F(x_i) - F(x_{i - 1}) \right).
 $$
 
 На любом отрезке $[x_{i - 1}, x_i]$ функция $F(x)$ удовлетворяет всем условиям теоремы Лагранжа о среднем, поэтому
-
 $$
 \exists \xi_i \in (x_{i - 1}; x_i): \quad F(x_i) - F(x_{i - 1}) = f(\xi_i) \Delta x_i,
 $$
 
 и, следовательно,
-
 $$
 F(b) - F(a) = \sum_{i = 1}^{N} f(\xi_i) \Delta x_i = \sigma(f;\tau;\xi),
 $$
-
 где $\tau$ --- разбиение отрезка $[a;b]$ точками $x_0, x_1, \ldots, x_N$. А так как функция $f(x)$ интегрируема на $[a;b]$, то по теореме  \ref{ch11.1thm1}
-
 $$
 \lim_{|\tau| \to 0} \sigma (f;\tau; \xi) = \int\limits_{a}^{b} f(x) \,dx.
 $$
 
 Формула $\eqref{ch11.3eq1}$ доказана в случае, когда $F'(x) = f(x)$ на интервале $(a;b)$. В общем случае, пусть функция $F(x)$ непрерывна на отрезке $[a;b]$ и $F'(x) = f(x)$ всюду, кроме, может быть, конечного числа точек $c_0, c_1, \ldots, c_N$, таких, что $a = c_0 < c_1 < \ldots < c_N = b$, где $F'(x) \not= f(x)$ или $F'(x)$ не существует. Тогда, как уже доказано,
-
 $$
 \int\limits_{c_{i - 1}}^{c_i} f(x) \,dx = F(c_i) - F(c_{i - 1}),
 $$
 
 и поэтому
-
 $$
 \int\limits_{a}^{b} f(x) \,dx = \sum_{i = 1}^{N} \int\limits_{c_{i - 1}}^{c_{i}} f(x) \,dx = F(b) - F(a).
 $$
@@ -239,14 +220,12 @@ $$
 
 
 Формула $\eqref{ch11.2eq1}$ называется \textit{формулой Ньютома-Лейбница}. В ней вместо разности $F(b) - F(a)$ иногда пишут $F(x)\big|_{a}^{b}$, и тогда она принимает вид
-
 $$
 \int\limits_{a}^{b} f(x) \,dx = F(x)\big|_{a}^{b}.
 $$
 
 \begin{cons}
 Если функция $f(x)$ на отрезке $[a;b]$ интегрируема и имеет первообразную $F(x)$ (точную или обобщенную), то
-
 $$
 F(x) = F(a) + \int\limits_{a}^{x} f(t)\,dt.
 $$
@@ -267,7 +246,6 @@ $$
 В заключение доказанную теорему сформулируем как теорему об интеграле от производной:
 
 \textit{Если функция $F(x) \: x \in [a;b]$, на отрезке $[a;b]$ непрерывна и кусочно-дифференцируема, а ее производная интегрируема на $[a;b]$, то}
-
 \begin{equation} \label{ch11.3eq3}
 \int\limits_{a}^{b}F'(x) \,dx = F(b) - F(a).
 \end{equation} 

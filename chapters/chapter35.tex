@@ -1,25 +1,20 @@
 \chapter{Разложение функции, регулярной в кольце, в ряд Лорана. Изолированные особые точки однозначного характера.}
+
 \section{Разложение функции, регулярной в кольце, в ряд Лорана}
 
 \begin{defn}
 Рядом Лорана с центром в точке $a \in \bbC$ называется ряд вида
-
 \begin{equation} \label{ch35.1eq1}
 \sum\limits_{n = -\infty}^{+\infty} c_n (z - a)^n,
 \end{equation}
-
 понимаемый как сумма двух рядов:
-
 \begin{equation} \label{ch35.1eq2}
 \sum\limits_{n = 0}^{+\infty} c_n (z - a)^n
 \end{equation}
-
 и
-
 \begin{equation} \label{ch35.1eq3}
 \sum\limits_{n = -\infty}^{-1} c_n (z - a)^n = \sum\limits_{m = 1}^{+\infty} c_{-m} (z - a)^{-m}.
 \end{equation}
-
 \end{defn}
 
 Ряд $\eqref{ch35.1eq2}$ является обычным степенным рядом и в силу теоремы \hyperref[ch34.2Thm1]{Абеля} (билет №34) областью его сходимости является некоторый круг $B_R(a)$, где $R$ --- радиус сходимости ряда $\eqref{ch35.1eq2}$. Ряд $\eqref{ch35.1eq3}$ заменой $\frac{1}{z - a} = \zeta$ приводится к степенному ряду $\sum\limits_{m = 1}^{+\infty}c_{-m} \zeta^m$, и по той же теореме \hyperref[ch34.2Thm1]{Абеля} его область сходимости --- тоже некоторый круг $|\zeta| < \alpha_0$. Следовательно, ряд $\eqref{ch35.1eq3}$ сходится в области $|z - a| > \frac{1}{\alpha_0} \triangleq \rho \ge 0$. Если $\rho > R$, то суммарный ряд $\eqref{ch35.1eq1}$ не сходится ни в одной точке, если же $\rho < R$, то ряд $\eqref{ch35.1eq1}$ сходится в кольце: $\rho < |z - a| < R$.
@@ -28,7 +23,6 @@
 
 По теореме \hyperref[ch34.2Thm1]{Абеля} ряд $\eqref{ch35.1eq2}$ сходится равномерно в $\overline{B_{R_1}(a)}$ при 
 $R_1 \in (0,R)$, а ряд $\eqref{ch35.1eq3}$ сходится равномерно на множестве $|z - a| \ge \rho_1$ при $\rho_1 > \rho$. Следовательно, ряд Лорана сходится равномерно в любом кольце
-
 $$
 \rho_1 \le |z - a| \le R_1, \quad \rho < \rho_1 < R_1 < R.
 $$
@@ -67,17 +61,13 @@ S(z)=\sum\limits_{n=1}^{+\infty} f_n(z), \quad z\in G
 
 \begin{thm}[Лорана-Вейерштрасса] \label{ch35.1Thm1}
 Всякая функция $\omega = f(z)$, регулярная в кольце $\rho < |z - a| < R$, где $0 \le \rho < R \le +\infty$, представима в этом кольце суммой сходящегося ряда Лорана
-
 $$
 f(z) = \sum\limits_{n = -\infty}^{+\infty} c_n(z - a)^n,
 $$
-
 коэффициенты которого определяются по формулам
-
 \begin{equation} \label{ch35.1eq4}
 c_n = \frac{1}{2\pi i} \int_{\gamma_r} \frac{f(\zeta)}{(\zeta - a)^{n + 1}} \,d\zeta, \quad r \in (\rho, R), \quad n \in \bbZ,
 \end{equation}
-
 причем ориентация окружности $\gamma_r \triangleq \{\zeta \: \big| \: |\zeta - a| = r\}$ положительная, т.е. обход производится против хода часовой стрелки.
 
 \end{thm}
@@ -89,22 +79,18 @@ c_n = \frac{1}{2\pi i} \int_{\gamma_r} \frac{f(\zeta)}{(\zeta - a)^{n + 1}} \,d\
 	
 \item
 Покажем, что каждый коэффициент $c_n$ в формуле $\eqref{ch35.1eq4}$ не зависит от выбора $r \in (\rho, R)$ . Функция $\frac{f(\zeta)}{(\zeta - a)^{n+1}}$ регулярна в кольце $\rho < |\zeta - a| < R$. Для любых чисел $r_1, r_2: \rho < r_1 < r_2 < R$ определим окружности $\gamma_k$ с центром в точке $a$ и радиуса $r_k, k \in \overline{1,2}$, ориентированные положительно. По \hyperref[abc28]{обобщенной теореме Коши} получаем равенство
-
-$$
-\int_{\gamma_2 \cup \gamma_{1}^{-1}} \frac{f(\zeta)}{(\zeta - a)^{n + 1}} \,d\zeta = 0, \text{т.е.}
-$$
-
-$$
+\begin{equation*}
+\begin{split}
+\int_{\gamma_2 \cup \gamma_{1}^{-1}} \frac{f(\zeta)}{(\zeta - a)^{n + 1}} \,d\zeta = 0, \text{т.е.}\\
 \int_{\gamma_2} \frac{f(\zeta)}{(\zeta - a)^{n + 1}} \,d\zeta = \int_{\gamma_1} \frac{f(\zeta)}{(\zeta - a)^{n + 1}} \,d\zeta,
-$$
-
+\end{split}
+\end{equation*}
 что и требовалось для доказательства независимости интеграла $\eqref{ch35.1eq4}$ от выбора $r \in (\rho, R)$ при каждом $n \in \bbZ$.
 
 \item
 
 Зафиксируем произвольную точку $z_0$ в кольце $\rho < |z - a| < R$. Выберем числа $r_1, r_2$ такие, что 
 $\rho < r_1 < |z_0 - a| < r_2 < R$, и окружности $\gamma_k = \{ z \: \big| \: |z - a| = r_k\}$ при $k \in \overline{1,2}$, ориентированные положительно. Тогда контур $\Gamma = \gamma_2 \cup \gamma_{1}^{-1}$, является границей кольца $r_1 < |z - a| < r_2$, в котором по  \hyperref[ch34thm1]{интегральной формуле Коши} получаем
-
 \begin{equation} \label{ch35.1eq5}
 f(z_0) = \frac{1}{2\pi i} \int_\Gamma \frac{f(\zeta)}{\zeta - z_0} \,d\zeta = \frac{1}{2\pi i} \int_{\gamma_2} \frac{f(\zeta)}{\zeta - z_0} \,d\zeta - \frac{1}{2\pi i} \int_{\gamma_1} \frac{f(\zeta)}{\zeta - z_0} \,d\zeta \triangleq I_2 + I_1.
 \end{equation}
@@ -115,19 +101,14 @@ f(z_0) = \frac{1}{2\pi i} \int_\Gamma \frac{f(\zeta)}{\zeta - z_0} \,d\zeta = \f
 \end{equation}
 
 Из справедливости оценки
-
 $$
 \left| f(\zeta) \frac{(z_0 - a)^n}{(\zeta - a)^{n + 1}}\right| \le q_{2}^n \cdot \frac{M}{r_2}, \quad \forall \zeta \in \gamma_2,
 $$
-
 где $q_2 \triangleq \frac{|z_0 - a|}{r_2} < 1, \quad M \triangleq \sup \{ |f(z)| \: \big| \: r_1 \le |z - a| \le r_2\} < +\infty$, и из того, что ряд $\sum\limits_{n = 0}^{+\infty} q_{2}^n$ сходится, по признаку Вейерштрасса получаем, что ряд $\eqref{ch35.1eq6}$ сходится абсолютно и равномерно на $\gamma_2$. По теореме \ref{ch35.1Thm6}  ряд $\eqref{ch35.1eq6}$ можно почленно интегрировать по $\gamma_2$, т.е. получим, что 
-
 \begin{equation} \label{ch35.1eq7}
 I_2 = \frac{1}{2\pi i} \int_{\gamma_2} \frac{f(\zeta)}{\zeta - z_0} \,d z \myeq{\eqref{ch35.1eq6}} \sum\limits_{n = 0}^{+\infty} \frac{1}{2\pi i} \int_{\gamma_2} \frac{f(\zeta)}{(\zeta - a)^{n + 1}} \,d\zeta \cdot (z_0 - a)^n = \sum\limits_{n = 0}^{+\infty} c_n (z_0 - a)^n,
 \end{equation}
-
 где 
-
 \begin{equation} \label{ch35.1eq8}
 c_n = \frac{1}{2\pi i} \int_{\gamma_2}  \frac{f(\zeta)}{(\zeta - a)^{n + 1}} \,d\zeta, \quad n = 0,1,2,\ldots
 \end{equation}
@@ -135,37 +116,29 @@ c_n = \frac{1}{2\pi i} \int_{\gamma_2}  \frac{f(\zeta)}{(\zeta - a)^{n + 1}} \,d
 \item
 
 Рассмотрим интеграл $I_1$ из $\eqref{ch35.1eq5}$. Представим $-\frac{1}{\zeta - z_0}$ в виде ряда (см. \hyperref[exmpl2]{пример 2} из билета №34 )
-
 \begin{equation} \label{ch35.1eq9}
 -\frac{1}{\zeta - z_0} = \frac{1}{(z_0 - a) \left( 1 - \frac{\zeta - a}{z_0 - a}\right)} = \sum_{n = 0}^{+\infty} \frac{(\zeta - a)^n}{(z_0 - a)^{n + 1}}.
 \end{equation}
 
 По признаку Вейерштрасса ряд $\eqref{ch35.1eq9}$ сходится равномерно по $\zeta$ на $\gamma_1$, так как
-
 $$
 \left| \frac{\zeta - a}{z_0 - a}\right| = \frac{r_1}{|z_0 - a|} \triangleq q_1 < 1, \quad \forall \zeta \in \gamma_1.
 $$
 
 Так как $|f(\zeta)| \le M$ при $\zeta \in \gamma_1$, то ряд
-
 \begin{equation} \label{ch35.1eq10}
 -\frac{1}{2\pi i} \frac{f(\zeta)}{(\zeta - z_0)} = \sum\limits_{n = 0}^{+\infty} \frac{1}{2\pi i} \frac{f(\zeta)(\zeta - a)^n}{(z_0 - a)^{n + 1}}, \quad \zeta \in \gamma_1,
 \end{equation}
-
 также сходится равномерно на $\gamma_1$, и аналогично случаю вычисления $I_2$ его можно почленно интегрировать. После интегрирования равенства $\eqref{ch35.1eq10}$ получаем
-
 \begin{equation} \label{ch35.1eq11}
 I_1 = \sum\limits_{n = 0}^{+\infty} \left( \frac{1}{2\pi i} \int_{\gamma_1} f(\zeta)(\zeta - a)^n \,d\zeta\right) \frac{1}{(z_0 - a)^{n + 1}}.
 \end{equation}
 
 Заменяя в формуле $\eqref{ch35.1eq11}$ номера $(n + 1)$ на $(-m)$, получаем равенство
-
 \begin{equation} \label{ch35.1eq12}
 I_1 = \sum\limits_{m = -\infty}^{-1} c_m (z_0 - a)^m,
 \end{equation}
-
 где
-
 \begin{equation} \label{ch35.1eq13}
 c_m = \frac{1}{2\pi i} \int_{\gamma_1} \frac{f(\zeta)}{(\zeta - a)^{m + 1}} \,d\zeta, \quad m = -1,-2,\ldots
 \end{equation}
@@ -181,7 +154,7 @@ c_m = \frac{1}{2\pi i} \int_{\gamma_1} \frac{f(\zeta)}{(\zeta - a)^{m + 1}} \,d\
 Если функция $f : B_R(a) \to \bbC$ регулярна на $B_R(a)$, то ее ряд Лорана с центром в точке а совпадает с ее рядом Тейлора с центром в точке $a$.
 \end{cons}
 \begin{proof}
-В самом деле, по формуле $\eqref{ch35.1eq4}$ при $m = -1,-2, \ldots$ функция $\frac{f(\zeta)}{(\zeta - a)^{-m-1}}$ будет регулярной в круге $B_R(a)$, и по теореме Коши интеграл от нее по замкнутому контуру равен нулю, т.е. $c_m = 0 \quad \forall m = -1,-2, \ldots$.
+В самом деле, по формуле $\eqref{ch35.1eq4}$ при $m = -1,-2, \ldots$ функция $\frac{f(\zeta)}{(\zeta - a)^{m+1}}$ будет регулярной в круге $B_R(a)$, и по теореме Коши интеграл от нее по замкнутому контуру равен нулю, т.е. $c_m = 0 \quad \forall m = -1,-2, \ldots$.
 \end{proof}
 
 \begin{thm}[о единственности разложения в ряд Лорана] \label{Ch35.1Thm2}
@@ -190,13 +163,11 @@ c_m = \frac{1}{2\pi i} \int_{\gamma_1} \frac{f(\zeta)}{(\zeta - a)^{m + 1}} \,d\
 
 \begin{proof}
 Пусть регулярная функция $f$ представлена в кольце $\rho < |z - a| < R$ в виде некоторого ряда
-
 \begin{equation} \label{ch35.1eq14}
 f(z) = \sum_{n = -\infty}^{-1} b_n (z - a)^n + \sum_{n = 0}^{+\infty} b_n (z - a)^n.
 \end{equation}
 
 Выберем число $r \in (\rho, R)$, и пусть окружность $\gamma_r = \{ z \: \big| \: |z - a| = r\}$ ориентирована положительно. Как показано в \hyperref[exmpl1]{примере 1} (билет №34), справедлива формула
-
 \begin{equation} \label{ch35.1eq15}
 I_k \triangleq \int_{\gamma_r} \frac{\,dz}{(z - a)^{k + 1}} = 
 \begin{cases}
@@ -206,19 +177,15 @@ I_k \triangleq \int_{\gamma_r} \frac{\,dz}{(z - a)^{k + 1}} =
 \end{equation}
 
 Как было отмечено в начале параграфа, ряд $\eqref{ch35.1eq14}$ на окружности $\gamma_r$ сходится равномерно. Зафиксируем любое число $k \in \bbZ$. Умножив ряд $\eqref{ch35.1eq14}$ на ограниченную по модулю на кривой $\gamma_r$ функцию $\frac{1}{2\pi i(z - a)^{k + 1}}$, получаем равномерно сходящийся на окружности $\gamma_r$ ряд
-
 \begin{equation} \label{ch35.1eq16}
 \frac{1}{2\pi i} \frac{f(z)}{(z - a)^{k + 1}} = \sum_{n = -\infty}^{+\infty} \frac{1}{2\pi i} b_n \frac{(z-a)^n}{(z - a)^{k + 1}}.
 \end{equation}
 
 Следовательно, по теореме \ref{ch35.1Thm6} его можно почленно интегрировать по окружности $\gamma_r$, и, учитывая формулу $\eqref{ch35.1eq4}$, получаем
-
 $$
 c_k \myeq{\eqref{ch35.1eq4}} \frac{1}{2\pi i} \int_{\gamma_r} \frac{f(z)}{(z - a)^{k + 1}} \,dz \myeq{\eqref{ch35.1eq16}} \sum_{n = -\infty}^{+\infty} \frac{1}{2\pi i} b_n \int_{\gamma_r} \frac{\,dz}{(z - a)^{k - n + 1}} \myeq{\eqref{ch35.1eq15}} b_k,
 $$
-
 т.е. ряд $\eqref{ch35.1eq14}$ совпадает с рядом Лорана $\eqref{ch35.1eq1}$, $\eqref{ch35.1eq4}$.
-
 \end{proof}
 
 Из следствия \ref{ch35.1cons1} и теоремы \ref{Ch35.1Thm2} получаем
@@ -229,29 +196,23 @@ $$
 
 \begin{cons} [неравенство Коши для коэффициентов ряда Лорана] \label{ch35.1cons3}
 Пусть функция $f$ регулярна в кольце $\rho < |z - a| < R$ и на каждой окружности $\gamma_r = \{ z \: \big| \: |z - a| = r\}$ справедлива оценка $|f(z)| \le A_r \: \forall z \in \gamma_r$. Тогда для коэффициентов $\eqref{ch35.1eq4}$ ряда Лорана $\eqref{ch35.1eq1}$ справедлива оценка
-
 \begin{equation} \label{ch35.1eq20}
 |c_n| \le \frac{A_r}{r^n}, \quad \forall n \in \bbZ.
 \end{equation}
 
 \begin{proof}
 Из формулы $\eqref{ch35.1eq4}$ сразу следует
-
 $$
 |c_n| = \left| \frac{1}{2\pi i} \int_{\gamma_r} \frac{f(\zeta)\,d\zeta}{(\zeta - a)^{n + 1}} \right| \le \frac{A_r}{2\pi r^{n + 1}} \int_{\gamma_r} |\,d\zeta| = \frac{A_r}{r^n},
 $$
-
 что и требовалось доказать.
 \end{proof}
 \end{cons}
 
 \section{Изолированные особые точки однозначного характера}
 
-
 \begin{defn}\label{ch35.1defn3}
-
 Пусть функция $f$ не регулярна в точке $a \in \overline{\bbC}$, но регулярна в некоторой проколотой окрестности этой точки $a$ (т.е. на множестве $\overset{\circ}{B}_\rho(a), \rho > 0$). Тогда точку $а$ называют \textit{изолированной особой точкой (однозначного характера) функции $f$}.
-
 \end{defn}
 
 В определении \ref{ch35.1defn3} точка $a$ может быть как конечной точкой (тогда $\overset{\circ}{B}_\rho(a) = \{ z \: \big| \: 0 < |z - a| < \rho\}$), так и бесконечной (тогда $\overset{\circ}{B}_\rho(\infty) = \{ z \: \big| \: |z| > \rho\}$).
@@ -268,31 +229,25 @@ $$
 \end{defn}
 
 В случае, когда особая точка $a$ конечна, регулярную в кольце $\overset{\circ}{B}_\rho(a)$ функцию $f$ по теореме \ref{ch35.1Thm1} можно представить в виде сходящегося ряда Лорана с центром в точке $a$, т.е.
-
 \begin{equation} \label{ch35.2eq1}
 f(z) = \sum_{n = -\infty}^{+\infty} c_n (z - a)^n, \quad z \in \overset{\circ}{B}_\rho(a).
 \end{equation}
 
 Тогда будем различать две части ряда Лорана
-
 $$
-I_{\text{пр}} \triangleq \sum_{n = 0}^{+\infty} c_n (z - a)^n \quad \text{и} \quad I_{\text{гл}} \triangleq \sum_{n = -\infty}^{-1} c_n (z - a)^n
+I_{\text{пр}} \triangleq \sum_{n = 0}^{+\infty} c_n (z - a)^n \quad \text{и} \quad I_{\text{гл}} \triangleq \sum_{n = -\infty}^{-1} c_n (z - a)^n,
 $$
-
 которые называют соответственно \textit{правильной и главной частями ряда Лорана} $\eqref{ch35.2eq1}$ с центром в особой точке $a$.
 
 В случае, когда особая точка $a = \infty$, функцию $f$ можно представить в виде сходящегося в кольце $\overset{\circ}{B}_\rho(\infty)$ ряда Лорана
-
 \begin{equation} \label{ch35.2eq2}
 f(z) = \sum_{n = -\infty}^{+\infty} c_n z^n, \quad z \in \overset{\circ}{B}_\rho(\infty),
 \end{equation}
 
 и теперь будем различать части ряда $\eqref{ch35.2eq2}$
-
 $$
-I_{\text{пр}} \triangleq \sum_{n = -\infty}^{0} c_n z^n \quad \text{и} \quad I_{\text{гл}} \triangleq \sum_{n = 1}^{+\infty} c_n z^n
+I_{\text{пр}} \triangleq \sum_{n = -\infty}^{0} c_n z^n \quad \text{и} \quad I_{\text{гл}} \triangleq \sum_{n = 1}^{+\infty} c_n z^n,
 $$
-
 которые называются соответственно \textit{правильной и главной частями ряда Лорана} $\eqref{ch35.2eq2}$ с центром в $\infty$.
 
 \begin{thm}\label{Ch35.2Thm5}
@@ -313,7 +268,6 @@ I. Пусть точка $a \in \bbC$ конечна.
 \begin{enumerate}
 
 \item \textit{Необходимость}. Пусть $a$ --- устранимая особая точка функции $f$, т.е. существует конечный предел $\lim\limits_{z \to a} f(z)$. Тогда функция $f$ ограничена в некоторой окрестности точки $a$, т.е. существуют числа $\rho_1 \in (0, \rho)$ и $A > 0$ такие, что $|f(z)| < A$ при $\forall z \in \overset{\circ}{B}_{\rho_1}(a)$. Воспользуемся\hyperref[ch35.1cons3]{неравенством Коши для коэффициентов ряда Лорана} функции $f$
-
 $$
 |c_n| \le \frac{A}{r^n}, \quad \forall r \in (0, \rho_1).
 $$
@@ -323,7 +277,6 @@ $$
 \item \textit{Достаточность}. Пусть $I_{\text{гл}}(z) \equiv 0$, т.е. $c_n = 0 \quad \forall n < 0$. Тогда $f(z) = \sum\limits_{n = 0}^{+\infty} c_n (z - a)^n \triangleq S(z), \quad \forall z \in \overset{\circ}{B}_{\rho}(a)$.
 
 Так как сумма сходящегося степенного ряда $S(z)$ есть регулярная функция на круге $\overset{\circ}{B}_{\rho}(a)$, причем $f(z) = S(z)$ при $z \not= a$, то существует предел
-
 $$
 \lim_{z \to a} f(z) = S(a) = c_0.
 $$
@@ -331,19 +284,16 @@ $$
 \item \textit{Необходимость}. Пусть точка $a$ --- полюс функции $f$, т.е. существует предел $\lim\limits_{z \to a} f(z) = \infty$. В силу этого можно выбрать $\delta > 0$ такое, что при всех $z \in \overset{\circ}{B}_{\delta}(a)$ справедливо неравенство $|f(z)| > 1$. Определим функцию $g(z)\triangleq\frac{1}{f(z)}$ при $z \in \overset{\circ}{B}_{\delta}(a)$.
 
 Очевидно, что функция $g$ регулярна в проколотой окрестности $\overset{\circ}{B}_{\delta}(a)$, причем $g(z) \not= 0$ и $|g(z)| < 1$ при всех $z \in \overset{\circ}{B}_{\delta}(a)$. Так как точка $a$ есть полюс функции $f$, то существует предел $\lim\limits_{z \to a} g(z) = \lim\limits_{z \to a} \frac{1}{f(z)} = 0$, т.е. получаем, что точка $a$ есть устранимая особая точка функции $g$. Следовательно, доопределив $g(a) = 0$, получаем, что функция $g$ регулярна в круге $B_{\delta}(a)$, т.е. по \hyperref[abc29]{теореме 5} (билет №34) она представима в виде сходящегося степенного ряда
-
 \begin{equation} \label{ch35.2eq3}
 g(z) = b_m (z - a)^m + b_{m + 1} (z - a)^{m + 1} + \ldots, \quad \forall z \in B_\delta(a).
 \end{equation}
 
 Так как функция $g(z) \not\equiv 0$, в равенстве $\eqref{ch35.2eq3}$ существует номер $m \ge 1$, при котором $b_m \not= 0$. Таким образом, $g(z) = (z - a)^{m} h(z)$, где $h(z) = b_m + b_{m + 1} (z - a) + \ldots ,$ т.e. функция $h$ как сумма сходящегося степенного ряда регулярна в круге $B_{\delta}(a)$, причем $h(a) \not= 0$. Поэтому $h(z) \not= 0$ при всех $z$ из некоторой окрестности $B_{\rho_1}(a)$, где $0 < \rho_1 < \delta$. Следовательно, функция $\frac{1}{h(z)}$ тоже регулярна в $B_{\rho_1}(a)$, и  по \hyperref[abc29]{теореме 5} (билет №34) она также представима в виде сходящегося степенного ряда
-
 $$
 \frac{1}{h(z)} = d_0 + d_1 (z - a) + d_2 (z - a)^2 + \ldots , \quad z \in B_{\rho_1}(a),
 $$
 
 причем здесь $d_0 = \frac{1}{b_m} \not= 0$. В итоге получаем в $\overset{\circ}{B}_{\rho_1}(a)$
-
 \begin{multline} \label{ch35.2eq4}
 f(z) = \frac{1}{g(z)} = \frac{1}{(z - a)^m} \cdot \frac{1}{h(z)} = \frac{d_0}{(z - a)^m} + \frac{d_1}{(z - a)^{m - 1}} + \ldots \\ \ldots+ \frac{d_{m - 1}}{(z - a)} + d_m + d_{m + 1} (z - a) + \ldots 
 \end{multline}
@@ -351,7 +301,6 @@ f(z) = \frac{1}{g(z)} = \frac{1}{(z - a)^m} \cdot \frac{1}{h(z)} = \frac{d_0}{(z
 Таким образом, правая часть в равенстве $\eqref{ch35.2eq4}$ есть ряд Лорана функции $f$ с центром в точке $a$, причем главная часть $I_{\text{гл}}(z)$, очевидно, содержит конечное число ненулевых слагаемых.
 
 \item \textit{Достаточность}. Пусть справедливо представление функции $f$ в проколотой окрестности $\overset{\circ}{B}_{\rho_1}(a)$ в виде сходящегося ряда Лорана $\eqref{ch35.2eq4}$, причем $d_0 \not= 0$. Тогда, вынося общий множитель, получаем
-
 \begin{equation} \label{ch35.2eq5}
 f(z) = \frac{1}{(z - a)^m} (d_0 + d_1 (z - a) + \ldots) = \frac{p(z)}{(z - a)^m}.
 \end{equation}
@@ -368,13 +317,11 @@ II. Пусть функция $f$ имеет особую точку $a = \infty
 
 \begin{cons} \label{ch35.2cons1}
 Точка $a \in \bbC$ является полюсом функции $f$ тогда и только тогда, когда существуют окрестность $\overset{\circ}{B}_\rho(a)$, натуральное число $m \ge 1$ и регулярная в круге $B_\rho(a)$ функция $p$ такие, что $p(a) \not = 0$ и
-
 \begin{equation} \label{ch35.2eq6}
 f(z) = \frac{p(z)}{(z - a)^m}, \quad \forall z \in \overset{\circ}{B}_\rho(a).
 \end{equation}
 
 В свою очередь, точка $a = \infty$ является полюсом функции $f$ тогда и только тогда, когда существуют окрестность $\overset{\circ}{B}_\rho(\infty)$, число $m \ge 1$, регулярная в $\overset{\circ}{B}_\rho(\infty)$ функция $h$, у которой существует конечный предел $h(\infty) \not= 0$, такие, что
-
 \begin{equation} \label{ch35.2eq7}
 f(z) = z^m h(z), \quad z \in \overset{\circ}{B}_\rho(\infty).
 \end{equation}
@@ -391,7 +338,6 @@ f(z) = z^m h(z), \quad z \in \overset{\circ}{B}_\rho(\infty).
 
 \begin{defn} \label{ch35.2defn4}
 Пусть $a \in \bbC,$ $p > 0,$ $m \ge 1$, пусть функция $g : B_{\rho}(a) \to \bbC$ регулярна и
-
 $$
 g(a) = g'(a) = \ldots = g^{(m - 1)}(a) = 0, \quad g^{(m)}(a) \not= 0.
 $$
@@ -406,7 +352,6 @@ $m > k$, то функция $f(z) = \frac{h(z)}{g(z)}$ имеет в точке
 
 \begin{proof}
 В силу определения $\eqref{ch35.2defn4}$ имеет для функций $h$ и $g$ представление
-
 $$
 h(z) = (z - a)^k h_1(z), \quad g(z) = (z - a)^m g_1(z),
 $$
