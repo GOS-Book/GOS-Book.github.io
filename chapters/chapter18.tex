@@ -1,2 +1,143 @@
 \chapter{Достаточные условия равномерной сходимости тригонометрического ряда Фурье.}
-\section{Достаточные условия равномерной сходимости тригонометрического ряда Фурье}
+
+\section{Признак Липшица равномерной сходимости}
+Говорят, что функция $f(x), x \in (A;B)$, на интервале $(A;B)$ удовлетворяет \textit{условию Липщица порядка} $\alpha > 0$, если существует постоянная $C$ такая, что
+$$
+|f(x+\xi) - f(x)| \le C|\xi|^{\alpha}
+$$
+для любого $x \in (A;B)$ и любого $\xi$ такого, что $x + \xi \in (A;B)$.
+
+\begin{thm} [Признак Липшица] \label{ch18thm1}
+Если функция $f(x) \in \overset{*}{L^{R}_1}(-\pi;\pi)$ на интервале $(A;B)$ удовлетворяет условию Липшица порядка $\alpha > 0$, то ее ряд Фурье на любом отрезке $[a;b] \subset (A;B)$ сходится равномерно к $f(x)$.
+\end{thm}
+\begin{proof}
+При доказательстве признка Липшица (теорема \ref{ch17thm3}) в билете 15 получено равенство
+$$
+T_n(f; x) - f(x) = \frac{1}{2\pi} \int\limits_{-\pi}^{\pi} F(x,\xi) \sin{\lambda_n \xi} \,d\xi,
+$$
+где
+$$
+F(x,\xi) = \frac{f(x+\xi) - f(x)}{\sin (\xi \backslash 2)}, \quad \lambda_{n} = n + \frac12.
+$$
+
+Пусть $\delta = \min \{a - A;B - b\}$. Тогда, как и в билете 15, получаем, что функция $F(x,\xi)$ удовлетворяет неравентсву
+$$
+|F(x,\xi)| \le \pi C |\xi|^{\alpha - 1}
+$$
+для любого $x \in [a;b]$ и любого $\xi \in (-\delta;\delta)$. Следовательно, для любого $x \in [a;b]$ и любого $h \in (0;\delta)$ справедливо неравенство
+\begin{multline} \label{ch18eq1}
+|T_n(f; x) - f(x)| \le C \frac{1}{\alpha} h^{\alpha}\ +\\
++ \frac{1}{2\pi} \left| \int\limits_{-\pi}^{-h} F(x,\xi) \sin{\lambda_n \xi} \,d\xi \right| + \frac{1}{2\pi} \left| \int\limits_{h}^{\pi} F(x,\xi) \sin{\lambda_n \xi} \,d\xi \right|.
+\end{multline}
+
+Покажем, что для любого $h \in (0;\delta)$
+\begin{equation} \label{ch18eq2}
+\sup\limits_{x \in [a;b]}\left|\int\limits_{h}^{\pi} F(x,\xi) \sin{\lambda_n \xi} \,d\xi \right| \xrightarrow{n \to \infty} 0
+\end{equation}
+
+Так как функция $\sin (\xi \backslash 2)$ на интервале $(0;\pi)$ непрерывна, неотрицательна и монотонно возрастает, то, согласно второй теореме о среднем, для любого $x \in [a;b]$ и любого $h \in (0;\pi)$ существует $\theta \in [h;\pi]$ такое, что
+$$
+\int\limits_{h}^{\pi} F(x,\xi) \sin{\lambda_n \xi}\,d\xi = \frac{1}{\sin (h \backslash 2)} \int\limits_{h}^{\theta} (f(x+\xi) - f(x)) \sin{\lambda_n \xi}\,d\xi.
+$$
+
+Легко видеть, что для любого $x \in [a;b]$
+$$
+\left| \int\limits_{h}^{\theta} f(x) \sin{\lambda_n \xi}\,d\xi \right| \le \frac{2}{\lambda_{n}}\sup\limits_{x \in [a;b]}|f(x)| \xrightarrow{n \to \infty} 0
+$$
+Далее,
+\begin{multline*}
+\left| \int\limits_{h}^{\theta} f(x + \xi) \sin{\lambda_n \xi}\,d\xi \right| \le \left| \int\limits_{h}^{\theta} f(x + \xi) e^{i\lambda_{n}y} \,d\xi \right|\ =\\
+=\ \left| \int\limits_{h + x}^{\theta + x} f(y) e^{i\lambda_{n}y}\,dy \right| \le \sup\limits_{\alpha,\beta} \left|\int\limits_{\alpha}^{\beta} f(y) e^{i\lambda_{n}y}\,dy \right|,
+\end{multline*}
+где супремум берется по всем $\alpha,\beta \in [a - \pi;b + \pi]$. По теореме Римана о равномерной осцилляции этот супремум стремится к нулю при $n to \infty$. Утверждение \eqref{ch18eq2} доказано. Аналогично доказывается
+\begin{equation} \label{ch18eq3}
+\sup\limits_{x \in [a;b]} \left|\int\limits_{-pi}^{-h} F(x,\xi) \sin{\lambda_n \xi} \,d\xi \right| \xrightarrow{n \to \infty} 0
+\end{equation}
+Из всего выше следует, что
+$$
+\overline{\lim\limits_{n \to \infty}} \sup \limits_{x \in [a;b]} |T_n(f; x) - f(x)| \le C \cdot \frac{1}{\alpha}h^{\alpha}
+$$
+для любого $h \in (0;\delta)$.
+\end{proof}
+Из теоремы Лагранжа о среднем сразу следует, что если функция на некотором интервале имеет ограниченную производную, то на это интервале она удовлетворяет условию Липшица порядка $\alpha = 1$. Поэтому получаем следующее утверждение.
+\begin{cons}
+Если функция $f(x) \in \overset{*}{L^{R}_1}(-\pi;\pi)$ на интервале $(A;B)$ имеет ограниченную производную, то ее ряд Фурье сходится к $f(x)$ равномерно на любом отрезке $[a;b] \subset (A;B)$.
+\end{cons}
+
+\section{Признак Дини равномерной сходимости}
+Пусть функция $f(x)$ определена на некотором интервале, содержащем отрезок $[a;b]$, и в каждой точке этого отрезка непрерывна. Тогда, если существует $\delta > 0$ такое, что для любого $x \in [a;b]$ интеграл
+$$
+\psi(\delta ; x) = \int\limits_{-\delta}^{\delta} \left|\frac{f(x + \xi) - f(x)}{\xi}\right|\, d\xi
+$$
+сходится, то говорят, что функция $f(x)$ удовлетворяет \textit{условию Дини} на отрезке $[a;b]$. Если, кроме того,
+\begin{equation} \label{ch18eq4}
+\sup\limits_{x \in [a;b]} \psi(h;x) \to 0 \quad \text{при} \quad h \to 0 ,
+\end{equation}
+то будем говорить, что функция $f$ на отрезке $[a;b]$ удовлетворяет \textit{равномерному условию Дини}.
+
+\begin{thm} [Признак Дини] \label{ch18thm2}
+Если функция $f(x) \in \overset{*}{L^{R}_1}(-\pi;\pi)$ на отрезке $[a;b]$ удовлетворяет равномерному условию Дини, то ее ряд Фурье сходится к $f(x)$ равномерно на $[a;b]$.
+\end{thm}
+\begin{proof}
+Как и при доказательстве признака Липщица (Теорема \ref{ch18thm1}), для любого $h \in (0;\delta)$ получаем неравенство
+$$
+\overline{\lim\limits_{n \to \infty}} \sup \limits_{x \in [a;b]} |T_n(f; x) - f(x)| \le \sup\limits_{x \in [a;b]} \psi(h;x)
+$$
+Тогда отсюда и из условия \eqref{ch18eq4} следует, что
+$$
+\overline{\lim\limits_{n \to \infty}} \sup \limits_{x \in [a;b]} |T_n(f; x) - f(x)| = 0
+$$
+\end{proof}
+
+\section{Признак Дирихле равномерной сходимости}
+
+Сначала рассмотрим случай монотонных на интервале функций.
+
+\begin{thm} \label{ch18thm3}
+Если функция $f(x) \in \overset{*}{L^{R}_1}(-\pi;\pi)$ непрерывна и монотонна на интервале $(A;B)$, то ее ряд Фурье сходится к $f(x)$ равномерно на любом отрезке $[a;b] \subset (A;B)$.
+\end{thm}
+\begin{proof}
+Пусть $\delta = \min \{a - A; B - b\}$. Тогда как и при доказательстве признака Дирихле сходимости ряда Фурье в точке (Теорема \ref{ch17thm5} билета №17), для любого $x \in [a;b]$ и любого $h \in (0;\delta)$ получаем неравенство
+\begin{multline} \label{ch18eq5}
+|T_n(f; x) - f(x)| \le\\
+\le C\sum_{\pm}|f(x \pm h) - f(x)| + \frac{1}{2\pi} \sum_{\pm} \left|\int\limits_{h}^{\pi} F_{\pm}(x; \xi) \sin{\lambda_n \xi} \,d\xi \right|.
+\end{multline}
+
+При доказательства признака Липшица равномерной сходимости ряда Фурье (Теорема \ref{ch18thm1}) доказано, что последние интегралы в неравенстве \eqref{ch18eq5} при $n \to \infty$ стремятся к нулю равномерно относительно $x \in [a;b]$. Следовательно,
+$$
+\overline{\lim\limits_{n \to \infty}} \sup \limits_{x \in [a;b]} |f(x \pm h) - f(x)| \le 2c\omega_{f}(h),
+$$
+где $\omega_{f}(h)$ --- модуль непрерывности функции $f$. А так как функция $f$ равномерно непрерывна на отрезке $\left[a - \frac{\delta}{2}; b + \frac{\delta}{2}\right]$, то $\omega_{f}(h) \to \infty$ при $h \to +0$, и поэтому
+$$
+\lim\limits_{n \to \infty} \sup\limits_{x \in [a;b]} |T_n(f; x) - f(x)| = 0
+$$
+\end{proof}
+\begin{cons}
+Если функция $f(x) \in \overset{*}{L^{R}_1}(-\pi;\pi)$ на интервале $(A;B)$ представима в виде суммы или разности двух непрерывных монотонных функций, то ее ряд Фурье сходится к $f(x)$ равномерно на любом отрезке $[a;b] \subset (A;B)$.
+\end{cons}
+
+\begin{thm} [Признак Дирихле равномерной сходимости ряда Фурье] \label{ch18thm4}
+Если функция $f(x) \in \overset{*}{L^{R}_1}(-\pi;\pi)$ непрерывна и кусочно-монотонна на интервале $(A;B)$, то ее ряд Фурье сходится к $f(x)$ равномерно на любом отрезке $[a;b] \subset (A;B)$.
+\end{thm}
+\begin{proof}
+Рассмотрим сначала случай, когда функция $f$ монотонна на промежутках $(A;c]$ и $[c;B)$. Тогда
+$$
+f(x) = \phi(x) - \psi(x),
+$$
+где
+\begin{align*}
+&\phi(x) = f(x)\ \text{на}\ (A;c]\ \text{и}\ \phi(x) = \psi(x)\ \text{на}\ [c;B),\\
+&\psi(x) = 0   \ \text{на}\ (A;c]\ \text{и}\ \psi(x) = f(c) - f(x) \ \text{на}\ [c;B).
+\end{align*}
+Так как функции $\phi(x)$ и $\psi(x)$ на интервале $(A;B)$ непрерывны и монотонны, то в этом случае утверждение теоремы доказано.
+
+Рассмотрим теперь общий случай. Пусть интервал $(A;B)$ точками $c_1, c_2, \ldots, c_N$ разбивается на $N + 1$ промежутков, на каждом из которых функция $f$ монотонна, и пусть, для определенности,
+$$
+A < a < c_1 < c_2 < \ldots < c_N < b < B.
+$$
+На каждом интервале $(c_k, c_{k+1}), k = 1, \ldots, N - 1$, выберем какую-нибудь точку $b_k$. Тогда, как уже доказано, ряд Фурье функции $f$ сходится равномерно к $f(x)$ на каждом отрезке
+$$
+[a_1; b_1], [b_1; b_2],\ldots, [b_{N-1};b],
+$$
+а следовательно, и на отрезке $[a;b]$.
+\end{proof}
