@@ -13,6 +13,7 @@
  
 \usepackage{indentfirst} 
 \usepackage{amsmath,amsthm,amssymb,amscd} 				
+
 \usepackage{blkarray}		
 \usepackage{multicol}		
 %\usepackage{hhline}
@@ -42,6 +43,19 @@
 \usepackage{forloop}
 %\newcounter{ct}
 %\forloop{ct}{1}{\value{ct} < 10}{\arabic{ct} \\}
+
+\usepackage{framed}
+\renewenvironment{leftbar}[1][\hsize]
+{%
+    \def\FrameCommand
+    {%
+        {\color{Purplemountainmajesty}\vrule width 1.35pt}%
+        \hspace{5pt}%must no space.
+        %\fboxsep=\FrameSep\colorbox{#3FORCOLOR}%
+    }%
+    \MakeFramed{\hsize#1\advance\hsize-\width\FrameRestore}%
+}
+{\endMakeFramed}
 
 \input{include/wrapping}
     

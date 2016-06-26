@@ -112,6 +112,7 @@ $$
 Предел любой подпоследовательности данной последовательности называется \textit{частичным пределом} этой последовательности.
 \end{defn}
 
+\begin{leftbar}
 \begin{thm}[Больцано-Вейерштрасса] \label{ch1.1thm3}
 \label{exp9}
 У любой ограниченной последовательности существует сходящаяся подпоследовательность.
@@ -138,10 +139,12 @@ $$
 \end{aligned}
 \end{gather*}
 Так как $a_k \le x_{n_k} \le b_k \;\; \forall k$, то из \hyperref[exp10]{теоремы о трех последовательностях} следует, что $\lim_{k \to \infty}\limits x_{n_k} = c$.
+
 Теорема доказана.
 \end{proof}
 
 \hyperref[exp9]{Теорему Больцано-Вейерштрасса} можно сформулировать следующим образом: \textit{Любая ограниченная последовательность имеет хотя бы один частичный предел.}
+\end{leftbar}
 
 \section{Критерий Коши сходимости числовой последовательности}
 
@@ -177,9 +180,7 @@ $$
 \begin{thm}[Критерий Коши] 
 $\{x_n\}$ сходится $\Longleftrightarrow$ $\{x_n\}$ фундаментальна, где $\{x_n\}$ -- числовая последовательность.
 \end{thm}
-\begin{proof}
-$ $\linebreak
-\vspace*{-\baselineskip}
+\begin{proof}\leavevmode
 \begin{itemize}
 \item[$\Longrightarrow$:]
 Смотри Лемму \ref{lemm1}.
@@ -197,7 +198,6 @@ $ $\linebreak
 $$
 |x_n-x_0| \le |x_n-x_{n_p}|+|x_{n_p}-x_0|<\frac{\epsilon}{2}+\frac{\epsilon}{2}=\epsilon.
 $$
-А так как $\epsilon > 0$ любое, то этим доказано, что $\lim_{n \to +\infty}\limits x_n = x_0$.
+А так как $\epsilon > 0$ любое, то этим доказано, что $\lim_{n \to +\infty}\limits x_n = x_0$. \qedhere
 \end{itemize}
-\vspace{-1.65\baselineskip}
 \end{proof}

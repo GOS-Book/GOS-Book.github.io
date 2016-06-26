@@ -3,20 +3,20 @@
 
 Аналогом ряда Фурье в данном вопросе будем называть интеграл
 $$
-\int\limits_{0}^{+\infty} (a(y)cos(yx) + b(y)sin(yx))dy,\quad \text{где}
+\int\limits_{0}^{+\infty} (a(y)\cos(yx) + b(y)\sin(yx))dy,\quad \text{где}
 $$
 $$
-a(y) = \lim_{l \to +\infty}\frac{1}{\pi}\int\limits_{-l}^{l} f(t)cos(yt)dt,\qquad 
-b(y) = \lim_{l \to +\infty}\frac{1}{\pi}\int\limits_{-l}^{l} f(t)sin(yt)dt
+a(y) = \lim_{l \to +\infty}\frac{1}{\pi}\int\limits_{-l}^{l} f(t)\cos(yt)dt,\qquad 
+b(y) = \lim_{l \to +\infty}\frac{1}{\pi}\int\limits_{-l}^{l} f(t)\sin(yt)dt
 $$
 который называется \textit{интегралом Фурье}.
 
 Заметим, что не для всякой функции $f$, которая абсолютно интегрируема на любом конечном интервале, определенные выше пределы существуют. Если же функция $f$ абсолютно интегрируема на $\bbR$, то эти пределы заведомо существуют и
 \begin{equation} \label{ch19eq1}
-a(f;y) = \frac{1}{\pi}\int\limits_{-\infty}^{+\infty} f(t)cos(yt)dt
+a(f;y) = \frac{1}{\pi}\int\limits_{-\infty}^{+\infty} f(t)\cos(yt)dt
 \end{equation}
 \begin{equation} \label{ch19eq2}
-b(f;y) = \frac{1}{\pi}\int\limits_{-\infty}^{+\infty} f(t)sin(yt)dt
+b(f;y) = \frac{1}{\pi}\int\limits_{-\infty}^{+\infty} f(t)\sin(yt)dt
 \end{equation}
 
 \begin{thm}
@@ -32,9 +32,9 @@ b(f;y) = \frac{1}{\pi}\int\limits_{-\infty}^{+\infty} f(t)sin(yt)dt
 \begin{proof}
 Из неравенств
 $$
-|f(t)cos(yt)| \le |f(t)|, \quad |f(t)sin(yt)| \le |f(t)|.
+|f(t)\cos(yt)| \le |f(t)|, \quad |f(t)\sin(yt)| \le |f(t)|.
 $$
-и абсолютной интегрируемости функции $f$ на $\bbR$ следует, что интегралы \eqref{ch19eq1} и \eqref{ch19eq2} сходятся равномерно на $\bbR$ относительно $y$, и поэтому функции $a(f)$ и $b(f)$ непрервны на $\bbR$.
+и абсолютной интегрируемости функции $f$ на $\bbR$ следует, что интегралы \eqref{ch19eq1} и \eqref{ch19eq2} сходятся равномерно на $\bbR$ относительно $y$, и поэтому функции $a(f)$ и $b(f)$ непрерывны на $\bbR$.
 
 Неравенства \eqref{ch19eq3} очевидны, а соотношения \eqref{ch19eq4} следуют из теоремы Римана об осцилляции. 
 \end{proof}
