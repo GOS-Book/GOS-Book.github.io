@@ -112,24 +112,24 @@
 что соответствует системе
 
   $\begin{cases}
-  x'_1+\sum \limits_{j=r+1}^n a'_{1j}x_j=b'_1\\
-  x'_2+\sum \limits_{j=r+1}^n a'_{2j}x_j=b'_2\\
+  x'_1+\sum \limits_{j=r+1}^n a'_{1j}x'_j=b'_1\\
+  x'_2+\sum \limits_{j=r+1}^n a'_{2j}x'_j=b'_2\\
   \ldots \\
-  x'_r+\sum \limits_{j=r+1}^n a'_{rj}x_j=b'_r\\ 
+  x'_r+\sum \limits_{j=r+1}^n a'_{rj}x'_j=b'_r\\ 
   \end{cases}
   \Leftrightarrow
   \begin{cases}
-  x'_1=b'_1-\sum \limits_{j=r+1}^n a'_{1j}x_j\\
-  x'_2=b'_2-\sum \limits_{j=r+1}^n a'_{2j}x_j\\
+  x'_1=b'_1-\sum \limits_{j=r+1}^n a'_{1j}x'_j\\
+  x'_2=b'_2-\sum \limits_{j=r+1}^n a'_{2j}x'_j\\
   \ldots \\
-  x'_r=b'_r-\sum \limits_{j=r+1}^n a'_{rj}x_j\\ 
+  x'_r=b'_r-\sum \limits_{j=r+1}^n a'_{rj}x'_j\\ 
   \end{cases}$
   
   $x'_1,...x'_r$ называются \textit{главными} неизвестными, $x'_{r+1},...,x'_n$ -- \textit{свободными}, или \textit{параметрическими}, т.к. выбор последних произволен.
   
-  Оконательно, получаем:
+  Введём обозначения:
   \begin{equation}
-  X'_0=\begin{pmatrix} b'_1\\ \vdots \\b'_r \\ \hline \\ \fudge 0 \\ \\ \end{pmatrix}
+  X'_0=\begin{pmatrix} b'_1\\ \vdots \\b'_r \\ \hline \\ \fudge 0 \\ \\ \end{pmatrix}, 
   X'_j=\bordermatrix{
       & \cr
       & -a'_{1,r+j} \cr
@@ -142,7 +142,7 @@
   }, j=\overline{1,n-r}
   \end{equation}
   
-  Во введённых обозначениях решение имеет вид
+  Тогда решение имеет вид
   \begin{equation*}
    Y'=X'_0+\sum_{j=1}^{n-r}x'_{r+j}X'_j,$$
     где 
