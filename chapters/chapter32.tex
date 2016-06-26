@@ -61,14 +61,12 @@ $$
 \section{Закон больших чисел}
 
 Говорят, что к случайным величинам $\xi_k, \: k = 1, 2, \ldots,$ имеющим математические ожидания $M\xi_k, \: k = 1, 2,\ldots,$ применим закон больших чисел, если для любого $\epsilon > 0$
-
 \begin{equation} \label{ch32.2eq4}
 \lim_{n \to \infty} P \left( \left| \frac{\xi_1 + \xi_2 + \ldots + \xi_n}{n} - \frac{M \xi_1 + M \xi_2 + \ldots + M \xi_n}{n} \right| < \epsilon \right) = 1
 \end{equation}
 
 \begin{thm} [Маркова]
 Если у случайных величин $\xi_k, \: k = 1,2,\ldots$, существуют дисперсии и если при $n \to \infty$
-
 \begin{equation} \label{ch32.2eq5}
 \frac{1}{n^2} D  \left( \sum_{k  = 1}^{n} \xi_k\right) \to 0,
 \end{equation}
@@ -77,21 +75,20 @@ $$
 
 \begin{proof}
 Обозначим $\eta_n = (\xi_1 + \ldots + \xi_n) / n$. Пользуясь неравенством Чебышева, в котором положим $b = \epsilon, \: \xi = \eta_n$, получим
-
 $$
 P \left( \left| \eta_n - M  \eta_n \right| \ge \epsilon \right) \le \frac{1}{\epsilon^2} D  \eta_n.
 $$
-Отсюда, так как
 
+Отсюда, так как
 $$
 M  \eta_n = \frac{M \xi_1 + \ldots + M \xi_n}{n}, \quad D \eta_n = \frac{1}{n^2} D  \left( \sum_{k  = 1}^{n} \xi_k\right),
 $$ 
 для вероятности противоположного события находим оценку
-
 $$
 P \left( \left| \frac{\xi_1 + \ldots + \xi_n}{n} - \frac{M \xi_1 + \ldots + M \xi_n}{n} \right| < \epsilon \right) \ge 1 - \frac{1}{\epsilon^2n^2} D  \left( \sum_{k  = 1}^{n} \xi_k\right).
 $$
-Из этого неравенства и условия $\eqref{ch32.2eq5}$ следует $\eqref{ch32.2eq4}$.
+
+Из этого неравенства и условия \eqref{ch32.2eq5} следует \eqref{ch32.2eq4}.
 \end{proof}
 
 Некоторые частные случаи этой теоремы.
@@ -101,10 +98,11 @@ $$
 \end{thm}
 
 \begin{proof}
-В самом деле, для доказательства теоремы достаточно проверить условие $\eqref{ch32.2eq5}$. Из неравенств $D  \xi_k < c, \: k = 1, 2\ldots$, и попарной независимости случайных величин $\xi_k, \: k = 1,2,\ldots$, следует, что
+В самом деле, для доказательства теоремы достаточно проверить условие \eqref{ch32.2eq5}. Из неравенств $D  \xi_k < c, \: k = 1, 2\ldots$, и попарной независимости случайных величин $\xi_k, \: k = 1,2,\ldots$, следует, что
 $$
 D  \left( \sum_{k  = 1}^{n} \xi_k\right) = \sum_{k  = 1}^{n} D  \xi_k  < nc.
 $$
+
 Отсюда получаем условие $\eqref{ch32.2eq5}$:
 $$
 \frac{1}{n^2} D  \left( \sum_{k  = 1}^{n} \xi_k\right) < \frac{c}{n} \xrightarrow{n \to \infty} 0. \qedhere
@@ -117,13 +115,11 @@ $$
 \begin{proof}
 Теорема \ref{ch32.2T4} следует из теоремы \ref{ch32.2T3}. Действительно, дисперсии $D\xi_k, \: k = 1,2, \ldots,$ существуют и равны между собой; следовательно, они равномерно ограничены и мы находимся в условиях теоремы \ref{ch32.2T3}.
 \end{proof}
-Утверждение теоремы $\ref{ch32.2T4}$ означает, что для любых $\epsilon > 0, \: \delta > 0$, найдется такое $N$, что при $n > N$ верно неравенство
-
+Утверждение теоремы \ref{ch32.2T4} означает, что для любых $\epsilon > 0, \: \delta > 0$, найдется такое $N$, что при $n > N$ верно неравенство
 \begin{equation} \label{ch32.2eq6}
 P \left( \left| \frac{\xi_1 + \xi_2 + \ldots + \xi_n}{n} - a \right| < \epsilon \right) \ge 1 - \delta,
 \end{equation}
 где $a = M  \xi_k, \: k = 1, 2, \ldots$
-
 
 \section{Схема Бернулли}
 
@@ -136,14 +132,12 @@ P \left( \left| \frac{\xi_1 + \xi_2 + \ldots + \xi_n}{n} - a \right| < \epsilon 
 Простейшая задача, относящаяся к схеме Бернулли, состоит в определении вероятности $P_n(m)$ того, что в $n$ испытаниях событие $A$ произойдет $m$ раз ($0 \le m \le n$).
 
 Мы только что нашли, что вероятность того, что событие $A$ наступит в испытаниях с определенными $m$ номерами, а в остальных не наступит равна $p^mq^{n - m}$. По теореме сложения искомая вероятность равна сумме только что вычисленных вероятностей для всех различных способов размещения $m$ появлений события $A$ и $n - m$ непоявлений среди $n$ испытаний. Число таких способов известно из теории сочетаний, оно равно 	$C_n^m = \frac{n!}{m!(n - m)!}$ и, следовательно,
- 
 \begin{equation} \label{ch32.1.1eq1}
 P_n(m) = C_n^m p^mq^{n - m} \quad (m = 0,1,2,\ldots,n).
 \end{equation}
 
 \begin{thm} [Бернулли]
 Пусть $\mu_n$ --- число успехов в $n$ испытаниях Бернулли и $p$ --- вероятность успеха в каждом отдельном испытании. Тогда $\forall \epsilon > 0$
-
 \begin{equation} \label{ch32.2eq7}
 \lim_{n \to \infty} P \left( \left| \frac{\mu_n}{n} - p \right| < \epsilon \right) = 1.
 \end{equation}
@@ -154,8 +148,6 @@ P_n(m) = C_n^m p^mq^{n - m} \quad (m = 0,1,2,\ldots,n).
 
 Так как $\xi_k,\; k = 1,2,\ldots, \: n$, независимы, одинаково распределены $(P( \xi_k = 1) = p, \,P( \xi_k = 0) = 1 - p = q)$, то дисперсии случайных величин $\xi_k$ существуют и $M  \xi_k = p$, то теорема Бернулли сразу следует из теоремы $\ref{ch32.2T4}$.
 \end{proof}
-
-
 
 \section{Предельная теорема Пуассона}
 \begin{thm} [Пуассона]
@@ -178,5 +170,5 @@ P(\mu_n = m) = \frac{n(n - 1)\ldots(n - m + 1)}{m!} \left( \frac{\lambda_n}{n}\r
 
 Таким образом, при больших $n$ и малых $p$ мы можем воспользоваться приближенной формулой
 $$
-P(\mu_n = m) \approx \frac{(\lambda_n)^m}{m!} e^{-\lambda_n},	\lambda_n = np
+P(\mu_n = m) \approx \frac{(\lambda_n)^m}{m!} e^{-\lambda_n},	\lambda_n = np.
 $$
