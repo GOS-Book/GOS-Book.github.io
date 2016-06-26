@@ -4,25 +4,43 @@
 \section{Дифференцируемость функций комплексного переменного}
 
 \subsection{Предел. Функции комплексного переменного}
+Выберем системы окрестностей для точек из $\bbC$, чтобы определить понятие сходимости (сделаем это аналогично $\bbR^2$).
+\begin{itemize}
+\item
+$B_r(z_0) \triangleq \{z \;\bigl|\; |z-z_0|<r \bigl.\}$ --- выберем в качестве \textit{окрестности произвольной точки} $z_0$ радиуса $r>0.$
+\item
+$\overset{\circ} {B}_r(z_0)\triangleq \{z \;\bigl|\; 0<|z-z_0|<r \bigl.\}$ --- будем обозначать так \textit{проколотую окрестность точки} $z_0 \in \bbC$.
+\item
+$\overline{B_r(z_0)} \triangleq \{z \;\bigl|\; |z-z_0|\le r \bigl.\}$ --- будем обозначать так замкнутый круг с центром в точке $z_0$ радиуса $r$. %см.рис1
+\end{itemize}
+
 Пусть $\{z_n\}$ --- последовательность чисел из $\bbC$, $z_n=x_n+iy_n, \, n \in \bbN$. 
 \begin{defn}
-Число $A = a+ib \in \bbC$ называется \textit{пределом последовательности} $\{z_n\}$, если $\forall \epsilon > 0\quad \exists N(\epsilon)$ такое, что $\forall n \ge N(\epsilon) $ справедливо включение $z_n \in B_\epsilon(A) \triangleq \{z_n \;\bigl|\; |z_n-A|<\epsilon \bigl.\}$.
+Число $A = a+ib \in \bbC$ называется \textit{пределом последовательности} $\{z_n\}$, если $\forall \epsilon > 0\quad \exists N(\epsilon)$ такое, что $\forall n \ge N(\epsilon) $ справедливо включение $z_n \in B_\epsilon(A) = \{z_n \;\bigl|\; |z_n-A|<\epsilon \bigl.\}$.
+$$
+\forall \epsilon > 0\quad \exists N(\epsilon): \quad\forall n \ge N(\epsilon) \quad z_n \in B_\epsilon(A)\quad (\text{т.е. }|z_n-A|<\epsilon).
+$$
 \end{defn}
-\begin{defn}
-Последовательность $\{z_n\}$ \textit{сходится к бесконечности}, если 
+\begin{defn}\label{ch33.defn3}
+Последовательность $\{z_n\}$ \textit{сходится (стремится) к бесконечности} $(z_n\to\infty)$, если 
 $$
 \forall \epsilon > 0\quad \exists N(\epsilon): \fa n \ge N(\epsilon) \quad |z_n|>\epsilon.
 $$
 \end{defn} 
-Это определение эквивалентно тому, что окрестностью бесконечности является внешность круга $\overline{B_\epsilon(0)}$, т.е. множество вида $\overset{\circ} {B}_\epsilon(\infty)\triangleq \{z \;\bigl|\; |z|>\epsilon \bigl.\}$. Обозначим $B_\epsilon(\infty)=\overset{\circ} {B}_\epsilon(\infty) \cup\{\infty\}$.
+Это определение эквивалентно тому, что окрестностью бесконечности является внешность круга $\overline{B_\epsilon(0)}$, т.е. множество вида $\overset{\circ} {B}_\epsilon(\infty)\triangleq \{z \;\bigl|\; |z|>\epsilon \bigl.\}$. 
 
-Пусть $f: G\to \bbC$ - функция, где $G \subset \bboC$. Где ${\bboC =\{\infty\} \cup \{\bbC\}}$ с введенной выше системой окрестностей точки $\infty$. Заметим, что задание комплексной функции $f$ равносильно заданию двух действительных функций $u=u(x,y)$ и $v=v(x,y)$, так как $f(z)=u(x,y)+iv(x,y)$.
+\begin{defn}
+Комплексная плоскость $\bbC$ с введенной выше системой окрестностей своих точек, пополненная присоединением к ней единственной бесконечно удаленной точки $z=\infty$ и системой ее окрестностей $\overset{\circ} {B}_\epsilon(\infty)$ (т.е. сходимостью к $\infty$ по определению \ref{ch33.defn3}), называется \textit{расширенной комплексной плоскостью} и обозначается ${\bboC =\{\infty\} \cup \{\bbC\}}$.
+\end{defn}
+При этом обозначим $B_\epsilon(\infty)=\overset{\circ} {B}_\epsilon(\infty) \cup\{\infty\}$.
+
+Пусть $f: G\to \bbC$ --- функция, где $G \subset \bboC$. Заметим, что задание комплексной функции $f$ равносильно заданию двух действительных функций $u=u(x,y)$ и $v=v(x,y)$, так как $f(z)=u(x,y)+iv(x,y)$.
 \begin{defn}
 Точка $z_0 \in \bboC$ называется \textit{внутренней точкой множества} $G \subset \bboC$ ($z_0 \in \interior G$), если существует число $\epsilon > 0$ такое, что справедливо включение $B_\epsilon (z_0) \subset G$.
 \end{defn} 
 
 \begin{defn}
-Точка $z_0 \in \bboC$ называется \textit{предельной точкой множества} $G \subset \bboC$, если для любого числа $\epsilon > 0$ в проколотой окрестности $\overset{\circ} {B}_\epsilon(z_0)\triangleq \{z \;\bigl|\; 0<|z-z_0|<\epsilon \bigl.\}$ имеется по крайней мере одна точка (а потому и бесконечно много точек) из $G$ (т.е. $\overset{\circ} {B}_\epsilon(z_0) \cap G \neq \emptyset,\; \forall\epsilon > 0$).
+Точка $z_0 \in \bboC$ называется \textit{предельной точкой множества} $G \subset \bboC$, если для любого числа $\epsilon > 0$ в проколотой окрестности $\overset{\circ} {B}_\epsilon(z_0)$ имеется по крайней мере одна точка (а потому и бесконечно много точек) из $G$ (т.е. $\overset{\circ} {B}_\epsilon(z_0) \cap G \neq \emptyset,\; \forall\epsilon > 0$).
 \end{defn}
 
 \begin{defn}
