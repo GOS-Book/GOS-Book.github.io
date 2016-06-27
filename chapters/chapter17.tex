@@ -221,18 +221,21 @@ $$
 \begin{proof}
 Для характеричстических функций любого конечного промежутка это утверждение очевидно. Действительно, если $\xi$ и $\eta$ --- концы промежутка, то
 $$
-\left|\int\limits_{\xi}^{\eta} e^{i\lambda x}dx\right| = \left|\cfrac{e^{i\lambda \eta} - e^{i\lambda \xi}}{i\lambda}\right| \le \frac{2}{|\lambda|}
+\left|\int\limits_{\xi}^{\eta} e^{i\lambda x}dx\right| = \left|\cfrac{e^{i\lambda \eta} - e^{i\lambda \xi}}{i\lambda}\right| \le \frac{2}{|\lambda|}.
 $$
+
 А так как любая финитная ступенчатая функция есть линейная комбинация характеристических функций конечного числа конечных промежутков, то утверждение теоремы верно для любой такой функции.
 
-Согласно теореме \eqref{ch17thm1}, для любого $\epsilon > 0$ существует финитная ступенчатая функция $\phi(x)$ такая, что
+Согласно теореме \ref{ch17thm1}, для любого $\epsilon > 0$ существует финитная ступенчатая функция $\phi(x)$ такая, что
 $$
-\int\limits_{\Delta} |f(x) - \phi(x)|dx < \frac{\epsilon}{2}
+\int\limits_{\Delta} |f(x) - \phi(x)|dx < \frac{\epsilon}{2}.
 $$
+
 Тогда
 $$
 \left|\int\limits_{\Delta} f(x)e^{i\lambda x}dx\right| \le \int\limits_{\Delta} |f(x) - \phi(x)|dx\ +\ \left|\int\limits_{\Delta} \phi(x)e^{i\lambda x}dx\right|.
 $$
+
 Последний интеграл, согласно уже доказанному, стремится к нулю при $\lambda \to \infty$, поэтому
 $$
 \exists\ \lambda_{\epsilon} : \quad \forall\ \lambda, |\lambda| > \lambda_{\epsilon} : \left|\int\limits_{\Delta} \phi(x)e^{i\lambda x}dx\right| < \frac{\epsilon}{2}.
