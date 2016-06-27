@@ -1,4 +1,5 @@
 \chapter{Формула Тейлора с остаточным членом в форме Пеано или Лагранжа.}
+
 \section{Формула Тейлора с остаточным членом в форме Лагранжа}
 
 Пусть функция $f(x)$ определена в некоторой окрестности точки $x_0$ и в точке $x_0$ имеет $n$-ю производную, а следовательно, и все производные до $n$-го порядка. Легко видеть, что многочлен
@@ -9,6 +10,7 @@ $$
 $$
 P_n^{(k)}(x_0) = f^{(k)}(x_0) \quad \forall k = 0,1,\ldots,n.
 $$
+
 Этот многочлен называется \textit{многочленом Тейлора функции $f$ в точке $x_0$}.
 
 Равенство $$f(x) = P_n(x) + r_n(x)$$ называется \textit{формулой Тейлора} для функции $f(x)$ в точке $x_0$, а функция $r_n(x)$ --- остаточным членом формулы Тейлора.
@@ -101,10 +103,10 @@ $$
 \begin{equation} \label{ch5.2eq2}
 f(x) = \sum_{k = 0}^{n} \frac{f^{(k)}(x_0)}{k!} (x - x_0)^k + o((x - x_0)^n), \quad \textit{при } x \to x_0,
 \end{equation}
-где $\psi(x) = o((x - x_0)^n), x \to x_0 \leftrightarrow \psi(x) = \alpha(x) (x - x_0)^n, \quad \text{где} \lim_{x \to x_0} \alpha(x) = 0$.
-
-Формула $\eqref{ch5.2eq2}$ называется формулой Тейлора для $f$ в точке $x_0$ порядка $n$ с остаточным членом в форме Пеано
+где $\psi(x) = o((x - x_0)^n), x \to x_0 \leftrightarrow \psi(x) = \alpha(x) (x - x_0)^n, \ \text{где}\ \lim\limits_{x \to x_0} \alpha(x) = 0$.
 \end{thm}
+
+Формула \eqref{ch5.2eq2} называется \textit{формулой Тейлора для $f$ в точке $x_0$ порядка $n$ с остаточным членом в форме Пеано.}
 
 \begin{proof}
 Функция $f$ дифференцируема $n$ раз в точке $x_0$ $\quad \Rightarrow \quad f^{(n - 1)}(x)$ определена в некоторой окрестности $O(x_0)$ точки $x_0$, т.е. $\exists f^{(n)}(x_0) \in \bbR: \quad$
@@ -133,7 +135,7 @@ $$
 $$
 \lim_{x \to x_0} \frac{r_n(x)}{\phi(x)} = \frac{1}{n!} \lim_{\xi \to x_0} \frac{r_n^{(n-1)}(\xi) - r_n^{(n-1)}(x_0)}{\xi - x_0} = \frac{1}{n!} r_n^{(n)}(x_0) = 0
 $$
-Функция $f(x) = \frac{r_n(x)}{\phi(x)}, \quad x \in \overset{\circ}{O}(x_0)$ --- бесконечно малая функция при $x \to x_0 \quad \Rightarrow r_n(x) = \phi(x)f(x) = (x - x_0)^n \cdot \alpha(x) = o((x - x_0)^n), \quad x \to x_0 \quad \Rightarrow \text{формула} \eqref{ch5.2eq2}$.
+Функция $\alpha(x) = \frac{r_n(x)}{\phi(x)}, \quad x \in \overset{\circ}{O}(x_0)$ --- бесконечно малая функция при $x \to x_0 \quad \Rightarrow r_n(x) = \alpha(x)\phi(x) = \alpha(x)(x - x_0)^n  = o((x - x_0)^n),\ \text{при} x \to x_0 \quad \Rightarrow \text{формула}\ \eqref{ch5.2eq2}$.
 \end{proof}
 
 \begin{thm}[о единственности разложения функции по формуле Тейлора]
@@ -145,7 +147,7 @@ f(x) = \sum_{k = 0}^{n}a_k (x - x_0)^k + o((x - x_0)^n), \quad x \to x_0
 \end{thm}
 
 \begin{proof}
-$f$ - дифференцируема $n$ раз в точке $x_0 \quad \Rightarrow$
+$f$ --- дифференцируема $n$ раз в точке $x_0 \ \Rightarrow$
 Справедлива Формула Тейлора с остаточным членом в форме Пеано:
 \begin{equation} \label{eq5.3eq4}
 f(x) = \sum_{k = 0}^{n} \frac{f^{(k)}(x_0)}{k!} \cdot (x - x_0)^k + o((x - x_0)^n) \quad \text{при} \quad x \to x_0
@@ -155,5 +157,5 @@ f(x) = \sum_{k = 0}^{n} \frac{f^{(k)}(x_0)}{k!} \cdot (x - x_0)^k + o((x - x_0)^
 \begin{equation} \label{eq5.3.eq5}
 \sum\limits_{k = 0}^{n} \left( \frac{f^{(k)}(x_0)}{k!} - a_k \right) (x - x_0)^k = o((x - x_0)^n)
 \end{equation}
-В $\eqref{eq5.3.eq5}$ левая и правая часть имеют пределы при $x \to x_0$, которые равны между собой.
+В \eqref{eq5.3.eq5} левая и правая часть имеют пределы при $x \to x_0$, которые равны между собой.
 \end{proof}

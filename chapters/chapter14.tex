@@ -1,4 +1,4 @@
-\part[Кратные интегралы и теория поля.(продолжение)]{Кратные интегралы и теория поля.\protect\linebreak(продолжение)}%\protect\linebreak \vbox{\vspace*{5\baselineskip}}\centerline{\includegraphics[height=0.3\textheight]{pictures/Foxi/4}}}
+\part[Кратные интегралы и теория поля.]{Кратные интегралы и теория поля.}%\protect\linebreak \vbox{\vspace*{5\baselineskip}}\centerline{\includegraphics[height=0.3\textheight]{pictures/Foxi/4}}}
 
 \chapter{Формула Грина. Потенциальные векторные поля на плоскости.}
 \section{Формула Грина} 
@@ -12,7 +12,6 @@
 
 \begin{lemm}
 Если функции $P(x,y)$ и $Q(x,y)$ определены и непрерывны на $\overline{\Delta}$, а их производные $P'_y$ и $Q'_x$ непрерывны и интегрируемы на $\Delta$, то справедлива формула
-
 \begin{equation} \label{Grin}
 \iint\limits_{\Delta} \left( \pd{Q}{x}-\frac{\partial P}{\partial y} \right)\,dxdy = \int\limits_{\partial \Delta} P\,dx + Q\,dy
 \end{equation}
@@ -28,10 +27,12 @@ $$
 $$
 \iint\limits_\Delta\pd{Q}{x}\,dxdy = \int_{BC}\limits Q\,dy - \int_{AD}\limits Q\,dy = \int_{BC}\limits Q\,dy + \int_{DA}\limits Q\,dy.
 $$
+
 А так как интегралы от $Q\,dy$ по $AB$ и $CD$ равны нулю, то
 $$
 \iint\limits_\Delta\pd{Q}{x}\,dxdy = \int\limits_{ABCDA} Q\,dy
 $$
+
 Аналогично доказывается, что
 $$
 \iint\limits_\Delta\pd{P}{y}\,dx\,dy = -\int\limits_{ABCDA} P\,dx.  
@@ -51,7 +52,7 @@ $$
 \begin{defn}
 Векторное поле $a(M)$, $M\in G$, называется \textit{потенциальным в области G}, если существует скалярная функция $u(M), M\in G$, такая, что 
 $$
-a(M) = grad u(M), M \in G.
+a(M) = \grad u(M), M \in G.
 $$
 
 В этом случае функция $u(M)$ называется \textit{потенциалом векторного поля} $a(M)$.
