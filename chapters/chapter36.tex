@@ -2,12 +2,12 @@
 
 \section{Вычеты}
 
+\begin{leftbar}
 \begin{defn}
 Пусть $a \in \bbC$ --- изолированная особая точка регулярной функции $f : \overset{\circ}{B}_\rho(a) \to \bbC, \: \rho > 0$. Пусть $\gamma_r \triangleq \{ z \: \big| \: |z - a| = r\}$ --- положительно ориентированная окружность, причем $0 < r < \rho$. Тогда \textit{вычетом функции $f$ в точке $a$} называется число
 \begin{equation} \label{ch36.1eq1}
 \res_{a} f \triangleq \frac{1}{2\pi i} \int_{\gamma_r} f(z) \,dz.
 \end{equation}
-
 \end{defn}
 
 Отметим, что в формуле \eqref{ch36.1eq1} интеграл не зависит от величины $r\in (0, \rho)$.
@@ -53,6 +53,7 @@ f(z) = \frac{c_{-m_0}}{(z - a)^{m_0}} + \frac{c_{-m_0 + 1}}{(z - a)^{m_0 - 1}} +
 
 Левая часть равенства \eqref{ch36.1eq7}, очевидно, имеет предел при $z \to a$. Поэтому, переходя к пределу, в силу формулы \eqref{ch36.1eq3} получаем формулу \eqref{ch36.1eq4}.
 \end{proof}
+\end{leftbar}
 
 \begin{lemm}
 Пусть функция $f : \overset{\circ}{B}_\rho(a) \to \bbC$ представима в виде
@@ -117,6 +118,7 @@ $$
 
 \end{proof}
 
+\begin{leftbar}
 \begin{thm} [Коши о вычетах] \label{ch36.1T1}
 Пусть дана область $G \subset \overline{\bbC}$ с кусочно-гладкой положительно ориентированной границей $\Gamma$ (см. определения \ref{ch33defn1}, \ref{ch33defn2} из билета №33). Пусть функция $f$ определена и регулярна на $G$ всюду, за исключением конечного числа изолированных особых точек $a_1,a_2,\ldots,a_n \in G$ (при этом имеется в виду, что все $a_k$ различны и если $\infty \in G$, то $\infty = a_n$) и пусть к тому же функция $f$ непрерывно продолжима на границу области $G$. Тогда справедлива формула
 \begin{equation} \label{ch36.1eq14}
@@ -154,6 +156,7 @@ $$
 откуда и из \eqref{ch36.1eq16} следует \eqref{ch36.1eq14}.	
 \end{enumerate}
 \end{proof}
+\end{leftbar}
 
 \begin{cons}
 Пусть функция $f$ регулярна во всей комплексной плоскости, за исключением конечного числа изолированных особых точек $a_1,\ldots,a_n \in \overline{\bbC}$. Тогда
@@ -181,6 +184,7 @@ $$
 
 {\bf I. Вычисление интегралов вида}
 
+\begin{leftbar}
 \begin{equation} \label{ch36.1eq19}
 J = \int_{-\infty}^{+\infty} R_{n,m} (x) dx,
 \end{equation}
@@ -230,7 +234,6 @@ $$
 $$
 \left| \int_{C_R} \Phi(z)\,dz \right| \le \int_{C_R} |\Phi(z)||\,dz| \le \epsilon(R) \int_{C_R}|\,dz| = \epsilon(R)\pi R \to 0.
 $$
-
 \end{proof}
 
 Применим \hyperref[ch36.1lemm4]{лемму \ref{ch36.1lemm4}} для случая рациональной функции $\Phi(z) = R_{n,m}(z)$ из правого интеграла в \eqref{ch36.1eq20} при сформулированных выше условиях (т.е. при $m > n + 1$).
@@ -327,3 +330,4 @@ $$
 J_1 = \Re \int_{-\infty}^{+\infty} e^{i \alpha x} R(x) \,dx, \quad J_2 = \Im \int_{-\infty}^{+\infty} e^{i \alpha x}R(x) \,dx.
 $$
 \end{cons}
+\end{leftbar}
