@@ -168,22 +168,15 @@ $$
 Лемма доказана.
 \end{proof}
 
-\begin{lemm}
-\label{lemm2}
-Если последовательность $\{x_n\}$ фундаментальна, то она ограничена.
-\end{lemm}
-\begin{proof}
-Пусть $\{x_n\}$ удовлетворяет \eqref{fuck}. Положим $\epsilon = 1,\; m = N_1$. Тогда $\forall n > N_1:\\ |x_n-x_{N_1}| <\epsilon = 1 \Leftrightarrow \fa n > N_1: |x_n - x_{N_1}| < 1$, т.е. $x_{N_1} - 1< x_n < x_{N_1}+1$. Если теперь через $a$ и $b$ обозначим наименьшее и наибольшее из чисел $x_1,\dots,x_{N_1},x_{N_1}-1,x_{N_1}+1$, то, очевидно, $a \le x_n \le b \fa n$.
-Лемма доказана.
-\end{proof}
-
 \begin{thm}[Критерий Коши] 
 $\{x_n\}$ сходится $\Longleftrightarrow$ $\{x_n\}$ фундаментальна, где $\{x_n\}$ -- числовая последовательность.
 \end{thm}
 \begin{proof}\leavevmode
 \begin{itemize}
 \item[$\Longrightarrow$:]
-Смотри Лемму \ref{lemm1}.
+
+Пусть $\{x_n\}$ фундаментальна, т.е. удовлетворяет \eqref{fuck}. Положим $\epsilon = 1,\; m = N_1$. Тогда $\forall n > N_1:\\ |x_n-x_{N_1}| <\epsilon = 1 \Leftrightarrow \fa n > N_1: |x_n - x_{N_1}| < 1$, т.е. $x_{N_1} - 1< x_n < x_{N_1}+1$. Если теперь через $a$ и $b$ обозначим наименьшее и наибольшее из чисел $x_1,\dots,x_{N_1},x_{N_1}-1,x_{N_1}+1$, то, очевидно, $a \le x_n \le b \fa n$.
+
 \item[$\Longleftarrow$:]
 Пусть $\{x_n\}$ фундаментальна. Тогда, согласно лемме \ref{lemm2} $\{x_n\}$ ограничена. Следовательно, по \hyperref[exp9]{теореме Больцано-Вейерштрасса} у нее есть сходящаяся подпоследовательность $\{x_{n_k}\}: \;\exists x_0 \in \bbR\colon$ $\lim_{k \to \infty}\limits x_{n_k} =x_0 $. Докажем, что $\lim_{n \to \infty}\limits x_{n}=x_0 $.
 

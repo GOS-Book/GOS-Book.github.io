@@ -113,9 +113,9 @@ $$
 
 \begin{proof}
 Действительно, $\forall x_1, x_2$ из $\Delta$ имеем:
-$$
-|F(x_2) - F(x_1)| = \left| \int\limits_{c}^{x_2}f(t) \,dt - \int\limits_{c}^{x_1} f(t) \,dt\right| = \left| \int\limits_{x_1}^{x_2}f(t) \,dt \right| \le \left| \int\limits_{x_1}^{x_2}|f(t)| \,dt \right| \le ||f|| \cdot |x_2 - x_1|.
-$$
+\begin{multline*}
+|F(x_2) - F(x_1)| = \left| \int\limits_{c}^{x_2}f(t) \,dt - \int\limits_{c}^{x_1} f(t) \,dt\right| = \left| \int\limits_{x_1}^{x_2}f(t) \,dt \right| \le\\ \le \left| \int\limits_{x_1}^{x_2}|f(t)| \,dt \right| \le ||f|| \cdot |x_2 - x_1|.\tag*{$\qedhere$}
+\end{multline*}
 \end{proof}
 
 \begin{cons}
@@ -131,7 +131,6 @@ $$
 $$ 
 \frac{\Delta F}{\Delta x} = \frac{1}{\Delta x} \int_{x_0}^{x} f(t) \,dt, \quad f(x_0) = \frac{1}{\Delta x} \int_{x_0}^{x} f(x_0) \,dt,
 $$
-
 и поэтому 
 
 \begin{equation} \label{ch11.2eq3}
@@ -147,7 +146,6 @@ $$
 $$
 \left| \frac{\Delta F}{\Delta x} - f(x_0) \right| \le \frac{1}{|\Delta x|} \left| \int\limits_{x_0}^{x} \epsilon \,dt\right| = \epsilon
 $$
-
 $\forall x \in \overset{\circ}{O}_\delta(x_0) \cap \Delta$, и поэтому $F'(x_0)$  существует и $F'(x_0) = f(x_0).$
 \end{proof}
 

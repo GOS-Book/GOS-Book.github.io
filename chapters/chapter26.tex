@@ -23,14 +23,14 @@ $$
 \end{lemm}
 
 \begin{proof}
-Требуемое утверждение получается из определения $\ref{ch26.1defn3}$ дифференциального многочлена и свойства линейности для производных. Действительно,
+Требуемое утверждение получается из определения \ref{ch26.1defn3} дифференциального многочлена и свойства линейности для производных. Действительно,
 \begin{multline*}
-L(D)(c_1y_1+c_2y_2)=\\=(c_1y_1+c_2y_2)^{(n)}+a_1(c_1y_1+c_2y_2)^{(n-1)}+...+a_n(c_1y_1+c_2y_2)=\\=c_1(y_1^{(n)}+a_1y_1^{(n-1)}+...+a_ny_1)+c_2(y_2^{(n)}+a_1y_2^{(n-1)}+...+a_ny_2)=\\=c_1L(D)y_1+c_2L(D)y_2.
+L(D)(c_1y_1+c_2y_2)=\\=(c_1y_1+c_2y_2)^{(n)}+a_1(c_1y_1+c_2y_2)^{(n-1)}+...+a_n(c_1y_1+c_2y_2)=\\=c_1(y_1^{(n)}+a_1y_1^{(n-1)}+...+a_ny_1)+c_2(y_2^{(n)}+a_1y_2^{(n-1)}+...+a_ny_2)=\\=c_1L(D)y_1+c_2L(D)y_2. \tag*{$\qedhere$}
 \end{multline*}
 \end{proof}
 
 \begin{lemm} \label{ch26lemm1.2}
-Если $\lambda$ -- комплексное число, то для любой $y(x)\in C^n(\bbR)$ справедлива так называемая формула сдвига
+Если $\lambda$ --- комплексное число, то для любой $y(x)\in C^n(\bbR)$ справедлива так называемая формула сдвига
 $$
 L(D)\left[e^{\lambda x}\cdot y(x)\right]=e^{\lambda x}\cdot L(D+\lambda)y(x).
 $$
@@ -40,15 +40,15 @@ $$
 \begin{multline*}
 D^k[e^{\lambda x}\cdot y]=(e^{\lambda x}\cdot y)^{(k)}=\sum_{j=1}^{k}\limits C_k^j(e^{\lambda x})^{(j)}\cdot y^{(k-j)}=\\=e^{\lambda x}\cdot \sum_{j=0}^{k}\limits C_k^j\lambda^jD^{k-j}y=e^{\lambda x}(D+\lambda)^ky.
 \end{multline*}
+
 В силу этого,
 \begin{multline*}
-L(D)[e^{\lambda x}y]=e^{\lambda x}(D+\lambda)^ny+a_1e^{\lambda x}(D+\lambda)^{n-1}y+...+a_ne^{\lambda x}y=\\=e^{\lambda x}L(D+\lambda)y.
+L(D)[e^{\lambda x}y]=e^{\lambda x}(D+\lambda)^ny+a_1e^{\lambda x}(D+\lambda)^{n-1}y+...+a_ne^{\lambda x}y=\\=e^{\lambda x}L(D+\lambda)y.\tag*{$\qedhere$}
 \end{multline*}
 \end{proof}
 
 \begin{lemm} \label{ch26lemm1.3}
-Все решения уравнения $z'-\lambda z = f(x)$, где $\lambda$ -- комплексное число и $f(x)$ -- заданная комплекснозначная функция из $C(\bbR)$, задаются формулой
-	
+Все решения уравнения $z'-\lambda z = f(x)$, где $\lambda$ --- комплексное число и $f(x)$ --- заданная комплекснозначная функция из $C(\bbR)$, задаются формулой	
 $$
 z(x)=e^{\lambda x}\left(C+ \int_{x_0}^{x}\limits e^{-\lambda\zeta}\cdot f(\zeta)d\zeta\right),
 $$
@@ -60,11 +60,12 @@ $$
 $$
 c'(x)=e^{-\lambda x}\cdot f(x).
 $$
+
 Отсюда
 $$
 c(x)=C+\int_{x_0}^{x}\limits e^{-\lambda\zeta}\cdot f(\zeta)d\zeta,
 $$
-что и доказыает лемму.
+что и доказывает лемму.
 \end{proof}
 
 \section{Линейные однородные дифференциальные уравнения порядка n с постоянными коэффициентами}
@@ -92,7 +93,7 @@ L(D)y(x)=0.
 $$
 L(D)y=L(D)(C_1y_1+C_2y_2)=C_1L(D)y_1+C_2L(D)y_2=0,
 $$
-так как $L(D)y_1=L(D)y_2=0$ по условию леммы
+так как $L(D)y_1=L(D)y_2=0$ по условию леммы.
 \end{proof}
 
 Рассмотрим функции вида
@@ -108,12 +109,12 @@ $$
 
 
 \begin{proof}
-Применим индукцию по $m$. При $m=1$ утверждение леммы очевидно. Пусть утверждение леммы справледливо, если в формуле \eqref{ch26diff.3} заменить $m$ на $(m-1)$. При $m>1$ рассмотрим функцию
+Применим индукцию по $m$. При $m=1$ утверждение леммы очевидно. Пусть утверждение леммы справедливо, если в формуле \eqref{ch26diff.3} заменить $m$ на $(m-1)$. При $m>1$ рассмотрим функцию
 
 $$
 \psi(x)=e^{-\lambda_1x}\cdot\phi(x)=P_1(x)+ \sum_{k=2}^{m}\limits P_k(x)e^{(\lambda_k-\lambda_1)x}=0.
 $$
-Продифференцируем $\psi(x)$ $(N+1)$ раз, где $N$ -- степень многочлена $P_1(x)$. В силу того, что $P_1^{(N+1)}(x)=0$, получим 
+Продифференцируем $\psi(x)$ $(N+1)$ раз, где $N$ --- степень многочлена $P_1(x)$. В силу того, что $P_1^{(N+1)}(x)=0$, получим 
 $$
 \sum_{k=2}^{m}\limits\left[P_k(x)e^{(\lambda_k-\lambda_1)x}\right]^{(N+1)}=0
 $$
@@ -121,7 +122,7 @@ $$
 $$
 \sum_{k=2}^{m}\limits Q_k(x)e^{(\lambda_k-\lambda_1)x}=0,
 $$
-где $Q_k$ -- многочлены той же степени, что и $P_k(x)$, так как $\lambda_k-\lambda_1 \neq 0$ при всех $k=\overline{2,m}$. Из предположения индукции $Q_k(x)\equiv 0,\,\fa k=\overline{2,m}$. Следовательно, $P_k(x)\equiv 0,\,$ $k=\overline{2,m}$. Тогда и $P_1(x)\equiv 0$. Это значит, что все коэффициенты многочленов $P_1(x),...,P_m(x)$ в \eqref{ch26diff.3} нулевые.
+где $Q_k$ --- многочлены той же степени, что и $P_k(x)$, так как $\lambda_k-\lambda_1 \neq 0$ при всех $k=\overline{2,m}$. Из предположения индукции $Q_k(x)\equiv 0,\,\fa k=\overline{2,m}$. Следовательно, $P_k(x)\equiv 0,\,$ $k=\overline{2,m}$. Тогда и $P_1(x)\equiv 0$. Это значит, что все коэффициенты многочленов $P_1(x),...,P_m(x)$ в \eqref{ch26diff.3} нулевые.
 \end{proof}
 
 Рассмотрим характеристический многочлен
@@ -134,13 +135,10 @@ $$
 $$
 L(\lambda)=(\lambda-\lambda_0)^k\cdot L_1(\lambda),
 $$
-где $L_1(\lambda)$ -- многочлен степени $(n-k)$ и $L_1(\lambda_0)\neq 0$. Из формулы Тейлора для $L(\lambda)$ при $\lambda=\lambda_0$ сразу следует, что  $\lambda_0$ -- корень крастности $k$ для $L(\lambda)=0$ тогда и только тогда, когда
+где $L_1(\lambda)$ --- многочлен степени $(n-k)$ и $L_1(\lambda_0)\neq 0$. Из формулы Тейлора для $L(\lambda)$ при $\lambda=\lambda_0$ сразу следует, что  $\lambda_0$ -- корень крастности $k$ для $L(\lambda)=0$ тогда и только тогда, когда
 $$
 L(\lambda_0)=L'(\lambda_0)=...=L^{(k-1)}(\lambda_0)=0, \qquad L^{(k)}(\lambda_0)\neq 0
 $$
-
-
-
 
 \begin{lemm} \label{ch26lemm2.3}
 Если $\lambda_0$ -- корень кратности $k$ характеристического уравнения $L(\lambda)=0$, то каждая из функций 
@@ -187,10 +185,12 @@ y(x)=P_1(x)e^{\lambda_1x}+...+P_m(x)e^{{\lambda_m}x},
 $$
 L(\lambda)=(\lambda-\lambda_1)^{k_1}(\lambda-\lambda_2)^{k_2}...(\lambda-\lambda_m)^{k_m}.
 $$
+
 Значит,
 $$
 L(D)=(D-\lambda_1)^{k_1}(D-\lambda_2)^{k_2}...(D-\lambda_m)^{k_m}.
 $$
+
 Введем дифференциальный многочлен степени $(n-1)$
 $$
 M(D)=(D-\lambda_1)^{k_1-1}(D-\lambda_2)^{k_2}...(D-\lambda_m)^{k_m},
@@ -201,6 +201,7 @@ $$
 (D-\lambda_1)y=z,\\M(D)z=0.
 \end{cases}
 \end{equation}
+
 Каждое решение второго уравнения системы \eqref{ch26diff.5} в силу предположения индукции имеет вид
 $$
 z(x)=Q_1(x)e^{\lambda_1x}+Q_2(x)e^{\lambda_2x}+...+Q_m(x)e^{\lambda_mx},\quad 1\leq m\leq n,
@@ -226,6 +227,7 @@ P_1(x)+P_2(x)e^{(\lambda_2-\lambda_1)x}+...+P_m(x)e^{(\lambda_m-\lambda_1)x},\qu
 P_2(x)e^{(\lambda_2-\lambda_1)x}+...+P_m(x)e^{(\lambda_m-\lambda_1)x},\quad &k_1=1
 \end{cases}
 $$
+
 Подставляя это выражение в \eqref{ch26diff.6}, получаем, что рассматриваемое решение $y(x)$ уравнения \eqref{ch26diff.1} имеет вид \eqref{ch26diff.4}.
 
 Рассуждением от противного установим единственность записи \eqref{ch26diff.4} для каждого уравнения \eqref{ch26diff.1}. Если существует решение $y(x)$ уравнения \eqref{ch26diff.1}, для которого
@@ -236,10 +238,11 @@ $$
 $$
 \sum_{k=1}^{m}\limits\left[P_k(x)-\tilde{P}_k(x)\right]e^{\lambda_kx}\equiv 0.
 $$
+
 Из леммы \ref{ch26lemm2.2} тогда получаем, что $P_k(x)\equiv\tilde{P}_k(x),\; \fa k= \overline{1,m}$
 \end{proof}
 
-\section{Линейные неоднородные уравнения c постоянными коэффициентами и правой частью -- квазимногочленом}
+\section{Линейные неоднородные уравнения c постоянными коэффициентами и правой частью --- квазимногочленом}
 Эти уравнения имеют вид
 \begin{equation} \label{ch26adiff1.1}
 y^{(n)}(x)+a_1y^{(n-1)}(x)+...+a_ny(x)=f(x),
@@ -250,6 +253,7 @@ y^{(n)}(x)+a_1y^{(n-1)}(x)+...+a_ny(x)=f(x),
 \begin{equation}\label{ch26adiff1.2}
 z^{(n)}(x)+a_1z^{(n-1)}(x)+...+a_nz(x)=0
 \end{equation}
+
 Прежде всего покажем, что если известно какое-либо решение $y_0(x)$ линейного неоднородного уравнения \eqref{ch26adiff1.1}, то замена $y(x)=z(x)+y_0(x)$ приводит уравнение \eqref{ch26adiff1.1} к линейному однородному уравнению \eqref{ch26adiff1.2}. Действительно, воспользовавшись представлением левой части \eqref{ch26adiff1.1} через дифференциальный многочлен
 \begin{equation}\label{ch26adiff1.3}
 L(D)=D^n+a_1D^{n-1}+...+a_n,
@@ -269,9 +273,9 @@ $$
 \end{lemm}
 
 \begin{proof}
-$$
-L(D)y=L(D)(y_1+y_2)=L(D)y_1+L(D)y_2=f_1(x)+f_2(x)=f(x).
-$$
+\begin{equation*}
+L(D)y=L(D)(y_1+y_2)=L(D)y_1+L(D)y_2=f_1(x)+f_2(x)=f(x).\tag*{\qedhere}
+\end{equation*}
 \end{proof}
 
 \begin{defn}
@@ -332,6 +336,7 @@ a_nq_1+a_{n-1}\cdot m q_0=p_1,\\
 a_nq_m+...=p_m.
 \end{cases}
 $$
+
 Матрица этой линейной системы треугольная с числами $a_n=L(0)\neq 0$ по диагонали, поэтому все коэффициенты $Q_m(x)$ определяются однозначно.
 
 б) Резонансный случай
@@ -366,7 +371,7 @@ $$
 y(0)=y'(0)=...=y^{(k-1)}(0)=0,
 $$
 получаем единственное решение вида
-$$
-y(x)=x^k\cdot Q_m(x)
-$$
+\begin{equation}
+y(x)=x^k\cdot Q_m(x).\tag*{\qedhere}
+\end{equation}
 \end{proof}
