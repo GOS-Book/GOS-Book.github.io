@@ -23,7 +23,6 @@ $$
 $$
 \sum_{i = 1}^{N}m_i|\Delta_i| \quad \text{и} \quad \sum_{i = 1}^{N}M_i|\Delta_i|
 $$
-
 называются \textit{интегральными суммами Дарбу} (соответственно, \textit{нижней и верхней}) и обозначаются $s(f; \tau)$ и $S(f; \tau)$.
 \end{defn}
 
@@ -37,7 +36,6 @@ $$
 $$
 \sum_{i = 1}^{N} f(\xi_i)|\Delta_i|,
 $$
-
 где $\xi_i \in \Delta_i$ называется \textit{интегральной суммой Римана функции $f$} и обозначается $\sigma(f; \tau)$ или $\sigma(f; \tau; \xi)$, где $\xi = (\xi_1, \ldots, \xi_N)$. $\xi$ будем называть выборкой точек, подчиненной разбиению $\tau$.
 \end{defn}
 
@@ -56,7 +54,6 @@ $$
 $$
 \underline{J}(f) = \sup_{\tau} s(f; \tau), \quad \overline{J}(f) = \inf_{\tau} S(f; \tau),
 $$
-
 причем $\underline{J}(f) \le \overline{J}(f)$ для любой функции $f$, определенной на конечном промежутке 
 $\Delta$.
 \end{defn}
@@ -67,7 +64,6 @@ $\Delta$.
 $$
 J(f) = \underline{J}(f) = \overline{J}(f)
 $$
-
 называется \textit{интегралом Римана от функции $f$ по промежутку $\Delta$} и обозначается $\int\limits_{\Delta} f(x) \,dx$.
 \end{defn}
 
@@ -99,12 +95,10 @@ $$
 \begin{equation} \label{ch11.2eq1}
 F(x) = \int\limits_{c}^{x} f(t) \,dt, \quad x \in \Delta,
 \end{equation}
-
 где $c \in \Delta$, называется \textit{интегралом с переменным верхним пределом}, а функция
 \begin{equation} \label{ch11.2eq2}
 \Phi(x) = \int\limits_{x}^{c} f(t) \,dt, \quad x \in \Delta,
 \end{equation}
-
 --- \textit{интегралом с переменным нижним пределом}.
 
 Очевидно, $\Phi(x) = -F(x)\ \forall x \in \Delta$. Поэтому ограничимся рассмотрением только интегралов с переменным верхним пределом.
@@ -185,7 +179,6 @@ $$
 $$
 a = x_0 < x_1 < \ldots < x_n = b,
 $$
-
 имеем
 $$
 F(b) - F(a) = \sum_{i = 1}^{N} \left( F(x_i) - F(x_{i - 1}) \right).
@@ -195,7 +188,6 @@ $$
 $$
 \exists \xi_i \in (x_{i - 1}; x_i): \quad F(x_i) - F(x_{i - 1}) = f(\xi_i) \Delta x_i,
 $$
-
 и, следовательно,
 $$
 F(b) - F(a) = \sum_{i = 1}^{N} f(\xi_i) \Delta x_i = \sigma(f;\tau;\xi),
@@ -209,7 +201,6 @@ $$
 $$
 \int\limits_{c_{i - 1}}^{c_i} f(x) \,dx = F(c_i) - F(c_{i - 1}),
 $$
-
 и поэтому
 $$
 \int\limits_{a}^{b} f(x) \,dx = \sum_{i = 1}^{N} \int\limits_{c_{i - 1}}^{c_{i}} f(x) \,dx = F(b) - F(a).

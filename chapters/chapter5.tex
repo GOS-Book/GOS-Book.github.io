@@ -17,7 +17,7 @@ $$
 
 Замечание: В частном случае $x_0=0$ она называется \textit{формулой Маклорена}.
 
-\begin{thm}
+\begin{thm} \label{ch5.thm1}
 Если функция $f(x)$ в некоторой окрестности $O(x_0)$ точки $x_0$ имеет непрерывную производную $n$-го порядка и $f^{(n)}(x)$ дифференцируема в проколотой окрестности $\overset{\circ}{O}(x_0)$, то для любого
 $x \in \overset{\circ}{O}(x_0)$ существует $\xi$, лежащее строго между $x$ и $x_0$ и такое, что справедливо равенство
 \begin{equation} \label{ch5.1eq1}
@@ -103,7 +103,7 @@ $$
 \begin{equation} \label{ch5.2eq2}
 f(x) = \sum_{k = 0}^{n} \frac{f^{(k)}(x_0)}{k!} (x - x_0)^k + o((x - x_0)^n), \quad \textit{при } x \to x_0,
 \end{equation}
-где $\psi(x) = o((x - x_0)^n), x \to x_0 \leftrightarrow \psi(x) = \alpha(x) (x - x_0)^n, \ \text{где}\ \lim\limits_{x \to x_0} \alpha(x) = 0$.
+где $\psi(x) = o((x - x_0)^n),\ x \to x_0 \leftrightarrow \psi(x) = \alpha(x) (x - x_0)^n,$ где $\lim\limits_{x \to x_0} \alpha(x) = 0$.
 \end{thm}
 
 Формула \eqref{ch5.2eq2} называется \textit{формулой Тейлора для $f$ в точке $x_0$ порядка $n$ с остаточным членом в форме Пеано.}
@@ -117,7 +117,7 @@ $$
 r_n^{(k)}(x) = 0, \quad \forall k \in \overline{0,n}, \quad \phi^{(k)}(x_0) = 0, \quad \forall k \in \overline{0, n-1}, \quad \phi^{(k)}(x) \not= 0, \quad x \not= x_0.
 $$ 
 
-Согласно теореме Коши и следствию 5 из предыдущего билета все так же, как и в теореме 1 (про формулу Тейлора с остаточным членом в форме Лагранжа).
+Согласно теореме Коши и следствию \ref{ch4.1cons5} из предыдущего билета все так же, как и в теореме \ref{ch5.thm1} (про формулу Тейлора с остаточным членом в форме Лагранжа).
 
 $\forall x \in \overset{\circ}{O}(x_0) \quad x < x_0 \quad \exists \xi = \xi(x) \in (x, x_0):$
 $$

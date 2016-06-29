@@ -45,7 +45,7 @@
 \end{thm}
 
 \begin{proof}
-$\nabla f(x_0) = \overset{\rightarrow}{\theta}$ согласно Теореме $\ref{ch10thm1}$. Согласно формуле Тейлора с остаточным членом в форме Пеано (т.к. $df(x_0 = 0$)
+$\nabla f(x_0) = \overset{\rightarrow}{\theta}$ согласно Теореме $\ref{ch10thm1}$. Согласно формуле Тейлора с остаточным членом в форме Пеано (т.к. $df(x_0) = 0$)
 
 \begin{equation} \label{ch10eq3}
 f(x) = f(x_0) + \frac{1}{2} \Phi_2(x_0, h) + \alpha(x)|h|^2, \quad \text{где} \quad h = x - x_0 \in \bbR \quad \text{при} \quad \alpha(x) \overset{x \to x_0}{\longrightarrow} 0.
@@ -53,7 +53,7 @@ f(x) = f(x_0) + \frac{1}{2} \Phi_2(x_0, h) + \alpha(x)|h|^2, \quad \text{где}
 
 $\forall x \in D_f \setminus x_0$ положим $\xi = \frac{x - x_0}{|x - x_0|}; \quad \rho = |x - x_0| \quad \Rightarrow \quad \rho > 0, \quad |\xi| = 1$.
 
-$h = x - x_0 = \rho \xi \quad \Rightarrow \quad \Phi_2(x_0, h) = \Phi_2(x_0, \rho \xi) = \rho^2 \Phi_(x_0, \xi)$, т.к. $\Phi_2$ -- квадратичная форма $\Rightarrow \frac{f(x) - f(x_0)}{\rho^2} = \frac{1}{2}\Phi_2(x_0, \xi) + \alpha(x)$
+$h = x - x_0 = \rho \xi \quad \Rightarrow \quad \Phi_{2}(x_0, h) = \Phi_2(x_0, \rho \xi) = \rho^2 \Phi_(x_0, \xi)$, т.к. $\Phi_2$ -- квадратичная форма $\Rightarrow \frac{f(x) - f(x_0)}{\rho^2} = \frac{1}{2}\Phi_2(x_0, \xi) + \alpha(x)$
 
 Т.к. $x_0$ -- точка локального максимума, то $\exists \delta_0: \quad \forall x \in O_\delta(x_0) \cap D_f$. $f(x) - f(x_0) \le 0 \quad \Rightarrow \quad \forall \xi \in S_1(\bbR^n), (|\xi| = 1): \Phi_2(x_0, \xi) = 2 \frac{1}{\rho^2}(f(x) - f(x_0)) - \alpha(x)$
 
@@ -71,9 +71,9 @@ $\Rightarrow \quad \forall h \in \bbR^n: \quad \Phi_2(x_0, h) = |h^2| \cdot \Phi
 \end{thm}
 
 \begin{proof}
-Т.к. $\Phi_2$ непрерывна на компакте $S_1(\bbR^n)$, то она достигает минимума в точке $\xi_0 \in S_1(\bbR^n): \\ m = \Phi_2(x_0, \xi_0) = \inf\limits_{|\xi| = 1} \Phi_2(x_0, \xi) > 0$
+Т.к. $\Phi_2$ непрерывна на компакте $S_1(\bbR^n)$, то она достигает минимума в точке $\xi_0 \in S_1(\bbR^n):  m = \Phi_2(x_0, \xi_0) = \inf\limits_{|\xi| = 1} \Phi_2(x_0, \xi) > 0$
 
-Справедлива формула $\ref{ch10eq3} \quad \Rightarrow$
+Справедлива формула $\eqref{ch10eq3} \quad \Rightarrow$
 $$
 f(x) - f(x_0) = \frac{1}{2}|h^2| \cdot \left( \Phi_2 \left( x_0, \frac{\overline{h}}{|h|} \right) + \alpha(x) \right) \ge \frac{1}{2} |h|^2(m + \alpha(x))
 $$
