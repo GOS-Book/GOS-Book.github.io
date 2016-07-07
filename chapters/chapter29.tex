@@ -43,7 +43,7 @@ J(y+\alpha\eta)=\int\limits_a^b F[x,y(x)+\alpha\eta(x),y'(x)+\alpha\eta'(x)]dx.
 \end{multline*}
 
 \begin{defn}
-\textit{Допустимым приращением (вариацией)} функции $y(x)\in M$ называется любая функция $\eta (x)\in \coci[1]{[a,b]}$. Выражение $\frac{d}{d\alpha}J[y(x)+\alpha\eta(x)]\bigr|_{\alpha=0}$, где $\eta(x)$ -- любая функция из $\coci[1]{[a,b]}$,  называется \textit{первой вариацией} функционала $J(y)$ на функции $y(x)$ и обозначается $\delta J[y,\eta(x)]$, $\forall\eta(x)\in\coci[1]{[a,b]}$.
+\textit{Допустимым приращением (вариацией)} функции $y(x)\in M$ называется любая функция $\eta (x)\in \coci[1]{[a,b]}$. Выражение $\frac{d}{d\alpha}J[y(x)+\alpha\eta(x)]\bigr|_{\alpha=0}$, где $\eta(x)$ --- любая функция из $\coci[1]{[a,b]}$,  называется \textit{первой вариацией} функционала $J(y)$ на функции $y(x)$ и обозначается $\delta J[y,\eta(x)]$, $\forall\eta(x)\in\coci[1]{[a,b]}$.
 \end{defn}
 
 Таким образом, вариация функционала \eqref{ch29eq1}
@@ -88,15 +88,15 @@ $$
 
 
 \begin{thm}\label{ch29thm2}
-Пусть функция $F(x,y,p)$ -- дважды непрерывно дифференцируема при $\forall x\in[a,b]$, $\forall(y,p)\in \bbR^2_{(y,p)}$. Если дважды непрерывно дифференцируемая функция $\hat{y}(x)$ является решением простейшей вариационной задачи, то необходимо функция $\hat{y}(x)$ на $[a,b]$ удовлетворяет уравнению Эйлера
+Пусть функция $F(x,y,p)$ --- дважды непрерывно дифференцируема при $\forall x\in[a,b]$, $\forall(y,p)\in \bbR^2_{(y,p)}$. Если дважды непрерывно дифференцируемая функция $\hat{y}(x)$ является решением простейшей вариационной задачи, то необходимо функция $\hat{y}(x)$ на $[a,b]$ удовлетворяет уравнению Эйлера
 \begin{equation} \label{ch29eq5}
 \frac{\partial F}{\partial y}-\frac{d}{dx}\cdot\frac{\partial F}{\partial y'}=0
 \end{equation}
-(здесь $\frac{d}{dx}$ -- полная производная по $x$).
+(здесь $\frac{d}{dx}$ --- полная производная по $x$).
 \end{thm}
 
 \begin{proof}
-Если $\hat{y}(x)$ -- решение задачи, то в силу теоремы \ref{ch29thm1} $\delta J[\hat{y},\eta(x)] = 0$ для любой допустимой вариации $\eta(x)$. Учитывая, что $\eta(a)=\eta(b)=0$, проинтегрируем по частям слагаемое, содержащее $\eta'(x)$ в формуле \eqref{ch29eq4}. Это законно, так как выражение
+Если $\hat{y}(x)$ --- решение задачи, то в силу теоремы \ref{ch29thm1} $\delta J[\hat{y},\eta(x)] = 0$ для любой допустимой вариации $\eta(x)$. Учитывая, что $\eta(a)=\eta(b)=0$, проинтегрируем по частям слагаемое, содержащее $\eta'(x)$ в формуле \eqref{ch29eq4}. Это законно, так как выражение
 $$
 \frac{d}{dx}\frac{\partial F[x,y(x),y'(x)]}{\partial y'}\biggr|_{y=\hat{y}(x)} = \left[\frac{\partial^2F}{\partial y'\partial x}+\frac{\partial^2F}{\partial y'\partial y}\cdot y'+\frac{\partial ^2F}{\partial {y'}^{2}}\cdot y'' \right]\biggr|_{y=\hat{y}(x)}
 $$
