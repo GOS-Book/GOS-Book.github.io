@@ -1,136 +1,126 @@
+%\titleformat{\chapter}[display]{\raggedright\normalfont\Large\bfseries}{\chaptertitlename\ \thechapter}{2ex}{}
+
+%\titlespacing{\subsubsection}{0pt}{0mm plus 1mm minus 1mm}{0pt plus 1mm minus 1mm}  
+
+\everymath{\displaystyle}
+
 \chapter{Формулы к письменному ГОСу}
 
-\titlespacing{\subsubsection}{0pt}{0mm plus 1mm minus 1mm}{0pt plus 1mm minus 1mm}  
-ЭТОТ РАЗДЕЛ В ТОТАЛЬНО ТЕСТОВОМ НАБРОСОЧНОМ РЕЖИМЕ. ЧЕРНОВОМ РЕЖИМЕ. ДАЖЕ НЕ ЧИТАЙТЕ ШО Я ЗДЕСЬ НАПИСАЛ.
-!!!
 \section[Тригонометрические формулы.]{Тригонометрические формулы.\footnote{Здесь не указаны допустимые значения аргумента в виду их очевидности (знаменатели не ноль).}}
 \subsubsection{Основные тригонометрические формулы.}
-\vspace*{-1.8\baselineskip}
-\begin{multicols}{3}
-\begin{align*}
-&\sin^2x+\cos^2x=1;\\
-\end{align*}
-\vfill
-\columnbreak
-\begin{align*}
-&\tg^2x+1=\frac{1}{\cos^2x};\\
-&\ctg^2x+1=\frac{1}{\sin^2x};
-\end{align*}
-\vfill
-\columnbreak
-\begin{align*}
-&\tg x\cdot\ctg x=1.\\
-\end{align*}
-\vfill
-\end{multicols}
+\renewcommand*{\arraystretch}{2}
+\noindent\begin{tabular}{ c c c }
+\multirow{2}{*}{$\sin^2x+\cos^2x=1;$}
+&
+$\tg^2x+1=\frac{1}{\cos^2x};$
+&
+\multirow{2}{*}{$\tg x\cdot\ctg x=1.$}
+\\
+&
+$\ctg^2x+1=\frac{1}{\sin^2x};$
+&
+\end{tabular}
 \subsubsection{Формулы сложения и вычитания аргументов.}
-\vspace*{-1.8\baselineskip}
-\begin{multicols}{2}
-\begin{align*}
-&\sin(x\pm y)=\sin x \cos y \pm \cos x \sin y;\\
-&\cos(x\pm y)= \cos x \cos y \mp \sin x \sin y;\\
-\end{align*}
-\vfill
-\columnbreak
-\begin{align*}
-&\tg(x\pm y)=\frac{\tg x \pm \tg y}{1 \mp \tg x\tg y};\\
-&\ctg(x\pm y)=\frac{\ctg x\ctg y \mp 1}{\ctg x \pm \ctg y}.
-\end{align*}
-\end{multicols}
+\noindent\begin{tabular}{ c c c}
+$\sin(x\pm y)=\sin x \cos y \pm \cos x \sin y;$
+&
+$\tg(x\pm y)=\frac{\tg x \pm \tg y}{1 \mp \tg x\tg y};$
+\\
+$\cos(x\pm y)= \cos x \cos y \mp \sin x \sin y;$
+&
+$\ctg(x\pm y)=\frac{\ctg x\ctg y \mp 1}{\ctg x \pm \ctg y}.$
+\end{tabular}
 \subsubsection{Формулы двойного угла.}
-\vspace*{-1.8\baselineskip}
-\begin{multicols}{3}
-\begin{align*}
-&\sin 2x = 2\sin x \cos x;\\ 
-\end{align*}
-\vfill
-\columnbreak
-\begin{align*}
-&\cos 2x = \cos^2 x - \sin^2 x;\\
-&\cos 2x = 2\cos^2 x - 1; \\
-&\cos 2x = 1 - 2\sin^2 x;
-\end{align*}
-\vfill
-\columnbreak
-\begin{align*}
-&\tg 2x = \frac{2\tg x}{1-\tg^2x};\\
-&\ctg 2x = \frac{\ctg^2x-1}{2\ctg x}.
-\end{align*}
-\end{multicols}
+\noindent\begin{tabular}{ |c |c |c| }
+&
+$\cos 2x = \cos^2 x - \sin^2 x;$
+&
+\multirow{1}{*}{$\tg 2x = \frac{2\tg x}{1-\tg^2x};$}
+\\\hline
+$\sin 2x = 2\sin x \cos x;$
+&
+$\cos 2x = 2\cos^2 x - 1; $
+&
+\\\hline
+&
+$\cos 2x = 1 - 2\sin^2 x;$
+&
+$\ctg 2x = \frac{\ctg^2x-1}{2\ctg x}.$
+\end{tabular}
 \subsubsection{Формулы понижения степени.}
-\vspace*{-1.8\baselineskip}
-\begin{multicols}{2}
-\begin{align*}
-&2\sin^2x=1-\cos 2x;\\
-&4\sin^3x=3\sin x-\sin 3x;\\
-&8\sin^4x=3-4\cos2x+\cos4x;\\
-&16\sin^5x=10\sin x-5\sin 3x +\sin 5x;
-\end{align*}
-\vfill
-\columnbreak
-\begin{align*}
-&2\cos^2x=1+\cos 2x;\\
-&4\cos^3x=3\cos x+\cos 3x;\\
-&8\cos^4x=3+4\cos2x+\cos4x;\\
-&16\cos^5x=10\cos x+5\cos 3x +\cos 5x.
-\end{align*}
-\end{multicols}
+\begin{tabular}{ l l }
+$2\sin^2x=1-\cos 2x;$
+&
+$2\cos^2x=1+\cos 2x;$
+\\
+$4\sin^3x=3\sin x-\sin 3x;$
+&
+$4\cos^3x=3\cos x+\cos 3x;$
+\\
+$8\sin^4x=3-4\cos2x+\cos4x;$
+&
+$8\cos^4x=3+4\cos2x+\cos4x;$
+\\
+$16\sin^5x=10\sin x-5\sin 3x +\sin 5x;$
+&
+$16\cos^5x=10\cos x+5\cos 3x +\cos 5x.$
+\end{tabular}
 \subsubsection{Формулы преобразования произведений функций.}
-\vspace*{-0.8\baselineskip}
-\begin{align*}
-&2\sin x \sin y = \cos (x-y)-\cos(x+y);\\
-&2\cos x \cos y = \cos (x-y)+\cos(x+y);\\
-&2\sin x \cos y = \sin (x-y)+\sin(x+y);
-\end{align*}
-\newpage
+\begin{tabular}{c}
+$2\sin x \sin y = \cos (x-y)-\cos(x+y);$
+\\
+$2\cos x \cos y = \cos (x-y)+\cos(x+y);$
+\\
+$2\sin x \cos y = \sin (x-y)+\sin(x+y);$
+\end{tabular}
 \subsubsection{Формулы преобразования суммы функций.}
-\vspace*{-1.8\baselineskip}
-\begin{multicols}{2}
-\begin{align*}
-&\sin x\pm \sin y =2 \sin \frac{x\pm y}{2} \cos \frac{x\mp y}{2};\\
-&\cos x + \cos y  = 2 \cos \frac{x + y}{2} \cos \frac{x - y}{2};\\
-&\cos x - \cos y  = -2 \sin \frac{x + y}{2} \sin\frac{x - y}{2};
-\end{align*}
-\vfill
-\columnbreak
-\begin{align*}
-&\tg x \pm \tg y = \frac{\sin (x \pm y)}{ \cos x \cos y};\\
-&\ctg x \pm \tg y = \frac{\sin (y \pm x)}{ \sin x \sin y}.
-\end{align*}
-\end{multicols}
-
+\begin{tabular}{|c|c|}
+$\sin x\pm \sin y =2 \sin \frac{x\pm y}{2} \cos \frac{x\mp y}{2};$
+&
+$ $
+\\\hline
+$\cos x + \cos y  = 2 \cos \frac{x + y}{2} \cos \frac{x - y}{2};$
+&
+$\tg x \pm \tg y = \frac{\sin (x \pm y)}{ \cos x \cos y};$
+\\\hline
+$\cos x - \cos y  = -2 \sin \frac{x + y}{2} \sin\frac{x - y}{2};$
+&
+$\ctg x \pm \tg y = \frac{\sin (y \pm x)}{ \sin x \sin y}.$
+\end{tabular}
 \subsubsection{Формула Эйлера и ее следствия.}
-$e^{ix} = \cos x + i \sin x$
-
-$\sin x = \frac{e^{ix}-e^{-ix}}{2i}$
-
-$\cos x = \frac{e^{ix}+e^{-ix}}{2}$
-
+\begin{tabular}{c c c}
+$e^{ix} = \cos x + i \sin x;$
+&
+$\sin x = \frac{e^{ix}-e^{-ix}}{2i};$
+&
+$\cos x = \frac{e^{ix}+e^{-ix}}{2}.$
+\end{tabular}
 \section{Гиперболические функции.}
 
 \subsubsection{Определение.}
+\begin{tabular}{l l}
 $\sh x = \frac{e^{x}-e^{-x}}{2};$
-
-$\ch x = \frac{e^{x}+e^{-x}}{2};$
-
+&
 $\th x = \frac{\sh x}{\ch x}=\frac{e^{x}-e^{-x}}{e^{x}+e^{-x}}=\frac{e^{2x}-1}{e^{2x}+1};$
-
+\\
+$\ch x = \frac{e^{x}+e^{-x}}{2};$
+&
 $\cth x = \frac{1}{\th x};$
-
+\end{tabular}
 \subsubsection{Связь с тригонометрическими функциями.}
-
+\begin{tabular}{c c c}
 $\ch (ix) = \cos x$
-
-$\cos (ix) = \ch x$
-
+&
 $\sh (ix)= i \sin x$
-
-$\sin (ix) = i \sh x$
-
+&
 $\th (ix) = i \tg x$
-
+\\
+$\cos (ix) = \ch x$
+&
+$\sin (ix) = i \sh x$
+&
 $\tg (ix) = i \th x$
-
+\end{tabular}
 \subsubsection{Важное соотношение.}
 $\ch^2 x - \sh^2 x = 1;$
 
@@ -161,8 +151,6 @@ $\sh (-x) = -\sh x$
 $\sh (-x) = -\sh x$
 
 \section[Ряд Тейлора.]{Ряд Тейлора.\footnote{При $x \to 0$, R --- радиус сходимости.}}
-\vspace*{-1\baselineskip}
-\renewcommand*{\arraystretch}{2}
 \noindent\begin{tabular}{ l l l }
 \textbullet
 &

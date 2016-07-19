@@ -7,7 +7,6 @@
 %\geometry{showframe}
 
 \begin{document}
-
 \pagestyle{plain}
 \frontmatter
 \include{frontmatter/titlepageTMB}
@@ -15,17 +14,13 @@
 {\hypersetup{hidelinks}\tableofcontents}
 \include{frontmatter/litra}
 \include{frontmatter/foreword}
-
 \mainmatter
 \hypersetup{linkcolor = black} 
 \pagestyle{fancy}
 \setcounter{chapter}{0}
 \foreach \n in {1,...,36}{\include{chapters/chapter\n}}
-
 \appendix
-\titleformat{\chapter}[display]{\raggedright\normalfont\Large\bfseries}{\chaptertitlename\ \thechapter}{2ex}{}
-%\include{appendix/formulas}
-
+\include{appendix/formulas}
 \pagestyle{empty}
 \backmatter
 \include{backmatter/theend}
