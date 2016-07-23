@@ -110,7 +110,7 @@ $$
 $$
 где $q_2 \triangleq \frac{|z_0 - a|}{r_2} < 1, \quad M \triangleq \sup \{ |f(z)| \: \big| \: r_1 \le |z - a| \le r_2\} < +\infty$, и из того, что ряд $\sum\limits_{n = 0}^{+\infty} q_{2}^n$ сходится, по признаку Вейерштрасса получаем, что ряд $\eqref{ch35.1eq6}$ сходится абсолютно и равномерно на $\gamma_2$. По теореме \ref{ch35.1Thm6}  ряд $\eqref{ch35.1eq6}$ можно почленно интегрировать по $\gamma_2$, т.е. получим, что 
 \begin{equation} \label{ch35.1eq7}
-I_2 = \frac{1}{2\pi i} \int_{\gamma_2} \frac{f(\zeta)}{\zeta - z_0} \,d z \myeq{\eqref{ch35.1eq6}} \sum\limits_{n = 0}^{+\infty} \frac{1}{2\pi i} \int_{\gamma_2} \frac{f(\zeta)}{(\zeta - a)^{n + 1}} \,d\zeta \cdot (z_0 - a)^n = \sum\limits_{n = 0}^{+\infty} c_n (z_0 - a)^n,
+I_2 = \frac{1}{2\pi i} \int_{\gamma_2} \frac{f(\zeta)}{\zeta - z_0} \,d z \xlongequal{\eqref{ch35.1eq6}} \sum\limits_{n = 0}^{+\infty} \frac{1}{2\pi i} \int_{\gamma_2} \frac{f(\zeta)}{(\zeta - a)^{n + 1}} \,d\zeta \cdot (z_0 - a)^n = \sum\limits_{n = 0}^{+\infty} c_n (z_0 - a)^n,
 \end{equation}
 где 
 \begin{equation} \label{ch35.1eq8}
@@ -188,7 +188,7 @@ I_k \triangleq \int_{\gamma_r} \frac{\,dz}{(z - a)^{k + 1}} =
 
 Следовательно, по теореме \ref{ch35.1Thm6} его можно почленно интегрировать по окружности $\gamma_r$, и, учитывая формулу $\eqref{ch35.1eq4}$, получаем
 $$
-c_k \myeq{\eqref{ch35.1eq4}} \frac{1}{2\pi i} \int_{\gamma_r} \frac{f(z)}{(z - a)^{k + 1}} \,dz \myeq{\eqref{ch35.1eq16}} \sum_{n = -\infty}^{+\infty} \frac{1}{2\pi i} b_n \int_{\gamma_r} \frac{\,dz}{(z - a)^{k - n + 1}} \myeq{\eqref{ch35.1eq15}} b_k,
+c_k \xlongequal{\eqref{ch35.1eq4}} \frac{1}{2\pi i} \int_{\gamma_r} \frac{f(z)}{(z - a)^{k + 1}} \,dz \xlongequal{\eqref{ch35.1eq16}} \sum_{n = -\infty}^{+\infty} \frac{1}{2\pi i} b_n \int_{\gamma_r} \frac{\,dz}{(z - a)^{k - n + 1}} \xlongequal{\eqref{ch35.1eq15}} b_k,
 $$
 т.е. ряд $\eqref{ch35.1eq14}$ совпадает с рядом Лорана $\eqref{ch35.1eq1}$, $\eqref{ch35.1eq4}$.
 \end{proof}

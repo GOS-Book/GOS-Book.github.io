@@ -71,7 +71,7 @@ $2\sin x \sin y = \cos (x-y)-\cos(x+y);$
 \\
 $2\cos x \cos y = \cos (x-y)+\cos(x+y);$
 \\
-$2\sin x \cos y = \sin (x-y)+\sin(x+y);$
+$2\sin x \cos y = \sin (x-y)+\sin(x+y).$
 \end{tabular}
 \subsubsection{Формулы преобразования суммы функций.}
 \begin{tabular}{|c|c|}
@@ -109,32 +109,43 @@ $\cth x = \frac{1}{\th x};$
 \end{tabular}
 \subsubsection{Связь с тригонометрическими функциями.}
 \begin{tabular}{c c c}
-$\ch (ix) = \cos x$
+$\ch (ix) = \cos x;$
 &
-$\sh (ix)= i \sin x$
+$\sh (ix)= i \sin x;$
 &
-$\th (ix) = i \tg x$
+$\th (ix) = i \tg x;$
 \\
-$\cos (ix) = \ch x$
+$\cos (ix) = \ch x;$
 &
-$\sin (ix) = i \sh x$
+$\sin (ix) = i \sh x;$
 &
-$\tg (ix) = i \th x$
+$\tg (ix) = i \th x.$
 \end{tabular}
 \subsubsection{Важное соотношение.}
 $\ch^2 x - \sh^2 x = 1;$
 
 \subsubsection{Четность.}
-
-$\sh (-x) = -\sh x$
-
+\begin{tabular}{l l l}
+$\sh (-x) = -\sh x;$
+&
+$\ch (-x) = \ch x;$
+&
+$\th (-x) = \th x.$
+\end{tabular}
 \subsubsection{Формулы сложения.}
-
-$\sh (-x) = -\sh x$
-
+\begin{tabular}{l l}
+$\sh (x\pm y) =  \sh x \ch y \pm \sh y \ch x;$
+&
+$\th (x \pm y) = \frac{\th x \pm \th y}{1 \pm \th x \th y};$
+\\
+$\ch (x\pm y) =  \ch x \ch y \pm \sh y \sh x;$
+&
+$\cth (x \pm y) = \frac{1 \pm \cth x \cth y}{\cth x \pm \cth y}.$
+\end{tabular}
 \subsubsection{Формулы двойного угла.}
-
-$\sh (-x) = -\sh x$
+\begin{tabular}{l}
+$\sh (2x) = 2\ch x\sh x$
+\end{tabular}
 \subsubsection{Формулы кратных углов.}
 
 $\sh (-x) = -\sh x$
@@ -262,43 +273,43 @@ $\frac{1}{1-x}= \sum\limits_{n=0}^{+\infty} x^{n};$
 \noindent\begin{tabular}{ l l }
 $(C)'=0$ ($C$ --- постоянная); 
 &
-$(\arcsin x)' = \displaystyle\frac{1}{\sqrt{1-x^2}};$
+$(\arcsin x)' = \frac{1}{\sqrt{1-x^2}};$
 \\
 $(x^n)' = nx^{n-1}, n\in \bbN;$
 &
-$(\arccos x)' = -\displaystyle\frac{1}{\sqrt{1-x^2}};$
+$(\arccos x)' = -\frac{1}{\sqrt{1-x^2}};$
 \\
 $(a^x)'=\ln a\cdot a^x,\ a>0;$
 &
-$(\arctg x)' = \displaystyle\frac{1}{1+x^2}$
+$(\arctg x)' = \frac{1}{1+x^2}$
 \\
 $(x^a)'=ax^{a-1},\ x>0;$
 &
-$(\arcctg x)' = -\displaystyle\frac{1}{1+x^2}$
+$(\arcctg x)' = -\frac{1}{1+x^2}$
 \\
-$(\log_a x)'=\displaystyle\frac{\log_a e}{x},\ x>0,\ a>0, a\ne 0;$
+$(\log_a x)'=\frac{\log_a e}{x},\ x>0,\ a>0, a\ne 0;$
 &
 $(\sh x)'= \ch x;$
 \\
-$(\ln x)' = \displaystyle\frac{1}{x},\ x>0;$
+$(\ln x)' = \frac{1}{x},\ x>0;$
 &
 $(\ch x)'= \sh x;$
 \\
-$(\ln |x|)' = \displaystyle\frac{1}{x},\ x\ne 0;$
+$(\ln |x|)' = \frac{1}{x},\ x\ne 0;$
 &
-$(\th x)'= \displaystyle\frac{1}{\ch^2 x};$
+$(\th x)'= \frac{1}{\ch^2 x};$
 \\
 $(\sin x)'=\cos x;$
 &
-$(\cth x)'= -\displaystyle\frac{1}{\sh^2 x};$
+$(\cth x)'= -\frac{1}{\sh^2 x};$
 \\
 $(\cos x)'=-\sin x;$
 &
 \\
-$(\tg x)'= \displaystyle\frac{1}{\cos^2 x}, x \ne \frac{\pi}{2}(2n+1),\, n\in \bbZ;$
+$(\tg x)'= \frac{1}{\cos^2 x},\ x \ne \frac{\pi}{2}(2n+1),\, n\in \bbZ;$
 &
 \\
-$(\ctg x)'= -\displaystyle\frac{1}{\sin^2 x};$
+$(\ctg x)'= -\frac{1}{\sin^2 x};$
 &
 $(e^x)'=e^x;$
 \\
@@ -313,7 +324,7 @@ $\int \frac{dx}{\sqrt{a^2-x^2}}=\arcsin\frac{x}{a}+C,\ a\ne 0$
 
 \section{Несобственные интегралы.}
 
-$\displaystyle\int\limits_{0}^{1} \frac{dx}{x^a}$
+$\int\limits_{0}^{1} \frac{dx}{x^a}$
 
 \noindent$a<1\ \text{--- cх-ся};\\a\ge1\  \text{--- раcх-ся};$
 
@@ -342,7 +353,28 @@ $\int\limits_{\Gamma} \left(P\,dx+Q\,dy+R\,dz=\int\limits_{\alpha}^{\beta} P x'(
 \section{Асимптоты графиков.}
 
 \section{Вычеты.}
+\subsubsection{Формулы для подсчета вычета в конечной точке $a \in \bbC$.}
+\begin{itemize}
+\item 
+Общая формула с использованием ряда Лорана:
+$$c_{-1}=\res_a f.$$
+\item
+Если $a$ --- устранимая особая точка, то
+$$\res_a f=0.$$
+\item
+Если $a$ --- полюс порядка $n\in\bbN$, то
+$$
+\res_a f = \frac{1}{(n-1)!}\cdot \lim\limits_{z\to a} \frac{d^{n-1}}{dz^{n-1}}\left(f(z)(z-a)^n\right).
+$$
+\item 
+Если $a$ --- полюс первого порядка, то
+$$\res_a f=\lim\limits_{z\to a}{f(z)\cdot(z-a)}.$$
+\end{itemize}
+
+
 \usepict[0.3]{formulas/2}
+\subsubsection{Формулы для подсчета вычета в бесконечности}
+$c_{-1}$
 \usepict[0.3]{formulas/3}
 
 

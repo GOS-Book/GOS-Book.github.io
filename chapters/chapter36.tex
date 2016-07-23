@@ -132,7 +132,7 @@ $$
 
 Множество $\widetilde{G}$ тоже является областью с кусочно-гладкой границей $\widetilde{\Gamma} = \Gamma \cup \left( \bigcup\limits_{k = 1}^{n} \gamma_{k}^{-1} \right)$,	где $\gamma_k$ суть окружности $\{ z \: \big| \: |z - a_k| = r \}$, ориентированные движением против хода часовой стрелки, а $\gamma_{k}^{-1}$ --- они же, но ориентированные по ходу часовой стрелки. Получили, что $f$ регулярна на $\widetilde{G}$ и непрерывна на $\overline{\widetilde{G}} = \widetilde{G} \cup \widetilde{\Gamma}$ (см. рис. 2). Тогда по \hyperref[abc28]{обобщенной теореме \ref{abc28} Коши} (Билет №33) получаем
 $$
-0 = \int_{\widetilde{\Gamma}} f(z) \,dz = \int_{\Gamma} f(z) \,dz - \sum_{k = 1}^{n} \int_{\gamma_k} f(z) \,dz \myeq{\eqref{ch36.1eq1}} \int_{\Gamma} f(z) \,dz - \sum_{k = 1}^{n} 2\pi i \res_{a_k} f,
+0 = \int_{\widetilde{\Gamma}} f(z) \,dz = \int_{\Gamma} f(z) \,dz - \sum_{k = 1}^{n} \int_{\gamma_k} f(z) \,dz \xlongequal{\eqref{ch36.1eq1}} \int_{\Gamma} f(z) \,dz - \sum_{k = 1}^{n} 2\pi i \res_{a_k} f,
 $$
 что и дает формулу \eqref{ch36.1eq14}.
 
@@ -151,7 +151,7 @@ $$
  
 С другой стороны,
 $$
-\int_{\widetilde{\Gamma}} f(z) \,dz = \int_{\Gamma} f(z) \,dz + \int_{\gamma_R} f(z) \,dz \myeq{\eqref{ch36.1eq15}} \int_{\Gamma} f(z) \,dz - 2\pi i\res_{\infty} f,
+\int_{\widetilde{\Gamma}} f(z) \,dz = \int_{\Gamma} f(z) \,dz + \int_{\gamma_R} f(z) \,dz \xlongequal{\eqref{ch36.1eq15}} \int_{\Gamma} f(z) \,dz - 2\pi i\res_{\infty} f,
 $$
 откуда и из \eqref{ch36.1eq16} следует \eqref{ch36.1eq14}.	
 \end{enumerate}

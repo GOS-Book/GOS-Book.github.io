@@ -8,14 +8,15 @@
 
 \begin{document}
 \pagestyle{plain}
+\hypersetup{linkcolor = black} 
 \frontmatter
 \include{frontmatter/titlepageTMB}
 \include{frontmatter/epigpage}
 {\hypersetup{hidelinks}\tableofcontents}
 \include{frontmatter/litra}
 \include{frontmatter/foreword}
+\include{frontmatter/aboutGOS}
 \mainmatter
-\hypersetup{linkcolor = black} 
 \pagestyle{fancy}
 \setcounter{chapter}{0}
 \foreach \n in {1,...,36}{\include{chapters/chapter\n}}
