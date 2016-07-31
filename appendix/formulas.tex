@@ -130,7 +130,7 @@ $\sh (-x) = -\sh x;$
 &
 $\ch (-x) = \ch x;$
 &
-$\th (-x) = \th x.$
+$\th (-x) = -\th x.$
 \end{tabular}
 \subsubsection{Формулы сложения.}
 \begin{tabular}{l l}
@@ -145,21 +145,49 @@ $\cth (x \pm y) = \frac{1 \pm \cth x \cth y}{\cth x \pm \cth y}.$
 \subsubsection{Формулы двойного угла.}
 \begin{tabular}{l}
 $\sh (2x) = 2\ch x\sh x$
+\\
+$\ch (2x) = \ch^2 x + \sh^2 x$
 \end{tabular}
 \subsubsection{Формулы кратных углов.}
-
-$\sh (-x) = -\sh x$
+\begin{tabular}{l}
+$\sh (3x) = 4\sh^3 x + 3 \sh x$
+\\
+$\ch (3x) = 4 \ch^3 x - 3 \ch x$
+\end{tabular}
 \subsubsection{Формулы произведения.}
-
-$\sh (-x) = -\sh x$
+\begin{tabular}{l}
+$\sh x \sh y = \frac{\ch(x + y) - \ch (x - y)}{2}$
+\\
+$\sh x \ch y = \frac{\sh(x + y) + \sh(x - y)}{2}$
+\\
+$\ch x \ch y = \frac{\ch(x + y) + \ch(x - y)}{2}$
+\end{tabular}
 \subsubsection{Формулы суммы.}
-
-$\sh (-x) = -\sh x$
+\begin{tabular}{l}
+$\sh x \pm \sh y = 2 \sh\frac{x \pm y}{2} \ch\frac{x \mp y}{2}$
+\\
+$\ch x + \ch y = 2 \ch\frac{x + y}{2}\ch\frac{x - y}{2}$
+\\
+$\ch x - \ch y = 2 \sh\frac{x + y}{2}\sh\frac{x - y}{2}$
+\\
+$\th x \pm \th y = \frac{\sh(x \pm y)}{\ch x \ch y}$
+\end{tabular}
 \subsubsection{Формулы понижения степени.}
-
-$\sh (-x) = -\sh x$
+\begin{tabular}{l}
+$\ch^2 \frac{x}{2} = \frac{\ch x + 1}{2}$
+\\
+$\sh^2 \frac{x}{2} = \frac{\ch x - 1}{2}$
+\end{tabular}
 \section{Обратные гиперболические функции.}
-$\sh (-x) = -\sh x$
+\begin{tabular}{l}
+$\arsh x = \ln(x + \sqrt{x^2 + 1})$
+\\
+$\arch x = \ln(x + \sqrt{x^2 - 1}); \: x \ge 1$
+\\
+$\arth x = \ln \left(\frac{\sqrt{1 - x^2}}{1 - x} \right)$
+\\
+%$\arcth x = \ln \left( \frac{\sqrt{x^2 - 1}}{x - 1} \right)$
+\end{tabular}
 
 \section[Ряд Тейлора.]{Ряд Тейлора.\footnote{При $x \to 0$, R --- радиус сходимости.}}
 \noindent\begin{tabular}{ l l l }
@@ -319,6 +347,8 @@ $(e^x)'=e^x;$
 $\int \frac{dx}{\sqrt{a^2-x^2}}=\arcsin\frac{x}{a}+C,\ a\ne 0$
 
 \section{Вычисление площадей плоских фигур и длин кривых.}
+
+
 
 \section{Вычисление объемов тел и площадей поверхностей.}
 
