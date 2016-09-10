@@ -41,7 +41,7 @@
 \begin{thm}
 Пусть функция $f$ определена и имеет частные производные 2-го порядка в некоторой окрестности точки $x_0 \in \bbR^n$, причем частные производные 2-го порядка непрерывны в точке $x_0$.
 
-Тогда, если $x_0$ --- точка локального максимума функции $f$, то $\nabla f(x_0) = \overset{\rightarrow}{\theta}; \quad \Phi_2(x_0, h) \le 0 \quad \forall h \in \bbR^n.$
+Тогда, если $x_0$ "--- точка локального максимума функции $f$, то $\nabla f(x_0) = \overset{\rightarrow}{\theta}; \quad \Phi_2(x_0, h) \le 0 \quad \forall h \in \bbR^n.$
 \end{thm}
 
 \begin{proof}
@@ -53,9 +53,9 @@ f(x) = f(x_0) + \frac{1}{2} \Phi_2(x_0, h) + \alpha(x)|h|^2, \quad \text{где}
 
 $\forall x \in D_f \setminus x_0$ положим $\xi = \frac{x - x_0}{|x - x_0|}; \quad \rho = |x - x_0| \quad \Rightarrow \quad \rho > 0, \quad |\xi| = 1$.
 
-$h = x - x_0 = \rho \xi \quad \Rightarrow \quad \Phi_{2}(x_0, h) = \Phi_2(x_0, \rho \xi) = \rho^2 \Phi_(x_0, \xi)$, т.к. $\Phi_2$ --- квадратичная форма $\Rightarrow \frac{f(x) - f(x_0)}{\rho^2} = \frac{1}{2}\Phi_2(x_0, \xi) + \alpha(x)$
+$h = x - x_0 = \rho \xi \quad \Rightarrow \quad \Phi_{2}(x_0, h) = \Phi_2(x_0, \rho \xi) = \rho^2 \Phi_(x_0, \xi)$, т.к. $\Phi_2$ "--- квадратичная форма $\Rightarrow \frac{f(x) - f(x_0)}{\rho^2} = \frac{1}{2}\Phi_2(x_0, \xi) + \alpha(x)$
 
-Т.к. $x_0$ --- точка локального максимума, то $\exists \delta_0: \quad \forall x \in O_\delta(x_0) \cap D_f$. $f(x) - f(x_0) \le 0 \quad \Rightarrow \quad \forall \xi \in S_1(\bbR^n), (|\xi| = 1): \Phi_2(x_0, \xi) = 2 \frac{1}{\rho^2}(f(x) - f(x_0)) - \alpha(x)$
+Т.к. $x_0$ "--- точка локального максимума, то $\exists \delta_0: \quad \forall x \in O_\delta(x_0) \cap D_f$. $f(x) - f(x_0) \le 0 \quad \Rightarrow \quad \forall \xi \in S_1(\bbR^n), (|\xi| = 1): \Phi_2(x_0, \xi) = 2 \frac{1}{\rho^2}(f(x) - f(x_0)) - \alpha(x)$
 
 $\Phi_2(x_0, \xi) = \lim\limits_{\rho \to 0} \left(2 \frac{1}{\rho^2}(f(x) - f(x_0)) - \alpha(x) \right)$
 
@@ -67,7 +67,7 @@ $\Rightarrow \quad \forall h \in \bbR^n: \quad \Phi_2(x_0, h) = |h^2| \cdot \Phi
 \end{proof}
 
 \begin{thm} [Достаточное условие экстремума] \label{ch10thm3}
-Пусть функция $f$ определена и 2-ды непрерывно-дифференцируема в некоторой окрестности точки $x_0 \in \bbR^n$. Тогда если $\nabla f(x_0) = \vv{\theta}$ и $\Phi_2(x_0, h) > 0 \quad \forall h \not= \vv{\theta}$ , то $x_0$ --- точка строгого локального минимума функции $f$.
+Пусть функция $f$ определена и 2-ды непрерывно-дифференцируема в некоторой окрестности точки $x_0 \in \bbR^n$. Тогда если $\nabla f(x_0) = \vv{\theta}$ и $\Phi_2(x_0, h) > 0 \quad \forall h \not= \vv{\theta}$ , то $x_0$ "--- точка строгого локального минимума функции $f$.
 \end{thm}
 
 \begin{proof}

@@ -6,15 +6,15 @@ $$
 $$ 
 Множество функций $C^1[a,b]$ с введенной метрикой является линейным нормированным пространством.
 
-Пусть $F(x,y,p)$ --- заданная непрерывно дифференцируемая функция для $\forall x\in [a,b]$ и $\forall(y,p)\in \bbR^2_{(y,p)}$ --- плоскости с декартовыми прямоугольными координатами $y,p$. Рассмотрим интеграл
+Пусть $F(x,y,p)$ "--- заданная непрерывно дифференцируемая функция для $\forall x\in [a,b]$ и $\forall(y,p)\in \bbR^2_{(y,p)}$ "--- плоскости с декартовыми прямоугольными координатами $y,p$. Рассмотрим интеграл
 \begin{equation}\label{ch29eq1}
-J(y)=\int_a^b\limits F[x,y(x),y'(x)]dx
+J(y)=\int_a^b\limits F[x,y(x),y'(x)]\,dx
 \end{equation}
 на множестве $M$ тех функций $y(x)\in C^1[a,b]$, которые удовлетворяют граничным условиям
 \begin{equation}\label{ch29eq2}
 y(a)=A,\quad y(b)=B,
 \end{equation}
-где $A$ и $B$ --- заданные числа. Функции $y(x)\in M$ будем называть \textit{допустимыми}.
+где $A$ и $B$ "--- заданные числа. Функции $y(x)\in M$ будем называть \textit{допустимыми}.
 
 Очевидно, что $\forall y(x)\in M$ интеграл \eqref{ch29eq1} определен и задает функционал (отображение $F \colon M \to \bbC$) с областью определения $M$ в пространстве $C^1[a,b]$.
 
@@ -22,7 +22,7 @@ y(a)=A,\quad y(b)=B,
 Говорят, что функция $\hat{y}(x)\in M$ дает \textit{слабый локальный минимум (максимум)} функционала \eqref{ch29eq1}, если $\exists$ число $\epsilon>0$ такое, что для $\forall y(x)\in M$, для которой $||y(x)-\hat{y}(x)||_{C^1[a,b]}<\epsilon$, выполняется неравенство $J(y)\geq J(\hat{y})$ ($J(y)\leq J(\hat{y})$).
 \end{defn}
 
-Оба понятия --- слабый локальный минимум и слабый локальный максимум объединяются единым термином: \textit{слабый локальный экстремум}.
+Оба понятия "--- слабый локальный минимум и слабый локальный максимум объединяются единым термином: \textit{слабый локальный экстремум}.
 
 \begin{defn}
 Задача нахождения слабого локального экстремума функционала \eqref{ch29eq1} называется \textit{простейшей вариационной задачей}
@@ -34,23 +34,23 @@ y(a)=A,\quad y(b)=B,
 
 Пусть $y(x)\in M$ и $\eta (x)\in \coci[1]{[a,b]}$. Рассмотрим семейство функций, зависящих от действительного параметра $\alpha$: $y(x,\alpha)=y(x)+\alpha\cdot\eta(x)$. Поскольку $y(x,\alpha)\in M$ при $\forall\alpha$, то можно рассмотреть интеграл 
 \begin{equation} \label{ch29eq3}
-J(y+\alpha\eta)=\int\limits_a^b F[x,y(x)+\alpha\eta(x),y'(x)+\alpha\eta'(x)]dx.
+J(y+\alpha\eta)=\int\limits_a^b F[x,y(x)+\alpha\eta(x),y'(x)+\alpha\eta'(x)]\,dx.
 \end{equation}
 
 При фиксированных $y(x)$ и $\eta(x)$ интеграл $\eqref{ch29eq3}$ является собственным интегралом $\Phi(\alpha)$, зависящим от параметра $\alpha$. Если взять некоторое $\epsilon>0$, то при $|\alpha|\leq\epsilon,\;x\in[a,b]$ подынтегральная функция F и ее производная по $\alpha$ в силу наложенных на $F$ условий являются непрерывными. Тогда по известной из курса анализа теореме $\Phi(\alpha)=J(y+\alpha\eta)$ является дифференцируемой функцией $\alpha$ при $|\alpha|\leq \epsilon$ и по правилу Лейбница
 \begin{multline*}
-\Phi'(0)=\frac{d}{d\alpha}J[y(x)+\alpha\eta(x)]\biggr|_{\alpha=0}=\\=\int\limits_a^b\left\{ \frac{\partial F[x,y(x),y'(x)]}{\partial y}\cdot \eta(x)+\frac{\partial F[x,y(x),y'(x)]}{\partial y'}\cdot \eta'(x)\right\}dx.
+\Phi'(0)=\frac{d}{d\alpha}J[y(x)+\alpha\eta(x)]\biggr|_{\alpha=0}=\\=\int\limits_a^b\left\{ \frac{\partial F[x,y(x),y'(x)]}{\partial y}\cdot \eta(x)+\frac{\partial F[x,y(x),y'(x)]}{\partial y'}\cdot \eta'(x)\right\}\,dx.
 \end{multline*}
 
 \begin{defn}
-\textit{Допустимым приращением (вариацией)} функции $y(x)\in M$ называется любая функция $\eta (x)\in \coci[1]{[a,b]}$. Выражение $\frac{d}{d\alpha}J[y(x)+\alpha\eta(x)]\bigr|_{\alpha=0}$, где $\eta(x)$ --- любая функция из $\coci[1]{[a,b]}$,  называется \textit{первой вариацией} функционала $J(y)$ на функции $y(x)$ и обозначается $\delta J[y,\eta(x)]$, $\forall\eta(x)\in\coci[1]{[a,b]}$.
+\textit{Допустимым приращением (вариацией)} функции $y(x)\in M$ называется любая функция $\eta (x)\in \coci[1]{[a,b]}$. Выражение $\frac{d}{d\alpha}J[y(x)+\alpha\eta(x)]\bigr|_{\alpha=0}$, где $\eta(x)$ "--- любая функция из $\coci[1]{[a,b]}$,  называется \textit{первой вариацией} функционала $J(y)$ на функции $y(x)$ и обозначается $\delta J[y,\eta(x)]$, $\forall\eta(x)\in\coci[1]{[a,b]}$.
 \end{defn}
 
 Таким образом, вариация функционала \eqref{ch29eq1}
 \begin{equation} \label{ch29eq4}
-\delta J[y,\eta(x)]=\int\limits_a^b\left\{\frac{\partial F[x,y(x),y'(x)]}{\partial y}\cdot\eta(x) + \frac{\partial F[x,y(x),y'(x)]}{\partial y'}\cdot \eta'(x)\right\}dx,
+\delta J[y,\eta(x)]=\int\limits_a^b\left\{\frac{\partial F[x,y(x),y'(x)]}{\partial y}\cdot\eta(x) + \frac{\partial F[x,y(x),y'(x)]}{\partial y'}\cdot \eta'(x)\right\}\,dx,
 \end{equation}
-где $\eta(x)$ --- любая допустимая вариация функции  $y(x)\in M$.
+где $\eta(x)$ "--- любая допустимая вариация функции  $y(x)\in M$.
 
 Отметим, что первая вариация $\delta J[y,\eta(x)]$ линейно зависит от $\eta(x)$ и $\eta'(x)$.
 
@@ -69,7 +69,7 @@ J(y+\alpha\eta)=\int\limits_a^b F[x,y(x)+\alpha\eta(x),y'(x)+\alpha\eta'(x)]dx.
 \end{proof}
 
 \begin{lemm}[Основная лемма вариационного исчисления] \label{ch29.2lemm1}
-Если $f(x)\in C[a,b]$ и $\int_a^b\limits f(x)\eta(x)dx=0$ для $\forall\eta(x)\in \coci[1]{[a,b]}$, то $f(x)\equiv 0$ на $[a,b]$.
+Если $f(x)\in C[a,b]$ и $\int_a^b\limits f(x)\eta(x)\,dx=0$ для $\forall\eta(x)\in \coci[1]{[a,b]}$, то $f(x)\equiv 0$ на $[a,b]$.
 \end{lemm}
 \begin{proof}
 Рассуждаем от противного. Пусть $f(x) \not\equiv  0$ на $[a,b]$. Тогда $\exists x_0\in(a,b)$ такая, что $f(x_0)\neq 0$. Пусть для определенности $f(x_0)>0$. Из непрерывности $f(x)$ на $[a,b]$ следует, что $\exists\epsilon>0$ такое, что $f(x)\geq\frac{1}{2}f(x_0)$, $\forall x\in [x_0-\epsilon,x_0+\epsilon]\subset (a,b).$ Возьмем
@@ -81,28 +81,28 @@ $$
 $$
 Нетрудно проверить, что функция $\eta(x)\in \coci[1]{[a,b]}$. По интегральной теореме о среднем получаем, что
 \begin{multline*}
-\int_a^b\limits f(x)\eta(x)dx=\int\limits_{x_0-\epsilon}^{x_0+\epsilon} f(x)\eta(x)dx =\\= f(\zeta)\int\limits_{x_0-\epsilon}^{x_0+\epsilon}\eta(x)dx \geq \frac{1}{2} f(x_0)\int\limits_{x_0-\epsilon}^{x_0+\epsilon}  \eta (x)dx>0,
+\int_a^b\limits f(x)\eta(x)\,dx=\int\limits_{x_0-\epsilon}^{x_0+\epsilon} f(x)\eta(x)\,dx =\\= f(\zeta)\int\limits_{x_0-\epsilon}^{x_0+\epsilon}\eta(x)\,dx \geq \frac{1}{2} f(x_0)\int\limits_{x_0-\epsilon}^{x_0+\epsilon}  \eta (x)\,dx>0,
 \end{multline*}
 где $\zeta\in[x_0-\epsilon,x_0+\epsilon]$. А это неравенство противоречит условию теоремы. Значит, наше предположение о том, что $f(x)\not\equiv  0$ на $[a,b]$ неверно. Лемма доказана.
 \end{proof}
 
 
 \begin{thm}\label{ch29thm2}
-Пусть функция $F(x,y,p)$ --- дважды непрерывно дифференцируема при $\forall x\in[a,b]$, $\forall(y,p)\in \bbR^2_{(y,p)}$. Если дважды непрерывно дифференцируемая функция $\hat{y}(x)$ является решением простейшей вариационной задачи, то необходимо функция $\hat{y}(x)$ на $[a,b]$ удовлетворяет уравнению Эйлера
+Пусть функция $F(x,y,p)$ "--- дважды непрерывно дифференцируема при $\forall x\in[a,b]$, $\forall(y,p)\in \bbR^2_{(y,p)}$. Если дважды непрерывно дифференцируемая функция $\hat{y}(x)$ является решением простейшей вариационной задачи, то необходимо функция $\hat{y}(x)$ на $[a,b]$ удовлетворяет уравнению Эйлера
 \begin{equation} \label{ch29eq5}
 \frac{\partial F}{\partial y}-\frac{d}{dx}\cdot\frac{\partial F}{\partial y'}=0
 \end{equation}
-(здесь $\frac{d}{dx}$ --- полная производная по $x$).
+\textup{(}здесь $\frac{d}{dx}$ "--- полная производная по $x$\textup{)}.
 \end{thm}
 
 \begin{proof}
-Если $\hat{y}(x)$ --- решение задачи, то в силу теоремы \ref{ch29thm1} $\delta J[\hat{y},\eta(x)] = 0$ для любой допустимой вариации $\eta(x)$. Учитывая, что $\eta(a)=\eta(b)=0$, проинтегрируем по частям слагаемое, содержащее $\eta'(x)$ в формуле \eqref{ch29eq4}. Это законно, так как выражение
+Если $\hat{y}(x)$ "--- решение задачи, то в силу теоремы \ref{ch29thm1} $\delta J[\hat{y},\eta(x)] = 0$ для любой допустимой вариации $\eta(x)$. Учитывая, что $\eta(a)=\eta(b)=0$, проинтегрируем по частям слагаемое, содержащее $\eta'(x)$ в формуле \eqref{ch29eq4}. Это законно, так как выражение
 $$
 \frac{d}{dx}\frac{\partial F[x,y(x),y'(x)]}{\partial y'}\biggr|_{y=\hat{y}(x)} = \left[\frac{\partial^2F}{\partial y'\partial x}+\frac{\partial^2F}{\partial y'\partial y}\cdot y'+\frac{\partial ^2F}{\partial {y'}^{2}}\cdot y'' \right]\biggr|_{y=\hat{y}(x)}
 $$
 в силу условий теоремы является непрерывной на $[a,b]$ функцией. Имеем
 \begin{multline*}
-0=\int\limits_a^b\left\{\frac{\partial F[x,\hat{y}(x),\hat{y}'(x)]}{\partial y}\cdot \eta(x)+\frac{\partial F [x,\hat{y}(x),\hat{y}'(x)]}{\partial y'}\cdot\eta'(x)\right\}dx=\\=\frac{\partial F[x,\hat{y}(x),\hat{y}'(x)]}{\partial y'}\cdot \eta(x)\biggr|_{x=a}^{b}+\int\limits_a^b\left\{\frac{\partial F}{\partial y} - \frac{d}{dx}\frac{\partial F}{\partial y'}\right\}\biggr|_{y=\hat{y}(x)}\cdot\eta(x)dx=\\=\int\limits_a^b\left\{\frac{\partial F}{\partial y}-\frac{d}{dx}\frac{\partial F}{\partial y'}\right\}\biggr|_{y=\hat{y}(x)}\cdot \eta(x)dx.
+0=\int\limits_a^b\left\{\frac{\partial F[x,\hat{y}(x),\hat{y}'(x)]}{\partial y}\cdot \eta(x)+\frac{\partial F [x,\hat{y}(x),\hat{y}'(x)]}{\partial y'}\cdot\eta'(x)\right\}\,dx=\\=\frac{\partial F[x,\hat{y}(x),\hat{y}'(x)]}{\partial y'}\cdot \eta(x)\biggr|_{x=a}^{b}+\int\limits_a^b\left\{\frac{\partial F}{\partial y} - \frac{d}{dx}\frac{\partial F}{\partial y'}\right\}\biggr|_{y=\hat{y}(x)}\cdot\eta(x)\,dx=\\=\int\limits_a^b\left\{\frac{\partial F}{\partial y}-\frac{d}{dx}\frac{\partial F}{\partial y'}\right\}\biggr|_{y=\hat{y}(x)}\cdot \eta(x)\,dx.
 \end{multline*}
 
 Поскольку функция  $\eta(x)\in\coci[1]{[a,b]}$, а функция

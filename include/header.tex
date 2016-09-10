@@ -18,6 +18,8 @@
 \usepackage{multicol}
 \usepackage{multirow}		
 %\usepackage{hhline}
+\usepackage{longtable}
+
 
 \usepackage{fontawesome}
 
@@ -48,6 +50,8 @@
 %\forloop{ct}{1}{\value{ct} < 10}{\arabic{ct} \\}
 
 \usepackage{framed}
+
+%Фиолетовая линия сбоку. 
 \renewenvironment{leftbar}[1][\hsize]
 {%
     \def\FrameCommand
@@ -60,7 +64,12 @@
 }
 {\endMakeFramed}
 
+  
 \input{include/wrapping}
+
+%https://www.ctan.org/pkg/minitoc
+%Чтобы создавать минисодержания, например, после partpage в формулах
+\usepackage{minitoc}
     
 \usepackage{titlesec, titletoc}
 \titleformat{\chapter}[display]
@@ -203,6 +212,20 @@
   		urlcolor = Purplemountainmajesty
 }
 
-%conflicting order of packages
+%!!!conflicting order of packages
 \usepackage{extarrows}
 \usepackage{rmathbr}
+
+%http://www.ctan.org/pkg/embrac
+%чтобы скобки были прямыми во всем документе, и не поддавались \textit. Однако не распространяется на теоремы и окружения.
+\usepackage{embrac}
+
+% создать отдельное оглавнение, у маленькой штучки. Уточни значение числа 1.
+\newcommand\DoToC{%
+  \startcontents
+  \printcontents{}{1}{\textbf{Contents}\vskip3pt\hrule\vskip5pt}
+  \vskip3pt\hrule\vskip5pt
+}
+
+% чтобы фильтровать warnings.
+\usepackage{silence}
