@@ -12,12 +12,15 @@
 
 \addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
 
+\newgeometry{margin=1.6cm, top=1.2cm,right=1.5cm,left=1.5cm, footskip = 1 cm, headheight=20pt,headsep=0.2cm}
+
+\resetHeadWidth
 
 \chapter{Формулы к письменному ГОСу}
 \mtcsettitle{minitoc}{Содержание приложения}
 \renewcommand{\mtcfont}{\normalsize}
 \renewcommand{\mtcSfont}{\small}
-\adjustmtc
+%\adjustmtc
 \minitoc
 
 \newpage
@@ -91,15 +94,15 @@ $2\sin x \cos y = \sin (x-y)+\sin(x+y).$
 \begin{tabular}{ c c}
 $\sin x\pm \sin y =2 \sin \frac{x\pm y}{2} \cos \frac{x\mp y}{2};$
 &
-$ $
+\multirow{2}{*}{$\tg x \pm \tg y = \frac{\sin (x \pm y)}{ \cos x \cos y};$}
 \\
 $\cos x + \cos y  = 2 \cos \frac{x + y}{2} \cos \frac{x - y}{2};$
 &
-$\tg x \pm \tg y = \frac{\sin (x \pm y)}{ \cos x \cos y};$
+\multirow{2}{*}{$\ctg x \pm \tg y = \frac{\sin (y \pm x)}{ \sin x \sin y}.$}
 \\
 $\cos x - \cos y  = -2 \sin \frac{x + y}{2} \sin\frac{x - y}{2};$
 &
-$\ctg x \pm \tg y = \frac{\sin (y \pm x)}{ \sin x \sin y}.$
+$ $
 \end{tabular}
 \subsubsection{Формула Эйлера и ее следствия}
 \begin{tabular}{c c c}
@@ -204,7 +207,8 @@ $\arth x = \ln \left(\frac{\sqrt{1 - x^2}}{1 - x} \right)$
 \end{tabular}
 
 \section{Производные}
-\noindent\begin{longtable}{ l l }
+\subsubsection{Формулы для производных элементарных функций}
+\noindent\begin{longtable}[l]{ l l }
 $(C)'=0$ ($C$ --- постоянная); 
 &
 $(\arcsin x)' = \frac{1}{\sqrt{1-x^2}};$
@@ -238,15 +242,16 @@ $(\sin x)'=\cos x;$
 $(\cth x)'= -\frac{1}{\sh^2 x};$
 \\
 $(\cos x)'=-\sin x;$
-&
+& $(e^x)'=e^x;$
 \\
 $(\tg x)'= \frac{1}{\cos^2 x},\ x \ne \frac{\pi}{2}(2n+1),\, n\in \bbZ;$
 &
 \\
 $(\ctg x)'= -\frac{1}{\sin^2 x};$
 &
-$(e^x)'=e^x;$
 \end{longtable}
+\subsubsection{Формула Лейбница}
+$(uv)^{(n)}=\sum\limits^n_{k=0} C^k_n u^{n-k} v^{k}$
 
 \section[Ряд Тейлора]{Ряд Тейлора\footnote{При $x \to 0$, R --- радиус сходимости.}}
 \noindent\begin{longtable}{ l l l }
@@ -265,13 +270,16 @@ $\sin x = \sum\limits_{n=0}^{+\infty} (-1)^{n}\displaystyle\frac{x^{2n+1}}{(2n+1
 &
 $\cos x = 1 - \frac{x^2}{2!} + \frac{x^4}{4!}+o(x^4);$
 &
-$\cos x  = \sum\limits_{n=0}^{+\infty} (-1)^{n}\displaystyle\frac{x^{2n}}{(2n)!}$
+$\cos x  = \sum\limits_{n=0}^{+\infty} (-1)^{n}\displaystyle\frac{x^{2n}}{(2n)!}, R=\infty$
 \\
 &
 $\tg x = x + \frac{x^3}{3}+\frac{2x^5}{15}+o(x^5)$
 &
-$\tg x  = \sum\limits_{n=0}^{+\infty}$
+$\tg x  = \sum\limits_{n=0}^{+\infty} \frac{B_{2n} (-4)^n (1-4^n)}{(2n)!} x^{2n-1},$
 \\
+& &
+$R=\frac{\pi}{2}$, где $B_{2n}$ "--- числа Бернулли.\footnote{Не все формулы надо знать наизусть. Но левый столбец по-хорошему надо для ГОСа знать}
+\\ 
 \textbullet
 &
 $\sh x = x +\frac{x^3}{3!}+\frac{x^5}{5!}+o(x^5);$
@@ -286,28 +294,28 @@ $\ch x  = \sum\limits_{n=0}^{+\infty}\displaystyle\frac{x^{2n}}{(2n)!},\ R=\inft
 &
 $\th x = x - \frac{x^3}{3}+\frac{2x^5}{15}+o(x^5);$
 &
-$\th x  = \sum\limits_{n=0}^{+\infty};$
+$\th x  = \sum\limits_{n=0}^{+\infty} \frac{B_{2n} 4^n (4^n-1)}{(2n)!} x^{2n-1}, R=\frac{\pi}{2};$
 \\
 &
-$\cth x = \frac{1}{x} + \frac{x}{3}+\frac{x^3}{45}+o(x^3);$
+$\cth x = \frac{1}{x} + \frac{x}{3}+\frac{x^3}{45}+o(x^3);$\footnote{Это ряд Лорана, но в ТФКП,возможно, но маловероятно, пригодится}
 &
-$\cth x  = \sum\limits_{n=0}^{+\infty} B_{2n};$
+$\cth x  = \sum\limits_{n=0}^{+\infty} \frac{2^{2n}B_{2n}x^{2n-1}}{(2n)!},\quad0<|x|<\pi;$
 \\
 \textbullet
 &
 $\arcsin x = x + \frac{x^3}{6}+\frac{3x^5}{40}+o(x^5);$
 &
-$\arcsin x=\sum\limits_{n=0}^{+\infty} \frac{(2n)!}{4^n(n!)^2(2n + 1)}x^{2n + 1}, R = 1;$
+$\arcsin x=\sum\limits_{n=0}^{+\infty} \frac{(2n)!}{4^n(n!)^2(2n + 1)}x^{2n + 1},$
 \\
 &
 $\arccos x= \frac{\pi}{2} - \arcsin x;$
 &
-$\arccos x = \sum\limits_{n=0}^{+\infty};$
+$ R = 1 ;$
 \\
 &
 $\arctg x = x - \frac{x^3}{3}+\frac{x^5}{5}+o(x^5);$
 &
-$\arctg x = \sum\limits_{n=0}^{+\infty} (-1)^n\displaystyle\frac{x^{2n+1}}{2n+1};$
+$\arctg x = \sum\limits_{n=0}^{+\infty} (-1)^n\displaystyle\frac{x^{2n+1}}{2n+1},\ R=1;$
 \\
 \textbullet
 &
@@ -316,9 +324,11 @@ $\arsh x = x - \frac{x^3}{6}+\frac{3x^5}{40}+o(x^5);$
 $\arsh x = \sum\limits_{n=0}^{+\infty} \frac{(-1)^n(2n)!}{4^n (n!)^2 (2n + 1)} x^{2n + 1}, R = 1;$
 \\
 &
-$\arch x = $
+$\arch x = \ln 2x - \frac{1}{4x^2}-\frac{3}{32x^4}+o\left(\frac{1}{x^{4}}\right);$  \footnote{Это тоже ряд Лорана}
 &
-$\arch x = \sum\limits_{n=0}^{+\infty};$
+$\arch x = \ln 2x - $
+\\
+& & $-\sum_{n=1}^\infty \left( \frac {(2n)!} {2^{2n}(n!)^2} \right) \frac {x^{-2n}} {(2n)} , \ x > 1; $
 \\
 &
 $\arth x = x + \frac{x^3}{3}+\frac{x^5}{5}+o(x^5);$
@@ -409,7 +419,6 @@ $\int\limits_{\Gamma} \left(P\,dx+Q\,dy+R\,dz=\int\limits_{\alpha}^{\beta} P x'(
 
 \section{Все для Фурье}
 
-\section{Асимптоты графиков}
 
 \section{Вычеты}
 \subsubsection{Формулы для подсчета вычета в конечной точке $a \in \bbC$.}
@@ -436,7 +445,130 @@ $$\res_a f=\lim\limits_{z\to a}{f(z)\cdot(z-a)}.$$
 $c_{-1}$
 \usepict[0.3]{formulas/3}
 
+\section{Формулы из теории вероятностей}
 
-\section{Площади}
+\begin{longtable}[l]{l}
+$A^k_n=\frac{n!}{(n-k)!}=n(n-1)(n-2)\dots(n-k+1)$ "--- размещения;
+\\
+$C^k_n=\binom{n}{k}=\frac{n!}{k!(n-k)!}=\frac{n(n-1)(n-2)\dots(n-k+1)}{k!}$ "--- сочетания;
+\\
+$\binom{n}{k}=\binom{n}{n-k};\qquad \binom{n+1}{k+1}=\binom{n}{k+1}+\binom{k}{n}; $
+\end{longtable}
 
-считал интегралы в госе --- площадь эллипса забыл. СЮДА НА.
+\section{Суммирование}
+\addcontentsline{toc}{subsubsection}{Арифметическая прорессия}
+\addcontentsline{toc}{subsubsection}{Геометрическая прорессия}
+\begin{longtable}[l]{l l}
+{\normalfont\normalsize\bfseries Арифметическая прорессия}
+&
+{\normalfont\normalsize\bfseries Геометрическая прорессия}
+\\
+$a_{n+1}=a_n+d;$ & $b_n=b_1 q^{n-1};$
+\\
+$a_n=a_1+(n-1)d;$ & $S_n=b_1\frac{1-q^n}{1-q}=\frac{b_n q-b_1}{q-1}, q\ne 1$;
+\\ 
+$S_n=\frac{a_1+a_n}{2}\cdot n=\frac{2a_1+d(n-1)}{2}\cdot n;$ & $b^2_n=b_{n-1}b_{n+1}, n\geq2,$
+\\
+$a_n=\frac{a_{n-1}+a_{n+1}}{2}, n\geq 2;$ & $b_kb_{n-k+1}=b_1b_n,\ k\in\overline{1,n};$
+\\
+$a_k+a_{n-k}=a_1+a_n,\ k\in\overline{1,n}.$ & Если $|q|<1$, то $S=\frac{b_1}{1-q}$
+\end{longtable}
+
+\subsubsection{Бином Ньютона}
+\begin{longtable}[l]{l}
+$(a+b)^n=\sum^{k}_n C^k_n a^k b^{n-k};$
+\\
+$\sum^{k}_n C^k_n=2^n \quad \sum^{k}_n (-1)^k C^k_n=0.$
+\end{longtable}
+
+\section{Некоторые замечательные пределы.}
+\begin{longtable}[l]{l}
+$\lim\limits_{x\to0}\frac{\sin x}{x}=1;$
+\\
+$\lim\limits_{x\to0} (1+x)^{1/x}=e.$
+\end{longtable}
+
+\section{Асимптоты графиков}
+\textbullet \quad
+Прямая $x=x_0$ "--- вертикальная асимптота графика $f(x)$, если $$\lim\limits_{x\to x_0-0}f(x)=\infty\ \text{или}\ \lim\limits_{x\to x_0+0}f(x)=\infty.$$ 
+
+\textbullet \quad
+Прямая $y=kx+b$ "--- наклонная асимптота графика $f(x), x\to\pm\infty$, если $$\lim\limits_{x\to\pm\infty}\frac{f(x)}{x}=k; \quad \lim\limits_{x\to\pm\infty} (f(x)-kx)=b.$$
+
+\textbullet \quad
+Прямая $y=b$ "--- горизонтальная асимптота графика $f(x), x\to\pm\infty$ (случай $k=0$), если $$ \lim\limits_{x\to\pm\infty} f(x)=b.$$
+
+\newgeometry{margin=1.6cm, top=1.2cm,right=1cm,left=1cm, footskip = 1 cm, headheight=20pt,headsep=0.2cm}
+\resetHeadWidth
+\section[Площади различных фигур]{Площади различных фигур\footnote{Добавил сюда, только потому что на ГОСе забыл формулу площади эллипса :-)}}
+\noindent\begin{longtable}{|A{0.22}{0}|B{0.37}{0}|A{0.42}{0}|}
+\hline
+Фигура & Формула & Переменные 
+\endfirsthead\hline
+Фигура & Формула & Переменные 
+\endhead\hline
+\multicolumn{3}{|c|}{Многоугольники}\tabularnewline
+\hline
+Правильный треугольник & $a^2\frac{\sqrt{3}}{4}$ & $a$ "--- длина стороны треугольника \tabularnewline\hline
+Прямоугольный треугольник & $\frac{ab}{2}$ & $a$ и $b$ "--- катеты треугольника 
+\tabularnewline\hline
+\multirow{8}{2.5cm}{Произвольный треугольник} & $\frac{1}{2}ah$
+&
+$a$ "--- сторона треугольника, $h$ "--- высота, проведённая к этой стороне 
+\tabularnewline\cline{2-3}
+& $\frac{1}{2}ab\sin\alpha$ & $a$ и $b$ "--- любые две стороны, $\alpha$ "--- угол между ними
+\tabularnewline\cline{2-3}
+&$\sqrt{p(p-a)(p-b)(p-c)}$ \newline (формула Герона) &  $a$, $b$ и $c$ "--- стороны треугольника, $p$ "--- полупериметр $\left(p=\frac{a+b+c}{2}\right)$;
+\tabularnewline\cline{2-3}
+&$|\frac{1}{2}\begin{vmatrix}x_0&y_0&1\\x_1&y_1&1\\x_2&y_2&1\end{vmatrix}|$ & $(x_0;y_0)$, $(x_1;y_1)$, $(x_2;y_2)$ "--- координаты вершин треугольника (обратите внимание на знак модуля).
+\tabularnewline\hline
+Квадрат & $a^2$ & $a$ "--- длина стороны квадрата 
+\tabularnewline\hline
+Прямоугольник & $ab$ & $a$ и $b$ "--- длины сторон прямоугольника (его длина и ширина) 
+\tabularnewline\hline
+Ромб & $\frac{1}{2}cd$ &  $c$ и $d$ "--- длины диагоналей ромба 
+\tabularnewline\hline
+\multirow{3}{2.5cm}{Параллелограмм} & $ah$ & $a$ и $h$ "--- длины стороны и опущенной на неё высоты соответственно \tabularnewline\cline{2-3}
+& $ab\sin\alpha$ & $a$ и $b$ "--- соседние стороны параллелограмма, $\alpha$ "--- угол между ними
+\tabularnewline\hline
+Трапеция &  $\frac{1}{2}(a+b)h$ & $a$ и $b$ "--- основания трапеции, $h$ "--- высота трапеции 
+\tabularnewline\hline
+Произвольный четырёхугольник &  $\sqrt{(p-a)(p-b)(p-c)\cdot}$\newline$\overline{\cdot(p-d)-abcd\cos\alpha}$ \newline (формула Брахмагупты) & $a$, $b$, $c$, $d$ "--- стороны четырёхугольника, $p$ "--- его полупериметр, $\alpha$ "--- полусумма противолежащих углов четырёхугольника 
+\tabularnewline\hline
+Правильный шестиугольник & $a^2\frac{3\sqrt{3}}{2}$ & $a$ "--- длина стороны шестиугольника
+\tabularnewline\hline
+Правильный восьмиугольник & $2a^2(1+\sqrt{2})$ & $a$ "--- длина стороны восьмиугольника
+\tabularnewline\hline
+Правильный многоугольник & $\frac{P^2/n}{4\operatorname{tg}(\pi/n)}$ & $P$ "--- периметр, $n$ "--- количество сторон
+\tabularnewline\hline
+Произвольный многоугольник & $\frac{1}{2}\left|\sum^{n}_{i=1}(x_{i+1}-x_i)(y_{i+1}+y_i)\right|$ (метод трапеций) & $(x_i;y_i)$ "--- координаты вершин многоугольника в порядке их обхода, замыкая последнюю с первой: $(x_{n+1};y_{n+1})=(x_1;y_1)$; при наличии отверстий направление их обхода противоположно обходу внешней границы многоугольника
+\tabularnewline\hline
+\multicolumn{3}{|c|}{Площади круга, его частей, описанных и вписанных в круг фигур}\tabularnewline\hline
+Круг &  $\pi r^2$ или $\frac{\pi d^2}{4}$ & $r$ "--- радиус, $d$ "--- диаметр круга
+\tabularnewline\hline
+Сектор круга & $\frac{\alpha r^2}{2}$ & $r$ "--- радиус круга, $\alpha$ "--- центральный угол сектора (в радианах)
+\tabularnewline\hline
+Сегмент круга & $\frac{r^2}{2}(\alpha-\sin\alpha)$ & $r$ "--- радиус круга, $\alpha$ "--- центральный угол сегмента (в радианах)
+\tabularnewline\hline
+Эллипс & $\pi ab$ & $a$, $b$ "--- большая и малая полуоси эллипса
+\tabularnewline\hline
+Треугольник, вписанный в окружность & $\frac{abc}{4R}$ & $a$, $b$ и $c$ "--- стороны треугольника, $R$ "--- радиус описанной окружности
+\tabularnewline\hline
+Четырёхугольник, вписанный в окружность & $\sqrt{(p-a)(p-b)(p-c)(p-d)}$ \newline(формула Брахмагупты) & $a$, $b$, $c$, $d$ "--- стороны четырёхугольника, $p$ "--- его полупериметр
+\tabularnewline\hline
+Многоугольник, описанный около окружности & $\frac{1}{2}Pr$ & $r$ "--- радиус окружности, вписанной в многоугольник, $P$ "--- периметр многоугольника
+\tabularnewline\hline
+Прямоугольная трапеция, описанная около окружности & $ab$ & $a$, $b$ "--- основания трапеции
+\tabularnewline\hline
+\multicolumn{3}{|c|}{Площади поверхностей тел в пространстве}\tabularnewline \hline
+Полная поверхность цилиндра & $2\pi r(r+h)$ & $r$ и $h$ "--- радиус и высота соответственно
+\tabularnewline\hline
+Боковая поверхность цилиндра & $2\pi rh$ & $r$ и $h$ "--- радиус и высота соответственно
+\tabularnewline\hline
+Полная поверхность конуса & $\pi r (l + r)$ & $r$ и $l$ "--- радиус и образующая боковой поверхности соответственно
+\tabularnewline\hline
+Боковая поверхность конуса & $\pi rl$ & $r$ и $l$ "--- радиус и образующая боковой поверхности соответственно
+\tabularnewline\hline
+Поверхность сферы (шара) & $4\pi r^2$ или $\pi d^2$ & $r$ и $d$ "--- радиус и диаметр соответственно
+\tabularnewline\hline
+\end{longtable}

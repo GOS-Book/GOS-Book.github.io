@@ -19,7 +19,17 @@
 \usepackage{multirow}		
 %\usepackage{hhline}
 \usepackage{longtable}
+\usepackage{array}
+\usepackage{ragged2e}
 
+
+\newcolumntype{A}[2]{%
+    >{\minipage{\dimexpr#1\linewidth-2\tabcolsep-#2\arrayrulewidth\relax}\vspace\tabcolsep}%
+    c<{\RaggedRight\vspace\tabcolsep\endminipage}}
+
+\newcolumntype{B}[2]{%
+    >{\minipage{\dimexpr#1\linewidth-2\tabcolsep-#2\arrayrulewidth\relax}\vspace\tabcolsep}%
+    c<{\centering\vspace\tabcolsep\endminipage}}
 
 \usepackage{fontawesome}
 
@@ -95,7 +105,28 @@
  \markboth{\ifnum\value{secnumdepth}>-1 \chaptertitlename\thechapter \fi}{}%
 }
 
+\makeatletter
+\newcommand{\resetHeadWidth}{\fancy@setoffs}
+\makeatother
+
 \addto\captionsrussian{\renewcommand{\chaptername}{Билет №}}
+
+\usepackage{pgfornament}
+\newcommand{\framesize}{\textwidth}
+\titleformat{\part}
+  [display]
+  {\centering\normalfont\Huge\bfseries}
+  {%
+    \mbox{\pgfornament[width=0.75\framesize,symmetry=h]{75}}
+    \vskip 3pt
+    \MakeUppercase{\Huge \partname\ \thepart}%
+  }
+  {3pt}
+  {\huge\MakeUppercase}
+  [%
+  \mbox{\pgfornament[width=0.75\framesize]{75}}%
+  ]
+
    
 % page settings 
 \parindent=0.6cm
