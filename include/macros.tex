@@ -4,8 +4,8 @@
 \newcommand{\bbA}{\mathbb{A}}
 \newcommand{\bbB}{\mathbb{B}}
 \newcommand{\bbC}{\mathbb{C}} % комплексные числа
-\newcommand{\bbD}{\mathbb{D}}
-\newcommand{\bbE}{\mathbb{E}} 
+\newcommand{\bbD}{\mathbb{D}} % дисперсия
+\newcommand{\bbE}{\mathbb{E}} % математическое ожидание
 \newcommand{\bbF}{\mathbb{F}}
 \newcommand{\bbG}{\mathbb{G}}
 \newcommand{\bbH}{\mathbb{H}}
@@ -16,7 +16,7 @@
 \newcommand{\bbM}{\mathbb{M}}
 \newcommand{\bbN}{\mathbb{N}} %натуральные числа
 \newcommand{\bbO}{\mathbb{O}}
-\newcommand{\bbP}{\mathbb{P}}
+\newcommand{\bbP}{\mathbb{P}} % вероятность
 \newcommand{\bbQ}{\mathbb{Q}} % рациональные числа
 \newcommand{\bbR}{\mathbb{R}} % действительные числа
 \newcommand{\bbS}{\mathbb{S}}
@@ -28,7 +28,7 @@
 \newcommand{\bbY}{\mathbb{Y}}
 \newcommand{\bbZ}{\mathbb{Z}} %целые числа
 
-%Матожидание и Дисперсия. 
+%Матожидание и Дисперсия. (старая версия -- сейчас не используем)
 \newcommand{\ccM}{\mathcal{M}}
 \newcommand{\ccD}{\mathcal{D}}
 
@@ -40,7 +40,9 @@
 \renewcommand{\ge}{\geqslant}
 \renewcommand{\emptyset}{\varnothing}
 
-%Возможно правильная расстановка пробелов в кванторах - НЕ ИСПОЛЬЗУЙТЕ НИ ЗА ЧТО НА СВЕТЕ, ЛУЧШЕ РУКАМИ.
+%Возможно правильная расстановка пробелов в кванторах - НЕ ИСПОЛЬЗУЙТЕ НИ ЗА ЧТО НА СВЕТЕ, ЛУЧШЕ РУКАМИ. 
+
+%они еще есть в документе, только потому что я дурак. надо удалять их по максимуму.
 \renewcommand{\fa}{\quad\forall}%renewcommand из-за package fontawesome, который добавляет кучу красивых символов (смайлики, рожицы, значки)
 \newcommand{\ex}{\quad\exists}
 
@@ -105,14 +107,17 @@
 \def\sh{\mathop{\rm sh}\nolimits}
 \def\ch{\mathop{\rm ch}\nolimits}
 \def\th{\mathop{\rm th}\nolimits}
+\def\cth{\mathop{\rm cth}\nolimits}
 
 %Арктангенс
 \def\arctg{\mathop{\rm arctg}\nolimits}
+\def\arcctg{\mathop{\rm arcctg}\nolimits}
 
 %Обратные гиперболические функции 
 \def\arsh{\mathop{\rm arsh}\nolimits}
 \def\arch{\mathop{\rm arch}\nolimits}
 \def\arth{\mathop{\rm arth}\nolimits}
+\def\arcth{\mathop{\rm arcth}\nolimits}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -133,15 +138,16 @@
 
 \newcommand{\Gm}{(\partial G)^{-}}
 
-
-
-
-
-
-
-
-
-
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
 %%Это перешло сюда по наследству от теорфиза, пусть будет, мало ли. 
 
 % Скобки (высокие)

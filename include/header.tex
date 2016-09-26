@@ -14,6 +14,15 @@
 \usepackage{indentfirst} 
 \usepackage{amsmath,amssymb,amscd,amsthm} 				
 
+\usepackage[margin=1.6cm, top=1.2cm,right=1.9cm,left=1.9cm, footskip = 1 cm, headheight=20pt,headsep=0.2cm]{geometry}
+
+%Choose what you like. the first for usual using, the second for the book, the third for the typography.
+%\usepackage[margin=1.6cm, top=1.2cm,right=1.6cm,left=2.2cm, footskip = 1 cm, headheight=20pt,headsep=0.2cm]{geometry}
+
+%\usepackage[a4paper]{geometry}
+
+%\geometry{includeheadfoot}% also useful option for geometry
+
 \usepackage{blkarray}		
 \usepackage{multicol}
 \usepackage{multirow}		
@@ -21,7 +30,6 @@
 \usepackage{longtable}
 \usepackage{array}
 \usepackage{ragged2e}
-
 
 \newcolumntype{A}[2]{%
     >{\minipage{\dimexpr#1\linewidth-2\tabcolsep-#2\arrayrulewidth\relax}\vspace\tabcolsep}%
@@ -33,10 +41,6 @@
 
 \usepackage{fontawesome}
 
-%\usepackage[margin=1.6cm, top=1.2cm,right=1.6cm,left=2.2cm, footskip = 1 cm, headheight=20pt,headsep=0.2cm]{geometry}
-
-%FOR PRINTING OUTPUT VERSION you should uncomment next statement.
-\usepackage[margin=1.6cm, top=1.2cm,right=1.9cm,left=1.9cm, footskip = 1 cm, headheight=20pt,headsep=0.2cm]{geometry}
 \usepackage{emptypage}
 
 \usepackage{epigraph}
@@ -99,6 +103,7 @@
   \pagestyle{fancy}
 \fancyfoot[C]{\thepage}
 \fancyhead{}
+%Even - четная, Odd - нечетная
 \fancyhead [CE] {\nouppercase{\slshape \small \rightmark}}
 \fancyhead [CO] {\nouppercase{\slshape \small \leftmark}}
 \renewcommand{\chaptermark}[1]{%
@@ -136,7 +141,7 @@
 %\relpenalty=10000
 
 % front page
-\author{Андрей Диденко}
+\author{Диденко Андрей}
 \title{Подготовка к ГОСу по МатАнализу \LaTeX
 \thanks{Спасибо всем моим друзьям за поддержку в написании этого документа}
 \date{10 Апреля 2016}}
