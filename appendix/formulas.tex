@@ -43,6 +43,7 @@ $\tg^2x+1=\frac{1}{\cos^2x};$
 $\ctg^2x+1=\frac{1}{\sin^2x};$
 &
 \end{tabular}
+
 \subsubsection{Формулы сложения и вычитания аргументов}
 \noindent\begin{tabular}{ c c c}
 $\sin(x\pm y)=\sin x \cos y \pm \cos x \sin y;$
@@ -53,6 +54,7 @@ $\cos(x\pm y)= \cos x \cos y \mp \sin x \sin y;$
 &
 $\ctg(x\pm y)=\frac{\ctg x\ctg y \mp 1}{\ctg x \pm \ctg y}.$
 \end{tabular}
+
 \subsubsection{Формулы двойного угла}
 \noindent\begin{tabular}{ c c c }
 &
@@ -70,6 +72,7 @@ $\cos 2x = 1 - 2\sin^2 x;$
 &
 $\ctg 2x = \frac{\ctg^2x-1}{2\ctg x}.$
 \end{tabular}
+
 \subsubsection{Формулы понижения степени}
 \begin{tabular}{ l l }
 $2\sin^2x=1-\cos 2x;$
@@ -88,6 +91,7 @@ $16\sin^5x=10\sin x-5\sin 3x +\sin 5x;$
 &
 $16\cos^5x=10\cos x+5\cos 3x +\cos 5x.$
 \end{tabular}
+
 \subsubsection{Формулы преобразования произведений функций}
 \begin{tabular}{c}
 $2\sin x \sin y = \cos (x-y)-\cos(x+y);$
@@ -96,6 +100,7 @@ $2\cos x \cos y = \cos (x-y)+\cos(x+y);$
 \\
 $2\sin x \cos y = \sin (x-y)+\sin(x+y).$
 \end{tabular}
+
 \subsubsection{Формулы преобразования суммы функций}
 \begin{tabular}{ c c}
 $\sin x\pm \sin y =2 \sin \frac{x\pm y}{2} \cos \frac{x\mp y}{2};$
@@ -110,6 +115,7 @@ $\cos x - \cos y  = -2 \sin \frac{x + y}{2} \sin\frac{x - y}{2};$
 &
 $ $
 \end{tabular}
+  
 \subsubsection{Формула Эйлера и ее следствия}
 \begin{tabular}{c c c}
 $e^{ix} = \cos x + i \sin x;$
@@ -118,7 +124,143 @@ $\sin x = \frac{e^{ix}-e^{-ix}}{2i};$
 &
 $\cos x = \frac{e^{ix}+e^{-ix}}{2}.$
 \end{tabular}
+
+\begin{absolutelynopagebreak}
+\subsubsection{Формулы приведения}
+\tiny
+\begin{longtable}{|c|c|c|c|c|c|c|c|c|}
+\hline
+в рад.
+&
+$\pi/2-x$
+&
+$\pi/2+x$
+&
+$\pi-x$
+&
+$\pi+x$
+&
+$3\pi/2-x$
+&
+$3\pi/2+x$
+&
+$2\pi-x$
+&
+$2\pi+x$
+\\\hline
+$\sin$
+&
+$\cos x$
+&
+$\cos x$
+&
+$\sin x$
+&
+$-\sin x$
+&
+$-\cos x$
+&
+$-\cos x$
+&
+$-\sin x$
+&
+$\sin x$
+\\\hline
+$\cos$
+&
+$\sin x$
+&
+$-\sin x$
+&
+$-\cos x$
+&
+$-\cos x$
+&
+$-\sin x$
+&
+$\sin x$
+&
+$\cos x$
+&
+$\cos x$
+\\\hline
+$\tg$
+&
+$\ctg x$
+&
+$-\ctg x$
+&
+$-\tg x$
+&
+$\tg x$
+&
+$\ctg x$
+&
+$-\ctg x$
+&
+$-\tg x$
+&
+$\tg x$
+\\\hline
+$\ctg$
+&
+$\tg x$
+&
+$-\tg x$
+&
+$-\ctg x$
+&
+$\ctg x$
+&
+$\tg x$
+&
+$-\tg x$
+&
+$-\ctg x$
+&
+$\ctg x$
+\\\hline
+в $^{\circ}$
+&
+$90^{\circ}-x$
+&
+$90^{\circ}+x$
+&
+$180^{\circ}-x$
+&
+$180^{\circ}+x$
+&
+$270^{\circ}-x$
+&
+$270^{\circ}+x$
+&
+$360^{\circ}-x$
+&
+$360^{\circ}+x$
+\\\hline
+\end{longtable}
+\end{absolutelynopagebreak}
+\normalsize 
+Алгоритм действий, который здесь работает:
+\begin{enumerate}
+\item
+Определите знак первоначальной функции в соответствующей четверти. Ставим этот знак перед новой функцией. Напомню знаки:
+\usepict[0.18]{forpict1}
+\item
+\begin{itemize}
+\item 
+При $90^{\circ}$ и $270^{\circ}$ функция меняется на кофункцию. (Детский жест на подсказку. Вопрос. Меняем на конфункцию? точки на вертикали, значит головой киваем сверху вниз. Получается согласие \glqqДа\grqq "--- меняем на конфункцию).
+\item
+При $180^{\circ}$ и $360^{\circ}$ функция не меняется на кофункцию. (Аналогично, точки по горизонтали, значит машем головой в горизонтальной плоскости, получается отказ \glqqНет\grqq "--- не меняем).
+\end{itemize}
+\end{enumerate}
+
+\begin{exmpl}
+$\cos(270^{\circ}-x)=?$. Данный угол лежит в третьей четверти, косинус в третьей четверти отрицателен. Меняем функцию на кофункцию, так как у нас 270 градусов, значит: $\cos(270^{\circ}-x)=-\sin x$. Верно!
+\end{exmpl}
+
 \section[Гиперболические функции]{\protect\href{https://ru.wikipedia.org/wiki/\%D0\%93\%D0\%B8\%D0\%BF\%D0\%B5\%D1\%80\%D0\%B1\%D0\%BE\%D0\%BB\%D0\%B8\%D1\%87\%D0\%B5\%D1\%81\%D0\%BA\%D0\%B8\%D0\%B5_\%D1\%84\%D1\%83\%D0\%BD\%D0\%BA\%D1\%86\%D0\%B8\%D0\%B8}{Гиперболические функции}}
+
 \subsubsection{Определение}
 \begin{tabular}{l l}
 $\sh x = \frac{e^{x}-e^{-x}}{2};$
@@ -129,6 +271,7 @@ $\ch x = \frac{e^{x}+e^{-x}}{2};$
 &
 $\cth x = \frac{1}{\th x};$
 \end{tabular}
+
 \subsubsection{Связь с тригонометрическими функциями}
 \begin{tabular}{c c c}
 $\ch (ix) = \cos x;$
@@ -143,6 +286,7 @@ $\sin (ix) = i \sh x;$
 &
 $\tg (ix) = i \th x.$
 \end{tabular}
+
 \subsubsection{Важное соотношение}
 $\ch^2 x - \sh^2 x = 1;$
 
@@ -154,6 +298,7 @@ $\ch (-x) = \ch x;$
 &
 $\th (-x) = -\th x.$
 \end{tabular}
+
 \subsubsection{Формулы сложения}
 \begin{tabular}{l l}
 $\sh (x\pm y) =  \sh x \ch y \pm \sh y \ch x;$
@@ -164,36 +309,40 @@ $\ch (x\pm y) =  \ch x \ch y \pm \sh y \sh x;$
 &
 $\cth (x \pm y) = \frac{1 \pm \cth x \cth y}{\cth x \pm \cth y}.$
 \end{tabular}
-\subsubsection{Формулы двойного угла}
-\begin{tabular}{l}
-$\sh (2x) = 2\ch x\sh x$
+
+\begin{longtable}[l]{l l}
+{\normalfont\normalsize\bfseries Формулы двойного угла}
+&
+{\normalfont\normalsize\bfseries Формулы тройного угла}
 \\
-$\ch (2x) = \ch^2 x + \sh^2 x$
-\end{tabular}
-\subsubsection{Формулы кратных углов}
-\begin{tabular}{l}
+$\sh (2x) = 2\ch x\sh x$
+&
 $\sh (3x) = 4\sh^3 x + 3 \sh x$
 \\
+$\ch (2x) = \ch^2 x + \sh^2 x$
+&
 $\ch (3x) = 4 \ch^3 x - 3 \ch x$
-\end{tabular}
-\subsubsection{Формулы произведения}
-\begin{tabular}{l}
+\\
+{\normalfont\normalsize\bfseries Формулы произведения}
+&
+{\normalfont\normalsize\bfseries Формулы суммы}
+\\
 $\sh x \sh y = \frac{\ch(x + y) - \ch (x - y)}{2}$
-\\
-$\sh x \ch y = \frac{\sh(x + y) + \sh(x - y)}{2}$
-\\
-$\ch x \ch y = \frac{\ch(x + y) + \ch(x - y)}{2}$
-\end{tabular}
-\subsubsection{Формулы суммы}
-\begin{tabular}{l}
+&
 $\sh x \pm \sh y = 2 \sh\frac{x \pm y}{2} \ch\frac{x \mp y}{2}$
 \\
+$\sh x \ch y = \frac{\sh(x + y) + \sh(x - y)}{2}$
+&
 $\ch x + \ch y = 2 \ch\frac{x + y}{2}\ch\frac{x - y}{2}$
 \\
+$\ch x \ch y = \frac{\ch(x + y) + \ch(x - y)}{2}$
+&
 $\ch x - \ch y = 2 \sh\frac{x + y}{2}\sh\frac{x - y}{2}$
 \\
+&
 $\th x \pm \th y = \frac{\sh(x \pm y)}{\ch x \ch y}$
-\end{tabular}
+\end{longtable}
+
 \subsubsection{Формулы понижения степени}
 \begin{tabular}{l}
 $\ch^2 \frac{x}{2} = \frac{\ch x + 1}{2}$
@@ -268,7 +417,13 @@ $(\arcth x)'=-\frac{1}{x^2-1};$
 \subsubsection{Формула Лейбница}
 $(uv)^{(n)}=\sum\limits^n_{k=0} C^k_n u^{n-k} v^{k}$
 
-\section[Ряд Тейлора]{Ряд Тейлора\footnote{При $x \to 0$, R "--- радиус сходимости.}}
+\section[Ряд Тейлора]{Ряд Тейлора\footnote{При $x \to 0$. $R$ "--- радиус сходимости. Для ряда $\sum\limits_{n=-\infty}^{+\infty} c_n (z-z_0)^n $ его можно определить по формуле Коши-Адамара:
+$$
+R = \frac{1}{\overline{\lim\limits_{n \to + \infty}} \sqrt[n]{|c_n|}}
+$$
+Более удобная, но менее универсальная формула:$$
+R = \lim\limits_{n \to + \infty} \left| \frac{c_n}{c_{n + 1}} \right|
+$$}}
 \noindent\begin{longtable}{ l l l }
 \textbullet
 &
@@ -280,20 +435,17 @@ $e^x=\sum\limits_{n=0}^{+\infty}\displaystyle\frac{x^n}{n!},\ R=\infty;$
 &
 $\sin x = x - \frac{x^3}{3!} + \frac{x^5}{5!}+o(x^5);$
 &
-$\sin x = \sum\limits_{n=0}^{+\infty} (-1)^{n}\displaystyle\frac{x^{2n+1}}{(2n+1)!},\ R=\infty$
+$\sin x = \sum\limits_{n=0}^{+\infty} (-1)^{n}\displaystyle\frac{x^{2n+1}}{(2n+1)!},\; R=\infty;$
 \\
 &
 $\cos x = 1 - \frac{x^2}{2!} + \frac{x^4}{4!}+o(x^4);$
 &
-$\cos x  = \sum\limits_{n=0}^{+\infty} (-1)^{n}\displaystyle\frac{x^{2n}}{(2n)!}, R=\infty$
+$\cos x  = \sum\limits_{n=0}^{+\infty} (-1)^{n}\displaystyle\frac{x^{2n}}{(2n)!},\; R=\infty;$
 \\
 &
 $\tg x = x + \frac{x^3}{3}+\frac{2x^5}{15}+o(x^5)$
 &
-$\tg x  = \sum\limits_{n=0}^{+\infty} \frac{B_{2n} (-4)^n (1-4^n)}{(2n)!} x^{2n-1},$
-\\
-& &
-$R=\frac{\pi}{2}$, где $B_{2n}$ "--- числа Бернулли.\footnote{Не все формулы надо знать наизусть. Но левый столбец по-хорошему надо для ГОСа знать}
+$\tg x  = \sum\limits_{n=0}^{+\infty} \frac{B_{2n}\cdot (-4)^n (1-4^n)}{(2n)!} x^{2n-1},\; R=\frac{\pi}{2};$ \footnote{В этой формуле $B_{2n}$ "--- это числа Бернулли. На самом деле, далеко не все формулы надо знать наизусть. Но левый столбец по-хорошему надо для ГОСа знать}
 \\ 
 \textbullet
 &
@@ -385,13 +537,9 @@ $\arch x = \ln 2x - $
 & & $-\sum_{n=1}^\infty \left( \frac {(2n)!} {2^{2n}(n!)^2} \right) \frac {x^{-2n}} {(2n)} , \ |x| > 1; $
 \\
 &
-$\arcth x = \arth {\frac{1}{x}}= $
+$\arcth x = =\frac{1}{x}+\frac{1}{3x^3}+\frac{1}{5x^5}+o\left(\frac{1}{x^5}\right); $
 &
 $\arcth x = \sum_{\infty}^{n=1}\frac{1}{(2n-1)x^{2n-1}}, x > 1.$
-\\
-&
-$=\frac{1}{x}+\frac{1}{3x^3}+\frac{1}{5x^5}+o\left(\frac{1}{x^5}\right);$
-&
 \end{longtable}
 
 \section{Основные неопределенные интегралы}
@@ -500,7 +648,7 @@ $$\res_{\infty} f = -c_{-1}.$$
 $$\res_{\infty} f= \lim\limits_{z\to \infty} \left( f(\infty)-f(z)\right)\cdot z,\ \text{где}\ f(\infty)=\lim\limits_{z\to \infty} f(z) .$$
 \end{itemize}
 
-\section{Формулы из теории вероятностей}
+\section{Формулы из комбинаторики}
 
 \begin{longtable}[l]{l}
 $A^k_n=\frac{n!}{(n-k)!}=n(n-1)(n-2)\dots(n-k+1)$ "--- размещения;
@@ -511,8 +659,6 @@ $\binom{n}{k}=\binom{n}{n-k};\qquad \binom{n+1}{k+1}=\binom{n}{k+1}+\binom{k}{n}
 \end{longtable}
 
 \section{Суммирование}
-\addcontentsline{toc}{subsubsection}{Арифметическая прорессия}
-\addcontentsline{toc}{subsubsection}{Геометрическая прорессия}
 \begin{longtable}[l]{l l}
 {\normalfont\normalsize\bfseries Арифметическая прорессия}
 &
