@@ -1,36 +1,32 @@
 \documentclass[a5paper,openany,9pt]{extbook}
-\input{structure}
-\include{include/header}
+\include{header}
+\include{include/structureOLD}
 \include{include/macros}
 
-%\includeonly{chapters/chapter1}
+%\includeonly{chapters/chapter18}
 %%comment it before outprinting
 %\usepackage{showkeys}
 %\geometry{showframe}
 
 \begin{document}
-
-\pagestyle{empty}
+\pagestyle{plain}
 \hypersetup{linkcolor = black} 
 \frontmatter
-\include{epicstyle/titlepageTMB}
+\input{frontmatter/OLDtitlepageTMB}
 \dominitoc
-\chapterimage{epicstyle/chapterimage}
 {\hypersetup{hidelinks}\tableofcontents}
 \include{frontmatter/epigpage}
-\pagestyle{fancy}
 \include{frontmatter/litra}
 \include{frontmatter/foreword}
 \include{frontmatter/aboutGOS}
-\include{frontmatter/epigraph2}
 \mainmatter
+\pagestyle{fancy}
 \setcounter{chapter}{0}
-\renewcommand{\chaptermark}[1]{\markboth{\ifnum\value{secnumdepth}>-1 \sffamily\small \chaptertitlename\thechapter \fi}{}}
 \foreach \n in {1,...,36}{\include{chapters/chapter\n}}
 \appendix
-\renewcommand{\chaptermark}[1]{\markboth{\ifnum\value{secnumdepth}>-1 \sffamily\small \chaptertitlename\ \thechapter \fi}{}}
+\fancyhead[CO]{\nouppercase{\slshape \small Приложение \thechapter}}
 \include{appendix/formulas}
 \pagestyle{empty}
 \backmatter
-
+\include{backmatter/theend}
 \end{document}

@@ -1,14 +1,17 @@
-%document information
-%\documentclass[a5paper,openany,9pt]{extbook}главы начинаются с любой страницы
-
 %\documentclass[a5paper,9pt]{extbook}  %главы начинаются с нечетных страниц, часто создавая пустые страницы
 
 %\documentclass[10pt,a4paper]{book} %а4 большой формат.
 
 % packages
-
+\usepackage{cmap}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+ 
 \usepackage{indentfirst} 
 \usepackage{amsmath,amssymb,amscd,amsthm} 				
+
+\usepackage[margin=1.6cm, top=1.2cm,right=1.9cm,left=1.9cm, footskip = 1 cm, headheight=20pt,headsep=0.2cm]{geometry}
 
 %Choose what you like. the first for usual using, the second for the book, the third for the typography.
 %\usepackage[margin=1.6cm, top=1.2cm,right=1.6cm,left=2.2cm, footskip = 1 cm, headheight=20pt,headsep=0.2cm]{geometry}
@@ -86,46 +89,54 @@
 
 %https://www.ctan.org/pkg/minitoc
 %Чтобы создавать минисодержания, например, после partpage в формулах
-
 \usepackage{minitoc}
-
+    
 \usepackage{titlesec, titletoc}
-\renewcommand{\thesection}{\textsection\arabic{chapter}.\arabic{section}}
-\renewcommand{\thesubsection}{\arabic{subsection}}
+\titleformat{\chapter}[display]
+  {\raggedright\normalfont\Large\bfseries}{\chaptertitlename\thechapter}{2ex}{}
 
-%\titleformat{\chapter}[display]
-%  {\raggedright\normalfont\Large\bfseries}{\chaptertitlename\thechapter}{2ex}{}
+\titleformat{\section}
+  {\normalfont\Large\bfseries}{\thesection.}{1em}{}
+\renewcommand{\thesection}{\textsection\arabic{section}}
+\titlecontents{section}[2.7em]{\addvspace{0.5ex}}%
+ {\contentslabel[\thecontentslabel.]{1.25em}\hskip0.8em}%numbered
+ {}%numberless%
+ {\enspace\titlerule*[0.7pc]{.}\contentspage}%
 
-%\titleformat{\section}
-%  {\normalfont\Large\bfseries}{\thesection.}{1em}{}
-%\renewcommand{\thesection}{\textsection\arabic{section}}
-%\titlecontents{section}[2.7em]{\addvspace{0.5ex}}%
-% {\contentslabel[\thecontentslabel.]{1.25em}\hskip0.8em}%numbered
-% {}%numberless%
-% {\enspace\titlerule*[0.7pc]{.}\contentspage}%
+\renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}.}
+
+\usepackage{fancyhdr}
+  \pagestyle{fancy}
+\fancyfoot[C]{\thepage}
+\fancyhead{}
+%Even - четная, Odd - нечетная
+\fancyhead [CE] {\nouppercase{\slshape \small \rightmark}}
+\fancyhead [CO] {\nouppercase{\slshape \small \leftmark}}
+\renewcommand{\chaptermark}[1]{%
+ \markboth{\ifnum\value{secnumdepth}>-1 \chaptertitlename\thechapter \fi}{}%
+}
 
 \makeatletter
 \newcommand{\resetHeadWidth}{\fancy@setoffs}
 \makeatother
 
-
 \addto\captionsrussian{\renewcommand{\chaptername}{Билет №}}
 
-%\usepackage{pgfornament}
-%\newcommand{\framesize}{\textwidth}
-%\titleformat{\part}
-%  [display]
-%  {\centering\normalfont\Huge\bfseries}
-%  {%
-%    \mbox{\pgfornament[width=0.75\framesize,symmetry=h]{75}}
-%    \vskip 3pt
-%    \MakeUppercase{\Huge \partname\ \thepart}%
-%  }
-%  {3pt}
-%  {\huge\MakeUppercase}
-%  [%
-%  \mbox{\pgfornament[width=0.75\framesize]{75}}%
-%  ]
+\usepackage{pgfornament}
+\newcommand{\framesize}{\textwidth}
+\titleformat{\part}
+  [display]
+  {\centering\normalfont\Huge\bfseries}
+  {%
+    \mbox{\pgfornament[width=0.75\framesize,symmetry=h]{75}}
+    \vskip 3pt
+    \MakeUppercase{\Huge \partname\ \thepart}%
+  }
+  {3pt}
+  {\huge\MakeUppercase}
+  [%
+  \mbox{\pgfornament[width=0.75\framesize]{75}}%
+  ]
 
    
 % page settings 
@@ -147,6 +158,85 @@
 
 %own commands
 
+\newtheoremstyle{note}%
+{3pt}% Space above1
+{3pt}% Space below1
+{}% Body font
+{}% Indent amount2
+{\bfseries}% Theorem head font
+{.}% Punctuation after theorem head
+{.5em}% Space after theorem head3
+{}% 
+
+\theoremstyle{note}
+\newtheorem{defn}{Определение}[chapter]
+\renewcommand{\thedefn}{\arabic{defn}}
+\newcommand{\theHdefn}{\thechapter.\arabic{defn}}
+
+\newtheorem{defnn}{Определение} %штрихованное.
+\renewcommand{\thedefnn}{\arabic{defn}'}
+\newcommand{\theHdefnn}{\thechapter.\arabic{defnn}'}
+
+
+\theoremstyle{plain}
+\newtheorem{thm}{Теорема}[chapter]
+\renewcommand{\thethm}{\arabic{thm}}
+\newcommand{\theHthm}{\thechapter.\arabic{thm}}
+
+\newtheorem{thmn}{Теорема}[chapter] %штрихованное.
+\renewcommand{\thethmn}{\arabic{thm}'}
+\newcommand{\theHthmn}{\thechapter.\arabic{thmn}'}
+
+
+\newtheorem{cons}{Следствие}[chapter]
+\renewcommand{\thecons}{\arabic{cons}}
+\newcommand{\theHcons}{\thechapter.\arabic{cons}}
+
+\newtheorem{consn}{Cледствие}[chapter] %штрихованное.
+\renewcommand{\theconsn}{\arabic{cons}'}
+\newcommand{\theHconsn}{\thechapter.\arabic{consn}'}
+
+
+\newtheorem{lemm}{Лемма}[chapter]
+\renewcommand{\thelemm}{\arabic{lemm}}
+\newcommand{\theHlemm}{\thechapter.\arabic{lemm}}
+
+\newtheorem{lemmn}{Лемма}[chapter] %штрихованное.
+\renewcommand{\thelemmn}{\arabic{lemm}'}
+\newcommand{\theHlemmn}{\thechapter.\arabic{lemmn}'}
+  
+\newtheorem{exmpl}{Пример}[chapter]
+\renewcommand{\theexmpl}{\arabic{exmpl}}
+\newcommand{\theHexmpl}{\thechapter.\arabic{exmpl}}
+
+\newtheorem{stt}{Утверждение}[chapter]
+\renewcommand{\thestt}{\arabic{stt}}
+\newcommand{\theHstt}{\thechapter.\arabic{stt}}
+
+\newtheorem{exerc}{Упражнение}[chapter]
+\renewcommand{\theexerc}{\arabic{exerc}}
+\newcommand{\theHexerc}{\thechapter.\arabic{exerc}}
+
+\newtheorem{axiome}{Аксиома}[chapter]
+\renewcommand{\theaxiome}{\arabic{axiome}}
+\newcommand{\theHaxiome}{\thechapter.\arabic{axiome}}
+
+\newtheorem{axiomen}{Аксиома}[chapter] %штрихованное.
+\renewcommand{\theaxiomen}{\arabic{axiome}'}
+\newcommand{\theHaxiomen}{\thechapter.\arabic{axiomen}'}
+
+\newtheorem*{notion}{Замечание}
+
+\numberwithin{equation}{chapter}
+\renewcommand{\theequation}{\arabic{equation}}
+\newcommand{\theHequation}{\thechapter.\arabic{equation}}
+
+\newenvironment{solution}
+  {\begin{proof}[Решение.]}
+  {\end{proof}}
+
+%\renewcommand\qedsymbol{$\triangle$}
+
 %special mention
 
 \usepackage[breaklinks,pdftex,hyperindex,unicode]{hyperref}	
@@ -162,21 +252,6 @@
   colorlinks = true,     
   		linkcolor  = darkblue, 
   		urlcolor = Purplemountainmajesty
-}
-
-
-\usepackage{bookmark}
-\bookmarksetup{
-open,
-numbered,
-addtohook={%
-\ifnum\bookmarkget{level}=0 % chapter
-\bookmarksetup{bold}%
-\fi
-\ifnum\bookmarkget{level}=-1 % part
-\bookmarksetup{color=ocre,bold}%
-\fi
-}
 }
 
 %!!!conflicting order of packages

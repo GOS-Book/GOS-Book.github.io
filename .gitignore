@@ -29,3 +29,13 @@ _main.pdf
 **/*.mtc*
 **/*.ptc*
 **/*.maf
+structure.tex
+_main.tex
+**/*.ist
+**/*.bib
+**/*.xml
+**/*.bcf
+**/*.ps
+TemplateExmp.tex
+epicstyle/**
+_main.tex
