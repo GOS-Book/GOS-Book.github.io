@@ -1,0 +1,18 @@
+sudo: required
+dist: trusty
+before_install:
+- sudo apt-get -qq update
+- sudo apt-get install -y --no-install-recommends texlive-latex-base texlive-latex-recommended
+  texlive-latex-extra cm-super-minimal texlive-lang-cyrillic texlive-fonts-recommended
+  texlive-fonts-extra latexmk texlive-generic-recommended latex-xcolor pgf make
+script:
+- make
+deploy:
+  provider: releases
+  api_key:
+    secure: 0P4rYwANOp7/+Mv8fvc9gH8IzQUh08PJBFuXZnox9+zpkY3qC+1oCzZGAztWOP0SvRDHnNCeAU5qcoHE+OpqXZNf8K/cJYSz+tWDdss87EqmE73R7QmyTeRXuRAcp6xkpBQAER6RgP4i85Olxl5HfJU1Us2JdqCFRqoM25NGAHw+YwP5iHZnEN3lecHyot0erBsDYUY7RSvEHKu7CcN8viqo41hptnmfnUwPEl9I/1mcQcgnztLWwiUbf9WvKl7zmajjLc7HM+FCVhZDdCxTph0wPt9kuY3ici2M4n1GsvBE++2XMhoeskRvePnlSvXzFuQhhq0OD2GjC/3zaM/NOqwVUUBNCEQ6H3tG9US7bIxrvI7ZSMry8JGJhXJy13TdbiwN1leFIortZYAJ1HTZSbShYPGWTBi3Qmr4lAidHmKtGIajEePciokO4vi1Po7/npUX19K2bwipY8Itte50YTX2L7wyxkpkypIB/V9Dc1ULE5DNbGp2PqX/jwsMAcU1nsGSPYDfItau6DfditR11o7rRoL5tLpD4o01TKoBDWF4lwCoD9q9mlZ8NJe0o9sLUFgEQN1Z3p9oulEFs5TgzsMNuiIHCO2ZRqC8xYZiFOi1QcRpoA6Hvdp2oiWn0pqwKgJ0JUt75ZPrlOROAoXYx3n7yNl132OArNP/weD4n9g=
+  file: main.pdf
+  skip_cleanup: true
+  on:
+    tags: true
+    repo: mkuznets/quantum-mechanics-lectures
