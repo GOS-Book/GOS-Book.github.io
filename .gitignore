@@ -39,3 +39,6 @@ _main.tex
 TemplateExmp.tex
 epicstyle/**
 _main.tex
+_main.tex
+*.mst
+mystyle.xdy

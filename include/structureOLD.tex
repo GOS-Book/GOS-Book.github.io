@@ -7,7 +7,7 @@
 \usepackage[T2A]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[russian]{babel}
- 
+
 \usepackage{indentfirst} 
 \usepackage{amsmath,amssymb,amscd,amsthm} 				
 
@@ -28,14 +28,6 @@
 \usepackage{array}
 \usepackage{ragged2e}
 
-\newcolumntype{A}[2]{%
-    >{\minipage{\dimexpr#1\linewidth-2\tabcolsep-#2\arrayrulewidth\relax}\vspace\tabcolsep}%
-    c<{\RaggedRight\vspace\tabcolsep\endminipage}}
-
-\newcolumntype{B}[2]{%
-    >{\minipage{\dimexpr#1\linewidth-2\tabcolsep-#2\arrayrulewidth\relax}\vspace\tabcolsep}%
-    c<{\centering\vspace\tabcolsep\endminipage}}
-
 \usepackage{fontawesome}
 
 \usepackage{emptypage}
@@ -44,9 +36,11 @@
 \usepackage{tikz}
 %\usepackage{cancel}
 \usepackage[e]{esvect}		
-													
+
 \usepackage{xcolor}
 \usepackage{colortbl}
+
+\definecolor{ocre}{rgb}{0,0,.6}
 \definecolor{darkblue}{rgb}{0,0,.6}
 \definecolor{Purplemountainmajesty}{RGB}{150, 120, 182}
 
@@ -55,7 +49,7 @@
 
 %\usepackage{enumitem}
 %\setlist{nosep}
-     
+
 %\forloop[hstepi]{hcounter i}{hinitial valuei}{hconditioni}{hcodei}
 \usepackage{forloop}
 %\newcounter{ct}
@@ -66,79 +60,65 @@
 %Фиолетовая линия сбоку. 
 \renewenvironment{leftbar}[1][\hsize]
 {%
-    \def\FrameCommand
-    {%
-        {\color{Purplemountainmajesty}\vrule width 1.35pt}%
-        \hspace{5pt}%must no space.
-        %\fboxsep=\FrameSep\colorbox{#3FORCOLOR}%
-    }%
-    \MakeFramed{\hsize#1\advance\hsize-\width\FrameRestore}%
+	\def\FrameCommand
+	{%
+		{\color{Purplemountainmajesty}\vrule width 1.35pt}%
+		\hspace{5pt}%must no space.
+		%\fboxsep=\FrameSep\colorbox{#3FORCOLOR}%
+	}%
+	\MakeFramed{\hsize#1\advance\hsize-\width\FrameRestore}%
 }
 {\endMakeFramed}
 
 
-% Запрет разрыва страница внутри данного окружения. Иногда бывает полезно.
-\newenvironment{absolutelynopagebreak}
-  {\par\nobreak\vfil\penalty0\vfilneg
-   \vtop\bgroup}
-  {\par\xdef\tpd{\the\prevdepth}\egroup
-   \prevdepth=\tpd}
-
-  
-\input{include/wrapping}
-
 %https://www.ctan.org/pkg/minitoc
 %Чтобы создавать минисодержания, например, после partpage в формулах
 \usepackage{minitoc}
-    
+
 \usepackage{titlesec, titletoc}
 \titleformat{\chapter}[display]
-  {\raggedright\normalfont\Large\bfseries}{\chaptertitlename\thechapter}{2ex}{}
+{\raggedright\normalfont\Large\bfseries}{\chaptertitlename\thechapter}{2ex}{}
 
 \titleformat{\section}
-  {\normalfont\Large\bfseries}{\thesection.}{1em}{}
+{\normalfont\Large\bfseries}{\thesection.}{1em}{}
 \renewcommand{\thesection}{\textsection\arabic{section}}
 \titlecontents{section}[2.7em]{\addvspace{0.5ex}}%
- {\contentslabel[\thecontentslabel.]{1.25em}\hskip0.8em}%numbered
- {}%numberless%
- {\enspace\titlerule*[0.7pc]{.}\contentspage}%
+{\contentslabel[\thecontentslabel.]{1.25em}\hskip0.8em}%numbered
+{}%numberless%
+{\enspace\titlerule*[0.7pc]{.}\contentspage}%
 
 \renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}.}
 
 \usepackage{fancyhdr}
-  \pagestyle{fancy}
+\pagestyle{fancy}
 \fancyfoot[C]{\thepage}
 \fancyhead{}
 %Even - четная, Odd - нечетная
 \fancyhead [CE] {\nouppercase{\slshape \small \rightmark}}
 \fancyhead [CO] {\nouppercase{\slshape \small \leftmark}}
 \renewcommand{\chaptermark}[1]{%
- \markboth{\ifnum\value{secnumdepth}>-1 \chaptertitlename\thechapter \fi}{}%
+	\markboth{\ifnum\value{secnumdepth}>-1 \chaptertitlename\thechapter \fi}{}%
 }
-
-\makeatletter
-\newcommand{\resetHeadWidth}{\fancy@setoffs}
-\makeatother
 
 \addto\captionsrussian{\renewcommand{\chaptername}{Билет №}}
 
 \usepackage{pgfornament}
 \newcommand{\framesize}{\textwidth}
 \titleformat{\part}
-  [display]
-  {\centering\normalfont\Huge\bfseries}
-  {%
-    \mbox{\pgfornament[width=0.75\framesize,symmetry=h]{75}}
-    \vskip 3pt
-    \MakeUppercase{\Huge \partname\ \thepart}%
-  }
-  {3pt}
-  {\huge\MakeUppercase}
-  [%
-  \mbox{\pgfornament[width=0.75\framesize]{75}}%
-  ]
+[display]
+{\centering\normalfont\Huge\bfseries}
+{%
+	\mbox{\pgfornament[width=0.75\framesize,symmetry=h]{75}}
+	\vskip 3pt
+	\MakeUppercase{\Huge \partname\ \thepart}%
+}
+{3pt}
+{\huge\MakeUppercase}
+[%
+\mbox{\pgfornament[width=0.75\framesize]{75}}%
+]
 
-   
+
 % page settings 
 \parindent=0.6cm
 
@@ -149,9 +129,9 @@
 % front page
 \author{Диденко Андрей}
 \title{Подготовка к ГОСу по МатАнализу \LaTeX
-\thanks{Спасибо всем моим друзьям за поддержку в написании этого документа}
-\date{10 Апреля 2016}}
-  
+	\thanks{Спасибо всем моим друзьям за поддержку в написании этого документа}
+	\date{10 Апреля 2016}}
+
 % other settings
 \pdfcompresslevel=9
 \pdfobjcompresslevel=9
@@ -204,7 +184,7 @@
 \newtheorem{lemmn}{Лемма}[chapter] %штрихованное.
 \renewcommand{\thelemmn}{\arabic{lemm}'}
 \newcommand{\theHlemmn}{\thechapter.\arabic{lemmn}'}
-  
+
 \newtheorem{exmpl}{Пример}[chapter]
 \renewcommand{\theexmpl}{\arabic{exmpl}}
 \newcommand{\theHexmpl}{\thechapter.\arabic{exmpl}}
@@ -232,8 +212,8 @@
 \newcommand{\theHequation}{\thechapter.\arabic{equation}}
 
 \newenvironment{solution}
-  {\begin{proof}[Решение.]}
-  {\end{proof}}
+{\begin{proof}[Решение.]}
+	{\end{proof}}
 
 %\renewcommand\qedsymbol{$\triangle$}
 
@@ -241,17 +221,17 @@
 
 \usepackage[breaklinks,pdftex,hyperindex,unicode]{hyperref}	
 \hypersetup{
-  pdftitle           = {\texorpdfstring{GOS Book Matan}{GOS Book Matan}},
-  pdfauthor          = {Didenko Andre},
-  pdfsubject         = {Matan},
-  pdfstartview       = {FitH},
-  pdfborder          = {0 0 0},
-  bookmarksopen      = true,
-  bookmarksnumbered  = true,
-  bookmarksopenlevel = 2,
-  colorlinks = true,     
-  		linkcolor  = darkblue, 
-  		urlcolor = Purplemountainmajesty
+	pdftitle           = {\texorpdfstring{GOS Book Matan}{GOS Book Matan}},
+	pdfauthor          = {Didenko Andre},
+	pdfsubject         = {Matan},
+	pdfstartview       = {FitH},
+	pdfborder          = {0 0 0},
+	bookmarksopen      = true,
+	bookmarksnumbered  = true,
+	bookmarksopenlevel = 2,
+	colorlinks = true,     
+	linkcolor  = darkblue, 
+	urlcolor = Purplemountainmajesty
 }
 
 %!!!conflicting order of packages
@@ -262,12 +242,5 @@
 %чтобы скобки были прямыми во всем документе, и не поддавались \textit. Однако не распространяется на теоремы и окружения.
 \usepackage{embrac}
 
-% создать отдельное оглавнение, у маленькой штучки. Уточни значение числа 1.
-\newcommand\DoToC{%
-  \startcontents
-  \printcontents{}{1}{\textbf{Contents}\vskip3pt\hrule\vskip5pt}
-  \vskip3pt\hrule\vskip5pt
-}
-
 % чтобы фильтровать warnings.
-\usepackage{silence}
+\newcommand{\rindex}[1]{#1}

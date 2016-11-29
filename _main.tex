@@ -3,6 +3,7 @@
 \include{include/header}
 \include{include/macros}
 
+%--shell-escape
 %\includeonly{chapters/chapter1}
 %%comment it before outprinting
 %\usepackage{showkeys}
@@ -31,6 +32,6 @@
 \renewcommand{\chaptermark}[1]{\markboth{\ifnum\value{secnumdepth}>-1 \sffamily\small \chaptertitlename\ \thechapter \fi}{}}
 \include{appendix/formulas}
 \pagestyle{empty}
+\printindex
 \backmatter
-
 \end{document}
