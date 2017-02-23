@@ -6,8 +6,7 @@ before_install:
   texlive-latex-extra cm-super-minimal texlive-lang-cyrillic texlive-fonts-recommended
   texlive-fonts-extra latexmk texlive-generic-recommended latex-xcolor pgf make
   texlive-bibtex-extra
-  texlive-insbox
-  texlive-threeparttable
+- sudo apt-get install texlive-full
 script:
 - make
 deploy:
