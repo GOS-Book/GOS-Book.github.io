@@ -1,0 +1,84 @@
+\begingroup
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture,overlay]
+\coordinate [below=8 cm] (midpoint) at (current page.north);
+\node at (current page.north west)
+{\begin{tikzpicture}[remember picture,overlay]
+\node[anchor=north west,inner sep=0pt] at (0,0) {\includegraphics[width=\paperwidth]{epicstyle/background}}; % Background image
+\draw[anchor=north] (midpoint) node [fill=ocre!30!white,fill opacity=0.6,text opacity=1,inner sep=1cm]{\Huge\centering\bfseries\sffamily\parbox[c][][t]{\paperwidth}{\centering GOSBook\\[15pt] % Book title
+%{\Large }\\[20pt] % Subtitle
+{\huge Didenko Andre}}}; % Author name
+\end{tikzpicture}};
+\end{tikzpicture}
+\vfill
+\endgroup
+
+\newpage
+\thispagestyle{empty}
+\begingroup
+\newgeometry{margin=1.6cm, top=1.2cm, footskip = 1 cm, headheight=11pt,headsep=0.2cm}
+\epigraph{Умереть не страшно, страшно не жить.}{Виктор Гюго}\centering
+\settowidth{\unitlength}{\LARGE\scshape Московский Физико-Технический Институт}
+
+\begin{figure}[!h]
+\center
+\includegraphics[width=0.27\textwidth]{pictures/MIPT2}
+\end{figure}
+\vspace*{\baselineskip}
+{\LARGE\scshape Московский Физико-Технический Институт}\\[\baselineskip]
+\rule{\unitlength}{1.6pt}\vspace*{-\baselineskip}\vspace*{2pt}
+\rule{\unitlength}{0.4pt}\\[1.8\baselineskip]
+{\Huge Подготовка к ГОСу по Матану}\\[\baselineskip]
+{\large \itshape Sapere aude}\\[0.7\baselineskip]
+\rule{\unitlength}{0.4pt}\vspace*{-\baselineskip}\vspace{3.2pt}
+\rule{\unitlength}{1.6pt}\\[\baselineskip]
+{\Large\scshape Диденко А.А. \\ $ $\\студент 311 группы}\par
+\vspace*{1.5\baselineskip}  
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%4
+{\LARGE\scshape Редакция от \twodigit\day.\twodigit\month.\the\year \;(\currenttime)}\par % при печати убрать.
+
+\mbox{}
+
+\textcolor{red}{\huge \textbf{Обновляйте книгу по этим ссылкам!}}
+
+\vspace*{0.5\baselineskip} 
+
+\href{http://latex.aslushnikov.com/compile?git=https://github.com/DidenkoAndre/GOS_book&target=_main.tex}{\large \textcolor{Purplemountainmajesty}{\textit{https://latex.aslushnikov.com/...}}}
+
+\vspace*{0.5\baselineskip} 
+
+\href{https://www.dropbox.com/sh/7e5mfj8q68o2ipp/AAD8XvpZhiJzFbEh_IeH305ia?dl=0&preview=GOSBook.pdf}{\large \textcolor{Purplemountainmajesty}{\textit{https://www.dropbox.com/...}}}
+
+\mbox{}
+
+\textcolor{PersianBlue}{\huge \textsf{Подписывайтесь на нашего telegram-бота!}} 
+
+\vspace*{0.5\baselineskip} 
+
+\href{https://t.me/GOSBook_Bot}{\textcolor{Purplemountainmajesty}{$@GOSBook\_Bot$}} (\textit{Находится в разработке})
+
+\mbox{}
+
+Крайне не рекомендую использовать это пособие\\ {\textbf{в данный момент}} \\как \textit{\textbf{основную}} литературу в подготовке к ГОСу. \\
+
+\mbox{}
+
+\textcolor{red}{\Large \textbf{
+Ищем добровольцев для помощи в написании и редактировании этой книги!!!}}
+
+\vspace*{0.3\baselineskip} 
+
+\textcolor{red}{
+писать сюда: \href{https://vk.com/didenko_andre}{ \textcolor{Purplemountainmajesty}{$vk.com/didenko\_andre$}}
+}
+
+\mbox{}
+
+\vfill
+{\LARGE\scshape \LaTeX}\\[\baselineskip]
+{\LARGE\scshape 2016}\par
+\restoregeometry
+\endgroup
+\newpage

@@ -1,0 +1,18 @@
+ ;;; xindy style file
+ (markup-locclass-list :open "\dotfill" :sep "")
+
+ (define-letter-groups
+ ("a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m"
+ "n" "o" "p" "q" "r" "s" "t" "u" "v" "w" "x" "y" "z"))
+
+ (require
+ "rules/latin-tolower.xdy")
+
+ (use-rule-set
+ :run 0
+ :rule-set ("latin-tolower"))
+
+ (markup-letter-group
+ :open-head "\nopagebreak\tikz\node at (0pt,0pt) [draw=none,fill=ocre!50,line width=1pt,inner sep=5pt]{\parbox{\linewidth-2\fboxsep-2\fboxrule-2pt}{\centering\large\sffamily\bfseries\textcolor{white}{ "
+    :close-head "}}};\vspace*{0.2cm}\nopagebreak"
+ :capitalize)
