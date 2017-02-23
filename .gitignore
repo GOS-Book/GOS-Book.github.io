@@ -38,6 +38,7 @@ _main.tex
 **/*.ps
 TemplateExmp.tex
 epicstyle/**
+pictures/reference/**
 _main.tex
 _main.tex
 *.mst
