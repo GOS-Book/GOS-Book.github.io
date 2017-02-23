@@ -5,6 +5,7 @@ before_install:
 - sudo apt-get install -y --no-install-recommends texlive-latex-base texlive-latex-recommended
   texlive-latex-extra cm-super-minimal texlive-lang-cyrillic texlive-fonts-recommended
   texlive-fonts-extra latexmk texlive-generic-recommended latex-xcolor pgf make
+  texlive-bibtex-extra
 script:
 - make
 deploy:
