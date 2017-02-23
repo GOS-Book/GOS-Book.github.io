@@ -7,6 +7,7 @@ before_install:
   texlive-fonts-extra latexmk texlive-generic-recommended latex-xcolor pgf make
   texlive-bibtex-extra
   texlive-insbox
+  textlive-threeparttable
 script:
 - make
 deploy:
