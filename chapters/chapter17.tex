@@ -23,7 +23,7 @@
 \begin{defn}
 Любые две функции $\phi(x)$	и $\psi(x)$, определенные на промежутке $\Delta$, называются \textit{ортогональными на $\Delta$}, если их произведение интегрируемо на $\Delta$ (в собственном или несобственном смысле) и
 $$
-\int \limits_\Delta\phi(x) \psi(x)dx=0
+\int \limits_\Delta\phi(x) \psi(x)\,dx=0
 $$
 Очевидно, функция, тождественно равнвю нулю на промежутке $\Delta$, ортогональна на $\Delta$ любой функции, определенной на $\Delta$.
 \end{defn}
@@ -51,7 +51,7 @@ $$
 \begin{defn}
 Система функций \eqref{ch17.1eq0}, определенных на промежутке $\Delta$, называется \textit{ортонормированной на $\Delta$}, если она ортогональна на $\Delta$ и 
 \begin{equation} \label{ch17.1eq000}
-\int \limits_\Delta{|\phi_n(x)|^2dx=1} \quad \forall n \in \bbN.
+\int \limits_\Delta{|\phi_n(x)|^2\,dx=1} \quad \forall n \in \bbN.
 \end{equation}
 Условие \eqref{ch17.1eq000} называется \textit{условием нормировки.}
 \end{defn}
@@ -68,17 +68,17 @@ f(x)= \sum_{n = 1}^{\infty} a_n \phi_n(x),
 \end{equation}
 Найдем формулы для определения коэффициентов этого ряда. Для этого обе части равентсва \eqref{ch17.1eq03} умножим на $\phi_k(x)$ и проинтегрируем по промежутку $\Delta$, предполагая, что полученный ряд можно интегрировать почленно. В результате получим равенство
 $$
-\int \limits_\Delta{f(x) \phi_k(x)}dx=a_k\int \limits_\Delta|\phi_k(x)|^2dx,
+\int \limits_\Delta{f(x) \phi_k(x)}\,dx=a_k\int \limits_\Delta|\phi_k(x)|^2\,dx,
 $$
 так как интегралы от произведений $\phi_n(x)\psi_n(x)$ при $n\ne k$ равны нулю (в силу ортогональьности системы \eqref{ch17.1eq02})
 
 Предположим еще, что ортогональную систему \eqref{ch17.1eq02} можно нормировать, т.е. что
 $$
-\int \limits_\Delta|\phi_k(x)|^2dx\ne 0 \quad \forall n
+\int \limits_\Delta|\phi_k(x)|^2\,dx\ne 0 \quad \forall n
 $$
 Тогда для коэффициентов $a_n$ ряда \eqref{ch17.1eq03} получим формулу
 \begin{equation} \label{ch17.1eq04}
-a_n= \frac{1}{\int \limits_\Delta|\phi_n(x)|^2dx} \int \limits_\Delta f(x)\phi_n(x)dx, \quad n\in \bbN.
+a_n= \frac{1}{\int \limits_\Delta|\phi_n(x)|^2\,dx} \int \limits_\Delta f(x)\phi_n(x)\,dx, \quad n\in \bbN.
 \end{equation}
 
 \begin{defn}
@@ -94,7 +94,7 @@ $a=c_0<c_1<\ldots<c_m=b$;
 \item[2)]
 $\forall [\alpha;\beta]\subset(c_{k-1};c_k),\ k\in \overline{1,m}$ функция $f$ интегрируема по Риману на $[\alpha;\beta]$;	
 \item[3)]
-$\int \limits_\Delta |f(x)|dx$ сходится;
+$\int \limits_\Delta |f(x)|\,dx$ сходится;
 \item[2)]
 $ \forall\epsilon>0$ функция $f$ интегрируема по Риману на множестве 
 
@@ -113,7 +113,7 @@ $G_{\epsilon}=\Delta \setminus (\bigcup \limits_{k=0}^{m}(O_{\epsilon}(c_k))$
 \end{equation}
 Из общей формулы для коэффициентов Фурье следует, что коэффициенты $a_0, a_n, b_n$ ряда ($\ref{ch17eq2}$) вычисляются по формулам:
 \begin{align} \label{ch17eq3}
-a_0 &= \frac{1}{l} \int\limits_{a}^{b} f(x)dx,\\
+a_0 &= \frac{1}{l} \int\limits_{a}^{b} f(x)\,dx,\\
 a_n &= \frac{1}{l} \int\limits_{a}^{b} f(x)\,\cos n\frac{\pi}{l}x\, dx,\\
 b_n &= \frac{1}{l} \int\limits_{a}^{b} f(x)\,\sin n\frac{\pi}{l}x\, dx,
 \end{align}
@@ -139,11 +139,11 @@ $$
 \begin{defn}
 Для любой функции $f(x) \in \overset{*}{L^{R}_1}(-l;l)$ числа
 \begin{equation}
-c_{\nu} = \frac{1}{2l} \int\limits_{-l}^{l} f(x)\, e^{-i\nu\frac{\pi}{l}x}dx,\quad \nu = 0,\pm 1, \pm 2,\ldots
+c_{\nu} = \frac{1}{2l} \int\limits_{-l}^{l} f(x)\, e^{-i\nu\frac{\pi}{l}x}\,dx,\quad \nu = 0,\pm 1, \pm 2,\ldots
 \end{equation}
 называются \textit{коэффициентами Фурье функции f по ортогональной системе} \eqref{ch17eq6}, причем
 \begin{equation}
-c_0 = a_0/2, \quad c_{k} = \cfrac{a_k - ib_k}{2}, \quad c_{-k} = \cfrac{a_k + ib_k}{2} \quad \forall\ k \in \bbN,
+c_0 = a_0/2, \quad c_{k} = \cfrac{a_k - ib_k}{2}, \quad c_{-k} = \cfrac{a_k + ib_k}{2} \quad \forall k \in \bbN,
 \end{equation}
 где $a_0, a_n, b_n$ "--- коэффициенты Фурье функции $f$ по тригонометрической системе \eqref{ch17eq1}.
 \end{defn}
@@ -173,7 +173,7 @@ $$
 \begin{thm} \label{ch17thm1}
 Если функция $f(x)$ абсолютно интегрируема на промежутке $\Delta$, то для любого $\epsilon > 0$ существует финитная ступенчатая функция $\phi(x)$ такая, что $\supp\phi \subset \overline{\Delta}$ и
 \begin{equation} \label{ch17eq7}
-\int\limits_{\Delta} |f(x) - \phi(x)|dx < \epsilon.
+\int\limits_{\Delta} |f(x) - \phi(x)|\,dx < \epsilon.
 \end{equation}
 \end{thm}
 \begin{proof}
@@ -181,17 +181,17 @@ $$
 
 Из определения абсолютно интегрируемой функции $f$ на промежутке $\Delta$ следует, что существует ограниченное измеримое множество $g_{\epsilon} \subset \Delta$, на котором функция $f$ интегрируема по Риману, причем
 $$
-\int\limits_{\Delta} |f(x)|dx - \int\limits_{g_{\epsilon}} |f(x)|dx = \int\limits_{\Delta\backslash g_{\epsilon}} |f(x)|dx
+\int\limits_{\Delta} |f(x)|\,dx - \int\limits_{g_{\epsilon}} |f(x)|\,dx = \int\limits_{\Delta\backslash g_{\epsilon}} |f(x)|\,dx
 $$
 
 Через $f_{\epsilon}(x)$ обозначим функцию, равную $f(x)$ на $g_{\epsilon}$ и нулю вне $g_{\epsilon}$. Очевидно,
 \begin{equation} \label{ch17eq8}
-\int\limits_{\Delta} |f(x) - f_{\epsilon}(x)|dx = \int\limits_{\Delta\backslash g_{\epsilon}} |f(x)|dx < \frac{\epsilon}{2}
+\int\limits_{\Delta} |f(x) - f_{\epsilon}(x)|\,dx = \int\limits_{\Delta\backslash g_{\epsilon}} |f(x)|\,dx < \frac{\epsilon}{2}
 \end{equation}
 
 Функция $f_{\epsilon}(x)$ равна нулю вне ограниченного множества $g_{\epsilon} \subset \Delta$, поэтому ее носитель содержится в некотором отрезке $[a;b] \subset \overline{\Delta}$. На этом отрезке она интегрируема по Риману, так как она интегрируема по Риману на $g_{\epsilon}\ \text{и на}\ [a;b]\backslash g_{\epsilon}$. Поэтому существует разбиение $\tau$ отрезка $[a;b]$ на промежутки $\Delta_1,\ldots,\Delta_N$ такое, что
 $$
-\int\limits_{a}^{b} f_{\epsilon}(x)dx - s(f_{\epsilon};\tau) < \frac{\epsilon}{2},
+\int\limits_{a}^{b} f_{\epsilon}(x)\,dx - s(f_{\epsilon};\tau) < \frac{\epsilon}{2},
 $$
 где $s(f_{\epsilon};\tau)$ "--- нижняя сумма Дарбу функции $f_{\epsilon}(x)$, т.е.
 $$
@@ -199,16 +199,16 @@ s(f_{\epsilon};\tau) = \sum_{j = 1}^{N} m_{j}|\Delta_j|,
 $$
 где $m_j = \inf\limits_{x \in \Delta_j}\,f_{\epsilon}(x)$. Через $\phi(x)$ обозначим ступенчатую функцию, которая равна $m_j$ на $\Delta_j,\ j = 1,\ldots,N$, и нулю вне $[a;b]$. Очевидно, $\phi(x) \le f_{\epsilon}(x)$ для любого $x \in \bbR$,
 $$
-\int\limits_{\Delta} \phi(x)dx = \int\limits_{a}^{b} \phi(x)dx = s(f_{\epsilon};\tau),
+\int\limits_{\Delta} \phi(x)\,dx = \int\limits_{a}^{b} \phi(x)\,dx = s(f_{\epsilon};\tau),
 $$
 и, следовательно,
 \begin{equation} \label{ch17eq9}
-\int\limits_{\Delta} |f(x) - \phi(x)|dx = \int\limits_{a}^{b} f_{\epsilon}(x)dx - s(f_{\epsilon};\tau) < \frac{\epsilon}{2}
+\int\limits_{\Delta} |f(x) - \phi(x)|\,dx = \int\limits_{a}^{b} f_{\epsilon}(x)\,dx - s(f_{\epsilon};\tau) < \frac{\epsilon}{2}
 \end{equation}
 Из неравенств \eqref{ch17eq8} и \eqref{ch17eq9} следует, что финитная ступенчатая функция $\phi(x)$ удовлетворяет неравенству \eqref{ch17eq7} теоремы. Действительно:
 \begin{multline*}
-\int\limits_{\Delta} |f(x) - \phi(x)|dx \le \int\limits_{\Delta} |f(x) - f_{\epsilon}(x)|dx+\\
-+\int\limits_{\Delta} |f(x) - \phi(x)|dx < \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon
+\int\limits_{\Delta} |f(x) - \phi(x)|\,dx \le \int\limits_{\Delta} |f(x) - f_{\epsilon}(x)|\,dx+\\
++\int\limits_{\Delta} |f(x) - \phi(x)|\,dx < \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon
 \end{multline*}
 \end{proof}
 
@@ -221,35 +221,35 @@ $$
 \begin{proof}
 Для характеричстических функций любого конечного промежутка это утверждение очевидно. Действительно, если $\xi$ и $\eta$ "--- концы промежутка, то
 $$
-\left|\int\limits_{\xi}^{\eta} e^{i\lambda x}dx\right| = \left|\cfrac{e^{i\lambda \eta} - e^{i\lambda \xi}}{i\lambda}\right| \le \frac{2}{|\lambda|}.
+\left|\int\limits_{\xi}^{\eta} e^{i\lambda x}\,dx\right| = \left|\cfrac{e^{i\lambda \eta} - e^{i\lambda \xi}}{i\lambda}\right| \le \frac{2}{|\lambda|}.
 $$
 
 А так как любая финитная ступенчатая функция есть линейная комбинация характеристических функций конечного числа конечных промежутков, то утверждение теоремы верно для любой такой функции.
 
 Согласно теореме \ref{ch17thm1}, для любого $\epsilon > 0$ существует финитная ступенчатая функция $\phi(x)$ такая, что
 $$
-\int\limits_{\Delta} |f(x) - \phi(x)|dx < \frac{\epsilon}{2}.
+\int\limits_{\Delta} |f(x) - \phi(x)|\,dx < \frac{\epsilon}{2}.
 $$
 
 Тогда
 $$
-\left|\int\limits_{\Delta} f(x)e^{i\lambda x}dx\right| \le \int\limits_{\Delta} |f(x) - \phi(x)|dx\ +\ \left|\int\limits_{\Delta} \phi(x)e^{i\lambda x}dx\right|.
+\left|\int\limits_{\Delta} f(x)e^{i\lambda x}\,dx\right| \le \int\limits_{\Delta} |f(x) - \phi(x)|\,dx\ +\ \left|\int\limits_{\Delta} \phi(x)e^{i\lambda x}\,dx\right|.
 $$
 
 Последний интеграл, согласно уже доказанному, стремится к нулю при $\lambda \to \infty$, поэтому
 $$
-\exists\ \lambda_{\epsilon} : \quad \forall\ \lambda, |\lambda| > \lambda_{\epsilon} : \left|\int\limits_{\Delta} \phi(x)e^{i\lambda x}dx\right| < \frac{\epsilon}{2}.
+\exists\ \lambda_{\epsilon} : \quad \forall\ \lambda, |\lambda| > \lambda_{\epsilon} : \left|\int\limits_{\Delta} \phi(x)e^{i\lambda x}\,dx\right| < \frac{\epsilon}{2}.
 $$
 Следовательно,
 $$
-\left|\int\limits_{\Delta} f(x)e^{i\lambda x}dx\right| < \epsilon \quad \forall\ \lambda, |\lambda| > \lambda_{\epsilon},
+\left|\int\limits_{\Delta} f(x)e^{i\lambda x}\,dx\right| < \epsilon \quad \forall\ \lambda, |\lambda| > \lambda_{\epsilon},
 $$
 что и доказывает равенство \eqref{ch17eq10}.
 \end{proof}
 
 Отметим, что здесь параметр $\lambda$ может принимать любое значение из $\bbR$ и, в частности, может стремиться как к $+\infty$, так и к $-\infty$. Следовательно, наряду с \eqref{ch17eq10} выполняется и равенство
 $$
-\lim_{\lambda \to \infty}\int\limits_{a}^{b} f(x)e^{-i\lambda x}dx = 0
+\lim_{\lambda \to \infty}\int\limits_{a}^{b} f(x)e^{-i\lambda x}\,dx = 0
 $$
 
 \begin{cons}
@@ -301,7 +301,7 @@ $$
 $$
 |F(\xi)| \le \frac{C|\xi|^\alpha}{\left| \sin{\frac{\xi}{2}} \right|} \quad \forall \xi \in (-\delta; \delta).
 $$
-А так как функция $\sin{\frac{\xi}{2}}$ выпукл вверх на отрезке $[0; \pi]$, то
+А так как функция $\sin{\frac{\xi}{2}}$ выпукла вверх на отрезке $[0; \pi]$, то
 
 $$
 \sin{\frac{\xi}{2}} \ge \frac{\xi}{\pi} \quad \forall \xi \in [0; \pi],
