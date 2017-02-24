@@ -6,7 +6,9 @@ define delete
 endef		
 		
 book: $(MAINSRC)		
-	latexmk -pdf -pdflatex="pdflatex -halt-on-error" $(MAINSRC)		
+	git pull origin
+	latexmk -pdf -pdflatex="pdflatex -halt-on-error" $(MAINSRC)
+	mv -f _main.pdf GOSBook.pdf
 		
 chapter: check-env		
 	pdflatex "\newcommand{\n}{$(CH)}\input{chapter}"		
