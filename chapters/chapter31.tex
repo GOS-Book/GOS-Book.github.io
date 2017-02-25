@@ -53,16 +53,16 @@ $$
 
 Когда n-мерный вектор $(\xi_1,\xi_2,\dots,\xi_n)$ имеет плотностью распределения вероятностей $p(x_1,x_2,\dots,x_n)$ (называемой \textit{совместной плотностью распределения}), то функцию распределения можно записать в виде интеграла:
 $$
-F(x_1,\dots,x_n)=\idotsint\limits_\bbD p(z_1,\dots,z_n)\,dz_1dz_2\dots dz_n,
+F(x_1,\dots,x_n)=\idotsint\limits_\bbD p(z_1,\dots,z_n)\,dz_1\,dz_2\,\dots\,dz_n,
 $$
-причем область интегрирования $\bbD$ определяется неравенствами $\xi_i<x_i, i\in \overline{1,n}$
+причем область интегрирования $\bbD$ определяется неравенствами $\xi_i<x_i,\ i\in \overline{1,n}$
 
 Очевидно, что в случае дискретных случайных величин совместную функцию распределения можно записать как n-мерную сумму, также распространенную на область $\bbD$.
 
 
 Решим задачу о функции распределения суммы непрерывных случайных величин $\zeta=\xi+\eta$. Пусть $p(x_1,x_2)$ "--- плотность распределения вероятностей вектора $(\xi,\eta)$. Искомая функция равна вероятности попадания точки $(\xi,\eta)$ в полупространство $\xi+\eta<x$ и, следовательно, 
 \begin{multline}\label{ch31.1eq1}
-F_{\zeta}(x)=\iint\limits_{x_1+x_2<x} p(x_1,x_2)\,dx_1 dx_2=\int\limits_{-\infty}^{+\infty}\int\limits_{-\infty}^{x-x_1}p(x_1,x_2)\,dx_1 dx_2=\\
+F_{\zeta}(x)=\iint\limits_{x_1+x_2<x} p(x_1,x_2)\,dx_1\, dx_2=\int\limits_{-\infty}^{+\infty}\int\limits_{-\infty}^{x-x_1}p(x_1,x_2)\,dx_1\, dx_2=\\
 =\int\limits_{-\infty}^{x}dx_1\int\limits_{-\infty}^{+\infty} p(z,x_1-z)\,dz.
 \end{multline}
 
@@ -149,7 +149,7 @@ $$
 
 Точно так же в случае, когда существуют двумерная плотность распределения $p(x,y)$ случайной величины $(\xi,\eta)$, по формуле \eqref{ch31.1eq1} находим:
 \begin{multline*}
-\bbE(\xi+\eta)=\int x\,dF_{\xi+\eta}(x)=\int x \left(\int p(z,x-z)\,dz\right)dx=\iint xp(z,x-z)\,dz dx=\\=\iint (z+y) p(z,y)\,dz dy=\iint z p(z,y)\,dz dy + \iint y p(z,y)\,dz dy=\\=\int z p_\xi(z)\,dz + \int y p_\eta (y)\,dy= \bbE\xi+\bbE\eta.
+\bbE(\xi+\eta)=\int x\,dF_{\xi+\eta}(x)=\int x \left(\int p(z,x-z)\,dz\right)dx=\iint xp(z,x-z)\,dz\, dx=\\=\iint (z+y) p(z,y)\,dz\, dy=\iint z p(z,y)\,dz\, dy + \iint y p(z,y)\,dz\, dy=\\=\int z p_\xi(z)\,dz + \int y p_\eta (y)\,dy= \bbE\xi+\bbE\eta.
 \end{multline*}
 
 Эта теорема имеет место и в самом общем случае, но мы не будем его касаться в данном пособии.\footnote{Мы не будем их затрагивать, потому что их просто не требуют по программе ГОСа, да и в нашем курсе теории вероятностей (2 семестр ФРТК) не давалось общего случая.}
