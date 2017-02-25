@@ -13,7 +13,7 @@
 \begin{lemm}
 Если функции $P(x,y)$ и $Q(x,y)$ определены и непрерывны на $\overline{\Delta}$, а их производные $P'_y$ и $Q'_x$ непрерывны и интегрируемы на $\Delta$, то справедлива формула
 \begin{equation} \label{Grin}
-\iint\limits_{\Delta} \left( \pd{Q}{x}-\frac{\partial P}{\partial y} \right)\,dxdy = \int\limits_{\partial \Delta} P\,dx + Q\,dy
+\iint\limits_{\Delta} \left( \pd{Q}{x}-\frac{\partial P}{\partial y} \right)\,dx\,dy = \int\limits_{\partial \Delta} P\,dx + Q\,dy
 \end{equation}
 где обход $\partial\Delta$ совершается против часовой стрелки, есди система координат $x,y$ правая (рис 14.1), и по часовой стрелке, если система координат $x,y$ левая (рис 14.2).
 \end{lemm}
@@ -21,22 +21,22 @@
 \begin{proof}
 По формуле сведения кратного интеграла к повторному получаем
 $$
-\iint\limits_{\Delta} \pd{Q}{x} \,dxdy = \int_{c}^{d}\limits dy \int_a^b\limits \pd{Q}{x}\,dx = \int_c^d\limits Q(b,y)\,dy - \int_c^d\limits Q(a,y)\,dy
+\iint\limits_{\Delta} \pd{Q}{x} \,dx\,dy = \int_{c}^{d}\limits dy \int_a^b\limits \pd{Q}{x}\,dx = \int_c^d\limits Q(b,y)\,dy - \int_c^d\limits Q(a,y)\,dy
 $$
 В правой части стоит разность двух интегралов: первый интеграл "--- это криволинейный интеграл по отрезку $BC$, а второй "--- интеграл отрезку $AD$. Следовательно,
 $$
-\iint\limits_\Delta\pd{Q}{x}\,dxdy = \int_{BC}\limits Q\,dy - \int_{AD}\limits Q\,dy = \int_{BC}\limits Q\,dy + \int_{DA}\limits Q\,dy.
+\iint\limits_\Delta\pd{Q}{x}\,dx\,dy = \int_{BC}\limits Q\,dy - \int_{AD}\limits Q\,dy = \int_{BC}\limits Q\,dy + \int_{DA}\limits Q\,dy.
 $$
 
 А так как интегралы от $Q\,dy$ по $AB$ и $CD$ равны нулю, то
 $$
-\iint\limits_\Delta\pd{Q}{x}\,dxdy = \int\limits_{ABCDA} Q\,dy
+\iint\limits_\Delta\pd{Q}{x}\,dx\,dy = \int\limits_{ABCDA} Q\,dy
 $$
 
 Аналогично доказывается, что
 $$
 \iint\limits_\Delta\pd{P}{y}\,dx\,dy = -\int\limits_{ABCDA} P\,dx.  
-$$ 
+$$
 \noindent
 Лемма доказана.
 \end{proof}
