@@ -4,20 +4,20 @@
 
 Аналогом ряда Фурье в данном вопросе будем называть интеграл
 $$
-\int\limits_{0}^{+\infty} (a(y)\cos(yx) + b(y)\sin(yx))dy,\quad \text{где}
+\int\limits_{0}^{+\infty} (a(y)\cos(yx) + b(y)\sin(yx))\,dy,\quad \text{где}
 $$
 $$
-a(y) = \lim_{l \to +\infty}\frac{1}{\pi}\int\limits_{-l}^{l} f(t)\cos(yt)dt,\qquad 
-b(y) = \lim_{l \to +\infty}\frac{1}{\pi}\int\limits_{-l}^{l} f(t)\sin(yt)dt
+a(y) = \lim_{l \to +\infty}\frac{1}{\pi}\int\limits_{-l}^{l} f(t)\cos(yt)\,dt,\qquad 
+b(y) = \lim_{l \to +\infty}\frac{1}{\pi}\int\limits_{-l}^{l} f(t)\sin(yt)\,dt
 $$
 который называется \textit{интегралом Фурье}.
 
 Заметим, что не для всякой функции $f$, которая абсолютно интегрируема на любом конечном интервале, определенные выше пределы существуют. Если же функция $f$ абсолютно интегрируема на $\bbR$, то эти пределы заведомо существуют и
 \begin{equation} \label{ch19eq1}
-a(f;y) = \frac{1}{\pi}\int\limits_{-\infty}^{+\infty} f(t)\cos(yt)dt
+a(f;y) = \frac{1}{\pi}\int\limits_{-\infty}^{+\infty} f(t)\cos(yt)\,dt
 \end{equation}
 \begin{equation} \label{ch19eq2}
-b(f;y) = \frac{1}{\pi}\int\limits_{-\infty}^{+\infty} f(t)\sin(yt)dt
+b(f;y) = \frac{1}{\pi}\int\limits_{-\infty}^{+\infty} f(t)\sin(yt)\,dt
 \end{equation}
 
 \begin{thm}
@@ -41,22 +41,22 @@ $$
 \end{proof}
 
 \begin{defn}
-Определенная на $\bbR$ функция называется \textit{локально интегрируемой}, если она абсолютно интегрируема на любом конечном интервале.
+Определенная на $\bbR$ функция называется \textit{локально интегрируемой}\rindex{функция!локально интегрируемая}, если она абсолютно интегрируема на любом конечном интервале.
 \end{defn}
 \begin{defn}
 Для любой локально интегрируемой функции $\phi, x \in \bbR$ предел
 $$
-\lim_{l \to +\infty}\int\limits_{-l}^{l} \phi(x)dx
+\lim_{l \to +\infty}\int\limits_{-l}^{l} \phi(x)\,dx
 $$
 называеют \textit{интегралом от $+\infty$ до $-\infty$ в смысле главного значения (или в смысле Коши)} и обозначают
 $$
-\v.p.\int\limits_{-\infty}^{+\infty} \phi(x)dx
+\v.p.\int\limits_{-\infty}^{+\infty} \phi(x)\,dx
 $$
 \end{defn}
 
 Для локально интегрируемой на $\bbR$ функции $f$ введем функцию
 \begin{equation} \label{ch19eq5}
-c(f;y)=\v.p.\frac{1}{2\pi}\int\limits_{-\infty}^{+\infty} f(t)e^{-iyt}dt
+c(f;y)=\v.p.\frac{1}{2\pi}\int\limits_{-\infty}^{+\infty} f(t)e^{-iyt}\,dt
 \end{equation}
 являющуюся аналогом коэффициентов Фурье в комплексной форме для периодических функций, и через эту функцию выразим интеграл Фурье функции $f$.
 
@@ -80,17 +80,17 @@ $$
 
 Пусть абсолютно интегрируемая на $\bbR$ функция $f$ в любой точке $x \in \bbR$ непрерывна и удовлетворяет условию Дини или условию Дирихле. Тогда:
 $$
-\forall\ x \in \bbR\quad f(x) = \v.p.\int\limits_{-\infty}^{+\infty} c(f;y)e^{iyx}dy,\quad c(f;y)=\frac{1}{2\pi}\int\limits_{-\infty}^{+\infty} f(x)e^{-iyx}dx
+\forall x \in \bbR\quad f(x) = \v.p.\int\limits_{-\infty}^{+\infty} c(f;y)e^{iyx}\,dy,\quad c(f;y)=\frac{1}{2\pi}\int\limits_{-\infty}^{+\infty} f(x)e^{-iyx}\,dx
 $$
 Здесь функция $f$ принимает действительные значения, а функция $c(f;y)$ принимает, вообще говоря, комплексные значения. Причем, в первом равенстве нет множителя перед интегралом, а во втором "--- стоит множитель $\frac{1}{2\pi}$. Обычно используют более симметричные формулы.
 \begin{defn}
 Для любой локально интегрируемой комплекснозначной функции $f(x), x \in \bbR$ функция
 $$
-\widehat{f}(\xi) = \v.p.\frac{1}{\sqrt{2\pi}} \int\limits_{-\infty}^{+\infty} f(x)e^{-i\xi x}dx
+\widehat{f}(\xi) = \v.p.\frac{1}{\sqrt{2\pi}} \int\limits_{-\infty}^{+\infty} f(x)e^{-i\xi x}\,dx
 $$
 называется \textit{преобразованием (или образом) Фурье функции f}, а функция
 $$
-\widetilde{f}(\xi) = \v.p.\frac{1}{\sqrt{2\pi}} \int\limits_{-\infty}^{+\infty} f(x)e^{i\xi x}dx
+\widetilde{f}(\xi) = \v.p.\frac{1}{\sqrt{2\pi}} \int\limits_{-\infty}^{+\infty} f(x)e^{i\xi x}\,dx
 $$
 называется \textit{обратным преобразованием (или прообразом) Фурье функции f}.
 \end{defn}
@@ -115,7 +115,7 @@ $$
 
 Действительно, из равенства
 $$
-f(x)=f(c)+\int\limits_c^x f'(x)dt,\quad c\in\bbR,
+f(x)=f(c)+\int\limits_c^x f'(t)\,dt,\quad c\in\bbR,
 $$
 и сходимости интеграла $f'(x)$ на $\bbR$ следует, что пределы у $f(x)$ при $x\to\pm\infty$ существуют, а из сходимости интеграла от $f(x)$ на $\bbR$ следует, что эти пределы равны нулю.
 
@@ -129,8 +129,8 @@ $$
 \begin{proof}
 По формуле интегрирования по частям получаем
 $$
-F[f']=\frac{1}{\sqrt{2\pi}}\int\limits_{-\infty}^{+\infty} f'(x)e^{-i\xi x}dx={\frac{1}{\sqrt{2\pi}}f(x)e^{-i\xi x}}	
-\big|^{-\infty}_{+\infty} - \frac{1}{\sqrt{2\pi}}\int\limits_{-\infty}^{+\infty}f(x)(-i\xi)e^{-i\xi x}dx.
+F[f']=\frac{1}{\sqrt{2\pi}}\int\limits_{-\infty}^{+\infty} f'(x)e^{-i\xi x}\,dx={\frac{1}{\sqrt{2\pi}}f(x)e^{-i\xi x}}	
+\big|^{-\infty}_{+\infty} - \frac{1}{\sqrt{2\pi}}\int\limits_{-\infty}^{+\infty}f(x)(-i\xi)e^{-i\xi x}\,dx.
 $$
 В силу леммы, внеинтегральные члены равны нулю, поэтому
 $$
@@ -164,7 +164,7 @@ $$
 \begin{proof}
 По признаку Вейерштрасса интегралы
 $$
-\int\limits_{-\infty}^{+\infty}f(x)e^{-i\xi x}dx\quad \text{и} -i\int\limits_{-\infty}^{+\infty}xf(x)e^{-i\xi x}dx
+\int\limits_{-\infty}^{+\infty}f(x)e^{-i\xi x}\,dx\quad \text{и} -i\int\limits_{-\infty}^{+\infty}xf(x)e^{-i\xi x}\,dx
 $$
 сходятся равномерно по $\xi$ на $\bbR$, поэтому они непрерывны и производная по $\xi$ от первого из них равна второму. Следовательно,
 $$

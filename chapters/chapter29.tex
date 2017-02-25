@@ -19,7 +19,7 @@ y(a)=A,\quad y(b)=B,
 Очевидно, что $\forall y(x)\in M$ интеграл \eqref{ch29eq1} определен и задает функционал (отображение $F \colon M \to \bbC$) с областью определения $M$ в пространстве $C^1[a,b]$.
 
 \begin{defn}
-Говорят, что функция $\hat{y}(x)\in M$ дает \textit{слабый локальный минимум (максимум)} функционала \eqref{ch29eq1}, если $\exists$ число $\epsilon>0$ такое, что для $\forall y(x)\in M$, для которой $||y(x)-\hat{y}(x)||_{C^1[a,b]}<\epsilon$, выполняется неравенство $J(y)\geq J(\hat{y})$ ($J(y)\leq J(\hat{y})$).
+Говорят, что функция $\hat{y}(x)\in M$ дает \textit{слабый локальный минимум (максимум)} функционала \eqref{ch29eq1}, если $\exists$ число $\epsilon>0$ такое, что для $\forall y(x)\in M$, для которой $||y(x)-\hat{y}(x)||_{C^1[a,b]}<\epsilon$, выполняется неравенство $J(y)\geq J(\hat{y})$ ($J(y)\le J(\hat{y})$).
 \end{defn}
 
 Оба понятия "--- слабый локальный минимум и слабый локальный максимум объединяются единым термином: \textit{слабый локальный экстремум}.
@@ -37,7 +37,7 @@ y(a)=A,\quad y(b)=B,
 J(y+\alpha\eta)=\int\limits_a^b F[x,y(x)+\alpha\eta(x),y'(x)+\alpha\eta'(x)]\,dx.
 \end{equation}
 
-При фиксированных $y(x)$ и $\eta(x)$ интеграл $\eqref{ch29eq3}$ является собственным интегралом $\Phi(\alpha)$, зависящим от параметра $\alpha$. Если взять некоторое $\epsilon>0$, то при $|\alpha|\leq\epsilon,\;x\in[a,b]$ подынтегральная функция F и ее производная по $\alpha$ в силу наложенных на $F$ условий являются непрерывными. Тогда по известной из курса анализа теореме $\Phi(\alpha)=J(y+\alpha\eta)$ является дифференцируемой функцией $\alpha$ при $|\alpha|\leq \epsilon$ и по правилу Лейбница
+При фиксированных $y(x)$ и $\eta(x)$ интеграл $\eqref{ch29eq3}$ является собственным интегралом $\Phi(\alpha)$, зависящим от параметра $\alpha$. Если взять некоторое $\epsilon>0$, то при $|\alpha|\le\epsilon,\;x\in[a,b]$ подынтегральная функция F и ее производная по $\alpha$ в силу наложенных на $F$ условий являются непрерывными. Тогда по известной из курса анализа теореме $\Phi(\alpha)=J(y+\alpha\eta)$ является дифференцируемой функцией $\alpha$ при $|\alpha|\le \epsilon$ и по правилу Лейбница
 \begin{multline*}
 \Phi'(0)=\frac{d}{d\alpha}J[y(x)+\alpha\eta(x)]\biggr|_{\alpha=0}=\\=\int\limits_a^b\left\{ \frac{\partial F[x,y(x),y'(x)]}{\partial y}\cdot \eta(x)+\frac{\partial F[x,y(x),y'(x)]}{\partial y'}\cdot \eta'(x)\right\}\,dx.
 \end{multline*}

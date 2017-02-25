@@ -50,7 +50,7 @@ L(D)[e^{\lambda x}y]=e^{\lambda x}(D+\lambda)^ny+a_1e^{\lambda x}(D+\lambda)^{n-
 \begin{lemm} \label{ch26lemm1.3}
 Все решения уравнения $z'-\lambda z = f(x)$, где $\lambda$ "--- комплексное число и $f(x)$ "--- заданная комплекснозначная функция из $C(\bbR)$, задаются формулой	
 $$
-z(x)=e^{\lambda x}\left(C+ \int_{x_0}^{x}\limits e^{-\lambda\zeta}\cdot f(\zeta)d\zeta\right),
+z(x)=e^{\lambda x}\left(C+ \int_{x_0}^{x}\limits e^{-\lambda\zeta}\cdot f(\zeta)\,d\zeta\right),
 $$
 где $C$ "--- произвольная комплексная постоянная. 
 \end{lemm}
@@ -63,7 +63,7 @@ $$
 
 Отсюда
 $$
-c(x)=C+\int_{x_0}^{x}\limits e^{-\lambda\zeta}\cdot f(\zeta)d\zeta,
+c(x)=C+\int_{x_0}^{x}\limits e^{-\lambda\zeta}\cdot f(\zeta)\,d\zeta,
 $$
 что и доказывает лемму.
 \end{proof}
@@ -131,7 +131,7 @@ L(\lambda)=\lambda^n+a_1\lambda^{n-1}+...+a_n.
 $$
 Уравнение $L(\lambda)=0$ называется \textit{характеристическим уравнением} для \eqref{ch26diff.1}.
 
-Напомним, что число $\lambda_0$ называется \textit{корнем кратности} $k\,(k\in\bbN, 1\leq k \leq n$) уравнения $L(\lambda)=0$, если
+Напомним, что число $\lambda_0$ называется \textit{корнем кратности} $k\,(k\in\bbN, 1\le k \le n$) уравнения $L(\lambda)=0$, если
 $$
 L(\lambda)=(\lambda-\lambda_0)^k\cdot L_1(\lambda),
 $$
@@ -165,7 +165,7 @@ $$
 
 
 \begin{thm} \label{ch26thm1}
-Пусть характеристическое уравнение $L(\lambda)=0$ имеет корни $\lambda_1,...,\lambda_m\;(m\in \bbN, 1\leq m\leq n)$ соответственно кратности $k_1,...,k_m\;(k_1+...+k_m=n).$ Тогда:
+Пусть характеристическое уравнение $L(\lambda)=0$ имеет корни $\lambda_1,...,\lambda_m\;(m\in \bbN, 1\le m\le n)$ соответственно кратности $k_1,...,k_m\;(k_1+...+k_m=n).$ Тогда:
 
 а) любая функция вида
 \begin{equation} \label{ch26diff.4}
@@ -204,17 +204,17 @@ $$
 
 Каждое решение второго уравнения системы \eqref{ch26diff.5} в силу предположения индукции имеет вид
 $$
-z(x)=Q_1(x)e^{\lambda_1x}+Q_2(x)e^{\lambda_2x}+...+Q_m(x)e^{\lambda_mx},\quad 1\leq m\leq n,
+z(x)=Q_1(x)e^{\lambda_1x}+Q_2(x)e^{\lambda_2x}+...+Q_m(x)e^{\lambda_mx},\quad 1\le m\le n,
 $$
 где $Q_1(x)$ "--- многочлен степени $(k_1-2)$ в случае $k_1>1$ и $Q_1(x)\equiv 0$ в случае $k_1=1$, а $Q_j(x)$ "--- многочлены степени $(k_j-1)$ при всех $j=\overline{2,m}$. По лемме \ref{ch26lemm1.3} решение первого уравнения системы \eqref{ch26diff.5} имеет вид
 \begin{equation}\label{ch26diff.6}
-y=e^{\lambda_1x}\left(C+\int e^{-\lambda_1x} z(x) dx\right),
+y=e^{\lambda_1x}\left(C+\int e^{-\lambda_1x} z(x)\, dx\right),
 \end{equation}
 где $C$ "--- комплексная постоянная.
 
 Учитывая, что при целом $l\geq 0$ первообразная
 $$
-\int x^le^{\lambda x}dx = \begin{cases}
+\int x^le^{\lambda x}\,dx = \begin{cases}
 (b_0x^l+...+b_l)e^{\lambda x},\quad &\lambda \neq 0,\quad  b_0\neq 0,\\
 \frac{x^{l+1}}{l+1},\quad &\lambda=0.
 \end{cases}
@@ -222,7 +222,7 @@ $$
 и что $\lambda_j-\lambda_1\neq 0,\; \fa j=\overline{2,m}$, из вида $z(x)$ находим, что
 
 $$
-\int e^{-\lambda_1x}z(x)dx = \begin{cases}
+\int e^{-\lambda_1x}z(x)\,dx = \begin{cases}
 P_1(x)+P_2(x)e^{(\lambda_2-\lambda_1)x}+...+P_m(x)e^{(\lambda_m-\lambda_1)x},\quad &k_1>1\\
 P_2(x)e^{(\lambda_2-\lambda_1)x}+...+P_m(x)e^{(\lambda_m-\lambda_1)x},\quad &k_1=1
 \end{cases}
@@ -341,7 +341,7 @@ $$
 
 б) Резонансный случай
 $$
-L(\lambda)=\lambda^k(\lambda^{n-k}+a_1\lambda^{n-k-1}+...+a_{n-k}),\quad 1\leq k \leq n,\quad a_{n-k}\neq 0,\quad k\neq n.
+L(\lambda)=\lambda^k(\lambda^{n-k}+a_1\lambda^{n-k-1}+...+a_{n-k}),\quad 1\le k \le n,\quad a_{n-k}\neq 0,\quad k\neq n.
 $$
 Следовательно,
 $$
