@@ -85,9 +85,9 @@ I^{(n)}(z) = \frac{n!}{2\pi i} \int_\gamma \frac{q(\zeta)}{(\zeta - z)^{n+1}}\,d
 \end{leftbar}
 
 \begin{proof}\leavevmode
-
+\begin{enumerate}[wide, labelwidth=!, labelindent=\parindent]
 \noindent\addpictureitem{pictures/ch34pict2}{0.2}{
-\indent\fbox{$1.$}      
+\item     
 Докажем формулу $\eqref{ch34eq6}$ при $n = 1$. Так как функция $q(\zeta)$ непрерывна на контуре $\gamma$, то существует число $M < + \infty$ такое, что $|q(\zeta)| \le M$ при $\zeta \in \gamma$.
       
 Фиксируем точку $z \notin \gamma$. Пусть $d \triangleq \dist(z, \gamma)$. Очевидно, что $d > 0$. Выберем число $r \in (0, \frac{d}{2})$ и возьмем произвольное число $\Delta z \in \bbC$ так, чтобы $0 < |\Delta z| < r$. Тогда для $\forall \zeta \in \gamma$ получаем
@@ -120,12 +120,13 @@ I^{(n)}(z) = \frac{n!}{2\pi i} \int_\gamma \frac{q(\zeta)}{(\zeta - z)^{n+1}}\,d
 I'(z) = \frac{1}{2\pi i} \int_\gamma \frac{q(\zeta)}{(\zeta - z)^2} \,d\zeta.
 \end{equation}
 
-\fbox{$2.$}
+\item
 Общий случай $n$-й производной получается аналогично первому случаю из формулы $\eqref{ch34eq6}$ для $(n - 1)$-й производной и воспользовавшись биномом Ньютона
 $$
 (\zeta - z - \Delta z)^n = (\zeta - z)^n - n \Delta z (\zeta - z)^{n - 1} + O(\Delta z^2),
 $$
 которое легко проверяется, например, методом математической индукции.
+\end{enumerate}
 
 Теорема доказана.
 \end{proof}

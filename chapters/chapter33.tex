@@ -119,9 +119,9 @@ f'(z_0) = u'_x(x_0,y_0) + iv'_x(x_0,y_0)= v'_y(x_0,y_0) -iu'_y(x_0,y_0).
 \end{equation}
 \end{enumerate}
 \end{thm}
-\begin{proof} $ $
-
-\fbox{$\Longrightarrow$:}
+\begin{proof}\leavevmode
+\begin{itemize}[wide, labelwidth=!, labelindent=\parindent]
+\item[$\Longrightarrow$:]
 Пусть $\exists f'(z_0) = a+ib $. Тогда $\Delta f = f'(z_0)\Delta z + \alpha(\Delta z)$, где $\frac{\alpha(\Delta z)}{\Delta z}\xrightarrow{\Delta z \to 0}0$. Но, с другой стороны, $\Delta f = \Delta u + i \Delta v$. А значит
 $$
 \Delta u + i \Delta v = \underbrace{(a+ib)}_{f'(z_0)}(\Delta x + i \Delta y) + \underbrace{\alpha_1(\Delta x, \Delta y) +i \alpha_2(\Delta x, \Delta y)}_{\alpha(\Delta z)}
@@ -154,7 +154,7 @@ $$
 f'(z_0) = a+ib = u'_x(x_0,y_0) + iv'_x(x_0,y_0)= v'_y(x_0,y_0) -iu'_y(x_0,y_0)
 $$ 
 
-\fbox{$\Longleftarrow$:}
+\item[$\Longleftarrow$:]
 Пусть функции $u(x,y)$, $v(x,y)$ дифференцируемы в точке $(x_0,y_0)$, выполнены условия Коши-Римана \eqref{exp17}. Тогда в точке $z_0=x_0+iy_0$
 \begin{multline*}
 \Delta f = \Delta u + i\Delta v \xlongequal{u,v\;\text{\scriptsize дифф.}} u'_x\Delta x + \overbrace{u'_y}^{-v'_x}\Delta y + \alpha_1(\Delta x,\Delta y)+ \\+ i\bigr(v'_x\Delta x + \overbrace{v'_y}^{u'_x}\Delta y + \alpha_2(\Delta x,\Delta y)\bigl) \xlongequal{\eqref{exp17}}\\\xlongequal{\eqref{exp17}} (u'_x+iv'_x)(\Delta x + i \Delta y) + \alpha_1(\Delta x,\Delta y)+ i\alpha_2(\Delta x,\Delta y) = A\cdot\Delta z + \alpha(\Delta z),
@@ -164,6 +164,7 @@ $$
 \left| \frac{\alpha(\Delta z)}{\Delta z} \right| \le \frac{|\alpha_1(\Delta x,\Delta y)|}{\sqrt{(\Delta x)^2 + (\Delta y)^2}} + \frac{|\alpha_2(\Delta x,\Delta y)|}{\sqrt{(\Delta x)^2 + (\Delta y)^2}} \xrightarrow{(\Delta x,\Delta y) \to (0,0)} 0,
 $$
 (гипотенуза не длинее суммы катетов, $|\alpha|^2=|\alpha_1|^2 + |\alpha_2|^2 $). Т.е. функция $f$ дифференцируема в точке $z_0$, и верна формула \eqref{exp8}.
+\end{itemize}
 
 Теорема доказана.
 \end{proof}
