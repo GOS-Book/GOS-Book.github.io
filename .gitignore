@@ -24,7 +24,8 @@
 **/*.out
 **/*.bak
 **/*.gz
-**/*.pdf
+_main.pdf
+_mainOLD.pdf
 **/*.mtc*
 **/*.ptc*
 **/*.maf
