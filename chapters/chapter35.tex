@@ -76,12 +76,9 @@ c_n = \frac{1}{2\pi i} \int_{\gamma_r} \frac{f(\zeta)}{(\zeta - a)^{n + 1}} \,d\
 
 \end{thm}
 
-\begin{proof}
+\begin{proof}\leavevmode
 
-
-\begin{enumerate}
-	
-\item
+\fbox{$1.$}
 Покажем, что каждый коэффициент $c_n$ в формуле $\eqref{ch35.1eq4}$ не зависит от выбора $r \in (\rho, R)$ . Функция $\frac{f(\zeta)}{(\zeta - a)^{n+1}}$ регулярна в кольце $\rho < |\zeta - a| < R$. Для любых чисел $r_1, r_2: \rho < r_1 < r_2 < R$ определим окружности $\gamma_k$ с центром в точке $a$ и радиуса $r_k, k \in \overline{1,2}$, ориентированные положительно. По \hyperref[abc28]{обобщенной теореме Коши} получаем равенство
 \begin{equation*}
 \begin{split}
@@ -91,8 +88,7 @@ c_n = \frac{1}{2\pi i} \int_{\gamma_r} \frac{f(\zeta)}{(\zeta - a)^{n + 1}} \,d\
 \end{equation*}
 что и требовалось для доказательства независимости интеграла $\eqref{ch35.1eq4}$ от выбора $r \in (\rho, R)$ при каждом $n \in \bbZ$.
 
-\item
-
+\fbox{$2.$}
 Зафиксируем произвольную точку $z_0$ в кольце $\rho < |z - a| < R$. Выберем числа $r_1, r_2$ такие, что 
 $\rho < r_1 < |z_0 - a| < r_2 < R$, и окружности $\gamma_k = \{ z \: \big| \: |z - a| = r_k\}$ при $k \in \overline{1,2}$, ориентированные положительно. Тогда контур $\Gamma = \gamma_2 \cup \gamma_{1}^{-1}$, является границей кольца $r_1 < |z - a| < r_2$, в котором по  \hyperref[ch34thm1]{интегральной формуле Коши} получаем
 \begin{equation} \label{ch35.1eq5}
@@ -117,8 +113,7 @@ I_2 = \frac{1}{2\pi i} \int_{\gamma_2} \frac{f(\zeta)}{\zeta - z_0} \,d z \xlong
 c_n = \frac{1}{2\pi i} \int_{\gamma_2}  \frac{f(\zeta)}{(\zeta - a)^{n + 1}} \,d\zeta, \quad n = 0,1,2,\ldots
 \end{equation}
 
-\item
-
+\fbox{$3.$}
 Рассмотрим интеграл $I_1$ из $\eqref{ch35.1eq5}$. Представим $-\frac{1}{\zeta - z_0}$ в виде ряда (см. \hyperref[exmpl2]{пример 2} из билета №34)
 \begin{equation} \label{ch35.1eq9}
 -\frac{1}{\zeta - z_0} = \frac{1}{(z_0 - a) \left( 1 - \frac{\zeta - a}{z_0 - a}\right)} = \sum_{n = 0}^{+\infty} \frac{(\zeta - a)^n}{(z_0 - a)^{n + 1}}.
@@ -149,9 +144,6 @@ c_m = \frac{1}{2\pi i} \int_{\gamma_1} \frac{f(\zeta)}{(\zeta - a)^{m + 1}} \,d\
 
 В силу пункта 1. в формулах $\eqref{ch35.1eq8}$, $\eqref{ch35.1eq13}$ контуры $\gamma_1, \gamma_2$ можно заменить на любую окружность $\gamma_r = \{ z \: \big| \: |z - a| = r\}$, где $\rho < r < R$, т.е.
 верна общая формула коэффициентов $\eqref{ch35.1eq4}$. Так как точка $z_0$ была выбрана в данном кольце произвольно, то, складывая ряды $\eqref{ch35.1eq7}$ и $\eqref{ch35.1eq12}$, получаем ряд Лорана с коэффициентами $\eqref{ch35.1eq4}$, сходящийся во всем кольце $\rho < |z - a| < R$.	
-
-\end{enumerate}
-
 \end{proof}
 \end{leftbar}
 
