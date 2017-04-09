@@ -255,8 +255,8 @@
 {\small\bf\sffamily\color{ocre}}% % Theorem head font
 {.}% Punctuation after theorem head
 {0.25em}% Space after theorem head
-{\small\sffamily\color{ocre}\thmname{#1}\nobreakspace\thmnumber{\@ifnotempty{#1}{}\@upn{#2}}% Theorem text (e.g. Theorem 2.1)
-\thmnote{\nobreakspace\the\thm@notefont\sffamily\bfseries\color{black}\nobreakspace(#3)}} % Optional theorem note
+{\small\sffamily\color{ocre}\thmname{#1}\thmnumber{\@ifnotempty{#1}{}\@upn{\nobreakspace#2}}% Theorem text (e.g. Theorem 2.1)
+\thmnote{\nobreakspace\the\thm@notefont\sffamily\bfseries\color{black}(#3)}} % Optional theorem note
 \renewcommand{\qedsymbol}{$\blacksquare$}% Optional qed square
 
 \newtheoremstyle{blacknumex}% Theorem style name
@@ -394,43 +394,43 @@ innerbottommargin=5pt]{cBox}
 \newtheorem{thmT}{Теорема}[chapter]
 \renewcommand{\thethmT}{\arabic{thmT}}
 \newcommand{\theHthmT}{\thechapter.\arabic{thmT}}
-\newenvironment{thm}{\begin{tBox}\begin{thmT}}{\end{thmT}\end{tBox}}
+\newenvironment{thm}{\begin{eBox}\begin{thmT}}{\end{thmT}\end{eBox}}
 \newcounter{thm}
 
 \newtheorem{thmnT}{Теорема}[chapter] %штрихованное.
 \renewcommand{\thethmnT}{\arabic{thmT}'}
 \newcommand{\theHthmnT}{\thechapter.arabic{thmnT}'}
-\newenvironment{thmn}{\begin{tBox}\begin{thmnT}}{\end{thmnT}\end{tBox}}
+\newenvironment{thmn}{\begin{eBox}\begin{thmnT}}{\end{thmnT}\end{eBox}}
 \newcounter{thmn}
 
 \newtheorem{lemmT}{Лемма}[chapter]
 \renewcommand{\thelemmT}{\arabic{lemmT}}
 \newcommand{\theHlemmT}{\thechapter.\arabic{lemmT}}
-\newenvironment{lemm}{\begin{tBox}\begin{lemmT}}{\end{lemmT}\end{tBox}}
+\newenvironment{lemm}{\begin{eBox}\begin{lemmT}}{\end{lemmT}\end{eBox}}
 \newcounter{lemm}
 
 \newtheorem{lemmnT}{Лемма}[chapter] %штрихованное.
 \renewcommand{\thelemmnT}{\arabic{lemmT}'}
 \newcommand{\theHlemmnT}{\thechapter.\arabic{lemmnT}'}
-\newenvironment{lemmn}{\begin{tBox}\begin{lemmnT}}{\end{lemmnT}\end{tBox}}
+\newenvironment{lemmn}{\begin{eBox}\begin{lemmnT}}{\end{lemmnT}\end{eBox}}
 \newcounter{lemmn}
 
 \newtheorem{sttT}{Утверждение}[chapter]
 \renewcommand{\thesttT}{\arabic{sttT}}
 \newcommand{\theHstt}{\thechapter.\arabic{sttT}}
-\newenvironment{stt}{\begin{tBox}\begin{sttT}}{\end{sttT}\end{tBox}}
+\newenvironment{stt}{\begin{eBox}\begin{sttT}}{\end{sttT}\end{eBox}}
 \newcounter{stt}
 
 \newtheorem{axiomeT}{Аксиома}[chapter]
 \renewcommand{\theaxiomeT}{\arabic{axiomeT}}
 \newcommand{\theHaxiomeT}{\thechapter.\arabic{axiomeT}}
-\newenvironment{axiome}{\begin{tBox}\begin{axiomeT}}{\end{axiomeT}\end{tBox}}
+\newenvironment{axiome}{\begin{eBox}\begin{axiomeT}}{\end{axiomeT}\end{eBox}}
 \newcounter{axiome}
 
 \newtheorem{axiomenT}{Аксиома}[chapter] %штрихованное.
 \renewcommand{\theaxiomenT}{\arabic{axiomeT}'}
 \newcommand{\theHaxiomenT}{\thechapter.\arabic{axiomenT}'}
-\newenvironment{axiomen}{\begin{tBox}\begin{axiomenT}}{\end{axiomenT}\end{tBox}}
+\newenvironment{axiomen}{\begin{eBox}\begin{axiomenT}}{\end{axiomenT}\end{eBox}}
 \newcounter{axiomen}
 
 \theoremstyle{blacknumbox}
@@ -457,12 +457,12 @@ innerbottommargin=5pt]{cBox}
 \newtheorem{exercT}{Упражнение}[chapter]
 \renewcommand{\theexercT}{\arabic{exercT}}
 \newcommand{\theHexercT}{\thechapter.\arabic{exercT}}
-\newenvironment{exerc}{\begin{eBox}\begin{exercT}}{\hfill{\color{ocre}\tiny\ensuremath{\blacksquare}}\end{exercT}\end{eBox}}	
+\newenvironment{exerc}{\begin{eBox}\begin{exercT}}{\hfill{\color{ocre}}\end{exercT}\end{eBox}}	
 \newcounter{exerc}
 
 
 \newtheorem*{notionT}{Замечание}
-\newenvironment{notion}{\begin{eBox}\begin{notionT}}{\hfill{\color{ocre}\tiny\ensuremath{\blacksquare}}\end{notionT}\end{eBox}}	
+\newenvironment{notion}{\begin{tBox}\begin{notionT}}{\end{notionT}\end{tBox}}	
 
 \numberwithin{equation}{chapter}
 \renewcommand{\theequation}{\arabic{equation}}
