@@ -74,9 +74,9 @@ P(a) \not= 0, \quad Q(a) = 0, \quad Q'(a) \not= 0.
 
 \begin{proof}
 В самом деле, в силу условия \eqref{ch36.1eq8} точка $a$ "--- полюс 1-го порядка функции $f$ и по формуле  \eqref{ch36.1eq4} получаем
-$$
-\res_{a} f = \lim_{z \to a} \left[ \frac{P(z)(z - a)}{Q(z)}\right] = \lim_{z \to a} \frac{P(z)}{\frac{Q(z) - Q(a)}{z - a}} = \frac{P(a)}{Q'(a)}.
-$$
+\begin{equation*}
+\res_{a} f = \lim_{z \to a} \left[ \frac{P(z)(z - a)}{Q(z)}\right] = \lim_{z \to a} \frac{P(z)}{\frac{Q(z) - Q(a)}{z - a}} = \frac{P(a)}{Q'(a)}. \qedhere
+\end{equation*}
 \end{proof}
 
 \begin{defn} \label{ch36defn2}
@@ -84,7 +84,7 @@ $$
 \begin{equation} \label{ch36.1eq10}
 \res_{\infty} f \triangleq \frac{1}{2\pi i} \int_{\gamma_R^{-1}} f(z) \,dz,
 \end{equation}
-где число $R > R_0$, а окружность $\gamma_R^{-1} = \{ z \: \big| \: |z| = R \}$ ориентирована движением по ходу часовой стрелки (рис. 1) (т. е. отрицательно).
+где число $R > R_0$, а окружность $\gamma_R^{-1} = \{ z \: \big| \: |z| = R \}$ ориентирована движением по ходу часовой стрелки (рис. ?) (т. е. отрицательно).
 \end{defn}
 
 Аналогично случаю конечной точки оценим $\res_{\infty} f$ через ряд Лорана для функции $f$ в окрестности $\overset{\circ}{B}_{R_0}(\infty)$, учитывая, что его коэффициенты имеют вид
@@ -115,7 +115,6 @@ $$
 z(f(\infty) - f(z)) = -c_{-1} - \frac{c_{-2}}{z} + o\left(\frac{1}{z}\right),
 $$
 что в пределе при $z \to \infty$ дает формулу \eqref{ch36.1eq13}.	
-
 \end{proof}
 
 \begin{leftbar}
@@ -130,7 +129,7 @@ $$
 \begin{enumerate}[wide, labelwidth=!, labelindent=0pt]
 \item Пусть область $G$ ограничена. Так как число особых точек $a_1,\ldots,a_n \in \bbC$ конечно, то существует число $r > 0$ такое, что $B_r(a_k) \subset G \quad \forall k \in \overline{1,n}$, причем замыкания этих кругов попарно не пересекаются. Определим множество $\widetilde{G} \triangleq G \setminus \left( \bigcup\limits_{k = 1}^{n} \overline{B_r(a_k)}\right)$.
 
-Множество $\widetilde{G}$ тоже является областью с кусочно-гладкой границей $\widetilde{\Gamma} = \Gamma \cup \left( \bigcup\limits_{k = 1}^{n} \gamma_{k}^{-1} \right)$,	где $\gamma_k$ суть окружности $\{ z \: \big| \: |z - a_k| = r \}$, ориентированные движением против хода часовой стрелки, а $\gamma_{k}^{-1}$ "--- они же, но ориентированные по ходу часовой стрелки. Получили, что $f$ регулярна на $\widetilde{G}$ и непрерывна на $\overline{\widetilde{G}} = \widetilde{G} \cup \widetilde{\Gamma}$ (см. рис. 2). Тогда по \hyperref[abc28]{обобщенной теореме \ref{abc28} Коши} (Билет №33) получаем
+Множество $\widetilde{G}$ тоже является областью с кусочно-гладкой границей $\widetilde{\Gamma} = \Gamma \cup \left( \bigcup\limits_{k = 1}^{n} \gamma_{k}^{-1} \right)$,	где $\gamma_k$ суть окружности $\{ z \: \big| \: |z - a_k| = r \}$, ориентированные движением против хода часовой стрелки, а $\gamma_{k}^{-1}$ "--- они же, но ориентированные по ходу часовой стрелки. Получили, что $f$ регулярна на $\widetilde{G}$ и непрерывна на $\overline{\widetilde{G}} = \widetilde{G} \cup \widetilde{\Gamma}$ (см. рис. ?). Тогда по \hyperref[abc28]{обобщенной теореме \ref{abc28} Коши} (Билет №33) получаем
 $$
 0 = \int_{\widetilde{\Gamma}} f(z) \,dz = \int_{\Gamma} f(z) \,dz - \sum_{k = 1}^{n} \int_{\gamma_k} f(z) \,dz \xlongequal{\eqref{ch36.1eq1}} \int_{\Gamma} f(z) \,dz - \sum_{k = 1}^{n} 2\pi i \res_{a_k} f,
 $$
@@ -139,7 +138,7 @@ $$
 
 \item	Пусть $\infty \in G$. Тогда особые точки $a_1,\ldots,a_{n - 1} \in \bbC$ "--- конечны, а $a_n = \infty$. Так как по \hyperref[ch33defn1]{определению \ref{ch33defn1}} (Билет №33) граница $\Gamma$ состоит из ограниченных гладких компонент, то существует число $R > 0$ такое, что для каждого $z \in \Gamma \cup \left( \bigcup\limits_{k = 1}^{n - 1} a_k \right)$ справедливо неравенство $|z| < R$.
 
-Определим $\widetilde{G} = G \cap B_R(0)$. Тогда $\widetilde G$ — ограниченная область с кусочно-гладкой границей $\widetilde{\Gamma} = \Gamma \cup \gamma_R$, где $\gamma_R = \{ z \: \big| \: |z| = R\}$ "--- окружность, ориентированная движением против хода часовой стрелки (см. рис. 3). Для регулярной в $\bbC \setminus B_R(0)$ функции $f$ по \hyperref[ch36defn2]{определению \ref{ch36defn2}} справедлива формула
+Определим $\widetilde{G} = G \cap B_R(0)$. Тогда $\widetilde G$ — ограниченная область с кусочно-гладкой границей $\widetilde{\Gamma} = \Gamma \cup \gamma_R$, где $\gamma_R = \{ z \: \big| \: |z| = R\}$ "--- окружность, ориентированная движением против хода часовой стрелки (см. рис. ?). Для регулярной в $\bbC \setminus B_R(0)$ функции $f$ по \hyperref[ch36defn2]{определению \ref{ch36defn2}} справедлива формула
 \begin{equation} \label{ch36.1eq15}
 \res_{\infty} f = - \frac{1}{2\pi i} \int_{\gamma_R} f(z) \,dz.
 \end{equation}
@@ -153,7 +152,7 @@ $$
 $$
 \int_{\widetilde{\Gamma}} f(z) \,dz = \int_{\Gamma} f(z) \,dz + \int_{\gamma_R} f(z) \,dz \xlongequal{\eqref{ch36.1eq15}} \int_{\Gamma} f(z) \,dz - 2\pi i\res_{\infty} f,
 $$
-откуда и из \eqref{ch36.1eq16} следует \eqref{ch36.1eq14}.	
+откуда и из \eqref{ch36.1eq16} следует \eqref{ch36.1eq14}.	$\hfill\qedhere$
 \end{enumerate}
 \end{proof}
 \end{leftbar}

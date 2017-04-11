@@ -1,4 +1,4 @@
-\part[Гармонический анализ.]{Гармонический анализ.}%\protect\linebreak \vbox{\vspace*{5\baselineskip}}\centerline{\includegraphics[height=0.3\textheight]{pictures/Foxi/5}}}
+\part[Гармонический анализ]{Гармонический анализ}%\protect\linebreak \vbox{\vspace*{5\baselineskip}}\centerline{\includegraphics[height=0.3\textheight]{pictures/Foxi/5}}}
 
 \chapter{Достаточные условия сходимости тригонометрического ряда Фурье в точке.}
 \section{Ортогональные системы и ряды Фурье}
@@ -369,9 +369,9 @@ $$
 |F(\xi)| \le \pi\left|\frac{f(x_0 + \xi) - f(x_0)}{\xi}\right|.
 $$
 Отсюда и из условия Дини следует, что
-$$
-\overline{\lim\limits_{n \to \infty}}|T_n(f; x_0) - f(x_0)| = 0.
-$$
+\begin{equation*}
+\overline{\lim\limits_{n \to \infty}}|T_n(f; x_0) - f(x_0)| = 0. \qedhere
+\end{equation*}
 \end{proof}
 
 %TODO Нужны ли односторонние условия Дини
@@ -411,9 +411,9 @@ $$
 \overline{\lim\limits_{n \to \infty}}|T_n(f; x_0) - M_f(x_0)| \le C\sum_{\pm}|f(x_0\pm h) - f(x_0\pm 0)|
 $$
 для любого $h \in (0;\delta)$. А так как в последнем неравенстве правая часть стремится к нулю при $h \to +0$, то
-$$
+\begin{equation*}
 \lim\limits_{n \to \infty}|T_n(f; x_0) - M_f(x_0)| = 0. \qedhere
-$$
+\end{equation*}
 \end{proof}
 
 \begin{cons}

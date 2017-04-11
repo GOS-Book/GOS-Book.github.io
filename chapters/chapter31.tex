@@ -251,7 +251,10 @@ $$
 \begin{thm} Если $a$ "--- постоянная, то $$\bbD(a\xi) = a^2 \bbD\xi.$$
 \end{thm}
 \begin{proof}
-Действительно, $\bbD(a\xi) = \bbE(a\xi - \bbE (a\xi))^2 = \bbE [a (\xi - \bbE \xi)]^2 = a^2\bbE(\xi - \bbE\xi)^2 = a^2 \bbD\xi.$
+Действительно, 
+\begin{equation*}
+\bbD(a\xi) = \bbE(a\xi - \bbE (a\xi))^2 = \bbE [a (\xi - \bbE \xi)]^2 = a^2\bbE(\xi - \bbE\xi)^2 = a^2 \bbD\xi. \qedhere
+\end{equation*}
 \end{proof}
 
 \begin{thm}\label{ch31.disp1}
@@ -264,9 +267,9 @@ $$
 $$
 
 Отсюда следует формула из теоремы \ref{ch31.disp1}, так как согласно свойству мультипликативности математического ожидания
-\begin{multline*}
-\bbE(\xi - \bbE\xi)(\eta - \bbE\eta) = \bbE(\xi - \bbE\xi)\bbE(\eta - \bbE\eta) =\\= (\bbE\xi - \bbE\xi)(\bbE\eta - \bbE\eta) = 0.\tag*{\qedhere}
-\end{multline*}
+\begin{equation*}
+\bbE(\xi - \bbE\xi)(\eta - \bbE\eta) = \bbE(\xi - \bbE\xi)\bbE(\eta - \bbE\eta) = (\bbE\xi - \bbE\xi)(\bbE\eta - \bbE\eta) = 0. \qedhere
+\end{equation*}
 \end{proof}
 
 Формула из теоремы \ref{ch31.disp1} по индукции распространяется на сумму $n$ попарно независимых случайных величин. 
