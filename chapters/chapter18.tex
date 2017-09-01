@@ -16,7 +16,7 @@ T_n(f; x) - f(x) = \frac{1}{2\pi} \int\limits_{-\pi}^{\pi} F(x,\xi) \sin{\lambda
 $$
 где
 $$
-F(x,\xi) = \frac{f(x+\xi) - f(x)}{\sin (\xi \backslash 2)}, \quad \lambda_{n} = n + \frac12.
+F(x,\xi) = \frac{f(x+\xi) - f(x)}{\sin (\xi / 2)}, \quad \lambda_{n} = n + \frac12.
 $$
 
 Пусть $\delta = \min \{a - A;B - b\}$. Тогда, как и в билете 15, получаем, что функция $F(x,\xi)$ удовлетворяет неравентсву
@@ -34,9 +34,9 @@ $$
 \sup\limits_{x \in [a;b]}\left|\int\limits_{h}^{\pi} F(x,\xi) \sin{\lambda_n \xi} \,d\xi \right| \xrightarrow{n \to \infty} 0
 \end{equation}
 
-Так как функция $\sin (\xi \backslash 2)$ на интервале $(0;\pi)$ непрерывна, неотрицательна и монотонно возрастает, то, согласно второй теореме о среднем, для любого $x \in [a;b]$ и любого $h \in (0;\pi)$ существует $\theta \in [h;\pi]$ такое, что
+Так как функция $\sin (\xi / 2)$ на интервале $(0;\pi)$ непрерывна, неотрицательна и монотонно возрастает, то, согласно второй теореме о среднем, для любого $x \in [a;b]$ и любого $h \in (0;\pi)$ существует $\theta \in [h;\pi]$ такое, что
 $$
-\int\limits_{h}^{\pi} F(x,\xi) \sin{\lambda_n \xi}\,d\xi = \frac{1}{\sin (h \backslash 2)} \int\limits_{h}^{\theta} (f(x+\xi) - f(x)) \sin{\lambda_n \xi}\,d\xi.
+\int\limits_{h}^{\pi} F(x,\xi) \sin{\lambda_n \xi}\,d\xi = \frac{1}{\sin (h / 2)} \int\limits_{h}^{\theta} (f(x+\xi) - f(x)) \sin{\lambda_n \xi}\,d\xi.
 $$
 
 Легко видеть, что для любого $x \in [a;b]$

@@ -107,6 +107,8 @@
 }
 \makeatother
 
+%Закоментируй \iffalse и \fi если что-то случилось с этим файлом. 
+\iffalse
 \usepackage{filecontents}
 \begin{filecontents*}{mystyle.xdy}
 	;;; xindy style file
@@ -128,6 +130,7 @@
 				:close-head "}}};\vspace*{0.2cm}\nopagebreak"
 	:capitalize)
 \end{filecontents*}
+\fi
 
 %----------------------------------------------------------------------------------------
 %	MAIN TABLE OF CONTENTS
@@ -621,6 +624,11 @@ innerbottommargin=5pt]{cBox}
 \end{tikzpicture}
 \par\vspace*{200\p@}}
 \makeatother
+
+
+
+%%% AFTER STRUCTURE COMMANDS 
+\chapterimage{epicstyle/chapterimage}
 
 \iffalse
 \usepackage{hyperref}

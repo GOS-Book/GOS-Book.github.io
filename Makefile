@@ -10,7 +10,7 @@ book: $(MAINSRC)
 	pdflatex -synctex=1 -interaction=nonstopmode -shell-escape $(MAINSRC);\
 	xindy -L russian -C utf8 _main.idx;\
 	pdflatex -synctex=1 -interaction=nonstopmode -shell-escape $(MAINSRC);\
-	mv -f _main.pdf GOSBook.pdf
+	mv -f _main.pdf GOSBook\ Matan.pdf
 
 chapter: check-env
 	pdflatex "\newcommand{\n}{$(CH)}\input{chapter}"

@@ -70,7 +70,7 @@ $\forall M' < M \ (\forall M' > M) \ex x\in G: \quad x>M' \ (x<M')$.
 \quad\textbullet\quad Eсли множество $G \subset \bbR$ не ограничено сверху (снизу), то, по определению, $\sup G=+\infty$ ($\inf G=-\infty$).  
 \end{defn}
 
-\begin{defn}[Определение предела функции по Коши\rindex{предел!функции по Коши}]\label{exp12} 
+\begin{defn}[Определение предела функции по Коши\rindex{предел!функции по Коши}]\label{df:ch2:predelCaushi}
 Пусть $c\in\bboR$, $x_o \in \bboR$ и $x_0$ --- предельная точка множества $D_f \subset \bbR$. Тогда элемент $c$ называется \textit{пределом функции} $f$, заданной на множестве $D_f$ при $x \to x_0$ (в точке $x_0$), если
 $$
 \forall O(c) \ex O(x_0): \fa x \in \dnei{x_0}\cap D_f:\quad f(x) \in O(c),
@@ -93,18 +93,18 @@ $$
 \end{defn}
 
 \begin{thm}
-\label{exp13}
+\label{th:ch2:predeltochka}
 Пусть $G \subset \bbR$. Тогда $c \in \bbR$ является предельной точкой $G$ $\Longleftrightarrow$ $ \exists \{x_n\}: \fa n \in \bbN \quad x_n \in G\setminus\{c\}: \lim_{n \to \infty}\limits x_n = c$. 
 \end{thm}
 
-Согласно теореме \ref{exp13} у функции существует последовательность Гейне в любой точке $x_0$, являющейся предельной для $D_f$.
+Согласно теореме~\ref{th:ch2:predeltochka} у функции существует последовательность Гейне в любой точке $x_0$, являющейся предельной для $D_f$.
 
-\begin{defn}[Определение предела функции по Гейне\rindex{предел!функции по Гейне}]\label{exp11} 
+\begin{defn}[Определение предела функции по Гейне\rindex{предел!функции по Гейне}]\label{df:ch2:predelGeine}
 Пусть $c\in\bboR$, $x_0 \in \bboR$ и $x_0$ --- предельная точка множества $D_f \subset \bbR$. Тогда элемент $c$ называется \textit{пределом функции} $f$, заданной на множестве $D_f$ при $x \to x_0$ (в точке $x_0$), если для любой последовательности $\{x_n\}$ такой, что $\forall n \in \bbN: x_n\in D_f\setminus \{x_0\} \lim_{n \to \infty}\limits x_n = x_0$ выполняется условие $\lim_{n \to \infty}\limits f(x_n) = c$. 
 \end{defn}
 
 \begin{thm}
-Определение \ref{exp12} и определение \ref{exp11} эквивалентны.
+Определение~\ref{df:ch2:predelCaushi} и определение \ref{df:ch2:predelGeine} эквивалентны.
 \end{thm}
 
 \begin{defn}
@@ -148,7 +148,7 @@ $$
 \end{thm}
 
 
-\begin{thm} [Вейерштрасса\rindex{теорема!Вейерштрасса}] \label{ch1n1}
+\begin{thm} [Вейерштрасса\rindex{теорема!Вейерштрасса}] \label{th:ch2:Veyershtrass}
 Функция $f$, непрерывная на отрезке $[a;b]$, ограничена и достигает на нем своих точных верхней и нижней граней.
 \end{thm}
 \begin{proof}\leavevmode
@@ -165,7 +165,7 @@ $$
 
 Это эквивалентно тому, что $\forall n \in \bbN\ \exists x_n \in [a;b]:\ M-\frac{1}{n} < f(x_n) \le M $.
 
-Поскольку $ a\le x_n \le b \fa n \in \bbN$, то последовательность $\{x_n\}$ ограничена. По \hyperref[exp9]{теореме Больцано-Вейерштрасса} можно выделить из нее подпоследовательность ${x_{n_k}}$, сходящуюся к некоторому $x^* \in \bbR$ при $k \to \infty$.
+Поскольку $ a\le x_n \le b \fa n \in \bbN$, то последовательность $\{x_n\}$ ограничена. По \hyperref[th:ch1:TBV]{теореме Больцано-Вейерштрасса} можно выделить из нее подпоследовательность ${x_{n_k}}$, сходящуюся к некоторому $x^* \in \bbR$ при $k \to \infty$.
 
 Так как $f$ непрерывна в точке $x^*$, и так как $x_{n_k}\xrightarrow{k \to \infty} x^*$, то  
 $$
