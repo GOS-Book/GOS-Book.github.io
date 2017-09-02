@@ -30,7 +30,7 @@
 
 \subsection{Предел функций}
 \begin{defn}
-Пусть заданы множество $D_f \subset \bbR$ и некоторое правило $f$, которое каждому числу $x\in D_f$ ставит в соответствие одно и только одно некоторое число $y=f(x)$. Тогда множество всевозможных пар $(x, f(x)), x\in D_f$, называется \textit{числовой функцией}.
+Пусть заданы множество $D_f \subset \bbR$ и некоторое правило $f$, которое каждому числу $x\in D_f$ ставит в соответствие одно и только одно некоторое число $y=f(x)$. Тогда множество всевозможных пар $(x, f(x)), x\in D_f$, называется \textit{числовой функцией}\rindex{функция!числовая}.
 \end{defn}
 
 Обозначется $y=f(x),\ x\in D_f$, или, например, $f: D_f \to \bbR$. Тогда
@@ -121,8 +121,8 @@ $$
 \subsection{Непрерывность функции}
 Пусть $G \subset \bbR$. Тогда $\forall x_0 \in G$ выполняется одно и только одно из двух утверждений:
 \begin{enumerate}
-\item $x_0$ --- изолированная точка $\exists \delta>0:\quad \dneio{\delta}{x_0} \cap G = \emptyset$;
-\item $x_0$ --- предельная точка $\forall \delta > 0:\quad \dneio{\delta}{x_0}\cap G \neq \emptyset$.
+\item $x_0$ "--- изолированная точка $\exists \delta>0:\quad \dneio{\delta}{x_0} \cap G = \emptyset$;
+\item $x_0$ "--- предельная точка $\forall \delta > 0:\quad \dneio{\delta}{x_0}\cap G \neq \emptyset$.
 \end{enumerate}
 
 \begin{defn}
@@ -133,12 +133,12 @@ $$
 Функция $f$ называется \textit{непрерывной на множестве} $X \subset \bbR$, если функция $f$ определена на множестве $X$ и непрерывна в каждой точке множества $X$. 
 \end{defn}
 \begin{lemm}
-Функция $f$ непрерывна на промежутке $[a;b)$ (отрезке $[a;b]$) $\Longleftrightarrow$ 
+Функция $f$ непрерывна на промежутке $[a;b)$ (отрезке $[a;b]$) 
 $$
+\Longleftrightarrow
 \begin{cases}
-\forall x_0 \in (a;b) \ex \lim_{x \to x_0}\limits f(x) = f(x_0);\\
-\exists \lim_{x \to a+0}\limits f(x) = f(a);\\
-\bigr(\exists \lim_{x \to b-0}\limits f(x) = f(b)\bigl).\\
+\forall x_0 \in (a;b)\quad \exists \lim_{x \to x_0}\limits f(x) = f(x_0);\\
+\exists \lim_{x \to a+0}\limits f(x) = f(a)\qquad \Bigl(\exists \lim_{x \to b-0}\limits f(x) = f(b)\Bigr).
 \end{cases}
 $$  
 \end{lemm}
