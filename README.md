@@ -2,7 +2,7 @@
 
 ### Загрузить последнюю редакцию книги: 
 
-[![PDF Status](http://mult-masha-i-medved.ru/kcaptcha/masha.png)](http://latexonline.cc/compile?git=https://github.com/DidenkoAndre/GOS_book&target=_main.tex&download=GOSBook%20Matan.pdf)
+[![PDF Status](http://mult-masha-i-medved.ru/kcaptcha/masha.png)](http://latexonline.cc/compile?git=https://github.com/DidenkoAndre/GOS_book&target=_main.tex&download=GOSBook_Matan.pdf)
 
 ### Внимание.
 
