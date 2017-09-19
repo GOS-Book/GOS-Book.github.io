@@ -24,8 +24,10 @@
 **/*.out
 **/*.bak
 **/*.gz
+**/*.gz(busy)
 _main.pdf
 _mainOLD.pdf
+todo_formulas.pdf
 **/*.mtc*
 **/*.ptc*
 **/*.maf

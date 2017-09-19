@@ -1,0 +1,80 @@
+\documentclass[a5paper,openany,9pt]{extbook}
+
+\usepackage[margin=1.6cm, top=1.2cm,right=1.9cm,left=1.9cm, footskip = 1 cm, headheight=20pt,headsep=0.2cm]{geometry}
+\usepackage[english, russian]{babel}
+\usepackage[utf8]{inputenc} % Required for including letters with accents
+\usepackage[T2A]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\usepackage{enumitem} 
+\usepackage{booktabs} 
+\usepackage{microtype}
+\usepackage{cmap}
+
+\newcommand{\cyrfamily}[5]{%
+	\DeclareFontShape{#1}{#2}{#3}{#4}{
+		<-6>    #50500
+		<6-7>   #50600
+		<7-8>   #50700
+		<8-9>   #50800
+		<9-10>  #50900
+		<10-12> #51000
+		<12-17> #51200
+		<17-20> #51728
+		<20-23> #52074
+		<23-28> #52488
+		<28-34> #52986
+		<35->   #53583
+	}{}%
+}
+\DeclareFontFamily{T2A}{cmss}{}
+\cyrfamily{T2A}{cmss}{m}{n}{lass}
+\cyrfamily{T2A}{cmss}{m}{sl}{lasi}
+\cyrfamily{T2A}{cmss}{m}{it}{lasi}
+\cyrfamily{T2A}{cmss}{bx}{n}{lasx}
+\cyrfamily{T2A}{cmss}{bx}{it}{laso}
+\cyrfamily{T2A}{cmss}{bx}{sl}{laso}
+\DeclareFontShape{T2A}{cmss}{m}{sc}{<->sub*cmr/m/sc}{}
+\DeclareFontShape{T2A}{cmss}{sbc}{n}{<->lassdc10}{}
+
+\usepackage{calc}
+\usepackage{titletoc} 
+\usepackage{fancyhdr}
+\usepackage{amsmath,amsfonts,amssymb,amsthm} 
+
+\include{include/header}
+\include{include/macros}
+
+\begin{document}
+\chapter*{Reminder how to write formulas}
+
+This information based on AMS documentation and stackechange.com answer. I want to say that here are the rules to use correct command to get right spacing in math formulas. The rules which \LaTeX does automaticly aren't discussed here.
+
+\section{COLON}
+
+\begin{itemize}
+\item
+Use \verb|\mathbin{:}| in ratios:
+$$x\mathbin{:}y\mathbin{:}z = 3\mathbin{:}4\mathbin{:}5$$
+
+\item
+Use ``\verb=\colon='' in mappings:
+$$f\colon A \to B$$
+
+\item
+Use ``:'', when it's a punctuation symbol. For example, ``for all x such that''
+$$\forall x \in A\colon f(x) = 12$$
+
+\item
+Use ``:'' and in sets as relation symbol
+$$\{\,x : 1 < x < 2\,\}$$.
+
+\end{itemize}
+	
+\section{SPACING}
+
+\begin{itemize}
+\item
+Use ``\verb=\,='' and in sets when ``:'' is called
+$$\{\,x : 1 < x < 2\,\}$$.
+\end{itemize}
+
+\end{document}

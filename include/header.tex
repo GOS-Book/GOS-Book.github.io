@@ -200,6 +200,7 @@ addtohook={%
 % чтобы фильтровать warnings.
 \usepackage{silence}
 
+% делает все скобки в курсиве прямыми, т.е. \textup{}
 \usepackage{expl3,xparse}
 \ExplSyntaxOn
 \cs_new_eq:Nc \emph_old:n { emph~ } % Copying the old definition of `\emph`
@@ -217,5 +218,17 @@ addtohook={%
   \IfBooleanTF {#1} {\emph_old:n {#2}} {\emph_new:n {#2}}
 }
 \ExplSyntaxOff
+
+% делает все картинки пустыми. 
+%\iffalse
+\makeatletter
+\AtBeginDocument{%
+	\def\Ginclude@graphics#1{%
+		\begingroup\fboxsep=-\fboxrule
+		\fbox{\rule{\@ifundefined{Gin@@ewidth}{150pt}{\Gin@@ewidth}}{0pt}%
+			\rule{0pt}{\@ifundefined{Gin@@eheight}{100pt}{\Gin@@eheight}}}\endgroup}}
+\makeatother
+%\fi
+
 
 \usepackage[bottom]{footmisc}

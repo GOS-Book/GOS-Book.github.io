@@ -19,13 +19,13 @@ $\overline{B_r(z_0)} \triangleq \{z \;\bigl|\; |z-z_0|\le r \bigl.\}$ "--- бу�
 \begin{defn}
 Число $A = a+ib \in \bbC$ называется \textit{пределом последовательности} $\{z_n\}$, если $\forall \epsilon > 0\quad \exists N(\epsilon)$ такое, что $\forall n \ge N(\epsilon) $ справедливо включение $z_n \in B_\epsilon(A) = \{z_n \;\bigl|\; |z_n-A|<\epsilon \bigl.\}$.
 $$
-\forall \epsilon > 0\quad \exists N(\epsilon): \quad\forall n \ge N(\epsilon) \quad z_n \in B_\epsilon(A)\quad (\text{т.е. }|z_n-A|<\epsilon).
+\forall \epsilon > 0\quad \exists N(\epsilon)\colon \forall n \ge N(\epsilon) \quad z_n \in B_\epsilon(A)\quad (\text{т.е. }|z_n-A|<\epsilon).
 $$
 \end{defn}
 \begin{defn}\label{ch33.defn3}
 Последовательность $\{z_n\}$ \textit{сходится (стремится) к бесконечности} $(z_n\to\infty)$, если 
 $$
-\forall \epsilon > 0\quad \exists N(\epsilon): \fa n \ge N(\epsilon) \quad |z_n|>\epsilon.
+\forall \epsilon > 0\quad \exists N(\epsilon)\colon \forall n \ge N(\epsilon) \quad |z_n|>\epsilon.
 $$
 \end{defn} 
 Это определение эквивалентно тому, что окрестностью бесконечности является внешность круга $\overline{B_\epsilon(0)}$, т.е. множество вида $\overset{\circ} {B}_\epsilon(\infty)\triangleq \{z \;\bigl|\; |z|>\epsilon \bigl.\}$. 
@@ -47,7 +47,7 @@ $$
 \begin{defn}
 Пусть $f: G\subset \bboC \to \bboC$ "--- функция и точка $z_0$ "--- предельная точка для $G$. Тогда число $A \in \bboC$ называется \textit{пределом функции в точке $z_0$ по множеству $G$}, если 
 $$
-\forall \epsilon > 0 \ex \delta = \delta(\epsilon)>0:\fa z \in \overset{\circ} {B}_\delta(z_0)\cap G \quad f(z) \in B_\epsilon(A). 
+\forall \epsilon > 0 \exists \delta = \delta(\epsilon)>0:\forall z \in \overset{\circ} {B}_\delta(z_0)\cap G \quad f(z) \in B_\epsilon(A). 
 $$ 
 \end{defn}
 
@@ -68,7 +68,7 @@ $$
 то этот предел называется \textit{производной функции} $f$ в точке $z_0$ и обозначается $f'(z_0)$. 
 \end{defn}
 \end{leftbar}
-Пусть $\Delta z = z - z_0$ и $\Delta f = f(z) - f(z_0)$. Определение \ref{exp5} означает, что $\forall \epsilon > 0 \ex \delta=\delta(\epsilon)>0$ такое, что для $\forall \Delta z:\quad 0 <|\Delta z| <\delta$ справедливо 
+Пусть $\Delta z = z - z_0$ и $\Delta f = f(z) - f(z_0)$. Определение \ref{exp5} означает, что $\forall \epsilon > 0 \exists \delta=\delta(\epsilon)>0$ такое, что для $\forall \Delta z:\quad 0 <|\Delta z| <\delta$ справедливо 
 \begin{equation}
 \label{exp7}
 \left|\frac{\Delta f}{\Delta z} - f'(z_0) \right| < \epsilon.
@@ -85,7 +85,7 @@ $$
 Функция $f : B_r(z_0) \to \bbC $ дифференцируема в точке $z_0 \in \bbC$, если справедливо представление 
 \begin{equation}
 \label{exp4}
-\Delta f = A\cdot \Delta z + \alpha(\Delta z), \fa \Delta z: 0 < |\Delta z|< r,
+\Delta f = A\cdot \Delta z + \alpha(\Delta z), \forall \Delta z: 0 < |\Delta z|< r,
 \end{equation}
 где А не зависит от $\Delta z$, а функция $\alpha(\Delta z)$ является $o(\Delta z)$.
 \end{defn}
