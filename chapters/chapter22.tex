@@ -6,15 +6,15 @@
   \begin{defn}
   Отображение $\phi: L_1\rightarrow L_2$ называется \textit{линейным отображением}, если
   
-  (1) $\fa x_1,x_2 \in L_1 \hookrightarrow \phi(x_1+x_2)=\phi(x_1)+\phi(x_2)$
+  (1) $\forall x_1,x_2 \in L_1 \hookrightarrow \phi(x_1+x_2)=\phi(x_1)+\phi(x_2)$
   
-  (2) $\fa x \in L_1 \fa \lambda \in K \hookrightarrow \phi(\lambda x)=\lambda \phi(x)$
+  (2) $\forall x \in L_1 \forall \lambda \in K \hookrightarrow \phi(\lambda x)=\lambda \phi(x)$
   \end{defn}
   В частности, из определения следует, что $\phi(0_{L_1})=0_{L_2}$.
   \begin{defn}
     \textit{Образ} отображения --- это множество 
     \begin{equation}
-    \Im\phi=\phi(L_1)=\{y\in L_2: \ex x\in L_1: \phi(x)=y\}
+    \Im\phi=\phi(L_1)=\{y\in L_2: \exists x\in L_1: \phi(x)=y\}
     \end{equation}
   \end{defn}
   \begin{defn}
@@ -26,13 +26,13 @@
   \begin{defn}
   Отображение $\phi: L_1\rightarrow L_2$ называется \textit{инъективным}, если никакие два различных вектора из $L_1$ не имеют одинаковых образов:
   \begin{equation}\label{22.1.inject}
-    \fa x_1,x_2 \in L_1: \phi(x_1)=\phi(x_2) \hookrightarrow x_1=x_2
+    \forall x_1,x_2 \in L_1: \phi(x_1)=\phi(x_2) \hookrightarrow x_1=x_2
   \end{equation}
   \end{defn}  
   \begin{defn}
   Отображение $\phi: L_1\rightarrow L_2$ называется \textit{сюръективным}, если любой элемент $L_2$ имеет прообраз в $L_1$:
   \begin{equation}\label{22.1.surject}
-    \fa y \in L_2 \exists x \in L_1: \phi(x)=y \Leftrightarrow \Im \phi = L_2
+    \forall y \in L_2 \exists x \in L_1: \phi(x)=y \Leftrightarrow \Im \phi = L_2
   \end{equation}
   \end{defn}  
   
@@ -46,7 +46,7 @@
   \begin{proof} $ $
   \linebreak\vspace*{-\baselineskip}
   \begin{itemize}
-  \item[\underline{$\Longrightarrow:$}]   Пусть $\phi$ инъективно, то есть выполняется \eqref{22.1.inject}. Тогда \\ $\fa x\in L_1:\phi(x)=0=\phi(0) \hookrightarrow x=0,$ то есть $\Ker\phi=\{0\}$.
+  \item[\underline{$\Longrightarrow:$}]   Пусть $\phi$ инъективно, то есть выполняется \eqref{22.1.inject}. Тогда \\ $\forall x\in L_1:\phi(x)=0=\phi(0) \hookrightarrow x=0,$ то есть $\Ker\phi=\{0\}$.
   \item[\underline{$\Longleftarrow:$}] 
 Пусть $\Ker\phi=\{0\}$ и $\phi(x_1)=\phi(x_2)$. Тогда $\phi(x_1-x_2)=0 \Rightarrow x_1-x_2=0$. Таким образом, выполняется условие \eqref{22.1.inject}.
   \end{itemize}
@@ -61,7 +61,7 @@
   
   Рассмотрим запись преобразования $\phi$  в базисах. Пусть $\dim L_1 = n, e=\norm{e_1 \ldots e_n}$ --- базис в $L_1$; $\dim L_2 = m, f=\norm{f_1 \ldots f_m}$ --- базис в $L_2$.
   \begin{equation*}
-  \fa x \in L_1 \hookrightarrow x=\sum_{j=1}^n x_je_j \Rightarrow \phi(x)\xlongequal{linear}\sum_{j=1}^n x_j\phi(e_j) 
+  \forall x \in L_1 \hookrightarrow x=\sum_{j=1}^n x_je_j \Rightarrow \phi(x)\xlongequal{linear}\sum_{j=1}^n x_j\phi(e_j) 
   \end{equation*}
   \begin{equation*}
   \phi(e_j) \in L_2 \Rightarrow \phi(e_j)=\sum_{i=1}^m a_{ij}f_i \Rightarrow 
@@ -106,7 +106,7 @@
   \begin{defn}
   Вектор $x \in L: x \neq \vv 0$ называется \textit{собственным вектором} преобразования $\phi$, если 
   \begin{equation}
-    \ex \lambda \in K: \phi(x)=\lambda x,
+    \exists \lambda \in K: \phi(x)=\lambda x,
   \end{equation}
 $\lambda$ называется \textit{собственным значением} преобразования $\phi$ 
   \end{defn}
@@ -132,7 +132,7 @@ $\lambda$ называется \textit{собственным значением
   \begin{equation*}
   \alpha_1 (\lambda_n-\lambda_1) x_1 + \alpha_2 (\lambda_n-\lambda_2) x_2 + \ldots + \alpha_{n-1} (\lambda_n-\lambda_{n-1}) x_{n-1} = 0
   \end{equation*}
-  По предположению индукции $\fa i=\overline{1,n-1} \hookrightarrow \alpha_i(\lambda_n-\lambda_i)=0$, откуда в силу условия теоремы $\alpha_1=\cdots=\alpha_{n-1}=0 \Rightarrow \alpha_n x_n=0 \Rightarrow \alpha_n=0$
+  По предположению индукции $\forall i=\overline{1,n-1} \hookrightarrow \alpha_i(\lambda_n-\lambda_i)=0$, откуда в силу условия теоремы $\alpha_1=\cdots=\alpha_{n-1}=0 \Rightarrow \alpha_n x_n=0 \Rightarrow \alpha_n=0$
   \end{itemize}
   \vspace{-1.65\baselineskip}
   \end{proof}

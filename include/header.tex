@@ -220,7 +220,7 @@ addtohook={%
 \ExplSyntaxOff
 
 % делает все картинки пустыми. 
-%\iffalse
+\iffalse
 \makeatletter
 \AtBeginDocument{%
 	\def\Ginclude@graphics#1{%
@@ -228,7 +228,7 @@ addtohook={%
 		\fbox{\rule{\@ifundefined{Gin@@ewidth}{150pt}{\Gin@@ewidth}}{0pt}%
 			\rule{0pt}{\@ifundefined{Gin@@eheight}{100pt}{\Gin@@eheight}}}\endgroup}}
 \makeatother
-%\fi
+\fi
 
 
 \usepackage[bottom]{footmisc}

@@ -8,13 +8,13 @@
 \begin{defn}
 Линейное пространство $E$ над полем вещественных чисел называется \textit{евклидовым}, если в нём введено \textit{скалярное произведение} $(\bullet,\bullet): E\times E \rightarrow \bbR$ "--- операция удовлетворяющая следующим условиям:
 
-(1) $(\lambda x,y)=\lambda(x,y) \fa x,y \in E \fa \lambda \in \bbR$
+(1) $(\lambda x,y)=\lambda(x,y) \forall x,y \in E \forall \lambda \in \bbR$
 
-(2) $(x+y,z)=(x,z)+(y,z) \fa x,y,z \in E$
+(2) $(x+y,z)=(x,z)+(y,z) \forall x,y,z \in E$
 
-(3) $(x,y)=(y,x) \fa x,y \in E$
+(3) $(x,y)=(y,x) \forall x,y \in E$
 
-(4) $(x,x)>0 \fa x \in E: x \neq 0$
+(4) $(x,x)>0 \forall x \in E: x \neq 0$
 \end{defn}
   \begin{notion}
   Иначе говоря, скалярное произведение "--- симметричная положительно определённая билинейная форма (см. билет 24).
@@ -45,7 +45,7 @@
 \begin{defn}
   Линейное преобразование $\phi: E \rightarrow E$ евклидова пространства называется \textit{самосопряжённым}, если
   \begin{equation}\label{23.1.selfadjoint}
-  \fa x,y \in E \hookrightarrow (\phi(x),y)=(x,\phi(y))
+  \forall x,y \in E \hookrightarrow (\phi(x),y)=(x,\phi(y))
   \end{equation}
 \end{defn}
   \begin{thm}[Условие самосопряжённости преобразования в терминах матрицы Грама] Пусть матрица $A_\phi$ преобразования $\phi$ записана в некотором базисе $e$. $\phi$ является самосопряжённым преобразованием в том и только том случае, если
@@ -66,7 +66,7 @@
     (\phi(x),y)=(A_\phi X)^TG_eY=X^TA_\phi^TG_eY \\
     (\phi(x),y)=(x,\phi(y))=X^TG_eA_\phi Y \\
     \end{array}\right\rbrace \Rightarrow  \begin{array}{crl}
-    X^TA_\phi^TG_eY=X^TG_eA_\phi Y, \\ \fa X,Y\in \bbR^n
+    X^TA_\phi^TG_eY=X^TG_eA_\phi Y, \\ \forall X,Y\in \bbR^n
   \end{array}     
   \end{equation*}   
   Обозначим $B=A_\phi^TG_e, C=G_eA_\phi$. Подставляя $X=E_i, Y=E_j$, где $E_k$ "--- k-й столбец единичный матрицы, получим $E_i^TBE_j=E_i^TCE_j=b_{ij}=c_{ij}$, то есть $B=C$, что равносильно \eqref{23.1.criteria}.
@@ -78,14 +78,14 @@
   \begin{defn}
   Подпространство $U \subseteq L$ называется \textit{инвариантным подпространством} преобразовния $\phi$, или \textit{$\phi$-инвариантным}, если
   \begin{equation}\label{23.1.invariant}
-  \fa u \in U \hookrightarrow \phi(u) \in U
+  \forall u \in U \hookrightarrow \phi(u) \in U
   \end{equation}
   \end{defn} 
   
   \begin{defn}
   \textit{Ортогональным дополнением} подпространства $U$ евклидова пространства $E$ называется множество векторов из $E$, ортогональных каждому из векторов подпространства $U$, т.е.
   \begin{equation}\label{23.1.orthogonal}
-  U^\perp=\{v \in E: \fa u \in U \hookrightarrow (u,v)=0\}
+  U^\perp=\{v \in E: \forall u \in U \hookrightarrow (u,v)=0\}
   \end{equation}
   \end{defn}
   
@@ -94,7 +94,7 @@
   Если $U$ "--- $\phi$-инвариантное подпространство в $E$, то его ортогональное дополнение $U^\perp$ также $\phi$-инвариантно.
   \end{stt}
   \begin{proof}
-  $\fa x \in U \fa y \in U^\perp \hookrightarrow (x,\phi(y))=(\phi(x),y)=0$, т.к. $\phi(x)\in U$. Следовательно, $\phi(y)\in U^\perp \fa y\in U^\perp$.
+  $\forall x \in U \forall y \in U^\perp \hookrightarrow (x,\phi(y))=(\phi(x),y)=0$, т.к. $\phi(x)\in U$. Следовательно, $\phi(y)\in U^\perp \forall y\in U^\perp$.
   \end{proof}
   
   \begin{stt}
@@ -144,7 +144,7 @@
   \end{proof}
   
   \begin{defn}
-  Преобразование $\phi|_U:U\rightarrow U \subseteq L$ называется \textit{ограничением} преобразования $\phi:L\rightarrow L$ на инвариантное подпространство $U$, если $\fa u \in U \hookrightarrow \phi|_U(u)=\phi(u)$.
+  Преобразование $\phi|_U:U\rightarrow U \subseteq L$ называется \textit{ограничением} преобразования $\phi:L\rightarrow L$ на инвариантное подпространство $U$, если $\forall u \in U \hookrightarrow \phi|_U(u)=\phi(u)$.
   \end{defn}  
   \begin{notion}
   Ограничение самосопряжённого преобразования на инвариантное подпространство $U$ евклидова пространства $E$ остаётся самосопряжённым, если рассматривать на подпространстве склярное произведение, заданное во всём пространстве $E$.
@@ -159,7 +159,7 @@
   \fudge{ 0}&			&		 & \lambda_n \\
   \end{pmatrix}$, где $\lambda_1,...,\lambda_n$ "--- собственные значения матрицы этого преобразования.
   \end{thm}
-  \begin{proof} Проведём доказательство по индкуции по $n=\dim E$:
+  \begin{proof} Проведём доказательство по индукции по $n=\dim E$:
   \linebreak\vspace*{-\baselineskip}
   \begin{itemize}
   \item[\underline{$n=1:$}] случай очевиден.

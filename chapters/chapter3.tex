@@ -12,7 +12,7 @@
 
 Отрезок $[a_1; b_1]$ снова разделим пополам, и через $c_2$ обозначим его середину. Если $f(c_2) = C$, то утверждение доказано. Если же $f(c_2) \ne C$, то через $[a_2;b_2]$ обозначим ту половину, для которой $f(a_2) < C < f(b_2)$, и т.д. Процесс или обрывается на некотором шаге, и тогда утверждение доказано, или получается последовательность вложенных отрезков $[a_n;b_n]$ таких, что $\lim_{n \to \infty}\limits(b_n-a_n)=0$ и
 $$
-f(a_n)<C<f(b_n) \fa n\in \bbN.
+f(a_n)<C<f(b_n) \forall n\in \bbN.
 $$
 
 По \hyperref[th:ch1:poslstyag]{теореме о стягивающихся отрезках} $\exists!\; c \in \bigcap_{n \in \bbN}\limits[a_n;b_n] \Rightarrow c\in [a;b]$, причем 
@@ -25,7 +25,7 @@ $$
 \lim_{n \to \infty}f(a_n) = \lim_{n \to \infty}f(b_n) = f(c),
 $$
 
-Из $f(a_n)<C<f(b_n) \fa n\in\bbN$ следует 
+Из $f(a_n)<C<f(b_n) \forall n\in\bbN$ следует 
 \begin{equation*}
 \begin{split}
 \lim_{n \to \infty}f(a_n) &\le C \le \lim_{n \to \infty}f(b_n),\\

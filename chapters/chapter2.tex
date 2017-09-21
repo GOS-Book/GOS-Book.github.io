@@ -70,11 +70,11 @@ $\forall M' < M \; (\forall M' > M)\ \exists x\in G\colon x>M' \; (x<M')$.
 \begin{defn}[Определение предела функции по Коши\rindex{предел!функции по Коши}]\label{df:ch2:predelCaushi}
 Пусть $c\in\bboR$, $x_o \in \bboR$ и $x_0$ --- предельная точка множества $D_f \subset \bbR$. Тогда элемент $c$ называется \textit{пределом функции} $f$, заданной на множестве $D_f$ при $x \to x_0$ (в точке $x_0$), если
 $$
-\forall O(c) \ex O(x_0): \fa x \in \dnei{x_0}\cap D_f:\quad f(x) \in O(c),
+\forall O(c) \exists O(x_0): \forall x \in \dnei{x_0}\cap D_f:\quad f(x) \in O(c),
 $$  
 что эквивалентно (это можно доказать)
 $$
-\forall \epsilon > 0 \ex \delta >0: \fa x \in \dneio{\delta}{x_0} \cap D_f:\quad f(x) \in O_\epsilon (c). 
+\forall \epsilon > 0 \exists \delta >0: \forall x \in \dneio{\delta}{x_0} \cap D_f:\quad f(x) \in O_\epsilon (c). 
 $$
 
 Будем писать $\lim_{x \to x_0}\limits f(x) = c$, или <<$f(x)\to c$ при $x \to x_0$>>.
@@ -91,7 +91,7 @@ $$
 
 \begin{thm}
 \label{th:ch2:predeltochka}
-Пусть $G \subset \bbR$. Тогда $c \in \bbR$ является предельной точкой $G$ $\Longleftrightarrow$ $ \exists \{x_n\}: \fa n \in \bbN \quad x_n \in G\setminus\{c\}: \lim_{n \to \infty}\limits x_n = c$. 
+Пусть $G \subset \bbR$. Тогда $c \in \bbR$ является предельной точкой $G$ $\Longleftrightarrow$ $ \exists \{x_n\}: \forall n \in \bbN \quad x_n \in G\setminus\{c\}: \lim_{n \to \infty}\limits x_n = c$. 
 \end{thm}
 
 Согласно теореме~\ref{th:ch2:predeltochka} у функции существует последовательность Гейне в любой точке $x_0$, являющейся предельной для $D_f$.
@@ -162,7 +162,7 @@ $$
 
 Это эквивалентно тому, что $\forall n \in \bbN\ \exists x_n \in [a;b]:\ M-\frac{1}{n} < f(x_n) \le M $.
 
-Поскольку $ a\le x_n \le b \fa n \in \bbN$, то последовательность $\{x_n\}$ ограничена. По \hyperref[th:ch1:TBV]{теореме Больцано-Вейерштрасса} можно выделить из нее подпоследовательность ${x_{n_k}}$, сходящуюся к некоторому $x^* \in \bbR$ при $k \to \infty$.
+Поскольку $ a\le x_n \le b \forall n \in \bbN$, то последовательность $\{x_n\}$ ограничена. По \hyperref[th:ch1:TBV]{теореме Больцано-Вейерштрасса} можно выделить из нее подпоследовательность ${x_{n_k}}$, сходящуюся к некоторому $x^* \in \bbR$ при $k \to \infty$.
 
 Так как $f$ непрерывна в точке $x^*$, и так как $x_{n_k}\xrightarrow{k \to \infty} x^*$, то  
 $$

@@ -38,7 +38,7 @@
   
   (1) \vv{a_1},...,\vv{a_r} линейно независимы
   
-  (2) $\fa v \in V \ex \lambda_1,...\lambda_r: v=\sum \limits_{i=1}^r\lambda_ia_i$
+  (2) $\forall v \in V \exists \lambda_1,...\lambda_r: v=\sum \limits_{i=1}^r\lambda_ia_i$
   \end{defn}
   
   \begin{defn}
@@ -57,12 +57,12 @@
   \begin{proof}
   $\Rightarrow$: Пусть система совместна. Это означает, что
   \begin{equation*}
-  \ex x_1,\ldots, x_n: x_1a_1^\uparrow +\ldots+x_na_n^\uparrow=b^\uparrow,
+  \exists x_1,\ldots, x_n: x_1a_1^\uparrow +\ldots+x_na_n^\uparrow=b^\uparrow,
   \end{equation*}
   где через $a_k^\uparrow$ обозначен k-й столбец матрицы $A$. Следовательно, базис столбцов матрицы $A$  является и базисом столбцов матрицы $\widetilde A$ и $\rg A = \rg \widetilde A$.
   $\Leftarrow$: Пусть $\rg A = \rg \widetilde A$, а столбцы $a_{j_1}^\uparrow,...,a_{j_r}^\uparrow$ образуют базис матрицы $A$. Этот набор в совокупности с $b^\uparrow$ не может образовать линейно независимый набор, т.к. это повлечёт увеличение ранга, следовательно, 
   \begin{equation*}\\ 
-  \ex x_{j_1},...,x_{j_r}: -b^\uparrow+x_{j_1}a_{j_1}^\uparrow+\ldots+x_{j_r}a_{j_r}^\uparrow+\sum_{j \notin \{j_1,...,j_r\}}0 a_j^\uparrow = 0,
+  \exists x_{j_1},...,x_{j_r}: -b^\uparrow+x_{j_1}a_{j_1}^\uparrow+\ldots+x_{j_r}a_{j_r}^\uparrow+\sum_{j \notin \{j_1,...,j_r\}}0 a_j^\uparrow = 0,
   \end{equation*} 
   что означает, что решение существует.
   \end{proof}

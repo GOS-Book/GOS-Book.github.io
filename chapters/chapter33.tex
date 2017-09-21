@@ -360,7 +360,7 @@ $$
 где $z_0 \in G$ называется \textit{центром звездного множества}, $z_1 :[\alpha, \beta] \to \bbC$ "--- кусочно-гладкая функция, причем должны выполняться включения
 \begin{equation}
 \label{abc7}
-\Gamma_\lambda \triangleq \{ z \bigr|\bigl. z = z_0+\lambda z_1(t),  \alpha \le t \le \beta\} \subset G, \fa \lambda \in [0,1).
+\Gamma_\lambda \triangleq \{ z \bigr|\bigl. z = z_0+\lambda z_1(t),  \alpha \le t \le \beta\} \subset G, \forall \lambda \in [0,1).
 \end{equation}
 
 Проще говоря, множество $G$ называется \textit{звездным}\rindex{множество!звездное}, если можно найти такую точку (\textit{центр зведного множества}), что все прямые отрезки, соединяющие ее с любой другой, целиком принадлежат $G$.
@@ -390,10 +390,10 @@ $$
 Для каждого $\lambda \in (0,1)$ делаем замену переменного $\zeta = \lambda z$. Тогда $\zeta \in \Gamma_\lambda \Leftrightarrow z \in \Gamma$. В силу этой замены равенство \eqref{abc11}  принимает вид
 \begin{equation}
 \label{abc9}
-\int_{\Gamma} f(\lambda z)\lambda\,dz = 0, \; \text{откуда} \; \int_{\Gamma} f(\lambda z)\,dz = 0, \fa \lambda \in (0,1)
+\int_{\Gamma} f(\lambda z)\lambda\,dz = 0, \; \text{откуда} \; \int_{\Gamma} f(\lambda z)\,dz = 0, \forall \lambda \in (0,1)
 \end{equation}
 
-Так как функция $f$ непрерывна на ограниченном замкнутом множестве $\overline{G}$, то она равномерно непрерывна на $\overline{G}$. Это значит, что $\forall \epsilon > 0 \ex \delta = \delta (\epsilon) > 0, \forall z',z'' \in \overline{G}, |z'-z''|<\delta \Rightarrow |f(z')-f(z'')| < \epsilon$.  Поэтому $\forall z \in \Gamma$ получаем $|z-\lambda z|=(1-\lambda)|z| \le (1-\lambda)C_0$, где $C_0=\max\{|z|\bigr|\bigl. z\in \Gamma\}$.
+Так как функция $f$ непрерывна на ограниченном замкнутом множестве $\overline{G}$, то она равномерно непрерывна на $\overline{G}$. Это значит, что $\forall \epsilon > 0 \exists \delta = \delta (\epsilon) > 0, \forall z',z'' \in \overline{G}, |z'-z''|<\delta \Rightarrow |f(z')-f(z'')| < \epsilon$.  Поэтому $\forall z \in \Gamma$ получаем $|z-\lambda z|=(1-\lambda)|z| \le (1-\lambda)C_0$, где $C_0=\max\{|z|\bigr|\bigl. z\in \Gamma\}$.
 
 Выбрав $\lambda_\epsilon \in (0, 1)$, удовлетворяющее неравенству $(1 - \lambda_\epsilon) < \delta(\epsilon)/C_0 $, получаем $|z - \lambda_\epsilon z| < \delta(\epsilon),\, \forall z \in \Gamma$. Поэтому из \eqref{abc9} следует:
 \begin{multline}
@@ -415,12 +415,12 @@ $$
 \end{leftbar}
 \usepict{ch33pict5}
 \begin{proof}
-Поскольку область ограничена, то значит одна группа компонент, <<внешняя>> компонента, образует кусочно-гладкий замкнутый контур, который отделяет $G$ от бесконечности. (см. рис. \ref{ch33pict5})
+Поскольку область ограничена, то значит одна группа компонент, <<внешняя>> компонента, образует кусочно-гладкий замкнутый контур, который отделяет $G$ от бесконечности. (см. рис.~\ref{ch33pict5})
 
 Добавим к каждой <<внутренней>> компоненте границы $\partial G$ дополнительный разрез, соединяющий его с <<внешней>> компонентой. 
 Итак, мы конечным числом дополнительных непересекающихся между собой разрезов $R_1,\dots R_p$ разбили область $G$ на  подмножества $G_1,\dots, G_m$. Эти подмножества, по построению, являются ограниченными односвязными областями с кусочно-гладкими границами. Тогда по интегральной теореме Коши для односвязных множеств:
 $$
-\underbrace{0=\sum_{j=1}^m \int_{(\partial G_j)^+} f(z) \,dz }_{\text{\scriptsizeт.к. каждый интеграл} =0} = \int_{(\partial G)^+} f(z)\,dz + \sum_{k=1}^{m} \underbrace{\left( \int_{(R_k)^+}f(z)\,dz + \int_{(R_k)^-}f(z)\,dz \right)}_{\textstyle =0 \fa s}
+\underbrace{0=\sum_{j=1}^m \int_{(\partial G_j)^+} f(z) \,dz }_{\text{\scriptsizeт.к. каждый интеграл} =0} = \int_{(\partial G)^+} f(z)\,dz + \sum_{k=1}^{m} \underbrace{\left( \int_{(R_k)^+}f(z)\,dz + \int_{(R_k)^-}f(z)\,dz \right)}_{\textstyle =0 \forall s}
 $$ 
 Отсюда
 $$
