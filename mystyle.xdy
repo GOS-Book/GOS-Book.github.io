@@ -13,6 +13,6 @@
  :rule-set ("latin-tolower"))
 
  (markup-letter-group
- :open-head "\nopagebreak\tikz\node at (0pt,0pt) [draw=none,fill=ocre!50,line width=1pt,inner sep=5pt]{\parbox{\linewidth-2\fboxsep-2\fboxrule-2pt}{\centering\large\sffamily\bfseries\textcolor{white}{ "
+ :open-head "\nopagebreak\tikz\node at (0pt,0pt) [draw=none,fill=prpl!40,line width=1pt,inner sep=5pt]{\parbox{\linewidth-2\fboxsep-2\fboxrule-2pt}{\centering\large\sffamily\bfseries\textcolor{black}{ "
     :close-head "}}};\vspace*{0.2cm}\nopagebreak"
  :capitalize)

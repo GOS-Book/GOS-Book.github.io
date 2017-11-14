@@ -1,21 +1,12 @@
-\part{Приложения}
-%\titleformat{\chapter}[display]{\raggedright\normalfont\Large\bfseries}{\chaptertitlename\ \thechapter}{2ex}{}
-
 \titlespacing{\subsubsection}{0pt}{0mm plus 1mm minus 1mm}{0pt plus 1mm minus 1mm}  
-
 \titlespacing{\section}{0pt}{1mm plus 2mm minus 1mm}{1pt plus 2mm minus 1mm}  
-
 \renewcommand*{\arraystretch}{1.85}
-
 \everymath{\displaystyle}
-
 \addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
-
 \newgeometry{margin=1.6cm, top=1.2cm,right=1.5cm,left=1.5cm,bottom = 2cm, footskip = 1 cm, headheight=20pt,headsep=0.2cm}
-
 \resetHeadWidth
 
-\hypersetup{linkcolor = black, urlcolor = black} 
+\part{Приложения}
 
 \chapter[Формулы к письменному ГОСу]{Формулы к письменному ГОСу}
 
@@ -623,13 +614,13 @@ ${\int \limits _{\Gamma ^{+}}{P\;dx+Q\;dy+R\;dz}} = \iint \limits _{S^{+}}{det \
 
 \section{Преобразование координат}
 
-$J = \det {\begin{pmatrix}{\partial u_{1} \over \partial x_{1}}(x)&{\partial u_{1} \over \partial x_{2}}(x)\\{\partial u_{2} \over \partial x_{1}}(x)&{\partial u_{2} \over \partial x_{2}}(x)\end{pmatrix}}$
+$J = \det {\begin{pmatrix}{\pd{u_{1}}{x_{1}}}(x)&{\pd{u_{1}}{x_{2}}}(x)\\{\pd{u_{2}}{x_{1}}}(x)&{\pd{u_{2}}{x_{2}}}(x)\end{pmatrix}}$
 
-\subsection{Сферические координаты} 
+\subsubsection{Сферические координаты} 
 
 ${\begin{cases}x=r\sin \theta \cos \varphi ,\\y=r\sin \theta \sin \varphi ,\\z=r\cos \theta .\end{cases}} 0 \le \theta \le \pi, \quad 0 \le \varphi \le 2\pi, \quad J=r^{2}\sin \theta $
 
-\subsection{Цилиндрические координаты}
+\subsubsection{Цилиндрические координаты}
 ${\begin{cases}x=\rho \cos \varphi ,\\y=\rho \sin \varphi ,\\z=z.\end{cases}} \quad 0 \le \varphi \le 2\pi, \quad J = \rho$
 
 
@@ -640,7 +631,7 @@ ${\begin{cases}x=\rho \cos \varphi ,\\y=\rho \sin \varphi ,\\z=z.\end{cases}} \q
 	${\mathrm  {grad}}\,\varphi =\nabla \varphi ={\frac  {\partial \varphi }{\partial x}}{\vec  e}_{x}+{\frac  {\partial \varphi }{\partial y}}{\vec  e}_{y}+{\frac  {\partial \varphi }{\partial z}}{\vec  e}_{z}.$
 	
 	\item
-	$\operatorname {div}\,{\mathbf  {F}}= (\nabla , {\mathbf  {F}})= {\frac  {\partial F_{x}}{\partial x}}+{\frac  {\partial F_{y}}{\partial y}}+{\frac  {\partial F_{z}}{\partial z}} = \lim _{{V\rightarrow 0}}{\iint \limits _{S}\!\!\!\!\!\!\!\!\!\!\subset \!\supset \;({\vec  F},d{\vec  S}) \over V}$
+	$\operatorname {div}\,{\mathbf  {F}}= (\nabla , {\mathbf  {F}})= {\frac  {\partial F_{x}}{\partial x}}+{\frac  {\partial F_{y}}{\partial y}}+{\pd{F_{z}}{z}} = \lim _{{V\rightarrow 0}}{\frac{\iint \limits _{S}\!\!\!\!\!\!\!\!\!\!\subset \!\supset \;({\vec  F},d{\vec  S})}{V}}$
 	
 	\item
 	$\operatorname{rot}\; \mathbf{F} = [\mathbf{\nabla} , \mathbf{F}] = \begin{vmatrix} \mathbf{e}_x & \mathbf{e}_y & \mathbf{e}_z \\  
@@ -655,7 +646,7 @@ ${\begin{cases}x=\rho \cos \varphi ,\\y=\rho \sin \varphi ,\\z=z.\end{cases}} \q
 
 $S=2\pi \int \limits _{a}^{b}f(x){\sqrt  {1+\left(f'(x)\right)^{2}}}dx, \quad y=f(x),\ a\leq x\leq b$ вокруг Ox
 
-$S=2\pi \int \limits _{\alpha }^{\beta }y(t){\sqrt  {\left(x'(t)\right)^{2}+\left(y'(t)\right)^{2}}}dtб \quad x=x(t),\ y=y(t),\ \alpha \leq t\leq \beta  $
+$S=2\pi \int \limits _{\alpha }^{\beta }y(t){\sqrt  {\left(x'(t)\right)^{2}+\left(y'(t)\right)^{2}}}dt, \quad x=x(t),\ y=y(t),\ \alpha \leq t\leq \beta  $
 
 $S=2\pi \int \limits _{\alpha }^{\beta }\rho (\varphi )|\sin \varphi |{\sqrt  {\left(\rho (\varphi )\right)^{2}+\left(\rho '(\varphi )\right)^{2}}}d\varphi, \quad r=\rho (\varphi ),\ \alpha \leq \varphi \leq \beta $
 
@@ -670,7 +661,7 @@ $a_0= \frac{1}{l}\int\limits_{-l}^{l}f(x)dx, \quad a_n= \frac{1}{l}\int\limits_{
 
 2n - четность относительно $\frac {\pi}{2}$ такая же, как относительно 0
 
-\subsection{Равенство Парсеваля} 
+\subsubsection{Равенство Парсеваля} 
 $\frac {a_0^2}{2} + \sum _{{n=1}}^{\infty }(a_n^2 +b_n^2)={\frac  {1}{\pi }}\int _{{-\pi }}^{\pi }|f(x)|^{2}\,dx,$
 
 \section{Признаки Даламбера и Коши}
@@ -716,7 +707,7 @@ $$\res_a f = c_{-1}.$$
 $$\res_a f=0.$$
 \item 
 Если $a$ "--- полюс первого порядка, то
-$$\res_a f=\lim\limits_{z\to a}{f(z)\cdot(z-a)}.$$
+$$\res_a f=\lim_{z\to a}{f(z)\cdot(z-a)}.$$
 \item
 Если $a$ "--- полюс первого порядка, причем $f=\frac{g(z)}{h(z)}$, где $g(z),\ h(z)$ "--- регулярные в точке $a$, $g(a)\neq 0,\ h(a)=0. \ h'(a)\neq 0,$ то 
 $$\res_a f=\frac{g(a)}{h'(a)}.$$
@@ -801,7 +792,7 @@ $\lim\limits_{x\to0} (1+x)^{1/x}=e.$
 
 
 \section{Дифференциальные уравнения}
-\subsection {Точки равновесия}
+\subsubsection {Точки равновесия}
 
 \begin{itemize}
 	\item

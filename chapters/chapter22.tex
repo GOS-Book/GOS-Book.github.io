@@ -2,217 +2,219 @@
 \def\fudge#1{\smash{\hbox{\Large#1}}}
 \chapter[Линейное отображение конечномерных линейных прост\-ранств, его матрица. Свойства собственных векторов и собственных значений линейных преобразований.]{Линейное отображение конечномерных линейных пространств, его матрица. Свойства собственных векторов и собственных значений линейных преобразований.}
 \section{Линейное отображение конечномерных линейных пространств, его матрица}
-  Пусть $L_1$ и $L_2$ --- линейные пространства над одним  и тем же полем $K$.
-  \begin{defn}
-  Отображение $\phi: L_1\rightarrow L_2$ называется \textit{линейным отображением}, если
-  
-  (1) $\forall x_1,x_2 \in L_1 \hookrightarrow \phi(x_1+x_2)=\phi(x_1)+\phi(x_2)$
-  
-  (2) $\forall x \in L_1 \forall \lambda \in K \hookrightarrow \phi(\lambda x)=\lambda \phi(x)$
-  \end{defn}
-  В частности, из определения следует, что $\phi(0_{L_1})=0_{L_2}$.
-  \begin{defn}
-    \textit{Образ} отображения --- это множество 
-    \begin{equation}
-    \Im\phi=\phi(L_1)=\{y\in L_2: \exists x\in L_1: \phi(x)=y\}
-    \end{equation}
-  \end{defn}
-  \begin{defn}
-    \textit{Ядро} отображения --- это множество 
-    \begin{equation}
-    \Ker\phi=\{x\in L_1: \phi(x)=0_{L_2}\}
-    \end{equation}
-  \end{defn}
-  \begin{defn}
-  Отображение $\phi: L_1\rightarrow L_2$ называется \textit{инъективным}, если никакие два различных вектора из $L_1$ не имеют одинаковых образов:
-  \begin{equation}\label{22.1.inject}
-    \forall x_1,x_2 \in L_1: \phi(x_1)=\phi(x_2) \hookrightarrow x_1=x_2
-  \end{equation}
-  \end{defn}  
-  \begin{defn}
-  Отображение $\phi: L_1\rightarrow L_2$ называется \textit{сюръективным}, если любой элемент $L_2$ имеет прообраз в $L_1$:
-  \begin{equation}\label{22.1.surject}
-    \forall y \in L_2 \exists x \in L_1: \phi(x)=y \Leftrightarrow \Im \phi = L_2
-  \end{equation}
-  \end{defn}  
-  
-  \begin{stt} $ $ \\
-  1) $\Ker\phi$ --- линейное подпространство пространства $L_1$ \\
-  2) $\Im\phi$ --- линейное подпространство пространства $L_2$
-  \end{stt}
-  \begin{thm}
-  Линейное преобразование $\phi$ инъективно $\Leftrightarrow \Ker\phi=\{0\}$
-  \end{thm}
-  \begin{proof} $ $
-  \linebreak\vspace*{-\baselineskip}
-  \begin{itemize}
-  \item[\underline{$\Longrightarrow:$}]   Пусть $\phi$ инъективно, то есть выполняется \eqref{22.1.inject}. Тогда \\ $\forall x\in L_1:\phi(x)=0=\phi(0) \hookrightarrow x=0,$ то есть $\Ker\phi=\{0\}$.
-  \item[\underline{$\Longleftarrow:$}] 
-Пусть $\Ker\phi=\{0\}$ и $\phi(x_1)=\phi(x_2)$. Тогда $\phi(x_1-x_2)=0 \Rightarrow x_1-x_2=0$. Таким образом, выполняется условие \eqref{22.1.inject}.
-  \end{itemize}
-  \vspace{-1.65\baselineskip}
-  \end{proof}
-  
-  \begin{defn}
-  Линейное отображение $\phi: L\rightarrow L$, отображающее пространство $L$ в себя, называется \textit{линейным преобразованием}.
-  \end{defn}
-  
-  Напомним, говорят, что \textit{размерность} линейного пространства $\dim L = n$, если в нём существует базис из $n$ векторов.
-  
-  Рассмотрим запись преобразования $\phi$  в базисах. Пусть $\dim L_1 = n, e=\norm{e_1 \ldots e_n}$ --- базис в $L_1$; $\dim L_2 = m, f=\norm{f_1 \ldots f_m}$ --- базис в $L_2$.
-  \begin{equation*}
-  \forall x \in L_1 \hookrightarrow x=\sum_{j=1}^n x_je_j \Rightarrow \phi(x)\xlongequal{linear}\sum_{j=1}^n x_j\phi(e_j) 
-  \end{equation*}
-  \begin{equation*}
-  \phi(e_j) \in L_2 \Rightarrow \phi(e_j)=\sum_{i=1}^m a_{ij}f_i \Rightarrow 
-  \end{equation*}
-  \begin{equation*}
-  \Rightarrow \phi(x)=\sum_{j=1}^n\sum_{i=1}^m x_ja_{ij}f_i = \sum_{i=1}^m(\sum_{j=1}^n x_ja_{ij})f_i = \sum_{i=1}^m y_if_i
-  \end{equation*}
-  Отсюда и из единственности разложения по базису получаем закон преобразования координат:
-  \begin{equation}
-  y_i=\sum_{j=1}^n a_{ij}x_j, i=\overline{1,m} \Leftrightarrow Y_f^\uparrow=A_{\phi,e,f}X_e^\uparrow,
-  \end{equation}
-  где через $X_e^\uparrow$, или, сокращённо, $X$ обозначаются столбцы координат $\begin{Vmatrix}
-  x_1 \\ x_2 \\ \vdots \\ x_n
-  \end{Vmatrix}$ при разложении элемента $x$ по базису $e$: $x=e X_e^\uparrow$
-  \begin{defn}
-  Матрица $A_{\phi,e,f}=(a_{ij})_{\substack{ 1\le i\le m \\ 1\le j\le n }}=\norm{\phi(e_1)^\uparrow \ldots \phi(e_n)^\uparrow}$, состоящая из столбцов координат образов базисных элементов $e_j$ в разложении по базисным элементам $f_i$, называется \textit{матрицей линейного отображения} $\phi$ в паре базисов $e$ и $f$.
-  \end{defn}
-  \begin{stt}\label{22.1.KerIm} {О вычислении образа и ядра преобразования с помощью его матрицы} $ $\\
-  1) $x \in \Ker\phi \Leftrightarrow A_\phi X^\uparrow=0^\uparrow$ \\
-  2) $\Im\phi=\langle\phi(e_1) \ldots \phi(e_n)\rangle=\langle a_1^\uparrow \ldots a_n^\uparrow\rangle$, где $a_j^\uparrow$ --- столбцы матрицы $A_\phi$, а $\langle a_1^\uparrow \ldots a_n^\uparrow\rangle$ --- \textit{линейная оболочка}, то есть множество всех линейных комбинаций $\lambda_1 a_1^\uparrow + \ldots + \lambda_n a_n^\uparrow, \lambda_1\ldots\lambda_n \in \bbR$.
-  \end{stt}
-  \begin{thm}
-  Пусть дано линейное отображение $\phi:L_1\rightarrow L_2$. Тогда $\dim L_1=\dim\Ker\phi+\dim\Im\phi$.
-  \end{thm}
-  \begin{proof}
-  Из пункта 1) утверждения \ref{22.1.KerIm} и теоремы \ref{21.2.th.common} билета 21 следует, что размерность ядра преобразования равна количеству параметрических неизвестных, то есть $n-\rg A_\phi$, а его базис в координатной записи имеет вид фундаментальной системы решений уравнения $A_\phi X^\uparrow=0^\uparrow$.
-  Из пункта 2) того же утверждения следует, что $\dim\Im\phi=\rg A_\phi$.
-  \end{proof}    
-  \begin{notion}
-  Из доказанного, однако, не следует, что для любого преобразования $\phi$ пространства $L_2$ пространство разложимо в сумму ядра и образа преобразования.
-  \end{notion}
-  \begin{exmpl} $ $ \\
-  1) Для преобразования двумерного пространства с матрицей $A_\phi=\begin{pmatrix}
-  0 && 1 \\ 0 && 0
-  \end{pmatrix} \\
-  \Ker\phi=\Im\phi=\langle e_1\rangle, \Ker\phi+\Im\phi=\langle e_1\rangle \neq L = \langle e_1, e_2\rangle$  \\
-  2) В пространстве многочленов $P^{(n)}(x)$ степени не выше $n$ преобразование $\phi=\dfrac{d}{dx}$ будет линейным с $\Ker\phi=P^{(0)}(x)$ и $\Im\phi=P^{(n-1)}(x)$
-  \end{exmpl}
-  
-\section{Свойства собственных векторов и собственных значений линейных преобразований}
-  Пусть дано линеное преобразование $\phi: L \rightarrow L$, где $L$ - линейное пространство над полем $K$.
-  \begin{defn}
-  Вектор $x \in L: x \neq \vv 0$ называется \textit{собственным вектором} преобразования $\phi$, если 
-  \begin{equation}
-    \exists \lambda \in K: \phi(x)=\lambda x,
-  \end{equation}
-$\lambda$ называется \textit{собственным значением} преобразования $\phi$ 
-  \end{defn}
-  \begin{thm}
-  Пусть $x_1,...,x_n$ являются собственными векторами линейного преобразования $\phi$, отвечающими попарно разным собственным значениям $\lambda_1,...,\lambda_n$. Тогда $x_1,...,x_n$ образуют линейно независимую систему векторов.
-  \end{thm}
-  \begin{proof}
-  Воспользуемся методом математической индукции:
-  \linebreak\vspace*{-\baselineskip}
-  \begin{itemize}
-  \item[\underline{$n=1:$}] Вектор $x_1$ является собственным, значит, по определению не равен нулевому $\Rightarrow$ образует линейно-независиую систему.
-  \item[\underline{$n-1:$}] Пусть теорема верна для $n-1\ge 1$ собственных векторов.
-  
-  \item[\underline{$n:$}] Пусть для некоторых $\alpha_1,...,\alpha_n \hookrightarrow \alpha_1 x_1 + \ldots \alpha_n x_n = 0$. Покажем, что $\alpha_1=\ldots=\alpha_n=0$.
-  
-  $\phi(\sum_{i=1}^n \alpha_i x_i)=\sum_{i=1}^n \alpha_i \lambda_i x_i = \phi(0)=0$. \\
-  Получаем систему: \\
-  $\begin{cases}
-    \alpha_1 x_1 + \alpha_2 x_2 + \ldots + \alpha_n x_n = 0 & |\cdot \lambda_n \\
-    \alpha_1 \lambda_1 x_1 + \alpha_2 \lambda_2 x_2 + \ldots + \alpha_n \lambda_n x_n = 0 \\
-  \end{cases}$ \\
-  Вычтем второе равенство из первого и получим:
-  \begin{equation*}
-  \alpha_1 (\lambda_n-\lambda_1) x_1 + \alpha_2 (\lambda_n-\lambda_2) x_2 + \ldots + \alpha_{n-1} (\lambda_n-\lambda_{n-1}) x_{n-1} = 0
-  \end{equation*}
-  По предположению индукции $\forall i=\overline{1,n-1} \hookrightarrow \alpha_i(\lambda_n-\lambda_i)=0$, откуда в силу условия теоремы $\alpha_1=\cdots=\alpha_{n-1}=0 \Rightarrow \alpha_n x_n=0 \Rightarrow \alpha_n=0$
-  \end{itemize}
-  \vspace{-1.65\baselineskip}
-  \end{proof}
-  \begin{cons}
-  Если $\dim L = n$ и $\phi$ имеет $n$ различных собственных значений, то из собственных векторов преобразования $\phi$ можно составить базис $L$.
-  \end{cons}  
-  \begin{stt}
-  Линейное преобразование $\phi$ приводимо к диагональному виду тогда и только тогда, когда в $L$ существует базис $ h = \norm{h_1,...,h_n}$ из собственных векторов $\phi$. При этом $A_{\phi,h}=
-  \begin{pmatrix}
-  \lambda_1 &           &        & \\
-            & \lambda_2 &        & \fudge {0 }  \\
-            &			& \ddots & \\
-  \fudge{ 0}&			&		 & \lambda_n \\
-  \end{pmatrix}$, где $\lambda_i$ удовлетворяют $\phi(h_i)=\lambda_i h_i$.
-  \end{stt} 
-  
-  Теперь обсудим способ вычисления собственных значений и собственных векторов. Пусть в пространстве $L$ задан базис $ e=\norm{e_1,...,e_n}$. Распишем в координатном представлении закон преобразования собственного вектора $x=e X^\uparrow$:
-  \begin{equation}\label{22.2.eigenvectors}
-    A_\phi X^\uparrow=\lambda X^\uparrow \Leftrightarrow (A_\phi-\lambda E)X^\uparrow=0
-  \end{equation}
-Уравнение \ref{22.2.eigenvectors} имеет нетривиальные решения, если матрица вырожденна:
-  \begin{equation}\label{22.2.eigenvalues}
-  \bigchi_{A_\phi}(\lambda)\equiv\det(A_\phi-\lambda E)=0
-  \end{equation}
-  \begin{defn}
-    Уравнение \ref{22.2.eigenvalues} называется \textit{характеристическим}, его корни --- \textit{характеристическими корнями}, а многочлен $\bigchi_{A_\phi}(\lambda)$ --- \textit{характеристическим многочленом матрицы} $A_\phi$.
-  \end{defn}
-  \begin{stt}
-  Если $\lambda$ --- собственное значение, то оно является характеристическим корнем. Характеристический корень $\lambda_0$ является собственным значением, если $\lambda_0 \in K$.
-  \end{stt}
-  \begin{exmpl}
-  Пусть $\phi$ --- преобразование поворота на угол $\alpha$ в двумерном пространстве над полем вещественных чисел $K=\bbR$: $A_\phi=\begin{pmatrix}
-  \cos\alpha && -\sin\alpha \\ \sin\alpha && \cos\alpha
-  \end{pmatrix}$ и $\alpha \neq k\pi$. Тогда собственными значениями являются $\lambda_{1,2}=e^{\pm i\alpha} \notin K$. Данное преобразование не имеет собственных значений, а значит, и собственных векторов.
-  \end{exmpl}
+Пусть $L_1$ и $L_2$ "--- линейные пространства над одним  и тем же полем~$K$.
+\begin{defn}
+Отображение $\phi\colon L_1\rightarrow L_2$ называется \textit{линейным отображением}, если
+\begin{enumerate}
+\item $\forall x_1,x_2 \in L_1 \hookrightarrow \phi(x_1+x_2)=\phi(x_1)+\phi(x_2)$
+\item $\forall x \in L_1, \forall \lambda \in K \hookrightarrow \phi(\lambda x)=\lambda \phi(x)$
+\end{enumerate}
+\end{defn}
+В частности, из определения следует, что $\phi(0_{L_1})=0_{L_2}$.
+\begin{defn}
+\textit{Образ} отображения "--- это множество 
+\begin{equation}
+\Im\phi=\phi(L_1)=\{y\in L_2\,\big|\, \exists x\in L_1: \phi(x)=y\}
+\end{equation}
+\end{defn}
+\begin{defn}
+\textit{Ядро} отображения "--- это множество 
+\begin{equation}
+\Ker\phi=\{x\in L_1\,\big|\, \phi(x)=0_{L_2}\}
+\end{equation}
+\end{defn}
+\begin{defn}
+Отображение $\phi\colon L_1\rightarrow L_2$ называется \textit{инъективным}, если никакие два различных вектора из $L_1$ не имеют одинаковых образов:
+\begin{equation}\label{22.1.inject}
+\forall x_1,x_2 \in L_1\cquad \phi(x_1)=\phi(x_2) \hookrightarrow x_1=x_2
+\end{equation}
+\end{defn}  
+\begin{defn}
+Отображение $\phi\colon L_1\rightarrow L_2$ называется \textit{сюръективным}, если любой элемент $L_2$ имеет прообраз в $L_1$:
+\begin{equation}\label{22.1.surject}
+\forall y \in L_2 \quad \exists x \in L_1\cquad \phi(x)=y \Leftrightarrow \Im \phi = L_2
+\end{equation}
+\end{defn}  
 
-  \begin{defn}
-  Пусть $\phi:L\rightarrow L$ --- линейное преобразование пространства $L$ над полем $K$, $\lambda \in K$. Множество $L_\lambda$ собственных векторов, отвечающих собственному значению $\lambda$, называется \textit{собственным подпространством} для собственного значения $\lambda$.
-  \end{defn}
-  \begin{defn}
-  \textit{Геометрической кратностью} характеристического корня $\lambda_0$ называется размерность пространства $L_{\lambda_0}$.
-  \textit{Алгебраической кратностью} называется число $k \in \bbN$, если $\bigchi(\lambda)=(\lambda-\lambda_0)^k p(\lambda)$, где $p(\lambda)$ - такой многочлен, что $p(\lambda_0) \neq 0$.
-  \end{defn}
-  
+\begin{stt} 
+\begin{enumerate}
+\item $\Ker\phi$ "--- линейное подпространство пространства~$L_1$; 
+\item $\Im\phi$ "--- линейное подпространство пространства~$L_2$.
+\end{enumerate}
+\end{stt}
+\begin{thm}
+Линейное преобразование $\phi$ инъективно $\Leftrightarrow \Ker\phi=\{0\}$
+\end{thm}
+\begin{proof} $ $
+\linebreak\vspace*{-\baselineskip}
+\begin{itemize}
+\item[\underline{$\Longrightarrow:$}]   Пусть $\phi$ инъективно, то есть выполняется \eqref{22.1.inject}. Тогда \\ $\forall x\in L_1:\phi(x)=0=\phi(0) \hookrightarrow x=0,$ то есть $\Ker\phi=\{0\}$.
+\item[\underline{$\Longleftarrow:$}] 
+Пусть $\Ker\phi=\{0\}$ и $\phi(x_1)=\phi(x_2)$. Тогда $\phi(x_1-x_2)=0 \Rightarrow x_1-x_2=0$. Таким образом, выполняется условие \eqref{22.1.inject}.
+\end{itemize}
+\vspace{-1.65\baselineskip}
+\end{proof}
+
+\begin{defn}
+Линейное отображение $\phi: L\rightarrow L$, отображающее пространство $L$ в себя, называется \textit{линейным преобразованием}.
+\end{defn}
+
+Напомним, говорят, что \textit{размерность} линейного пространства $\dim L = n$, если в нём существует базис из $n$ векторов.
+
+Рассмотрим запись преобразования $\phi$  в базисах. Пусть $\dim L_1 = n, e=\norm{e_1 \ldots e_n}$ "--- базис в $L_1$; $\dim L_2 = m, f=\norm{f_1 \ldots f_m}$ "--- базис в $L_2$.
+\begin{equation*}
+\forall x \in L_1 \hookrightarrow x=\sum_{j=1}^n x_je_j \Rightarrow \phi(x)\xlongequal{linear}\sum_{j=1}^n x_j\phi(e_j) 
+\end{equation*}
+\begin{equation*}
+\phi(e_j) \in L_2 \Rightarrow \phi(e_j)=\sum_{i=1}^m a_{ij}f_i \Rightarrow 
+\end{equation*}
+\begin{equation*}
+\Rightarrow \phi(x)=\sum_{j=1}^n\sum_{i=1}^m x_ja_{ij}f_i = \sum_{i=1}^m(\sum_{j=1}^n x_ja_{ij})f_i = \sum_{i=1}^m y_if_i
+\end{equation*}
+Отсюда и из единственности разложения по базису получаем закон преобразования координат:
+\begin{equation}
+y_i=\sum_{j=1}^n a_{ij}x_j, i=\overline{1,m} \Leftrightarrow Y_f^\uparrow=A_{\phi,e,f}X_e^\uparrow,
+\end{equation}
+где через $X_e^\uparrow$, или, сокращённо, $X$ обозначаются столбцы координат $\begin{Vmatrix}
+x_1 \\ x_2 \\ \vdots \\ x_n
+\end{Vmatrix}$ при разложении элемента $x$ по базису $e$: $x=e X_e^\uparrow$
+\begin{defn}
+Матрица $A_{\phi,e,f}=(a_{ij})_{\substack{ 1\le i\le m \\ 1\le j\le n }}=\norm{\phi(e_1)^\uparrow \ldots \phi(e_n)^\uparrow}$, состоящая из столбцов координат образов базисных элементов $e_j$ в разложении по базисным элементам $f_i$, называется \textit{матрицей линейного отображения} $\phi$ в паре базисов $e$ и $f$.
+\end{defn}
+\begin{stt}\label{22.1.KerIm} {О вычислении образа и ядра преобразования с помощью его матрицы} $ $\\
+1) $x \in \Ker\phi \Leftrightarrow A_\phi X^\uparrow=0^\uparrow$ \\
+2) $\Im\phi=\langle\phi(e_1) \ldots \phi(e_n)\rangle=\langle a_1^\uparrow \ldots a_n^\uparrow\rangle$, где $a_j^\uparrow$ "--- столбцы матрицы $A_\phi$, а $\langle a_1^\uparrow \ldots a_n^\uparrow\rangle$ "--- \textit{линейная оболочка}, то есть множество всех линейных комбинаций $\lambda_1 a_1^\uparrow + \ldots + \lambda_n a_n^\uparrow, \lambda_1\ldots\lambda_n \in \bbR$.
+\end{stt}
+\begin{thm}
+Пусть дано линейное отображение $\phi:L_1\rightarrow L_2$. Тогда $\dim L_1=\dim\Ker\phi+\dim\Im\phi$.
+\end{thm}
+\begin{proof}
+Из пункта 1) утверждения \ref{22.1.KerIm} и теоремы \ref{21.2.th.common} билета 21 следует, что размерность ядра преобразования равна количеству параметрических неизвестных, то есть $n-\rg A_\phi$, а его базис в координатной записи имеет вид фундаментальной системы решений уравнения $A_\phi X^\uparrow=0^\uparrow$.
+Из пункта 2) того же утверждения следует, что $\dim\Im\phi=\rg A_\phi$.
+\end{proof}    
+\begin{notion}
+Из доказанного, однако, не следует, что для любого преобразования $\phi$ пространства $L_2$ пространство разложимо в сумму ядра и образа преобразования.
+\end{notion}
+\begin{exmpl} $ $ \\
+1) Для преобразования двумерного пространства с матрицей $A_\phi=\begin{pmatrix}
+0 && 1 \\ 0 && 0
+\end{pmatrix} \\
+\Ker\phi=\Im\phi=\langle e_1\rangle, \Ker\phi+\Im\phi=\langle e_1\rangle \neq L = \langle e_1, e_2\rangle$  \\
+2) В пространстве многочленов $P^{(n)}(x)$ степени не выше $n$ преобразование $\phi=\dfrac{d}{dx}$ будет линейным с $\Ker\phi=P^{(0)}(x)$ и $\Im\phi=P^{(n-1)}(x)$
+\end{exmpl}
+
+\section{Свойства собственных векторов и собственных значений линейных преобразований}
+Пусть дано линеное преобразование $\phi: L \rightarrow L$, где $L$ - линейное пространство над полем $K$.
+\begin{defn}
+Вектор $x \in L: x \neq \vv 0$ называется \textit{собственным вектором} преобразования $\phi$, если 
+\begin{equation}
+\exists \lambda \in K: \phi(x)=\lambda x,
+\end{equation}
+$\lambda$ называется \textit{собственным значением} преобразования $\phi$ 
+\end{defn}
+\begin{thm}
+Пусть $x_1,...,x_n$ являются собственными векторами линейного преобразования $\phi$, отвечающими попарно разным собственным значениям $\lambda_1,...,\lambda_n$. Тогда $x_1,...,x_n$ образуют линейно независимую систему векторов.
+\end{thm}
+\begin{proof}
+Воспользуемся методом математической индукции:
+\linebreak\vspace*{-\baselineskip}
+\begin{itemize}
+\item[\underline{$n=1:$}] Вектор $x_1$ является собственным, значит, по определению не равен нулевому $\Rightarrow$ образует линейно-независиую систему.
+\item[\underline{$n-1:$}] Пусть теорема верна для $n-1\ge 1$ собственных векторов.
+
+\item[\underline{$n:$}] Пусть для некоторых $\alpha_1,...,\alpha_n \hookrightarrow \alpha_1 x_1 + \ldots \alpha_n x_n = 0$. Покажем, что $\alpha_1=\ldots=\alpha_n=0$.
+
+$\phi(\sum_{i=1}^n \alpha_i x_i)=\sum_{i=1}^n \alpha_i \lambda_i x_i = \phi(0)=0$. \\
+Получаем систему: \\
+$\begin{cases}
+\alpha_1 x_1 + \alpha_2 x_2 + \ldots + \alpha_n x_n = 0 & |\cdot \lambda_n \\
+\alpha_1 \lambda_1 x_1 + \alpha_2 \lambda_2 x_2 + \ldots + \alpha_n \lambda_n x_n = 0 \\
+\end{cases}$ \\
+Вычтем второе равенство из первого и получим:
+\begin{equation*}
+\alpha_1 (\lambda_n-\lambda_1) x_1 + \alpha_2 (\lambda_n-\lambda_2) x_2 + \ldots + \alpha_{n-1} (\lambda_n-\lambda_{n-1}) x_{n-1} = 0
+\end{equation*}
+По предположению индукции $\forall i=\overline{1,n-1} \hookrightarrow \alpha_i(\lambda_n-\lambda_i)=0$, откуда в силу условия теоремы $\alpha_1=\cdots=\alpha_{n-1}=0 \Rightarrow \alpha_n x_n=0 \Rightarrow \alpha_n=0$
+\end{itemize}
+\vspace{-1.65\baselineskip}
+\end{proof}
+\begin{cons}
+Если $\dim L = n$ и $\phi$ имеет $n$ различных собственных значений, то из собственных векторов преобразования $\phi$ можно составить базис $L$.
+\end{cons}  
+\begin{stt}
+Линейное преобразование $\phi$ приводимо к диагональному виду тогда и только тогда, когда в $L$ существует базис $ h = \norm{h_1,...,h_n}$ из собственных векторов $\phi$. При этом $A_{\phi,h}=
+\begin{pmatrix}
+\lambda_1 &           &        & \\
+        & \lambda_2 &        & \fudge {0 }  \\
+        &			& \ddots & \\
+\fudge{ 0}&			&		 & \lambda_n \\
+\end{pmatrix}$, где $\lambda_i$ удовлетворяют $\phi(h_i)=\lambda_i h_i$.
+\end{stt} 
+
+Теперь обсудим способ вычисления собственных значений и собственных векторов. Пусть в пространстве $L$ задан базис $ e=\norm{e_1,...,e_n}$. Распишем в координатном представлении закон преобразования собственного вектора $x=e X^\uparrow$:
+\begin{equation}\label{22.2.eigenvectors}
+A_\phi X^\uparrow=\lambda X^\uparrow \Leftrightarrow (A_\phi-\lambda E)X^\uparrow=0
+\end{equation}
+Уравнение \ref{22.2.eigenvectors} имеет нетривиальные решения, если матрица вырожденна:
+\begin{equation}\label{22.2.eigenvalues}
+\bigchi_{A_\phi}(\lambda)\equiv\det(A_\phi-\lambda E)=0
+\end{equation}
+\begin{defn}
+Уравнение \ref{22.2.eigenvalues} называется \textit{характеристическим}, его корни --- \textit{характеристическими корнями}, а многочлен $\bigchi_{A_\phi}(\lambda)$ --- \textit{характеристическим многочленом матрицы} $A_\phi$.
+\end{defn}
+\begin{stt}
+Если $\lambda$ --- собственное значение, то оно является характеристическим корнем. Характеристический корень $\lambda_0$ является собственным значением, если $\lambda_0 \in K$.
+\end{stt}
+\begin{exmpl}
+Пусть $\phi$ --- преобразование поворота на угол $\alpha$ в двумерном пространстве над полем вещественных чисел $K=\bbR$: $A_\phi=\begin{pmatrix}
+\cos\alpha && -\sin\alpha \\ \sin\alpha && \cos\alpha
+\end{pmatrix}$ и $\alpha \neq k\pi$. Тогда собственными значениями являются $\lambda_{1,2}=e^{\pm i\alpha} \notin K$. Данное преобразование не имеет собственных значений, а значит, и собственных векторов.
+\end{exmpl}
+
+\begin{defn}
+Пусть $\phi:L\rightarrow L$ --- линейное преобразование пространства $L$ над полем $K$, $\lambda \in K$. Множество $L_\lambda$ собственных векторов, отвечающих собственному значению $\lambda$, называется \textit{собственным подпространством} для собственного значения $\lambda$.
+\end{defn}
+\begin{defn}
+\textit{Геометрической кратностью} характеристического корня $\lambda_0$ называется размерность пространства $L_{\lambda_0}$.
+\textit{Алгебраической кратностью} называется число $k \in \bbN$, если $\bigchi(\lambda)=(\lambda-\lambda_0)^k p(\lambda)$, где $p(\lambda)$ - такой многочлен, что $p(\lambda_0) \neq 0$.
+\end{defn}
+
 $ $\\ $ $\\
 
-  \begin{thm}
-  Геометрическая кратность характеристического корня не превосходит его алгебраической кратности.
-  \end{thm}
-  Действительно, если $\lambda_0$ --- корень геометрической кратности $m$, то в $L_{\lambda_0}$ можно выбрать базис $e_1,...,e_m$, а затем дополнить его до линейно независимого набора элементами $e_{m+1},...,e_n \in L$. Далее нужно перейти к полученному базису и воспользоваться определением матрицы преобразования:
-  \begin{equation*}
-  A_{\phi,e}=
-  \begin{Vmatrix}
-    \begin{tabular}{ccc|c}
-      $\lambda_0$ & 			&$\fudge{0 }$& \\
-      			& $\ddots$ 	& 			& $\fudge C$ \\
-      $\fudge{ 0}$&			& $\lambda_0$ & \\ \hline
-      			&  			& 			& \\
-      			& $\fudge 0$ 	& 			& $\fudge D$ \\
-    \end{tabular} 
-  \end{Vmatrix} 
-  \end{equation*}
-  \begin{equation*}
-  \bigchi_\phi=
-  \begin{vmatrix}
-    \begin{tabular}{ccc|c}
-      $\lambda_0-\lambda$ & 			&$\fudge{0 }$ 			& \\
-      			& $\ddots$ 	& 			& $\fudge C$ \\
-      $\fudge{ 0}$&			& $\lambda_0-\lambda$ & \\ \hline
-      			&  			& 			& \\
-      			& $\fudge 0$ 	& 			& $ D-\lambda E$ \\
-    \end{tabular} 
-  \end{vmatrix} = \begin{vmatrix}
-        \lambda_0-\lambda & 			& \\
-      			& \ddots 	&  \\
-      			&  & \lambda_0-\lambda\\ 
-  \end{vmatrix} \begin{vmatrix}
-  D-\lambda E
-  \end{vmatrix}=
-  \end{equation*}
-  \begin{equation}
-  =(\lambda_0-\lambda)^m \det(D-\lambda E) \Rightarrow k \ge m
-  \end{equation}
+\begin{thm}
+Геометрическая кратность характеристического корня не превосходит его алгебраической кратности.
+\end{thm}
+Действительно, если $\lambda_0$ --- корень геометрической кратности $m$, то в $L_{\lambda_0}$ можно выбрать базис $e_1,...,e_m$, а затем дополнить его до линейно независимого набора элементами $e_{m+1},...,e_n \in L$. Далее нужно перейти к полученному базису и воспользоваться определением матрицы преобразования:
+\begin{equation*}
+A_{\phi,e}=
+\begin{Vmatrix}
+\begin{tabular}{ccc|c}
+  $\lambda_0$ & 			&$\fudge{0 }$& \\
+     			& $\ddots$ 	& 			& $\fudge C$ \\
+  $\fudge{ 0}$&			& $\lambda_0$ & \\ \hline
+     			&  			& 			& \\
+     			& $\fudge 0$ 	& 			& $\fudge D$ \\
+\end{tabular} 
+\end{Vmatrix} 
+\end{equation*}
+\begin{equation*}
+\bigchi_\phi=
+\begin{vmatrix}
+\begin{tabular}{ccc|c}
+  $\lambda_0-\lambda$ & 			&$\fudge{0 }$ 			& \\
+     			& $\ddots$ 	& 			& $\fudge C$ \\
+  $\fudge{ 0}$&			& $\lambda_0-\lambda$ & \\ \hline
+     			&  			& 			& \\
+     			& $\fudge 0$ 	& 			& $ D-\lambda E$ \\
+\end{tabular} 
+\end{vmatrix} = \begin{vmatrix}
+    \lambda_0-\lambda & 			& \\
+     			& \ddots 	&  \\
+     			&  & \lambda_0-\lambda\\ 
+\end{vmatrix} \begin{vmatrix}
+D-\lambda E
+\end{vmatrix}=
+\end{equation*}
+\begin{equation}
+=(\lambda_0-\lambda)^m \det(D-\lambda E) \Rightarrow k \ge m
+\end{equation}

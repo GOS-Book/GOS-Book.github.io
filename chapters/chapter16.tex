@@ -3,7 +3,7 @@
 \subsection{Формула Стокса для гладкой параметрически заданной поверхности}
 Рассмотрим гладкую параметрически заданную поверхность с краем
 \begin{equation} \label{yaa14e1}
-S=\{\vv{r}(u,v),\quad(u,v)\in\overline{D} \}
+S=\{\vv{r}(u,v),\ (u,v)\in\overline{D} \}
 \end{equation}
 
 Будем предполагать, что здесь $D$ "--- это ограниченная область, граница которой состоит из конечного числа кусочно-гладких контуров. Тогда граница (край) поверхности \eqref{yaa14e1} тоже состоит из конечного числа кусочно-гладких контуров. Любую такую поверхность $S$ будем называть \textit{гладкой поверхностью с кусочно-гладкой границей}.
@@ -12,15 +12,13 @@ S=\{\vv{r}(u,v),\quad(u,v)\in\overline{D} \}
 
 \begin{thm}
 Если функции $P(x,y,z),\, Q(x,y,z),\, R(x,y,z)$ определены и непрерывно дифференцируемы в области $G\subset \bbR^3$, то для любой гладкой поверхности $S\subset G$ c кусочно-гладкой границей $\partial S$ справедливы формулы
-\begin{equation} \label{yaa14e2}
-\int\limits_{\partial S} P\,dx = \iint\limits_{S} \pd{P}{z}\,dz\,dx-\pd{P}{y}\,dx\,dy,
-\end{equation}
-\begin{equation} \label{yaa14e3}
-\int\limits_{\partial S} Q\,dy = \iint\limits_{S} \pd{Q}{x}\,dx\,dy- \pd{Q}{z}\,dy\,dz,
-\end{equation}
-\begin{equation} \label{yaa14e4}
-\int\limits_{\partial S} R\,dz =\iint\limits_{S} \pd{R}{y}\,dy\,dz- \pd{R}{z}\,dz\,dx,
-\end{equation}
+\begin{align}\label{yaa14e2}
+&\int\limits_{\partial S} P\,dx = \iint\limits_{S} \pd{P}{z}\,dz\,dx-\pd{P}{y}\,dx\,dy,
+\\\label{yaa14e3}
+&\int\limits_{\partial S} Q\,dy = \iint\limits_{S} \pd{Q}{x}\,dx\,dy- \pd{Q}{z}\,dy\,dz,
+\\ \label{yaa14e4}
+&\int\limits_{\partial S} R\,dz =\iint\limits_{S} \pd{R}{y}\,dy\,dz- \pd{R}{z}\,dz\,dx,
+\end{align}
 где ориентации поверхности $S$ и ее границы $\partial S$ согласованы.
 \end{thm}
 \begin{proof}
@@ -45,7 +43,8 @@ $$
 $$
 Преобразуем подынтегральное выражение этого интеграла:
 \begin{multline*}
-\pd{(Px'_v)}{u} - \pd{(Px'_u)}{v} = \left(\pd{P}{x}x'_u+\pd{P}{y}y'_u+\pd{P}{z}z'_u\right)x'_v-\left(\pd{P}{x}x'_v+\pd{P}{y}y'_v+\pd{P}{z}z'_v\right)x'_u =\\= \pd{P}{y}(y'_ux'_v-y'_vx'_u)+\pd{P}{z}(z'_ux'_v-z'_vx'_u)=-\pd{P}{y}\cdot \pd{(x,y)}{(u,v)}+\pd{P}{z}\cdot\pd{(z,x)}{(u,v)}.
+\pd{(Px'_v)}{u} - \pd{(Px'_u)}{v}
+=\left(\pd{P}{x}x'_u+\pd{P}{y}y'_u+\pd{P}{z}z'_u\right)x'_v-\\-\left(\pd{P}{x}x'_v+\pd{P}{y}y'_v+\pd{P}{z}z'_v\right)x'_u = \pd{P}{y}(y'_ux'_v-y'_vx'_u)+\pd{P}{z}(z'_ux'_v-z'_vx'_u)=\\=-\pd{P}{y}\cdot \pd{(x,y)}{(u,v)}+\pd{P}{z}\cdot\pd{(z,x)}{(u,v)}.
 \end{multline*}
 В результате получим равенство
 \begin{equation} \label{yaa14e6}
@@ -62,11 +61,11 @@ $$
 Теорема доказана.
 \end{proof}
 
-Сложив равенства \eqref{yaa14e2}"--- \eqref{yaa14e4}, получим формулу
+Сложив равенства \eqref{yaa14e2}--\eqref{yaa14e4}, получим формулу
 \begin{multline*}
 \int\limits_{\partial S} P\,dx+Q\,dy+R\,dz = \iint\limits_S \left(\pd{R}{y}-\pd{Q}{z}\right)dy\,dz + \left(\pd{P}{z}-\pd{R}{x}\right)dz\,dx+\\+\left(\pd{Q}{x}-\pd{P}{y}\right)dx\,dy.
 \end{multline*}
-Эта формула (как, в частности, любая из формул \eqref{yaa14e2}-\eqref{yaa14e4}) называется \textit{формулой Стокса}\rindex{формула!Стокса}.
+Эта формула (как, в частности, любая из формул \eqref{yaa14e2}--\eqref{yaa14e4}) называется \textit{формулой Стокса}\rindex{формула!Стокса}.
 
 Если поверхность $S$ лежит на плоскости $z=0$, то формула Стокса превращается формулу Грина: 
 $$

@@ -1,21 +1,5 @@
-%document information
-%\documentclass[a5paper,openany,9pt]{extbook}главы начинаются с любой страницы
-
-%\documentclass[a5paper,9pt]{extbook}  %главы начинаются с нечетных страниц, часто создавая пустые страницы
-
-%\documentclass[10pt,a4paper]{book} %а4 большой формат.
-
-% packages
-
 \usepackage{indentfirst} 
 \usepackage{amsmath,amssymb,amscd,amsthm} 				
-
-%Choose what you like. the first for usual using, the second for the book, the third for the typography.
-%\usepackage[margin=1.6cm, top=1.2cm,right=1.6cm,left=2.2cm, footskip = 1 cm, headheight=20pt,headsep=0.2cm]{geometry}
-
-%\usepackage[a4paper]{geometry}
-
-%\geometry{includeheadfoot}% also useful option for geometry
 
 \usepackage{blkarray}		
 \usepackage{multicol}
@@ -37,47 +21,34 @@
 \newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 
-%\usepackage{fontawesome}
-
 \usepackage{emptypage}
 
 \usepackage{epigraph}
-\usepackage{tikz}
-%\usepackage{cancel}
 \usepackage[e]{esvect}		
-													
-\usepackage{xcolor}
-\usepackage{colortbl}
-\definecolor{darkblue}{rgb}{0,0,.6}
-\definecolor{Purplemountainmajesty}{RGB}{150, 120, 182}
-\definecolor{PersianBlue}{RGB}{28, 57, 187}
 
 \usepackage{datetime}
-%\usepackage{lipsum}
 
-%\usepackage{enumitem}
-%\setlist{nosep}
+%for correct accents above symbols
+\usepackage{accents}%Note it is by default in scriptscriptstyle. Force correct font by yourself.
      
-%\forloop[hstepi]{hcounter i}{hinitial valuei}{hconditioni}{hcodei}
 \usepackage{forloop}
-%\newcounter{ct}
-%\forloop{ct}{1}{\value{ct} < 10}{\arabic{ct} \\}
 
 \usepackage{framed}
 
 %Фиолетовая линия сбоку. 
-\renewenvironment{leftbar}[1][\hsize]
-{%
-    \def\FrameCommand
-    {%
-        {\color{Purplemountainmajesty}\vrule width 1.35pt}%
+\renewenvironment{leftbar}[1][\hsize]{%
+    \def\FrameCommand{%
+        {\color{prpl}\vrule width 1.35pt}%
         \hspace{5pt}%must no space.
         %\fboxsep=\FrameSep\colorbox{#3FORCOLOR}%
-    }%
+        }%
     \MakeFramed{\hsize#1\advance\hsize-\width\FrameRestore}%
 }
 {\endMakeFramed}
 
+\newcommand{\boxtitle}[2]
+{\setlength\fboxsep{0pt}%
+\noindent\colorbox{prpl!20}{\strut\parbox[c][.6cm]{\ecart}{\color{prpl!70}\Large\sffamily\bfseries\centering#1}}\hskip\esp\colorbox{prpl!40}{\strut\parbox[c][.6cm]{\linewidth-\ecart-\esp}{\Large\sffamily\centering\bfseries#2}}}
 
 % Запрет разрыва страница внутри данного окружения. Иногда бывает полезно.
 \newenvironment{absolutelynopagebreak}
@@ -85,12 +56,8 @@
    \vtop\bgroup}
   {\par\xdef\tpd{\the\prevdepth}\egroup
    \prevdepth=\tpd}
-
   
 \input{include/wrapping}
-
-%https://www.ctan.org/pkg/minitoc
-%Чтобы создавать минисодержания, например, после partpage в формулах
 
 \usepackage{minitoc}
 
@@ -98,41 +65,12 @@
 \renewcommand{\thesection}{\textsection\arabic{chapter}.\arabic{section}}
 \renewcommand{\thesubsection}{\arabic{subsection}}
 
-%\titleformat{\chapter}[display]
-%  {\raggedright\normalfont\Large\bfseries}{\chaptertitlename\thechapter}{2ex}{}
-
-%\titleformat{\section}
-%  {\normalfont\Large\bfseries}{\thesection.}{1em}{}
-%\renewcommand{\thesection}{\textsection\arabic{section}}
-%\titlecontents{section}[2.7em]{\addvspace{0.5ex}}%
-% {\contentslabel[\thecontentslabel.]{1.25em}\hskip0.8em}%numbered
-% {}%numberless%
-% {\enspace\titlerule*[0.7pc]{.}\contentspage}%
-
 \makeatletter
 \newcommand{\resetHeadWidth}{\fancy@setoffs}
 \makeatother
 
 
-\addto\captionsrussian{\renewcommand{\chaptername}{Билет №}}
-
-
-%\usepackage{pgfornament}
-%\newcommand{\framesize}{\textwidth}
-%\titleformat{\part}
-%  [display]
-%  {\centering\normalfont\Huge\bfseries}
-%  {%
-%    \mbox{\pgfornament[width=0.75\framesize,symmetry=h]{75}}
-%    \vskip 3pt
-%    \MakeUppercase{\Huge \partname\ \thepart}%
-%  }
-%  {3pt}
-%  {\huge\MakeUppercase}
-%  [%
-%  \mbox{\pgfornament[width=0.75\framesize]{75}}%
-%  ]
-
+\addto\captionsrussian{\renewcommand{\chaptername}{Билет \textnumero}}
    
 % page settings 
 \parindent=0.6cm
@@ -151,84 +89,45 @@
 \pdfcompresslevel=9
 \pdfobjcompresslevel=9
 
-%own commands
+\usepackage{extarrows}
+\usepackage{rmathbr}
 
-\usepackage[breaklinks,pdftex,hyperindex,unicode]{hyperref}	
+\usepackage{embrac} % upright brackets in emphasized text
+
+\usepackage{todonotes}
+\presetkeys{todonotes}{inline, color=prpl}{}
+
+\usepackage{hyperref}	
 \hypersetup{
-  pdftitle           = {\texorpdfstring{GOSBook Matan}{GOSBook Matan}},
-  pdfauthor          = {Didenko Andre},
-  pdfsubject         = {Matan},
-  pdfstartview       = {FitH},
-  pdfborder          = {0 0 0},
-  bookmarksopen      = true,
-  bookmarksnumbered  = true,
-  bookmarksopenlevel = 2,
-  colorlinks = true,     
-  		linkcolor  = darkblue, 
-  		urlcolor = Purplemountainmajesty
+  breaklinks,unicode,bookmarksopen,bookmarksnumbered,hidelinks,
+  pdftoolbar            = false,        
+  pdfmenubar            = false,        
+  pdftitle              = {\texorpdfstring{GOSBook Matan}{GOSBook Matan}},
+  pdfauthor             = {Didenko Andre},
+  pdfsubject            = {Matan},
+  pdfstartview          = {FitV},
+  pdfborder             = {0 0 0},
+  bookmarksopenlevel    = 2,
 }
+
+% make all href have purple italics font
+\let\oldhref\href
+\renewcommand{\href}[3][prpl]{\oldhref{#2}{\textit{\textcolor{#1}{#3}}}}
 
 \usepackage{bookmark}
 \bookmarksetup{
-open,
-numbered,
-addtohook={%
+open,numbered,addtohook={%
 \ifnum\bookmarkget{level}=0 % chapter
 \bookmarksetup{bold}%
 \fi
 \ifnum\bookmarkget{level}=-1 % part
-\bookmarksetup{color=ocre,bold}%
+\bookmarksetup{color=prpl,bold}%
 \fi
-}
-}
+}}
 
-%!!!conflicting order of packages
-\usepackage{extarrows}
-\usepackage{rmathbr}
+%Situational commands for special stuff
 
-%http://www.ctan.org/pkg/embrac
-%чтобы скобки были прямыми во всем документе, и не поддавались \textit. Однако не распространяется на теоремы и окружения.
-\usepackage{embrac}
-
-% создать отдельное оглавнение, у маленькой штучки. Уточни значение числа 1.
-\newcommand\DoToC{%
-  \startcontents
-  \printcontents{}{1}{\textbf{Contents}\vskip3pt\hrule\vskip5pt}
-  \vskip3pt\hrule\vskip5pt
-}
-
-% чтобы фильтровать warnings.
-\usepackage{silence}
-
-% делает все скобки в курсиве прямыми, т.е. \textup{}
-\usepackage{expl3,xparse}
-\ExplSyntaxOn
-\cs_new_eq:Nc \emph_old:n { emph~ } % Copying the old definition of `\emph`
-\cs_new_protected:Npn \emph_braces:n #1 % Set up how braces should be typeset.
-  { \mode_if_math:TF {#1} { \textup{#1} } }
-\cs_new:Npn \emph_new:n #1 {
-  \tl_set:Nn \l_emph_tl {#1}
-  \tl_replace_all:Nnn \l_emph_tl {(}{\emph_braces:n{(}}
-  \tl_replace_all:Nnn \l_emph_tl {)}{\emph_braces:n{)}}
-  \tl_replace_all:Nnn \l_emph_tl {[}{\emph_braces:n{[}}
-  \tl_replace_all:Nnn \l_emph_tl {]}{\emph_braces:n{]}}
-  \exp_args:NV \emph_old:n \l_emph_tl
-}
-\RenewDocumentCommand {\emph} {sm} {
-  \IfBooleanTF {#1} {\emph_old:n {#2}} {\emph_new:n {#2}}
-}
-\ExplSyntaxOff
-
-% делает все картинки пустыми. 
-\iffalse
-\makeatletter
-\AtBeginDocument{%
-	\def\Ginclude@graphics#1{%
-		\begingroup\fboxsep=-\fboxrule
-		\fbox{\rule{\@ifundefined{Gin@@ewidth}{150pt}{\Gin@@ewidth}}{0pt}%
-			\rule{0pt}{\@ifundefined{Gin@@eheight}{100pt}{\Gin@@eheight}}}\endgroup}}
-\makeatother
-\fi
-
-
-\usepackage[bottom]{footmisc}
+%\includeonly{chapters/chapter1} %compile only this file.
+%\usepackage{showkeys} %show names of labels and references
+%\geometry{showframe} % show geometry frame box
+%\usepackage[1]{pagesel} $compile only first page

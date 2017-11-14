@@ -1,55 +1,10 @@
-%% my macros
-
-%% Math fonts
-\newcommand{\bbA}{\mathbb{A}}
-\newcommand{\bbB}{\mathbb{B}}
-\newcommand{\bbC}{\mathbb{C}} % комплексные числа
-\newcommand{\bbD}{\mathbb{D}} % дисперсия
-\newcommand{\bbE}{\mathbb{E}} % математическое ожидание
-\newcommand{\bbF}{\mathbb{F}}
-\newcommand{\bbG}{\mathbb{G}}
-\newcommand{\bbH}{\mathbb{H}}
-\newcommand{\bbI}{\mathbb{I}}
-\newcommand{\bbJ}{\mathbb{J}}
-\newcommand{\bbK}{\mathbb{K}}
-\newcommand{\bbL}{\mathbb{L}}
-\newcommand{\bbM}{\mathbb{M}}
-\newcommand{\bbN}{\mathbb{N}} %натуральные числа
-\newcommand{\bbO}{\mathbb{O}}
-\newcommand{\bbP}{\mathbb{P}} % вероятность
-\newcommand{\bbQ}{\mathbb{Q}} % рациональные числа
-\newcommand{\bbR}{\mathbb{R}} % действительные числа
-\newcommand{\bbS}{\mathbb{S}}
-\newcommand{\bbT}{\mathbb{T}}
-\newcommand{\bbU}{\mathbb{U}}
-\newcommand{\bbV}{\mathbb{V}}
-\newcommand{\bbW}{\mathbb{W}}
-\newcommand{\bbX}{\mathbb{X}}
-\newcommand{\bbY}{\mathbb{Y}}
-\newcommand{\bbZ}{\mathbb{Z}} %целые числа
-
-%Матожидание и Дисперсия. (старая версия -- сейчас не используем)
-\newcommand{\ccM}{\mathcal{M}}
-\newcommand{\ccD}{\mathcal{D}}
-
 % Привычное написание букв каппа, эпсилон и фи и знаков "больше, или равно", "меньше, или равно", пустого множества
-\renewcommand{\kappa}{\varkappa }
+\renewcommand{\kappa}{\varkappa}
 \renewcommand{\epsilon}{\varepsilon}
 \renewcommand{\phi}{\varphi}
 \renewcommand{\le}{\leqslant}
 \renewcommand{\ge}{\geqslant}
 \renewcommand{\emptyset}{\varnothing}
-
-%Возможно правильная расстановка пробелов в кванторах - НЕ ИСПОЛЬЗУЙТЕ НИ ЗА ЧТО НА СВЕТЕ, ЛУЧШЕ РУКАМИ. 
-
-%Множества с чертой:
-\newcommand{\bboR}{\overline{\mathbb{R}}}
-\newcommand{\bboC}{\overline{\mathbb{C}}}
-
-%Проколотая окрестность
-\newcommand{\dneio}[2]{\overset{\raisebox{0pt}[0pt][0pt]{$\scriptscriptstyle\circ$}}{O}_{#1}({#2})}
-\newcommand{\dnei}[1]{\overset{\raisebox{0pt}[0pt][0pt]{$\scriptscriptstyle\circ$}}{O}({#1})}
-\newcommand{\coci}[2][]{\overset{\raisebox{0pt}[0pt][0pt]{$\scriptscriptstyle\circ$}}{C^{#1}}{#2}}
 
 % Полная производная
 \newcommand{\D}[2]{\frac{d{#1}}{d{#2}}}
@@ -57,137 +12,96 @@
 % Частная производная
 \newcommand{\pd}[2]{\frac{\partial{#1}}{\partial{#2}}}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Множества с чертой:
+\newcommand{\bboR}{\overline{\mathbb{R}}}
+\newcommand{\bboC}{\overline{\mathbb{C}}}
 
-% Действительная и мнимая части
-\def\Re{\mathop{\mathrm{Re}}\nolimits}
-\def\Im{\mathop{\mathrm{Im}}\nolimits}
-
-%Ядро отображения
-\def\Ker{\mathop{\mathrm{Ker}}\nolimits}
-
-%Внутренность множества.
-\DeclareMathOperator*{\interior}{int} % * предполагает использование \limits
-
-% Носитель
-\def\supp{\mathop{\mathrm{supp}}\limits}
-
-% Дивергенция
-\def\Div{\mathop{\mathrm{div}}\nolimits}
-
-% Ротор
-\def\rot{\mathop{\mathrm{rot}}\nolimits}
-
-% Градиент
-\def\grad{\mathop{\mathrm{grad}}\limits}
-
-% Константа
-\def\const{\mathop{\mathrm{const}}\nolimits}
-
-% Ранг
-\def\rg{\mathop{\mathrm{rg}}\nolimits}
-
-%% Вычет
-\def\res{\mathop{\rm res}\limits}
-
-%% Расстояние
-\def\dist{\mathop{\rm dist}\limits}
-
-%% Ковариация
-\def\cov{\mathop{\rm cov}\limits}
-
-%% Интеграл в смысле главного значения
-\def\v.p.{\mathop{\rm v.p.}\nolimits}
-
-%Гиперболические функции
-\def\sh{\mathop{\rm sh}\nolimits}
-\def\ch{\mathop{\rm ch}\nolimits}
-\def\th{\mathop{\rm th}\nolimits}
-\def\cth{\mathop{\rm cth}\nolimits}
-
-%Арктангенс
-\def\arctg{\mathop{\rm arctg}\nolimits}
-\def\arcctg{\mathop{\rm arcctg}\nolimits}
-
-%Обратные гиперболические функции 
-\def\arsh{\mathop{\rm arsh}\nolimits}
-\def\arch{\mathop{\rm arch}\nolimits}
-\def\arth{\mathop{\rm arth}\nolimits}
-\def\arcth{\mathop{\rm arcth}\nolimits}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Проколотая окрестность (можно и удалить в будущем)
+\newcommand{\dneio}[2]{\accentset{\circ}{O}_{#1}({#2})}
+\newcommand{\dnei}[1]{\accentset{\circ}{O}({#1})}
+\newcommand{\coci}[2][]{\accentset{\circ}{C}^{#1}{#2}}
 
 % Крупная хи
 \newcommand{\bigchi}{\text{\scalebox{1.5}{$\chi$}}}
 
-% Римские цифры
-\makeatletter
-\newcommand*{\rom}[1]{\expandafter\@slowromancap\romannumeral #1@}
-\makeatother
-
-%% Text fomats
-\newcommand{\tbi}[1]{\textbf{\textit{#1}}}
-
-%% Сокращение для одной штуки
-
+% Сокращение для одной штуки в ТФКП
 \newcommand{\Gp}{(\partial G)^{+}}
-
 \newcommand{\Gm}{(\partial G)^{-}}
 
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%%Это перешло сюда по наследству от теорфиза, пусть будет, мало ли. 
+% desired spaces in noninline math after colon
+\newcommand{\cquad}{{:}\quad}
 
-% Скобки (высокие)
-\newcommand{\brc}[1]{\left ( {#1} \right )}
-
-% Скобки фигурные (высокие)
-\newcommand{\brcr}[1]{\left\{ {#1} \right\}}
-
-% Скобки квадратные (высокие)
-\newcommand{\brs}[1]{\left [ {#1} \right ]}
-
-% Усреднение
-\newcommand{\avg}[1]{\langle{#1}\rangle}
-
-% Усреднение (высокое)
-\newcommand{\avgh}[1]{\left\langle{#1}\right\rangle}
-
-% Бра-вектор
-\newcommand{\bra}[1]{\left\langle{#1}\right|}
-
-% Кет-вектор
-\newcommand{\ket}[1]{\left|{#1}\right\rangle}
-
-% Скалярное произведение
-\newcommand{\bk}[2]{\langle{#1}|{#2}\rangle}
-
-% Скалярное произведение (высокое)
-\newcommand{\bkh}[2]{\left\langle{#1}|{#2}\right\rangle}
-
-% Проектор
-\newcommand{\proj}[2]{\ket{#1}\bra{#2}}
-
-% Матричный элемент
-\newcommand{\bfk}[3]{\langle{#1}|{#2}|{#3}\rangle}
-
-% Матричный элемент (высокий)
-\newcommand{\bfkh}[3]{\left\langle{#1}\left|{#2}\right|{#3}\right\rangle}
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% QUESTIONABLE MACROSES - убрать их?
 % Модуль
 \providecommand{\abs}[1]{\left\lvert{#1}\right\rvert}
-
 % Норма
 \providecommand{\norm}[1]{\lVert#1\rVert}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Math fonts
+\newcommand{\bbC}{\mathbb{C}} % комплексные числа
+\newcommand{\bbD}{\mathbb{D}} % дисперсия
+\newcommand{\bbE}{\mathbb{E}} % математическое ожидание
+\newcommand{\bbN}{\mathbb{N}} % натуральные числа
+\newcommand{\bbP}{\mathbb{P}} % вероятность
+\newcommand{\bbQ}{\mathbb{Q}} % рациональные числа
+\newcommand{\bbR}{\mathbb{R}} % действительные числа
+\newcommand{\bbZ}{\mathbb{Z}} % целые числа
+
+\newcommand{\ccN}{\mathcal{N}}%нормальное распределение
+
+% Действительная и мнимая части
+\let\Re\relax
+\DeclareMathOperator{\Re}{Re}
+\let\Im\relax
+\DeclareMathOperator{\Im}{Im}
+
+% Дивергенция
+\let\div\relax
+\DeclareMathOperator{\div}{div}
+
+% Ядро отображения
+\DeclareMathOperator{\Ker}{Ker}
+
+% Внутренность множества.
+\DeclareMathOperator*{\interior}{int}
+
+% Носитель
+\DeclareMathOperator*{\supp}{supp}
+
+% Ротор
+\DeclareMathOperator{\rot}{rot}
+
+% Градиент
+\DeclareMathOperator{\grad}{grad}
+
+% Константа
+\DeclareMathOperator{\const}{const}
+
+% Ранг
+\DeclareMathOperator{\rg}{rg}
+
+% Вычет
+\DeclareMathOperator*{\res}{res}
+
+% Расстояние
+\DeclareMathOperator*{\dist}{dist}
+
+%% Ковариация
+\DeclareMathOperator*{\cov}{cov}
+
+% Интеграл в смысле главного значения
+\DeclareMathOperator{\v.p.}{v.p.}
+
+%О братные гиперболические функции
+\DeclareMathOperator{\arsh}{arsh}
+\DeclareMathOperator{\arch}{arch}
+\DeclareMathOperator{\arth}{arth}
+\DeclareMathOperator{\arcth}{arcth}
+
+% Диагональная матрица
+\DeclareMathOperator{\diag}{diag}
 
 % След матрицы
-
-\def\sp{\mathop{\mathrm{sp}}\nolimits}
+\DeclareMathOperator{\tr}{tr}

@@ -3,25 +3,17 @@
 \include{include/header}
 \include{include/macros}
 
-%--shell-escape
-%\includeonly{epicstyle/chapterimage}
-%\usepackage{showkeys}
-%\geometry{showframe}
-%\usepackage[1]{pagesel}
-
 \begin{document}
-
 \pagestyle{empty}
 \frontmatter
-\include{epicstyle/titlepageTMB}
+\include{frontmatter/titlepageTMB}
 \dominitoc
-\hypersetup{linkcolor = black} 
-{\hypersetup{hidelinks}\tableofcontents}
-\include{frontmatter/references}
+\tableofcontents
 \pagestyle{fancy}
 \include{frontmatter/litra}
 \include{frontmatter/foreword}
 \include{frontmatter/aboutGOS}
+\include{frontmatter/notations}
 \include{frontmatter/epigraph}
 \mainmatter
 \setcounter{chapter}{0}

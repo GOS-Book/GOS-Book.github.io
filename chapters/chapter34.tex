@@ -68,7 +68,7 @@ $$
 \end{proof}
 
 \begin{defn}\label{ch34defn1}
-Пусть $\gamma$ — кусочно-гладкий контур в $\bbC$ и пусть $\omega = q(z)$ — непрерывная на $\gamma$ функция. Тогда интеграл вида
+Пусть $\gamma$ — кусочно-гладкий контур в $\bbC$ и пусть $\omega = q(z)$ "--- непрерывная на $\gamma$ функция. Тогда интеграл вида
 
 \begin{equation} \label{ch34eq5}
 I(z) \triangleq \frac{1}{2 \pi i} \int_\gamma \frac{q(\zeta)}{\zeta - z}\,d\zeta, \quad z \notin \gamma
@@ -90,12 +90,12 @@ I^{(n)}(z) = \frac{n!}{2\pi i} \int_\gamma \frac{q(\zeta)}{(\zeta - z)^{n+1}}\,d
 \item     
 Докажем формулу $\eqref{ch34eq6}$ при $n = 1$. Так как функция $q(\zeta)$ непрерывна на контуре $\gamma$, то существует число $M < + \infty$ такое, что $|q(\zeta)| \le M$ при $\zeta \in \gamma$.
       
-Фиксируем точку $z \notin \gamma$. Пусть $d \triangleq \dist(z, \gamma)$. Очевидно, что $d > 0$. Выберем число $r \in (0, \frac{d}{2})$ и возьмем произвольное число $\Delta z \in \bbC$ так, чтобы $0 < |\Delta z| < r$. Тогда для $\forall \zeta \in \gamma$ получаем
+\indent Фиксируем точку $z \notin \gamma$. Пусть $d \triangleq \dist(z, \gamma)$. Очевидно, что $d > 0$. Выберем число $r \in (0, \frac{d}{2})$ и возьмем произвольное число $\Delta z \in \bbC$ так, чтобы $0 < |\Delta z| < r$. Тогда для $\forall \zeta \in \gamma$ получаем}
 \begin{equation} \label{ch34eq7}
 |\zeta - (z + \Delta z)| \ge |\zeta - z| - |\Delta z| \ge d - \frac{d}{2} = \frac{d}{2}
 \end{equation}
 
-Оценим выражение }
+Оценим выражение 
 \begin{multline} \label{ch34eq8}
 \frac{I(z + \Delta z) - I(z)}{\Delta z} - \frac{1}{2 \pi i} \int_\gamma \frac{q(\zeta)}{(\zeta - z)^2}\,d\zeta=\\ = \frac{1}{2 \pi i} \int_\gamma q(\zeta) \left[ \left( \frac{1}{\zeta - z - \Delta z} - \frac{1}{\zeta - z} \right) \frac{1}{\Delta z} - \frac{1}{(\zeta - z)^2} \right] \,d\zeta.
 \end{multline}
@@ -150,7 +150,6 @@ f^{(n)}(z) = \frac{n!}{2\pi i} \int_{\gamma_{r_0}} \frac{f(\zeta)}{(\zeta - z)^{
 Так как точка $z_0 \in G$ была произвольной, то функция $f$ бесконечно дифференцируема во всей области G.
 \end{proof}
 
-
 \section{Разложение функции, регулярной в окрестности точки, в ряд Тейлора}
 
 Опираясь на интегральную формулу Коши, в этом параграфе покажем, что функция регулярна в окрестности некоторой точки тогда и только тогда, когда в этой окрестности она представима в виде суммы степенного ряда.
@@ -201,7 +200,7 @@ S_N(z) \triangleq \sum\limits_{n = 0}^{N} z^n = \left( \sum\limits_{n = 0}^{N} z
 \end{multline*}
 \end{exmpl} 
 \begin{stt} \label{ch34stt1000}
-Пусть в области $G$ заданы непрерывные функции $f_n: G \to \bbC, \: n \in \bbN$ и кусочно-гладкий контур $\gamma$. Пусть функциональный ряд $\sum\limits_{n = 0}^{+\infty}f_n(z)$ сходится к своей сумме $S(z)$ равномерно на контуре $\gamma$. Тогда этот ряд можно почленно интегрировать по контуру $\gamma$, т.е. справедливо равенство 
+Пусть в области $G$ заданы непрерывные функции $f_n\colon G \to \bbC$, $n \in \bbN$ и кусочно-гладкий контур $\gamma$. Пусть функциональный ряд $\sum\limits_{n = 0}^{+\infty}f_n(z)$ сходится к своей сумме $S(z)$ равномерно на контуре $\gamma$. Тогда этот ряд можно почленно интегрировать по контуру $\gamma$, т.е. справедливо равенство 
 \begin{equation} \label{ch34eq1000} 
 \int\limits_{\gamma}S(z) \,dz = \sum\limits_{n = 0}^{+\infty} \int\limits_{\gamma} f_n(z) \,dz. 
 \end{equation} 
@@ -209,7 +208,7 @@ S_N(z) \triangleq \sum\limits_{n = 0}^{N} z^n = \left( \sum\limits_{n = 0}^{N} z
 \end{stt}
 \begin{leftbar}
 \begin{defn}
-Пусть у функции $f : B_r(a) \to \bbC$ существуют в точке $a \in \bbC$, $r > 0$, производные $f^{(n)}(a)$ любого порядка $n \in \bbN$. Тогда степенной ряд вида
+Пусть у функции $f \colon B_r(a) \to \bbC$ существуют в точке $a \in \bbC$, $r > 0$, производные $f^{(n)}(a)$ любого порядка $n \in \bbN$. Тогда степенной ряд вида
 \begin{equation} \label{ch34.2eq4}
 \sum\limits_{n = 0}^{+\infty} \frac{f^{(n)}(a)}{n!} (z - a)^n
 \end{equation}
@@ -221,7 +220,6 @@ S_N(z) \triangleq \sum\limits_{n = 0}^{N} z^n = \left( \sum\limits_{n = 0}^{N} z
 \begin{equation} \label{ch34.2eq5}
 f(z) = \sum\limits_{n = 0}^{\infty} c_n(z - a)^n, \quad \forall z \in B_r(a),
 \end{equation}
-
 где
 \begin{equation} \label{ch34.2eq6}
 c_n = \frac{f^{(n)}(a)}{n!}.

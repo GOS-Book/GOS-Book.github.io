@@ -19,7 +19,8 @@ softclean:
 	$(call delete, '.*\.\(bbl\|bcf\|blg\|aux\|log\|lof\|loc\|lot\|loa\|out\|toc\|dvi\|fdb_latexmk\|run\.xml\|htm\|fls\)$$')
 
 clean: softclean
-	$(call delete, '.*\.\(synctex\|idx\|ilg\|ind\)$$')
+	$(call delete, '.*\.\(synctex\|idx\|ilg\|ind\|maf\|ptc\|bak\)$$')
+	-rm -f *.mtc*
 
 distclean: clean
 	$(call delete, '.*\.\(pdf\)$$')

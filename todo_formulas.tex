@@ -2,7 +2,7 @@
 
 %Packages from structure.tex
 \usepackage[margin=1.6cm, top=1.2cm,right=1.9cm,left=1.9cm, footskip = 1 cm, headheight=20pt,headsep=0.2cm]{geometry}
-\usepackage[english, russian]{babel}
+\usepackage[russian, english]{babel}
 \usepackage[utf8]{inputenc} % Required for including letters with accents
 \usepackage[T2A]{fontenc} % Use 8-bit encoding that has 256 glyphs
 \usepackage{enumitem} 
@@ -21,7 +21,7 @@
 \begin{document}
 \chapter*{Reminder how to write formulas}
 
-This information based on AMS documentation and stackechange.com answer. I want to say that here are the rules to use correct command to get right spacing in math formulas. The rules which \LaTeX\ does automaticly aren't discussed here.
+This information based on AMS documentation and stackechange.com answer \colorbox{prpl}{\textcolor{white}{AND MY OWN PREFERENCES}}. I want to say that here are the rules to use correct command to get right spacing in math formulas. The rules which \LaTeX\ does automaticly aren't discussed here.
 
 Also look at the source code to understand those rules
 
@@ -33,16 +33,17 @@ Use \verb|\mathbin{:}| in ratios:
 $$x\mathbin{:}y\mathbin{:}z = 3\mathbin{:}4\mathbin{:}5$$
 
 \item
-Use ``\verb=\colon='' in mappings:
+Use ``\verb=\colon='' in mappings in \textbf{non-inline math}:
 $$f\colon A \to B$$
 
-\item
-Use ``:'', when it's a punctuation symbol. For example, ``for all x such that''
-$$\forall x \in A\colon f(x) = 12$$
+\item[\colorbox{prpl}{\textcolor{white}{MY}}\ $\bullet$]
+Use ``\verb={:}\quad='' or macros ``\verb=\cquad='', when it's a punctuation symbol in \textbf{non-inline math} and between math statements like \verb|A\cquad B| anywere.
+$$\forall x \in A\cquad f(x) = 12$$
+But use simple ``\verb=\colon='' like here: in \textbf{inline math}
+\begin{center}
+$\forall x \in A\colon f(x) = 12$
+\end{center}
 
-\item
-Use ``:'' and in sets as relation symbol
-$$\{\,x : 1 < x < 2\,\}$$.
 
 \end{itemize}
 	
@@ -50,12 +51,92 @@ $$\{\,x : 1 < x < 2\,\}$$.
 
 \begin{itemize}
 \item
-Use ``\verb=\,='' to make brackets futher in sets when ``:'' is called
-$$\{\,x : 1 < x < 2\,\}$$
+Use ``\verb=\,='' to make brackets futher in sets when ``\verb=\,\big|\,='' is called like this \verb|$\{\,x : 1 < x < 2\,\}$|
+$$\{\,x \,\big|\, 1 < x < 2\,\}$$
 \item
-Use ``\verb=\,='' before differentials in integrals
+Use ``\verb=\,='' before differentials in integrals \verb=$\int f(x)\,dx$=
 $$ \int f(x)\, dx$$
+\item[\colorbox{prpl}{\textcolor{white}{MY}}\ $\bullet$]
+Use \verb|\quad| between logic elements in \textbf{non-inline math}
+$$
+\forall A \in B \quad \mu A < \mu B 
+$$
+
+But use simple formulas divison ``\verb=$\forall A \in B$ $\mu A < \mu B$='' with usual spaces in inline math in \textbf{inline math} (or consider quad idk actually): 
+\begin{center}
+$\forall A \in B$ $\mu A < \mu B$.
+\end{center}
+Use punctuation symbols if needed after \$-symbol.
+\item[\colorbox{prpl}{\textcolor{white}{MY}}\ $\bullet$]
+Use ``\verb|\ |'' before parenthesis in \textbf{non-inline math}:
+$$
+\forall M' < M \ (\forall M' > M)\quad \exists x\in G\cquad x>M' \ (x<M')
+$$
+But again use simple formulas divison with usual spaces in \textbf{inline math}.
+
+\item 
+Use comma without any spaces like this \verb|$a,b$| when comma actually is a part of formula, for example
+\begin{center}
+$1<a,b<2$. 
+\end{center}
+But when it is not part of the formula (for example, when it is range 1, 2, 3, \dots) use spaces in \textbf{non-inline math} ``\verb|\ |'' or formulas divison in \textbf{inline math} (sometimes with ``$\sim$'' symbol to prevent line-breaking).
+$$
+\phi_1(x), \ \phi_2(x),\ \ldots\,,\ \phi_n(x), \ldots,
+$$
+\item 
+When \verb|\dots| (or \verb|\cdots|, or \verb|\ldots|) are used in formula don't use spaces at all. But when it comes to talk about ranges and enumeration like in previous item use it in the followinf way:\verb|,\ \dots\,,| to get space before and after those dots.
+$$
+\phi_1(x), \ \phi_2(x),\ \ldots\,,\ \phi_n(x), \ldots,
+$$
+
+\textit{Reference:} \href{https://tex.stackexchange.com/questions/115030/using-commas-in-mathematical-formulas}{$tex.stackexchange.com/...$}
 \end{itemize}
+
+\section{CORRECT SYMBOLS}
+
+\begin{itemize}
+\item
+Use ``\verb=\,\big|\,='' and in sets as relation symbol
+$$\{\,x : 1 < x < 2\,\}.$$
+\item
+Use ``\verb=\setminus='' for set minus operation. Not backslashes or smth like this.
+$$
+A = B \setminus C
+$$
+\item 
+Use \verb|\cdots| between binary relation symbols like ``+'' and \verb|\cdots| with commas in enumeration.
+$$
+\phi_1(x),\ \ldots\,,\ \phi_n(x), \ldots,\quad x_1 + \cdots + x_2 + \cdots = 12.
+$$
+Use \verb|\dots| when you don't care (it's fine btw because \LaTeX\ replaces dots either with cdots or with ldots). Do not use simple \verb|$...$|.
+
+Refence: \href{http://www.ctex.org/documents/shredder/src/texbook.pdf}{\textit{texbook.pdf}}, page 172
+\item 
+Please use \verb=\accentset{*}{L}^{R}_1=:
+$$
+\accentset{*}{L}^{R}_1
+$$
+\end{itemize}
+\section{SMALL PLACEMENT DETAILS}
+\begin{itemize}
+\item[\colorbox{prpl}{\textcolor{white}{MY}}\ $\bullet$]
+Do not use ``\verb=\limits='' with \verb=\int=,\verb=\int=, etc.. I am fine with integration interval to be a side of integral-symbol.
+$$
+\int_\Delta{f(x) \phi_k(x)}\,dx=a_k\int_\Delta|\phi_k(x)|^2\,dx,
+$$
+But \verb=$\iint\limits$=
+\end{itemize}
+
+\section{About <<Ёфикации>>}
+\begin{itemize}
+\item
+Sorry bro, but we don't want to use letter <<ё>>. Use <<е>> instead.
+\item 
+\verb=т.е.\ слово=
+\end{itemize}
+
+
+
 
 \newpage
 

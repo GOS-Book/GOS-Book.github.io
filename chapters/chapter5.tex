@@ -13,7 +13,8 @@ $$
 
 \noindent Этот многочлен называется \textit{многочленом Тейлора функции $f$ в точке $x_0$}.
 
-Равенство $$f(x) = P_n(x) + r_n(x)$$ называется \textit{формулой Тейлора}\rindex{формула!Тейлора} для функции $f(x)$ в точке $x_0$. При этом $\frac{f^{(k)}(x_0)}{k!} (x - x_0)^k$ называется \textit{$k$-м членом} формулы Тейлора, а функция $r_n(x)$ "--- остаточным членом формулы Тейлора (он идет после $n$-го члена)\footnote{Иногда, чтобы указать, что многочлен Тейлора построен для определённой функции пишут $P_n(f,x)$, $r_n(f,x)$ вместо $P_n(x)$, $r_n(x)$}. 
+Равенство $$f(x) = P_n(x) + r_n(x)$$ называется \textit{формулой Тейлора}\rindex{формула!Тейлора} для функции $f(x)$ в точке $x_0$. При этом $\frac{f^{(k)}(x_0)}{k!} (x - x_0)^k$ называется \textit{$k$-м членом} формулы Тейлора, а функция $r_n(x)$ "--- остаточным членом формулы Тейлора\footnotemark (он идет после $n$-го члена)
+\footnotetext{Иногда, чтобы указать, что многочлен Тейлора построен для определённой функции пишут $P_n(f,x)$, $r_n(f,x)$ вместо $P_n(x)$, $r_n(x)$}. 
 
 \begin{notion} В частном случае $x_0=0$ она называется \textit{формулой Маклорена}.
 \end{notion}
@@ -29,19 +30,23 @@ f(x) = \sum_{k = 0}^{n} \frac{f^{(k)}(x_0)}{k!}(x - x_0)^k + \frac{f^{(n + 1)}(\
 \end{thm}
 
 \begin{proof}
-Функции $$r_n(x) = f(x) - P_n(x) \quad \text{и} \quad \phi(x) = (x - x_0)^{n + 1}$$ удовлетворяют всем условиям следствия \ref{ch4.1cons5} из теоремы Коши о среднем (Билет №4). Кроме того, $$r_n^{(k)}(x_0) = 0, \quad \phi^{(k)}(x_0) = 0 \quad \forall k = 0,1,\ldots,n.$$ Поэтому, если $x \in O(x_0)$ и, например, $x < x_0$, то существует $\xi_1 \in (x; x_0)$ такое, что
+Функции $$r_n(x) = f(x) - P_n(x) \quad \text{и} \quad \phi(x) = (x - x_0)^{n + 1}$$ удовлетворяют всем условиям следствия \ref{ch4.1cons5} из теоремы Коши о среднем (Билет №4). Кроме того, 
+$$
+r_n^{(k)}(x_0) = 0, \quad \phi^{(k)}(x_0) = 0 \quad \forall k = 0,1,\ldots,n.
+$$ 
+Поэтому, если $x \in O(x_0)$ и, например, $x < x_0$, то существует $\xi_1 \in (x; x_0)$ такое, что
 $$
 \frac{r_n(x)}{\phi(x)} = \frac{r_n(x) - r_n(x_0)}{\phi(x) - \phi(x_0)} = \frac{r_n'(\xi_1)}{\phi'(\xi_1)}.
 $$
 Аналогично,
 $$
-\exists \xi_2 \in (\xi_1; x_0): \quad \frac{r_n'(\xi_1)}{\phi'(\xi_1)} = \frac{r_n''(\xi_2)}{\phi''(\xi_2)}.
+\exists \xi_2 \in (\xi_1; x_0)\cquad \frac{r_n'(\xi_1)}{\phi'(\xi_1)} = \frac{r_n''(\xi_2)}{\phi''(\xi_2)}.
 $$
 
 $$\ldots\ldots\ldots (\text{до тех пор пока есть производные})$$
 
 $$
-\exists \xi_n \in (\xi_{n - 1}; x_0): \quad \frac{r_n^{(n - 1)}(\xi_{n - 1})}{\phi^{(n - 1)}(\xi_{n - 1})} = \frac{r_n^{(n)}(\xi_{n})}{\phi^{(n)}(\xi_{n})}.
+\exists \xi_n \in (\xi_{n - 1}; x_0) \cquad \frac{r_n^{(n - 1)}(\xi_{n - 1})}{\phi^{(n - 1)}(\xi_{n - 1})} = \frac{r_n^{(n)}(\xi_{n})}{\phi^{(n)}(\xi_{n})}.
 $$
 Легко видеть, что 
 $$
@@ -53,7 +58,7 @@ $$
 
 К этим функциям на отрезке $[\xi_n; x_0]$ снова применим теорему о среднем:
 $$
-\exists \xi \in (\xi_n; x_0): \quad \frac{r_n^{(n)}(\xi_{n})}{\phi^{(n)}(\xi_{n})} = \frac{r_n^{(n + 1)}(\xi)}{\phi^{(n + 1)}(\xi)} = \frac{f^{(n + 1)}(\xi)}{(n + 1)!}.
+\exists \xi \in (\xi_n; x_0)\cquad \frac{r_n^{(n)}(\xi_{n})}{\phi^{(n)}(\xi_{n})} = \frac{r_n^{(n + 1)}(\xi)}{\phi^{(n + 1)}(\xi)} = \frac{f^{(n + 1)}(\xi)}{(n + 1)!}.
 $$
 
 Следовательно, $\exists \xi \in (x; x_0)$ такое, что
@@ -91,7 +96,7 @@ $$
 \begin{proof}
 Пусть последовательность $\{ x_n \}$ такая, что 
 $$
-\forall n \quad x_n \in D_{\phi}, \quad x_n \not= x_0 \quad \text{и} \quad \lim_{n \to \infty} x_n = x_0.
+\forall n\in \bbN \quad x_n \in D_{\phi}, \quad x_n \not= x_0 \quad \text{и} \quad \lim_{n \to \infty} x_n = x_0.
 $$
 Тогда последовательность $y_n = \phi(x_n)$ сходится к $y_0$ при $n \to \infty$ и 
 $$
@@ -124,7 +129,7 @@ f(x) = \sum_{k = 0}^{n} \frac{f^{(k)}(x_0)}{k!} (x - x_0)^k + o((x - x_0)^n), \q
 где $\psi(x) = o((x - x_0)^n),\ x \to x_0 \leftrightarrow \psi(x) = \alpha(x) (x - x_0)^n,$ где $\lim\limits_{x \to x_0} \alpha(x) = 0$.
 \end{thm}
 
-Формула \eqref{ch5.2eq2} называется \textit{формулой Тейлора для $f$ в точке $x_0$ порядка $n$ с остаточным членом в форме Пеано.}
+Формула~\eqref{ch5.2eq2} называется \textit{формулой Тейлора для $f$ в точке $x_0$ порядка $n$ с остаточным членом в форме Пеано.}
 
 \begin{proof}
 Функция $f$ дифференцируема $n$ раз в точке $x_0$ $\quad \Rightarrow \quad f^{(n - 1)}(x)$ определена в некоторой окрестности $O(x_0)$ точки $x_0$, т.е. $\exists f^{(n)}(x_0) \in \bbR: \quad$
@@ -135,7 +140,7 @@ $$
 r_n^{(k)}(x) = 0, \quad \forall k \in \overline{0,n}, \quad \phi^{(k)}(x_0) = 0, \quad \forall k \in \overline{0, n-1}, \quad \phi^{(k)}(x) \not= 0, \quad x \not= x_0.
 $$ 
 
-Согласно теореме Коши и следствию \ref{ch4.1cons5} из предыдущего билета все так же, как и в теореме \ref{ch5.thm1} (про формулу Тейлора с остаточным членом в форме Лагранжа).
+Согласно теореме Коши и следствию \ref{ch4.1cons5} из предыдущего билета все так же, как и в теореме~\ref{ch5.thm1} (про формулу Тейлора с остаточным членом в форме Лагранжа).
 
 $\forall x \in \overset{\circ}{O}(x_0) \quad x < x_0 \quad \exists \xi = \xi(x) \in (x, x_0):$
 $$
@@ -145,7 +150,7 @@ $\forall x \in \overset{\circ}{O}(x_0) \quad \exists \xi \not= x_0:$
 $$
 \frac{r_n(x)}{\phi(x)} = \frac{r_n^{(n-1)}(\xi) - r_n^{(n-1)}(x_0)}{n!(\xi - x_0)}, \quad r_n^{(n-1)}(x_0) = 0 \Rightarrow
 $$
-$\xi = \xi(x): \quad \xi(x) < x_0 \quad \forall x \in O(x_0) \quad x < x_0$
+$\xi = \xi(x)\cquad \xi(x) < x_0 \quad \forall x \in O(x_0) \quad x < x_0$
 $$
 \lim_{x \to x_0} \xi(x) = x_0, \quad \text{т.к.} \quad x < \xi(x) < x_0 \quad \Rightarrow
 $$
@@ -183,7 +188,7 @@ $\eqref{eq5.3eq4} \quad \Rightarrow \quad \sum\limits_{k = 1}^{n} \left( \frac{f
 
 $\lim\limits_{x \to x_0} \quad \Rightarrow \quad \frac{f^{(1)}(x_0)}{1!} - a_1 = 0 \quad \Rightarrow \quad a_1 = \frac{f^{(1)}(x)}{1!}$
 
-Делая так $n$ раз, получим $a_n = \frac{f^{(n)}(x_0)}{n!}$
+Делая так $n$ раз, получим $a_n = \frac{f^{(n)}(x_0)}{n!}$.
 \end{proof}
 
 
@@ -200,7 +205,7 @@ $$
 Поскольку $f^{(k)}(x_0)$ "--- суть число, то $\left(\frac{f^{(k)}(x_0)}{k!} (x - x_0)^k\right)' =  \frac{f^{(k)}(x_0)}{(k-1)!} (x - x_0)^{k-1} $ и верна следующая последовательность равенств
 \begin{multline*}
 (r_n(f,x))' = \left(f(x) - \sum_{k = 0}^{n} \frac{f^{(k)}(x_0)}{k!} (x - x_0)^k \right)' =
-\\ = f'(x) - \sum_{k = 1}^{n} \frac{f^{(k)}(x_0)}{(k-1)!} (x - x_0)^{k-1}= f'(x) - \sum_{k = 0}^{n-1} \frac{{f'} ^{(k)}(x_0)}{k!} (x - x_0)^k =\\=r_{n-1}(f',x). \qedhere
+\\ = f'(x) - \sum_{k = 1}^{n} \frac{f^{(k)}(x_0)}{(k-1)!} (x - x_0)^{k-1}= f'(x) - \sum_{k = 0}^{n-1} \frac{{f'} ^{(k)}(x_0)}{k!} (x - x_0)^k =\\=r_{n-1}(f',x). \tag*{\qedhere}
 \end{multline*}
 \end{proof}
 

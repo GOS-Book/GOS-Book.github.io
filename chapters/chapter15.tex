@@ -3,17 +3,16 @@
 
 \begin{defn}
 Область $G \subset \bbR^3$ называется элементарной относительно оси $z$ в прямоугольной декартовой системе координат $(O, x, y, z)$, если 
-
 \begin{equation} \label{ch15eq1}
-G = \{ (x,y,z) \in \bbR^3: \: (x,y) \in g, \: \phi_1(x,y) < z < \phi_2(x,y) \: \forall (x,y) \in g\}, 
+G = \{\, (x,y,z) \in \bbR^3\,\big|\, (x,y) \in g, \quad \phi_1(x,y) < z < \phi_2(x,y) \quad \forall (x,y) \in g\,\}, 
 \end{equation}
-где $g$ - ограниченная область в $\bbR^2$ с кусочно-гладкой границей $\partial g$ и функции $\phi_1, \phi_2$ определены, непрерывны на замыкании области $\overline{g}$ и непрерывно-дифференцируемы на $g$.
+где $g$ "--- ограниченная область в $\bbR^2$ с кусочно-гладкой границей $\partial g$ и функции $\phi_1$, $\phi_2$ определены, непрерывны на замыкании области $\overline{g}$ и непрерывно-дифференцируемы на $g$.
 \end{defn}
 
 Аналогично определяется область в $\bbR^3$, элементарная относительно осей $x,y$.
 
 \begin{notion}
-Так как область $g$ ограничена и ее граница является кусочно-гладкой, то граница имеет нулевую меру Жордана, а $g$ - измеримо по Жордану, $\partial g$ - компакт.
+Так как область $g$ ограничена и ее граница является кусочно-гладкой, то граница имеет нулевую меру Жордана, а $g$ "--- измеримо по Жордану, $\partial g$ "--- компакт.
 \end{notion}
 
 \begin{lemm} \label{ch15lemm1}
@@ -29,7 +28,7 @@ G = \{ (x,y,z) \in \bbR^3: \: (x,y) \in g, \: \phi_1(x,y) < z < \phi_2(x,y) \: \
 \begin{equation} \label{ch15eq2y}
 \iiint\limits_{G} \frac{\partial f}{\partial y}\,dx\,dy\,dz = \iint\limits_{\partial	G_{\textit{внеш}}} f \,dx\,dz,
 \end{equation}
-где поверхностные интегралы берутся по внешней относительно $G$ стороне повехности $\partial G$.
+где поверхностные интегралы берутся по внешней относительно $G$ стороне поверхности $\partial G$.
 \end{lemm}
 
 \begin{proof}
@@ -49,25 +48,25 @@ $\Rightarrow$
 
 $\displaystyle\iint\limits_G f \,dx\,dy = \displaystyle\iint\limits_g (f(x,y,\phi_2(x,y)) - f(x,y,\phi_1(x,y))) \,dx \,dy$
 
-$\displaystyle\iiint\limits_G \dfrac{\partial f}{\partial z} \,dx \,dy \,dz = \displaystyle\iint\limits_g \,dx \,dy \displaystyle\int\limits_{\phi_1(x,y)}^{\phi_2(x,y)} \dfrac{\partial f}{\partial z}(x,y,z) \,dz = \displaystyle\iint\limits_g f(x,y,\phi_2) - f(x,y,\phi_1) \,dx \,dy$
-
+\begin{multline*}
+\iiint\limits_G \dfrac{\partial f}{\partial z} \,dx \,dy \,dz = \iint\limits_g \,dx \,dy \int\limits_{\phi_1(x,y)}^{\phi_2(x,y)} \dfrac{\partial f}{\partial z}(x,y,z) \,dz =\\= \iint\limits_g f(x,y,\phi_2) - f(x,y,\phi_1) \,dx \,dy\tag*{\qedhere}
+\end{multline*}
 \end{proof}
 
 \begin{cons}
 Лемма $\ref{ch15lemm1}$ для $x$ и для $y$ доказывается аналогично.
 \end{cons}
 
-\begin{thm} [Теорема Остроградского-Гаусса]
-Пусть область $G \subset \bbR^3$ элементарна относительно всех координатных осей. Тогда если функции $P,Q,R$ определены и непрерывны на $\overline{G}$, а частные производные $P'_x, Q'_y, R'_z$ - непрерывны и ограничены на $G$, то справедлива \textit{формула Остроградского-Гаусса}\rindex{формула!Остроградского-Гаусса}:
+\begin{thm} [Теорема Остроградского"--~Гаусса]
+Пусть область $G \subset \bbR^3$ элементарна относительно всех координатных осей. Тогда если функции $P,Q,R$ определены и непрерывны на $\overline{G}$, а частные производные $P'_x, Q'_y, R'_z$ "--- непрерывны и ограничены на $G$, то справедлива \textit{формула Остроградского"--~Гаусса}\rindex{формула!Остроградского"--~Гаусса}:
 
 \begin{equation} \label{ch15eq3}
 \iiint\limits_G (P'_x + Q'_y + R'_z) \,dx\,dy\,dz = \iint\limits_{\partial G_{\textit{внеш}}} P\,dy\,dz + Q\,dz\,dx + R\,dx\,dy,
 \end{equation}
 где $\partial G_{\textit{внеш}}$ "--- внешняя относительно области $G$ сторона поверхности $G$.
-
 \end{thm}
 \begin{proof}
-$(\ref{ch15eq3}) \Leftarrow (\ref{ch15eq2x}), (\ref{ch15eq2y}), (\ref{ch15eq2z})$
+$(\ref{ch15eq3}) \Leftarrow (\ref{ch15eq2x}), (\ref{ch15eq2y}), (\ref{ch15eq2z}).$
 \end{proof}
 
 \begin{lemm}
@@ -106,7 +105,7 @@ $(\ref{ch15eqA}, \ref{ch15eqB}, \ref{ch15eqC}) \; \Rightarrow \; (\ref{ch15eq2z}
 \end{proof}
 
 \begin{thm}
-Пусть область $G \subset \bbR^3$ такая, что для каждой их трех координатных осей ее можно конечным числом кусочно-гладких поверхностей разрезать на конечное число областей, элементарных относительно соответсвующей оси. Тогда если функции $P,Q,R$ непрерывны на $\overline{G}$, а их частные производные $P'_x, Q'_y, R'_z$ непрерывны и ограничены на $G$, то справедлива \textit{формула Остроградского-Гаусса} ($\ref{ch15eq3}$).
+Пусть область $G \subset \bbR^3$ такая, что для каждой их трех координатных осей ее можно конечным числом кусочно-гладких поверхностей разрезать на конечное число областей, элементарных относительно соответствующей оси. Тогда если функции $P,Q,R$ непрерывны на $\overline{G}$, а их частные производные $P'_x, Q'_y, R'_z$ непрерывны и ограничены на $G$, то справедлива \textit{формула Остроградского"--~Гаусса} ($\ref{ch15eq3}$).
 \end{thm}
 
 \begin{thm}
@@ -115,14 +114,14 @@ $(\ref{ch15eqA}, \ref{ch15eqB}, \ref{ch15eqC}) \; \Rightarrow \; (\ref{ch15eq2z}
 \section{Соленоидальные векторные поля.}
 
 \begin{defn}
-Непрерывно-дифференцируемое векторное поле $\vv{a}(M), \; M \in G$ называется \textit{соленоидальным}\rindex{поле!соленоидальное} в области $G$, если 
+Непрерывно-дифференцируемое векторное поле $\vv{a}(M)$, $M \in G$ называется \textit{соленоидальным}\rindex{поле!соленоидальное} в области $G$, если 
 \begin{equation} \label{ch15.2eq1}
-\forall M \in G \quad \Div \: \vv{a}(M) = 0
+\forall M \in G \quad \div \vv{a}(M) = 0
 \end{equation}
 \end{defn}
 
 \begin{thm}
-Непрерывно-дифференцируемое векторное поле $\vv{a}(M), \; M \in G$ является соленоидальным в области $G$ $\Leftrightarrow$ для любой замкнутой области $\overline{g}$ такой, что $\overline{g} \subset G$ и $\partial g$ - кусочно-гладкая граница области $g$, выполняется равенство:
+Непрерывно-дифференцируемое векторное поле $\vv{a}(M)$, $M \in G$ является соленоидальным в области $G$ $\Leftrightarrow$ для любой замкнутой области $\overline{g}$ такой, что $\overline{g} \subset G$ и $\partial g$ - кусочно-гладкая граница области $g$, выполняется равенство:
 
 \begin{equation} \label{ch15.2eq2}
 \iint\limits_{\partial g_{\textit{внеш}}} \vv{a} \,d\vv{s} = 0
@@ -130,28 +129,28 @@ $(\ref{ch15eqA}, \ref{ch15eqB}, \ref{ch15eqC}) \; \Rightarrow \; (\ref{ch15eq2z}
 \end{thm}
 
 \begin{proof}
-Пусть выполняется ($\ref{ch15.2eq1}$). Пусть $g$ "--- область: $\overline{g} \subset G$ и $\partial g$ - кусочно-гладкая поверхность.
+Пусть выполняется ($\ref{ch15.2eq1}$). Пусть $g$ "--- область: $\overline{g} \subset G$ и $\partial g$ "--- кусочно-гладкая поверхность.
 
-Тогда так как $\vv{a}$ "--- непрерывно-дифференциуемое векторное поле в $G$, по формуле Остроградского-Гаусса:
+Тогда так как $\vv{a}$ "--- непрерывно-дифференцируемое векторное поле в $G$, по формуле Остроградского"--~Гаусса:
 
 $$
-\iint\limits_{\partial \overline{g}} \vv{a} \,d\vv{s} = \iiint\limits_g \Div \: \vv{a}(M) \,dg = 0, \; \textit{из } (\ref{ch15.2eq1}) 
+\iint\limits_{\partial \overline{g}} \vv{a} \,d\vv{s} = \iiint\limits_g \div \: \vv{a}(M) \,dg = 0, \; \textit{из } (\ref{ch15.2eq1}) 
 $$
 
 $\Rightarrow$ из ($\ref{ch15.2eq1}$) $\Rightarrow$ ($\ref{ch15.2eq2}$)
 
 Пусть выполняется ($\ref{ch15.2eq2}$), $M \in G$.
-$\Rightarrow \; \exists \delta > 0: \; O_\delta \subset G$
+$\Rightarrow \; \exists \delta > 0: \; O_\delta \subset G \Rightarrow$
 
-$\Rightarrow \; \Div \: \vv{a}(M) = \lim\limits_{r \to +0}\left( \frac{1}{\frac{4}{3}\pi r^3}\displaystyle\iint\limits_{S^{+}_M(r)}a \,d\vv{s} \right) = 0,$ где $S^{+}_M(r)$ "--- сфера с центром в точке $M$ радиуса $r, \: r \in (0, \delta)$.
+$$ \; \div \: \vv{a}(M) = \lim\limits_{r \to +0}\left( \frac{1}{\frac{4}{3}\pi r^3}\displaystyle\iint\limits_{S^{+}_M(r)}a \,d\vv{s} \right) = 0,$$ где $S^{+}_M(r)$ "--- сфера с центром в точке $M$ радиуса $r, \: r \in (0, \delta)$.
 
 $(\ref{ch15.2eq2}) \Rightarrow (\ref{ch15.2eq1})$
 \end{proof}
 
 \begin{defn}
-Непрерывно-дифференцируемая векторная фукнция $\vv{b}(M), \; M \in G$, называется векторным потенциалом векторного поля $\vv{a}(M), \; M \in G \subset \bbR^3$, в области $G$, если 
+Непрерывно-дифференцируемая векторная функция $\vv{b}(M)$, $M \in G$, называется векторным потенциалом векторного поля $\vv{a}(M)$, $M \in G \subset \bbR^3$, в области $G$, если 
 $$
-\forall M \in G: \; \vv{a}(M) = \rot \: \vv{b}(M)
+\forall M \in G\quad \vv{a}(M) = \rot \vv{b}(M)
 $$
 \end{defn}
 
@@ -162,7 +161,7 @@ $$
 \begin{proof}
 $\vv{a}(M)$ "--- непрерывно-дифференцируемо по условию.
 Пусть $\forall M \in G \quad \vv{a}(M) = \rot \: \vv{b}(M)$.
-$\Rightarrow \quad \exists \Div \: \vv{a}(M) = \Div(\rot \: \vv{b}(M)) = 0$ в $G$.
+$\Rightarrow \quad \exists \div \: \vv{a}(M) = \div(\rot \: \vv{b}(M)) = 0$ в $G$.
 \end{proof}
 
 \begin{defn} 
@@ -181,8 +180,10 @@ $\vv{a}$ "--- непрерывно-дифференцируемая вектор
 $S_2, S_1 \subset G$.
 
 $\Rightarrow$ на $S_2, S_1$ справедлива формула Стокса.
-
-$\iint\limits_S \vv{a}\,d\vv{s} = \iint\limits_{S_1} \vv{a}\,d\vv{s} + \iint\limits_{S_2} \vv{a}\,d\vv{s} = \iint\limits_{S_1} \rot \: \vv{b}\,d\vv{s} + \iint\limits_{S_2} \rot \: \vv{b}\,d\vv{s} \xlongequal{\textit{Стокс}} \iint\limits_{\gamma_1} \vv{b}\,d\vv{r} + \iint\limits_{\gamma_2} \vv{b}\,d\vv{r} = \iint\limits_{\gamma_1} \vv{b}\,d\vv{r} - \iint\limits_{\gamma_1} \vv{b}\,d\vv{r} = 0$
+\begin{multline*}
+\iint\limits_S \vv{a}\,d\vv{s} = \iint\limits_{S_1} \vv{a}\,d\vv{s} + \iint\limits_{S_2} \vv{a}\,d\vv{s} = \iint\limits_{S_1} \rot \: \vv{b}\,d\vv{s} + \iint\limits_{S_2} \rot \: \vv{b}\,d\vv{s} \xlongequal{\textit{Стокс}}\\
+= \iint\limits_{\gamma_1} \vv{b}\,d\vv{r} + \iint\limits_{\gamma_2} \vv{b}\,d\vv{r} = \iint\limits_{\gamma_1} \vv{b}\,d\vv{r} - \iint\limits_{\gamma_1} \vv{b}\,d\vv{r} = 0.
+\end{multline*}
 \end{proof}
 
 \begin{thm}
@@ -195,6 +196,6 @@ $\iint\limits_S \vv{a}\,d\vv{s} = \iint\limits_{S_1} \vv{a}\,d\vv{s} + \iint\lim
 \begin{thm}[Гельмгольца\rindex{теорема!Гельмгольца}] 
 Любое непрерывно-дифференцируемое векторное поле $\vv{a}(M), \; M \in G$, $G$ "--- область в $\bbR^3$, является суммой двух непрерывно-дифференцируемых векторных полей "--- потенциального и соленоидального:
 $$
-\vv{a}(M) = \grad \: u(M) + \vv{c}(M), \quad \forall M \in G, \quad \Div \: \vv{c}(M) = 0
+\vv{a}(M) = \grad \: u(M) + \vv{c}(M), \quad \forall M \in G, \quad \div \: \vv{c}(M) = 0
 $$
 \end{thm}

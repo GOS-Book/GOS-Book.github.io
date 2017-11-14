@@ -8,26 +8,19 @@
 \begin{defn}
 Точка $x_0 \in D_f$ будет называться точкой \textit{локального минимума (максимума)}, если 
 \begin{equation} \label{ch10eq1}
-\exists \delta > 0: \quad \forall x \in D_f \cap O_\delta(x_0): \quad f(x) \ge f(x_0)
+\exists \delta > 0 \cquad \forall x \in D_f \cap O_\delta(x_0) \cquad f(x) \ge f(x_0)\quad \bigl(f(x) \le f(x_0)\bigr)
 \end{equation} 
-\begin{equation} \label{ch10eq2}
-(\exists \delta > 0: \quad \forall x \in D_f \cap O_\delta(x_0): \quad f(x) \le f(x_0))
-\end{equation} 
- Точка $x_0$ будет называться точкой \textit{строгого минимума (максимума)}:
- \begin{equation} \label{ch10eq1'}
-\exists \delta > 0: \quad \forall x \in D_f \cap O_\delta(x_0): \quad f(x) > (f(x_0)
+Точка $x_0$ будет называться точкой \textit{строгого минимума (максимума)} :
+\begin{equation}\label{ch10eq1'}
+\exists \delta > 0\cquad \forall x \in D_f \cap O_\delta(x_0) \cquad f(x) > f(x_0)\quad \bigl(f(x) < f(x_0)\bigr)
 \tag{\ref{ch10eq1}$'$} 
-\end{equation} 
-\begin{equation} \label{ch10eq2'}
-(\exists \delta > 0: \quad \forall x \in D_f \cap O_\delta(x_0): \quad f(x) < f(x_0))
-\tag{\ref{ch10eq2}$'$} 
 \end{equation} 
 \end{defn}
 
 \begin{defn}
 Точка $x_0 \in D_f$ называется точкой локального экстремума, если она является либо точкой локального минимума, либо точкой локального максимума функции $f$.
 
-Точка $x_0$ не является точкой локального экстремума $\Leftrightarrow$ $\forall \delta > 0 \quad \exists x_1, x_2 \in D_f \cap \overset{\circ}{O}_\delta(x_0): \quad f(x_1) < f(x_0) < f(x_2)$
+Точка $x_0$ не является точкой локального экстремума $\Leftrightarrow$ $$\forall \delta > 0 \quad \exists x_1, x_2 \in D_f \cap \overset{\circ}{O}_\delta(x_0) \cquad f(x_1) < f(x_0) < f(x_2)$$
 \end{defn}
 \section{Необходимые условия, достаточные условия}
 

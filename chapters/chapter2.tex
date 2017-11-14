@@ -3,18 +3,18 @@
 \section{Ограниченность функции, непрерывной на отрезке, достижение точных верхней и нижней граней}
 
 \subsection{Предельная, внутренняя, изолированная точки множества}
-Пусть $G \subset \bbR$ --- множество.
+Пусть $G \subset \bbR$ "--- множество.
 \begin{defn}
-Точка $x_0 \in G$ называется \textit{изолированной точкой множества} $G$, если $\exists \delta >0\quad  O_\delta(x_0) \cap G = x_0$.
+Точка $x_0 \in G$ называется \textit{изолированной точкой множества}\rindex{точка множества!изолированная} $G$, если $$\exists \delta >0\cquad  O_\delta(x_0) \cap G = x_0.$$
 \end{defn}
 
 \begin{defn}
-Точка $x_0 \in G$ называется \textit{внутренней точкой множества} $G$, если $\exists \delta >0\quad O_\delta(x_0) \subset G$.
+Точка $x_0 \in G$ называется \textit{внутренней точкой множества}\rindex{точка множества!внутренняя} $G$, если $$\exists \delta >0\cquad O_\delta(x_0) \subset G.$$
 \end{defn}
 
 \begin{defn}
 Если $c \in \bbR$, то 
-\begin{enumerate}[wide, labelwidth=!, labelindent=0pt]
+\begin{enumerate}[wide, labelwidth=!, labelindent=0pt, nolistsep]
 \item
 \textit{проколотой $\epsilon$-окрестностью числа} $c$ называется $$\dneio{\epsilon}{c} \triangleq O_\epsilon(c)\setminus\{c\}=(c-\epsilon;c)\cup(c;c+\epsilon);$$
 \item
@@ -25,79 +25,88 @@
 \end{defn}
 
 \begin{defn}
-Точка $c \in \bbR$ называется \textit{предельной точкой множества} $G$, если $\forall \epsilon >0 \ \dneio{\epsilon}{c} \cap G \ne \emptyset$.
+Точка $c \in \bbR$ называется \textit{предельной точкой множества}\rindex{точка множества!предельная} $G$, если $$\forall \epsilon >0 \quad \dneio{\epsilon}{c} \cap G \ne \emptyset.$$
 \end{defn}
 
 \subsection{Предел функций}
+\todo{игрек из МНОЖЕСТВА ИГРЕК}
 \begin{defn}
-Пусть заданы множество $D_f \subset \bbR$ и некоторое правило $f$, которое каждому числу $x\in D_f$ ставит в соответствие одно и только одно некоторое число $y=f(x)$. Тогда множество всевозможных пар $(x, f(x)), x\in D_f$, называется \textit{числовой функцией}\rindex{функция!числовая}.
+Пусть заданы множество $D_f$ и некоторое правило $f$, которое каждому числу $x\in D_f$ ставит в соответствие одно и только одно некоторое $y=f(x)$. Тогда множество всевозможных пар $(x, f(x))$, $x\in D_f$, называется \textit{функцией}\rindex{функция} $f(x)$.
 \end{defn}
 
+\todo{про состоит из одного элемента}
+\begin{defnn}
+\end{defnn}
 Обозначется $y=f(x),\ x\in D_f$, или, например, $f\colon D_f \to \bbR$. Тогда
-\begin{itemize}
+\begin{itemize}[wide, labelwidth=!, labelindent=0pt]
 \item
 Множество $D_f$ называется \textit{областью определения} функции $f$.
 \item
-Множество всех $y=f(x),\ x\in D_f$ называется \textit{множеством значений} функции $f$ и обозначается $f(D_f)$. $$f(D_f)=\{\,y : y=f(x),\; x\in D_f\,\}.$$
+Множество всех $y=f(x),\ x\in D_f$ называется \textit{множеством значений} функции $f$ и обозначается $f(D_f)$. $$f(D_f)=\{\,y \,\big|\, y=f(x),\; x\in D_f\,\}.$$
 \item 
-Множество всех точек плоскости с координатами $(x, f(x)),\ x\in D_f$, называется \textit{графиком} функции $f$. $$\Gamma_f = \{\,(x,y) : y = f(x),\; x\in D_f\,\}.$$
+Множество всех точек плоскости с координатами $(x, f(x)),\ x\in D_f$, называется \textit{графиком} функции $f$. $$\Gamma_f = \{\,(x,y) \,\big|\, y = f(x),\; x\in D_f\,\}.$$
 \item
-Если $M \subset D_f$, то множество всех $y=f(x)$, когда $x\in M$, называется \textit{образом множества} $M$ и обозначается $f(M)$. $$f(M) = \{\,y: y=f(x),\; x\in M\,\}.$$
+Если $M \subset D_f$, то множество всех $y=f(x)$, когда $x\in M$, называется \textit{образом множества} $M$ и обозначается $f(M)$. $$f(M) = \{\,y\,\big|\, y=f(x),\; x\in M\,\}.$$
 \item
-Если $E \subset f(D_f)$, то множество всех $x$, когда $y\in E$, называется \textit{полным прообразом} множества $E$ и обозначается $f^{-1}(E)$. $$f^{-1}(E)=\{\,x : x\in D_f,\; f(x)\in E\,\}.$$
+Если $E \subset f(D_f)$, то множество всех $x$, когда $y\in E$, называется \textit{полным прообразом} множества $E$ и обозначается $f^{-1}(E)$. $$f^{-1}(E)=\{\,x \,\big|\, x\in D_f,\; f(x)\in E\,\}.$$
 \item
 При $S\subset D_f$ функция $f_S\colon S\to\bbR$, при $f_S(x)=f(x)$ называется \textit{сужением} функции $f$ на $S$ и обозначается $f\bigr|_S$.
 \end{itemize}
  
+Наряду с термином <<функция>> в определенных ситуациях употребляются равнозначные ему термины <<отображение>>, <<преобразование>>, <<морфизм>>, <<соответствие>>.
+\begin{notion}
+Используя определение функции можно дать еще одно альтернативное определение для понятия <<последовательность>>. Всякое отображение $f\colon \bbN \to Y$  называется \textit{последовательностью} $\{y_n\}$ элементов множества $Y$, где ее $n$-ым элементом будет являться $(n,f(n))$.
+\end{notion} 
+
 \begin{defn}
 Функция $f$ называется \textit{ограниченной сверху (снизу) на множестве} $X\subset D_f$, если множество $f(X)$ ограничено сверху (снизу), т.е. существует число M такое, что
 $$
-\forall x \in X \quad f(x) \le M \quad (\text{соотв.}\; f(x)\ge M).
+\forall x \in X \quad f(x) \le M \ (\text{соотв. } f(x)\ge M).
 $$
 \end{defn}
 
 \begin{defn}
-Число $M \in \bbR$ --- \textit{точная верхняя (нижняя) грань множества} $G \subset \bbR$ --- $\sup G$ $(\inf G)$, если 
+Число $M \in \bbR$ "--- \textit{точная верхняя (нижняя) грань множества} $G \subset \bbR$ "--- $\sup G$ $(\inf G)$, если 
 \begin{enumerate}
 \item
-$\forall x \in G\colon x \le M \; (x\ge M)$,
+$\forall x \in G\cquad x \le M \ (x\ge M)$,
 \item
-$\forall M' < M \; (\forall M' > M)\ \exists x\in G\colon x>M' \; (x<M')$.
+$\forall M' < M \ (\forall M' > M)\quad \exists x\in G\cquad x>M' \ (x<M')$.
 \end{enumerate}
 \quad\textbullet\quad Eсли множество $G \subset \bbR$ не ограничено сверху (снизу), то, по определению, $\sup G=+\infty$ ($\inf G=-\infty$).  
 \end{defn}
 
 \begin{defn}[Определение предела функции по Коши\rindex{предел!функции по Коши}]\label{df:ch2:predelCaushi}
-Пусть $c\in\bboR$, $x_o \in \bboR$ и $x_0$ --- предельная точка множества $D_f \subset \bbR$. Тогда элемент $c$ называется \textit{пределом функции} $f$, заданной на множестве $D_f$ при $x \to x_0$ (в точке $x_0$), если
+Пусть $c\in\bboR$, $x_o \in \bboR$ и $x_0$ "--- предельная точка множества $D_f \subset \bbR$. Тогда элемент $c$ называется \textit{пределом функции} $f$, заданной на множестве $D_f$ при $x \to x_0$ (в точке $x_0$), если
 $$
-\forall O(c) \exists O(x_0): \forall x \in \dnei{x_0}\cap D_f:\quad f(x) \in O(c),
+\forall O(c)\quad \exists O(x_0)\cquad \forall x \in \dnei{x_0}\cap D_f\cquad f(x) \in O(c),
 $$  
 что эквивалентно (это можно доказать)
 $$
-\forall \epsilon > 0 \exists \delta >0: \forall x \in \dneio{\delta}{x_0} \cap D_f:\quad f(x) \in O_\epsilon (c). 
+\forall \epsilon > 0\quad \exists \delta >0\cquad \forall x \in \dneio{\delta}{x_0} \cap D_f\cquad f(x) \in O_\epsilon (c). 
 $$
 
 Будем писать $\lim_{x \to x_0}\limits f(x) = c$, или <<$f(x)\to c$ при $x \to x_0$>>.
 \end{defn}
-Если точка $x_0$ --- не предельная для множества $D_f$, то функция $f$ не может иметь предела по Коши в точке $x_0$. %(ведь тогда $\exists\, \delta$ такая, что $\dneio{\delta}{x_0}\cap D_f=\emptyset$).
+Если точка $x_0$ "--- не предельная для множества $D_f$, то функция $f$ не может иметь предела по Коши в точке $x_0$. %(ведь тогда $\exists\, \delta$ такая, что $\dneio{\delta}{x_0}\cap D_f=\emptyset$).
 
 \begin{defn}
-Если $x_0$ --- предельная точка множества области определения $D_f$ функции $f$, то последовательность $\{x_n\}$ называется последовательностью Гейне функции $f$ в точке $x_0$ при условии, что
+Если $x_0$ "--- предельная точка множества области определения $D_f$ функции $f$, то последовательность $\{x_n\}$ называется последовательностью Гейне функции $f$ в точке $x_0$ при условии, что
 \begin{enumerate}
-\item $\forall n \in \bbN:\; x_n\in D_f\setminus \{x_0\}$;
+\item $\forall n \in \bbN\cquad x_n\in D_f\setminus \{x_0\}$;
 \item $\lim_{n \to \infty}\limits x_n = x_0$.
 \end{enumerate}
 \end{defn}
 
 \begin{thm}
 \label{th:ch2:predeltochka}
-Пусть $G \subset \bbR$. Тогда $c \in \bbR$ является предельной точкой $G$ $\Longleftrightarrow$ $ \exists \{x_n\}: \forall n \in \bbN \quad x_n \in G\setminus\{c\}: \lim_{n \to \infty}\limits x_n = c$. 
+Пусть $G \subset \bbR$. Тогда $c \in \bbR$ является предельной точкой $G$ $\Longleftrightarrow$ $ \exists \{x_n\}\colon \forall n \in \bbN$ $x_n \in G\setminus\{c\}\colon \lim_{n \to \infty}\limits x_n = c$. 
 \end{thm}
 
 Согласно теореме~\ref{th:ch2:predeltochka} у функции существует последовательность Гейне в любой точке $x_0$, являющейся предельной для $D_f$.
 
 \begin{defn}[Определение предела функции по Гейне\rindex{предел!функции по Гейне}]\label{df:ch2:predelGeine}
-Пусть $c\in\bboR$, $x_0 \in \bboR$ и $x_0$ --- предельная точка множества $D_f \subset \bbR$. Тогда элемент $c$ называется \textit{пределом функции} $f$, заданной на множестве $D_f$ при $x \to x_0$ (в точке $x_0$), если для любой последовательности $\{x_n\}$ такой, что $\forall n \in \bbN: x_n\in D_f\setminus \{x_0\} \lim_{n \to \infty}\limits x_n = x_0$ выполняется условие $\lim_{n \to \infty}\limits f(x_n) = c$. 
+Пусть $c\in\bboR$, $x_0 \in \bboR$ и $x_0$ --- предельная точка множества $D_f \subset \bbR$. Тогда элемент~$c$ называется \textit{пределом функции} $f$, заданной на множестве $D_f$ при $x \to x_0$ (в точке $x_0$), если для любой последовательности $\{x_n\}$ такой, что $\forall n \in \bbN: x_n\in D_f\setminus \{x_0\} \lim_{n \to \infty}\limits x_n = x_0$ выполняется условие $\lim_{n \to \infty}\limits f(x_n) = c$. 
 \end{defn}
 
 \begin{thm}
@@ -105,7 +114,7 @@ $$
 \end{thm}
 
 \begin{defn}
-Пусть $f: D_f \to \bbR$ и $S \subset D_f$, $x_0$ --- предельная точка множества $S$, $x_0 \in \bboR$. Тогда элемент $c \in \bbR$ называется \textit{пределом функции $f$ по множеству $S$} при $x \to x_0$, если $\lim_{x \to x_0}\limits g(x) = c$, где $g(x)=\left.f\right|_S = \{(x;f(x)),x \in S\}$.
+Пусть $f\colon D_f \to \bbR$ и $S \subset D_f$, $x_0$ --- предельная точка множества $S$, $x_0 \in \bboR$. Тогда элемент $c \in \bbR$ называется \textit{пределом функции $f$ по множеству $S$} при $x \to x_0$, если $\lim_{x \to x_0}\limits g(x) = c$, где $g(x)=\left.f\right|_S = \{(x;f(x)),x \in S\}$.
 \end{defn}
 
 \begin{defn}
@@ -113,13 +122,11 @@ $$
 Аналогично определяется \textit{предел справа функции} $f$: $f(x_0+0)=\lim_{x \to x_0+0}\limits f(x)$. 
 \end{defn}
 
-
-
 \subsection{Непрерывность функции}
 Пусть $G \subset \bbR$. Тогда $\forall x_0 \in G$ выполняется одно и только одно из двух утверждений:
 \begin{enumerate}
-\item $x_0$ "--- изолированная точка $\exists \delta>0:\quad \dneio{\delta}{x_0} \cap G = \emptyset$;
-\item $x_0$ "--- предельная точка $\forall \delta > 0:\quad \dneio{\delta}{x_0}\cap G \neq \emptyset$.
+\item $x_0$ "--- изолированная точка $\exists \delta>0\cquad \dneio{\delta}{x_0} \cap G = \emptyset$;
+\item $x_0$ "--- предельная точка $\forall \delta > 0\quad \dneio{\delta}{x_0}\cap G \neq \emptyset$.
 \end{enumerate}
 
 \begin{defn}
@@ -135,12 +142,12 @@ $$
 \Longleftrightarrow
 \begin{cases}
 \forall x_0 \in (a;b)\quad \exists \lim_{x \to x_0}\limits f(x) = f(x_0);\\
-\exists \lim_{x \to a+0}\limits f(x) = f(a)\qquad \Bigl(\exists \lim_{x \to b-0}\limits f(x) = f(b)\Bigr).
+\exists \lim_{x \to a+0}\limits f(x) = f(a)\quad \Bigl(\text{и } \exists \lim_{x \to b-0}\limits f(x) = f(b)\Bigr).
 \end{cases}
 $$  
 \end{lemm}
 
-\begin{thm}[Больцано-Вейерштрасса](доказана в билете №1)
+\begin{thm}[Больцано-Вейерштрасса](доказана в билете \textnumero 1)
 У любой ограниченной последовательности существует сходящаяся подпоследовательность.
 \end{thm}
 

@@ -40,7 +40,10 @@ f(c)&\le C\le f(c).\\
 Теорема доказана.
 \end{proof}
 
-Эту теорему можно сформулировать следующим образом:	\textit{Если функция~$f$ непрерывна на промежутке $\Delta$, то множество $f(\Delta)$ является промежутком.}
+Эту теорему можно сформулировать следующим образом:	
+\begin{thmn}
+Если функция~$f$ непрерывна на промежутке $\Delta$, то множество $f(\Delta)$ является промежутком.
+\end{thmn}
 
 Заметим, что обратное утверждение является неверным, например, $f(x)= \sin(\frac{1}{x})$ для $x\ne0$ и $f(0) = 0$ разрывна в точке $x = 0$, но у нее образ любого отрезка есть отрезок. Однако, для монотонных функций обратное утверждение является верным, докажем это в Теореме \ref{ch3n3}.
 \begin{defn}
@@ -52,7 +55,7 @@ $$
 
 \begin{defn}
 Пусть $x_0$ "--- точка разрыва функции $f$. Тогда 
-\begin{enumerate}
+\begin{enumerate}[wide, labelwidth=!, labelindent=0pt]
 \item
 %\begin{figure}[!h]
 %\centering
@@ -60,7 +63,7 @@ $$
 %\end{figure}
 %(что-то сделать с картинкой надо будет)
 
-Если $\exists \lim_{x \to x_0}\limits f(x) \in \bbR$, то $x_0$ - \textit{точка устранимого разрыва}
+Если $\exists \lim_{x \to x_0}\limits f(x) \in \bbR$, то $x_0$ "--- \textit{точка устранимого разрыва}
 \item
 Если $\exists \lim_{x \to x_0\pm0}\limits f(x)=f(x_0\pm 0)$, но $f(x_0+0)\ne f(x_0-0)$, то $x_0$ "--- \textit{точка разрыва первого рода}, а число $\Delta f=f(x_0+0)-f(x_0-0)$ называется скачком функции $f$ в точке $x_0$.
 \item
@@ -94,8 +97,8 @@ $$
 \begin{proof}
 Согласно Теореме~\ref{th:ch2:Veyershtrass} (Вейерштрасса) из прошлого билета 
 \begin{align*}
-&\exists x_* \in \Delta:\quad f(x_*)=m=\inf(f(\Delta)),\\
-&\exists x^* \in \Delta:\quad f(x^*)=M=\sup(f(\Delta)).
+&\exists x_* \in \Delta\cquad f(x_*)=m=\inf(f(\Delta)),\\
+&\exists x^* \in \Delta\cquad f(x^*)=M=\sup(f(\Delta)).
 \end{align*}   
 Cогласно теореме \ref{ch3n2} (о промежуточных значениях) $f(\Delta)$ "--- промежуток $\Rightarrow f(\Delta)=[m,M]$. 
 

@@ -1,0 +1,138 @@
+\begingroup
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture,overlay]
+\coordinate [below=5 cm] (midpoint) at (current page.north);
+\node at (current page.north west)
+{\begin{tikzpicture}[remember picture,overlay]
+\node[anchor=north west,inner sep=0pt] at (0,0) {\includegraphics[width=\paperwidth]{pictures/background}}; % Background image
+\draw[anchor=north] (midpoint) node [fill=prpl!30!white,fill opacity=0.6,text opacity=1,inner sep=1cm]{\Huge\centering\bfseries\sffamily\parbox[c][][t]{\paperwidth}{\centering { \textcolor{black!70}{\fontsize{23}{14}\selectfont GOSBook}}\\[4pt] % Book title
+%{\Large }\\[20pt] % Subtitle
+{\textcolor{black!70}{\huge Didenko Andre}}}}; % Author name
+\end{tikzpicture}};
+\end{tikzpicture}
+\vfill
+\endgroup
+
+%\shadetext[left color=CornflowerBlue, right color=prpl, middle color=prpl, shading angle=55]{\huge Didenko Andre}
+
+\newpage
+\thispagestyle{empty}
+\begingroup
+\newgeometry{margin=1.4cm, top=1.0cm, footskip = 1 cm, headheight=11pt,headsep=0.2cm}
+\epigraph{Умереть не страшно, страшно не жить.}{Виктор Гюго}\centering
+
+\settowidth{\unitlength}{\LARGE\scshape Московский Физико"--~Технический Институт}
+\vspace{-3.6\baselineskip}
+\begin{figure}[!h]
+\center
+\includegraphics[width=0.2\textwidth]{pictures/MIPT2}
+\end{figure}
+{\LARGE\scshape Московский Физико"--~Технический Институт}
+\rule{\unitlength}{1.7pt}\vspace*{-\baselineskip}\vspace*{2pt}
+\rule{\unitlength}{0.4pt}\\[0.6\baselineskip]
+{\Huge Подготовка к ГОСу по Матану}\\[0.4\baselineskip]
+{\large \itshape Sapere aude}\\[0.16\baselineskip]
+\rule{\unitlength}{0.4pt}\vspace*{-1.5\baselineskip}\vspace{3.2pt}
+\rule{\unitlength}{1.7pt}\\[0.55\baselineskip]
+{\Large\scshape Диденко А.А. \\\vspace*{0.1\baselineskip}  \normalsize студент 311 группы}\par
+\vspace*{0.35\baselineskip}  
+
+{\LARGE\scshape Редакция от \twodigit\day.\twodigit\month.\the\year \;(\currenttime)}\par 
+
+\vspace*{-1\baselineskip}  
+\begin{flushleft}
+\section*{\Large Полезные ссылки}
+\begin{itemize}[wide, labelwidth=!, labelindent=0pt, label=$\blacktriangleright$, noitemsep]
+\item Актуальная версия в pdf-формате доступна по ссылкам:
+
+\qquad\href{http://latexonline.cc/compile?git=https://github.com/DidenkoAndre/GOS_book&target=_main.tex&download=GOSBook_Matan.pdf&command=pdflatex}{$
+\begin{array}{l}
+\includegraphics[width=0.4cm]{pictures/reference/latexonline}
+\end{array}
+$\large latexonline.cc/...}
+
+\qquad\href{https://www.dropbox.com/sh/7e5mfj8q68o2ipp/AAD8XvpZhiJzFbEh_IeH305ia?dl=0&preview=GOSBook.pdf}{$
+\begin{array}{l}
+\includegraphics[width=0.4cm]{pictures/reference/dropbox}
+\end{array}
+$\large dropbox.com/...}
+
+\item \textbf{Важно!} Дополнительные материалы, полезные при подготовке как к \textit{устному} экзамену, так и к \textit{письменному} доступны по ссылке:
+
+\qquad\href{https://drive.google.com/drive/u/0/folders/0BzuzEyNkpwYDYjVNcE0wa3hqWjA}{$
+\begin{array}{l}
+\includegraphics[width=0.4cm]{pictures/reference/drive}
+\end{array}
+$\large drive.google.com/...}
+
+\item Литература по курсам доступна по ссылке:
+
+\qquad\href{https://drive.google.com/drive/u/0/folders/0BzuzEyNkpwYDcENXcV9jNWdwVlU}{$
+\begin{array}{l}
+\includegraphics[width=0.4cm]{pictures/reference/drive}
+\end{array}
+$\large drive.google.com/...}
+
+\item Анкета о ГОСе, которую рекомендую всем заполнить после его сдачи:
+
+\qquad\href{https://docs.google.com/spreadsheets/d/10jIg9Nr5oM1-Zjo_iIlKs8uxrBKrzfuJNas_YJIIxPs/edit\#gid=0}{$
+\begin{array}{l}
+\includegraphics[width=0.4cm]{pictures/reference/drive}
+\end{array}
+$\large drive.google.com/...}
+
+\item Подпишитесь на наш Telegram-бот с помощью команды \textsf{/subscribe}, и вы будете получать свежую версию автоматически!
+
+\qquad\href{https://t.me/GOSBook_Bot}{$
+\begin{array}{l}
+\includegraphics[width=0.4cm]{pictures/reference/telegram}
+\end{array}
+$\large telegram.me/GOSBook\_Bot} 
+
+\item Репозиторий, в котором хранится этот документ:
+
+\qquad\href{https://github.com/DidenkoAndre/GOS_book}{$
+\begin{array}{l}
+\includegraphics[width=0.4cm]{pictures/reference/git}
+\end{array}
+$\large github.com/DidenkoAndre/GOS\_book}
+
+\item Вы всегда можете поддержать проект материально! 
+Перевести средства на развитие проекта можно на карту {\large 5244 6873 8510 3816} \textsf{(MasterCard)}.
+
+\item По любым вопросам касательно книги, а также если вы хотите помочь в написании материала, просьба обращаться в личные сообщения: 
+
+\qquad\href{https://vk.com/didenko_andre}{$
+\begin{array}{l}
+\includegraphics[width=0.4cm]{pictures/reference/vk}
+\end{array}
+$\large vk.com/didenko\_andre}
+
+\qquad\href{https://telegram.me/didenko_andre}{$
+\begin{array}{l}
+\includegraphics[width=0.4cm]{pictures/reference/telegram}
+\end{array}
+$\large telegram.me/didenko\_andre}
+
+\qquad\href{https://instagram.com/didenko_andre}{$
+\begin{array}{l}
+\includegraphics[width=0.4cm]{pictures/reference/instagram}
+\end{array}
+$\large instagram.com/didenko\_andre}
+\end{itemize}
+
+\smallskip
+\vfill
+
+\textcolor{red}{
+$\blacktriangleright$ Я крайне не рекомендую использовать данное пособие как \textit{\textbf{основную}} литературу во время подготовки к Государственному экзамену.
+}
+\end{flushleft}
+
+\medskip
+\vfill
+{\huge\scshape I\;$\heartsuit$\;\LaTeX}\\[0.5\baselineskip]
+{\LARGE\scshape 2016}\par
+\restoregeometry
+\endgroup
+\newpage
