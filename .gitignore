@@ -35,3 +35,6 @@
 **/*.bcf
 **/*.ps
 *.mst
+
+# Allow
+!GOSBook.pdf
