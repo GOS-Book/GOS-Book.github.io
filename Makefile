@@ -1,5 +1,5 @@
 .PHONY: book chapter clean distclean check-env		
-MAINSRC = _main.tex
+MAINSRC = GOSBook.tex
 
 define delete
 	find . -depth -path "./.git/*" -prune -o -iregex $1 -type f -delete
@@ -8,9 +8,9 @@ endef
 book: $(MAINSRC)
 	git pull origin;\
 	pdflatex -synctex=1 -interaction=nonstopmode -shell-escape $(MAINSRC);\
-	xindy -L russian -C utf8 _main.idx;\
+	xindy -L russian -C utf8 GOSBook.idx;\
 	pdflatex -synctex=1 -interaction=nonstopmode -shell-escape $(MAINSRC);\
-	mv -f _main.pdf GOSBook_Matan.pdf
+	#mv -f GOSBook.pdf GOSBook_Matan.pdf
 
 chapter: check-env
 	pdflatex "\newcommand{\n}{$(CH)}\input{chapter}"
