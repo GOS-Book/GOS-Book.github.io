@@ -25,7 +25,6 @@
 **/*.bak
 **/*.gz
 **/*.gz(busy)
-**/*.pdf
 **/*.mtc*
 **/*.ptc*
 **/*.maf
@@ -35,6 +34,10 @@
 **/*.bcf
 **/*.ps
 *.mst
+
+# Other
+**/*.pdf
+**/*.sty
 
 # Allow
 !GOSBook.pdf
