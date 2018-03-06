@@ -5,6 +5,9 @@ define delete
 	find . -depth -path "./.git/*" -prune -o -iregex $1 -type f -delete
 endef		
 
+git: 
+	git pull origin 
+
 book: $(MAINSRC)
 	git pull origin;\
 	pdflatex -synctex=1 -interaction=nonstopmode -shell-escape $(MAINSRC);\
