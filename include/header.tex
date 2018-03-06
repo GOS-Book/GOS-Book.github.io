@@ -59,8 +59,6 @@
   
 \input{include/wrapping}
 
-\usepackage{minitoc}
-
 \usepackage{titlesec, titletoc}
 \renewcommand{\thesection}{\textsection\arabic{chapter}.\arabic{section}}
 \renewcommand{\thesubsection}{\arabic{subsection}}
@@ -126,9 +124,14 @@ open,numbered,addtohook={%
 \fi
 }}
 
+%VARIABLES
+\newlength{\iconwidth}
+\setlength{\iconwidth}{0.35cm}
+
 %Situational commands for special stuff
 
 %\includeonly{chapters/chapter1} %compile only this file.
 %\usepackage{showkeys} %show names of labels and references
 %\geometry{showframe} % show geometry frame box
 %\usepackage[1]{pagesel} $compile only first page
+

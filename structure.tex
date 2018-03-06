@@ -2,18 +2,6 @@
 % The Legrand Orange Book
 % Structural Definitions File
 % Version 2.0 (9/2/15)
-%
-% Original author:
-% Mathias Legrand (legrand.mathias@gmail.com) with modifications by:
-% Vel (vel@latextemplates.com)
-% DIDENKO ANDRE.
-% 
-% This file has been downloaded from:
-% http://www.LaTeXTemplates.com
-%
-% License:
-% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
-%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %----------------------------------------------------------------------------------------
@@ -129,14 +117,14 @@
 {\addvspace{12pt}\large\sffamily\bfseries} % Spacing and font options for chapters
 {\color{prpl!60}\contentslabel[\Large\thecontentslabel]{1.25cm}\color{prpl}} % Chapter number
 {\color{prpl}}  
-{\color{prpl!60}\normalsize\;\titlerule*[.5pc]{.}\;\thecontentspage} % Page number
+{\color{prpl!60}\large\sffamily\bfseries\;\titlerule*[.5pc]{.}\;\thecontentspage} % Page number
 
 % Section text styling
 \titlecontents{section}[1.25cm] % Indentation
 {\addvspace{3pt}\sffamily\bfseries} % Spacing and font options for sections
 {\contentslabel[\thecontentslabel]{1.25cm}} % Section number
 {}
-{\hfill\color{black}\thecontentspage} % Page number
+{\sffamily\bfseries\ \titlerule*[.5pc]{.}\;\thecontentspage} % Page number
 []
 
 % Subsection text styling
@@ -172,21 +160,21 @@
 {\addvspace{15pt}\large\sffamily\bfseries} % Spacing and font options for chapters
 {\color{prpl}\contentslabel[\Large\thecontentslabel]{1.25cm}\color{prpl}} % Chapter number
 {}  
-{\color{prpl}\normalsize\sffamily\bfseries\;\titlerule*[.5pc]{.}\;\thecontentspage} % Page number
+{\color{prpl}\large\sffamily\bfseries\;\titlerule*[.5pc]{.}\;\thecontentspage} % Page number
 
 % Section text styling
 \titlecontents{lsection}[0em] % Indenting
 {\sffamily\small} % Spacing and font options for sections
 {\contentslabel[\thecontentslabel]{1.25cm}} % Section number
 {}
-{}
+{\sffamily\small\;\titlerule*[.5pc]{.}\;\thecontentspage}
 
 % Subsection text styling
 \titlecontents{lsubsection}[.5em] % Indentation
 {\normalfont\footnotesize\sffamily} % Font settings
 {}
 {}
-{}
+{\normalfont\footnotesize\sffamily\;\titlerule*[.5pc]{.}\;\thecontentspage}
 
 %----------------------------------------------------------------------------------------
 %	PAGE HEADERS
@@ -247,7 +235,7 @@
 {\small\bf\sffamily}% Theorem head font
 {.}% Punctuation after theorem head
 {0.25em}% Space after theorem head
-{\small\sffamily{\tiny\ensuremath{\blacksquare}}\nobreakspace\thmname{#1}\nobreakspace\thmnumber{\@ifnotempty{#1}{}\@upn{#2}}% Theorem text (e.g. Theorem 2.1)
+{\small\sffamily{\qedsymbol}\nobreakspace\thmname{#1}\nobreakspace\thmnumber{\@ifnotempty{#1}{}\@upn{#2}}% Theorem text (e.g. Theorem 2.1)
 \thmnote{\nobreakspace\the\thm@notefont\sffamily\bfseries(#3)}}% Optional theorem note
 
 \newtheoremstyle{blacknumbox} % Theorem style name
@@ -282,7 +270,6 @@
 {.}% Punctuation after theorem head
 {.5em}% Space after theorem head3
 {}%
-\renewcommand{\qedsymbol}{$\blacksquare$}% Optional qed square
 \makeatother
 
 %----------------------------------------------------------------------------------------
@@ -430,7 +417,7 @@ innerbottommargin=5pt]{cBox}
 \newtheorem{exmplT}{Пример}[chapter]
 \renewcommand{\theexmplT}{\arabic{exmplT}}
 \newcommand{\theHexmplT}{\thechapter.\arabic{exmplT}}
-\newenvironment{exmpl}{\begin{exmplT}}{\hfill{\tiny\ensuremath{\blacksquare}}\end{exmplT}}
+\newenvironment{exmpl}{\pushQED{\qed}\begin{exmplT}}{\popQED\end{exmplT}}
 \newcounter{exmpl}
 
 \theoremstyle{prplnumbox}
@@ -524,7 +511,7 @@ innerbottommargin=5pt]{cBox}
 \fill[prpl!20](0cm,0cm) rectangle (\paperwidth,-\paperheight);
 \node[anchor=north, text width=14.3cm] at (7.5cm,-3.25cm){\raggedleft\color{prpl!40}\fontsize{220}{100}\raggedleft\sffamily\bfseries\raggedleft\@Roman\c@part}; 
 \node[anchor=south east] at (\paperwidth-1cm,-\paperheight+1cm){\parbox[t][][t]{8.5cm}{
-\printcontents{l}{0}{\setcounter{tocdepth}{1}}%
+\printcontents{l}{0}{\setcounter{tocdepth}{2}}%
 }};
 \node[anchor=north east] at (\paperwidth-0.5cm,-1cm){\parbox[t][][t]{14cm}{\strut\raggedleft\color{white}\fontsize{30}{30}\sffamily\bfseries#2}};
 \end{tikzpicture}};
@@ -560,7 +547,6 @@ innerbottommargin=5pt]{cBox}
 %	CHAPTER HEADINGS
 %----------------------------------------------------------------------------------------
 
-% A switch to conditionally include a picture, implemented by  Christian Hupfer
 \newif\ifusechapterimage
 \usechapterimagetrue
 \newcommand{\thechapterimage}{}%
@@ -574,7 +560,7 @@ innerbottommargin=5pt]{cBox}
 {\begin{tikzpicture}[remember picture,overlay]
 \node[anchor=north west,inner sep=0pt] at (0,0) {\ifusechapterimage\includegraphics[width=\paperwidth]{\thechapterimage}\fi};
 \draw[anchor=west] (\Gm@lmargin,-6cm) node [line width=2pt,rounded corners=15pt,draw=prpl,fill=white,fill opacity=0.5,inner sep=35pt]{\strut\makebox[22cm]{}};
-\draw[anchor=west] (\Gm@lmargin+.3cm,-6cm) node[text width=12.5cm] {\huge\sffamily\bfseries\color{black}\thechapter. #1\strut};
+\draw[anchor=west] (\Gm@lmargin+.3cm,-6cm) node[text width=11cm] {\huge\sffamily\bfseries\color{black}\thechapter. #1\strut};
 \end{tikzpicture}};
 \end{tikzpicture}
 \else
@@ -583,7 +569,7 @@ innerbottommargin=5pt]{cBox}
 {\begin{tikzpicture}[remember picture,overlay]
 \node[anchor=north west,inner sep=0pt] at (0,0) {\ifusechapterimage\includegraphics[width=\paperwidth]{\thechapterimage}\fi};
 \draw[anchor=west] (\Gm@lmargin,-6cm) node [line width=2pt,rounded corners=15pt,draw=prpl,fill=white,fill opacity=0.5,inner sep=35pt]{\strut\makebox[22cm]{}};
-\draw[anchor=west] (\Gm@lmargin+.3cm,-6cm) node[text width=12.5cm] {\huge\sffamily\bfseries\color{black}#1\strut};
+\draw[anchor=west] (\Gm@lmargin+.3cm,-6cm) node[text width=11cm] {\huge\sffamily\bfseries\color{black}#1\strut};
 \end{tikzpicture}};
 \end{tikzpicture}
 \fi\fi\par\vspace*{200\p@}}}

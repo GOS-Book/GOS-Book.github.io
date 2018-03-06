@@ -1,11 +1,7 @@
 ## GOSBook
 
 ### Загрузить последнюю редакцию книги: 
-https://didenkoandre.github.io/GOSBook/
-
-Альтернативная ссылка:
-
-[latexonline.cc/...](http://latexonline.cc/compile?git=https://github.com/DidenkoAndre/GOSBook&target=GOSBook.tex&download=GOSBook.pdf&command=pdflatex)
+[<img src="https://raw.githubusercontent.com/DidenkoAndre/didenkoandre.github.io/master/favicon.png" width="15" height="15"/>](https://didenkoandre.github.io/GOSBook/) https://didenkoandre.github.io/GOSBook/
 
 ### Внимание.
 

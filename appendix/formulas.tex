@@ -3,20 +3,13 @@
 \renewcommand*{\arraystretch}{1.85}
 \everymath{\displaystyle}
 \addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
+\addtocontents{ptc}{\protect\setcounter{tocdepth}{2}}
 \newgeometry{margin=1.6cm, top=1.2cm,right=1.5cm,left=1.5cm,bottom = 2cm, footskip = 1 cm, headheight=20pt,headsep=0.2cm}
 \resetHeadWidth
 
 \part{Приложения}
-
 \chapter[Формулы к письменному ГОСу]{Формулы к письменному ГОСу}
 
-\mtcsettitle{minitoc}{Содержание приложения}
-\renewcommand{\mtcfont}{\normalsize}
-\renewcommand{\mtcSfont}{\small}
-%\adjustmtc
-\minitoc
-
-\newpage
 \section[Тригонометрические формулы]{Тригонометрические формулы\footnote{Здесь не указаны допустимые значения аргумента в виду их очевидности (знаменатели не ноль).}}
 
 \subsubsection{Основные тригонометрические формулы}
@@ -514,7 +507,6 @@ $\arth x = x + \frac{x^3}{3}+\frac{x^5}{5}+o(x^5);$
 $\arth x = \sum\limits_{n=0}^{+\infty} \frac{1}{2n + 1} x^{2n + 1}, R = 1;$
 \end{longtable}
 
-\begin{absolutelynopagebreak}
 \subsubsection{Несколько рядов Лорана в догонку}
 \noindent\begin{longtable}{ l l l }
 \textbullet
@@ -536,7 +528,6 @@ $\arcth x = =\frac{1}{x}+\frac{1}{3x^3}+\frac{1}{5x^5}+o\left(\frac{1}{x^5}\righ
 &
 $\arcth x = \sum_{\infty}^{n=1}\frac{1}{(2n-1)x^{2n-1}}, x > 1.$
 \end{longtable}
-\end{absolutelynopagebreak}
 
 \section{Основные неопределенные интегралы}
 \noindent\begin{longtable}[l]{l l}

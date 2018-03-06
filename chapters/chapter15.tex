@@ -155,13 +155,16 @@ $$
 \end{defn}
 
 \begin{lemm}
-Если непрерывно-дифференцируемое векторное поле $\vv{a}(M), \; M \in G$, имеет на области $G$ векторный потенциал, то оно соленоидально на $G$. 
+Если непрерывно-дифференцируемое векторное поле $\vv{a}(M)$, $M \in G$, имеет на области $G$ векторный потенциал, то оно соленоидально на $G$. 
 \end{lemm}
 
 \begin{proof}
 $\vv{a}(M)$ "--- непрерывно-дифференцируемо по условию.
-Пусть $\forall M \in G \quad \vv{a}(M) = \rot \: \vv{b}(M)$.
-$\Rightarrow \quad \exists \div \: \vv{a}(M) = \div(\rot \: \vv{b}(M)) = 0$ в $G$.
+Тогда 
+\begin{equation*}
+\forall M \in G \quad \vv{a}(M) = \rot \: \vv{b}(M)
+\Rightarrow \quad \exists \div \vv{a}(M) = \div(\rot\vv{b}(M)) = 0 \text{ в } G. \tag*{\qedhere}
+\end{equation*}
 \end{proof}
 
 \begin{defn} 
@@ -182,12 +185,12 @@ $S_2, S_1 \subset G$.
 $\Rightarrow$ на $S_2, S_1$ справедлива формула Стокса.
 \begin{multline*}
 \iint\limits_S \vv{a}\,d\vv{s} = \iint\limits_{S_1} \vv{a}\,d\vv{s} + \iint\limits_{S_2} \vv{a}\,d\vv{s} = \iint\limits_{S_1} \rot \: \vv{b}\,d\vv{s} + \iint\limits_{S_2} \rot \: \vv{b}\,d\vv{s} \xlongequal{\textit{Стокс}}\\
-= \iint\limits_{\gamma_1} \vv{b}\,d\vv{r} + \iint\limits_{\gamma_2} \vv{b}\,d\vv{r} = \iint\limits_{\gamma_1} \vv{b}\,d\vv{r} - \iint\limits_{\gamma_1} \vv{b}\,d\vv{r} = 0.
+= \iint\limits_{\gamma_1} \vv{b}\,d\vv{r} + \iint\limits_{\gamma_2} \vv{b}\,d\vv{r} = \iint\limits_{\gamma_1} \vv{b}\,d\vv{r} - \iint\limits_{\gamma_1} \vv{b}\,d\vv{r} = 0. \tag*{\qedhere}
 \end{multline*}
 \end{proof}
 
 \begin{thm}
-Если непрерывно-дифференцируемое векторное поле $\vv{a}(M), \; M \in G$ соленоидально в области $G \subset \bbR^3$, то 
+Если непрерывно-дифференцируемое векторное поле $\vv{a}(M)$, $M \in G$ соленоидально в области $G \subset \bbR^3$, то 
 \begin{multline}
 \forall M \in G \; \exists \delta > 0,\ \exists \textit{непр-дифф. вект. поле } \vv{b}(P), \; P \in O_\delta(M): \\ \quad \forall P \in O_\delta(M): \; \vv{a}(P) = \rot \: \vv{b}(P) 
 \end{multline}
