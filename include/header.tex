@@ -5,9 +5,12 @@
 \usepackage{multicol}
 \usepackage{multirow}		
 %\usepackage{hhline}
-\usepackage{longtable}
 \usepackage{array}
 \usepackage{ragged2e}
+
+\usepackage{longtable}
+\setlength{\LTpre}{0pt}
+\setlength{\LTpost}{0pt}
 
 \newcolumntype{A}[2]{%
     >{\minipage{\dimexpr#1\linewidth-2\tabcolsep-#2\arrayrulewidth\relax}\vspace\tabcolsep}%
@@ -91,6 +94,8 @@
 \usepackage{rmathbr}
 
 \usepackage{embrac} % upright brackets in emphasized text
+
+\usepackage[style=russian]{csquotes}
 
 % this package doesn't exist for Suse-Server
 %\usepackage{todonotes}

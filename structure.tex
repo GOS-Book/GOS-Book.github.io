@@ -186,8 +186,8 @@
 \renewcommand{\chaptermark}[1]{\markboth{\ifnum\value{secnumdepth}>-1 \sffamily\small #1 \fi}{}} % Chapter text font settings
 \renewcommand{\sectionmark}[1]{\markright{\sffamily\small \thesection\hspace{5pt}#1}{}} % Section text font settings
 \fancyhf{} \fancyhead[LE,RO]{\sffamily\normalsize\thepage} % Font setting for the page number in the header
-\fancyhead[LO]{\nouppercase{\small \rightmark}} % Print the nearest section name on the left side of odd pages
-\fancyhead[RE]{\nouppercase{\small \leftmark}} % Print the current chapter name on the right side of even pages
+\fancyhead[LO]{\nouppercase{\footnotesize \rightmark}} % Print the nearest section name on the left side of odd pages
+\fancyhead[RE]{\nouppercase{\footnotesize \leftmark}} % Print the current chapter name on the right side of even pages
 \renewcommand{\headrulewidth}{0.5pt} % Width of the rule under the header
 \addtolength{\headheight}{2.5pt} % Increase the spacing around the header slightly
 \renewcommand{\footrulewidth}{0pt} % Removes the rule in the footer
@@ -288,7 +288,8 @@ innerrightmargin=5pt,
 innertopmargin=5pt,
 leftmargin=0cm,
 rightmargin=0cm,
-innerbottommargin=5pt]{tBox}
+innerbottommargin=5pt, 
+linewidth=1pt]{tBox}
 
 % Exercise box	  
 \newmdenv[skipabove=7pt,
@@ -510,7 +511,7 @@ innerbottommargin=5pt]{cBox}
 \node at (current page.north west){\begin{tikzpicture}[remember picture,overlay]%	
 \fill[prpl!20](0cm,0cm) rectangle (\paperwidth,-\paperheight);
 \node[anchor=north, text width=14.3cm] at (7.5cm,-3.25cm){\raggedleft\color{prpl!40}\fontsize{220}{100}\raggedleft\sffamily\bfseries\raggedleft\@Roman\c@part}; 
-\node[anchor=south east] at (\paperwidth-1cm,-\paperheight+1cm){\parbox[t][][t]{8.5cm}{
+\node[anchor=south east] at (\paperwidth-1cm,-\paperheight+1cm){\parbox[t][][t]{9cm}{
 \printcontents{l}{0}{\setcounter{tocdepth}{2}}%
 }};
 \node[anchor=north east] at (\paperwidth-0.5cm,-1cm){\parbox[t][][t]{14cm}{\strut\raggedleft\color{white}\fontsize{30}{30}\sffamily\bfseries#2}};

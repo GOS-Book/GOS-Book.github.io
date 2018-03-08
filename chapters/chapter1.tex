@@ -154,6 +154,35 @@ $(-\infty; +\infty) = \bbR$, $[-\infty;+\infty]=\bboR$, $[-\infty; +\infty) = \b
 Множество $\bbQ$ рациональных чисел удовлетворяет аксиомам~1--6, но не удовлетворяет аксиоме 15. Покажем последнее. Пусть $A = \{\,a\,\big|\,a\in\bbQ,\ a>0,\ a^2<2\,\}$, $B = \{\,b\,\big|\,b\in\bbQ,\ b>0,\ b^2>2\,\}$. Тогда во множестве $\bbQ$ не существует числа $c$ ($c\in\bbQ$) со свойством: $a\le c\le b \quad \forall a \in A,\ \forall b\in B$.
 \end{notion}
 
+\section{Точные грани числовых множеств}
+\begin{defn}
+Число $M \in \bbR$ "--- \textit{верхняя (нижняя) грань множества} $G\subset \bbR$, если выполняется условие 
+$$
+\forall x \in \bbR \cquad x \le G \quad (x \ge G)
+$$
+\end{defn}
+\begin{defn}
+Число $M \in \bbR$ "--- \textit{точная верхняя (нижняя) грань множества} $G \subset \bbR$ и обозначается $\sup G$ $(\inf G)$, если 
+\begin{enumerate}
+\item
+$\forall x \in G\cquad x \le M \quad (x\ge M)$,
+\item
+$\forall M' < M \ (\forall M' > M)\quad \exists x\in G\cquad x>M' \quad (x<M')$.
+\end{enumerate}
+\quad\textbullet\quad Eсли множество $G \subset \bbR$ не ограничено сверху (снизу), то, по определению, $\sup G=+\infty$ ($\inf G=-\infty$).  
+\end{defn}
+\begin{defn}
+Число $M \in \bbR$ называется \textit{максимальным (минимальным) элементом множества} $G \subset \bbR$ и обозначается $\max G$ $(\min G)$,, если 
+\begin{enumerate}
+\item
+$M\in G$,
+\item
+$\forall x \in G\cquad x \le M \quad (x \ge M)$.
+\end{enumerate}
+\end{defn}
+
+
+
 \section{Последовательности и пределы}
 \begin{defn}
 Пусть имеется правило, которое каждому натуральному числу $n$ ставит в соответствие некоторое $x_n$ из множества $X$. Тогда множество всевозможных упорядоченных пар $(n;x_n)$, $n \in \bbN$, называется \textit{последовательностью} и обозначается либо $\{x_n\}$, либо $x_n$, $n \in \bbN$, либо $x_1,x_2,\dots,x_n,\dots$
@@ -327,7 +356,7 @@ $$
 Если последовательность $\{x_n\}$ фундаментальна, то она ограничена.
 \end{lemm}
 \begin{proof}
-Пусть $\{x_n\}$ фундаментальна, т.е. удовлетворяет \eqref{eq:ch1:fundamen}. Положим $\epsilon = 1$, $m = N_1$. Тогда $\forall n > N_1\colon |x_n-x_{N_1}| <\epsilon = 1 \Leftrightarrow \forall n > N_1\colon |x_n - x_{N_1}| < 1$, т.е. $x_{N_1} - 1< x_n < x_{N_1}+1$. Если теперь через $a$ и $b$ обозначим наименьшее и наибольшее из чисел $x_1$, $\dots$, $x_{N_1}$, $x_{N_1}-1$, $x_{N_1}+1$, то, очевидно, $a \le x_n \le b$, $\forall n$.
+Пусть $\{x_n\}$ фундаментальна, т.е. удовлетворяет \eqref{eq:ch1:fundamen}. Положим $\epsilon = 1$, $m = N_1$. Тогда $\forall n > N_1:$ $|x_n-x_{N_1}| <\epsilon = 1 \Leftrightarrow \forall n > N_1\colon |x_n - x_{N_1}| < 1$, т.е. $x_{N_1} - 1< x_n < x_{N_1}+1$. Если теперь через $a$ и $b$ обозначим наименьшее и наибольшее из чисел $x_1$, $\dots$, $x_{N_1}$, $x_{N_1}-1$, $x_{N_1}+1$, то, очевидно, $a \le x_n \le b$, $\forall n$.
 
 Лемма доказана.
 \end{proof}
