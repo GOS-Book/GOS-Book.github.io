@@ -36,18 +36,6 @@
      
 \usepackage{forloop}
 
-\usepackage{framed}
-
-%Фиолетовая линия сбоку. 
-\renewenvironment{leftbar}[1][\hsize]{%
-    \def\FrameCommand{%
-        {\color{prpl}\vrule width 1.35pt}%
-        \hspace{5pt}%must no space.
-        %\fboxsep=\FrameSep\colorbox{#3FORCOLOR}%
-        }%
-    \MakeFramed{\hsize#1\advance\hsize-\width\FrameRestore}%
-}
-{\endMakeFramed}
 
 \newcommand{\boxtitle}[2]
 {\setlength\fboxsep{0pt}%
@@ -62,19 +50,14 @@
   
 \input{include/wrapping}
 
-\usepackage{titlesec, titletoc}
+\usepackage[nobottomtitles*]{titlesec}%nobottomtitles*, but very strange behaviour with footnotes 
 \renewcommand{\thesection}{\textsection\arabic{chapter}.\arabic{section}}
 \renewcommand{\thesubsection}{\arabic{subsection}}
-
-\makeatletter
-\newcommand{\resetHeadWidth}{\fancy@setoffs}
-\makeatother
-
 
 \addto\captionsrussian{\renewcommand{\chaptername}{Билет \textnumero}}
    
 % page settings 
-\parindent=0.6cm
+\setlength{\parindent}{0.6cm}
 
 %переносы в формулах после бинарных операций и отношений, 10000 - запрет, 0 - можно.
 %\binoppenalty=10000
@@ -82,8 +65,8 @@
 
 % front page
 \author{Диденко Андрей}
-\title{Подготовка к ГОСу по МатАнализу \LaTeX
-\thanks{Спасибо всем моим друзьям за поддержку в написании этого документа}
+\title{Подготовка к ГОСу по МатАнализу
+\thanks{Спасибо всем за поддержку в написании этого документа}
 \date{10 Апреля 2016}}
   
 % other settings
@@ -139,4 +122,3 @@ open,numbered,addtohook={%
 %\usepackage{showkeys} %show names of labels and references
 %\geometry{showframe} % show geometry frame box
 %\usepackage[1]{pagesel} $compile only first page
-

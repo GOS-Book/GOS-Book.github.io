@@ -1,11 +1,10 @@
-\titlespacing{\subsubsection}{0pt}{0mm plus 1mm minus 1mm}{0pt plus 1mm minus 1mm}  
-\titlespacing{\section}{0pt}{1mm plus 2mm minus 1mm}{1pt plus 2mm minus 1mm}  
+%\titlespacing{\subsubsection}{0pt}{0mm plus 1mm minus 1mm}{0pt plus 1mm minus 1mm}  
+%\titlespacing{\section}{0pt}{1mm plus 2mm minus 1mm}{1pt plus 2mm minus 1mm}  
 \renewcommand*{\arraystretch}{1.5}
 \everymath{\displaystyle}
 \addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
 \addtocontents{ptc}{\protect\setcounter{tocdepth}{2}}
-\newgeometry{margin=1.5cm, top=1.2cm,right=1.5cm,left=1.5cm,bottom = 1.5cm, footskip = 1 cm, headheight=20pt,headsep=0.2cm}
-\resetHeadWidth
+\setlength{\parindent}{0cm}
 
 \part{Приложения}
 \chapter[Формулы к письменному ГОСу]{Формулы к письменному ГОСу}
@@ -15,16 +14,16 @@
 \section{Тригонометрические формулы}
 
 \subsubsection{Основные тригонометрические формулы}
-\begin{tabular}{ l l l }
+\begin{longtable}[l]{l l l}
 $\sin^2x+\cos^2x=1;$
 &
 $\tg^2x+1=\frac{1}{\cos^2x};$
 &
 $\tg x\cdot\ctg x=1.$
-\end{tabular}
+\end{longtable}
 
 \subsubsection{Формулы сложения и вычитания аргументов}
-\begin{tabular}{ l l l}
+\begin{longtable}[l]{l l l}
 $\sin(x\pm y)=\sin x \cos y \pm \cos x \sin y;$
 &
 $\tg(x\pm y)=\frac{\tg x \pm \tg y}{1 \mp \tg x\tg y};$
@@ -32,10 +31,10 @@ $\tg(x\pm y)=\frac{\tg x \pm \tg y}{1 \mp \tg x\tg y};$
 $\cos(x\pm y)= \cos x \cos y \mp \sin x \sin y;$
 &
 $\ctg(x\pm y)=\frac{\ctg x\ctg y \mp 1}{\ctg x \pm \ctg y}.$
-\end{tabular}
+\end{longtable}
 
 \subsubsection{Формулы двойного угла}
-\begin{tabular}{ l l }
+\begin{longtable}[l]{ l l }
 $\sin 2x = 2\sin x \cos x;$
 &
 $\tg 2x = \frac{2\tg x}{1-\tg^2x};$
@@ -43,10 +42,10 @@ $\tg 2x = \frac{2\tg x}{1-\tg^2x};$
 $\cos 2x = \cos^2 x - \sin^2 x;$
 &
 $\ctg 2x = \frac{\ctg^2x-1}{2\ctg x}.$
-\end{tabular}
+\end{longtable}
 
 \subsubsection{Формулы понижения степени}
-\begin{tabular}{ l l }
+\begin{longtable}[l]{ l l }
 $2\sin^2x=1-\cos 2x;$
 &
 $2\cos^2x=1+\cos 2x;$
@@ -54,19 +53,20 @@ $2\cos^2x=1+\cos 2x;$
 $4\sin^3x=3\sin x-\sin 3x;$
 &
 $4\cos^3x=3\cos x+\cos 3x;$
-\end{tabular}
+\end{longtable}
 
 \subsubsection{Формулы преобразования произведения}
-\begin{tabular}{l}
+\begin{longtable}[l]{ l}
 $2\sin x \sin y = \cos (x-y)-\cos(x+y);$
 \\
 $2\cos x \cos y = \cos (x-y)+\cos(x+y);$
 \\
 $2\sin x \cos y = \sin (x-y)+\sin(x+y).$
-\end{tabular}
+\end{longtable}
 
+\newpage
 \subsubsection{Формулы преобразования суммы}
-\begin{tabular}{l}
+\begin{longtable}[l]{ l}
 $\sin x\pm \sin y =2 \sin \frac{x\pm y}{2} \cos \frac{x\mp y}{2};$
 \\
 $\cos x + \cos y  = 2 \cos \frac{x + y}{2} \cos \frac{x - y}{2};$
@@ -74,20 +74,20 @@ $\cos x + \cos y  = 2 \cos \frac{x + y}{2} \cos \frac{x - y}{2};$
 $\cos x - \cos y  = -2 \sin \frac{x + y}{2} \sin\frac{x - y}{2};$
 \\
 $\tg x \pm \tg y = \frac{\sin (x \pm y)}{ \cos x \cos y};$
-\end{tabular}
+\end{longtable}
   
 \subsubsection{Формула Эйлера и ее следствия}
-\begin{tabular}{l l l}
+\begin{longtable}[l]{ l l l}
 $e^{ix} = \cos x + i \sin x;$
 &
 $\sin x = \frac{e^{ix}-e^{-ix}}{2i};$
 &
 $\cos x = \frac{e^{ix}+e^{-ix}}{2}.$
-\end{tabular}
+\end{longtable}
 
 \subsubsection{Формулы приведения}
 \tiny
-\begin{longtable}{|c|c|c|c|c|c|c|c|c|}
+\begin{longtable}[l]{|c|c|c|c|c|c|c|c|c|}
 \hline
 &
 $\pi/2-x$
@@ -179,6 +179,9 @@ $-\ctg x$
 $\ctg x$
 \\\hline
 \end{longtable}
+
+$ $
+
 \normalsize
 Алгоритм действий, который здесь работает:
 \begin{enumerate}
@@ -188,22 +191,16 @@ $\ctg x$
 \item
 \begin{itemize}
 \item 
-При $\pi/2$ и $3\pi/2$ функция меняется на кофункцию. %(Детский жест на подсказку. Вопрос. Меняем на конфункцию? точки на вертикали, значит головой киваем сверху вниз. Получается согласие \glqqДа\grqq "--- меняем на конфункцию).
+При $\pi/2$ и $3\pi/2$ функция меняется на кофункцию.
 \item
-При $\pi$ и $2\pi$ функция не меняется на кофункцию. %(Аналогично, точки по горизонтали, значит машем головой в горизонтальной плоскости, получается отказ \glqqНет\grqq "--- не меняем).
+При $\pi$ и $2\pi$ функция не меняется на кофункцию.
 \end{itemize}
 \end{enumerate}
-
-\iffalse
-\begin{exmpl}
-$\cos(270^{\circ}-x)=?$. Данный угол лежит в третьей четверти, косинус в третьей четверти отрицателен. Меняем функцию на кофункцию, так как у нас 270 градусов, значит: $\cos(270^{\circ}-x)=-\sin x$. Верно!
-\end{exmpl}
-\fi
 
 \section{Гиперболические функции}
 
 \subsubsection{Определение}
-\begin{tabular}{l l}
+\begin{longtable}[l]{ l l}
 $\sh x = \frac{e^{x}-e^{-x}}{2};$
 &
 $\th x = \frac{\sh x}{\ch x}=\frac{e^{x}-e^{-x}}{e^{x}+e^{-x}}=\frac{e^{2x}-1}{e^{2x}+1};$
@@ -211,10 +208,10 @@ $\th x = \frac{\sh x}{\ch x}=\frac{e^{x}-e^{-x}}{e^{x}+e^{-x}}=\frac{e^{2x}-1}{e
 $\ch x = \frac{e^{x}+e^{-x}}{2};$
 &
 $\cth x = \frac{1}{\th x};$
-\end{tabular}
+\end{longtable}
 
 \subsubsection{Связь с тригонометрическими функциями}
-\begin{tabular}{l l l}
+\begin{longtable}[l]{  l l l}
 $\ch (ix) = \cos x;$
 &
 $\sh (ix)= i \sin x;$
@@ -226,15 +223,15 @@ $\cos (ix) = \ch x;$
 $\sin (ix) = i \sh x;$
 &
 $\tg (ix) = i \th x.$
-\end{tabular}
+\end{longtable}
 
 \subsubsection{Важное соотношение}
-\begin{tabular}{l}
+\begin{longtable}[l]{  l}
 $\ch^2 x - \sh^2 x = 1;$
-\end{tabular}
+\end{longtable}
 
 \subsubsection{Формулы сложения и вычитания аргументов}
-\begin{tabular}{l l}
+\begin{longtable}[l]{  l l}
 $\sh (x\pm y) =  \sh x \ch y \pm \sh y \ch x;$
 &
 $\th (x \pm y) = \frac{\th x \pm \th y}{1 \pm \th x \th y};$
@@ -242,10 +239,10 @@ $\th (x \pm y) = \frac{\th x \pm \th y}{1 \pm \th x \th y};$
 $\ch (x\pm y) =  \ch x \ch y \pm \sh y \sh x;$
 &
 $\cth (x \pm y) = \frac{1 \pm \cth x \cth y}{\cth x \pm \cth y}.$
-\end{tabular}
+\end{longtable}
 
 \subsubsection{Формулы двойного угла}
-\begin{tabular}{l l}
+\begin{longtable}[l]{  l l}
 $\sh 2x = 2\ch x\sh x$
 &
 $\th 2x = \frac{2\th x}{1 + \th^2 x}$
@@ -253,10 +250,10 @@ $\th 2x = \frac{2\th x}{1 + \th^2 x}$
 $\ch 2x = \ch^2 x + \sh^2 x$
 &
 $\cth 2x = \frac{1}{2}(\th x + \cth x)$
-\end{tabular}
+\end{longtable}
 
 \subsubsection{Формулы понижения степени}
-\begin{tabular}{l l}
+\begin{longtable}[l]{  l l}
 $2\ch^2 x = \ch 2x + 1$
 &
 $2\sh^2 x = \ch 2x - 1$
@@ -264,19 +261,19 @@ $2\sh^2 x = \ch 2x - 1$
 $4\sh^3 x = \sh 3x - 3 \sh x$
 &
 $4 \ch^3 x = \ch 3x + 3 \ch x$
-\end{tabular}
+\end{longtable}
 
 \subsubsection{Формулы преобразования произведения}
-\begin{tabular}{l}
+\begin{longtable}[l]{ l}
 $\sh x \sh y = \frac{\ch(x + y) - \ch (x - y)}{2}$
 \\
 $\sh x \ch y = \frac{\sh(x + y) + \sh(x - y)}{2}$
 \\
 $\ch x \ch y = \frac{\ch(x + y) + \ch(x - y)}{2}$
-\end{tabular}
+\end{longtable}
 
 \subsubsection{Формулы преобразования суммы}
-\begin{tabular}{l}
+\begin{longtable}[l]{  l}
 $\sh x \pm \sh y = 2 \sh\frac{x \pm y}{2} \ch\frac{x \mp y}{2}$
 \\
 $\ch x + \ch y = 2 \ch\frac{x + y}{2}\ch\frac{x - y}{2}$
@@ -284,11 +281,11 @@ $\ch x + \ch y = 2 \ch\frac{x + y}{2}\ch\frac{x - y}{2}$
 $\ch x - \ch y = 2 \sh\frac{x + y}{2}\sh\frac{x - y}{2}$
 \\
 $\th x \pm \th y = \frac{\sh(x \pm y)}{\ch x \ch y}$
-\end{tabular}
+\end{longtable}
 
 \section{Обратные гиперболические функции}
 
-\begin{tabular}{l}
+\begin{longtable}[l]{l}
 $\arsh x = \ln(x + \sqrt{x^2 + 1})$
 \\
 $\arch x = \ln(x + \sqrt{x^2 - 1}); \: x \ge 1$
@@ -296,12 +293,12 @@ $\arch x = \ln(x + \sqrt{x^2 - 1}); \: x \ge 1$
 $\arth x = \frac{1}{2}\ln \left(\frac{1 + x}{1 - x} \right),\ |x|<1.$
 \\
 $\arcth x = \frac{1}{2}\ln \left( \frac{x+ 1}{x - 1} \right),\ |x|<1.$
-\end{tabular}
+\end{longtable}
 
 \section{Производные}
 
 \subsubsection{Формулы для производных элементарных функций}
-\begin{longtable}[l]{ @{\hspace*{\leftmargin}} l l }
+\begin{longtable}[l]{  l l }
 $(C)'=0$ ($C$ --- постоянная); 
 &
 $(e^x)'=e^x;$
@@ -352,9 +349,9 @@ $(\arcth x)'=-\frac{1}{x^2-1};$
 \end{longtable}
 
 \subsubsection{Формула Лейбница}
-\begin{tabular}{l}
+\begin{longtable}[l]{l}
 $(uv)^{(n)}=\sum\limits^n_{k=0} C^k_n u^{n-k} v^{k}$
-\end{tabular}
+\end{longtable}
 
 \section{Ряд Тейлора}
 
@@ -368,97 +365,73 @@ R = \lim\limits_{n \to + \infty} \left| \frac{c_n}{c_{n + 1}} \right|
 $$
 \end{notion}
 
-\begin{longtable}{ l l l }
-\textbullet
-&
+\begin{longtable}{ l l }
 $e^x=1+\frac{x}{1!}+\frac{x^2}{2!}+\frac{x^3}{3!}+o(x^3);$
 &
 $e^x=\sum\limits_{n=0}^{+\infty}\displaystyle\frac{x^n}{n!},\ R=\infty;$
 \\
-\textbullet
-&
 $\sin x = x - \frac{x^3}{3!} + \frac{x^5}{5!}+o(x^5);$
 &
 $\sin x = \sum\limits_{n=0}^{+\infty} (-1)^{n}\displaystyle\frac{x^{2n+1}}{(2n+1)!},\; R=\infty;$
 \\
-&
 $\cos x = 1 - \frac{x^2}{2!} + \frac{x^4}{4!}+o(x^4);$
 &
 $\cos x  = \sum\limits_{n=0}^{+\infty} (-1)^{n}\displaystyle\frac{x^{2n}}{(2n)!},\; R=\infty;$
 \\
-&
 $\tg x = x + \frac{x^3}{3}+\frac{2x^5}{15}+o(x^5)$
 &
 $\tg x  = \sum\limits_{n=0}^{+\infty} \frac{B_{2n}\cdot (-4)^n (1-4^n)}{(2n)!} x^{2n-1},\; R=\frac{\pi}{2};$ \footnote{В этой формуле $B_{2n}$ "--- это числа Бернулли. На самом деле, далеко не все формулы надо знать наизусть. Но левый столбец из формул Маклорена по-хорошему надо для ГОСа знать}
 \\ 
-\textbullet
-&
 $\sh x = x +\frac{x^3}{3!}+\frac{x^5}{5!}+o(x^5);$
 &
 $\sh x =\sum\limits_{n=0}^{+\infty}\displaystyle\frac{x^{2n+1}}{(2n+1)!},\ R=\infty;$
 \\
-&
 $\ch x = 1 + \frac{x^2}{2!}+\frac{x^4}{4!}+o(x^4);$
 &
 $\ch x  = \sum\limits_{n=0}^{+\infty}\displaystyle\frac{x^{2n}}{(2n)!},\ R=\infty;$
 \\
-&
 $\th x = x - \frac{x^3}{3}+\frac{2x^5}{15}+o(x^5);$
 &
 $\th x  = \sum\limits_{n=0}^{+\infty} \frac{B_{2n} 4^n (4^n-1)}{(2n)!} x^{2n-1}, R=\frac{\pi}{2};$
 \\
-\textbullet
-&
 $\arcsin x = x + \frac{x^3}{6}+\frac{3x^5}{40}+o(x^5);$
 &
 $\arcsin x=\sum\limits_{n=0}^{+\infty} \frac{(2n)!}{4^n(n!)^2(2n + 1)}x^{2n + 1},  R = 1 ;$
 \\
-&
 $\arccos x= \frac{\pi}{2} - \arcsin x;$
 &
 $\arcctg x = \frac{\pi}{2} - \arctg x;$
 \\
-&
 $\arctg x = x - \frac{x^3}{3}+\frac{x^5}{5}+o(x^5);$
 &
 $\arctg x = \sum\limits_{n=0}^{+\infty} (-1)^n\displaystyle\frac{x^{2n+1}}{2n+1},\ R=1;$
 \\
-\textbullet
-&
 $\ln(1+x)=x-\frac{x^2}{2}+\frac{x^3}{3}+o(x^3);$
 &
 $\ln(1+x)= \sum\limits_{n=1}^{+\infty} \frac{(-1)^{n+1}}{n} x^n, R=1;$
 \\
-&
 $\ln(1-x)=-x-\frac{x^2}{2}-\frac{x^3}{3}+o(x^3);$
 &
 $\ln(1-x)= -\sum\limits_{n=1}^{+\infty} \frac{1}{n} x^n, R=1;$
 \\
-\textbullet
-&
 $
 (1+x)^{a}=1+ax+\displaystyle\frac{a(a-1)}{2!}x^2+
 $
 &
 $(1+x)^{a}= \sum\limits_{n=0}^{+\infty} C^{n}_{a} x^n,\;\text{где} $
 \\
-&
 $\qquad+\displaystyle\frac{a(a-1)(a-2)}{3!}x^3+o(x^3);$
 &
 $\quad C^{n}_{a}=\frac{a(a-1)\dots(a-n+1)}{n!},\; R=1;$
 \\
-&
 $\frac{1}{1-x}=1+x+x^2+x^3+o(x^3);$
 &
 $\frac{1}{1-x}= \sum\limits_{n=0}^{+\infty} x^{n};$
 \\
-\textbullet
-&
 $\arsh x = x - \frac{x^3}{6}+\frac{3x^5}{40}+o(x^5);$
 &
 $\arsh x = \sum\limits_{n=0}^{+\infty} \frac{(-1)^n(2n)!}{4^n (n!)^2 (2n + 1)} x^{2n + 1}, R = 1;$
 \\
-&
 $\arth x = x + \frac{x^3}{3}+\frac{x^5}{5}+o(x^5);$
 &
 $\arth x = \sum\limits_{n=0}^{+\infty} \frac{1}{2n + 1} x^{2n + 1}, R = 1;$
@@ -466,21 +439,16 @@ $\arth x = \sum\limits_{n=0}^{+\infty} \frac{1}{2n + 1} x^{2n + 1}, R = 1;$
 
 \subsubsection{Несколько рядов Лорана в догонку}
 \begin{longtable}{ l l l }
-\textbullet
-&
 $\cth x = \frac{1}{x} + \frac{x}{3}+\frac{x^3}{45}+o(x^3);$
 &
 $\cth x  = \sum\limits_{n=0}^{+\infty} \frac{2^{2n}B_{2n}x^{2n-1}}{(2n)!},\quad0<|x|<\pi;$
 \\
-\textbullet
-&
 $\arch x = \ln 2x - \frac{1}{4x^2}-\frac{3}{32x^4}+o\left(\frac{1}{x^{4}}\right);$ 
 &
 $\arch x = \ln 2x - $
 \\
-& & $-\sum_{n=1}^\infty \left( \frac {(2n)!} {2^{2n}(n!)^2} \right) \frac {x^{-2n}} {(2n)} , \ |x| > 1; $
+& $-\sum_{n=1}^\infty \left( \frac {(2n)!} {2^{2n}(n!)^2} \right) \frac {x^{-2n}} {(2n)} , \ |x| > 1; $
 \\
-&
 $\arcth x = =\frac{1}{x}+\frac{1}{3x^3}+\frac{1}{5x^5}+o\left(\frac{1}{x^5}\right); $
 &
 $\arcth x = \sum_{\infty}^{n=1}\frac{1}{(2n-1)x^{2n-1}}, x > 1.$
@@ -764,15 +732,11 @@ $\lim\limits_{x\to0} (1+x)^{1/x}=e.$
 	Центр: $\rm{Re}\lambda _1 = \rm{Re}\lambda _2 = 0$ 
 \end{itemize}
 
-\newgeometry{margin=1.6cm, top=1.2cm,right=1.5cm,left=1.5cm,bottom = 0.8cm, footskip = 0.5 cm, headheight=20pt,headsep=0.2cm}
-\resetHeadWidth
 \newpage
 
 \section[Площади различных фигур]{Площади различных фигур\footnote{Добавил сюда, только потому что на ГОСе забыл формулу площади эллипса :-)}}
-\setlength\LTleft{-1cm}
-\setlength\LTright{-1cm}
-\small
-\noindent\begin{longtable}{|A{0.23}{0}|B{0.35}{0}|A{0.58}{0}|}
+\scriptsize
+\begin{longtable}[l]{|A{0.21}{0}|B{0.34}{0}|A{0.45}{0}|}
 \hline
 Фигура & Формула & Переменные 
 \endfirsthead\hline
@@ -842,3 +806,7 @@ $a$ "--- сторона треугольника, $h$ "--- высота, про�
 Поверхность сферы (шара) & $4\pi r^2$ или $\pi d^2$ & $r$ и $d$ "--- радиус и диаметр соответственно
 \tabularnewline\hline
 \end{longtable}
+
+%%%AFTER FORMULAS COMMANDS
+\footnotesize
+\setlength{\parindent}{0.6cm}

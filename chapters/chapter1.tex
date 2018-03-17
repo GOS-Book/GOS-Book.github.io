@@ -63,7 +63,7 @@ $ a \le a\quad \forall a \in \bbR$;
 \item
 $ a\le b,\ b\le a \Rightarrow a=b \quad \forall a,b\in\bbR$;
 \item
-$a\le b,\ b\le c \Rightarrow a\le c\quad \forall a,b,c\in \bbR$.
+$a\le b,\ b\le c \Rightarrow a\le c\quad \forall a,b,c\in \bbR$ (транзитивность).
 \end{enumerate}
 \item
 \textbf{Аксиома связи сложения и порядка}
@@ -85,55 +85,53 @@ $ 0 \le a,\ 0\le b\Rightarrow 0 \le a\cdot b\quad \forall a,b \in \bbR$.
 $$
 a\le b\quad \forall a \in A, \  \forall b \in B.
 $$
-Тогда $\exists c \in \bbR$ такое, что
-$$
-a\le c\le b\quad \forall a \in A,\ \forall b\in B.
-$$
+Тогда $\exists c \in \bbR$ такое, что $a\le c\le b\quad \forall a \in A,\ \forall b\in B.$
 \end{enumerate}
 \end{enumerate}
-
-Определим теперь отношения порядка <<$<$>>, <<$>$>>, <<$\ge$>> и операции вычитания~<<$-$>> и деления~<<$/$>> на множестве действительных чисел:
-\begin{itemize}[noitemsep]
+\enlargethispage{\baselineskip}
+\begin{defn}
+Определим отношения порядка <<$<$>>, <<$>$>>, <<$\ge$>> и операции вычитания~<<$-$>> и деления~<<$/$>> на множестве $\bbR$:
+\begin{itemize}[noitemsep,  topsep=0pt]
 \item 
-$a < b \Leftrightarrow a \le b \text{ и } a\neq b$;
+$a < b \Longleftrightarrow a \le b \text{ и } a\neq b$;
 \item
-$a > b \Leftrightarrow b < a$;
-\item
-$a \ge b \Leftrightarrow b \le a$;
+$a > b \Longleftrightarrow b < a$, аналогично $a \ge b \Longleftrightarrow b \le a$;
 \item
 $a - b \triangleq a + (-b)$;
 \item
-$a / b =  \frac{a}{b} \triangleq a \cdot \frac{1}{b} $;
+$a / b =  \frac{a}{b} \triangleq a \cdot \frac{1}{b}$; 
 \end{itemize}
+\end{defn}
+
 
 \begin{defn}
 Напоследок, определим некоторые важнейшие числовые множества:
-\begin{itemize}[wide, labelwidth=!, labelindent=0pt, nolistsep]
+\begin{itemize}[wide, labelwidth=!, labelindent=0pt, nolistsep, topsep=0pt]
 \item 
-Множество \textit{натуральных} чисел $\bbN = \{1,\ 1+1=2,\ \dots\,,\ n = 1+\dots+1,\ \dots\,\}$.
+Множество \textit{натуральных} чисел $$\bbN = \{1,\ 1+1=2,\ \dots\,,\ n = 1+\dots+1,\ \dots\,\}.$$
 \item 
-Множество $\bbN_0 \triangleq \bbN \cup \{0\}$.
+Множество $\bbN_0 \triangleq \bbN \cup \{0\}.$
 \item 
-Множество \textit{целых} чисел $\bbZ = \{ 0,\ 1,\ -1,\ 2,\ -2,\ 3,\ -3,\ \dots\,\}$, т.е.\ множество чисел $x$ таких, что $x\in \bbN$ или $-x \in \bbN$, или $x = 0$.
+Множество \textit{целых} чисел $$\bbZ = \{ 0,\ 1,\ -1,\ 2,\ -2,\ 3,\ -3,\ \dots\,\},$$ т.е.\ множество чисел $x$ таких, что $x\in \bbN$ или $-x \in \bbN$, или $x = 0$.
 \item
-Множество \textit{рациональных} чисел $\bbQ=\{\,x\,\big|\,x=\frac{p}{q},\ q\in\bbN,\ p\in\bbZ\,\}$.
+Множество \textit{рациональных} чисел $$\bbQ=\{\,x\,\big|\,x=p/q,\ q\in\bbN,\ p\in\bbZ\,\}.$$
 \item 
 Множество \textit{иррациональных чисел} $\bbR \setminus \bbQ$.
 \item 
 Множество действительных чисел $\bbR$ часто называют \textit{числовой прямой}, а числа "--- \textit{точками числовой прямой}. А сами действительные числа часто будем называть \textit{числами}, подразумевая именно элементы из множества~$\bbR$.
 \item 
-Наряду с числовой прямой определим \textit{расширенную числовую прямую:} множество $\bboR=\bbR\cup \{-\infty, {+\infty}\}$, в котором определены отношения порядка <<$\le$>>, операции <<$+$>>, <<$\cdot$>> для элементов из $\bbR$. Элементы $-\infty$, $+\infty$ не содержатся в $\bbR$, для них определены отношения порядка: $\forall x \in \bbR$\quad$-\infty < x < +\infty$. Кроме того, частично определены операции <<$+$>>, <<$-$>>, <<$\cdot$>> и <<$/$>>
+Наряду с числовой прямой определим \textit{расширенную числовую прямую:} множество $\bboR=\bbR\cup \{-\infty, {+\infty}\}$. В нем определены отношения порядка, операции <<$+$>>, <<$\cdot$>> для элементов из $\bbR$. Элементы $-\infty$, $+\infty$ не содержатся в $\bbR$. Для них определены отношения порядка: $\forall x \in \bbR$\quad$-\infty < x < +\infty$. Частично определены операции <<$+$>>, <<$-$>>, <<$\cdot$>> и <<$/$>>:
 \begin{align*}
-&+\infty + a = +\infty,\quad \forall a \in \bbR\cup\{+\infty\};\quad -\infty+ a = -\infty\quad \forall a \in \bbR\cup\{-\infty\};\\
-&-\infty - a = -\infty,\quad \forall a \in \bbR\cup\{-\infty\};\quad +\infty - a = +\infty\quad \forall a \in \bbR\cup\{+\infty\};\\
-&\forall a > 0, a\in\bbR\cup\{+\infty\}\quad +\infty\cdot a = +\infty\quad\text{и}\quad -\infty\cdot a = -\infty;\\ 
-&\forall a < 0,  a\in\bbR\cup\{-\infty\}\quad +\infty\cdot a = -\infty\quad\text{и}\quad -\infty\cdot a = +\infty;\\
-& \frac{a}{-\infty} = \frac{a}{+\infty} = 0 \quad \forall a \in \bbR;
+&+\infty + a = +\infty \quad\text{и}\quad +\infty - a = +\infty,\quad \forall a \in \bbR\cup\{+\infty\}; \\
+&-\infty - a = -\infty \quad\text{и}\quad -\infty + a = -\infty,\quad \forall a \in \bbR\cup\{-\infty\}; \\
+&+\infty\cdot a = +\infty\quad\text{и}\quad -\infty\cdot a = -\infty,\quad \forall a > 0,\  a\in\bbR\cup\{+\infty\};\\ 
+&+\infty\cdot a = -\infty\quad\text{и}\quad -\infty\cdot a = +\infty, \quad \forall a < 0,\  a\in\bbR\cup\{-\infty\};\\
+& a/ -\infty = a / +\infty = 0, \quad \forall a \in \bbR;
 \end{align*}
-Но не определены: сумма $+\infty + (-\infty)$, произведение $0\cdot (\pm \infty)$, частное $\pm \infty / \pm \infty$.
+Но не определены: сумма $+\infty + (-\infty)$, разность $+\infty - (+\infty),$ произведение $0\cdot (\pm \infty)$, частное $\pm \infty / \pm \infty$.
 \item
-Промежутки на $\bbR$ (на $\bboR$)
-\begin{itemize}[nolistsep, label = $\scriptstyle\blacktriangleright$]
+Промежутки на $\bbR$ (на $\bboR$):
+\begin{itemize}[nolistsep, label = $\scriptstyle\blacktriangleright$, topsep=0pt]
 \item 
 \textit{интервал} $(a,b)\triangleq \{\,x\in\bbR\,\big|\,a < x < b\,\}$, $a,b\in\bbR\colon a<b$;
 \item 
@@ -141,17 +139,18 @@ $a / b =  \frac{a}{b} \triangleq a \cdot \frac{1}{b} $;
 \item 
 \textit{полуинтервалы} $(a,b]$, $[a,b)$ c аналогичным определением;
 \item 
-\textit{лучи} $(-\infty; a)$, $(-\infty; a)$, $(-\infty;a]$, $[a;+\infty]$
+\textit{лучи} $(-\infty; a)$, $(-\infty; a)$, $(-\infty;a]$, $[a;+\infty];$
 \item 
-\textit{точка} $\{a\}$;
+\textit{точка} $\{a\};$
 \item 
-$(-\infty; +\infty) = \bbR$, $[-\infty;+\infty]=\bboR$, $[-\infty; +\infty) = \bbR \cup \{-\infty\}$.
+$(-\infty; +\infty) = \bbR$, $[-\infty;+\infty]=\bboR$, $[-\infty; +\infty) = \bbR \cup \{-\infty\}.$
 \end{itemize}
 \end{itemize}
 \end{defn}
 
 \begin{notion}
-Множество $\bbQ$ рациональных чисел удовлетворяет аксиомам~1--6, но не удовлетворяет аксиоме 15. Покажем последнее. Пусть $A = \{\,a\,\big|\,a\in\bbQ,\ a>0,\ a^2<2\,\}$, $B = \{\,b\,\big|\,b\in\bbQ,\ b>0,\ b^2>2\,\}$. Тогда во множестве $\bbQ$ не существует числа $c$ ($c\in\bbQ$) со свойством: $a\le c\le b \quad \forall a \in A,\ \forall b\in B$.
+Множество $\bbQ$ рациональных чисел удовлетворяет аксиомам~I--VI, но не удовлетворяет аксиоме VII. Покажем последнее. Пусть 
+$A = \{\,a\,\big|\,a\in\bbQ,\ a>0,\ a^2<2\,\},$ $B = \{\,b\,\big|\,b\in\bbQ,\ b>0,\ b^2>2\,\}.$ Тогда во множестве $\bbQ$ не существует числа $c\in\bbQ$ со свойством: $a\le c\le b \quad \forall a \in A,\ \forall b\in B$.
 \end{notion}
 
 \section{Точные грани числовых множеств}

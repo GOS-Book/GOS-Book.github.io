@@ -30,7 +30,6 @@ $$
 \end{cases}$\qedhere
 \end{solution}
 
-\begin{leftbar}
 \begin{thm}[Интегральная формула Коши\rindex{формула!Коши, интегральная}] \label{ch34thm1}
 Пусть $G$ "--- ограниченная область в $\bbC$ с кусочно-гладкой положительно ориентированной границей $\Gamma= \Gp$. Пусть функция $f\colon \overline{G}\to \bbC$ регулярна на $G$ и непрерывна на $\overline{G}=G\cup\Gamma$. Тогда для любой точки $z\in G$ справедлива интегральная формула Коши вида
  \begin{equation} \label{ch34eq1}
@@ -82,7 +81,6 @@ I(z) \triangleq \frac{1}{2 \pi i} \int_\gamma \frac{q(\zeta)}{\zeta - z}\,d\zeta
 I^{(n)}(z) = \frac{n!}{2\pi i} \int_\gamma \frac{q(\zeta)}{(\zeta - z)^{n+1}}\,d\zeta, \quad n \in \bbN
 \end{equation}
 \end{thm}
-\end{leftbar}
 
 \begin{proof}\leavevmode
 \begin{enumerate}[wide, labelwidth=!, labelindent=\parindent]
@@ -130,11 +128,9 @@ $$
 
 Теорема доказана.
 \end{proof}
-\begin{leftbar}
 \begin{thm} \label{ch34Thm3}
 Пусть функция $f : G \to \bbC$ регулярна в области $G \subset \bbC$. Тогда эта функция имеет в $G$ производные всех порядков, т.е. является бесконечно дифференцируемой функцией в области $G$.
 \end{thm}
-\end{leftbar}
 
 \begin{proof}
 Фиксируем произвольную точку $z_0 \in G$, тогда существует число $r_0 > 0$ такое, что $\overline{B_{r_0}(z_0)}\subset G$. Пусть окружность $\gamma_{r_0} \triangleq \{ z \: \bigl| \: |z - z_0| = r_0 \}$ ориентирована положительно относительно внутренности круга (т.е. движением против хода часовой стрелки). Тогда по теореме \ref{ch34thm1} справедлива интегральная формула Коши
@@ -206,7 +202,6 @@ S_N(z) \triangleq \sum\limits_{n = 0}^{N} z^n = \left( \sum\limits_{n = 0}^{N} z
 \end{equation} 
 
 \end{stt}
-\begin{leftbar}
 \begin{defn}
 Пусть у функции $f \colon B_r(a) \to \bbC$ существуют в точке $a \in \bbC$, $r > 0$, производные $f^{(n)}(a)$ любого порядка $n \in \bbN$. Тогда степенной ряд вида
 \begin{equation} \label{ch34.2eq4}
@@ -272,6 +267,4 @@ f(z) = \sum\limits_{n = 0}^{+\infty} \frac{f^{(n)}(a)}{n!} (z - a)^n,
 $$
 
 который сходится по крайней мере в круге $B_R(a)$ максимального радиуса $R > 0$, при котором этот круг содержится в области $G$ (см. рис. $\ref{ch34pict5}$).
-
 \end{cons}
-\end{leftbar}
