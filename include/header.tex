@@ -12,17 +12,13 @@
 \setlength{\LTpre}{0pt}
 \setlength{\LTpost}{0pt}
 
-\newcolumntype{A}[2]{%
+\newcolumntype{A}[2]{% vertical alignment in longtable with certain width of column
     >{\minipage{\dimexpr#1\linewidth-2\tabcolsep-#2\arrayrulewidth\relax}\vspace\tabcolsep}%
     c<{\RaggedRight\vspace\tabcolsep\endminipage}}
 
 \newcolumntype{B}[2]{%
     >{\minipage{\dimexpr#1\linewidth-2\tabcolsep-#2\arrayrulewidth\relax}\vspace\tabcolsep}%
     c<{\centering\vspace\tabcolsep\endminipage}}
-
-\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
-\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
-\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 
 \usepackage{emptypage}
 
@@ -36,17 +32,9 @@
      
 \usepackage{forloop}
 
-
 \newcommand{\boxtitle}[2]
 {\setlength\fboxsep{0pt}%
 \noindent\colorbox{prpl!20}{\strut\parbox[c][.6cm]{\ecart}{\color{prpl!70}\Large\sffamily\bfseries\centering#1}}\hskip\esp\colorbox{prpl!40}{\strut\parbox[c][.6cm]{\linewidth-\ecart-\esp}{\Large\sffamily\centering\bfseries#2}}}
-
-% Запрет разрыва страница внутри данного окружения. Иногда бывает полезно.
-\newenvironment{absolutelynopagebreak}
-  {\par\nobreak\vfil\penalty0\vfilneg
-   \vtop\bgroup}
-  {\par\xdef\tpd{\the\prevdepth}\egroup
-   \prevdepth=\tpd}
   
 \input{include/wrapping}
 
@@ -58,10 +46,6 @@
    
 % page settings 
 \setlength{\parindent}{0.6cm}
-
-%переносы в формулах после бинарных операций и отношений, 10000 - запрет, 0 - можно.
-%\binoppenalty=10000
-%\relpenalty=10000
 
 % front page
 \author{Диденко Андрей}
