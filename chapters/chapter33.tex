@@ -51,15 +51,6 @@ $$
 $$ 
 \end{defn}
 
-\begin{thm} [о трех функциях из матанализа для $\bbR$.]
-\label{exp14}
-Пусть точка $x_0$ является предельной для областей определения функций $f(x)$, $g(x)$ и $h(x)$. Тогда если существуют пределы $\lim_{x \to x_0}\limits f(x) = \lim_{x \to x_0}\limits h(x) = A \in \bboR$, причем
-$$
-\exists \delta > 0\cquad \forall x \in \dneio{\delta}{x_0}\quad f(x)\le g(x) \le h(x),
-$$
-то и $\lim_{x \to x_0}\limits g(x) = A.$
-\end{thm}
-
 \subsection{Дифференцирование функций комплексного переменного}
 \begin{defn}
 \label{exp5}
@@ -69,7 +60,7 @@ $$
 $$
 то этот предел называется \textit{производной функции} $f$ в точке $z_0$ и обозначается $f'(z_0)$. 
 \end{defn}
-Пусть $\Delta z = z - z_0$ и $\Delta f = f(z) - f(z_0)$. Определение \ref{exp5} означает, что $\forall \epsilon > 0 \exists \delta=\delta(\epsilon)>0$ такое, что для $\forall \Delta z\cquad 0 <|\Delta z| <\delta$ справедливо 
+Пусть $\Delta z = z - z_0$ и $\Delta f = f(z) - f(z_0)$. Определение \ref{exp5} означает, что $\forall \epsilon > 0$ $\exists \delta=\delta(\epsilon)>0$ такое, что для $\forall \Delta z$: $0 <|\Delta z| <\delta$ справедливо 
 \begin{equation}
 \label{exp7}
 \left|\frac{\Delta f}{\Delta z} - f'(z_0) \right| < \epsilon.
@@ -79,7 +70,7 @@ $$
 \label{exp6}
 \Delta f = f'(z_0)\Delta z + \alpha(\Delta z),
 \end{equation}
-где функция $\alpha(\Delta z)$, определяемая из равенства \eqref{exp6} в силу \eqref{exp7} удовлетворяет условию $\lim_{\Delta z \to 0}\limits \frac{\alpha(\Delta z)}{\Delta z} = 0$. (такая функция называется $o-$малой и обозначается $o(\Delta z)$.
+где функция $\alpha(\Delta z)$, определяемая из равенства \eqref{exp6} в силу \eqref{exp7} удовлетворяет условию $\lim_{\Delta z \to 0}\limits \frac{\alpha(\Delta z)}{\Delta z} = 0$. Такая функция называется $o$-малой и обозначается $o(\Delta z)$.
 
 \begin{defn}
 Функция $f\colon B_r(z_0) \to \bbC $ дифференцируема в точке $z_0 \in \bbC$, если справедливо представление 
@@ -136,7 +127,7 @@ $$
 $$
 \underbrace{{{\vphantom{\frac{0}{0}}}}0}_{=0} \le \frac{|\alpha_1(\Delta x, \Delta y)|}{|\Delta z|} \le \underbrace{\frac{|\alpha(\Delta z)|}{|\Delta z|}}_{\xrightarrow{\Delta z \to 0} 0 }.
 $$
-Из теоремы \hyperref[exp14]{о трех функциях} следует: $\exists \lim_{\substack{\Delta x \to 0\\ \Delta y \to 0}}\limits \frac{|\alpha_1(\Delta x,\Delta y)|}{\sqrt{\Delta x ^2 + \Delta y^2}} = 0.$
+Из теоремы \hyperref[th:ch1:threefuncs]{о трех функциях} из математического анализа для $\bboR$ следует: $\exists \lim_{\substack{\Delta x \to 0\\ \Delta y \to 0}}\limits \frac{|\alpha_1(\Delta x,\Delta y)|}{\sqrt{\Delta x ^2 + \Delta y^2}} = 0.$
 Аналогично, $\exists \lim_{\substack{\Delta x \to 0\\ \Delta y \to 0}}\limits \frac{|\alpha_2(\Delta x,\Delta y)|}{\sqrt{\Delta x^2 + \Delta y^2}} = 0$. 
 Отсюда и из равенства \eqref{exp15} следует дифференцируемость функций $u(x,y)$ и $v(x,y)$ в точке $(x_0,y_0) \in \bbR^2$, причем 
 \begin{equation}
@@ -305,8 +296,8 @@ $$
 В силу непрерывной дифференцируемости функций $u$ и $v$ на односвязной области $G$, следующей из регулярности функции $f$, формула Грина \eqref{abc6} и \hyperref[exp17]{условия Коши-Римана} дают для интегралов \eqref{abc4}
 \begin{equation*}
 \begin{split}
-&J_1 \xlongequal{\eqref{abc6}} \iint_D \left(-\pd{v}{x}-\pd{u}{y}\right)\,dx dy \xlongequal{\text{ \href{https://vk.com/id29839661}{\scriptsize \textcolor{black}{УКР}}}} 0,\\
-&J_2 \xlongequal{\eqref{abc6}} \iint_D \left(\pd{u}{x}-\pd{v}{y}\right)\,dx dy \xlongequal{\text{\href{https://vk.com/id29839661}{\scriptsize \textcolor{black}{УКР}}}} 0,
+&J_1 \xlongequal{\eqref{abc6}} \iint_D \left(-\pd{v}{x}-\pd{u}{y}\right)\,dx\, dy \xlongequal{\text{ \href{https://vk.com/id29839661}{\scriptsize \textcolor{black}{УКР}}}} 0,\\
+&J_2 \xlongequal{\eqref{abc6}} \iint_D \left(\pd{u}{x}-\pd{v}{y}\right)\,dx\, dy \xlongequal{\text{\href{https://vk.com/id29839661}{\scriptsize \textcolor{black}{УКР}}}} 0,
 \end{split}
 \end{equation*} 
 т.е. равенство \eqref{abc3} доказано, а значит теорема доказана.
