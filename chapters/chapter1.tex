@@ -1,5 +1,5 @@
 \part{Введение в математический анализ}
-\chapter[Теорема Больцано-Вейерштрасса и критерий Коши сходимости числовой последовательности.]{Теорема Больцано-Вейерштрасса и критерий Коши сходимости числовой последовательности.}
+\chapter{Теорема Больцано"--~Вейерштрасса и критерий Коши сходимости числовой последовательности.}
 
 \section[Аксиоматика множества действительных чисел]{Аксиоматика множества действительных чисел\footnote{\leavevmode\vspace*{-\baselineskip}
 \InsertBoxL{0}{\llap{\includegraphics[height=2.5cm]{Bang}}}%
@@ -119,7 +119,9 @@ $a / b =  \frac{a}{b} \triangleq a \cdot \frac{1}{b}$;
 \item 
 Множество действительных чисел $\bbR$ часто называют \textit{числовой прямой}, а числа "--- \textit{точками числовой прямой}. А сами действительные числа часто будем называть \textit{числами}, подразумевая именно элементы из множества~$\bbR$.
 \item 
-Наряду с числовой прямой определим \textit{расширенную числовую прямую:} множество $\bboR=\bbR\cup \{-\infty, {+\infty}\}$. В нем определены отношения порядка, операции <<$+$>>, <<$\cdot$>> для элементов из $\bbR$. Элементы $-\infty$, $+\infty$ не содержатся в $\bbR$. Будем их называть \textit{бесконечно удаленными точками}.  Для них определены отношения порядка: $\forall x \in \bbR$\quad$-\infty < x < +\infty$. Частично определены операции <<$+$>>, <<$-$>>, <<$\cdot$>> и <<$/$>>:
+Наряду с числовой прямой определим \textit{расширенную числовую прямую:} множество $\bboR=\bbR\cup \{-\infty, {+\infty}\}$. В нем определены отношения порядка, операции <<$+$>>, <<$\cdot$>> для элементов из $\bbR$. Элементы $-\infty$, $+\infty$ не содержатся в $\bbR$. Будем их называть \textit{бесконечно удаленными точками (числами)} в противопоставление точкам числовой прямой $\bbR$, которые также называют \textit{конечными точками (точками)}. 
+
+Итак, для плюс и минус бесконечностей определены отношения порядка: $\forall x \in \bbR$ $-\infty < x < +\infty$. Частично определены операции <<$+$>>, <<$-$>>, <<$\cdot$>> и <<$/$>>:
 \begin{align*}
 &+\infty + a = +\infty \quad\text{и}\quad +\infty - a = +\infty,\quad \forall a \in \bbR\cup\{+\infty\}; \\
 &-\infty - a = -\infty \quad\text{и}\quad -\infty + a = -\infty,\quad \forall a \in \bbR\cup\{-\infty\}; \\
@@ -127,9 +129,9 @@ $a / b =  \frac{a}{b} \triangleq a \cdot \frac{1}{b}$;
 &+\infty\cdot a = -\infty\quad\text{и}\quad -\infty\cdot a = +\infty, \quad \forall a < 0,\  a\in\bbR\cup\{-\infty\};\\
 & a/ -\infty = a / +\infty = 0, \quad \forall a \in \bbR;
 \end{align*}
-Но не определены: сумма $+\infty + (-\infty)$, разность $+\infty - (+\infty),$ произведение $0\cdot (\pm \infty)$, частное $\pm \infty / \pm \infty$.
+Но, например, не определены: сумма $+\infty + (-\infty)$, произведение $0\cdot (\pm \infty)$, частное $\pm \infty / \pm \infty$.
 \item
-Промежутки на $\bbR$ (на $\bboR$):
+Пусть заданы действительные числа $a$, $b$, $a < b$. \textit{Числовыми промежутками} называются следующие множества:
 \begin{itemize}[nolistsep, label = $\scriptstyle\blacktriangleright$, topsep=0pt]
 \item 
 \textit{интервал} $(a,b)\triangleq \{\,x\in\bbR\,\big|\,a < x < b\,\}$, $a,b\in\bbR\colon a<b$;
@@ -142,33 +144,50 @@ $a / b =  \frac{a}{b} \triangleq a \cdot \frac{1}{b}$;
 \item 
 \textit{точка} $\{a\};$
 \item 
-$(-\infty; +\infty) = \bbR$, $[-\infty;+\infty]=\bboR$, $[-\infty; +\infty) = \bbR \cup \{-\infty\}.$
+\textit{числовая прямая} $(-\infty; +\infty) = \bbR$
 \end{itemize}
 \end{itemize}
 \end{defn}
 
-\begin{notion}
 Множество $\bbQ$ рациональных чисел удовлетворяет аксиомам~I--VI, но не удовлетворяет аксиоме VII. Покажем последнее. Пусть 
 $A = \{\,a\,\big|\,a\in\bbQ,\ a>0,\ a^2<2\,\},$ $B = \{\,b\,\big|\,b\in\bbQ,\ b>0,\ b^2>2\,\}.$ Тогда во множестве $\bbQ$ не существует числа $c\in\bbQ$ со свойством: $a\le c\le b \quad \forall a \in A,\ \forall b\in B$.
-\end{notion}
 
 \section{Точные грани числовых множеств}
 \begin{defn}
 Число $M \in \bbR$ "--- \textit{верхняя (нижняя) грань множества} $G\subset \bbR$, если выполняется условие 
 $$
-\forall x \in \bbR \cquad x \le G \quad (x \ge G)
+\forall x \in \bbR \cquad x \le M \quad (x \ge M)
 $$
 \end{defn}
 \begin{defn}
-Число $M \in \bbR$ "--- \textit{точная верхняя (нижняя) грань множества} $G \subset \bbR$ и обозначается $\sup G$ $(\inf G)$, если 
+Множество $G\subset \bbR$ называется \textit{ограниченным сверху (снизу)}, если существует верхняя (нижняя) грань этого множества:
+$$
+\exists M \in \bbR \cquad \forall x \in \bbR \cquad x \le M \quad (x \ge M)
+$$
+Множество $G$ называется \textit{ограниченным}, если $G$ ограничено сверху и снизу.
+\end{defn}
+\begin{defn}
+\textit{Модулем} числа $x$ назывантся число 
+$$
+|x|=\begin{cases}x, \text{ если }x\ge 0\\-x,\text{ если }x<0\end{cases}
+$$
+\end{defn}
+Тогда, с введенным определением, можно показать, что множество $G$ ограничено тогда и только тогда, когда 
+$$
+\exists M \in \bbR \cquad \forall x \in G \quad |x| \le M.
+$$
+\begin{defn}
+Число $M \in \bbR$ "--- \textit{точная верхняя (нижняя) грань} или {супремум (инфимум) множества} $G \subset \bbR$ и обозначается $\sup G$ $(\inf G)$, если 
 \begin{enumerate}
 \item
 $\forall x \in G\cquad x \le M \quad (x\ge M)$,
 \item
 $\forall M' < M \ (\forall M' > M)\quad \exists x\in G\cquad x>M' \quad (x<M')$.
 \end{enumerate}
-Eсли множество $G \subset \bbR$ не ограничено сверху (снизу), то, по определению, $\sup G=+\infty$ ($\inf G=-\infty$).  
 \end{defn}
+
+Eсли множество $G \subset \bbR$ не ограничено сверху (снизу), то, по определению, $\sup G=+\infty$ ($\inf G=-\infty$).  
+
 \begin{defn}
 Число $M \in \bbR$ называется \textit{максимальным (минимальным) элементом множества} $G \subset \bbR$ и обозначается $\max G$ $(\min G)$, если 
 \begin{enumerate}

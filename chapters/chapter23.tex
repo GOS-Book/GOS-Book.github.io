@@ -17,7 +17,7 @@
   \begin{notion}
   Иначе говоря, скалярное произведение "--- симметричная положительно определённая билинейная форма (см. билет 24).
   \end{notion}
-  Рассмотрим, как происходит вычисление скалярного произведения через координаты в базисе $e=\norm{e_1 \ldots e_n}:x=\sum\limits_{i=1}^nx_ie_i=eX, y=\sum\limits_{j=1}^ny_je_j=eY$
+  Рассмотрим, как происходит вычисление скалярного произведения через координаты в базисе $e=\norm{e_1 \ldots e_n}$: $x=\sum\limits_{i=1}^nx_ie_i=eX, y=\sum\limits_{j=1}^ny_je_j=eY$
   \begin{equation}\label{23.1.sc.pr}
   (x,y)=(\sum\limits_{i=1}^nx_ie_i,\sum\limits_{j=1}^ny_je_j)=\sum\limits_{i=1}^n\sum\limits_{j=1}^nx_i(e_i,e_j)y_j
   \end{equation}
@@ -41,7 +41,7 @@
   \end{notion}
   
 \begin{defn}
-  Линейное преобразование $\phi: E \rightarrow E$ евклидова пространства называется \textit{самосопряжённым}, если
+  Линейное преобразование $\phi\colon E \rightarrow E$ евклидова пространства называется \textit{самосопряжённым}, если
   \begin{equation}\label{23.1.selfadjoint}
   \forall x,y \in E \hookrightarrow (\phi(x),y)=(x,\phi(y))
   \end{equation}
@@ -67,7 +67,7 @@
     X^TA_\phi^TG_eY=X^TG_eA_\phi Y, \\ \forall X,Y\in \bbR^n
   \end{array}     
   \end{equation*}   
-  Обозначим $B=A_\phi^TG_e, C=G_eA_\phi$. Подставляя $X=E_i, Y=E_j$, где $E_k$ "--- k-й столбец единичный матрицы, получим $E_i^TBE_j=E_i^TCE_j=b_{ij}=c_{ij}$, то есть $B=C$, что равносильно \eqref{23.1.criteria}.
+  Обозначим $B=A_\phi^TG_e$, $C=G_eA_\phi$. Подставляя $X=E_i$, $Y=E_j$, где $E_k$ "--- k-й столбец единичный матрицы, получим $E_i^TBE_j=E_i^TCE_j=b_{ij}=c_{ij}$, то есть $B=C$, что равносильно \eqref{23.1.criteria}.
   \end{proof}
   \begin{cons}
   В ортонормированном базисе $(G_e=E)$ условие самосопряжённости преобразования $\phi$ приобретает вид: $A=A^T$, то есть матрица должна быть симметричной.
@@ -83,7 +83,7 @@
   \begin{defn}
   \textit{Ортогональным дополнением} подпространства $U$ евклидова пространства $E$ называется множество векторов из $E$, ортогональных каждому из векторов подпространства $U$, т.е.
   \begin{equation}\label{23.1.orthogonal}
-  U^\perp=\{v \in E: \forall u \in U \hookrightarrow (u,v)=0\}
+  U^\perp=\{v \in E\cquad \forall u \in U \hookrightarrow (u,v)=0\}
   \end{equation}
   \end{defn}
   
@@ -92,7 +92,7 @@
   Если $U$ "--- $\phi$-инвариантное подпространство в $E$, то его ортогональное дополнение $U^\perp$ также $\phi$-инвариантно.
   \end{stt}
   \begin{proof}
-  $\forall x \in U \forall y \in U^\perp \hookrightarrow (x,\phi(y))=(\phi(x),y)=0$, т.к. $\phi(x)\in U$. Следовательно, $\phi(y)\in U^\perp \forall y\in U^\perp$.
+  $\forall x \in U\quad \forall y \in U^\perp \hookrightarrow (x,\phi(y))=(\phi(x),y)=0$, т.к. $\phi(x)\in U$. Следовательно, $\phi(y)\in U^\perp \forall y\in U^\perp$.
   \end{proof}
   
   \begin{stt}
