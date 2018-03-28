@@ -1,7 +1,7 @@
 ## GOSBook
 
 ### Загрузить последнюю редакцию книги: 
-[<img src="https://raw.githubusercontent.com/DidenkoAndre/didenkoandre.github.io/master/favicon.png" width="15" height="15"/>](https://didenkoandre.github.io/GOSBook/) https://didenkoandre.github.io/GOSBook/
+[<img src="https://raw.githubusercontent.com/DidenkoAndre/didenkoandre.github.io/master/favicon.png" width="15" height="15"/>](https://didenkoandre.github.io/GOSBook/GOSBook.pdf) https://didenkoandre.github.io/GOSBook/GOSBook.pdf
 
 ### Внимание.
 
