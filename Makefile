@@ -22,7 +22,7 @@ softclean:
 	$(call delete, '.*\.\(bbl\|bcf\|blg\|aux\|log\|lof\|loc\|lot\|loa\|out\|toc\|dvi\|fdb_latexmk\|run\.xml\|htm\|fls\)$$')
 
 clean: softclean
-	$(call delete, '.*\.\(synctex\|idx\|ilg\|ind\|maf\|ptc\|bak\)$$')
+	$(call delete, '.*\.\(synctex\|gz(busy)\|idx\|ilg\|ind\|maf\|ptc\|bak\)$$')
 	-rm -f *.mtc*
 
 distclean: clean
