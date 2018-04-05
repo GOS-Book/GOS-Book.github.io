@@ -24,106 +24,117 @@
 \include{include/macros}
 
 \begin{document}
-\chapter*{Reminder how to write formulas}
+\chapter*{Recommendations how to write formulas better}
 
 This information is based on \href{http://www.ctex.org/documents/shredder/src/texbook.pdf}{\textit{Knuth's TeXbook}},  AMS documentation, \href{https://tex.stackexchange.com/}{\textit{tex.stackexchange.com}} answers,  \colorbox{prpl}{\textcolor{white}{AND MY OWN PREFERENCES}}. I want to say that here are the rules to use correct command to get right spacing in math formulas. The rules which \LaTeX\ does automaticly aren't discussed here.
 
 Also look at the source code to understand those rules
 
 \begin{itemize}
+\item 
+Enumeration. In simple enumeration use ties with formula division in inline mode and space command \verb|\,| in noninline mode:
+
+$i=1$,~2, \ldots,~$n$.$\Bigr|$ 
+\begin{flalign}
+&i=1,\,2,\,\ldots,\,n.\Bigr|&
+\end{flalign}
+You can also use space command \verb|\,| in inline mode, if you don't use formula separation at all. But try to avoid it as much as possible. For example, use \verb|\{$x$,\{$x$, $y$\}\}| rather than \verb|$\{x,\,\{x,\,y\}\}$|.
+
+$\{x,\,\{x,\,y\}\}$
+
+\{$x$,\{$x$, $y$\}\}
+
+Remember that \verb|\ldots|,\verb|\cdots| produce very bad spacing in the following example \verb|$\ldots$,| 
+
+The same pattern goes for vectors and assets declared by enumeration. 
+
+$X = \{x_1$,~$x_2$, \dots,~$x_n$,~\dots $\},\Bigr|$
+\begin{flalign}
+&X = \{x_1,\,x_2,\,\dots,\,x_n,\,\dots \},\Bigr|&
+\end{flalign}
+But, notice that numerical gaps (intervals, segments) should take no space between left and right elements both in inline and noninline mode \verb|(a;b)|,\verb|[a;b]|
+
+$\Bigr|(a;b)\Bigr|$
+\begin{flalign}
+&\Bigr|(a;b)\Bigr|&
+\end{flalign}
+Reference: Inline: \href{http://www.ctex.org/documents/shredder/src/texbook.pdf}{\textit{Knuth's TeXbook}}, page 173. Noninline: It's my own preference.
+
+\item 
+Use \verb|\quad| between mathematics statements both in inline and noninline mode, however try to avoid these constructions in inline mode.
+
+$\forall y\in Y\quad  y\in X\Bigr|$
+\begin{flalign}
+&\forall y\in Y\quad  y\in X\Bigr|&
+\end{flalign}
+
+However if there is any punctuational symbol, then use simple space with ties, space-command \verb|\| or (the most recommended) formula separation.
 \item
-Spacing after ellipsis:
+Use ``\verb=\,\big|\,='' and in sets as relation symbol
 
-\verb|\ldots|, \verb|\cdots|:
-
-Clearly $a_i<b_i$ for $i=1$,~2, $\ldots\,$,~$n$.$\Bigr|$
-
-Clearly $a_i<b_i$ for $i=1$,~2, $\ldots$,~$n$.$\Bigr|$ --- incorrect
-
-Clearly $a_i<b_i$ for $i=1$,~2, \ldots,~$n$.$\Bigr|$ --- USE THIS
-
+$\{x \,\big|\ 1 < x < 2\}\Bigr|$
 \begin{flalign}
-a,\ldots,b
+&\{x \,\big|\ 1 < x < 2\}\Bigr|&
 \end{flalign}
+Notice that we have no additional spaces after the first bracket and before the final bracket.
+\item
+Use ``\verb=\setminus='' for set minus operation. Not backslashes or smth like this.
 
-\verb|\dots|:
+\item
+Phrases like i.e., e.g. requires ties or spacecommand \verb|\ | after it because otherwise the space will be slighty bigger than recommended.  
 
-Clearly $a_i<b_i$ for $i=1$,~2, $\dots\,$,~$n$.$\Bigr|$
+$\Bigr|$i.e.~author$\Bigr|$
 
-Clearly $a_i<b_i$ for $i=1$,~2, $\dots$,~$n$.$\Bigr|$
+$\Bigr|$i.e.\ author$\Bigr|$
 
-Clearly $a_i<b_i$ for $i=1$,~2, \dots,~$n$.$\Bigr|$
+$\Bigr|$i.e. author$\Bigr|$
 
+Remember that т.е. doesnt need comma after it, because it is union.
+
+
+\item
+Parentheses. When you want to use it with the word ``respectively'' then use this word in the last bracket. Do it like in the following russian way:
+
+Будем говорить, что на множестве $G$ определена операция сложения <<$+$>> (умножения <<$\cdot$>>), если любой упорядоченной паре элементов ($a$,~$b$) элементов $G$ поставлен в соответствие элемент $y = a + b$ (соотв., $y = a\cdot b$)
+
+Try to avoid 3 or more parentheses brackets. Try to edit sentences or just make new one additional phrase.
+
+\item 
+
+Because of bug use this: 
+
+\verb|\end{itemize}\vspace{-1.0\baselineskip}\end{defn}|
+
+when itemize and defn come to the end of the page. !Actually I need to solve this question on stackexchange.
+
+\item 
+
+Use \verb|\dfrac{1}{a}| in inline maths, because i dont like standard latex text-style fractions. They are too small, aren't they?
+
+$a / b =  \dfrac{a}{b} \triangleq a \cdot \dfrac{1}{b}$; 
+
+$a / b =  \frac{a}{b} \triangleq a \cdot \frac{1}{b}$; 
+
+\item 
+
+Try to avoid \verb|\Longleftrightarrow|, \verb|\Rightarrow| in order to give more mathematical text rather than lecture's summary.
+\newpage
+\item
+Use ``\verb=\,='' before differentials in integrals \verb=\int f(x)\,dx=
 \begin{flalign}
-a,\dots,b
+&\int f(x)\, dx&
 \end{flalign}
 
 \item
-
-Enumeration of elements:
-
-$\Bigr|$$i=1$,~$2$, \dots,~$n$.$\Bigr|$ \text{--- USE THIS INLINE}
-
+Use ``\verb=\,='' after factorials in math formulas \verb=\frac{n!}{k!\,(n-k)!}=
 \begin{flalign}
-&\Bigr|i=1,2, \ldots,n.\Bigr| \text{--- USE THIS NOTINLINE}&
+&\frac{n!}{k!\,(n-k)!}&
 \end{flalign}
+\item
+Use punctuations symbols after \verb|$...$| in inline math and use them inside noninline-environments.
 
-$\Bigr| i=1, 2, \dots,n$.$\Bigr|$
-\begin{flalign}
-&\Bigr|i=1,~2,~\ldots,~n.\Bigr| \text{--- incorrect}&
-\end{flalign}
-
-$\Bigr|$$i=1$,~$2$, \dots,~$n$.$\Bigr|$
-
-\begin{flalign}
-&\text{$\Bigr|$$i=1$,~$2$, \dots,~$n$.$\Bigr|$}&
-\end{flalign}
-
-\begin{flalign}
-&\Bigr|i=1,~2,~\ldots,~n.\Bigr| \text{--- incorrect}&
-\end{flalign}
-
-Reference: \href{http://www.ctex.org/documents/shredder/src/texbook.pdf}{\textit{Knuth's TeXbook}}, page 173
-
-\item 
-
-Множества часто обозначают прописными буквами $X$,~$Y$,~$Z$,~\ldots, 
-
-\item 
-
-Метод перечисления: 
-
-$X = \{x_1$,~$x_2$, \dots,~$x_n$,~\dots $\},\Bigr|$ \text{--- USE THIS INLINE}
-
-\begin{flalign}
-&X = \{x_1,x_2,\dots,x_n,\dots \},\Bigr| \text{ --- USE THIS NOTINLINE}&
-\end{flalign}
-
-\begin{flalign}
-&X = \{x_1,~x_2,~\dots,~x_n,~\dots \},\Bigr|&
-\end{flalign}
-
-$X = \{x_1,x_2,\dots,x_n,\dots \},\Bigr|$
-
-$X = \{x_1,~x_2,~\dots,~x_n,~\dots \},\Bigr|$
-
-$X = \{\text{$x_1$,~$x_2$, \dots,~$x_n$,~\dots} \},\Bigr|$
-
-
-
-$X = \{x_1,x_2,\dots,x_n,\dots \},\Bigr|$
-\item 
-
-Метод наложения условия: 
-$$
-X = \{x\,\big|\, \text{выполняется некоторое условие для $x$}\}, \text{ например, }
-X = \{x\,\big|\,x^2 < 1\}.
-$$
-
-\item 
-
-Заметим, что с помощью квантора $\forall$ это можно записать следующим образом: $X \subset Y \Longleftrightarrow \forall y\in Y\quad  y\in X$. 
-
+$b=3$, $a=2$ 
+ 
 \item 
 
 Будем говорить, что на множестве $G$ задано отношение порядка <<$\le$>>, если для любых двух элементов $a,b\in G$ выполняется хотя бы одно из условий $a\le b$, $b \le a$.
@@ -182,9 +193,7 @@ $\forall x \in A$: $f(x) = 12$
 \item
 Use ``\verb=\,='' to make brackets futher in sets when ``\verb=\,\big|\,='' is called like this \verb|$\{\,x : 1 < x < 2\,\}$|
 $$\{\,x \,\big|\, 1 < x < 2\,\}$$
-\item
-Use ``\verb=\,='' before differentials in integrals \verb=$\int f(x)\,dx$=
-$$ \int f(x)\, dx$$
+
 \item[\colorbox{prpl}{\textcolor{white}{MY}}\ $\bullet$]
 Use \verb|\quad| between logic elements in \textbf{non-inline math}
 $$
