@@ -33,7 +33,7 @@ $$
 \begin{defn}
 Система функций 
 \begin{equation} \label{ch17.1eq0}
-\{1,\, \cos kx,\, \sin kx\}, \quad k\in \bbN
+\{1,~\cos kx,~\sin kx\}, \quad k\in \bbN
 \end{equation}
 называется тригонометрической системой функций.			
 \end{defn}
@@ -43,7 +43,7 @@ $$
 
 Обобщение системы \eqref{ch17.1eq0} является система функций
 $$
-1,\ \cos \frac{\pi}{l}x,\ \sin \frac{\pi}{l}x,\ldots,\ \cos n\frac{\pi}{l}x,\ \sin n\frac{\pi}{l}x,\ldots,
+1,~\cos \frac{\pi}{l}x,~\sin \frac{\pi}{l}x,~\ldots,~\cos n\frac{\pi}{l}x,~\sin n\frac{\pi}{l}x,~\ldots,
 $$
 где $l>0$, которую тоже будем называть \textit{тригонометрической системой}. Очевидно, она ортогональная на любом промежутке длины $2l$.
 \begin{defn}
@@ -58,7 +58,7 @@ $$
 
 Пусть $f(x)$, $x \in \Delta$, разложена в ряд по системе функций
 \begin{equation} \label{ch17.1eq02}
-\phi_1(x), \ \phi_2(x), \ldots,\ \phi_n(x), \ldots,
+\phi_1(x),~\phi_2(x),~\ldots,~\phi_n(x),~\ldots,
 \end{equation}
 ортогональной на промежутке $\Delta$:
 \begin{equation} \label{ch17.1eq03}
@@ -185,7 +185,7 @@ $$
 \int_{\Delta} |f(x) - f_{\epsilon}(x)|\,dx = \int_{\Delta\setminus g_{\epsilon}} |f(x)|\,dx < \frac{\epsilon}{2}
 \end{equation}
 
-Функция $f_{\epsilon}(x)$ равна нулю вне ограниченного множества $g_{\epsilon} \subset \Delta$, поэтому ее носитель содержится в некотором отрезке $[a;b] \subset \overline{\Delta}$. На этом отрезке она интегрируема по Риману, так как она интегрируема по Риману на $g_{\epsilon}\ \text{и на}\ [a;b]\setminus g_{\epsilon}$. Поэтому существует разбиение $\tau$ отрезка $[a;b]$ на промежутки $\Delta_1$,~$\ldots\,$, $\Delta_N$ такое, что
+Функция $f_{\epsilon}(x)$ равна нулю вне ограниченного множества $g_{\epsilon} \subset \Delta$, поэтому ее носитель содержится в некотором отрезке $[a;b] \subset \overline{\Delta}$. На этом отрезке она интегрируема по Риману, так как она интегрируема по Риману на $g_{\epsilon}$ и на $[a;b]\setminus g_{\epsilon}$. Поэтому существует разбиение $\tau$ отрезка $[a;b]$ на промежутки $\Delta_1$, \ldots,~$\Delta_N$ такое, что
 $$
 \int_{a}^{b} f_{\epsilon}(x)\,dx - s(f_{\epsilon};\tau) < \frac{\epsilon}{2},
 $$
@@ -193,7 +193,7 @@ $$
 $$
 s(f_{\epsilon};\tau) = \sum_{j = 1}^{N} m_{j}|\Delta_j|,
 $$
-где $m_j = \inf\limits_{x \in \Delta_j}\,f_{\epsilon}(x)$. Через $\phi(x)$ обозначим ступенчатую функцию, которая равна $m_j$ на $\Delta_j,\ j = 1,\ldots,N$, и нулю вне $[a;b]$. Очевидно, $\phi(x) \le f_{\epsilon}(x)$ для любого $x \in \bbR$,
+где $m_j = \inf\limits_{x \in \Delta_j}\,f_{\epsilon}(x)$. Через $\phi(x)$ обозначим ступенчатую функцию, которая равна $m_j$ на $\Delta_j$, $j = 1,\ldots,N$, и нулю вне $[a;b]$. Очевидно, $\phi(x) \le f_{\epsilon}(x)$ для любого $x \in \bbR$,
 $$
 \int_{\Delta} \phi(x)\,dx = \int_{a}^{b} \phi(x)\,dx = s(f_{\epsilon};\tau),
 $$
@@ -201,7 +201,7 @@ $$
 \begin{equation} \label{ch17eq9}
 \int_{\Delta} |f(x) - \phi(x)|\,dx = \int_{a}^{b} f_{\epsilon}(x)\,dx - s(f_{\epsilon};\tau) < \frac{\epsilon}{2}
 \end{equation}
-Из неравенств \eqref{ch17eq8} и \eqref{ch17eq9} следует, что финитная ступенчатая функция $\phi(x)$ удовлетворяет неравенству \eqref{ch17eq7} теоремы. Действительно:
+Из неравенств \eqref{ch17eq8} и \eqref{ch17eq9} следует, что финитная ступенчатая функция~$\phi(x)$ удовлетворяет неравенству~\eqref{ch17eq7} теоремы. Действительно:
 \begin{multline*}
 \int_{\Delta} |f(x) - \phi(x)|\,dx \le \int_{\Delta} |f(x) - f_{\epsilon}(x)|\,dx+\\
 +\int_{\Delta} |f(x) - \phi(x)|\,dx < \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon \tag*{\qedhere}

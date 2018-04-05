@@ -43,11 +43,11 @@ $\nabla f(x_0) = \overset{\rightarrow}{\theta}$ согласно Теореме 
 f(x) = f(x_0) + \frac{1}{2} \Phi_2(x_0, h) + \alpha(x)|h|^2, \quad \text{где} \quad h = x - x_0 \in \bbR \quad \text{при} \quad \alpha(x) \overset{x \to x_0}{\longrightarrow} 0.
 \end{equation}
 
-$\forall x \in D_f \setminus x_0$ положим $\xi = \frac{x - x_0}{|x - x_0|}; \quad \rho = |x - x_0| \quad \Rightarrow \quad \rho > 0, \quad |\xi| = 1$.
+$\forall x \in D_f \setminus \{x_0\}$ положим $\xi = \frac{x - x_0}{|x - x_0|}; \quad \rho = |x - x_0| \quad \Rightarrow \quad \rho > 0, \quad |\xi| = 1$.
 
 $h = x - x_0 = \rho \xi \quad \Rightarrow \quad \Phi_{2}(x_0, h) = \Phi_2(x_0, \rho \xi) = \rho^2 \Phi_(x_0, \xi)$, т.к. $\Phi_2$ "--- квадратичная форма $\Rightarrow \frac{f(x) - f(x_0)}{\rho^2} = \frac{1}{2}\Phi_2(x_0, \xi) + \alpha(x)$
 
-Т.к. $x_0$ "--- точка локального максимума, то $\exists \delta_0: \quad \forall x \in O_\delta(x_0) \cap D_f$. $f(x) - f(x_0) \le 0 \quad \Rightarrow \quad \forall \xi \in S_1(\bbR^n), (|\xi| = 1): \Phi_2(x_0, \xi) = 2 \frac{1}{\rho^2}(f(x) - f(x_0)) - \alpha(x)$
+Т.к. $x_0$ "--- точка локального максимума, то $\exists \delta_0\cquad \forall x \in O_\delta(x_0) \cap D_f$. $f(x) - f(x_0) \le 0 \quad \Rightarrow \quad \forall \xi \in S_1(\bbR^n), (|\xi| = 1): \Phi_2(x_0, \xi) = 2 \frac{1}{\rho^2}(f(x) - f(x_0)) - \alpha(x)$
 
 $\Phi_2(x_0, \xi) = \lim\limits_{\rho \to 0} \left(2 \frac{1}{\rho^2}(f(x) - f(x_0)) - \alpha(x) \right)$
 

@@ -5,9 +5,10 @@
 \node at (current page.north west)
 {\begin{tikzpicture}[remember picture,overlay]
 \node[anchor=north west,inner sep=0pt] at (0,0) {\includegraphics[width=\paperwidth]{pictures/background}}; % Background image
-\draw[anchor=north] (midpoint) node [fill=prpl!30!white,fill opacity=0.6,text opacity=1,inner sep=1cm]{\Huge\centering\bfseries\sffamily\parbox[c][][t]{\paperwidth}{\centering { \textcolor{black!70}{\fontsize{23}{14}\selectfont GOSBook}}\\[4pt] % Book title
+\draw[anchor=north] (midpoint) node [fill=prpl!30!white,fill opacity=0.6,text opacity=1,inner sep=0.8cm]{\Huge\centering\bfseries\sffamily\parbox[c][][t]{\paperwidth}{\centering { \textcolor{black!70}{\fontsize{23}{14}\selectfont GOSBook}}\\[4pt] % Book title
 %{\Large }\\[20pt] % Subtitle
-{\textcolor{black!70}{\huge Didenko Andre}}}}; % Author name
+{\textcolor{black!70}{\huge Didenko Andr\'e}}\\[2pt] % Author name
+{\textcolor{black!70}{\LARGE\scshape Edition from \twodigit\day.\twodigit\month.\the\year}}}}; 
 \end{tikzpicture}};
 \end{tikzpicture}
 \vfill
@@ -42,12 +43,19 @@
 \begin{itemize}[wide, labelwidth=!, labelindent=0pt, label=$\blacktriangleright$, noitemsep]
 \item Актуальная версия в pdf-формате доступна по ссылке:
 
+\qquad\href{https://didenkoandre.github.io/GOSBook/GOSBook.pdf}{$
+\begin{array}{l}
+\includegraphics[width=\iconwidth]{pictures/reference/favicon}
+\end{array}
+$\large didenkoandre.github.io/GOSBook/GOSBook.pdf}
+
+\item Web-site, посвященный данной книге:
+
 \qquad\href{https://didenkoandre.github.io/GOSBook}{$
 \begin{array}{l}
 \includegraphics[width=\iconwidth]{pictures/reference/favicon}
 \end{array}
 $\large didenkoandre.github.io/GOSBook}
-
 \iffalse
 \qquad\href{http://latexonline.cc/compile?git=https://github.com/DidenkoAndre/GOSBook&target=GOSBook.tex&download=GOSBook.pdf&command=pdflatex}{$
 \begin{array}{l}
@@ -62,7 +70,7 @@ $\large latexonline.cc/...}
 $\large dropbox.com/...}
 \fi
 
-\item \textbf{Важно!} Дополнительные материалы, полезные при подготовке как к \textit{устному} экзамену, так и к \textit{письменному} доступны по ссылке:
+\item Дополнительные материалы, полезные при подготовке как к \textit{устному} экзамену, так и к \textit{письменному} доступны по ссылке:
 
 \qquad\href{https://drive.google.com/drive/u/0/folders/0BzuzEyNkpwYDYjVNcE0wa3hqWjA}{$
 \begin{array}{l}
@@ -86,6 +94,7 @@ $\large drive.google.com/...}
 \end{array}
 $\large drive.google.com/...}
 
+\iffalse
 \item Подпишитесь на наш Telegram-бот с помощью команды \textsf{/subscribe}, и вы будете получать свежую версию автоматически!
 
 \qquad\href{https://t.me/gosbook_bot}{$
@@ -93,6 +102,7 @@ $\large drive.google.com/...}
 \includegraphics[width=\iconwidth]{pictures/reference/telegram}
 \end{array}
 $\large /GOSBook\_Bot} 
+\fi
 
 \item Репозиторий, в котором хранится этот документ:
 
@@ -113,19 +123,19 @@ $\large /didenkoandre/GOSBook}
 \begin{array}{l}
 \includegraphics[width=\iconwidth]{pictures/reference/vk}
 \end{array}
-$\large /didenko\_andre}
+$\large /didenko\_\!andre}
 
 \qquad\href{https://t.me/didenko_andre}{$
 \begin{array}{l}
 \includegraphics[width=\iconwidth]{pictures/reference/telegram}
 \end{array}
-$\large /didenko\_andre}
+$\large /didenko\_\!andre}
 
 \qquad\href{https://instagram.com/didenko_andre}{$
     \begin{array}{l}
     \includegraphics[width=\iconwidth]{pictures/reference/instagram}
     \end{array}
-$\large /didenko\_andre}
+$\large /didenko\_\!andre}
 \end{itemize}
 \smallskip
 \vfill

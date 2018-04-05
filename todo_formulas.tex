@@ -16,16 +16,143 @@
 \usepackage{xcolor}
 \definecolor{prpl}{RGB}{150, 120, 182}
 
-%oldstuff
+% new stuff
+% \lineskiplimit=-100pt\relax
+
+% old stuff
 \include{include/header}
 \include{include/macros}
 
 \begin{document}
 \chapter*{Reminder how to write formulas}
 
-This information based on AMS documentation and stackechange.com answer \colorbox{prpl}{\textcolor{white}{AND MY OWN PREFERENCES}}. I want to say that here are the rules to use correct command to get right spacing in math formulas. The rules which \LaTeX\ does automaticly aren't discussed here.
+This information is based on \href{http://www.ctex.org/documents/shredder/src/texbook.pdf}{\textit{Knuth's TeXbook}},  AMS documentation, \href{https://tex.stackexchange.com/}{\textit{tex.stackexchange.com}} answers,  \colorbox{prpl}{\textcolor{white}{AND MY OWN PREFERENCES}}. I want to say that here are the rules to use correct command to get right spacing in math formulas. The rules which \LaTeX\ does automaticly aren't discussed here.
 
 Also look at the source code to understand those rules
+
+\begin{itemize}
+\item
+Spacing after ellipsis:
+
+\verb|\ldots|, \verb|\cdots|:
+
+Clearly $a_i<b_i$ for $i=1$,~2, $\ldots\,$,~$n$.$\Bigr|$
+
+Clearly $a_i<b_i$ for $i=1$,~2, $\ldots$,~$n$.$\Bigr|$ --- incorrect
+
+Clearly $a_i<b_i$ for $i=1$,~2, \ldots,~$n$.$\Bigr|$ --- USE THIS
+
+\begin{flalign}
+a,\ldots,b
+\end{flalign}
+
+\verb|\dots|:
+
+Clearly $a_i<b_i$ for $i=1$,~2, $\dots\,$,~$n$.$\Bigr|$
+
+Clearly $a_i<b_i$ for $i=1$,~2, $\dots$,~$n$.$\Bigr|$
+
+Clearly $a_i<b_i$ for $i=1$,~2, \dots,~$n$.$\Bigr|$
+
+\begin{flalign}
+a,\dots,b
+\end{flalign}
+
+\item
+
+Enumeration of elements:
+
+$\Bigr|$$i=1$,~$2$, \dots,~$n$.$\Bigr|$ \text{--- USE THIS INLINE}
+
+\begin{flalign}
+&\Bigr|i=1,2, \ldots,n.\Bigr| \text{--- USE THIS NOTINLINE}&
+\end{flalign}
+
+$\Bigr| i=1, 2, \dots,n$.$\Bigr|$
+\begin{flalign}
+&\Bigr|i=1,~2,~\ldots,~n.\Bigr| \text{--- incorrect}&
+\end{flalign}
+
+$\Bigr|$$i=1$,~$2$, \dots,~$n$.$\Bigr|$
+
+\begin{flalign}
+&\text{$\Bigr|$$i=1$,~$2$, \dots,~$n$.$\Bigr|$}&
+\end{flalign}
+
+\begin{flalign}
+&\Bigr|i=1,~2,~\ldots,~n.\Bigr| \text{--- incorrect}&
+\end{flalign}
+
+Reference: \href{http://www.ctex.org/documents/shredder/src/texbook.pdf}{\textit{Knuth's TeXbook}}, page 173
+
+\item 
+
+Множества часто обозначают прописными буквами $X$,~$Y$,~$Z$,~\ldots, 
+
+\item 
+
+Метод перечисления: 
+
+$X = \{x_1$,~$x_2$, \dots,~$x_n$,~\dots $\},\Bigr|$ \text{--- USE THIS INLINE}
+
+\begin{flalign}
+&X = \{x_1,x_2,\dots,x_n,\dots \},\Bigr| \text{ --- USE THIS NOTINLINE}&
+\end{flalign}
+
+\begin{flalign}
+&X = \{x_1,~x_2,~\dots,~x_n,~\dots \},\Bigr|&
+\end{flalign}
+
+$X = \{x_1,x_2,\dots,x_n,\dots \},\Bigr|$
+
+$X = \{x_1,~x_2,~\dots,~x_n,~\dots \},\Bigr|$
+
+$X = \{\text{$x_1$,~$x_2$, \dots,~$x_n$,~\dots} \},\Bigr|$
+
+
+
+$X = \{x_1,x_2,\dots,x_n,\dots \},\Bigr|$
+\item 
+
+Метод наложения условия: 
+$$
+X = \{x\,\big|\, \text{выполняется некоторое условие для $x$}\}, \text{ например, }
+X = \{x\,\big|\,x^2 < 1\}.
+$$
+
+\item 
+
+Заметим, что с помощью квантора $\forall$ это можно записать следующим образом: $X \subset Y \Longleftrightarrow \forall y\in Y\quad  y\in X$. 
+
+\item 
+
+Будем говорить, что на множестве $G$ задано отношение порядка <<$\le$>>, если для любых двух элементов $a,b\in G$ выполняется хотя бы одно из условий $a\le b$, $b \le a$.
+
+\item \verb|Условия Коши"--~Римана\rindex{условия!Коши---Римана}|
+
+\item 
+$$
+\left| \frac{(z - a)^n}{(\zeta - a)^{n + 1}} f(\zeta) \right| \le \frac{M}{r_1} \cdot q^n, \text{ где }  M = \sup_{\zeta \in \gamma_{r_1}} |f(\zeta)| < +\infty, \text{--- USE THIS}
+$$
+$$
+\left| \frac{(z - a)^n}{(\zeta - a)^{n + 1}} f(\zeta) \right| \le \frac{M}{r_1} \cdot q^n, \quad \text{где} \quad M = \sup_{\zeta \in \gamma_{r_1}} |f(\zeta)| < +\infty,
+$$
+$$
+\left| \frac{(z - a)^n}{(\zeta - a)^{n + 1}} f(\zeta) \right| \le \frac{M}{r_1} \cdot q^n,  \quad M = \sup_{\zeta \in \gamma_{r_1}} |f(\zeta)| < +\infty,
+$$
+$$
+\left| \frac{(z - a)^n}{(\zeta - a)^{n + 1}} f(\zeta) \right| \le \frac{M}{r_1} \cdot q^n \quad M = \sup_{\zeta \in \gamma_{r_1}} |f(\zeta)| < +\infty,
+$$
+$$
+\left| \frac{(z - a)^n}{(\zeta - a)^{n + 1}} f(\zeta) \right| \le \frac{M}{r_1} \cdot q^n \qquad M = \sup_{\zeta \in \gamma_{r_1}} |f(\zeta)| < +\infty,
+$$
+
+\item
+
+Пара $(n$;~$x_n)$
+
+Пара $(n; x_n)$
+\end{itemize}
 
 \section{COLON}
 
@@ -35,15 +162,15 @@ Use \verb|\mathbin{:}| in ratios:
 $$x\mathbin{:}y\mathbin{:}z = 3\mathbin{:}4\mathbin{:}5$$
 
 \item
-Use ``\verb=\colon='' in mappings in \textbf{non-inline math}:
+Use ``\verb=\colon='' in mappings:
 $$f\colon A \to B$$
 
 \item[\colorbox{prpl}{\textcolor{white}{MY}}\ $\bullet$]
 Use ``\verb={:}\quad='' or macros ``\verb=\cquad='', when it's a punctuation symbol in \textbf{non-inline math} and between math statements like \verb|A\cquad B| anywere.
 $$\forall x \in A\cquad f(x) = 12$$
-But use simple ``\verb=\colon='' like here: in \textbf{inline math}
+But use simple \textbf{formula separation} \verb|$\forall x \in A$: $f(x) = 12$| like here: in \textbf{inline math}
 \begin{center}
-$\forall x \in A\colon f(x) = 12$
+$\forall x \in A$: $f(x) = 12$
 \end{center}
 
 
@@ -70,28 +197,55 @@ $\forall A \in B$ $\mu A < \mu B$.
 \end{center}
 Use punctuation symbols if needed after \$-symbol.
 \item[\colorbox{prpl}{\textcolor{white}{MY}}\ $\bullet$]
-Use ``\verb|\ |'' before parenthesis in \textbf{non-inline math}:
+Use ``\verb|\quad |'' before parenthesis in \textbf{non-inline math}:
 $$
-\forall M' < M \ (\forall M' > M)\quad \exists x\in G\cquad x>M' \ (x<M')
+\forall M' < M \quad (\forall M' > M)\quad \exists x\in G\cquad x>M' \quad (x<M')
 $$
-But again use simple formulas divison with usual spaces in \textbf{inline math}.
+(?)But again use simple formulas divison with usual spaces in \textbf{inline math}.
 
 \item 
 Use comma without any spaces like this \verb|$a,b$| when comma actually is a part of formula, for example
 \begin{center}
 $1<a,b<2$. 
 \end{center}
-But when it is not part of the formula (for example, when it is range 1, 2, 3, \dots) use spaces in \textbf{non-inline math} ``\verb|\ |'' or formulas divison in \textbf{inline math} (sometimes with ``$\sim$'' symbol to prevent line-breaking).
+But when it is not part of the formula (for example, when it is range 1, 2, 3, \dots) use spaces in \textbf{non-inline math} ``\verb|~|'' or formulas divison in \textbf{inline math}. Dont put \verb|\,| after \verb|\dots,\ldots,\cdots|
 $$
-\phi_1(x), \ \phi_2(x),\ \ldots\,,\ \phi_n(x), \ldots,
+\phi_1(x), \ \phi_2(x),\ \ldots,\ \phi_n(x), \ldots
 $$
-\item 
-When \verb|\dots| (or \verb|\cdots|, or \verb|\ldots|) are used in formula don't use spaces at all. But when it comes to talk about ranges and enumeration like in previous item use it in the followinf way:\verb|,\ \dots\,,| to get space before and after those dots.
 $$
-\phi_1(x), \ \phi_2(x),\ \ldots\,,\ \phi_n(x), \ldots,
+\phi_1(x), \ \phi_2(x),\ \dots,\ \phi_n(x), \ldots
 $$
 
+$\phi_1(x)$,~$\phi_2(x)$, \ldots,~$\phi_n(x), \ldots$
+
+$\phi_1(x)$,~$\phi_2(x)$, \dots,~$\phi_n(x), \ldots$
+
+Prove that $(1-x)^{-1}=1+x+x^2+\cdots$.
+
+Prove that $(1-x)^{-1}=1+x+x^2+\cdots$.
+
+Clearly $a_i<b_i$ for $i=1$,~2, $\ldots$,~$n$.
+
+Clearly $a_i<b_i$ for $i=1$,~2, $\dots\,$,~$n$.
+
+Clearly $a_i<b_i$ for $i=1$,~2, $\dots$,~$n$.
+
+Clearly $a_i<b_i$ for $i=1$,~2, $\cdots$,~$n$.
+
+
+Сonclusion: USE \verb|dots| without any space-commands in this situations.
+
+
+\item 
+\verb|$x_1$,~$x_2$,~\dots, $x_n$,~\dots|.
+
+\begin{center}
+$x_1$,~$x_2$,~\dots, $x_n$,~\dots
+\end{center}
+
 \textit{Reference:} \href{https://tex.stackexchange.com/questions/115030/using-commas-in-mathematical-formulas}{$tex.stackexchange.com/...$}
+
+Refence: \href{http://www.ctex.org/documents/shredder/src/texbook.pdf}{\textit{texbook.pdf}}, page 172
 
 \item 
 \verb|\exists!| is actual command for exists the only one! $\exists! с \in \bbR$
@@ -111,7 +265,7 @@ $$
 \item 
 Use \verb|\cdots| between binary relation symbols like ``+'' and \verb|\cdots| with commas in enumeration.
 $$
-\phi_1(x),\ \ldots\,,\ \phi_n(x), \ldots,\quad x_1 + \cdots + x_2 + \cdots = 12.
+\phi_1(x),\ \ldots,\ \phi_n(x), \ldots,\quad x_1 + \cdots + x_2 + \cdots = 12.
 $$
 Use \verb|\dots| when you don't care (it's fine btw because \LaTeX\ replaces dots either with cdots or with ldots). Do not use simple \verb|$...$|.
 
@@ -137,7 +291,14 @@ But \verb=$\iint\limits$=
 \item
 Sorry bro, but we don't want to use letter <<ё>>. Use <<е>> instead.
 \item 
-\verb=т.е.\ слово=
+There is no difference between \verb=т.е.\ слово= and \verb=т.е. слово= nowadays. 
+
+\begin{center}
+т.е.\ слово $\Bigr|$
+\end{center}
+\begin{center}
+т.е. слово $\Bigr|$
+\end{center}
 \end{itemize}
 
 

@@ -9,19 +9,19 @@
 }
 
 \begin{defn}
-Будем говорить, что на множестве $G$ определена операция сложения <<$+$>> (умножения <<$\cdot$>>), если любой упорядоченной паре элементов $(a,b)$ элементов $G$ поставлен в соответствие элемент $y = a + b$ ($y = a\cdot b$)
+Будем говорить, что на множестве $G$ определена операция сложения <<$+$>> (умножения <<$\cdot$>>), если любой упорядоченной паре элементов $(a,b)$ элементов $G$ поставлен в соответствие элемент $y = a + b$ (соотв., $y = a\cdot b$)
 \end{defn}
 
 Зачастую знак умножения <<$\cdot$>> опускают и пишут $ab$ вместо $a\cdot b$.
 
 \begin{defn}
-Будем говорить, что на множестве $G$ задано отношение порядка <<$\le$>>, если для любых двух элементов $a,b\in G$ выполняется хотя бы одно из условий $a\le b$, $b \le b$.
+Будем говорить, что на множестве $G$ задано отношение порядка <<$\le$>>, если для любых двух элементов $a,b\in G$ выполняется хотя бы одно из условий $a\le b$, $b \le a$.
 \end{defn}
 
-Другими словами, для любых $a, b \in \bbR$ заранее установлено, верно или неверно неравенство $a \le b$ (или $b \le a$).
+Другими словами, для любых $a, b \in \bbR$ заранее установлено, верно или неверно неравенство $a \le b$.
 
 \begin{defn}
-Множество $\bbR$, состоящее более, чем из одного элемента, называется \textit{множеством действительных (вещественных) чисел}, а его элементы "--- \textit{действительными (вещественными) числами}, если на $\bbR$ определены операции сложения~<<$+$>> и умножения~<<$\cdot$>> и отношение порядка~<<$\le$>>, удовлетворяющие следующим 15 аксиомам\rindex{аксиомы!множества действительных чисел}:
+Множество $\bbR$, состоящее более, чем из одного элемента, называется \textit{множеством действительных чисел}, а его элементы "--- \textit{действительными числами}, если на $\bbR$ определены операции сложения~<<$+$>> и умножения~<<$\cdot$>> и отношение порядка~<<$\le$>>, удовлетворяющие следующим 15 аксиомам\rindex{аксиомы!множества действительных чисел}:
 \end{defn}
 
 \begin{enumerate}[label=\Roman*.]
@@ -29,53 +29,53 @@
 \textbf{Аксиомы сложения} (\,$+\colon a,b \to a+b$\,)
 \begin{enumerate}[label=\arabic*.]
 \item 
-$a + b = b + a\quad\forall a,b \in \bbR$ (коммутативность);
+$a + b = b + a\quad\forall a,b \in \bbR$ (\textit{коммутативность});
 \item
-$a + (b + c) = (a + b) + c\quad \forall a,b,c \in \bbR$ (ассоциативность);
+$a + (b + c) = (a + b) + c\quad \forall a,b,c \in \bbR$ \textit{(ассоциативность});
 \item
-$\exists 0 \in \bbR\cquad a + 0 = a\quad \forall a \in \bbR$;
+$\exists 0 \in \bbR\cquad a + 0 = a\quad \forall a \in \bbR$ (\textit{нейтральность нуля});
 \item 
-$\forall a \in \bbR \quad \exists (-a) \in \bbR\cquad a + (-a) = 0$, $(-a)$ называется \textit{противоположным} числом для $a$.
+$\forall a \in \bbR \quad \exists (-a) \in \bbR\cquad a + (-a) = 0$, $(-a)$ называется \textit{противоположным} числом для $a$ (\textit{существование противоположного}).
 \end{enumerate}
 \item
-\textbf{Аксиомы умножения} (\,$\cdot\colon a,b \to a\cdot b$)
+\textbf{Аксиомы умножения} (\,$\cdot\colon a,b \to a\cdot b$\,)
 \begin{enumerate}[resume, label=\arabic*.]
 \item
-$a\cdot b = b \cdot a \quad \forall a,b\in \bbR$ (коммутативность);
+$a\cdot b = b \cdot a \quad \forall a,b\in \bbR$ (\textit{коммутативность});
 \item
-$a \cdot (b \cdot c) = (a \cdot b) \cdot c\quad \forall a,b,c \in \bbR$ (ассоциативность);
+$a \cdot (b \cdot c) = (a \cdot b) \cdot c\quad \forall a,b,c \in \bbR$ (\textit{ассоциативность});
 \item 
-$\exists 1 \in \bbR,\ 1\ne 0\cquad a\cdot1 = a\quad \forall a\in \bbR$;
+$\exists 1 \in \bbR$, $1\ne 0\cquad a\cdot1 = a\quad \forall a\in \bbR$ (\textit{нейтральность единицы});
 \item 
-$\forall a\in \bbR,\ a\ne 0,\quad \exists \frac{1}{a} \in \bbR\cquad a\cdot \frac{1}{a} = 1$, $\frac{1}{a}$ называется \textit{противоположным} числом для $a$.
+$\forall a\in \bbR$, $a\ne 0,\quad \exists \frac{1}{a} \in \bbR\cquad a\cdot \frac{1}{a} = 1$, $\frac{1}{a}$ называется \textit{обратным} числом для $a$ (\textit{существование обратного}).
 \end{enumerate}
 \item
 \textbf{Аксиома связи сложения и умножения}
 \begin{enumerate}[resume, label=\arabic*.]
 \item
-$(a+b) \cdot c = a\cdot c +  b\cdot c\quad \forall a,b,c \in \bbR$ (дистрибутивность умножения относительно сложения).
+$(a+b) \cdot c = a\cdot c +  b\cdot c\quad \forall a,b,c \in \bbR$ (\textit{дистрибутивность умножения относительно сложения}).
 \end{enumerate}
 \item
 \textbf{Аксиомы порядка} 
 \begin{enumerate}[resume, label=\arabic*.]
 \item 
-$ a \le a\quad \forall a \in \bbR$;
+$ a \le a\quad \forall a \in \bbR$ (\textit{рефлексивность});
 \item
-$ a\le b,\ b\le a \Rightarrow a=b \quad \forall a,b\in\bbR$;
+если $ a\le b$ и $b\le a$, то $a=b \quad \forall a,b\in\bbR$ (\textit{антисимметричность});
 \item
-$a\le b,\ b\le c \Rightarrow a\le c\quad \forall a,b,c\in \bbR$ (транзитивность).
+если $a\le b$ и $b\le c$, то $a\le c\quad \forall a,b,c\in \bbR$ (\textit{транзитивность}).
 \end{enumerate}
 \item
 \textbf{Аксиома связи сложения и порядка}
 \begin{enumerate}[resume, label=\arabic*.]
 \item 
-$ a \le a\Rightarrow a + c \le b + c\quad \forall a,b,c \in \bbR$.
+если $ a \le a$, то $ a + c \le b + c\quad \forall a,b,c \in \bbR$ (\textit{монотонность}).
 \end{enumerate}
 \item
 \textbf{Аксиома связи умножения и порядка}
 \begin{enumerate}[resume, label=\arabic*.]
 \item 
-$ 0 \le a,\ 0\le b\Rightarrow 0 \le a\cdot b\quad \forall a,b \in \bbR$.
+если $ 0 \le a$ и $0\le b$, то $ 0 \le a\cdot b\quad \forall a,b \in \bbR$ (\textit{монотонность}).
 \end{enumerate}
 \item
 \textbf{Принцип непрерывности}
@@ -104,39 +104,50 @@ $a / b =  \frac{a}{b} \triangleq a \cdot \frac{1}{b}$;
 \end{defn}
 
 Напоследок, определим некоторые важнейшие числовые множества:
-\begin{defn}\leavevmode
 \begin{itemize}[wide, labelwidth=!, labelindent=0pt, nolistsep, topsep=0pt]
 \item 
-Множество \textit{натуральных} чисел $$\bbN = \{1,\ 1+1=2,\ \dots\,,\ n = 1+\dots+1,\ \dots\,\}.$$
+Множество \textit{натуральных} чисел 
+$$\bbN = \{1,1+1=2,\ldots,n = 1+\ldots+1,\ldots\}.$$
 \item 
-Множество $\bbN_0 \triangleq \bbN \cup \{0\}.$
+Множество $\bbN_0 \triangleq \bbN \cup \{0\}$.
 \item 
-Множество \textit{целых} чисел $$\bbZ = \{ 0,\ 1,\ -1,\ 2,\ -2,\ 3,\ -3,\ \dots\,\},$$ т.е.\ множество чисел $x$ таких, что $x\in \bbN$ или $-x \in \bbN$, или $x = 0$.
+Множество \textit{целых} чисел 
+$$
+\bbZ = \{ 0,1,-1,2,-2,3,-3,\dots\},
+$$ 
+т.е. множество чисел $x$ таких, что $x\in \bbN$ или $-x \in \bbN$, или $x = 0$.
+\item Пусть $a,b\in\bbZ$, $a<b$. Тогда обозначим за $\overline{a,b}$ следующее множество
+$$
+\overline{a,b} = \{a,a+1,\dots,b-1,b\}.
+$$
 \item
-Множество \textit{рациональных} чисел $$\bbQ=\{\,x\,\big|\,x=p/q,\ q\in\bbN,\ p\in\bbZ\,\}.$$
+Множество \textit{рациональных} чисел 
+$$
+\bbQ=\{x\,\big|\,x=p/q,\ q\in\bbN,\ p\in\bbZ\}.
+$$
 \item 
 Множество \textit{иррациональных чисел} $\bbR \setminus \bbQ$.
 \item 
-Множество действительных чисел $\bbR$ часто называют \textit{числовой прямой}, а числа "--- \textit{точками числовой прямой}. А сами действительные числа часто будем называть \textit{числами}, подразумевая именно элементы из множества~$\bbR$.
+Множество действительных чисел $\bbR$ часто называют \textit{числовой прямой}, а числа "--- \textit{точками числовой прямой}. А сами действительные числа часто будем называть \textit{вещественными числами}, или просто \textit{числами}, подразумевая именно элементы из множества~$\bbR$.
 \item 
-Наряду с числовой прямой определим \textit{расширенную числовую прямую:} множество $\bboR=\bbR\cup \{-\infty, {+\infty}\}$. В нем определены отношения порядка, операции <<$+$>>, <<$\cdot$>> для элементов из $\bbR$. Элементы $-\infty$, $+\infty$ не содержатся в $\bbR$. Будем их называть \textit{бесконечно удаленными точками (числами)} в противопоставление точкам числовой прямой $\bbR$, которые также называют \textit{конечными точками (точками)}. 
+Наряду с числовой прямой определим \textit{расширенную числовую прямую:} множество $\bboR=\bbR\cup \{-\infty,+\infty\}$. В нем определены отношения порядка, операции  <<$+$>>, <<$-$>>, <<$\cdot$>> и <<$/$>> для элементов из $\bbR$. Элементы $-\infty$, $+\infty$ не содержатся в $\bbR$. Будем их называть \textit{бесконечно удаленными точками (числами)} в противопоставление точкам числовой прямой $\bbR$, которые также называют \textit{конечными точками (точками)}. 
 
-Итак, для плюс и минус бесконечностей определены отношения порядка: $\forall x \in \bbR$ $-\infty < x < +\infty$. Частично определены операции <<$+$>>, <<$-$>>, <<$\cdot$>> и <<$/$>>:
-\begin{align*}
-&+\infty + a = +\infty \quad\text{и}\quad +\infty - a = +\infty,\quad \forall a \in \bbR\cup\{+\infty\}; \\
+Для плюс и минус бесконечностей определены отношения порядка: $\forall x \in \bbR$ $-\infty < x < +\infty$. Частично определены операции <<$+$>>, <<$-$>>, <<$\cdot$>> и <<$/$>>
+\begin{alignat*}{1}
+&+\infty + a = +\infty\quad \text{и}\quad +\infty- a = +\infty,\quad \forall a \in \bbR\cup\{+\infty\}; \\
 &-\infty - a = -\infty \quad\text{и}\quad -\infty + a = -\infty,\quad \forall a \in \bbR\cup\{-\infty\}; \\
-&+\infty\cdot a = +\infty\quad\text{и}\quad -\infty\cdot a = -\infty,\quad \forall a > 0,\  a\in\bbR\cup\{+\infty\};\\ 
-&+\infty\cdot a = -\infty\quad\text{и}\quad -\infty\cdot a = +\infty, \quad \forall a < 0,\  a\in\bbR\cup\{-\infty\};\\
-& a/ -\infty = a / +\infty = 0, \quad \forall a \in \bbR;
-\end{align*}
+&+\infty\cdot a = +\infty \quad\text{и}\quad -\infty\cdot a = -\infty,\quad \forall a > 0,\  a\in\bbR\cup\{+\infty\};\\ 
+&+\infty\cdot a = -\infty \quad\text{и}\quad -\infty\cdot a = +\infty, \quad \forall a < 0,\  a\in\bbR\cup\{-\infty\};\\
+&a/ -\infty = 0 \quad\text{и}\quad a / +\infty = 0, \quad \forall a \in \bbR;
+\end{alignat*}
 Но, например, не определены: сумма $+\infty + (-\infty)$, произведение $0\cdot (\pm \infty)$, частное $\pm \infty / \pm \infty$.
 \item
 Пусть заданы действительные числа $a$, $b$, $a < b$. \textit{Числовыми промежутками} называются следующие множества:
 \begin{itemize}[nolistsep, label = $\scriptstyle\blacktriangleright$, topsep=0pt]
 \item 
-\textit{интервал} $(a,b)\triangleq \{\,x\in\bbR\,\big|\,a < x < b\,\}$, $a,b\in\bbR\colon a<b$;
+\textit{интервал} $(a,b)\triangleq \{x\in\bbR\,\big|\,a < x < b\}$, $a,b\in\bbR\colon a<b$;
 \item 
-\textit{отрезок} $[a;b] \triangleq \{\,x\,\big|\,a\le x \le b\,\}$, $a,b\in\bbR$, $a\le b$;
+\textit{отрезок} $[a;b] \triangleq \{x\,\big|\,a\le x \le b\}$, $a,b\in\bbR$, $a\le b$;
 \item 
 \textit{полуинтервалы} $(a,b]$, $[a,b)$ c аналогичным определением;
 \item 
@@ -147,10 +158,9 @@ $a / b =  \frac{a}{b} \triangleq a \cdot \frac{1}{b}$;
 \textit{числовая прямая} $(-\infty; +\infty) = \bbR$
 \end{itemize}
 \end{itemize}
-\end{defn}
 
 Множество $\bbQ$ рациональных чисел удовлетворяет аксиомам~I--VI, но не удовлетворяет аксиоме VII. Покажем последнее. Пусть 
-$A = \{\,a\,\big|\,a\in\bbQ,\ a>0,\ a^2<2\,\},$ $B = \{\,b\,\big|\,b\in\bbQ,\ b>0,\ b^2>2\,\}.$ Тогда во множестве $\bbQ$ не существует числа $c\in\bbQ$ со свойством: $a\le c\le b \quad \forall a \in A,\ \forall b\in B$.
+$A = \{a\,\big|\,a\in\bbQ,\ a>0,\ a^2<2\},$ $B = \{b\,\big|\,b\in\bbQ,\ b>0,\ b^2>2\}.$ Тогда во множестве $\bbQ$ не существует числа $c\in\bbQ$ со свойством: $a\le c\le b \quad \forall a \in A,\ \forall b\in B$.
 
 \section{Точные грани числовых множеств}
 \begin{defn}
@@ -167,9 +177,9 @@ $$
 Множество $G$ называется \textit{ограниченным}, если $G$ ограничено сверху и снизу.
 \end{defn}
 \begin{defn}
-\textit{Модулем} числа $x$ назывантся число 
+\textit{Модулем} числа $x$ называется число 
 $$
-|x|=\begin{cases}x, \text{ если }x\ge 0\\-x,\text{ если }x<0\end{cases}
+|x|=\begin{cases}x, \text{ если }x\ge 0;\\-x,\text{ если }x<0.\end{cases}
 $$
 \end{defn}
 Тогда, с введенным определением, можно показать, что множество $G$ ограничено тогда и только тогда, когда 
@@ -182,7 +192,7 @@ $$
 \item
 $\forall x \in G\cquad x \le M \quad (x\ge M)$,
 \item
-$\forall M' < M \ (\forall M' > M)\quad \exists x\in G\cquad x>M' \quad (x<M')$.
+$\forall M' < M \quad (\forall M' > M)\quad \exists x\in G\cquad x>M' \quad (x<M')$.
 \end{enumerate}
 \end{defn}
 
@@ -202,10 +212,10 @@ $\forall x \in G\cquad x \le M \quad (x \ge M)$.
 
 \section{Последовательности и пределы}
 \begin{defn}
-Пусть имеется правило, которое каждому натуральному числу $n$ ставит в соответствие некоторое $x_n$ из множества $G$. Тогда множество всевозможных упорядоченных пар $(n;x_n)$, $n \in \bbN$, называется \textit{последовательностью} и обозначается либо $\{x_n\}$, либо $x_n$, $n \in \bbN$, либо $x_1,x_2,\dots,x_n,\dots$
+Пусть имеется правило, которое каждому натуральному числу $n$ ставит в соответствие некоторое $x_n$ из множества $G$. Тогда множество всевозможных упорядоченных пар $(n;x_n)$, $n \in \bbN$, называется \textit{последовательностью} и обозначается либо $\{x_n\}$, либо $x_n$, $n \in \bbN$, либо $x_1$,~$x_2$,~\dots, $x_n$,~\dots
 \end{defn}
 
-Пара $(n;x_n)$ называется \textit{$n$-м элементом} этой последовательности и обозначается просто $x_n$. Число $n$ называется \textit{номером}, а число $a_n$ "--- \textit{значением} $n$-го элемента. Множество элементов последовательности всегда бесконечно. Два различных элемента последовательности могут иметь одно и то же значение, но заведомо отличаются номерами, которых бесконечно много. Множество же значений элементов последовательности может быть бесконечным, так и конечным, в частности, состоять из одного элемента. 
+Пара $(n; x_n)$ называется \textit{$n$-м элементом} этой последовательности и обозначается просто $x_n$. Число $n$ называется \textit{номером}, а число $a_n$ "--- \textit{значением} $n$-го элемента. Множество элементов последовательности всегда бесконечно. Два различных элемента последовательности могут иметь одно и то же значение, но заведомо отличаются номерами, которых бесконечно много. Множество же значений элементов последовательности может быть бесконечным, так и конечным, в частности, состоять из одного элемента. 
 
 Пока мы будем рассматривать лишь последовательности со значениями из $\bbR$ и называть их \textit{числовыми последовательностями}\rindex{последовательность!числовая} или просто последовательностями, поэтому можно считать $X=\bbR$ в данном определении. 
  
@@ -223,11 +233,11 @@ $$
 \begin{defn}
 Последовательность $\{x_n\}$ называется \textit{монотонно возрастающей (убывающей)}, если 
 $$
-\forall n \in \bbN \quad x_n \le x_{n+1} \quad (\text{соотв., }x_n \ge x_{n+1}).
+\forall n \in \bbN \quad x_n \le x_{n+1} \quad (x_n \ge x_{n+1}).
 $$
 Последовательность $\{x_n\}$ называется \textit{строго возрастающей \textup{(}убывающей\textup{)}}, если 
 $$
-\forall n \in \bbN \quad x_n < x_{n+1} \quad (\text{соотв., }x_n > x_{n+1}).
+\forall n \in \bbN \quad x_n < x_{n+1} \quad (x_n > x_{n+1}).
 $$
 \end{defn}
 
@@ -235,7 +245,7 @@ $$
 Пусть $c \in \bboR$, тогда 
 \begin{itemize}[wide, labelwidth=!, labelindent=0pt, nolistsep]
 \item
-\textit{окрестностью} числа $c \in \bbR$ называется любой интервал $(a;b)\ni c$, $(a;b) \subset \bbR$.
+\textit{окрестностью} числа $c \in \bbR$ называется любой интервал $(a;b)$, содержащий в себе элемент $c$: $(a;b)\ni c$, $(a;b) \subset \bbR$.
 \item
 \textit{окрестностью} элемента $+\infty$ называется любой луч $(a;+\infty)$, $a \in \bbR$.
 \item
@@ -326,7 +336,7 @@ $$
 \end{defn}
 
 \begin{thm}[Больцано"--~Вейерштрасса]\label{th:ch1:TBV}
-\rindex{теорема!Больцано"--~Вейерштрасса} У любой ограниченной последовательности существует сходящаяся подпоследовательность.
+\rindex{теорема!Больцано---Вейерштрасса} У любой ограниченной последовательности существует сходящаяся подпоследовательность.
 \end{thm}
 \begin{proof}
 Пусть последовательность $\{x_n\}$ ограничена, т.е. существуют числа $a$ и $b$ такие, что $a \le x_n \le b$ $\forall n$. Точкой
@@ -373,7 +383,7 @@ $$
 Если последовательность $\{x_n\}$ фундаментальна, то она ограничена.
 \end{lemm}
 \begin{proof}
-Пусть $\{x_n\}$ фундаментальна, т.е. удовлетворяет \eqref{eq:ch1:fundamen}. Положим $\epsilon = 1$, $m = N_1$. Тогда $$\forall n > N_1\quad |x_n-x_{N_1}| <\epsilon = 1,$$ т.е. $x_{N_1} - 1< x_n < x_{N_1}+1$. Если теперь через $a$ и $b$ обозначим соответственно наименьшее и наибольшее из чисел $x_1$, $\dots$, $x_{N_1}$, $x_{N_1}-1$, $x_{N_1}+1$, то, очевидно, $a \le x_n \le b$ $\forall n \in \bbN$.
+Пусть $\{x_n\}$ фундаментальна, т.е. удовлетворяет \eqref{eq:ch1:fundamen}. Положим $\epsilon = 1$, $m = N_1$. Тогда $$\forall n > N_1\quad |x_n-x_{N_1}| <\epsilon = 1,$$ т.е. $x_{N_1} - 1< x_n < x_{N_1}+1$. Если теперь через $a$ и $b$ обозначим соответственно наименьшее и наибольшее из чисел $x_1$,~\dots, $x_{N_1}$,~$x_{N_1}-1$,~$x_{N_1}+1$, то, очевидно, $a \le x_n \le b$ $\forall n \in \bbN$.
 
 Лемма доказана.
 \end{proof}

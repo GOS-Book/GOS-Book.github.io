@@ -23,6 +23,13 @@
 \usepackage{emptypage}
 
 \usepackage{epigraph}
+
+% https://tex.stackexchange.com/questions/96650/width-of-epigraphs
+\let\originalepigraph\epigraph 
+\renewcommand\epigraph[2]%
+   {\setlength{\epigraphwidth}{\widthof{\itshape\epigraphsize#1}}\originalepigraph{\itshape\epigraphsize#1}{\scshape\hfill#2}}
+
+
 \usepackage[e]{esvect}		
 
 \usepackage{datetime}
