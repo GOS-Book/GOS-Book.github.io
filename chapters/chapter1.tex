@@ -21,7 +21,7 @@
 Другими словами, для любых $a, b \in \bbR$ заранее установлено, верно или неверно неравенство $a \le b$.
 
 \begin{defn}
-Множество $\bbR$, состоящее более, чем из одного элемента, называется \textit{множеством действительных чисел}, а его элементы "--- \textit{действительными числами}, если на $\bbR$ определены операции сложения~<<$+$>> и умножения~<<$\cdot$>> и отношение порядка~<<$\le$>>, удовлетворяющие следующим 15 аксиомам\rindex{аксиомы!множества действительных чисел}:
+Множество $\bbR$, состоящее более, чем из одного элемента, называется \textit{множеством действительных чисел}, а его элементы "--- \textit{действительными числами}, если на $\bbR$ определены операции сложения~<<$+$>> и умножения~<<$\cdot$>> и отношение порядка~<<$\le$>>, удовлетворяющие следующим~$15$ аксиомам\rindex{аксиомы!множества действительных чисел}:
 \end{defn}
 
 \begin{enumerate}[label=\Roman*.]
@@ -83,7 +83,7 @@ $ a \le a\quad \forall a \in \bbR$ (\textit{рефлексивность});
 \item 
 Пусть $A$, $B$ "--- непустые подмножества $\bbR$ такие, что
 $$
-a\le b\quad \forall a \in A, \  \forall b \in B.
+a\le b\quad \forall a \in A, \,  \forall b \in B.
 $$
 Тогда $\exists c \in \bbR$ такое, что $a\le c\le b\quad \forall a \in A,\ \forall b\in B.$
 \end{enumerate}
@@ -124,7 +124,7 @@ $$
 \item
 Множество \textit{рациональных} чисел 
 $$
-\bbQ=\{x\,\big|\,x=p/q,\ q\in\bbN,\ p\in\bbZ\}.
+\bbQ=\{x\,\big|\,x=p/q,\, q\in\bbN,\ p\in\bbZ\}.
 $$
 \item 
 Множество \textit{иррациональных чисел} $\bbR \setminus \bbQ$.
@@ -135,18 +135,18 @@ $$
 
 Для плюс и минус бесконечностей определены отношения порядка: $\forall x \in \bbR$ $-\infty < x < +\infty$. Частично определены операции <<$+$>>, <<$-$>>, <<$\cdot$>> и <<$/$>>
 \begin{alignat*}{1}
-&+\infty + a = +\infty\quad \text{и}\quad +\infty- a = +\infty,\quad \forall a \in \bbR\cup\{+\infty\}; \\
-&-\infty - a = -\infty \quad\text{и}\quad -\infty + a = -\infty,\quad \forall a \in \bbR\cup\{-\infty\}; \\
-&+\infty\cdot a = +\infty \quad\text{и}\quad -\infty\cdot a = -\infty,\quad \forall a > 0,\  a\in\bbR\cup\{+\infty\};\\ 
-&+\infty\cdot a = -\infty \quad\text{и}\quad -\infty\cdot a = +\infty, \quad \forall a < 0,\  a\in\bbR\cup\{-\infty\};\\
-&a/ -\infty = 0 \quad\text{и}\quad a / +\infty = 0, \quad \forall a \in \bbR;
+&{+\infty} + a = +\infty \text{ и }  {+\infty}- a = +\infty\quad \forall a \in \bbR\cup\{+\infty\}; \\
+&{-\infty} - a = -\infty \text{ и } {-\infty} + a = -\infty\quad \forall a \in \bbR\cup\{-\infty\}; \\
+&{+\infty}\cdot a = +\infty \text{ и } {-\infty}\cdot a = -\infty\quad \forall a > 0,\,  a\in\bbR\cup\{+\infty\};\\ 
+&{+\infty}\cdot a = -\infty \text{ и } {-\infty}\cdot a = +\infty \quad \forall a < 0,\,  a\in\bbR\cup\{-\infty\};\\
+&a/ (-\infty) = 0 \text{ и } a / (+\infty) = 0 \quad \forall a \in \bbR;
 \end{alignat*}
-Но, например, не определены: сумма $+\infty + (-\infty)$, произведение $0\cdot (\pm \infty)$, частное $\pm \infty / \pm \infty$.
+Но, например, не определены: сумма $+\infty + (-\infty)$, произведение $0\cdot (\pm \infty)$, частное $(\pm \infty )/ (\pm \infty)$.
 \item
 Пусть заданы действительные числа $a$, $b$, $a < b$. \textit{Числовыми промежутками} называются следующие множества:
 \begin{itemize}[nolistsep, label = $\scriptstyle\blacktriangleright$, topsep=0pt]
 \item 
-\textit{интервал} $(a,b)\triangleq \{x\in\bbR\,\big|\,a < x < b\}$, $a,b\in\bbR\colon a<b$;
+\textit{интервал} $(a;b)\triangleq \{x\in\bbR\,\big|\,a < x < b\}$, $a,b\in\bbR,\, a<b$;
 \item 
 \textit{отрезок} $[a;b] \triangleq \{x\,\big|\,a\le x \le b\}$, $a,b\in\bbR$, $a\le b$;
 \item 
@@ -167,20 +167,20 @@ $A = \{a\,\big|\,a\in\bbQ,\ a>0,\ a^2<2\},$ $B = \{b\,\big|\,b\in\bbQ,\ b>0,\ b^
 \begin{defn}
 Число $M \in \bbR$ "--- \textit{верхняя (нижняя) грань множества} $G\subset \bbR$, если выполняется условие 
 $$
-\forall x \in \bbR \cquad x \le M \quad (\text{соотв., }x \ge M)
+\forall x \in \bbR \quad x \le M \quad (\text{соотв., }x \ge M)
 $$
 \end{defn}
 \begin{defn}
 Множество $G\subset \bbR$ называется \textit{ограниченным сверху (снизу)}, если существует верхняя (нижняя) грань этого множества:
 $$
-\exists M \in \bbR \cquad \forall x \in \bbR \cquad x \le M \quad (\text{соотв., } x \ge M)
+\exists M \in \bbR \cquad \forall x \in \bbR \quad x \le M \quad (\text{соотв., } x \ge M)
 $$
 Множество $G$ называется \textit{ограниченным}, если $G$ ограничено сверху и снизу.
 \end{defn}
 \begin{defn}
 \textit{Модулем} числа $x$ называется число 
 $$
-|x|=\begin{cases}x, \text{ если }x\ge 0;\\-x,\text{ если }x<0.\end{cases}
+|x|=\begin{cases}x \text{, если }x\ge 0;\\-x\text{, если }x<0.\end{cases}
 $$
 \end{defn}
 Тогда, с введенным определением, можно показать, что множество $G$ ограничено тогда и только тогда, когда 
@@ -191,14 +191,14 @@ $$
 Число $M \in \bbR$ "--- \textit{точная верхняя грань} или \textit{супремум множества} $G \subset \bbR$ и обозначается $\sup G$, если 
 \begin{enumerate}
 \item
-$\forall x \in G\cquad x \le M$,
+$\forall x \in G\cquad x \le M$;
 \item
 $\forall M' < M \quad \exists x\in G\cquad x>M'$.
 \end{enumerate}
 Аналогично, число $M \in \bbR$ "--- \textit{точная нижняя грань} или \textit{инфимум множества} $G \subset \bbR$ и обозначается $\inf G$, если 
 \begin{enumerate}
 \item
-$\forall x \in G\cquad x\ge M$,
+$\forall x \in G\quad x\ge M$;
 \item
 $\forall M' > M\quad \exists x\in G\cquad x<M'$.
 \end{enumerate}
@@ -210,9 +210,9 @@ Eсли множество $G \subset \bbR$ не ограничено сверх
 Число $M \in \bbR$ называется \textit{максимальным (минимальным) элементом множества} $G \subset \bbR$ и обозначается $\max G$ $(\min G)$, если 
 \begin{enumerate}
 \item
-$M\in G$,
+$M\in G$;
 \item
-$\forall x \in G\cquad x \le M \quad (\text{соотв., } x \ge M)$.
+$\forall x \in G\quad x \le M \quad (\text{соотв., } x \ge M)$.
 \end{enumerate}
 \end{defn}
 
@@ -220,10 +220,10 @@ $\forall x \in G\cquad x \le M \quad (\text{соотв., } x \ge M)$.
 
 \section{Последовательности и пределы}
 \begin{defn}
-Пусть имеется правило, которое каждому натуральному числу $n$ ставит в соответствие некоторое $x_n$ из множества $G$. Тогда множество всевозможных упорядоченных пар ($n$;~$x_n$), $n \in \bbN$, называется \textit{последовательностью} и обозначается либо $\{x_n\}$, либо $x_n$, $n \in \bbN$, либо $x_1$,~$x_2$,~\dots, $x_n$,~\dots
+Пусть имеется правило, которое каждому натуральному числу $n$ ставит в соответствие некоторое $x_n$ из множества $G$. Тогда множество всевозможных упорядоченных пар $(n, x_n)$, $n \in \bbN$, называется \textit{последовательностью} и обозначается либо $\{x_n\}$, либо $x_n$, $n \in \bbN$, либо $x_1$,~$x_2$,~\dots, $x_n$,~\dots
 \end{defn}
 
-Пара ($n$;~$x_n$) называется \textit{$n$-м элементом} этой последовательности и обозначается просто $x_n$. Число $n$ называется \textit{номером}, а число $a_n$ "--- \textit{значением} $n$-го элемента. Множество элементов последовательности всегда бесконечно. Два различных элемента последовательности могут иметь одно и то же значение, но заведомо отличаются номерами, которых бесконечно много. Множество же значений элементов последовательности может быть бесконечным, так и конечным, в частности, состоять из одного элемента. 
+Пара $(n, x_n)$ называется \textit{$n$-м элементом} этой последовательности и обозначается просто $x_n$. Число $n$ называется \textit{номером}, а число $a_n$ "--- \textit{значением} $n$-го элемента. Множество элементов последовательности всегда бесконечно. Два различных элемента последовательности могут иметь одно и то же значение, но заведомо отличаются номерами, которых бесконечно много. Множество же значений элементов последовательности может быть бесконечным, так и конечным, в частности, состоять из одного элемента. 
 
 Пока мы будем рассматривать лишь последовательности со значениями из $\bbR$ и называть их \textit{числовыми последовательностями}\rindex{последовательность!числовая} или просто последовательностями, поэтому можно считать $X=\bbR$ в данном определении. 
  

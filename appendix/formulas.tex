@@ -372,15 +372,15 @@ $e^x=\sum\limits_{n=0}^{+\infty}\displaystyle\frac{x^n}{n!},\ R=\infty;$
 \\
 $\sin x = x - \frac{x^3}{3!} + \frac{x^5}{5!}+o(x^5);$
 &
-$\sin x = \sum\limits_{n=0}^{+\infty} (-1)^{n}\displaystyle\frac{x^{2n+1}}{(2n+1)!},\; R=\infty;$
+$\sin x = \sum\limits_{n=0}^{+\infty} (-1)^{n}\displaystyle\frac{x^{2n+1}}{(2n+1)!},\, R=\infty;$
 \\
 $\cos x = 1 - \frac{x^2}{2!} + \frac{x^4}{4!}+o(x^4);$
 &
-$\cos x  = \sum\limits_{n=0}^{+\infty} (-1)^{n}\displaystyle\frac{x^{2n}}{(2n)!},\; R=\infty;$
+$\cos x  = \sum\limits_{n=0}^{+\infty} (-1)^{n}\displaystyle\frac{x^{2n}}{(2n)!},\, R=\infty;$
 \\
 $\tg x = x + \frac{x^3}{3}+\frac{2x^5}{15}+o(x^5)$
 &
-$\tg x  = \sum\limits_{n=0}^{+\infty} \frac{B_{2n}\cdot (-4)^n (1-4^n)}{(2n)!} x^{2n-1},\; R=\frac{\pi}{2};$ \footnote{В этой формуле $B_{2n}$ "--- это числа Бернулли. На самом деле, далеко не все формулы надо знать наизусть. Но левый столбец из формул Маклорена по-хорошему надо для ГОСа знать}
+$\tg x  = \sum\limits_{n=0}^{+\infty} \frac{B_{2n}\cdot (-4)^n (1-4^n)}{(2n)!} x^{2n-1},\, R=\frac{\pi}{2};$ \footnote{В этой формуле $B_{2n}$ "--- это числа Бернулли. На самом деле, далеко не все формулы надо знать наизусть. Но левый столбец из формул Маклорена по-хорошему надо для ГОСа знать}
 \\ 
 $\sh x = x +\frac{x^3}{3!}+\frac{x^5}{5!}+o(x^5);$
 &
@@ -418,11 +418,11 @@ $
 (1+x)^{a}=1+ax+\displaystyle\frac{a(a-1)}{2!}x^2+
 $
 &
-$(1+x)^{a}= \sum\limits_{n=0}^{+\infty} C^{n}_{a} x^n,\;\text{где} $
+$(1+x)^{a}= \sum\limits_{n=0}^{+\infty} C^{n}_{a} x^n$, где
 \\
 $\qquad+\displaystyle\frac{a(a-1)(a-2)}{3!}x^3+o(x^3);$
 &
-$\quad C^{n}_{a}=\frac{a(a-1)\dots(a-n+1)}{n!},\; R=1;$
+$\quad C^{n}_{a}=\frac{a(a-1)\dots(a-n+1)}{n!},\, R=1;$
 \\
 $\frac{1}{1-x}=1+x+x^2+x^3+o(x^3);$
 &
@@ -456,9 +456,9 @@ $\arcth x = \sum_{\infty}^{n=1}\frac{1}{(2n-1)x^{2n-1}}, x > 1.$
 
 \section{Основные неопределенные интегралы}
 \begin{longtable}[l]{l l}
-$\int x^\alpha \,dx = \frac{x^{\alpha+1}}{\alpha+1},\; \alpha\neq -1;$ & $ $ 
+$\int x^\alpha \,dx = \frac{x^{\alpha+1}}{\alpha+1},\, \alpha\neq -1;$ & $ $ 
 \\ $\int\frac{dx}{x+a} = \ln|x+a|+C;$ & $ $ 
-\\ $\int a^x dx = \frac{a^x}{\ln a} + C, \; a>0,\; a\neq 1;$ & $ $ 
+\\ $\int a^x dx = \frac{a^x}{\ln a} + C, \, a>0,\, a\neq 1;$ & $ $ 
 \\ $\int \sin x\,dx =-\cos x + C; $ 
 & $\int \cos x \,dx = \sin x + C;$ 
 \\ $\int \frac{dx}{\cos^2 x} = \tg x + C;$ 
@@ -467,11 +467,12 @@ $\int x^\alpha \,dx = \frac{x^{\alpha+1}}{\alpha+1},\; \alpha\neq -1;$ & $ $
 & $\int \ch x \,dx = \sh x + C;$ 
 \\ $\int \frac{dx}{\ch^2 x} = \th x + C; $ 
 & $\int \frac{dx}{\sh^2 x} = -\cth x + C; $ 
-\\ \multicolumn{2}{l}{$\int\frac{dx}{x^2+a^2} = \frac{1}{a}\arctg\frac{x}{a} + C = -\frac{1}{a}\arctg\frac{x}{a} + C,\; a\neq 0; $}
-\\ \multicolumn{2}{l}{$\int\frac{dx}{x^2-a^2} = \frac{1}{2a}\ln\left|\frac{x-a}{x+a}\right| + C, \; a\neq 0 ;$ }
-\\ \multicolumn{2}{l}{$\int\frac{dx}{\sqrt{a^2-x^2}} = \arcsin\frac{x}{a} + C=-\arccos\frac{x}{a} + C,\; |x|<a,\;a\neq 0;$}
-\\ \multicolumn{2}{l}{$\int\frac{dx}{\sqrt{x^2+a^2}} = \ln|x+\sqrt{x^2+a^2}|+C,\; a\neq 0; $}
-\\\multicolumn{2}{l}{$\int\frac{dx}{\sqrt{x^2-a^2}}= \ln|x+\sqrt{x^2-a^2}|+C,\; a\neq 0 \;(|x|<|a|). $}
+\\ \multicolumn{2}{l}{$\int\frac{dx}{x^2+a^2} = \frac{1}{a}\arctg\frac{x}{a} + C = -\frac{1}{a}\arctg\frac{x}{a} + C,\, a\neq 0; $}
+\\ \multicolumn{2}{l}{$\int\frac{dx}{x^2-a^2} = \frac{1}{2a}\ln\left|\frac{x-a}{x+a}\right| + C, \, a\neq 0 ;$ }
+\\ \multicolumn{2}{l}{$\int\frac{dx}{x^2-a^2} = \frac{1}{2a}\ln\left|\frac{x-a}{x+a}\right| + C$, $a\neq 0$;}
+\\ \multicolumn{2}{l}{$\int\frac{dx}{\sqrt{a^2-x^2}} = \arcsin\frac{x}{a} + C=-\arccos\frac{x}{a} + C$, $|x|<a$, $a\neq 0$;}
+\\ \multicolumn{2}{l}{$\int\frac{dx}{\sqrt{x^2+a^2}} = \ln|x+\sqrt{x^2+a^2}|+C$, $a\neq 0$;}
+\\\multicolumn{2}{l}{$\int\frac{dx}{\sqrt{x^2-a^2}}= \ln|x+\sqrt{x^2-a^2}|+C$, $a\neq 0$, $|x|<|a|$.}
 \end{longtable}
 
 \section{Вычисление площадей плоских фигур и длин кривых}
@@ -481,16 +482,28 @@ $\int x^\alpha \,dx = \frac{x^{\alpha+1}}{\alpha+1},\; \alpha\neq -1;$ & $ $
 \section{Вычисление объемов тел и площадей поверхностей}
 
 \section{Несобственные интегралы}
-\begin{itemize}
-\item
-Интеграл $\int\limits_{1}^{+\infty} \frac{dx}{x^a}$ сходится при $\alpha > 1$ и расходится при $\alpha \le 1$.
-\item 
-Интеграл $\int\limits_{0}^{1} \frac{dx}{x^a}$ сходится при $\alpha < 1$ и расходится при $\alpha \ge 1$.
-\item
-Интеграл $\int\limits_{2}^{+\infty} \frac{dx}{x^a |\ln x|^{\beta}}$ сходится при $\alpha > 1$ и любых $\beta$, расходится при $\alpha < 1$ и любых $\beta$, а если $\alpha = 1$, то при $\beta > 1$ интеграл сходится, а при $\beta \le 1$ "--- расходится.
-\item 
-Интеграл $\int\limits_{0}^{2} \frac{dx}{x^a |\ln x|^{\beta}}$ сходится при $\alpha < 1$ и любых $\beta$, расходится при $\alpha > 1$ и любых $\beta$, а если $\alpha = 1$, то при $\beta > 1$ интеграл сходится, а при $\beta \le 1$ "--- расходится.
-\end{itemize}
+\begin{longtable}{|c|c|c|}
+\hline Интеграл & сходится при & расходится при 
+\\\hline $\int\limits_{1}^{+\infty} \frac{dx}{x^a}$ 
+& $\alpha > 1$
+& $\alpha \le 1$
+\\\hline $\int\limits_{0}^{1} \frac{dx}{x^a}$
+& $\alpha < 1$
+& $\alpha \ge 1$
+\\\hline \multirow{2}{*}{$\int\limits_{2}^{+\infty} \frac{dx}{x^a |\ln x|^{\beta}}$}
+& $\alpha > 1$, $\forall \beta$
+& $\alpha < 1$, $\forall \beta$
+\\\cline{2-3} 
+& $\alpha = 1$, $\beta > 1$
+& $\alpha = 1$, $\beta \le 1$
+\\\hline \multirow{2}{*}{$\int\limits_{0}^{2} \frac{dx}{x^a |\ln x|^{\beta}}$}
+& $\alpha < 1$, $\forall \beta$
+& $\alpha > 1$, $\forall \beta$
+\\\cline{2-3} 
+& $\alpha = 1$, $\beta < 1$
+& $\alpha = 1$, $\beta \ge 1$
+\\\hline
+\end{longtable}
 
 \section{Криволинейные интегралы}
 \subsubsection{Первого рода}
@@ -506,9 +519,9 @@ $\oint\limits_{\Gamma ^{+}} P \,dx + Q \,dy = \iint\limits_{D} \left( \frac{\par
 
 \section{Поверхностные интегралы}
 \subsubsection{Первого рода} 
-${ I=\iint \limits _{S}{f\left(x, y, z\right)dS }=\iint \limits _{D}{f\left(x\left(u,v\right),y\left(u,v\right),z\left(u,v\right)\right){\sqrt {EG-F^{2}}}\;du\;dv}}$
+${ I=\iint \limits _{S}{f\left(x, y, z\right)dS }=\iint \limits _{D}{f\left(x\left(u,v\right),y\left(u,v\right),z\left(u,v\right)\right){\sqrt {EG-F^{2}}}\,du\,dv}}$
 
-${ E=\left(x_{u}'\right)^{2}+\left(y_{u}'\right)^{2}+\left(z_{u}'\right)^{2}}, \quad {F=x_{u}'\;x_{v}'+y_{u}'\;y_{v}'+z_{u}'\;z_{v}'}, \quad { G=\left(x_{v}'\right)^{2}+\left(y_{v}'\right)^{2}+\left(z_{v}'\right)^{2}}$
+${ E=\left(x_{u}'\right)^{2}+\left(y_{u}'\right)^{2}+\left(z_{u}'\right)^{2}}, \quad {F=x_{u}'\,x_{v}'+y_{u}'\,y_{v}'+z_{u}'\,z_{v}'}, \quad { G=\left(x_{v}'\right)^{2}+\left(y_{v}'\right)^{2}+\left(z_{v}'\right)^{2}}$
 
 $ I=\iint \limits _{S}{f\left(x, y, z\right)dS } = \iint \limits _{D} f(x,y) \sqrt {z_x^2 + z_y^2 + 1}dxdy, \quad z=z(x, y) $
 
@@ -516,17 +529,17 @@ $ I=\iint \limits _{S}{f\left(x, y, z\right)dS } = \iint \limits _{D} f(x,y) \sq
 
 \qquad  \qquad  \qquad \qquad \qquad \qquad \qquad \qquad \qquad (считать как интеграл 1 рода)
 
-${\iint \limits _{S }{P\;dy\;dz+Q\;dz\;dx+R\;dx\;dy}} = {\iint \limits _{S }{((P,Q,R),n)}dS}) = \iint \limits _{S}{det \begin{vmatrix}P&Q&R\\x_u&y_u&z_u\\x_v&y_v&z_v\end{vmatrix}}dudv$
+${\iint \limits _{S }{P\,dy\,dz+Q\,dz\,dx+R\,dx\,dy}} = {\iint \limits _{S }{((P,Q,R),n)}dS}) = \iint \limits _{S}{det \begin{vmatrix}P&Q&R\\x_u&y_u&z_u\\x_v&y_v&z_v\end{vmatrix}}dudv$
 
 
 $n = [r_u, r_v], \quad r = r(u,v) = (x(u,v), y(u,v), z(u,v),) , \quad n = \frac{-z_x i-z_y j+k}{\sqrt{(z_x)^2 + (z_y)^2 + 1}}, \quad z = z(x,y)$
 
 
 \subsubsection{Формула Гаусса-Остроградского}
-${\iint \limits _{S^{+}}{P\;dy\;dz+Q\;dz\;dx+R\;dx\;dy}} = {\iiint \limits _{G} \left(P_x + Q_y + R_z\right)dxdydz}, \quad \iiint\limits_V\mathrm{div}\,\mathbf{F}\,dV=\int\limits_{\;\,S}\!\!\!\!\int\!\!\!\!\!\!\!\!\!\!\!\!\;\!\!\;\subset\!\!\supset\mathbf F\cdot\mathbf{n}\,dS,$
+${\iint \limits _{S^{+}}{P\,dy\,dz+Q\,dz\,dx+R\,dx\,dy}} = {\iiint \limits _{G} \left(P_x + Q_y + R_z\right)dxdydz}, \quad \iiint\limits_V\mathrm{div}\,\mathbf{F}\,dV=\int\limits_{\,\,S}\!\!\!\!\int\!\!\!\!\!\!\!\!\!\!\!\!\,\!\!\,\subset\!\!\supset\mathbf F\cdot\mathbf{n}\,dS,$
 
 \subsubsection{Формула Стокса}
-${\int \limits _{\Gamma ^{+}}{P\;dx+Q\;dy+R\;dz}} = \iint \limits _{S^{+}}{det \begin{vmatrix}\rm{cos}\alpha &\rm{cos}\beta&\rm{cos}\gamma\\ \frac {\partial}{\partial x}&\frac {\partial}{\partial y}&\frac {\partial}{\partial z}\\P&Q&R\end{vmatrix}}dudv, \quad \int \limits _{\Sigma }{\mathrm  {rot}}\,{\mathbf  {F}}\cdot d{\mathbf  {\Sigma }}=\int \limits _{{\partial \Sigma }}{\mathbf  {F}}\cdot d{\mathbf  {r}}$
+${\int \limits _{\Gamma ^{+}}{P\,dx+Q\,dy+R\,dz}} = \iint \limits _{S^{+}}{det \begin{vmatrix}\rm{cos}\alpha &\rm{cos}\beta&\rm{cos}\gamma\\ \frac {\partial}{\partial x}&\frac {\partial}{\partial y}&\frac {\partial}{\partial z}\\P&Q&R\end{vmatrix}}dudv, \quad \int \limits _{\Sigma }{\mathrm  {rot}}\,{\mathbf  {F}}\cdot d{\mathbf  {\Sigma }}=\int \limits _{{\partial \Sigma }}{\mathbf  {F}}\cdot d{\mathbf  {r}}$
 
 \section{Преобразование координат}
 
@@ -547,10 +560,10 @@ ${\begin{cases}x=\rho \cos \varphi ,\\y=\rho \sin \varphi ,\\z=z.\end{cases}} \q
 	${\mathrm  {grad}}\,\varphi =\nabla \varphi ={\frac  {\partial \varphi }{\partial x}}{\vec  e}_{x}+{\frac  {\partial \varphi }{\partial y}}{\vec  e}_{y}+{\frac  {\partial \varphi }{\partial z}}{\vec  e}_{z}.$
 	
 	\item
-	$\operatorname {div}\,{\mathbf  {F}}= (\nabla , {\mathbf  {F}})= {\frac  {\partial F_{x}}{\partial x}}+{\frac  {\partial F_{y}}{\partial y}}+{\pd{F_{z}}{z}} = \lim _{{V\rightarrow 0}}{\frac{\iint \limits _{S}\!\!\!\!\!\!\!\!\!\!\subset \!\supset \;({\vec  F},d{\vec  S})}{V}}$
+	$\operatorname {div}\,{\mathbf  {F}}= (\nabla , {\mathbf  {F}})= {\frac  {\partial F_{x}}{\partial x}}+{\frac  {\partial F_{y}}{\partial y}}+{\pd{F_{z}}{z}} = \lim _{{V\rightarrow 0}}{\frac{\iint \limits _{S}\!\!\!\!\!\!\!\!\!\!\subset \!\supset \,({\vec  F},d{\vec  S})}{V}}$
 	
 	\item
-	$\operatorname{rot}\; \mathbf{F} = [\mathbf{\nabla} , \mathbf{F}] = \begin{vmatrix} \mathbf{e}_x & \mathbf{e}_y & \mathbf{e}_z \\  
+	$\operatorname{rot}\, \mathbf{F} = [\mathbf{\nabla} , \mathbf{F}] = \begin{vmatrix} \mathbf{e}_x & \mathbf{e}_y & \mathbf{e}_z \\  
 	\frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} 
 	\\  F_x & F_y & F_z 
 	\end{vmatrix} 

@@ -31,6 +31,15 @@ This information is based on \href{http://www.ctex.org/documents/shredder/src/te
 Also look at the source code to understand those rules
 
 \begin{itemize}
+\item
+Use punctuations symbols after \verb|$*formula*$| in inline math and use them inside noninline-environments.
+
+$b=3$, где
+\begin{flalign}
+&b=3,&
+\end{flalign}
+где
+
 \item 
 Enumeration. In simple enumeration use ties with formula division in inline mode and space command \verb|\,| in noninline mode:
 
@@ -38,21 +47,38 @@ $i=1$,~2, \ldots,~$n$.$\Bigr|$
 \begin{flalign}
 &i=1,\,2,\,\ldots,\,n.\Bigr|&
 \end{flalign}
+\item 
 You can also use space command \verb|\,| in inline mode, if you don't use formula separation at all. But try to avoid it as much as possible. For example, use \verb|\{$x$,\{$x$, $y$\}\}| rather than \verb|$\{x,\,\{x,\,y\}\}$|.
 
-$\{x,\,\{x,\,y\}\}$
+$\Bigr|\{x,\,\{x,\,y\}\}\Bigr|$
 
-\{$x$,\{$x$, $y$\}\}
+$\Bigr|$\{$x$, \{$x$, $y$\}\}$\Bigr|$
 
+\item 
 Remember that \verb|\ldots|,\verb|\cdots| produce very bad spacing in the following example \verb|$\ldots$,| 
 
-The same pattern goes for vectors and assets declared by enumeration. 
+The same pattern goes assets declared by enumeration. 
 
 $X = \{x_1$,~$x_2$, \dots,~$x_n$,~\dots $\},\Bigr|$
 \begin{flalign}
 &X = \{x_1,\,x_2,\,\dots,\,x_n,\,\dots \},\Bigr|&
 \end{flalign}
-But, notice that numerical gaps (intervals, segments) should take no space between left and right elements both in inline and noninline mode \verb|(a;b)|,\verb|[a;b]|
+
+\item
+However, for vectors and particularry for ordered pairs we use opposite pattern: no spaces at all both inline and noninle mode:
+
+$\vv X = (x_1, x_2, \dots, x_n,\dots),\Bigr|$
+\begin{flalign}
+&\vv X = (x_1,x_2,\dots,x_n,\dots),\Bigr|&
+\end{flalign}
+
+\item 
+Also we dont use spaces when enumeration is a direct part of the formula:
+
+$\forall a,b,c \in \bbR$
+
+\item
+As well, notice that numerical gaps (intervals, segments) should take no space between left and right elements both in inline and noninline mode \verb|(a;b)|,\verb|[a;b]|
 
 $\Bigr|(a;b)\Bigr|$
 \begin{flalign}
@@ -81,7 +107,7 @@ Notice that we have no additional spaces after the first bracket and before the 
 Use ``\verb=\setminus='' for set minus operation. Not backslashes or smth like this.
 
 \item
-Phrases like i.e., e.g. requires ties or spacecommand \verb|\ | after it because otherwise the space will be slighty bigger than recommended.  
+Phrases like i.e., e.g. requires ties \~ or spacecommand \verb|\ | after it because otherwise the space will be slighty bigger than recommended.  
 
 $\Bigr|$i.e.~author$\Bigr|$
 
@@ -118,9 +144,55 @@ $a / b =  \frac{a}{b} \triangleq a \cdot \frac{1}{b}$;
 \item 
 
 Try to avoid \verb|\Longleftrightarrow|, \verb|\Rightarrow| in order to give more mathematical text rather than lecture's summary.
-\newpage
+
+\item 
+About text in noninline equations. In noninline equations use \verb|\,\text{где }| or \verb|\,\text{где }\ | or the simplest \verb|\text{, где }| like in examples below:
+
+$\Bigl| \dfrac{(z - a)^n}{(\zeta - a)^{n + 1}} f(\zeta) \Bigr| \le \dfrac{M}{r_1} \cdot q^n$, где $M = \sup\limits_{\zeta \in \gamma_{r_1}} |f(\zeta)| < +\infty,\Bigr|$
+\begin{flalign}
+&\Bigl| \frac{(z - a)^n}{(\zeta - a)^{n + 1}} f(\zeta) \Bigr| \le \frac{M}{r_1} \cdot q^n, \,\text{где } M = \sup_{\zeta \in \gamma_{r_1}} |f(\zeta)| < +\infty,\Bigr|&
+\end{flalign}
+\begin{flalign}
+&\Bigl| \frac{(z - a)^n}{(\zeta - a)^{n + 1}} f(\zeta) \Bigr| \le \frac{M}{r_1} \cdot q^n, \,\text{где}\ M = \sup_{\zeta \in \gamma_{r_1}} |f(\zeta)| < +\infty,\Bigr|&
+\end{flalign}
+\begin{flalign}
+&\Bigl| \frac{(z - a)^n}{(\zeta - a)^{n + 1}} f(\zeta) \Bigr| \le \frac{M}{r_1} \cdot q^n\text{, где } M = \sup_{\zeta \in \gamma_{r_1}} |f(\zeta)| < +\infty,\Bigr|&
+\end{flalign}
+
 \item
-Use ``\verb=\,='' before differentials in integrals \verb=\int f(x)\,dx=
+
+\verb|\text{ и}\ | OR \verb|\ \text{и}\ | OR the simplest \verb|\text{ и }|
+
+$\Bigr|+\infty + a = +\infty$ и $+\infty- a = +\infty,\, \forall a \in \bbR\cup\{+\infty\}; \Bigr|$
+\begin{flalign}
+&\Bigr|+\infty + a = +\infty \text{ и}\ {+\infty}- a = +\infty,\, \forall a \in \bbR\cup\{+\infty\}; \Bigr|&
+\end{flalign}
+\begin{flalign}
+&\Bigr|+\infty + a = +\infty\ \text{и}\ {+\infty}- a = +\infty,\, \forall a \in \bbR\cup\{+\infty\}; \Bigr|&
+\end{flalign}
+\begin{flalign}
+&\Bigr|+\infty + a = +\infty\text{ и } {+\infty}- a = +\infty,\, \forall a \in \bbR\cup\{+\infty\}; \Bigr|&
+\end{flalign}
+
+\item 
+Remember about  \verb|{+\infty}|
+\item
+When you want to show 2 or more different equations on the same line in noninline mode then consider using \verb|;\qquad| 
+\begin{flalign}
+&a(y) = \lim_{l \to +\infty}\frac{1}{\pi}\int_{-l}^{l} f(t)\cos(yt)\,dt;\qquad 
+b(y) = \lim_{l \to +\infty}\frac{1}{\pi}\int_{-l}^{l} f(t)\sin(yt)\,dt&
+\end{flalign}
+
+\item 
+Use \verb|,\,| in noninline math with commas so it looks the same in inline mode and noninline mode:
+
+$\phi_{\nu}(x) = e^{i\nu\frac{\pi}{l}x},\, \nu \in \bbZ,\Bigr|$
+\begin{flalign}
+&\phi_{\nu}(x) = e^{i\nu\frac{\pi}{l}x},\, \nu \in \bbZ,\Bigr|&
+\end{flalign}
+
+\item
+Use \verb=\,= before differentials in integrals \verb=\int f(x)\,dx=
 \begin{flalign}
 &\int f(x)\, dx&
 \end{flalign}
@@ -130,41 +202,60 @@ Use ``\verb=\,='' after factorials in math formulas \verb=\frac{n!}{k!\,(n-k)!}=
 \begin{flalign}
 &\frac{n!}{k!\,(n-k)!}&
 \end{flalign}
-\item
-Use punctuations symbols after \verb|$...$| in inline math and use them inside noninline-environments.
 
-$b=3$, $a=2$ 
- 
+\item Remember about index bug with \verb|"--~|... so you should just use 
+
+\begin{center}
+\verb|Условия Коши"--~Римана\rindex{условия!Коши---Римана}|
+\end{center}
+
+\item USE ; in lists to separate items-elements:
+\begin{enumerate}
+\item
+$M\in G$;
+\item
+$\forall x \in G\quad x \le M \quad (\text{соотв., } x \ge M)$.
+\end{enumerate}
+\item
+Remember about \verb|r(f;x_0,x)|
+
 \item 
 
-Будем говорить, что на множестве $G$ задано отношение порядка <<$\le$>>, если для любых двух элементов $a,b\in G$ выполняется хотя бы одно из условий $a\le b$, $b \le a$.
+THINK of the last expression or smth like n=1,n here pls
 
-\item \verb|Условия Коши"--~Римана\rindex{условия!Коши---Римана}|
-
-\item 
-$$
-\left| \frac{(z - a)^n}{(\zeta - a)^{n + 1}} f(\zeta) \right| \le \frac{M}{r_1} \cdot q^n, \text{ где }  M = \sup_{\zeta \in \gamma_{r_1}} |f(\zeta)| < +\infty, \text{--- USE THIS}
-$$
-$$
-\left| \frac{(z - a)^n}{(\zeta - a)^{n + 1}} f(\zeta) \right| \le \frac{M}{r_1} \cdot q^n, \quad \text{где} \quad M = \sup_{\zeta \in \gamma_{r_1}} |f(\zeta)| < +\infty,
-$$
-$$
-\left| \frac{(z - a)^n}{(\zeta - a)^{n + 1}} f(\zeta) \right| \le \frac{M}{r_1} \cdot q^n,  \quad M = \sup_{\zeta \in \gamma_{r_1}} |f(\zeta)| < +\infty,
-$$
-$$
-\left| \frac{(z - a)^n}{(\zeta - a)^{n + 1}} f(\zeta) \right| \le \frac{M}{r_1} \cdot q^n \quad M = \sup_{\zeta \in \gamma_{r_1}} |f(\zeta)| < +\infty,
-$$
-$$
-\left| \frac{(z - a)^n}{(\zeta - a)^{n + 1}} f(\zeta) \right| \le \frac{M}{r_1} \cdot q^n \qquad M = \sup_{\zeta \in \gamma_{r_1}} |f(\zeta)| < +\infty,
-$$
-
-\item
-
-Пара $(n$;~$x_n)$
-
-Пара $(n; x_n)$
+\begin{alignat*}{1}
+&{+\infty} + a = +\infty \text{ и }  {+\infty}- a = +\infty\quad \forall a \in \bbR\cup\{+\infty\}; \\
+&{-\infty} - a = -\infty \text{ и } {-\infty} + a = -\infty\quad \forall a \in \bbR\cup\{-\infty\}; \\
+&{+\infty}\cdot a = +\infty \text{ и } {-\infty}\cdot a = -\infty\quad \forall a > 0,\,  a\in\bbR\cup\{+\infty\};\\ 
+&{+\infty}\cdot a = -\infty \text{ и } {-\infty}\cdot a = +\infty \quad \forall a < 0,\,  a\in\bbR\cup\{-\infty\};\\
+&a/ (-\infty) = 0 \text{ и } a / (+\infty) = 0 \quad \forall a \in \bbR;
+\end{alignat*}
 \end{itemize}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
+
+VERY OLD STUFF NEEED CHECHING BRO
 \section{COLON}
 
 \begin{itemize}
@@ -190,9 +281,6 @@ $\forall x \in A$: $f(x) = 12$
 \section{SPACING}
 
 \begin{itemize}
-\item
-Use ``\verb=\,='' to make brackets futher in sets when ``\verb=\,\big|\,='' is called like this \verb|$\{\,x : 1 < x < 2\,\}$|
-$$\{\,x \,\big|\, 1 < x < 2\,\}$$
 
 \item[\colorbox{prpl}{\textcolor{white}{MY}}\ $\bullet$]
 Use \verb|\quad| between logic elements in \textbf{non-inline math}
@@ -299,22 +387,6 @@ But \verb=$\iint\limits$=
 \begin{itemize}
 \item
 Sorry bro, but we don't want to use letter <<ё>>. Use <<е>> instead.
-\item 
-There is no difference between \verb=т.е.\ слово= and \verb=т.е. слово= nowadays. 
-
-\begin{center}
-т.е.\ слово $\Bigr|$
-\end{center}
-\begin{center}
-т.е. слово $\Bigr|$
-\end{center}
 \end{itemize}
-
-
-
-
-\newpage
-
-
 
 \end{document}

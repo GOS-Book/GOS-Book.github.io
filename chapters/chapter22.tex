@@ -104,7 +104,7 @@ x_1 \\ x_2 \\ \vdots \\ x_n
 \end{exmpl}
 
 \section{Свойства собственных векторов и собственных значений линейных преобразований}
-Пусть дано линеное преобразование $\phi: L \rightarrow L$, где $L$ - линейное пространство над полем $K$.
+Пусть дано линеное преобразование $\phi\colon L \rightarrow L$, где $L$ - линейное пространство над полем $K$.
 \begin{defn}
 Вектор $x \in L$: $x \neq \vv 0$ называется \textit{собственным вектором} преобразования $\phi$, если 
 \begin{equation}
@@ -134,7 +134,7 @@ $\begin{cases}
 \begin{equation*}
 \alpha_1 (\lambda_n-\lambda_1) x_1 + \alpha_2 (\lambda_n-\lambda_2) x_2 + \ldots + \alpha_{n-1} (\lambda_n-\lambda_{n-1}) x_{n-1} = 0
 \end{equation*}
-По предположению индукции $\forall i=\overline{1,n-1} \hookrightarrow \alpha_i(\lambda_n-\lambda_i)=0$, откуда в силу условия теоремы $\alpha_1=\cdots=\alpha_{n-1}=0 \Rightarrow \alpha_n x_n=0 \Rightarrow \alpha_n=0$
+По предположению индукции $\forall i=\overline{1,n-1} \hookrightarrow \alpha_i(\lambda_n-\lambda_i)=0$, откуда в силу условия теоремы $\alpha_1=\ldots=\alpha_{n-1}=0 \Rightarrow \alpha_n x_n=0 \Rightarrow \alpha_n=0$
 \end{itemize}
 \vspace{-1.65\baselineskip}
 \end{proof}
@@ -182,7 +182,7 @@ A_\phi X^\uparrow=\lambda X^\uparrow \Leftrightarrow (A_\phi-\lambda E)X^\uparro
 \begin{thm}
 Геометрическая кратность характеристического корня не превосходит его алгебраической кратности.
 \end{thm}
-Действительно, если $\lambda_0$ --- корень геометрической кратности $m$, то в $L_{\lambda_0}$ можно выбрать базис $e_1,...,e_m$, а затем дополнить его до линейно независимого набора элементами $e_{m+1},...,e_n \in L$. Далее нужно перейти к полученному базису и воспользоваться определением матрицы преобразования:
+Действительно, если $\lambda_0$ --- корень геометрической кратности $m$, то в $L_{\lambda_0}$ можно выбрать базис~$e_1$, \ldots,~$e_m$, а затем дополнить его до линейно независимого набора элементами $e_{m+1}$, \ldots,~$e_n \in L$. Далее нужно перейти к полученному базису и воспользоваться определением матрицы преобразования:
 \begin{equation*}
 A_{\phi,e}=
 \begin{Vmatrix}
