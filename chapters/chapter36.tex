@@ -279,7 +279,7 @@ $\int_{1}^{+\infty} O \left( \frac{1}{x^{m - n + 1}} \right)\,dx$ сходитс
 
 Первое слагаемое справа в \eqref{ch36.1eq25}, очевидно, стремится к искомому значению $J$ интеграла \eqref{ch36.1eq23} при $R \to +\infty$. Необходимо исследовать второе слагаемое в \eqref{ch36.1eq25}.
 
-\begin{lemm} [Жордана] \label{ch36.1lemm5}
+\begin{lemm} [Жордана\rindex{лемма!Жордана}] \label{ch36.1lemm5}
 Пусть $\Phi(z)$ "--- непрерывная функция на замкнутом множестве $\{ z \, \big| \, \Im z \ge 0,\ |z| \ge R_0 > 0 \}$. Пусть число $\alpha > 0$ и $C_R \triangleq \{ z \, \big| \, |z| = R, \ \Im z \ge 0 \}$,  $R > R_0$ "--- семейство полуокружностей в верхней полуплоскости. Обозначим
 $$
 \epsilon(R) \triangleq \max \{ |\Phi(z)| \, \big| \, z \in C_R \} \quad R > R_0.
@@ -303,7 +303,7 @@ $$
 \begin{multline*}
 \left| \int_{C_R} e^{i \alpha z} \Phi(z)\,dz \right| \le \int_{C_R} |\Phi(z)|e^{-\alpha R \sin \phi}|\,dz| \le \epsilon(R)R \int_0^\pi e^{-\alpha R \sin\phi} \,d\phi =\\= 2\epsilon(R)R \int_0^{\frac{\pi}{2}} e^{-\alpha R \sin\phi} \,d\phi \le 2\epsilon(R)R \int_0^{\frac{\pi}{2}} e^{-\alpha R 2\phi / \pi} \,d\phi \le \frac{\pi}{\alpha} \epsilon(R),\\
 \end{multline*}
-т.е. справедливо заключение леммы.
+т.е.~справедливо заключение леммы.
 \end{proof}
 
 Возвращаясь к формуле \eqref{ch36.1eq25}, покажем с помощью \hyperref[ch36.1lemm5]{леммы \ref{ch36.1lemm5} Жордана}, что второй интеграл в \eqref{ch36.1eq25} стремится к нулю при $R \to \infty$. При достаточно больших $R > R_0$ в силу условий сходимости $m - n \ge 1$ получаем $\epsilon(R) \le \frac{2}{R^{m - n}} \le \frac{2}{R} \to 0$. В силу леммы  \ref{ch36.1lemm5} имеет место равенство $\lim\limits_{R \to +\infty} \int_{\gamma_R} e^{i \alpha z}R(z) \,dz = J$, а потому справедлива формула
@@ -316,7 +316,7 @@ $$
 \begin{equation} \label{ch36.1eq28}
 J_1 = \int_{-\infty}^{+\infty} \cos\alpha x \cdot R(x) \,dx \quad \text{и} \quad J_2 = \int_{-\infty}^{+\infty} \sin \alpha x \cdot R(x) \,dx,
 \end{equation}
-где $R(x)$ "--- рациональная функция, сводятся к интегралу вида \eqref{ch36.1eq23}, т.е.
+где $R(x)$ "--- рациональная функция, сводятся к интегралу вида~\eqref{ch36.1eq23}, т.е.
 $$
 J_1 = \Re \int_{-\infty}^{+\infty} e^{i \alpha x} R(x) \,dx, \quad J_2 = \Im \int_{-\infty}^{+\infty} e^{i \alpha x}R(x) \,dx.
 $$
