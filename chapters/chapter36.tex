@@ -3,7 +3,7 @@
 \section{Вычеты}
 
 \begin{defn}
-Пусть $a \in \bbC$ "--- изолированная особая точка регулярной функции~$f\colon \overset{\circ}{B}_\rho(a) \to \bbC$, $\rho > 0$. Пусть $\gamma_r \triangleq \{ z \,\big|\, |z - a| = r\}$ "--- положительно ориентированная окружность, причем $0 < r < \rho$. Тогда \textit{вычетом\rindex{вычет} функции~$f$ в точке $a$} называется число
+Пусть $a \in \bbC$ "--- изолированная особая точка регулярной функции~$f\colon \overset{\circ}{B}_\rho(a) \to \bbC$, $\rho > 0$. Пусть $\gamma_r \triangleq \{ z \,\big|\, |z - a| = r\}$ "--- положительно ориентированная окружность, причём $0 < r < \rho$. Тогда \textit{вычетом\rindex{вычет} функции~$f$ в точке $a$} называется число
 \begin{equation} \label{ch36.1eq1}
 \res_{a} f \triangleq \frac{1}{2\pi i} \int_{\gamma_r} f(z) \,dz.
 \end{equation}
@@ -11,7 +11,7 @@
 
 Отметим, что в формуле~\eqref{ch36.1eq1} интеграл не зависит от величины~$r\in (0, \rho)$.
 
-Для получения более удобных выражений вычисления вычета функции, представим функцию $f\colon \overset{\circ}{B}_\rho(a) \to \bbC$ ее рядом Лорана с центром в точке $a$
+Для получения более удобных выражений вычисления вычета функции, представим функцию $f\colon \overset{\circ}{B}_\rho(a) \to \bbC$ её рядом Лорана с центром в точке $a$
 \begin{equation} \label{ch36.1eq2}
 f(z) = \sum_{n = -\infty}^{+\infty} c_n (z - a)^n.
 \end{equation}
@@ -25,7 +25,7 @@ $$
 \res_{a} f = c_{-1}.
 \end{equation}
 
-Приведем некоторые правила вычисления вычетов.
+Приведём некоторые правила вычисления вычетов.
 
 \begin{lemm} \label{ch36.1lemm1}
 Пусть $a$ "--- полюс функции $f$ порядка $m \le m_0$. Тогда справедлива формула
@@ -58,7 +58,7 @@ f(z) = \frac{c_{-m_0}}{(z - a)^{m_0}} + \frac{c_{-m_0 + 1}}{(z - a)^{m_0 - 1}} +
 $$
 f(z) = \frac{P(z)}{Q(z)}, \quad z \in \overset{\circ}{B}_\rho(a),
 $$
-где функции $P$ и $Q$ регулярны в круге $B_\rho(a)$, причем
+где функции $P$ и $Q$ регулярны в круге $B_\rho(a)$, причём
 \begin{equation} \label{ch36.1eq8}
 P(a) \not= 0, \quad Q(a) = 0, \quad Q'(a) \not= 0.
 \end{equation}
@@ -93,7 +93,7 @@ c_n = \frac{1}{2\pi i} \int_{\gamma_R} \frac{f(\zeta)}{\zeta^{n + 1}} \,d\zeta, 
 \begin{equation} \label{ch36.1eq12}
 \res_{\infty} f = -c_{-1},
 \end{equation}
-где $c_{-1}$ "--- коэффициент разложения функции $f$ в ряд Лорана с центром в бесконечности. Здесь появился знак минус за счет различной ориентации окружности $\gamma_R$ в формулах \eqref{ch36.1eq11} и \eqref{ch36.1eq10}.
+где $c_{-1}$ "--- коэффициент разложения функции $f$ в ряд Лорана с центром в бесконечности. Здесь появился знак минус за счёт различной ориентации окружности $\gamma_R$ в формулах \eqref{ch36.1eq11} и \eqref{ch36.1eq10}.
 
 \begin{lemm} \label{ch36.1lemm3}
 Пусть $\infty$ "--- устранимая точка функции $f$. Тогда $\res_{\infty} f$ можно вычислить по формуле
@@ -112,7 +112,7 @@ $$
 $$
 z(f(\infty) - f(z)) = -c_{-1} - \frac{c_{-2}}{z} + o\left(\frac{1}{z}\right),
 $$
-что в пределе при $z \to \infty$ дает формулу \eqref{ch36.1eq13}.	
+что в пределе при $z \to \infty$ даёт формулу \eqref{ch36.1eq13}.	
 \end{proof}
 
 \begin{thm} [Коши о вычетах] \label{ch36.1T1}
@@ -124,13 +124,13 @@ $$
 
 \begin{proof}\leavevmode
 \begin{enumerate}[wide, labelwidth=!, labelindent=0pt]
-\item Пусть область $G$ ограничена. Так как число особых точек $a_1,\ldots,a_n \in \bbC$ конечно, то существует число $r > 0$ такое, что $B_r(a_k) \subset G \quad \forall k \in \overline{1,n}$, причем замыкания этих кругов попарно не пересекаются. Определим множество $\widetilde{G} \triangleq G \setminus \left( \bigcup\limits_{k = 1}^{n} \overline{B_r(a_k)}\right)$.
+\item Пусть область $G$ ограничена. Так как число особых точек $a_1,\ldots,a_n \in \bbC$ конечно, то существует число $r > 0$ такое, что $B_r(a_k) \subset G \quad \forall k \in \overline{1,n}$, причём замыкания этих кругов попарно не пересекаются. Определим множество $\widetilde{G} \triangleq G \setminus \left( \bigcup\limits_{k = 1}^{n} \overline{B_r(a_k)}\right)$.
 
-Множество $\widetilde{G}$ тоже является областью с кусочно-гладкой границей $\widetilde{\Gamma} = \Gamma \cup \left( \bigcup\limits_{k = 1}^{n} \gamma_{k}^{-1} \right)$,	где $\gamma_k$ суть окружности $\{ z \,\big|\, |z - a_k| = r \}$, ориентированные движением против хода часовой стрелки, а $\gamma_{k}^{-1}$ "--- они же, но ориентированные по ходу часовой стрелки. Получили, что $f$ регулярна на $\widetilde{G}$ и непрерывна на $\overline{\widetilde{G}} = \widetilde{G} \cup \widetilde{\Gamma}$ (см. рис. ?). Тогда по \hyperref[abc28]{обобщенной теореме \ref{abc28} Коши} (Билет №33) получаем
+Множество $\widetilde{G}$ тоже является областью с кусочно-гладкой границей $\widetilde{\Gamma} = \Gamma \cup \left( \bigcup\limits_{k = 1}^{n} \gamma_{k}^{-1} \right)$,	где $\gamma_k$ суть окружности $\{ z \,\big|\, |z - a_k| = r \}$, ориентированные движением против хода часовой стрелки, а $\gamma_{k}^{-1}$ "--- они же, но ориентированные по ходу часовой стрелки. Получили, что $f$ регулярна на $\widetilde{G}$ и непрерывна на $\overline{\widetilde{G}} = \widetilde{G} \cup \widetilde{\Gamma}$ (см. рис. ?). Тогда по \hyperref[abc28]{обобщённой теореме \ref{abc28} Коши} (Билет №33) получаем
 $$
 0 = \int_{\widetilde{\Gamma}} f(z) \,dz = \int_{\Gamma} f(z) \,dz - \sum_{k = 1}^{n} \int_{\gamma_k} f(z) \,dz \xlongequal{\eqref{ch36.1eq1}} \int_{\Gamma} f(z) \,dz - \sum_{k = 1}^{n} 2\pi i \res_{a_k} f,
 $$
-что и дает формулу \eqref{ch36.1eq14}.
+что и даёт формулу \eqref{ch36.1eq14}.
 
 
 \item	Пусть $\infty \in G$. Тогда особые точки $a_1,\ldots,a_{n - 1} \in \bbC$ "--- конечны, а $a_n = \infty$. Так как по \hyperref[ch33defn1]{определению \ref{ch33defn1}} (Билет №33) граница $\Gamma$ состоит из ограниченных гладких компонент, то существует число $R > 0$ такое, что для каждого $z \in \Gamma \cup \left( \bigcup\limits_{k = 1}^{n - 1} a_k \right)$ справедливо неравенство $|z| < R$.
@@ -172,7 +172,7 @@ $$
 $$
 - \int_{\gamma_R} f(z) \,dz = 2\pi i \res_{\infty} f,
 $$
-что вместе с \eqref{ch36.1eq18} дает равенство \eqref{ch36.1eq17}.
+что вместе с \eqref{ch36.1eq18} даёт равенство \eqref{ch36.1eq17}.
 \end{proof}
 
 \section{Вычисление интегралов по замкнутому контуру при помощи вычетов}
@@ -187,7 +187,7 @@ $$
 P_n(x) = x^n + a_{n - 1} x^{n - 1} + \ldots + a_0, \quad
 Q_m(x) = x^m + b_{m - 1} x^{m - 1} + \ldots + b_0,
 $$
-причем полагаем, что $Q_m(x) \not= 0$ при всех $x \in \bbR^1$.
+причём полагаем, что $Q_m(x) \not= 0$ при всех $x \in \bbR^1$.
 
 Известно, что интеграл $J$ \eqref{ch36.1eq19} сходится при условии $m > n + 1$, что считаем выполненным.
 
@@ -250,13 +250,13 @@ $\cos\phi = \frac{1}{2} (e^{i\phi} + e^{-i\phi}) = \frac{1}{2}\left( z + \frac{1
 J = \int_0^{2\pi} R\left( \frac{z(\phi)}{2} + \frac{1}{2z(\phi)}, \: \frac{z(\phi)}{2i} - \frac{1}{2iz(\phi)}\right) \cdot \frac{z'(\phi)}{iz(\phi)} \,d\phi =\\= \int_{|z| = 1} R\left( \frac{1}{2} \left( z + \frac{1}{z}\right), \frac{1}{2i}\left( z - \frac{1}{z}\right)\right)\frac{\,dz}{iz} = \int_{|z| = 1} R_1(z)\,dz.
 \end{multline*}
 
-В итоге интеграл \eqref{ch36.1eq22} свелся к интегралу по кругу $|z| = 1$ от рациональной функции $R_1(z)$, который легко может быть вычислен с помощью  \hyperref[ch36.1T1]{теоремы \ref{ch36.1T1} (Коши о вычетах)}.
+В итоге интеграл \eqref{ch36.1eq22} свёлся к интегралу по кругу $|z| = 1$ от рациональной функции $R_1(z)$, который легко может быть вычислен с помощью  \hyperref[ch36.1T1]{теоремы \ref{ch36.1T1} (Коши о вычетах)}.
 
 {\bf III. Вычисление интегралов вида}
 \begin{equation} \label{ch36.1eq23}
 J = \int_{-\infty}^{+\infty} e^{i\alpha x} R(x) \,dx,
 \end{equation}
-где $R(x) = \frac{P_n(x)}{Q_m(x)}$ "--- рациональная функция, причем $m - n \ge 1$, $\alpha$ "--- действительное число, $\alpha > 0$ и $Q_m(x) \not= 0$ при всех $x \in \bbR^1$ (т.е. интеграл \eqref{ch36.1eq23} есть преобразование Фурье рациональной функции $R$).
+где $R(x) = \frac{P_n(x)}{Q_m(x)}$ "--- рациональная функция, причём $m - n \ge 1$, $\alpha$ "--- действительное число, $\alpha > 0$ и $Q_m(x) \not= 0$ при всех $x \in \bbR^1$ (т.е. интеграл \eqref{ch36.1eq23} есть преобразование Фурье рациональной функции $R$).
 
 Для получения условий сходимости интеграла \eqref{ch36.1eq23} представим подынтегральную функцию в виде
 $$
