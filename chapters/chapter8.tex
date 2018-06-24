@@ -9,7 +9,7 @@ f(x) - f(x^0) = (A, x - x^0) + o(|x - x^0|), \; x \to x^0,
 \end{equation}
 где $(A, x - x^0) = A_1(x_1 - x^0_1) + \ldots + A_n(x_n - x^0_n); \; o(|x - x^0|) = \alpha(x)|x - x^0|,$ где $\alpha(x)$ определена в $O(x^0), \; \lim\limits_{x \to x^0} \alpha(x) = 0$.
 
-При этом вектор $A \in \bbR^n$ называется градиентом функции $f$ в точке $x^0$. (Градиент $f$ в точке $x^0$ определен, если функция $f$ дифференцируема в точке $x^0$). Обозначается $\grad f(x^0), \nabla f(x^0)$.
+При этом вектор $A \in \bbR^n$ называется градиентом функции $f$ в точке $x^0$. (Градиент $f$ в точке $x^0$ определён, если функция $f$ дифференцируема в точке $x^0$). Обозначается $\grad f(x^0), \nabla f(x^0)$.
 
 Функция $f$ дифференцируема в точке $x^0 \in \bbR^n \; \Leftrightarrow \; f$ определена в окрестности $O(x^0)$ и $\exists A \in \bbR^n$, такое что 
 $$
@@ -31,14 +31,14 @@ $$
 \end{defn}
 
 \begin{defn}
-Производной функции $f$, определенной в окрестности $O(x^0), \: x^0 \in \bbR^n$ по направлению $\vv{l} \in \bbR^n \; |l| = 1$, называется предел
+Производной функции $f$, определённой в окрестности $O(x^0), \: x^0 \in \bbR^n$ по направлению $\vv{l} \in \bbR^n \; |l| = 1$, называется предел
 $$
 \frac{\partial f}{\partial l}(x^0) = \lim\limits_{t \to 0} \frac{f(x^0 + tl) - f(x^0)}{t}
 $$
 \end{defn}
 
 \begin{defn}
-Частной производной функции $f$, определенной в окрестности точки $x^0 \in \bbR^n$ по переменной $x_j, \: j \in \overline{1,n}$ в точке $x^0 \in \bbR^n$, называется производная функции $f$ в точке $x^0$ по направлению $\vv{l}_j = (0, \ldots, l_j = 1, \ldots, 0)$. Обозначается $\frac{\partial f}{\partial x_j}(x^0)$
+Частной производной функции $f$, определённой в окрестности точки $x^0 \in \bbR^n$ по переменной $x_j, \: j \in \overline{1,n}$ в точке $x^0 \in \bbR^n$, называется производная функции $f$ в точке $x^0$ по направлению $\vv{l}_j = (0, \ldots, l_j = 1, \ldots, 0)$. Обозначается $\frac{\partial f}{\partial x_j}(x^0)$
 
 $$
 \frac{\partial f}{\partial x_j}(x^0) = \lim\limits_{t \to 0} \frac{f(x^0_1, \ldots, x^0_{j - 1}, x^0_j + t, x^0_{j + 1}, \ldots, x^0_n) - f(x^0)}{t}  
@@ -55,7 +55,7 @@ $$
 $$
 f(x,y) - f(x^0, y^0) = f(x,y) - f(x^0, y) + f(x^0, y) - f(x^0, y^0),
 $$
-$ \quad f(x,y) = \phi(\xi), \xi \in [x^0, x] \quad \Rightarrow$ согласно условию Теоремы фунция $f(\xi, y)$ имеет частную производную $\frac{\partial f}{\partial x}(\xi, y)$ в любой точке $(\xi, y)$  при $\xi \in [x^0, x]$, т.к. тогда $(\xi, y) \in O(x^0, y^0) \quad \Rightarrow$ функция $\phi$ дифференцируема на отрезке $[x^0, x] \quad \Rightarrow$ по теореме Лагранжа $\exists \xi_1 \in (x^0, x), \: \phi(x) - \phi(x^0) = \phi'(\xi_1)(x - x^0) \quad \Rightarrow \quad \exists \xi_1 \in (x^0, x)$
+$ \quad f(x,y) = \phi(\xi), \xi \in [x^0, x] \quad \Rightarrow$ согласно условию Теоремы функция $f(\xi, y)$ имеет частную производную $\frac{\partial f}{\partial x}(\xi, y)$ в любой точке $(\xi, y)$  при $\xi \in [x^0, x]$, т.к. тогда $(\xi, y) \in O(x^0, y^0) \quad \Rightarrow$ функция $\phi$ дифференцируема на отрезке $[x^0, x] \quad \Rightarrow$ по теореме Лагранжа $\exists \xi_1 \in (x^0, x), \: \phi(x) - \phi(x^0) = \phi'(\xi_1)(x - x^0) \quad \Rightarrow \quad \exists \xi_1 \in (x^0, x)$
 
 $f(x,y) - f(x^0, y) = \frac{\partial f}{\partial x}(\xi, y)(x - x^0)$
 
@@ -85,7 +85,7 @@ $\Rightarrow \; f(x,y) - f(x^0, y^0) = f'_x(x^0, y^0) \Delta x + f'_y(x^0, y^0) 
 $\alpha \Delta x + \beta \Delta y = \frac{\alpha \Delta x + \beta \Delta y}{\sqrt{\Delta x^2 + \Delta y^2}} \cdot \sqrt{\Delta x^2 + \Delta y^2} = o(\sqrt{\Delta x^2 + \Delta y^2})$
 
 $$
-\frac{\Delta x}{\sqrt{\Delta x^2 + \Delta y^2}}, \; \frac{\Delta y}{\sqrt{\Delta x^2 + \Delta y^2}} - \textit{ограниченые},
+\frac{\Delta x}{\sqrt{\Delta x^2 + \Delta y^2}}, \; \frac{\Delta y}{\sqrt{\Delta x^2 + \Delta y^2}} - \textit{ограниченные},
 $$
 
 $$
@@ -96,5 +96,5 @@ $\Rightarrow \; f$ дифференцируема в точке $(x^0, y^0)$.
 \end{proof}
 
 \begin{cons}
-Если фунция $f$ определена на области $G \subset \bbR^n$ и имеет на этой области частные производные 1-го порядка, которые непрерывны на области $G$, то функция $f$ дифференцируема в каждой точке области $G$.
+Если функция $f$ определена на области $G \subset \bbR^n$ и имеет на этой области частные производные 1-го порядка, которые непрерывны на области $G$, то функция $f$ дифференцируема в каждой точке области $G$.
 \end{cons}
