@@ -4,12 +4,9 @@
 \everymath{\displaystyle}
 \addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
 \addtocontents{ptc}{\protect\setcounter{tocdepth}{2}}
-\setlength{\parindent}{0cm}
 
 \part{Приложения}
-\chapter[Формулы к письменному ГОСу]{Формулы к письменному ГОСу}
-
-Прошу прощения, но для компактности в данном разделе не указаны допустимые значения аргументов и параметров в большинстве случаев. Имейте в виду.
+\chapter[Формулы к письменному ГОСу]{Формулы к письменному ГОСу\footnote{Прошу прощения, но для компактности в данном разделе не указаны допустимые значения аргументов и параметров в большинстве случаев. Имейте в виду.}}
 
 \section{Тригонометрические формулы}
 
@@ -20,6 +17,15 @@ $\sin^2x+\cos^2x=1;$
 $\tg^2x+1=\frac{1}{\cos^2x};$
 &
 $\tg x\cdot\ctg x=1.$
+\end{longtable}
+
+\subsubsection{Формула Эйлера и ее следствия}
+\begin{longtable}[l]{ l l l}
+$e^{ix} = \cos x + i \sin x;$
+&
+$\sin x = \frac{e^{ix}-e^{-ix}}{2i};$
+&
+$\cos x = \frac{e^{ix}+e^{-ix}}{2}.$
 \end{longtable}
 
 \subsubsection{Формулы сложения и вычитания аргументов}
@@ -34,14 +40,12 @@ $\ctg(x\pm y)=\frac{\ctg x\ctg y \mp 1}{\ctg x \pm \ctg y}.$
 \end{longtable}
 
 \subsubsection{Формулы двойного угла}
-\begin{longtable}[l]{ l l }
+\begin{longtable}[l]{l l l}
 $\sin 2x = 2\sin x \cos x;$
 &
-$\tg 2x = \frac{2\tg x}{1-\tg^2x};$
-\\
 $\cos 2x = \cos^2 x - \sin^2 x;$
 &
-$\ctg 2x = \frac{\ctg^2x-1}{2\ctg x}.$
+$\tg 2x = \frac{2\tg x}{1-\tg^2x};$
 \end{longtable}
 
 \subsubsection{Формулы понижения степени}
@@ -55,8 +59,19 @@ $4\sin^3x=3\sin x-\sin 3x;$
 $4\cos^3x=3\cos x+\cos 3x;$
 \end{longtable}
 
+\subsubsection{Формулы преобразования суммы}
+\begin{longtable}[l]{ l l}
+$\sin x\pm \sin y =2 \sin \frac{x\pm y}{2} \cos \frac{x\mp y}{2};$
+&
+$\cos x + \cos y  = 2 \cos \frac{x + y}{2} \cos \frac{x - y}{2};$
+\\
+$\tg x \pm \tg y = \frac{\sin (x \pm y)}{ \cos x \cos y};$
+&
+$\cos x - \cos y  = -2 \sin \frac{x + y}{2} \sin\frac{x - y}{2};$
+\end{longtable}
+
 \subsubsection{Формулы преобразования произведения}
-\begin{longtable}[l]{ l}
+\begin{longtable}[l]{l}
 $2\sin x \sin y = \cos (x-y)-\cos(x+y);$
 \\
 $2\cos x \cos y = \cos (x-y)+\cos(x+y);$
@@ -64,30 +79,9 @@ $2\cos x \cos y = \cos (x-y)+\cos(x+y);$
 $2\sin x \cos y = \sin (x-y)+\sin(x+y).$
 \end{longtable}
 
-\newpage
-\subsubsection{Формулы преобразования суммы}
-\begin{longtable}[l]{ l}
-$\sin x\pm \sin y =2 \sin \frac{x\pm y}{2} \cos \frac{x\mp y}{2};$
-\\
-$\cos x + \cos y  = 2 \cos \frac{x + y}{2} \cos \frac{x - y}{2};$
-\\
-$\cos x - \cos y  = -2 \sin \frac{x + y}{2} \sin\frac{x - y}{2};$
-\\
-$\tg x \pm \tg y = \frac{\sin (x \pm y)}{ \cos x \cos y};$
-\end{longtable}
-  
-\subsubsection{Формула Эйлера и ее следствия}
-\begin{longtable}[l]{ l l l}
-$e^{ix} = \cos x + i \sin x;$
-&
-$\sin x = \frac{e^{ix}-e^{-ix}}{2i};$
-&
-$\cos x = \frac{e^{ix}+e^{-ix}}{2}.$
-\end{longtable}
-
 \subsubsection{Формулы приведения}
 \tiny
-\begin{longtable}[l]{|c|c|c|c|c|c|c|c|c|}
+\begin{longtable}{|c|c|c|c|c|c|c|c|c|}
 \hline
 &
 $\pi/2-x$
@@ -180,8 +174,6 @@ $\ctg x$
 \\\hline
 \end{longtable}
 
-$ $
-
 \normalsize
 Алгоритм действий, который здесь работает:
 \begin{enumerate}
@@ -200,7 +192,7 @@ $ $
 \section{Гиперболические функции}
 
 \subsubsection{Определение}
-\begin{longtable}[l]{ l l}
+\begin{longtable}[l]{l l}
 $\sh x = \frac{e^{x}-e^{-x}}{2};$
 &
 $\th x = \frac{\sh x}{\ch x}=\frac{e^{x}-e^{-x}}{e^{x}+e^{-x}}=\frac{e^{2x}-1}{e^{2x}+1};$
@@ -210,8 +202,13 @@ $\ch x = \frac{e^{x}+e^{-x}}{2};$
 $\cth x = \frac{1}{\th x};$
 \end{longtable}
 
+\subsubsection{Важное соотношение}
+\begin{longtable}[l]{l}
+$\ch^2 x - \sh^2 x = 1;$
+\end{longtable}
+
 \subsubsection{Связь с тригонометрическими функциями}
-\begin{longtable}[l]{  l l l}
+\begin{longtable}[l]{l l l}
 $\ch (ix) = \cos x;$
 &
 $\sh (ix)= i \sin x;$
@@ -225,13 +222,8 @@ $\sin (ix) = i \sh x;$
 $\tg (ix) = i \th x.$
 \end{longtable}
 
-\subsubsection{Важное соотношение}
-\begin{longtable}[l]{  l}
-$\ch^2 x - \sh^2 x = 1;$
-\end{longtable}
-
 \subsubsection{Формулы сложения и вычитания аргументов}
-\begin{longtable}[l]{  l l}
+\begin{longtable}[l]{l l}
 $\sh (x\pm y) =  \sh x \ch y \pm \sh y \ch x;$
 &
 $\th (x \pm y) = \frac{\th x \pm \th y}{1 \pm \th x \th y};$
@@ -242,7 +234,7 @@ $\cth (x \pm y) = \frac{1 \pm \cth x \cth y}{\cth x \pm \cth y}.$
 \end{longtable}
 
 \subsubsection{Формулы двойного угла}
-\begin{longtable}[l]{  l l}
+\begin{longtable}[l]{l l}
 $\sh 2x = 2\ch x\sh x$
 &
 $\th 2x = \frac{2\th x}{1 + \th^2 x}$
@@ -253,7 +245,7 @@ $\cth 2x = \frac{1}{2}(\th x + \cth x)$
 \end{longtable}
 
 \subsubsection{Формулы понижения степени}
-\begin{longtable}[l]{  l l}
+\begin{longtable}[l]{l l}
 $2\ch^2 x = \ch 2x + 1$
 &
 $2\sh^2 x = \ch 2x - 1$
@@ -273,33 +265,33 @@ $\ch x \ch y = \frac{\ch(x + y) + \ch(x - y)}{2}$
 \end{longtable}
 
 \subsubsection{Формулы преобразования суммы}
-\begin{longtable}[l]{  l}
+\begin{longtable}[l]{l  l}
 $\sh x \pm \sh y = 2 \sh\frac{x \pm y}{2} \ch\frac{x \mp y}{2}$
-\\
+&
 $\ch x + \ch y = 2 \ch\frac{x + y}{2}\ch\frac{x - y}{2}$
 \\
-$\ch x - \ch y = 2 \sh\frac{x + y}{2}\sh\frac{x - y}{2}$
-\\
 $\th x \pm \th y = \frac{\sh(x \pm y)}{\ch x \ch y}$
+&
+$\ch x - \ch y = 2 \sh\frac{x + y}{2}\sh\frac{x - y}{2}$
 \end{longtable}
 
 \section{Обратные гиперболические функции}
 
-\begin{longtable}[l]{l}
+\begin{longtable}[l]{l l}
 $\arsh x = \ln(x + \sqrt{x^2 + 1})$
-\\
-$\arch x = \ln(x + \sqrt{x^2 - 1}); \: x \ge 1$
-\\
+&
 $\arth x = \frac{1}{2}\ln \left(\frac{1 + x}{1 - x} \right),\ |x|<1.$
 \\
+$\arch x = \ln(x + \sqrt{x^2 - 1}); \: x \ge 1$
+&
 $\arcth x = \frac{1}{2}\ln \left( \frac{x+ 1}{x - 1} \right),\ |x|<1.$
 \end{longtable}
 
 \section{Производные}
 
 \subsubsection{Формулы для производных элементарных функций}
-\begin{longtable}[l]{  l l }
-$(C)'=0$ ($C$ --- постоянная); 
+\begin{longtable}[l]{l l}
+$(C)'=0$ ($C=const$); 
 &
 $(e^x)'=e^x;$
 \\
@@ -365,7 +357,7 @@ R = \lim\limits_{n \to + \infty} \left| \frac{c_n}{c_{n + 1}} \right|
 $$
 \end{notion}
 
-\begin{longtable}{ l l }
+\begin{longtable}[l]{ l l }
 $e^x=1+\frac{x}{1!}+\frac{x^2}{2!}+\frac{x^3}{3!}+o(x^3);$
 &
 $e^x=\sum\limits_{n=0}^{+\infty}\displaystyle\frac{x^n}{n!},\ R=\infty;$
@@ -437,8 +429,8 @@ $\arth x = x + \frac{x^3}{3}+\frac{x^5}{5}+o(x^5);$
 $\arth x = \sum\limits_{n=0}^{+\infty} \frac{1}{2n + 1} x^{2n + 1}, R = 1;$
 \end{longtable}
 
-\subsubsection{Несколько рядов Лорана в догонку}
-\begin{longtable}{ l l l }
+\subsubsection{Несколько рядов Лорана}
+\begin{longtable}[l]{ l l l }
 $\cth x = \frac{1}{x} + \frac{x}{3}+\frac{x^3}{45}+o(x^3);$
 &
 $\cth x  = \sum\limits_{n=0}^{+\infty} \frac{2^{2n}B_{2n}x^{2n-1}}{(2n)!},\quad0<|x|<\pi;$
@@ -743,6 +735,51 @@ $\lim\limits_{x\to0} (1+x)^{1/x}=e.$
 	\item
 	Центр: $\rm{Re}\lambda _1 = \rm{Re}\lambda _2 = 0$ 
 \end{itemize}
+
+\section{Некоторые дискретные распределения}
+\footnotesize
+\begin{longtable}[l]{|A{0.20}{0}|B{0.33}{0}|A{0.23}{0}|B{0.1}{0}|B{0.14}{0}|}
+\hline
+Распределение & Формула & Параметры & $\bbE$ & $\bbD$\tabularnewline\hline
+Вырожденное & $P(\xi=a) = 1$ & $a=const$ & $a$ & $0$\tabularnewline\hline
+Биномиальное & $P(\xi=k) = C^{k}_{n} p^k (1-p)^{n-k}$ & $n\in\bbN$, $0\le p\le 1$, $k\in\{0\}\cup\bbN$ & $np$ & $np(1-p)$ 
+\tabularnewline\hline
+Пуассона & $P(\xi=k) = \frac{\lambda^k}{k!} e^{-\lambda} $ & $\lambda>0$, $k\in\{0\}\cup\bbN$ & $\lambda$ & $\lambda$
+\tabularnewline\hline
+Геометрическое & $P(\xi=k) = p(1-p)^k$ & $0<p\le1$, $k\in\{0\}\cup\bbN$ & $\frac{1-p}{p}$ & $\frac{1-p}{p^2}$
+\tabularnewline\hline
+\end{longtable}
+
+\section{Некоторые абсолютно непрерывные распределения}
+\footnotesize
+\begin{longtable}[l]{|A{0.20}{0}|B{0.41}{0}|A{0.16}{0}|B{0.10}{0}|B{0.13}{0}|}
+\hline
+Распределение & Формула & Параметры & $\bbE$ & $\bbD$\tabularnewline\hline
+Равномерное на отрезке $[a;b]$ & 
+$p(x) = 
+\begin{cases}
+\frac{1}{b-a}, x\in [a;b]; \\ 
+0, x\notin [a;b].
+\end{cases}$ & $a<b$, $a,b\in\bbR$ & $\frac{a+b}{2}$ & $\frac{(b-a)^2}{12}$
+\tabularnewline\hline
+Нормальное (или гауссовское) & $p(x) = \frac{1}{\sigma \sqrt{2\pi}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}$, $x\in\bbR$
+& $\mu\in\bbR$, $\sigma\in(0;+\infty)$ & $\mu$ & $\sigma^2$
+\tabularnewline\hline
+Показательное & $p(x) = 
+\begin{cases}
+\lambda e^{-\lambda x}, x>0;\\
+0, x\le 0.
+\end{cases}$ 
+& $\lambda > 0$ & $\lambda^{-1}$ & $\lambda^{-2}$ 
+\tabularnewline\hline
+Гамма-распределение & $p(x) = 
+\begin{cases}\frac{\lambda^\alpha x^{\alpha-1}}{\Gamma(\alpha)}e^{-\lambda x}, x > 0;\\
+0, x \le 0
+\end{cases}$ (здесь $\Gamma(\alpha)$ "--- гамма-функция, $\Gamma (\alpha) = \int_{0}^{+\infty} x^{\alpha-1}e^{-x}\,dx$) & $\lambda > 0$, $\alpha > 0$ & $\frac{\alpha}{\lambda}$ & $\frac{\alpha}{\lambda^2}$
+\tabularnewline\hline
+Коши & $p(x) = \frac{1}{\pi}\frac{b}{1+b^2x^2}$, $x\in\bbR$ & $b > 0$ & не сущ. & $+\infty$
+\tabularnewline\hline
+\end{longtable}
 
 \newpage
 

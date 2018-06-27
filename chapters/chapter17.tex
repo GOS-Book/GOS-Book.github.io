@@ -138,23 +138,73 @@ $$
 c_{\nu} = \frac{1}{2l} \int_{-l}^{l} f(x)\, e^{-i\nu\frac{\pi}{l}x}\,dx,\quad \nu = 0,\, \pm 1,\, \pm 2,\,\ldots
 \end{equation}
 называются \textit{коэффициентами Фурье функции $f$ по ортогональной системе}~\eqref{ch17eq6}, причем
-\begin{equation}
+\begin{equation}\label{2018:ch17:eq15}
 c_0 = \frac{a_0}{2}, \quad c_{k} = \frac{a_k - ib_k}{2}, \quad c_{-k} = \frac{a_k + ib_k}{2} \quad \forall k \in \bbN,
 \end{equation}
-где $a_0, a_n, b_n$ "--- коэффициенты Фурье функции $f$ по тригонометрической системе~\eqref{ch17eq1}.
+где $a_0, a_n, b_n$ "--- коэффициенты Фурье функции~$f$ по тригонометрической системе~\eqref{ch17eq1}.
 \end{defn}
 
 \begin{defn}
 Выражение
-$$
+\begin{equation}
 \sum_{\nu = -\infty}^{\infty} c_{\nu}e^{i\nu\frac{\pi}{l}x},
-$$
+\end{equation}
 где $c_{\nu} = c_{\nu}(f)$, называют \textit{рядом Фурье функции f по системе} \eqref{ch17eq6}, а сумма
-$$
+\begin{equation}
 T_{n}(f;x) = \sum_{\nu = -n}^{n} c_{\nu}e^{i\nu\frac{\pi}{l}x}
-$$
+\end{equation}
 называется \textit{n-й частичной суммой} этого ряда.
 \end{defn}
+
+Из формул~\eqref{2018:ch17:eq15} следует, что
+\begin{multline*}
+T_{n}(f;x) = \frac{a_0}{2} + \sum_{k = 1}^{n} \frac{a_k-ib_k}{2} e^{k\frac{\pi}{l}x} + \sum_{k = 1}^{n} \frac{a_k + ib_k}{2} e^{-k\frac{\pi}{l}x} =\\ = \frac{a_0}{2} + \sum_{k = 1}^{n} a_{k} \cos n\frac{\pi}{l}x + b_{k} \sin n\frac{\pi}{l}x
+\end{multline*}
+
+Таким образом, $T_{n}(f;x)$ "--- это $n$-я частичная сумма ряда Фурье функции $f$ по тригонометрической системе~\eqref{ch17eq1}.
+
+Как уже говорилось, в основном будем рассматривать случай, когда $l=\pi$ и функция $f(x)$ периодическая с периодом $2\pi$. В этом случае
+\begin{equation}\label{2018:ch17:eq18}
+T_{n}(f;x) = \sum_{\nu = -n}^{n} c_{\nu}e^{i\nu x},
+\end{equation}
+где
+\begin{equation}\label{2018:ch17:eq19}
+c_v = \frac{1}{2\pi} \int_{-\pi}^{\pi} f(\xi) e^{i\nu \xi}\,d\xi,\ \nu\in\bbZ.
+\end{equation}
+
+\section{Интегральное представление частичных сумм рядов Фурье по тригонометрической системе. Ядро Дирихле}
+
+Рассмотрим $n$-ю частичную сумму ряда Фурье функции $f(x)\in \accentset{*}{L}^{R}_1(-\pi;\pi)$ по тригонометрической системе, ортогональной на интервале $(-\pi;\pi)$. Как показано в прошлом пункте, имеют место формулы~\eqref{2018:ch17:eq18} и  \eqref{2018:ch17:eq19}. Подставляя одну в другую, получим
+$$
+T_{n}(f;x) = \frac{1}{2\pi} \int_{-\pi}^{\pi} f(\xi) \sum_{\nu = -n}^{n} e^{i\nu(x-\xi)}\,d\xi
+$$
+\begin{defn}
+Функция $D_n(x) = \sum_{\nu = -n}^{n} e^{i\nu x}$ называется \textit{ядром Дирихле порядка $n$}.
+\end{defn}
+
+Очевидно, 
+$$
+D_n(x) = 1 + 2 \sum_{\nu = -n}^{n} \cos{\nu x}
+$$
+Отсюда следует, что $D_n(x)$ "--- четная $2\pi$-периодическая функция, $D_n(0) = 1+2n$ и
+$$
+\frac{1}{\pi}\int_{0}^{\pi} D_n(x) \,dx =1
+$$
+По формуле для суммы геометрической прогрессии получаем, что
+$$
+D_n(x) = \frac{e^{-inx} - e^{-inx +ix}}{1-e^{ix}} = 
+\frac{\sin(n+\frac{1}{2})x}{\sin{\frac{x}{2}}}
+$$
+для любого $x\ne 2k\pi$, $k \in \bbZ$ (и равно $2n+1$ в противоположном случае, как уже было замечено).
+
+С помощью ядра Дирихле $n$-я частичная сумма ряда Фурье функции $f(x)$ выражается следующим образом:
+$$
+T_{n}(f;x) = \frac{1}{2\pi} \int_{-\pi}^{\pi} f(\xi) D_n(\xi-x)\,d\xi = \frac{1}{2\pi} \int_{-\pi-x}^{\pi-x} f(\xi + x) D_n(\xi)\,d\xi.
+$$
+А так как подынтегральная функция является $2\pi$-периодической, то 
+$$
+T_{n}(f;x)= \frac{1}{2\pi} \int_{-\pi}^{\pi} f(\xi + x) D_n(\xi)\,d\xi.
+$$
 
 \section{Теорема Римана об осцилляции}
 \begin{defn}
@@ -249,7 +299,7 @@ $$
 $$
 
 \begin{cons}
-Если функция $f(x)$ абсолюно интегрируема на промежутке $\Delta$, то
+Если функция $f(x)$ абсолютно интегрируема на промежутке $\Delta$, то
 \begin{align*}
 &\lim_{\lambda \to \infty}\int_{\Delta} f(x)\cos{\lambda x}\,dx = 0\\
 &\lim_{\lambda \to \infty}\int_{\Delta} f(x)\sin{\lambda x}\,dx = 0

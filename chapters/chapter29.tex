@@ -1,126 +1,313 @@
-\chapter{Простейшая задача вариационного исчисления. Необходимые условия локального экстремума.}
-\section{Простейшая задача вариационного исчисления} 
-Обозначим через $C^1[a,b]$ множество всех непрерывно дифференцируемых функций, заданных на $[a,b]$. Для $\forall y_1(x),y_2(x)\in C^1[a,b]$ введем \textit{расстояние} между ними по формуле
-$$
-||y_1(x)-y(x)||_{C^1[a,b]}=\max_{x\in [a,b]}\limits |y_1(x)-y_2(x)|+\max_{x\in[a,b]}\limits |y'_1(x)-y'_2(x)|. 
-$$ 
-Множество функций $C^1[a,b]$ с введенной метрикой является линейным нормированным пространством.
+\chapter{Линейные обыкновенные дифференциальные уравнения с переменными коэффициентами. Фундаментальная система решений. Формула Лиувилля"--~Остроградского. Определитель Вронского.}
 
-Пусть $F(x,y,p)$ "--- заданная непрерывно дифференцируемая функция для $\forall x\in [a,b]$ и $\forall(y,p)\in \bbR^2_{(y,p)}$ "--- плоскости с декартовыми прямоугольными координатами $y,p$. Рассмотрим интеграл
-\begin{equation}\label{ch29eq1}
-J(y)=\int_a^b\limits F[x,y(x),y'(x)]\,dx
+\section{Линейные обыкновенные дифференциальные уравнения с переменными коэффициентами}
+
+Линейным дифференциальным уравнением порядка $n$ с переменными коэффициентами называется уравнение 
+\begin{equation} \label{ch28.1eq1}
+y^{(n)} + a_1(x)y^{(n - 1)} + \ldots + a_n(x)y = f(x),
 \end{equation}
-на множестве $M$ тех функций $y(x)\in C^1[a,b]$, которые удовлетворяют граничным условиям
-\begin{equation}\label{ch29eq2}
-y(a)=A,\quad y(b)=B,
+где $x \in [\alpha, \beta], \: a_j(x), \: j = \overline{1,n},$ "--- заданные непрерывные функции на $[\alpha, \beta]$, называемые коэффициентами уравнения \eqref{ch28.1eq1}, и $f(x)$ "--- заданная непрерывная на $[\alpha, \beta]$ функция, называемая правой частью уравнения \eqref{ch28.1eq1}. При $f(x) \equiv 0$ на $[\alpha, \beta]$, уравнение "--- однородное, в противном случае "--- неоднородное. $a_j(x), \: j = \overline{1,n}, \; f(x)$ могут быть комплексными.
+
+Функция $y = \phi(x)$ называется решением уравнения~\eqref{ch28.1eq1} на $[\alpha, \beta]$, если $\phi(x) \; n$ раз непрерывно дифференцируема на $[\alpha, \beta]$ и обращает~\eqref{ch28.1eq1} в тождество на всем $[\alpha, \beta]$.
+
+\begin{lemm}
+Если $f(x) = f_1(x) + f_2(x)$ и $y_i(x)$ "--- решение уравнения \eqref{ch28.1eq1} при $f(x) \equiv f_i(x)$ на $[\alpha, \beta], \: i = 1,2$, то функция $y(x) = y_1(x) + y_2(x)$ является решением уравнения \eqref{ch28.1eq1}.
+\end{lemm}  
+
+\begin{cons}
+Если $y_1(x), y_2(x)$ "--- решения линейного однородного уравнения и $c_1, c_2$ "--- произвольные числа, то линейная комбинация $y = c_1y_1(x) + c_2y_2(x)$ также является решением линейного однородного уравнения.
+\end{cons}
+
+Решение уравнения \eqref{ch28.1eq1} всегда можно свести к решению линейной системы дифференциальных уравнений порядка $n$ следующего вида:
+
+\begin{equation} \label{ch28.1eq2}
+y'(x) = A(x)y(x) + f(x),
 \end{equation}
-где $A$ и $B$ "--- заданные числа. Функции $y(x)\in M$ будем называть \textit{допустимыми}.
+где
+\begin{multline}
+y(x) = \begin{pmatrix}
+y_1(x) \\
+\vdots \\
+y_n(x)
+\end{pmatrix},
+A(x) = \begin{pmatrix}
+0 & 1 & 0 & \ldots & 0 \\
+0 & 0 & 1 & \ldots & 0 \\
+\hdotsfor{5} \\
+0 & 0 & 0 & \ldots & 1 \\
+-a_n(x) & -a_{n - 1}(x) & -a_{n - 2}(x) & \ldots & -a_1(x)
+\end{pmatrix}, \\
+f(x) = \begin{pmatrix}
+0 \\
+\vdots \\ 
+0 \\
+f(x)
+\end{pmatrix}.
+\end{multline}
 
-Очевидно, что $\forall y(x)\in M$ интеграл \eqref{ch29eq1} определен и задает функционал (отображение $F \colon M \to \bbC$) с областью определения $M$ в пространстве $C^1[a,b]$.
-
-\begin{defn}
-Говорят, что функция $\hat{y}(x)\in M$ дает \textit{слабый локальный минимум (максимум)} функционала \eqref{ch29eq1}, если $\exists$ число $\epsilon>0$ такое, что для $\forall y(x)\in M$, для которой $||y(x)-\hat{y}(x)||_{C^1[a,b]}<\epsilon$, выполняется неравенство $J(y)\geq J(\hat{y})$ ($J(y)\le J(\hat{y})$).
-\end{defn}
-
-Оба понятия "--- слабый локальный минимум и слабый локальный максимум объединяются единым термином: \textit{слабый локальный экстремум}.
-
-\begin{defn}
-Задача нахождения слабого локального экстремума функционала \eqref{ch29eq1} называется \textit{простейшей вариационной задачей}
-\end{defn}
-
-Простейшую вариационную задачу иногда называют задачей с закрепленными концами в силу того, что допустимые кривые обязаны проходить через две закрепленные точки $M_1(a,A)$ и $M_2(b,B)$ на плоскости $\bbR^2_{(x,y)}$
-
-Обозначим через $\coci[1]{[a,b]}$ множество всех тех функций $y(x)\in C^1[a,b]$, для которых $y(a)=y(b)=0$.
-
-Пусть $y(x)\in M$ и $\eta (x)\in \coci[1]{[a,b]}$. Рассмотрим семейство функций, зависящих от действительного параметра $\alpha$: $y(x,\alpha)=y(x)+\alpha\cdot\eta(x)$. Поскольку $y(x,\alpha)\in M$ при $\forall\alpha$, то можно рассмотреть интеграл 
-\begin{equation} \label{ch29eq3}
-J(y+\alpha\eta)=\int\limits_a^b F[x,y(x)+\alpha\eta(x),y'(x)+\alpha\eta'(x)]\,dx.
-\end{equation}
-
-При фиксированных $y(x)$ и $\eta(x)$ интеграл $\eqref{ch29eq3}$ является собственным интегралом $\Phi(\alpha)$, зависящим от параметра $\alpha$. Если взять некоторое $\epsilon>0$, то при $|\alpha|\le\epsilon,\;x\in[a,b]$ подынтегральная функция F и ее производная по $\alpha$ в силу наложенных на $F$ условий являются непрерывными. Тогда по известной из курса анализа теореме $\Phi(\alpha)=J(y+\alpha\eta)$ является дифференцируемой функцией $\alpha$ при $|\alpha|\le \epsilon$ и по правилу Лейбница
-\begin{multline*}
-\Phi'(0)=\frac{d}{d\alpha}J[y(x)+\alpha\eta(x)]\biggr|_{\alpha=0}=\\=\int\limits_a^b\left\{ \frac{\partial F[x,y(x),y'(x)]}{\partial y}\cdot \eta(x)+\frac{\partial F[x,y(x),y'(x)]}{\partial y'}\cdot \eta'(x)\right\}\,dx.
-\end{multline*}
-
-\begin{defn}
-\textit{Допустимым приращением (вариацией)} функции $y(x)\in M$ называется любая функция $\eta (x)\in \coci[1]{[a,b]}$. Выражение $\frac{d}{d\alpha}J[y(x)+\alpha\eta(x)]\bigr|_{\alpha=0}$, где $\eta(x)$ "--- любая функция из $\coci[1]{[a,b]}$,  называется \textit{первой вариацией} функционала $J(y)$ на функции $y(x)$ и обозначается $\delta J[y,\eta(x)]$, $\forall\eta(x)\in\coci[1]{[a,b]}$.
-\end{defn}
-
-Таким образом, вариация функционала \eqref{ch29eq1}
-\begin{equation} \label{ch29eq4}
-\delta J[y,\eta(x)]=\int\limits_a^b\left\{\frac{\partial F[x,y(x),y'(x)]}{\partial y}\cdot\eta(x) + \frac{\partial F[x,y(x),y'(x)]}{\partial y'}\cdot \eta'(x)\right\}\,dx,
-\end{equation}
-где $\eta(x)$ "--- любая допустимая вариация функции  $y(x)\in M$.
-
-Отметим, что первая вариация $\delta J[y,\eta(x)]$ линейно зависит от $\eta(x)$ и $\eta'(x)$.
-
-\section{Необходимые условия локального экстремума}
-\begin{thm} \label{ch29thm1}
-Если $\hat{y}(x)\in M$ является решением простейшей вариационной задачи, то необходимо $\delta J[\hat{y},\eta (x)]=0$ для любой допустимой $\eta (x)$.
-\end{thm}
-
-\begin{proof}
-Пусть для определенности $\hat{y}(x)\in M$ дает слабый локальный минимум для функционала $J(y)$, т.е. $\exists\epsilon>0$ такое, что $J(\hat{y}+h)\geq J(\hat{y})$ для $\forall h(x)\in \coci[1]{[a,b]}$, для которой $||h(x)||<\epsilon$. Положим $h(x)=\alpha\eta(x)$, где $\alpha\in \bbR,\;\eta(x)\in \coci[1]{[a,b]}$. Тогда $\hat{y}(x)+h(x)\in M$ и для достаточно малых $|\alpha|$ при фиксированной $\eta(x)$
-\begin{gather}
-||h(x)||_{C^1[a,b]}=|\alpha|\left\{\max_{[a,b]}\limits |\eta(x)|+\max_{[a,b]}\limits |\eta'(x)|\right\},\\
-\Phi(\alpha)=J(\hat{y}+\alpha\eta)\geq J(\hat{y})=\Phi(0)
-\end{gather}
-Это значит, что дифференцируемая функция $\Phi(\alpha)$ имеет минимум при $\alpha=0$. Значит, $\Phi ' (0)=0$, и тогда $\delta J[y,\eta(x)]=\Phi ' (0)=0,\; \forall \eta(x)\in \coci[1]{[a,b]}$
-\end{proof}
-
-\begin{lemm}[Основная лемма вариационного исчисления] \label{ch29.2lemm1}
-Если $f(x)\in C[a,b]$ и $\int_a^b\limits f(x)\eta(x)\,dx=0$ для $\forall\eta(x)\in \coci[1]{[a,b]}$, то $f(x)\equiv 0$ на $[a,b]$.
+\begin{lemm} \label{ch28.1lemm2}
+Уравнение \eqref{ch28.1eq1}) эквивалентно системе \eqref{ch28.1eq2}.
 \end{lemm}
-\begin{proof}
-Рассуждаем от противного. Пусть $f(x) \not\equiv  0$ на $[a,b]$. Тогда $\exists x_0\in(a,b)$ такая, что $f(x_0)\neq 0$. Пусть для определенности $f(x_0)>0$. Из непрерывности $f(x)$ на $[a,b]$ следует, что $\exists\epsilon>0$ такое, что $f(x)\geq\frac{1}{2}f(x_0)$, $\forall x\in [x_0-\epsilon,x_0+\epsilon]\subset (a,b).$ Возьмем
-$$
-\eta(x)=\begin{cases} 
-[x-(x_0-\epsilon)]^2\cdot [x-(x_0+\epsilon)]^2, &x\in[x_0-\epsilon,x_0+\epsilon],\\
-0, &x\notin[x_0-\epsilon,x_0+\epsilon].
-\end{cases}
-$$
-Нетрудно проверить, что функция $\eta(x)\in \coci[1]{[a,b]}$. По интегральной теореме о среднем получаем, что
-\begin{multline*}
-\int_a^b\limits f(x)\eta(x)\,dx=\int\limits_{x_0-\epsilon}^{x_0+\epsilon} f(x)\eta(x)\,dx =\\= f(\zeta)\int\limits_{x_0-\epsilon}^{x_0+\epsilon}\eta(x)\,dx \geq \frac{1}{2} f(x_0)\int\limits_{x_0-\epsilon}^{x_0+\epsilon}  \eta (x)\,dx>0,
-\end{multline*}
-где $\zeta\in[x_0-\epsilon,x_0+\epsilon]$. А это неравенство противоречит условию теоремы. Значит, наше предположение о том, что $f(x)\not\equiv  0$ на $[a,b]$ неверно. 
 
-Лемма доказана.
+\begin{proof}
+Пусть $y = \phi(x)$ "--- решение \eqref{ch28.1eq1}. 
+
+Положим $y_1(x) = \phi(x), \ y_2(x) = \phi'(x), \ldots, y_n(x) = \phi^{(n - 1)}(x)$. Тогда вектор-функция с компонентами $\phi(x),\ \phi'(x),\ldots,\ \phi^{(n - 1)}(x)$ удовлетворяет системе \eqref{ch28.1eq2}. Наоборот, если вектор-функция с компонентами $\phi(x), \phi'(x), \ldots, \phi^{(n - 1)}(x)$ "--- решение системы \eqref{ch28.1eq1}, то, исключив из \eqref{ch28.1eq2} переменные $y_2, \ldots, y_n$, получаем, что $y_1 = \phi(x)$ "--- решение уравнения \eqref{ch28.1eq1}.
 \end{proof}
 
+Лемма \ref{ch28.1lemm2} позволяет  перенести все результаты для линейных систем на случай уравнения \eqref{ch28.1eq1}.
 
-\begin{thm}\label{ch29thm2}
-Пусть функция $F(x,y,p)$ "--- дважды непрерывно дифференцируема при $\forall x\in[a,b]$, $\forall(y,p)\in \bbR^2_{(y,p)}$. Если дважды непрерывно дифференцируемая функция $\hat{y}(x)$ является решением простейшей вариационной задачи, то необходимо функция $\hat{y}(x)$ на $[a,b]$ удовлетворяет уравнению Эйлера
-\begin{equation} \label{ch29eq5}
-\frac{\partial F}{\partial y}-\frac{d}{dx}\cdot\frac{\partial F}{\partial y'}=0
+Рассмотрим для уравнения \eqref{ch28.1eq1} начальные условия
+\begin{equation} \label{ch28.1eq3}
+y(x_0) = y_1^{(0)}, \; y'(x_0) = y_2^{(0)}, \; \ldots, \; y^{(n - 1)}(x_0) = y_n^{(0)},
 \end{equation}
-(здесь $\frac{d}{dx}$ "--- полная производная по $x$).
+где $x_0 \in [\alpha, \beta]$ и $y_1^{(0)}, \ldots, y_n^{(0)}$ "--- заданные числа.
+
+\begin{thm}
+Пусть все функции $a_j(x), \: j = \overline{1,n}$ и $f(x)$ "--- непрерывны на $[\alpha, \beta]$ и пусть $x_0 \in [\alpha, \beta]$. Тогда при произвольных начальных значениях $y_1^{(0)}, \ldots, y_n^{(0)}$ решение задачи Коши \eqref{ch28.1eq1}), \: (\ref{ch28.1eq3} существует и единственно на всем $[\alpha, \beta]$.
 \end{thm}
 
 \begin{proof}
-Если $\hat{y}(x)$ "--- решение задачи, то в силу теоремы \ref{ch29thm1} $\delta J[\hat{y},\eta(x)] = 0$ для любой допустимой вариации $\eta(x)$. Учитывая, что $\eta(a)=\eta(b)=0$, проинтегрируем по частям слагаемое, содержащее $\eta'(x)$ в формуле \eqref{ch29eq4}. Это законно, так как выражение
+Сделав замену 
 $$
-\frac{d}{dx}\frac{\partial F[x,y(x),y'(x)]}{\partial y'}\biggr|_{y=\hat{y}(x)} = \left[\frac{\partial^2F}{\partial y'\partial x}+\frac{\partial^2F}{\partial y'\partial y}\cdot y'+\frac{\partial ^2F}{\partial {y'}^{2}}\cdot y'' \right]\biggr|_{y=\hat{y}(x)}
+y_1(x) = y(x), \; y_2(x) = y'(x), \; \ldots, \; y_n(x) = y^{(n - 1)}(x),
 $$
-в силу условий теоремы является непрерывной на $[a,b]$ функцией. Имеем
-\begin{multline*}
-0=\int\limits_a^b\left\{\frac{\partial F[x,\hat{y}(x),\hat{y}'(x)]}{\partial y}\cdot \eta(x)+\frac{\partial F [x,\hat{y}(x),\hat{y}'(x)]}{\partial y'}\cdot\eta'(x)\right\}\,dx=\\=\frac{\partial F[x,\hat{y}(x),\hat{y}'(x)]}{\partial y'}\cdot \eta(x)\biggr|_{x=a}^{b}+\int\limits_a^b\left\{\frac{\partial F}{\partial y} - \frac{d}{dx}\frac{\partial F}{\partial y'}\right\}\biggr|_{y=\hat{y}(x)}\cdot\eta(x)\,dx=\\=\int\limits_a^b\left\{\frac{\partial F}{\partial y}-\frac{d}{dx}\frac{\partial F}{\partial y'}\right\}\biggr|_{y=\hat{y}(x)}\cdot \eta(x)\,dx.
-\end{multline*}
-
-Поскольку функция  $\eta(x)\in\coci[1]{[a,b]}$, а функция
-$$
-\left\{\frac{\partial F(x,y,y')}{\partial y}-\frac{d}{dx}\cdot\frac{\partial F(x,y,y')}{\partial y'} \right\}\biggr|_{y=\hat{y}(x)}
-$$
-является непрерывной на $[a,b]$, то в силу леммы  \ref{ch29.2lemm1} (основной леммы вариационного исчисления)
-$$
-\left\{\frac{\partial F(x,y,y')}{\partial y} - \frac{d}{dx}\cdot\frac{\partial F(x,y,y')}{\partial y'}\right\}\biggr|_{y=\hat{y}(x)}\equiv 0,\quad \forall x\in [a,b].
-$$
-Это значит, что $\hat{y}(x)$ удовлетворяет уравнению Эйлера \eqref{ch29eq5}.
+сведем уравнение \eqref{ch28.1eq1} к системе \eqref{ch28.1eq2}. При этом начальные условия примут вид
+\begin{equation} \label{ch28.1eq4}
+y(x_0) = y^{(0)},
+\end{equation}
+где $y^{(0)}$ "--- вектор с компонентами $y_1^{(0)}, \ldots, y_n^{(0)}$. В силу леммы $\ref{ch28.1lemm2}$ задача Коши \eqref{ch28.1eq1}), \: (\ref{ch28.1eq3} эквивалентна задаче Коши \eqref{ch28.1eq2}), \: (\ref{ch28.1eq4}. В силу условий теоремы $A(x)$ и $f(x)$ "--- непрерывны на $[\alpha, \beta]$. Следовательно, для задачи Коши \eqref{ch28.1eq2}), \: (\ref{ch28.1eq4} выполнены все условия теоремы о существовании и единственности задачи Коши для линейной системы уравнений. Значит, и решение задачи Коши \eqref{ch28.1eq1}), \: (\ref{ch28.1eq3} существует и единственно на $[\alpha, \beta]$.
 \end{proof}
+\section{Фундаментальная система решений}
+
+Рассмотрим линейное однородное уравнение порядка $n$
+\begin{equation} \label{ch28.2eq1}
+y^{(n)} + a_1(x)y^{(n - 1)} + \ldots + a_n(x)y = 0,
+\end{equation} 
+где $a_j(x)$, $j = \overline{1,n}$, заданные непрерывные функции на $[\alpha, \beta]$.
 
 \begin{defn}
-Всякое решение уравнения Эйлера \eqref{ch29eq5} называют \textit{экстремалью} функционала \eqref{ch29eq1}. Всякая же экстремаль $y(x)$ функционала \eqref{ch29eq1}, являющаяся допустимой функцией, т.е. $y(x)\in M$, называется \textit{допустимой экстремалью} функционала \eqref{ch29eq1}.
+Решения $y_1(x), \ldots, y_k(x)$ уравнения \eqref{ch28.2eq1} называются \textit{линейно зависимыми} на $[\alpha, \beta]$, если $\exists$ числа $c_1, \ldots, c_k$, одновременно не равные нулю и такие, что 
+$$
+c_1y_1(x) + \ldots + c_ky_k(x) \equiv 0, \quad \forall x \in [\alpha, \beta].
+$$
+
+В противном случае решения $y_1(x), \ldots, y_k(x)$ называются \textit{линейно независимыми} на $[\alpha, \beta]$.
 \end{defn}
 
-Из теоремы \ref{ch29thm2} вытекает, что только среди допустимых экстремалей \eqref{ch29eq1}, т.е. среди экстремалей, удовлетворяющих граничным условиям \eqref{ch29eq2}, нужно искать решение простейшей вариационной задачи. 
+Рассмотрим линейную однородную систему, которая эквивалентна уравнению \eqref{ch28.1eq1}:
+\begin{multline} \label{ch28.2eq2}
+y'(x) = A(x)y(x), \\
+y(x) = \begin{pmatrix}
+y_1(x) \\
+\vdots \\
+y_n(x)
+\end{pmatrix},\quad
+A(x) = \begin{pmatrix}
+0 & 1 & 0 & \ldots & 0 \\
+0 & 0 & 1 & \ldots & 0 \\
+\hdotsfor{5} \\
+0 & 0 & 0 & \ldots & 1 \\
+-a_n & -a_{n - 1} & -a_{n - 2} & \ldots & -a_1
+\end{pmatrix}.
+\end{multline}
+
+\begin{lemm} \label{ch28.2lemm1}
+Решения $y_1(x), \ldots, y_k(x)$ уравнения~\eqref{ch28.2eq1} линейно зависимы на $[\alpha, \beta]$ тогда и только тогда, когда соответствующие им решения $Y_1(x), \ldots, Y_k(x)$ системы~\eqref{ch28.2eq2} линейно зависимы на $[\alpha,\beta]$ (здесь $Y_j(x)$ "--- вектор-функция с компонентами $y_j(x), y'_j(x), \ldots, y^{(n - 1)}_j(x), \ j = \overline{1,k}$.
+\end{lemm}
+
+\begin{proof}
+Пусть решения $y_1(x), \ldots, y_k(x)$ уравнения $\eqref{ch28.2eq1}$ линейно зависимы на $[\alpha, \beta]$. Тогда найдутся такие числа $c_1, \ldots, c_k, \: |c_1| + \ldots + |c_k| > 0$, что 
+$$
+c_1y_1(x) + \ldots + c_ky_k(x) \equiv 0, \quad \forall x \in [\alpha, \beta].
+$$
+
+Дифференцируя последовательно это тождество $(n - 1)$ раз, получаем тождество на $[\alpha, \beta]$ для решений системы $\eqref{ch28.2eq2}$:
+$$
+c_1Y_1(x) + \ldots + c_kY_k(x) \equiv 0,
+$$
+т.е. решения $Y_1(x), \ldots, Y_k(x)$ системы $\eqref{ch28.2eq2}$ линейно зависимы на $[\alpha, \beta]$.
+
+Обратно, если выполнено последнее тождество на $[\alpha, \beta]$ с некоторыми, одновременно не равными нулю, числами $c_1, \ldots, c_k$, то первая компонента этого векторного тождества означает линейную зависимость решений $y_1(x), \ldots, y_k(x)$ уравнения $\eqref{ch28.2eq1}.$
+\end{proof}
+
+\begin{cons}
+Решения $y_1(x), \ldots, y_k(x)$ уравнения \eqref{ch28.2eq1} линейно независимы на $[\alpha, \beta]$ тогда и только тогда, когда решения $Y_1(x), \ldots, Y_k(x)$ системы \eqref{ch28.2eq2} линейно независимы на $[\alpha, \beta]$.
+\end{cons}
+
+\begin{defn}
+Совокупность произвольных $n$ независимых решений $\phi_1(x), \ldots, \phi_n(x)$ уравнения \eqref{ch28.2eq1} называется \textit{фундаментальной системой решений уравнения} \eqref{ch28.2eq1}.
+\end{defn}
+
+Из леммы $\ref{ch28.2lemm1}$ в качестве следствия получаем следующее утверждение.
+
+\begin{lemm} \label{ch28.2lemm2}
+Решения $\phi_1(x), \ldots, \phi_n(x)$ уравнения \eqref{ch28.2eq1} образуют фундаментальную систему решений уравнения \eqref{ch28.2eq1} в том и только в том случае, когда вектор-функция $\Phi_j(x)$ с компонентами $\phi_j(x), \ldots, \phi^{(n - 1)}_j(x),\ j =\ \overline{1,n}$, образуют фундаментальную систему решений линейной однородной системы $\eqref{ch28.2eq2}$.
+\end{lemm}
+
+С помощью леммы $\ref{ch28.2lemm2}$ все утверждения о фундаментальных системах решений линейной однородной системы переносятся на фундаментальные системы решений линейных однородных уравнений порядка $n$.
+
+\begin{thm} \label{ch28.2thm1}
+Для уравнения \eqref{ch28.2eq1} существует бесконечное множество фундаментальных систем решений.
+\end{thm}
+
+\begin{proof}
+Уравнение \eqref{ch28.2eq1} эквивалентно системе \eqref{ch28.2eq2}, для которой справедлив аналог теоремы $\ref{ch28.2thm1}$ для линейной системы с переменными коэффициентами. В силу леммы $\ref{ch28.2lemm2}$ тогда справедлива и теорема $\ref{ch28.2thm1}$.
+\end{proof}
+
+\begin{thm} \label{ch28.2thm2}
+Если $\phi_1(x), \ldots, \phi_n(x)$ "--- фундаментальная система решений уравнения \eqref{ch28.2eq1}, то каждое решение $y(x)$ уравнения \eqref{ch28.2eq1} представимо единственным образом в виде
+$$
+y(x) = c_1\phi_1(x) + \cdots + c_n\phi_n(x),
+$$
+где $c_1, \ldots, c_n$ "--- постоянные.
+\end{thm}
+
+\begin{proof}
+По лемме $\ref{ch28.2lemm2}$ вектор-функции $\Phi_j(x)$ с компонентами $\phi_j(x),\\ \phi'_j(x), \ldots, \phi^{(n - 1)}_j(x), \: j = \overline{1,n}$, образуют фундаментальную систему решений системы \eqref{ch28.2eq2}, эквивалентной уравнению \eqref{ch28.2eq1}. По теореме, аналогичной теореме $\ref{ch28.2thm2}$, для линейной системы с переменными коэффициентами любое решение $Y(x)$ системы \eqref{ch28.2eq2} единственным образом представимо в виде
+$$
+Y(x) = c_1 \Phi_1(x) + \cdots + c_n \Phi_n(x).
+$$
+Первая строка этого векторного равенства и дает утверждение теоремы~$\ref{ch28.2thm2}$.
+\end{proof}
+
+\section{Определитель Вронского}
+
+Рассмотрим систему 
+\begin{equation} \label{ch28.4eq1}
+y'(x) = A(x)y(x),
+\end{equation}
+где $A(x)$ "--- заданная непрерывная на $[\alpha, \beta]$ комплекснозначная квадратная матрица порядка $n$.
+
+\begin{thm} \label{ch28.3thm1}
+Пусть $y_j(x), j = \overline{1,k}$ "--- решения линейной однородной системы~\eqref{ch28.4eq1}. Решения $y_j(x), j = \overline{1,k}$ "--- линейно независимы на $[\alpha, \beta]$ тогда и только тогда, когда $\forall x_0 \in [\alpha, \beta]$ числовые векторы $y_j(x_0), j = \overline{1,k}$ линейно независимы.
+\end{thm}
+
+\begin{proof}
+Пусть решения~\eqref{ch28.4eq1} $y_j(x), j = \overline{1,k}$ "--- линейно независимы. Если $\exists x_0 \in [\alpha, \beta]$, такое, что $y_j(x_0),\ j = \overline{1,k}$ "--- линейно зависимые векторы, то найдутся числа $c_1, \ldots, c_k, \; |c_1| + \ldots + |c_k| > 0$, такие, что
+$$
+c_1y_1(x_0) + \ldots + c_k y_k(x_0) = 0
+$$
+
+Вектор-функция
+$$
+y(x) = c_1y_1(x) + \ldots + c_k y_k(x)
+$$
+является решением системы \eqref{ch28.4eq1} и удовлетворяет начальному условию $y(x_0) = 0$. Тогда $y(x) \equiv 0$ на $[\alpha, \beta]$, т.е. $y_j(x), j = \overline{1,k}$, линейно зависимы. Противоречие.
+
+Наоборот. Пусть $\forall x_0 \in [\alpha, \beta]$ векторы $y_j(x_0), j = \overline{1,k}$, линейно независимы. Если бы вектор-функции $y_j(x), j = \overline{1,k}$, были линейно зависимыми на $[\alpha,\beta]$, то следовало бы, что векторы $y_j(x_0), j = \overline{1,k}$, "--- линейно зависимы. Противоречие.
+\end{proof}
+
+Пусть $y_1(x), \ldots, y_n(x)$ "--- система вектор-функций с $n$ компонентами на $[\alpha, \beta]$
+\begin{defn}
+\textit{Определителем Вронского} (или сокращенно \textit{вронскианом}) системы $y_1(x), \ldots, y_n(x)$ называется определитель
+$$
+W(x) \equiv W[y_1(x), \ldots, y_n(x)] = \det ||y_1(x)\ \ldots\ y_n(x)||.
+$$
+
+Если $y_1(x), \ldots, y_n(x)$ "--- решения линейной однородной системы \eqref{ch28.4eq1}, то из теоремы $\ref{ch28.3thm1}$ вытекает следующая связь между линейной зависимостью $y_1(x), \ldots, y_n(x)$ на $[\alpha, \beta]$ и обращением в нуль их определителя Вронского $W(x)$.
+
+\begin{itemize}
+\item
+Решения $y_1(x), \ldots, y_n(x)$ системы \eqref{ch28.4eq1} линейно зависимы на $[\alpha, \beta]$, тогда и только тогда, когда $W[y_1, \ldots, y_n] \equiv 0$ на $[\alpha, \beta]$.
+\item
+Решения $y_1(x), \ldots, y_n(x)$ системы \eqref{ch28.4eq1} линейно независимы на $[\alpha, \beta]$, тогда и только тогда, когда $W[y_1, \ldots, y_n] \not = 0$, $\forall x \in [\alpha, \beta]$. Отсюда получаем, что не существует таких $x_1, x_2 \in [\alpha, \beta], \; x_1 \not= x_2$, что $W(x_1) = 0, \; W(x_2) \not= 0$. 
+\end{itemize}
+\end{defn}
+
+\begin{defn}
+\textit{Определителем Вронского} (или сокращенно \textit{вронскианом}) решений $y_1(x), \ldots, y_n(x)$ уравнения \eqref{ch28.2eq1} называется определитель вида
+\begin{equation}
+\begin{vmatrix}
+y_1(x) & \ldots & y_n(x) \\
+y'_1(x) & \ldots & y'_n(x) \\
+\hdotsfor{3} \\
+y^{(n - 1)}_1(x) & \ldots & y^{(n - 1)}_n(x)
+\end{vmatrix}
+\end{equation}
+и обозначается $W(x)$ или $W[y_1(x), \ldots, y_n(x)]$.
+\end{defn}
+
+\begin{thm} \label{ch28.3thm3}
+Решения $y_1(x), \ldots, y_n(x)$ уравнения \eqref{ch28.2eq1} линейно зависимы тогда и только тогда, когда $W(x) \equiv 0$ на $[\alpha, \beta]$. Решения $y_1(x), \ldots, y_n(x)$ уравнения~\eqref{ch28.2eq1} линейно независимы тогда и только тогда, когда $W(x) \not= 0$ для всех $x \in [\alpha, \beta]$.
+\end{thm}
+
+\begin{proof}
+Сведем уравнение \eqref{ch28.2eq1} к эквивалентной системе~\eqref{ch28.2eq2}. Тогда столбцы $W(x)$ "--- решения системы \eqref{ch28.2eq2} и, значит, $W(x)$ является определителем Вронского и для решений \eqref{ch28.2eq2}. Но для него утверждения теоремы $\ref{ch28.3thm3}$ уже установлены для линейной однородной системы , как свойства определителя Вронского.
+\end{proof}
+
+\section{Формула Лиувилля"--~Остроградского}
+
+\begin{thm}
+Пусть $W(x)$ "--- вронскиан решений $y_1(x), \ldots, y_n(x)$ уравнения~\eqref{ch28.4eq1} и пусть $x_0 \in [\alpha, \beta]$. Тогда для всех $x \in [\alpha, \beta]$ справедлива формула Лиувилля"--~Остроградского
+\begin{equation} \label{ch28.4eq6}
+W(x) = W(x_0) \exp \left\lbrace \int\limits_{x_0}^{x} \tr A(\zeta) \,d\zeta \right\rbrace,
+\end{equation}
+где $\tr A(\zeta) = a_{11}(\zeta) + \cdots + a_{nn}(\zeta)$ называется следом матрицы $A(\zeta)$.
+\end{thm}
+
+\begin{proof}
+Покажем, что $W(x)$ удовлетворяет дифференциальному уравнению
+$$
+W'(x) = \tr A(x) \cdot W(x), \quad x \in [\alpha, \beta].
+$$
+Пусть $y_{ij}(x),\ i = \overline{1,n}$ компоненты решения $y_j(x),\ j = \overline{1,n}$. Тогда $W(x)$ является функцией всех этих компонент:
+$$
+W(x) = W[y_{11}(x), y_{21}(x), \ldots, y_{nn}(x)].
+$$
+По формуле производной сложной функции получаем, что 
+$$
+W'(x) = \sum\limits_{p,q = 1}^{n} \frac{\partial W(x)}{\partial y_{pq}(x)} y'_{pq}(x).
+$$
+Если $W_{pr}(x)$ "--- алгебраическое дополнение $y_{pr}(x)$ в $W(x)$, то разложение~$W(x)$ по $p$-й строке дает
+$$
+W(x) = \sum\limits_{r = 1}^{n} y_{pr}(x) \cdot W_{pr}(x).
+$$
+Отсюда находим, что 
+$$
+\frac{\partial W(x)}{\partial y_{pq}} = W_{pq}(x).
+$$
+Каждая вектор--функция $y_q(x)$ удовлетворяет системе~\eqref{ch28.4eq1}, т.е.
+$$
+y'_q(x) = A(x)y_q(x), \quad q = \overline{1,n}, \quad x \in [\alpha, \beta].
+$$
+Отсюда находим, что 
+$$
+y'_{pq}(x) = \sum\limits_{r = 1}^{n} a_{pr}(x)y_{rq}(x),
+$$
+где $a_{pr}(x)$ "--- элементы матрицы $A(x)$.
+
+Подставляя найденные выражения $\frac{\partial W(x)}{\partial y_{pq}}$ и $y'_{pq}(x)$ в формулу $W'(x)$, получаем, что
+$$
+W'(x) = \sum\limits_{p,q = 1}^{n} W_{pq}(x) \sum\limits_{r = 1}^{n} a_{pr}(x)y_{rq}(x) = \sum\limits_{p,r = 1}^{n} a_{pr}(x) \sum\limits_{q = 1}^{n} y_{rq}(x) W_{pq}(x).
+$$
+
+Но из курса алгебры известно, что 
+$$
+\sum\limits_{q = 1}^{n}y_{rq}(x) W_{pq}(x) = W(x) \cdot \delta_{rp},
+$$
+где $\delta_{rp}$ "--- символ Кронекера. Тогда
+$$
+W'(x) = W(x) \sum\limits_{p,r = 1}^{n} a_{pr}(x) \delta_{pr} = W(x) \sum\limits_{p = 1}^{n} a_{pp}(x) = W(x) \cdot \tr A(x).
+$$
+Интегрирование этого линейного однородного уравнения первого порядка дает требуемую формулу \eqref{ch28.4eq6}.
+\end{proof}
+
+\begin{thm}
+Пусть $W(x)$ "--- определитель Вронского решений $y_1(x), \ldots, y_n(x)$ уравнения \eqref{ch28.2eq1} и пусть $x_0 \in [\alpha, \beta]$. Тогда для всех $x \in [\alpha, \beta]$ справедлива формула Лиувилля"--~Остроградского
+$$
+W(x) = W(x_0) \exp \left\lbrace - \int\limits_{x_0}^{x} a_1(\zeta) \,d\zeta \right\rbrace.
+$$
+\end{thm}
+
+\begin{proof}
+Уравнение~\eqref{ch28.2eq1} эквивалентно линейной системе~\eqref{ch28.2eq2}. Для них определитель Вронского $W(x)$ один и тот же, и для системы \eqref{ch28.2eq2} формула Лиувилля"--~Остроградского доказана. Остается заметить, что для системы~\eqref{ch28.2eq2} $\tr A(\zeta) = - a_1(\zeta)$.
+\end{proof}
+
+\begin{notion}
+Рассмотрев уравнение~\eqref{ch28.2eq1}, заметим, что коэффициент при старшей производной $y^{(n)}$:  $a_0(x) = 1$. Если $a_0(x) \not= 1, a_0(x) \not= 0$, то 
+$$
+W(x) = W(x_0) \exp \left\lbrace - \int\limits_{x_0}^{x} \frac{a_1(\zeta)}{a_0(\zeta)} \,d\zeta \right\rbrace.
+$$
+\end{notion}
 

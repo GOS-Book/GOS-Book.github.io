@@ -1,168 +1,117 @@
-\chapter{Самосопряженные преобразования евклидовых пространств, свойства их собственных значений и собственных векторов.}
-
 \font\Large=cmr10 at 20pt
 \def\fudge#1{\smash{\hbox{\Large#1}}}
+\chapter{Собственные значения и собственные векторы линейных преобразований. Диагонализируемость линейных преобразований.}
 
-\section[Самосопряженные преобразования евклидовых пространств, свойства их собственных значений и собственных векторов.]{Самосопряженные преобразования евклидовых пространств, свойства их собственных значений и собственных векторов.\footnote{Рекомендую ознакомиться с написанными самим Чубаровым И.А. материалами по этому билету по этой ссылке: \href{https://drive.google.com/drive/u/0/folders/0BzuzEyNkpwYDcFhhV1l2N1lhY2s}{$https://drive.google.com/drive/...$}}}
+\section{Свойства собственных векторов и собственных значений линейных преобразований}
+Пусть дано линейное преобразование $\phi\colon L \rightarrow L$, где $L$ - линейное пространство над полем $K$.
+\begin{defn}
+Вектор $x \in L$: $x \neq \vv 0$ называется \textit{собственным вектором} преобразования $\phi$, если 
+\begin{equation}
+\exists \lambda \in K\cquad \phi(x)=\lambda x,
+\end{equation}
+$\lambda$ называется \textit{собственным значением} преобразования $\phi$ 
+\end{defn}
+\begin{thm}
+Пусть $x_1$,~\ldots, $x_n$ являются собственными векторами линейного преобразования $\phi$, отвечающими попарно разным собственным значениям $\lambda_1$,~\ldots,~$\lambda_n$. Тогда $x_1$,~\ldots, $x_n$ образуют линейно независимую систему векторов.
+\end{thm}
+\begin{proof}
+Воспользуемся методом математической индукции:
+\linebreak\vspace*{-\baselineskip}
+\begin{itemize}
+\item[\underline{$n=1:$}] Вектор $x_1$ является собственным, значит, по определению не равен нулевому $\Rightarrow$ образует линейно-независимую систему.
+\item[\underline{$n-1:$}] Пусть теорема верна для $n-1\ge 1$ собственных векторов.
+
+\item[\underline{$n:$}] Пусть для некоторых $\alpha_1,\dots,\alpha_n \hookrightarrow \alpha_1 x_1 + \ldots+\alpha_n x_n = 0$. Покажем, что $\alpha_1=\ldots=\alpha_n=0$.
+
+$\phi(\sum_{i=1}^n \alpha_i x_i)=\sum_{i=1}^n \alpha_i \lambda_i x_i = \phi(0)=0$. \\
+Получаем систему: \\
+$\begin{cases}
+\alpha_1 x_1 + \alpha_2 x_2 + \ldots + \alpha_n x_n = 0 & |\cdot \lambda_n \\
+\alpha_1 \lambda_1 x_1 + \alpha_2 \lambda_2 x_2 + \ldots + \alpha_n \lambda_n x_n = 0 \\
+\end{cases}$ \\
+Вычтем второе равенство из первого и получим:
+\begin{equation*}
+\alpha_1 (\lambda_n-\lambda_1) x_1 + \alpha_2 (\lambda_n-\lambda_2) x_2 + \ldots + \alpha_{n-1} (\lambda_n-\lambda_{n-1}) x_{n-1} = 0
+\end{equation*}
+По предположению индукции $\forall i=\overline{1,n-1} \hookrightarrow \alpha_i(\lambda_n-\lambda_i)=0$, откуда в силу условия теоремы $\alpha_1=\ldots=\alpha_{n-1}=0 \Rightarrow \alpha_n x_n=0 \Rightarrow \alpha_n=0$
+\end{itemize}
+\vspace{-1.65\baselineskip}
+\end{proof}
+\begin{cons}
+Если $\dim L = n$ и $\phi$ имеет $n$ различных собственных значений, то из собственных векторов преобразования $\phi$ можно составить базис $L$.
+\end{cons}  
+\begin{stt}
+Линейное преобразование $\phi$ приводимо к диагональному виду тогда и только тогда, когда в $L$ существует базис $ h = \norm{h_1,...,h_n}$ из собственных векторов $\phi$. При этом $A_{\phi,h}=
+\begin{pmatrix}
+\lambda_1 &           &        & \\
+        & \lambda_2 &        & \fudge {0 }  \\
+        &			& \ddots & \\
+\fudge{ 0}&			&		 & \lambda_n \\
+\end{pmatrix}$, где $\lambda_i$ удовлетворяют $\phi(h_i)=\lambda_i h_i$.
+\end{stt} 
+
+Теперь обсудим способ вычисления собственных значений и собственных векторов. Пусть в пространстве $L$ задан базис $ e=\norm{e_1,...,e_n}$. Распишем в координатном представлении закон преобразования собственного вектора $x=e X^\uparrow$:
+\begin{equation}\label{22.2.eigenvectors}
+A_\phi X^\uparrow=\lambda X^\uparrow \Leftrightarrow (A_\phi-\lambda E)X^\uparrow=0
+\end{equation}
+Уравнение \ref{22.2.eigenvectors} имеет нетривиальные решения, если матрица вырожденна:
+\begin{equation}\label{22.2.eigenvalues}
+\bigchi_{A_\phi}(\lambda)\equiv\det(A_\phi-\lambda E)=0
+\end{equation}
+\begin{defn}
+Уравнение \ref{22.2.eigenvalues} называется \textit{характеристическим}, его корни --- \textit{характеристическими корнями}, а многочлен $\bigchi_{A_\phi}(\lambda)$ --- \textit{характеристическим многочленом матрицы} $A_\phi$.
+\end{defn}
+\begin{stt}
+Если $\lambda$ --- собственное значение, то оно является характеристическим корнем. Характеристический корень $\lambda_0$ является собственным значением, если $\lambda_0 \in K$.
+\end{stt}
+\begin{exmpl}
+Пусть $\phi$ --- преобразование поворота на угол $\alpha$ в двумерном пространстве над полем вещественных чисел $K=\bbR$: $A_\phi=\begin{pmatrix}
+\cos\alpha && -\sin\alpha \\ \sin\alpha && \cos\alpha
+\end{pmatrix}$ и $\alpha \neq k\pi$. Тогда собственными значениями являются $\lambda_{1,2}=e^{\pm i\alpha} \notin K$. Данное преобразование не имеет собственных значений, а значит, и собственных векторов.
+\end{exmpl}
 
 \begin{defn}
-Линейное пространство $E$ над полем вещественных чисел называется \textit{евклидовым}, если в нём введено \textit{скалярное произведение} $(\bullet,\bullet): E\times E \rightarrow \bbR$ "--- операция удовлетворяющая следующим условиям:
-\begin{enumerate}
-\item  $(\lambda x,y)=\lambda(x,y)\quad \forall x,y \in E \quad\forall \lambda \in \bbR$
-\item  $(x+y,z)=(x,z)+(y,z)\quad \forall x,y,z \in E$
-\item  $(x,y)=(y,x)\quad \forall x,y \in E$
-\item  $(x,x)>0\quad \forall x \in E: x \neq 0$
-\end{enumerate}
+Пусть $\phi:L\rightarrow L$ --- линейное преобразование пространства $L$ над полем $K$, $\lambda \in K$. Множество $L_\lambda$ собственных векторов, отвечающих собственному значению $\lambda$, называется \textit{собственным подпространством} для собственного значения $\lambda$.
 \end{defn}
-  \begin{notion}
-  Иначе говоря, скалярное произведение "--- симметричная положительно определённая билинейная форма (см. билет 24).
-  \end{notion}
-  Рассмотрим, как происходит вычисление скалярного произведения через координаты в базисе $e=\norm{e_1 \ldots e_n}$: $x=\sum\limits_{i=1}^nx_ie_i=eX, y=\sum\limits_{j=1}^ny_je_j=eY$
-  \begin{equation}\label{23.1.sc.pr}
-  (x,y)=(\sum\limits_{i=1}^nx_ie_i,\sum\limits_{j=1}^ny_je_j)=\sum\limits_{i=1}^n\sum\limits_{j=1}^nx_i(e_i,e_j)y_j
-  \end{equation}
-  \begin{defn}
-  \textit{Матрицей Грама} базиса $e$ называется матрица попарных скалярных произведений его элементов:
-  \begin{equation}
-  G_e=\norm{(e_i,e_j)}=\begin{pmatrix}
-  (e_1,e_1)&&(e_1,e_2)&&\cdots&&(e_1,e_n)\\
-  (e_2,e_1)&&(e_2,e_2)&&\cdots&&(e_2,e_n)\\
-  \vdots   && \vdots  &&\ddots&& \vdots  \\
-  (e_n,e_1)&&(e_n,e_2)&&\cdots&&(e_n,e_n)\\
-  \end{pmatrix}
-  \end{equation}
-  \end{defn}
-  Теперь выражение \ref{23.1.sc.pr} можно записать в виде:
-  \begin{equation}
-  (x,y)=X^TG_eY
-  \end{equation}
-  \begin{notion}
-  Матрица Грама симметрична в силу симметричности скалярного произведения, однако не любая симметричная матрица может служить в качестве матрицы Грама: поскольку матрица Грама является матрицей билинейной формы скалярного произведения, она должна быть положительно определена (см. билет 24).
-  \end{notion}
-  
 \begin{defn}
-  Линейное преобразование $\phi\colon E \rightarrow E$ евклидова пространства называется \textit{самосопряжённым}, если
-  \begin{equation}\label{23.1.selfadjoint}
-  \forall x,y \in E \hookrightarrow (\phi(x),y)=(x,\phi(y))
-  \end{equation}
+\textit{Геометрической кратностью} характеристического корня $\lambda_0$ называется размерность пространства $L_{\lambda_0}$.
+\textit{Алгебраической кратностью} называется число $k \in \bbN$, если $\bigchi(\lambda)=(\lambda-\lambda_0)^k p(\lambda)$, где $p(\lambda)$ - такой многочлен, что $p(\lambda_0) \neq 0$.
 \end{defn}
-  \begin{thm}[Условие самосопряжённости преобразования в терминах матрицы Грама] Пусть матрица $A_\phi$ преобразования $\phi$ записана в некотором базисе $e$. $\phi$ является самосопряжённым преобразованием в том и только том случае, если
-  \begin{equation}\label{23.1.criteria}
-  A^T_{\phi,e}G_e=G_eA_{\phi,e}.
-  \end{equation}  
-  \end{thm}    
-  \begin{proof}
-  Пусть $X_e^\uparrow=X=
-  \begin{pmatrix}
-  x_1 \\ \vdots \\ x_n
-  \end{pmatrix},Y_e^\uparrow=Y=
-  \begin{pmatrix}
-  y_1 \\ \vdots \\ y_n
-  \end{pmatrix}$ - столбцы координат векторов $x=eX$ и $y=eY$. Тогда
-  \begin{equation*}
-  \left\lbrace \begin{array}{crl}
-    (\phi(x),y)=(A_\phi X)^TG_eY=X^TA_\phi^TG_eY \\
-    (\phi(x),y)=(x,\phi(y))=X^TG_eA_\phi Y \\
-    \end{array}\right\rbrace \Rightarrow  \begin{array}{crl}
-    X^TA_\phi^TG_eY=X^TG_eA_\phi Y, \\ \forall X,Y\in \bbR^n
-  \end{array}     
-  \end{equation*}   
-  Обозначим $B=A_\phi^TG_e$, $C=G_eA_\phi$. Подставляя $X=E_i$, $Y=E_j$, где $E_k$ "--- k-й столбец единичный матрицы, получим $E_i^TBE_j=E_i^TCE_j=b_{ij}=c_{ij}$, то есть $B=C$, что равносильно \eqref{23.1.criteria}.
-  \end{proof}
-  \begin{cons}
-  В ортонормированном базисе $(G_e=E)$ условие самосопряжённости преобразования $\phi$ приобретает вид: $A=A^T$, то есть матрица должна быть симметричной.
-  \end{cons}
 
-  \begin{defn}
-  Подпространство $U \subseteq L$ называется \textit{инвариантным подпространством} преобразовния $\phi$, или \textit{$\phi$-инвариантным}, если
-  \begin{equation}\label{23.1.invariant}
-  \forall u \in U \hookrightarrow \phi(u) \in U
-  \end{equation}
-  \end{defn} 
-  
-  \begin{defn}
-  \textit{Ортогональным дополнением} подпространства $U$ евклидова пространства $E$ называется множество векторов из $E$, ортогональных каждому из векторов подпространства $U$, т.е.
-  \begin{equation}\label{23.1.orthogonal}
-  U^\perp=\{v \in E\cquad \forall u \in U \hookrightarrow (u,v)=0\}
-  \end{equation}
-  \end{defn}
-  
-  Пусть $\phi$ "--- самосопряжённое преобразование евклидова пространства~$E$.
-  \begin{stt}\label{23.1.stt_orth}
-  Если $U$ "--- $\phi$-инвариантное подпространство в $E$, то его ортогональное дополнение $U^\perp$ также $\phi$-инвариантно.
-  \end{stt}
-  \begin{proof}
-  $\forall x \in U\quad \forall y \in U^\perp \hookrightarrow (x,\phi(y))=(\phi(x),y)=0$, т.к. $\phi(x)\in U$. Следовательно, $\phi(y)\in U^\perp \forall y\in U^\perp$.
-  \end{proof}
-  
-  \begin{stt}
-  Собственные векторы самосопряжённого преобразования $\phi$, отвечающие различным собственным значениям, ортогональны.
-  \end{stt}
-  \begin{proof}
-  Если $\phi(x_1)=\lambda_1 x_1, \phi(x_2)=\lambda_2 x_2, \lambda_1 \neq \lambda_2$, то $\lambda_1(x_1,x_2)=(\phi(x_1),x_2)=(x_1,\phi(x_2))=\lambda_2(x_1,x_2) \Rightarrow (\lambda_1-\lambda_2)(x_1,x_2)=0 \Rightarrow (x_1,x_2)=0$
-  \end{proof}    
-    
-  \begin{lemm}\label{23.1.lemm}
-  Любое линейное преобразование конечномерного действительного линейного пространства обладает одномерным или двумерным инвариантным подпространством $U$.
-  \end{lemm}
-  \begin{notion}
-  Одномерное инвариантное подспространство порождается собственным вектором, а двумерное соответствует существенно комплексному характеристическому корню. В силу основной теоремы алгебры характеристический многочлен имеет хотя бы один комплексный корень.
-  \end{notion}
-  
-  \begin{thm}\label{23.1.thm1}
-  Все характеристические корни самосопряжённого преобразования действительные.
-  \end{thm}
-  \begin{proof} Проведём доказательство по индкуции по $n=\dim E$:
-  \linebreak\vspace*{-\baselineskip}
-  \begin{itemize}
-  \item[\underline{$n=1:$}] случай очевиден.
-  \item[\underline{$n=2:$}] в ортонормированном базисе
-    \begin{equation}
-    \bigchi_A(\lambda)=\begin{vmatrix}
-    a_{11}-\lambda & a_{12} \\
-    a_{12} & a_{22}-\lambda
-    \end{vmatrix}=\lambda^2-(a_{11}+a_{22})\lambda+a_{11}a_{22}-a_{12}^2=0 \end{equation}
-    Дискриминант этого уравнения $D=(a_{11}-a_{22})^2+4a_{12}^2 \ge 0 \Rightarrow \lambda_{1,2} \in \bbR$.
-  \item[\underline{$n>2:$}] сделаем индуктивное прдеположение, что у любой симметрической матрицы порядка меньше $n$ все характеристические корни вещественные. Допустим, хотя бы один корень матрицы $A$ мнимый. Согласно замечанию к лемме \ref{23.1.lemm}, ему соответствует двумерное инвариантное пространство $U$. По утверждению \ref{23.1.stt_orth}, $U^\perp$ тоже инвариантно.
-  
-  В ортонормированном базисе, составленном из базисов подпространств, матрица преобразования имеет блочный вид (из определения матрицы преобразования) $A'=\begin{Vmatrix}
-  A_1 & 0 \\
-  0 & A_2 \\
-  \end{Vmatrix}$, где $A_1$ и $A_2$ "--- симметрические матрицы $2$-го и $(n-2)$-го порядков соответственно.
-    \begin{equation}
-    \bigchi_A(\lambda)=\begin{vmatrix}
-    A_1-\lambda E & 0 \\
-    0 & A_2-\lambda E
-    \end{vmatrix}=\abs{A_1-\lambda E}\abs{A_2-\lambda E} \end{equation}
-    По предположению индукции  $\abs{A_2-\lambda E}$ имеет все действительные корни, с учётом случая \underline{$n=2$} $\abs{A_1-\lambda E}$ "--- тоже. Противоречие с предположением. 
-    
-    Т.о., теорема верна для всех $n$.
-  \end{itemize}
-  \vspace{-1.65\baselineskip}  
-  \end{proof}
-  
-  \begin{defn}
-  Преобразование $\phi|_U:U\rightarrow U \subseteq L$ называется \textit{ограничением} преобразования $\phi:L\rightarrow L$ на инвариантное подпространство $U$, если $\forall u \in U \hookrightarrow \phi|_U(u)=\phi(u)$.
-  \end{defn}  
-  \begin{notion}
-  Ограничение самосопряжённого преобразования на инвариантное подпространство $U$ евклидова пространства $E$ остаётся самосопряжённым, если рассматривать на подпространстве склярное произведение, заданное во всём пространстве $E$.
-  \end{notion}  
-  
-  \begin{thm}
-  Для любого самосопряжённого преобразования существует ортонормированный базис из его собственных векторов. Матрица преобразования в этом базисе диагональна: $A=
-  \begin{pmatrix}
-  \lambda_1 &           &        & \\
-            & \lambda_2 &        & \fudge {0 }  \\
-            &			& \ddots & \\
-  \fudge{ 0}&			&		 & \lambda_n \\
-  \end{pmatrix}$, где $\lambda_1,...,\lambda_n$ "--- собственные значения матрицы этого преобразования.
-  \end{thm}
-  \begin{proof} Проведём доказательство по индукции по $n=\dim E$:
-  \linebreak\vspace*{-\baselineskip}
-  \begin{itemize}
-  \item[\underline{$n=1:$}] случай очевиден.
-  \item[\underline{$n>1:$}] пусть теорема верна для $\dim E<n$. Пусть $\lambda_1$ "--- какой-либо характеристический корень, действительный по теореме \ref{23.1.thm1}, "--- ему соответствует собственный вектор $h_1$ (сразу нормируем его: $\abs{h_1}=1$). $U=\langle h_1\rangle$ "--- одномерное инвариантное пространство, натянутое на этот вектор. Согласно утверждению \ref{23.1.stt_orth} подпространство $U^\perp$, имеющее размерность $n-1$, инвариантно, и для ограничения $\phi|_{U^\perp}$ в силу предположения индукции существует ортонормированный базис из собственных векторов $h_2,...,h_n$. Тогда $h_1,...,h_n$ "--- искомый базис.
-
-  \end{itemize}
-  \vspace{-1.65\baselineskip}  
-  \end{proof}
+\begin{thm}
+Геометрическая кратность характеристического корня не превосходит его алгебраической кратности.
+\end{thm}
+Действительно, если $\lambda_0$ --- корень геометрической кратности $m$, то в $L_{\lambda_0}$ можно выбрать базис~$e_1$, \ldots,~$e_m$, а затем дополнить его до линейно независимого набора элементами $e_{m+1}$, \ldots,~$e_n \in L$. Далее нужно перейти к полученному базису и воспользоваться определением матрицы преобразования:
+\begin{equation*}
+A_{\phi,e}=
+\begin{Vmatrix}
+\begin{tabular}{ccc|c}
+  $\lambda_0$ & 			&$\fudge{0 }$& \\
+     			& $\ddots$ 	& 			& $\fudge C$ \\
+  $\fudge{ 0}$&			& $\lambda_0$ & \\ \hline
+     			&  			& 			& \\
+     			& $\fudge 0$ 	& 			& $\fudge D$ \\
+\end{tabular} 
+\end{Vmatrix} 
+\end{equation*}
+\begin{equation*}
+\bigchi_\phi=
+\begin{vmatrix}
+\begin{tabular}{ccc|c}
+  $\lambda_0-\lambda$ & 			&$\fudge{0 }$ 			& \\
+     			& $\ddots$ 	& 			& $\fudge C$ \\
+  $\fudge{ 0}$&			& $\lambda_0-\lambda$ & \\ \hline
+     			&  			& 			& \\
+     			& $\fudge 0$ 	& 			& $ D-\lambda E$ \\
+\end{tabular} 
+\end{vmatrix} = \begin{vmatrix}
+    \lambda_0-\lambda & 			& \\
+     			& \ddots 	&  \\
+     			&  & \lambda_0-\lambda\\ 
+\end{vmatrix} \begin{vmatrix}
+D-\lambda E
+\end{vmatrix}=
+\end{equation*}
+\begin{equation}
+=(\lambda_0-\lambda)^m \det(D-\lambda E) \Rightarrow k \ge m
+\end{equation}

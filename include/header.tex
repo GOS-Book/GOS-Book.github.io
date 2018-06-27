@@ -9,8 +9,9 @@
 \usepackage{ragged2e}
 
 \usepackage{longtable}
+%To remove the whitespace before and after a longtable, you may change the lengths; Their default value is \bigskipamount
 \setlength{\LTpre}{0pt}
-\setlength{\LTpost}{0pt}
+\setlength{\LTpost}{0.5\bigskipamount}
 
 \newcolumntype{A}[2]{% vertical alignment in longtable with certain width of column
     >{\minipage{\dimexpr#1\linewidth-2\tabcolsep-#2\arrayrulewidth\relax}\vspace\tabcolsep}%

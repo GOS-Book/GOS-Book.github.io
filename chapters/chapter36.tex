@@ -1,323 +1,270 @@
-\chapter{Вычеты. Вычисление интегралов по замкнутому контуру при помощи вычетов.}
+\chapter{Интегральная формула Коши. Разложение функции, регулярной в окрестности точки, в ряд Тейлора.}
+\section{Интегральная формула Коши}
 
-\section{Вычеты}
 
-\begin{defn}
-Пусть $a \in \bbC$ "--- изолированная особая точка регулярной функции~$f\colon \overset{\circ}{B}_\rho(a) \to \bbC$, $\rho > 0$. Пусть $\gamma_r \triangleq \{ z \,\big|\, |z - a| = r\}$ "--- положительно ориентированная окружность, причем $0 < r < \rho$. Тогда \textit{вычетом\rindex{вычет} функции~$f$ в точке $a$} называется число
-\begin{equation} \label{ch36.1eq1}
-\res_{a} f \triangleq \frac{1}{2\pi i} \int_{\gamma_r} f(z) \,dz.
+\begin{exmpl}
+\label{exmpl1}
+Вычислить интеграл 
+$$
+I_k = \int_{\gamma_r^+} (z-a)^k\,dz, \quad k \in \bbZ, \; a\in \bbC
+$$
+где контур $\gamma_r^+$ есть окружность $\{ z \bigl|\bigr. |z - a| = r>0 \}$, ориентированная движением против хода часовой стрелки.
+\end{exmpl}
+\begin{solution}
+Выберем параметризацию окружности $\gamma_r^+$ вида $z = a + r e^{i \varphi}$, где $\varphi \in [0, 2\pi]$. Тогда
+$$
+I_k = \int_{0}^{2 \pi} r^k e^{i k \varphi} \cdot r i e^{i \varphi} \,d\varphi = i r^{k+1} \int_{0}^{2 \pi} e^{i (k + 1) \varphi}\,d\varphi.
+$$
+
+В Итоге
+\begin{enumerate}
+\item
+При $k = -1$ получаем $$I_{-1} = i \int_{0}^{2\pi}\,d\varphi = 2 \pi i;$$
+\item
+При $k \ne -1$ получаем
+$$
+I_k = i r^{k + 1} \left( \int_{0}^{2 \pi} \cos(k + 1) \varphi \,d \varphi + i \int_{0}^{2 \pi} \sin(k + 1) \varphi \,d\varphi \right) = 0.
+$$
+\end{enumerate}
+Ответ: $I_k=\begin{cases}2\pi i, \quad &k=-1,\\0, \quad &k\ne -1. 
+\end{cases}$\qedhere
+\end{solution}
+
+\begin{thm}[Интегральная формула Коши\rindex{формула!Коши, интегральная}] \label{ch34thm1}
+Пусть $G$ "--- ограниченная область в $\bbC$ с кусочно-гладкой положительно ориентированной границей $\Gamma= \Gp$. Пусть функция $f\colon \overline{G}\to \bbC$ регулярна на $G$ и непрерывна на $\overline{G}=G\cup\Gamma$. Тогда для любой точки $z\in G$ справедлива интегральная формула Коши вида
+ \begin{equation} \label{ch34eq1}
+ f(z) = \frac{1}{2\pi i}\int_\Gamma \frac{f(\zeta)}{\zeta - z}\,d\zeta.
+ \end{equation}
+\end{thm}
+\begin{proof}
+Фиксируем произвольную точку $z \in G$. Функция $\frac{f(\zeta)}{\zeta - z}$ регулярна по переменному $\zeta$ в области $G \setminus \{z\}$. Выберем число $r_0 > 0$ такое, что выполнено включение $\overline{B_{r_0}(z)}\subset G$. 
+
+\usepict{ch34pict1}
+
+Обозначим через $\gamma_r=\gamma_r^{+} \triangleq \{ \zeta \bigl| |\zeta - z| = r \}$ окружность радиуса $r \in (0, r_0)$ ориентированную против хода часовой стрелки. Обозначим множества $G_r \triangleq G \setminus \overline{B_r(z)}$ и $\Gamma_r \triangleq \Gamma \cup \gamma_r^{-}$. Очевидно, что множество $G_r$ есть область с кусочно-гладкой положительно ориентированной границей $\Gamma_r$(рис.\ref{ch34pict1}). 
+
+По обощенной интегральной теореме Коши \ref{abc28} из билета №33 получаем
+\begin{equation} \label{ch34eq2}
+ 0 = \int_{\Gamma_r} \frac{f(\zeta)}{\zeta - z}\,d\zeta = \int_\Gamma \frac{f(\zeta)}{\zeta - z}\,d\zeta - \int_{\gamma_r} \frac{f(\zeta)}{\zeta - z}\,d\zeta.
 \end{equation}
+Итак,
+\begin{equation} \label{ch34eq3}
+J \triangleq \frac{1}{2\pi i} \int_\Gamma \frac{f(\zeta)}{\zeta - z}\,d\zeta \xlongequal{\eqref{ch34eq2}} \frac{1}{2\pi i} \int_{\gamma_r} \frac{f(\zeta)}{\zeta - z}\,d\zeta,  \quad  \forall r\cquad 0 < r < r_0
+\end{equation}
+
+Как показано в примере \ref{exmpl1}, справедливо равенство $1 = \frac{1}{2\pi i} \int_{\gamma_r} \frac{1}{\zeta - z}\,d\zeta$, откуда 
+$$
+J - f(z) = \frac{1}{2\pi i} \int_{\gamma_r} \frac{f(\zeta) - f(z)}{\zeta - z}\,d\zeta, \quad  \forall r \in (0,r_0)
+$$
+
+Так как $f(\zeta)$ непрерывна в точке $z \in G$, то для каждого $\epsilon > 0$ существует $\delta(\epsilon) \in (0, r_0)$ такое, что $\forall \zeta$: $|\zeta - z| < \delta(\epsilon)$ следует $|f(\zeta) - f(z)| < \epsilon$. Поэтому выбирая $r \in (0, \delta(\epsilon))$, получаем
+\begin{equation} \label{ch34eq4}
+|J - f(z)| \le \frac{1}{2\pi} \int_{\gamma_r} \frac{|f(\zeta) - f(z)|}{|\zeta - z|}|\,d\zeta| \le 
+\frac{\epsilon}{2 \pi r} \int_{\gamma_r} |\,d\zeta| = \epsilon.
+\end{equation}
+
+Так как $\epsilon > 0$ произвольное число, то из (3), (4) следует $J = f(z)$, т.е. формула $\eqref{ch34eq1}$.
+\end{proof}
+
+\begin{defn}\label{ch34defn1}
+Пусть $\gamma$ — кусочно-гладкий контур в $\bbC$ и пусть $\omega = q(z)$ "--- непрерывная на $\gamma$ функция. Тогда интеграл вида
+
+\begin{equation} \label{ch34eq5}
+I(z) \triangleq \frac{1}{2 \pi i} \int_\gamma \frac{q(\zeta)}{\zeta - z}\,d\zeta, \quad z \notin \gamma
+\end{equation}
+называется \textit{интегралом типа Коши} по контуру $\gamma$ от функции $q$.
 \end{defn}
 
-Отметим, что в формуле~\eqref{ch36.1eq1} интеграл не зависит от величины~$r\in (0, \rho)$.
-
-Для получения более удобных выражений вычисления вычета функции, представим функцию $f\colon \overset{\circ}{B}_\rho(a) \to \bbC$ ее рядом Лорана с центром в точке $a$
-\begin{equation} \label{ch36.1eq2}
-f(z) = \sum_{n = -\infty}^{+\infty} c_n (z - a)^n.
-\end{equation}
-
-Так как
-$$
-c_n = \frac{1}{2\pi i} \int_{\gamma_r} \frac{f(\zeta)}{(\zeta - a)^{n + 1}} \,d\zeta, \quad r \in (0, \rho), \quad n \in \bbZ,
-$$
-то получаем, что интеграл~\eqref{ch36.1eq1} равен коэффициенту $c_{-1}$, т.е.
-\begin{equation} \label{ch36.1eq3}
-\res_{a} f = c_{-1}.
-\end{equation}
-
-Приведем некоторые правила вычисления вычетов.
-
-\begin{lemm} \label{ch36.1lemm1}
-Пусть $a$ "--- полюс функции $f$ порядка $m \le m_0$. Тогда справедлива формула
-\begin{equation} \label{ch36.1eq4}
-\res_{a} f = \frac{1}{(m_0 - 1)!} \lim_{z \to a} \frac{\,d^{m_0 -1}}{\,dz^{m_0 - 1}} [(z - a)^{m_0} f(z)].
-\end{equation}
-\end{lemm}
-
-\begin{proof}
-Представим функцию $f$ в виде ряда Лорана \eqref{ch36.1eq2} с центром в полюсе $a$ порядка $m$. Так как число $m_0 \ge m$, то в ряде \eqref{ch36.1eq2} коэффициенты $c_n = 0$ при всех $n < -m_0$. Итак,
-\begin{equation} \label{ch36.1eq5}
-f(z) = \frac{c_{-m_0}}{(z - a)^{m_0}} + \frac{c_{-m_0 + 1}}{(z - a)^{m_0 - 1}} + \ldots + \frac{c_{-1}}{(z - a)} + c_0 + c_1 (z - a) + \ldots.
-\end{equation}
-
-Умножая ряд \eqref{ch36.1eq5} на $(z - a)^{m_0}$, получаем 
-\begin{equation} \label{ch36.1eq6}
-(z - a)^{m_0} f(z) = c_{-m_0} + c_{-m_0 + 1} (z - a) + \ldots + c_{-1} (z - a)^{m_0 - 1} + \ldots, \quad z \in \overset{\circ}{B}_\rho(a).
-\end{equation}
-
-Так как полученный в правой части равенства \eqref{ch36.1eq6} степенной ряд сходится в $B_\rho(a)$, то по теореме \hyperref[ch34.2Thm1]{Абеля} (Билет №34) он сходится абсолютно и равномерно внутри области $B_\rho(a)$. Поэтому по \hyperref[ch35.1Thm5]{теореме \ref{ch35.1Thm5} (Вейерштрасса)} его можно почленно дифференцировать $(m_0 - 1)$ раз, после чего получаем
-\begin{equation} \label{ch36.1eq7}
-\frac{\,d^{m_0 - 1}}{\,dz^{m_0 - 1}} [(z - a)^{m_0} f(z)] = (m_0 - 1)! c_{-1} + m_0! c_0 (z - a) + \ldots, \quad z \in \overset{\circ}{B}_\rho(a).
-\end{equation}
-
-Левая часть равенства \eqref{ch36.1eq7}, очевидно, имеет предел при $z \to a$. Поэтому, переходя к пределу, в силу формулы \eqref{ch36.1eq3} получаем формулу \eqref{ch36.1eq4}.
-\end{proof}
-
-\begin{lemm}
-Пусть функция $f \colon \overset{\circ}{B}_\rho(a) \to \bbC$ представима в виде
-$$
-f(z) = \frac{P(z)}{Q(z)}, \quad z \in \overset{\circ}{B}_\rho(a),
-$$
-где функции $P$ и $Q$ регулярны в круге $B_\rho(a)$, причем
-\begin{equation} \label{ch36.1eq8}
-P(a) \not= 0, \quad Q(a) = 0, \quad Q'(a) \not= 0.
-\end{equation}
-
-Тогда справедлива формула
-\begin{equation} \label{ch36.1eq9}
-\res_{a} f = \frac{P(a)}{Q'(a)}.
-\end{equation}
-
-\end{lemm}
-
-\begin{proof}
-В самом деле, в силу условия \eqref{ch36.1eq8} точка $a$ "--- полюс 1-го порядка функции $f$ и по формуле  \eqref{ch36.1eq4} получаем
-\begin{equation*}
-\res_{a} f = \lim_{z \to a} \left[ \frac{P(z)(z - a)}{Q(z)}\right] = \lim_{z \to a} \frac{P(z)}{\frac{Q(z) - Q(a)}{z - a}} = \frac{P(a)}{Q'(a)}. \qedhere
-\end{equation*}
-\end{proof}
-
-\begin{defn} \label{ch36defn2}
-Пусть функция $f\colon \overset{\circ}{B}_{R_0}(\infty) \to \bbC$ регулярна (число $R_0 \ge 0$). Тогда \textit{вычетом функции $f$ в бесконечности} называется число
-\begin{equation} \label{ch36.1eq10}
-\res_{\infty} f \triangleq \frac{1}{2\pi i} \int_{\gamma_R^{-1}} f(z) \,dz,
-\end{equation}
-где число $R > R_0$, а окружность $\gamma_R^{-1} = \{ z \,\big|\, |z| = R \}$ ориентирована движением по ходу часовой стрелки (т. е. отрицательно).
-\end{defn}
-
-Аналогично случаю конечной точки оценим $\res_{\infty} f$ через ряд Лорана для функции $f$ в окрестности $\overset{\circ}{B}_{R_0}(\infty)$, учитывая, что его коэффициенты имеют вид
-\begin{equation} \label{ch36.1eq11}
-c_n = \frac{1}{2\pi i} \int_{\gamma_R} \frac{f(\zeta)}{\zeta^{n + 1}} \,d\zeta, \quad n \in \bbZ,
-\end{equation}
-где окружность $\gamma_R$ при $R > R_0$ ориентирована движением против хода часовой стрелки. Сравнивая выражения \eqref{ch36.1eq11} и \eqref{ch36.1eq10}, убеждаемся в справедливости формулы
-\begin{equation} \label{ch36.1eq12}
-\res_{\infty} f = -c_{-1},
-\end{equation}
-где $c_{-1}$ "--- коэффициент разложения функции $f$ в ряд Лорана с центром в бесконечности. Здесь появился знак минус за счет различной ориентации окружности $\gamma_R$ в формулах \eqref{ch36.1eq11} и \eqref{ch36.1eq10}.
-
-\begin{lemm} \label{ch36.1lemm3}
-Пусть $\infty$ "--- устранимая точка функции $f$. Тогда $\res_{\infty} f$ можно вычислить по формуле
-\begin{equation} \label{ch36.1eq13}
-\res_{\infty} f = \lim_{z \to \infty} [z(f(\infty) - f(z))].
-\end{equation}
-
-\end{lemm}
-
-\begin{proof}
-Из условия леммы следует, что ряд Лорана в некоторой окрестности $\overset{\circ}{B}_{R_0}(\infty)$ имеет вид
-$$
-f(z) = f(\infty) + \frac{c_{-1}}{z} + \frac{c_{-2}}{z^2} + \ldots,
-$$
-т.е.
-$$
-z(f(\infty) - f(z)) = -c_{-1} - \frac{c_{-2}}{z} + o\left(\frac{1}{z}\right),
-$$
-что в пределе при $z \to \infty$ дает формулу \eqref{ch36.1eq13}.	
-\end{proof}
-
-\begin{thm} [Коши о вычетах] \label{ch36.1T1}
-Пусть дана область $G \subset \overline{\bbC}$ с кусочно-гладкой положительно ориентированной границей $\Gamma$ (см. определения \ref{ch33defn1}, \ref{ch33defn2} из билета №33). Пусть функция $f$ определена и регулярна на $G$ всюду, за исключением конечного числа изолированных особых точек $a_1,a_2,\ldots,a_n \in G$ (при этом имеется в виду, что все $a_k$ различны и если $\infty \in G$, то $\infty\ =\ a_n$) и пусть к тому же функция $f$ непрерывно продолжима на границу области $G$. Тогда справедлива формула
-\begin{equation} \label{ch36.1eq14}
-\int_\Gamma f(z) \,dz = 2 \pi i \sum_{k = 1}^{n} \res_{a_k} f.
+\begin{thm} \label{ch34Thm2}
+При сформулированных в определении \ref{ch34defn1} условиях функция $I\colon\bbC \setminus \gamma \to \bbC$ из $\eqref{ch34eq5}$ определена и дифференцируема бесконечное число раз, причем для производных справедлива формула
+\begin{equation} \label{ch34eq6}
+I^{(n)}(z) = \frac{n!}{2\pi i} \int_\gamma \frac{q(\zeta)}{(\zeta - z)^{n+1}}\,d\zeta, \quad n \in \bbN
 \end{equation}
 \end{thm}
 
 \begin{proof}\leavevmode
-\begin{enumerate}[wide, labelwidth=!, labelindent=0pt]
-\item Пусть область $G$ ограничена. Так как число особых точек $a_1,\ldots,a_n \in \bbC$ конечно, то существует число $r > 0$ такое, что $B_r(a_k) \subset G \quad \forall k \in \overline{1,n}$, причем замыкания этих кругов попарно не пересекаются. Определим множество $\widetilde{G} \triangleq G \setminus \left( \bigcup\limits_{k = 1}^{n} \overline{B_r(a_k)}\right)$.
-
-Множество $\widetilde{G}$ тоже является областью с кусочно-гладкой границей $\widetilde{\Gamma} = \Gamma \cup \left( \bigcup\limits_{k = 1}^{n} \gamma_{k}^{-1} \right)$,	где $\gamma_k$ суть окружности $\{ z \,\big|\, |z - a_k| = r \}$, ориентированные движением против хода часовой стрелки, а $\gamma_{k}^{-1}$ "--- они же, но ориентированные по ходу часовой стрелки. Получили, что $f$ регулярна на $\widetilde{G}$ и непрерывна на $\overline{\widetilde{G}} = \widetilde{G} \cup \widetilde{\Gamma}$ (см. рис. ?). Тогда по \hyperref[abc28]{обобщенной теореме \ref{abc28} Коши} (Билет №33) получаем
-$$
-0 = \int_{\widetilde{\Gamma}} f(z) \,dz = \int_{\Gamma} f(z) \,dz - \sum_{k = 1}^{n} \int_{\gamma_k} f(z) \,dz \xlongequal{\eqref{ch36.1eq1}} \int_{\Gamma} f(z) \,dz - \sum_{k = 1}^{n} 2\pi i \res_{a_k} f,
-$$
-что и дает формулу \eqref{ch36.1eq14}.
-
-
-\item	Пусть $\infty \in G$. Тогда особые точки $a_1,\ldots,a_{n - 1} \in \bbC$ "--- конечны, а $a_n = \infty$. Так как по \hyperref[ch33defn1]{определению \ref{ch33defn1}} (Билет №33) граница $\Gamma$ состоит из ограниченных гладких компонент, то существует число $R > 0$ такое, что для каждого $z \in \Gamma \cup \left( \bigcup\limits_{k = 1}^{n - 1} a_k \right)$ справедливо неравенство $|z| < R$.
-
-Определим $\widetilde{G} = G \cap B_R(0)$. Тогда $\widetilde G$ — ограниченная область с кусочно-гладкой границей $\widetilde{\Gamma} = \Gamma \cup \gamma_R$, где $\gamma_R = \{ z \,\big|\, |z| = R\}$ "--- окружность, ориентированная движением против хода часовой стрелки (см. рис. ?). Для регулярной в $\bbC \setminus B_R(0)$ функции $f$ по \hyperref[ch36defn2]{определению \ref{ch36defn2}} справедлива формула
-\begin{equation} \label{ch36.1eq15}
-\res_{\infty} f = - \frac{1}{2\pi i} \int_{\gamma_R} f(z) \,dz.
+\begin{enumerate}[wide, labelwidth=!, labelindent=\parindent]
+\noindent\addpictureitem{pictures/ch34pict2}{0.2}{
+\item     
+Докажем формулу $\eqref{ch34eq6}$ при $n = 1$. Так как функция $q(\zeta)$ непрерывна на контуре $\gamma$, то существует число $M < + \infty$ такое, что $|q(\zeta)| \le M$ при $\zeta \in \gamma$.
+      
+\indent Фиксируем точку $z \notin \gamma$. Пусть $d \triangleq \dist(z, \gamma)$. Очевидно, что $d > 0$. Выберем число $r \in (0, \frac{d}{2})$ и возьмем произвольное число $\Delta z \in \bbC$ так, чтобы $0 < |\Delta z| < r$. Тогда для $\forall \zeta \in \gamma$ получаем}
+\begin{equation} \label{ch34eq7}
+|\zeta - (z + \Delta z)| \ge |\zeta - z| - |\Delta z| \ge d - \frac{d}{2} = \frac{d}{2}
 \end{equation}
 
-Так как область $\widetilde{G}$ ограничена, то, опираясь на результат п.1, получаем
-\begin{equation} \label{ch36.1eq16}
-\int_{\widetilde{\Gamma}} f(z) \,dz = 2\pi i \sum_{k = 1}^{n - 1} \res_{a_k} f.
+Оценим выражение 
+\begin{multline} \label{ch34eq8}
+\frac{I(z + \Delta z) - I(z)}{\Delta z} - \frac{1}{2 \pi i} \int_\gamma \frac{q(\zeta)}{(\zeta - z)^2}\,d\zeta=\\ = \frac{1}{2 \pi i} \int_\gamma q(\zeta) \left[ \left( \frac{1}{\zeta - z - \Delta z} - \frac{1}{\zeta - z} \right) \frac{1}{\Delta z} - \frac{1}{(\zeta - z)^2} \right] \,d\zeta.
+\end{multline}
+
+Упростим выражение в прямых скобках под интегралом $\eqref{ch34eq8}$:
+\begin{multline*}
+[\ldots] = \frac{{(\zeta} - {z}) - (({\zeta} - {z}) - {\Delta z})}{(\zeta - z)((\zeta - z) - \Delta z)} \cdot \frac{1}{{\Delta z}} - \frac{1}{(\zeta - z)^2} = \frac{1}{(\zeta - z)(\Delta z- (\zeta-z) )} -\\- \frac{1}{(\zeta - z)^2} =
+\frac{(\zeta - z)-(\Delta z- (\zeta-z))}{(\zeta - z)^2(\Delta z- (\zeta-z) )}
+=\frac{\Delta z}{(\zeta - z)^2 (\zeta - z - \Delta z)} .
+\end{multline*}
+Поэтому для $\eqref{ch34eq8}$ получаем оценку 
+
+\begin{multline*}
+\left| \frac{\Delta I}{\Delta z} - \frac{1}{2\pi i} \int_\gamma \frac{q(\zeta)}{(\zeta - z)^2}\,d\zeta \right| 
+\le \frac{1}{2\pi} \int_\gamma \frac{|q(\zeta)||\Delta z||\,d\zeta|}{|\zeta - z|^2|\zeta - z - \Delta z|} \le \\
+\le \frac{|\Delta z|}{\pi d^3} \int_\gamma |q(\zeta)||\,d\zeta| 
+\le \frac{|\Delta z| \cdot M}{\pi d^3} \int_\gamma |\,d\zeta| \xrightarrow{\Delta z \to 0} 0.
+\end{multline*}
+
+Таким образом, в пределе получаем равенство
+\begin{equation} \label{ch34eq9}
+I'(z) = \frac{1}{2\pi i} \int_\gamma \frac{q(\zeta)}{(\zeta - z)^2} \,d\zeta.
 \end{equation}
- 
-С другой стороны,
+
+\item
+Общий случай $n$-й производной получается аналогично первому случаю из формулы $\eqref{ch34eq6}$ для $(n - 1)$-й производной и воспользовавшись биномом Ньютона
 $$
-\int_{\widetilde{\Gamma}} f(z) \,dz = \int_{\Gamma} f(z) \,dz + \int_{\gamma_R} f(z) \,dz \xlongequal{\eqref{ch36.1eq15}} \int_{\Gamma} f(z) \,dz - 2\pi i\res_{\infty} f,
+(\zeta - z - \Delta z)^n = (\zeta - z)^n - n \Delta z (\zeta - z)^{n - 1} + O(\Delta z^2),
 $$
-откуда и из \eqref{ch36.1eq16} следует \eqref{ch36.1eq14}. \qedhere
+которое легко проверяется, например, методом математической индукции.
 \end{enumerate}
-\end{proof}
 
-\begin{cons}
-Пусть функция $f$ регулярна во всей комплексной плоскости, за исключением конечного числа изолированных особых точек $a_1,\ldots,a_n \in \overline{\bbC}$. Тогда
-\begin{equation} \label{ch36.1eq17}
-\sum_{k = 1}^{n} \res_{a_k} f = 0.
-\end{equation}
-\end{cons}
+Теорема доказана.
+\end{proof}
+\begin{thm} \label{ch34Thm3}
+Пусть функция $f \colon G \to \bbC$ регулярна в области $G \subset \bbC$. Тогда эта функция имеет в $G$ производные всех порядков, т.е. является бесконечно дифференцируемой функцией в области $G$.
+\end{thm}
 
 \begin{proof}
-Так как $\infty$, очевидно, является особой точкой данной функции $f$, то без ограничения общности полагаем, что $a_n = \infty$. Рассмотрим $R > 0$ такое, что все $a_k \in B_R(0) \quad \forall k \in \overline{1, n - 1}$. Как обычно, обозначим через $\gamma_R \triangleq \{ z \,\big|\, |z| = R\}$ окружность, ориентированную движением против хода часовой стрелки.
-
-Тогда по \hyperref[ch36.1T1]{теореме \ref{ch36.1T1}} для области $B_R(0)$ получаем
-\begin{equation} \label{ch36.1eq18}
-\int_{\gamma_R} f(z) \,dz = 2\pi i \sum_{k = 1}^{n - 1} \res_{a_k} f.
+Фиксируем произвольную точку $z_0 \in G$, тогда существует число $r_0 > 0$ такое, что $\overline{B_{r_0}(z_0)}\subset G$. Пусть окружность $\gamma_{r_0} \triangleq \{ z \,\big|\, |z - z_0| = r_0 \}$ ориентирована положительно относительно внутренности круга (т.е. движением против хода часовой стрелки). Тогда по теореме \ref{ch34thm1} справедлива интегральная формула Коши
+\begin{equation} \label{ch34eq10}
+f(z) = \frac{1}{2\pi i} \int_{\gamma_{r_0}} \frac{f(\zeta)}{\zeta - z} \,d\zeta, \quad \forall z \in B_{r_0}(z_0).
 \end{equation}
 
-С другой стороны, по \hyperref[ch36defn2]{определению \ref{ch36defn2}},
-$$
-- \int_{\gamma_R} f(z) \,dz = 2\pi i \res_{\infty} f,
-$$
-что вместе с \eqref{ch36.1eq18} дает равенство \eqref{ch36.1eq17}.
+Так как в формуле $\eqref{ch34eq10}$ функция $\zeta \to f(\zeta)$ непрерывна на $\gamma_{r_0}$, то интеграл в $\eqref{ch34eq10}$ есть интеграл типа Коши, и по теореме \ref{ch34Thm2} он бесконечно дифференцируем в круге $B_{r_0}(z_0)$, т.е. в силу равенства $\eqref{ch34eq10}$ функция $f$ бесконечно дифференцируема в этом круге $B_{r_0}(z_0)$, при этом из $\eqref{ch34eq6}$ следует формула:
+\begin{equation} \label{ch34eq11}
+f^{(n)}(z) = \frac{n!}{2\pi i} \int_{\gamma_{r_0}} \frac{f(\zeta)}{(\zeta - z)^{n+1}}\,d\zeta, \quad \forall z \in B_{r_0}(z_0).
+\end{equation}
+
+Так как точка $z_0 \in G$ была произвольной, то функция $f$ бесконечно дифференцируема во всей области G.
 \end{proof}
 
-\section{Вычисление интегралов по замкнутому контуру при помощи вычетов}
+\section{Разложение функции, регулярной в окрестности точки, в ряд Тейлора}
 
-{\bf I. Вычисление интегралов вида}
+Опираясь на интегральную формулу Коши, в этом параграфе покажем, что функция регулярна в окрестности некоторой точки тогда и только тогда, когда в этой окрестности она представима в виде суммы степенного ряда.
 
-\begin{equation} \label{ch36.1eq19}
-J = \int_{-\infty}^{+\infty} R_{n,m} (x)\, dx,
+\begin{defn}
+$\textit{Степенным рядом}$ называется функциональный ряд вида
+\begin{equation} \label{ch34.2eq1}
+\sum_{n = 0}^{+\infty}\limits c_n (z - a)^n,
 \end{equation}
-где $R_{n,m}(x) = \frac{P_n(x)}{Q_m(x)}$ "--- рациональная функция,
-$$
-P_n(x) = x^n + a_{n - 1} x^{n - 1} + \ldots + a_0, \quad
-Q_m(x) = x^m + b_{m - 1} x^{m - 1} + \ldots + b_0,
-$$
-причем полагаем, что $Q_m(x) \not= 0$ при всех $x \in \bbR^1$.
+где точка $a \in \bbC$ и коэффициенты $c_n \in \bbC$ фиксированы.
+\end{defn}
 
-Известно, что интеграл $J$ \eqref{ch36.1eq19} сходится при условии $m > n + 1$, что считаем выполненным.
-
-Для вычисления интеграла \eqref{ch36.1eq19} определим ориентированный движением против хода часовой стрелки контур $\gamma_R \triangleq [-R, R] \cup C_R$, где $R > R_0 = \max\{ |z_k^{+}| \,\big|\, k \in \overline{1,l} \}$, а $ \{ z_{k}^{+} \}^l_{k = 1}$ "--- совокупность всех различных нулей многочлена $Q_m(z)$, лежащих в верхней полуплоскости $\Im z \ge 0$, полуокружность $C_R \triangleq \{ z \,\big|\, |z| = R, \ \Im z \ge 0 \}$. Чтобы воспользоваться \hyperref[ch36.1T1]{теоремой \ref{ch36.1T1} (Коши о вычетах)}, определим интеграл 
-$$
-J_R = \int_{\gamma_R} R_{n,m}(z)\,dz.
-$$
-
-По \hyperref[ch36.1T1]{теореме \ref{ch36.1T1} (Коши о вычетах)}, при каждом $R > R_0$
-$$
-J_R = 2\pi i\left( \sum_{k = 1}^{l} \res_{z_k^+} R_{n,m}\right).
-$$
-
-С другой стороны, имеет место представление интеграла $J_R = J_R^1 + J_R^2$, где 
-\begin{equation} \label{ch36.1eq20}
-J_R^1 \triangleq \int_{-R}^{+R} R_{n,m}(x)\,dx, \quad J_R^2 \triangleq \int_{C_R} R_{n,m}(z)\,dz.
-\end{equation}
-
-Очевидно, что $\lim\limits_{R \to +\infty} J_R^1 = J$. Осталось показать, что $\lim\limits_{R \to +\infty}J_R^2 = 0$, откуда последует формула:
-\begin{equation} \label{ch36.1eq21}
-\int_{-\infty}^{+\infty}R_{n,m}(x)\,dx = 2\pi i\sum_{k = 1}^{l} \res_{z_k^+} R_{n,m}.
-\end{equation}
-
-Докажем необходимое утверждение.
-
-\begin{lemm} \label{ch36.1lemm4}
-Пусть $\Phi(z)$ "--- непрерывная функция на замкнутом множестве $\{ z \,\big|\, \Im z \ge 0, \ |z| \ge R_0 > 0 \}$. Пусть $C_R \triangleq \{ z \,\big|\, |z| = R, \ \Im z \ge 0 \}$, $R > R_0$, "--- семейство полуокружностей в верхней полуплоскости. Обозначим
-$$
-\epsilon(R) \triangleq \max\{|\Phi(z)| \,\big|\, z\in C_R \} \quad \text{при} \quad R > R_0.
-$$
-
-Если $\lim\limits_{R \to +\infty} \epsilon(R)R = 0$, то $\lim\limits_{R \to +\infty} \int_{C_R} \Phi(z)\,dz = 0$.
-\end{lemm}
-
+\begin{thm}[Абеля\rindex{теорема!Абеля}] \label{ch34.2Thm1}
+Если степенной ряд $\eqref{ch34.2eq1}$ сходится в точке $z_0 \not= a$, то ряд $\eqref{ch34.2eq1}$ сходится абсолютно в любой точке из круга $B_{|z_0 - a|}(a)$, а в любом замкнутом круге $\overline{B_{r}(a)}$, где $0 < r < |z_0 - a|$, этот ряд сходится равномерно.
+\end{thm}
+\usepict[0.15]{ch34pict3}
 \begin{proof}
-Из условий леммы получаем оценки
-\begin{equation*}
-\left| \int_{C_R} \Phi(z)\,dz \right| \le \int_{C_R} |\Phi(z)||\,dz| \le \epsilon(R) \int_{C_R}|\,dz| = \epsilon(R)\pi R \to 0. \tag*{\qedhere}
-\end{equation*}
+Так как по условию числовой ряд $\sum_{n = 0}^{+\infty}\limits c_n (z - a)^n$ сходится, то из необходимого условия сходимости рядов следует, что $\lim\limits_{n \to \infty} |c_n(z_0 - a)^n| = 0$, поэтому существует число $\alpha > 0$ такое, что $|c_n(z_0 - a)^n| \le \alpha$ для всех $n$.
+\begin{enumerate}
+\item[1)] {\rightskip=3.5cm} { Пусть точка $z \in B_{|z_0 - a|}(a)$. Тогда $|c_n(z - a)^n| = |c_n(z_0 - a)^n| \cdot \left| \frac{z - a}{z_0 - a} \right|^n \le \alpha q^{n}_z$, где $q_z \triangleq \left| \frac{z - a}{z_0 - a} \right| < 1$. Так как числовой ряд $\sum_{n = 0}^{\infty}\limits q_{z}^n$ очевидно сходится, то по признаку сравнения ряд $\eqref{ch34.2eq1}$ сходится и абсолютно в точке $z$.
+}
+\item[2)] {\rightskip=0cm}Определим $q_0 \triangleq \frac{r}{|z_0 - a|}\ge\left|\frac{z - a}{z_0 - a}\right|$. Аналогично пункту 1 получаем оценку: $|c_n(z - a)^n| \le \alpha q^{n}_0$. Так как числовой ряд $\sum_{n = 0}^{\infty}\limits q_{0}^n$ очевидно сходится, то по признаку Вейештрасса(см. ниже) ряд $\eqref{ch34.2eq1}$ сходится равномерно на круге $\overline{B_{r}(a)}$.
+\end{enumerate}
+{\rightskip=-3.3cm} Теорема доказана.
 \end{proof}
 
-Применим \hyperref[ch36.1lemm4]{лемму \ref{ch36.1lemm4}} для случая рациональной функции $\Phi(z) = R_{n,m}(z)$ из правого интеграла в \eqref{ch36.1eq20} при сформулированных выше условиях (т.е. при $m > n + 1$).
+\begin{stt}[Признак Вейерштрасса\rindex{признак!Вейерштрасса}]
+Пусть последовательность функций $\{f_n\}$ такова, что $|f_n(z)| \le a_n$ для $\forall n \in \bbN$ и $\forall z \in G$ и пусть числовой ряд $\sum\limits_{n = 0}^{+\infty} a_n$ сходится. Тогда функциональный ряд $\sum_{n = 0}^{+\infty}\limits f_n(z)$ сходится абсолютно и равномерно на $G$. 
+\end{stt}
 
-При достаточно больших $|z| > R_0$ очевидно справедлива оценка $|\Phi(z)| \le 2|z|^{n - m}$, т.е.
-$\epsilon(R)R \le 2R^{n - m + 1} \to 0$, откуда следует, что выполнены условия леммы \ref{ch36.1lemm4}, по которой получаем равенство $\lim\limits_{R \to +\infty} J_R^2 = 0$.
+Эта теорема \ref{ch34.2Thm1} позволяет получить представление об области сходимости степенного ряда $\eqref{ch34.2eq1}$.
 
-Таким образом, формула \eqref{ch36.1eq21} обоснована полностью.
-
-{\bf II. Вычисление интегралов вида}
-
-\begin{equation} \label{ch36.1eq22}
-J = \int_{0}^{2\pi} R(\cos \phi, \sin\phi)\,d\phi,
+Определим для степенного ряда $\eqref{ch34.2eq1}$ понятие\textit{радиуса сходимости}:
+\begin{equation} \label{ch34.2eq2}
+R \triangleq \sup \{ |z - a| \,\big|\, \sum_{n = 0}^{+\infty} c_n (z - a)^n \text{ сходится} \}.
 \end{equation}
-где $R(x,y) = \frac{P_n(x,y)}{Q_m(x,y)}$; $P_n, Q_m$ "--- многочлены переменных $x$ и $y$.
 
-Сделаем замену $z = z(\phi) = e^{i \phi}$, $0 \le \phi \le 2\pi$. Тогда 
+Тогда, если $0 < R < +\infty$, то в силу теоремы \ref{ch34.2Thm1} Абеля в каждой точке круга $B_R(a)$ ряд $\eqref{ch34.2eq1}$ сходится, а в каждой точке $z \notin \overline{B_R(a)}$ ряд $\eqref{ch34.2eq1}$ расходится. Круг $B_R(a)$ называется \textit{кругом сходимости ряда} $\eqref{ch34.2eq1}$.
+Радиус сходимости $R$ степенного ряда $\eqref{ch34.2eq1}$ может быть вычислен по известной формуле Коши-Адамара (причем, в ней не исключено $R=\pm\infty$):
+\begin{equation} \label{ch34.2eq3}
+R = \frac{1}{\overline{\lim\limits_{n \to \infty}} \sqrt[n]{|c_n|}}
+\end{equation}
 
-$\cos\phi = \frac{1}{2} (e^{i\phi} + e^{-i\phi}) = \frac{1}{2}\left( z + \frac{1}{z}\right), \: \sin\phi = \frac{1}{2i} \left(z - \frac{1}{z} \right), \,dz = i e^{i \phi} \,d\phi,$ т.е. 
+\begin{exmpl} \label{exmpl2}
+Ряд вида $\sum\limits_{n = 0}^{+\infty} z^n$, являющийся суммой бесконечной геометрической прогрессии, очевидно сходится при $|z| < 1$ к функции $\frac{1}{1 - z}$, так как легко посчитать, что
 \begin{multline*}
-J = \int_0^{2\pi} R\left( \frac{z(\phi)}{2} + \frac{1}{2z(\phi)}, \: \frac{z(\phi)}{2i} - \frac{1}{2iz(\phi)}\right) \cdot \frac{z'(\phi)}{iz(\phi)} \,d\phi =\\= \int_{|z| = 1} R\left( \frac{1}{2} \left( z + \frac{1}{z}\right), \frac{1}{2i}\left( z - \frac{1}{z}\right)\right)\frac{\,dz}{iz} = \int_{|z| = 1} R_1(z)\,dz.
+S_N(z) \triangleq \sum\limits_{n = 0}^{N} z^n = \left( \sum\limits_{n = 0}^{N} z^n \right) \frac{1 - z}{1 - z} =\frac{1-z+z-\dots-z^N+z^N-z^{N+1}}{1-z}=\\= \frac{1 - z^{N + 1}}{1 - z}  \xrightarrow{N \to \infty} \frac{1}{1 - z}. \tag*{\qedhere}
 \end{multline*}
+\end{exmpl} 
+\begin{stt} \label{ch34stt1000}
+Пусть в области $G$ заданы непрерывные функции $f_n\colon G \to \bbC$, $n \in \bbN$ и кусочно-гладкий контур $\gamma$. Пусть функциональный ряд $\sum\limits_{n = 0}^{+\infty}f_n(z)$ сходится к своей сумме $S(z)$ равномерно на контуре $\gamma$. Тогда этот ряд можно почленно интегрировать по контуру $\gamma$, т.е. справедливо равенство 
+\begin{equation} \label{ch34eq1000} 
+\int\limits_{\gamma}S(z) \,dz = \sum\limits_{n = 0}^{+\infty} \int\limits_{\gamma} f_n(z) \,dz. 
+\end{equation} 
 
-В итоге интеграл \eqref{ch36.1eq22} свелся к интегралу по кругу $|z| = 1$ от рациональной функции $R_1(z)$, который легко может быть вычислен с помощью  \hyperref[ch36.1T1]{теоремы \ref{ch36.1T1} (Коши о вычетах)}.
-
-{\bf III. Вычисление интегралов вида}
-\begin{equation} \label{ch36.1eq23}
-J = \int_{-\infty}^{+\infty} e^{i\alpha x} R(x) \,dx,
+\end{stt}
+\begin{defn}
+Пусть у функции $f \colon B_r(a) \to \bbC$ существуют в точке $a \in \bbC$, $r > 0$, производные $f^{(n)}(a)$ любого порядка $n \in \bbN$. Тогда степенной ряд вида
+\begin{equation} \label{ch34.2eq4}
+\sum\limits_{n = 0}^{+\infty} \frac{f^{(n)}(a)}{n!} (z - a)^n
 \end{equation}
-где $R(x) = \frac{P_n(x)}{Q_m(x)}$ "--- рациональная функция, причем $m - n \ge 1$, $\alpha$ "--- действительное число, $\alpha > 0$ и $Q_m(x) \not= 0$ при всех $x \in \bbR^1$ (т.е. интеграл \eqref{ch36.1eq23} есть преобразование Фурье рациональной функции $R$).
+называется $\textit{рядом Тейлора функции f}$ с центром в точке $a$.
+\end{defn}
 
-Для получения условий сходимости интеграла \eqref{ch36.1eq23} представим подынтегральную функцию в виде
-$$
-R(x) e^{i \alpha x} = \frac{e^{i \alpha x}}{x^{m - n}} + O \left( \frac{1}{x^{m - n + 1}} \right) \quad |x| > 1.
-$$
-
-Интеграл $\int_1^{+\infty} \frac{e^{i \alpha x}}{x^{m - n}} \,dx$ сходится при $m - n \ge 1$ (по признаку Дирихле: функция $\int_1^x e^{i\alpha t}\,dt$ ограничена по модулю, а функция $\frac{1}{x^{m - n}}$ монотонно стремится к нулю при $z \to +\infty$). Интеграл 
-$\int_{1}^{+\infty} O \left( \frac{1}{x^{m - n + 1}} \right)\,dx$ сходится абсолютно, так как по условию $m - n + 1 \ge 2$. Сходимость интеграла \eqref{ch36.1eq23} в $-\infty$ при $m - n \ge 1$ проверяется аналогично.
-
-Рассмотрим, как и в пункте $I$, положительно ориентированный контур $\gamma_R \triangleq [-R,R] \cup C_R$. При достаточно больших $R > R_0 = \max \{ |z_k^+| \,\big|\, k \in \overline{1,l} \}$ получаем
-\begin{equation} \label{ch36.1eq24}
-\int_{\gamma_R} e^{i \alpha z}R(z) \,dz = 2\pi i \sum_{k = 1}^l \res_{z_k^+} (e^{i\alpha z}R(z)),
+\begin{thm} \label{abc29}
+Если функция $f$ регулярна в круге $B_r(a)$, где $a \in \bbC$, $r > 0$, то она представима в этом круге $B_r(a)$ в виде суммы сходящегося ряда Тейлора, т.е.
+\begin{equation} \label{ch34.2eq5}
+f(z) = \sum\limits_{n = 0}^{\infty} c_n(z - a)^n, \quad \forall z \in B_r(a),
 \end{equation}
-где через $\{ z_k^+ \}$ обозначены все различные нули многочлена $Q_m(z)$ (знаменателя функции $R(z)$), лежащие в верхней полуплоскости.
-
-С другой стороны, справедливо представление интеграла 
-\begin{equation} \label{ch36.1eq25}
-\int_{\gamma_R} e^{i \alpha z}R(z)\,dz = \int_{-R}^{+R} e^{i \alpha x}R(x)\,dx + \int_{C_R} e^{i \alpha z} R(z)\,dz.
+где
+\begin{equation} \label{ch34.2eq6}
+c_n = \frac{f^{(n)}(a)}{n!}.
 \end{equation}
 
-Первое слагаемое справа в \eqref{ch36.1eq25}, очевидно, стремится к искомому значению $J$ интеграла \eqref{ch36.1eq23} при $R \to +\infty$. Необходимо исследовать второе слагаемое в \eqref{ch36.1eq25}.
-
-\begin{lemm} [Жордана\rindex{лемма!Жордана}] \label{ch36.1lemm5}
-Пусть $\Phi(z)$ "--- непрерывная функция на замкнутом множестве $\{ z \, \big| \, \Im z \ge 0,\ |z| \ge R_0 > 0 \}$. Пусть число $\alpha > 0$ и $C_R \triangleq \{ z \, \big| \, |z| = R, \ \Im z \ge 0 \}$,  $R > R_0$ "--- семейство полуокружностей в верхней полуплоскости. Обозначим
-$$
-\epsilon(R) \triangleq \max \{ |\Phi(z)| \, \big| \, z \in C_R \} \quad R > R_0.
-$$
-
-Если $\lim\limits_{R \to +\infty} \epsilon(R) = 0$, то $\lim\limits_{R \to +\infty} \int_{C_R} e^{i \alpha z} \Phi(z) \,dz = 0$.
-\end{lemm}
-
+\end{thm}
+\usepict{ch34pict4}
 \begin{proof}
-Пусть $z \in C_R$, тогда $z = Re^{i\phi} = R\cos\phi + iR\sin\phi$, $ 0 \le \phi \le \pi$. Поэтому при $z \in C_R$
-$$
-|e^{i \alpha z}| = |e^{i \alpha(x + iy)}| = e^{-\alpha y} = e^{- \alpha R \sin\phi}.
-$$
+Фиксируем произвольную точку $z \in B_r(a)$. Тогда существует число $r_1 > 0$ такое, что $|z - a| < r_1 < r$.
 
-Воспользуемся для оценки неравенством
-\begin{equation} \label{ch36.1eq26}
-\sin \phi \ge \frac{2}{\pi}\phi \quad \text{} \quad \phi \in \left[ 0, \frac{\pi}{2}\right].
+Пусть $\gamma_{r_1} \triangleq \{\zeta \,\big|\, |\zeta - a| = r_1 \}$ — ориентированная движением против хода часовой стрелки окружность (см. рис. \ref{ch34pict4}). Запишем интегральную формулу Коши:
+\begin{equation} \label{ch34.2eq7}
+f(z) = \frac{1}{2 \pi i} \int_{\gamma_{r_1}} \frac{f(\zeta)}{\zeta - z} \,d\zeta.
 \end{equation}
 
-Получаем
-\begin{multline*}
-\left| \int_{C_R} e^{i \alpha z} \Phi(z)\,dz \right| \le \int_{C_R} |\Phi(z)|e^{-\alpha R \sin \phi}|\,dz| \le \epsilon(R)R \int_0^\pi e^{-\alpha R \sin\phi} \,d\phi =\\= 2\epsilon(R)R \int_0^{\frac{\pi}{2}} e^{-\alpha R \sin\phi} \,d\phi \le 2\epsilon(R)R \int_0^{\frac{\pi}{2}} e^{-\alpha R 2\phi / \pi} \,d\phi \le \frac{\pi}{\alpha} \epsilon(R),\\
-\end{multline*}
-т.е.~справедливо заключение леммы.
+Преобразуем функцию $\zeta \to \frac{1}{\zeta - z}$, где $\zeta \in \gamma_{r_1}$, к виду
+$$
+\frac{1}{\zeta - z} = \frac{1}{(\zeta - a) - (z - a)} = \frac{1}{(\zeta - a)\left( 1 - \frac{z - a}{\zeta - a}\right)}.
+$$
+Здесь $\left|\frac{z - a}{\zeta - a} \right| = \frac{|z - a|}{r_1} \triangleq q, q < 1$. Как в примере $\ref{exmpl2}$, получаем разложение в сходящийся ряд
+$$
+\frac{1}{\zeta - z} = \frac{1}{\zeta - a} \left( 1 + \frac{z - a}{\zeta - a} + \left( \frac{z - a}{\zeta - a}\right)^2 + \ldots \right) = \sum\limits_{n = 0}^{+\infty} \frac{(z - a)^n}{(\zeta - a)^{n + 1}}.
+$$
+В итоге, подынтегральная функция в $\eqref{ch34.2eq7}$ представима сходящимся на $\gamma_{r_1}$ рядом
+\begin{equation} \label{ch34.2eq8}
+\frac{f(\zeta)}{\zeta - z} = \sum\limits_{n = 0}^{+\infty} \frac{(z - a)^n}{(\zeta - a)^{n + 1}} f(\zeta), \quad \forall \zeta \in \gamma_{r_1}.
+\end{equation}
+
+Так как справедлива оценка
+$$
+\left| \frac{(z - a)^n}{(\zeta - a)^{n + 1}} f(\zeta) \right| \le \frac{M}{r_1} \cdot q^n, \quad \text{где} \quad M = \sup_{\zeta \in \gamma_{r_1}} |f(\zeta)| < +\infty,
+$$
+а ряд $\sum\limits_{n = 0}^{\infty} q^n$ сходится, то по признаку Вейерштрасса функциональный ряд~\eqref{ch34.2eq8} сходится равномерно на окружности $\gamma_{r_1}$. Поэтому в силу утверждения~\ref{ch34stt1000} ряд $\eqref{ch34.2eq8}$ можно почленно интегрировать по окружности $\gamma_{r_1}$. В результате получаем равенство
+\begin{equation} \label{ch34.2eq9}
+f(z) = \sum\limits_{n = 0}^{\infty} \frac{1}{2\pi i} \int_{\gamma_{r_1}} \frac{f(\zeta)}{(\zeta - a)^{n + 1}} \,d\zeta \cdot (z - a)^n,
+\end{equation}
+т.е. степенной ряд вида $\eqref{ch34.2eq1}$ с коэффициентами
+\begin{equation} \label{ch34.2eq10}
+c_n = \frac{1}{2\pi i} \int_{\gamma_{r_1}} \frac{f(\zeta)}{(\zeta - a)^{n + 1}} \,d\zeta.
+\end{equation}
+Эти коэффициенты $c_n$ не зависят от выбора точки $z$ или окружности $\gamma_{r_1}$, так как, воспользовавшись формулой для производной для интеграла типа Коши, получаем для $c_n$ формулу $\eqref{ch34.2eq6}$. Таким образом, ряд $\eqref{ch34.2eq9}$ есть ряд Тейлора функции $f$. В силу произвольности $z \in B_r(a)$ ряд $\eqref{ch34.2eq9}$ сходится в круге $B_r(a)$, а поэтому его радиус сходимости $R \ge r$.
 \end{proof}
 
-Возвращаясь к формуле \eqref{ch36.1eq25}, покажем с помощью \hyperref[ch36.1lemm5]{леммы \ref{ch36.1lemm5} Жордана}, что второй интеграл в \eqref{ch36.1eq25} стремится к нулю при $R \to \infty$. При достаточно больших $R > R_0$ в силу условий сходимости $m - n \ge 1$ получаем $\epsilon(R) \le \frac{2}{R^{m - n}} \le \frac{2}{R} \to 0$. В силу леммы  \ref{ch36.1lemm5} имеет место равенство $\lim\limits_{R \to +\infty} \int_{\gamma_R} e^{i \alpha z}R(z) \,dz = J$, а потому справедлива формула
-\begin{equation} \label{ch36.1eq27}
-\int_{-\infty}^{+\infty} e^{i \alpha x}R(x) \,dx = 2\pi i \cdot \sum_{k = 1}^l \res_{z_k^+} (e^{i \alpha z}R(z)).
-\end{equation}
+\begin{cons} \label{cons1}
+Пусть функция $f$ регулярна в области $G$ и пусть выбрана точка $a \in G$. Тогда функция $f$ представима в виде ряда Тейлора 
 
-\begin{cons} \label{ch36.1cons2}
-Интегралы вида
-\begin{equation} \label{ch36.1eq28}
-J_1 = \int_{-\infty}^{+\infty} \cos\alpha x \cdot R(x) \,dx \quad \text{и} \quad J_2 = \int_{-\infty}^{+\infty} \sin \alpha x \cdot R(x) \,dx,
-\end{equation}
-где $R(x)$ "--- рациональная функция, сводятся к интегралу вида~\eqref{ch36.1eq23}, т.е.
+\addpictureR{pictures/ch34pict5}{0.25} \label{ch34pict5}
 $$
-J_1 = \Re \int_{-\infty}^{+\infty} e^{i \alpha x} R(x) \,dx, \quad J_2 = \Im \int_{-\infty}^{+\infty} e^{i \alpha x}R(x) \,dx.
+f(z) = \sum\limits_{n = 0}^{+\infty} \frac{f^{(n)}(a)}{n!} (z - a)^n,
 $$
+
+который сходится по крайней мере в круге $B_R(a)$ максимального радиуса $R > 0$, при котором этот круг содержится в области $G$ (см. рис. $\ref{ch34pict5}$).
 \end{cons}
