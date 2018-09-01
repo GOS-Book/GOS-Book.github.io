@@ -1,0 +1,10 @@
+(progn
+  (searchpath ".;c:/texlive/2018/texmf-dist/xindy/modules;c:/texlive/2018/texmf-dist/xindy/modules/base")
+  (xindy:startup
+    :idxstyle "D:\\Документы Андрей\\Work\\GOSBook\\gaNkQ2l3kh"
+    :rawindex "D:\\Документы Андрей\\Work\\GOSBook\\U6PGlNDEYj"
+    :output "GOSBook.ind"
+    :logfile "nul"
+    
+    )
+  (exit))

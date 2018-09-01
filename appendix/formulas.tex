@@ -6,8 +6,9 @@
 \addtocontents{ptc}{\protect\setcounter{tocdepth}{2}}
 
 \part{Приложения}
-\chapter[Формулы к письменному ГОСу]{Формулы к письменному ГОСу\footnote{Прошу прощения, но для компактности в данном разделе не указаны допустимые значения аргументов и параметров в большинстве случаев. Имейте в виду.}}
+\chapter[Формулы к письменному ГОСу]{Формулы к письменному ГОСу\footnotemark}
 
+\footnotetext{Для компактности в данном разделе не указаны допустимые значения аргументов и параметров в большинстве случаев.}
 \section{Тригонометрические формулы}
 
 \subsubsection{Основные тригонометрические формулы}
@@ -71,12 +72,12 @@ $\cos x - \cos y  = -2 \sin \frac{x + y}{2} \sin\frac{x - y}{2};$
 \end{longtable}
 
 \subsubsection{Формулы преобразования произведения}
-\begin{longtable}[l]{l}
+\begin{longtable}[l]{l l}
 $2\sin x \sin y = \cos (x-y)-\cos(x+y);$
+&
+$2\sin x \cos y = \sin (x-y)+\sin(x+y).$
 \\
 $2\cos x \cos y = \cos (x-y)+\cos(x+y);$
-\\
-$2\sin x \cos y = \sin (x-y)+\sin(x+y).$
 \end{longtable}
 
 \subsubsection{Формулы приведения}
@@ -178,8 +179,8 @@ $\ctg x$
 Алгоритм действий, который здесь работает:
 \begin{enumerate}
 \item
-Определите знак первоначальной функции в соответствующей четверти. Ставим этот знак перед новой функцией. Напомню знаки:
-\usepict[0.12]{forpict1}
+Определите знак первоначальной функции в соответствующей четверти. Ставим этот знак перед новой функцией. Напомним знаки:
+\usepict[0.09]{forpict1}
 \item
 \begin{itemize}
 \item 
@@ -256,9 +257,9 @@ $4 \ch^3 x = \ch 3x + 3 \ch x$
 \end{longtable}
 
 \subsubsection{Формулы преобразования произведения}
-\begin{longtable}[l]{ l}
+\begin{longtable}[l]{ l l}
 $\sh x \sh y = \frac{\ch(x + y) - \ch (x - y)}{2}$
-\\
+&
 $\sh x \ch y = \frac{\sh(x + y) + \sh(x - y)}{2}$
 \\
 $\ch x \ch y = \frac{\ch(x + y) + \ch(x - y)}{2}$
@@ -348,7 +349,7 @@ $(uv)^{(n)}=\sum\limits^n_{k=0} C^k_n u^{n-k} v^{k}$
 \section{Ряд Тейлора}
 
 \begin{notion}
-Здесь указаны ряды Тейлора при $x \to 0$, т.е. ряды Маклорена. За $R$ обозначен радиус сходимости. Для ряда $\sum\limits_{n=-\infty}^{+\infty} c_n (z-z_0)^n $ его можно определить по формуле Коши"--~Адамара:
+Здесь указаны ряды Тейлора при $x \to 0$, т.е.~ряды Маклорена. За $R$ обозначен радиус сходимости. Для ряда $\sum\limits_{n=-\infty}^{+\infty} c_n (z-z_0)^n $ его можно определить по формуле Коши"--~Адамара:
 $$
 R = \frac{1}{\overline{\lim\limits_{n \to + \infty}} \sqrt[n]{|c_n|}}
 $$
@@ -642,7 +643,7 @@ $$
 \item
 Если $a$ "--- полюс порядка $n\in\bbN$, то, в частности, если $f(z)=\frac{h(z)}{(z-a)^m},$ где $h(z)$ "--- регулярная в точке $a$, то 
 $$\res_a f(z) = \frac{1}{(m-1)!} h^{(m-1)}(a),$$
-т.е. вычет функции $f(z)$ в точке $a$ равен коэффициенту при $(z-a)^{m-1}$ ряда Тейлора $h(z)=\sum\limits_{n=0}^{\infty} c_n (z-a)^n$
+т.е.~вычет функции $f(z)$ в точке $a$ равен коэффициенту при $(z-a)^{m-1}$ ряда Тейлора $h(z)=\sum\limits_{n=0}^{\infty} c_n (z-a)^n$
 
 \item
 Если  $a$ "--- существенно особая точка, то, подчеркну, что 
@@ -661,14 +662,48 @@ $$\res_{\infty} f= \lim\limits_{z\to \infty} \left( f(\infty)-f(z)\right)\cdot z
 
 \section{Формулы из комбинаторики}
 
+\subsubsection{Формулы де Моргана для множеств (законы двойственности)}
+
+\begin{longtable}[l]{l l}
+	$\overline{A \cup B} = \overline{A} \cap \overline{B};$ 
+	& $\overline{A \cap B} = \overline{A} \cup \overline{B}.$
+\end{longtable}
+
+\subsubsection{Формула включений-исключений для мощности множества}
 \begin{longtable}[l]{l}
+$\biggl | \bigcup_{i=1}^{n}A_i \biggl | = \sum_{i} | A_i | - \sum_{i<j} | A_i \cap A_j | + \ldots + (-1)^{n-1} | A_1 \cap A_2 \cap \ldots \cap A_n |.$
+\end{longtable}
+
+\subsubsection{Перестановки, сочетания и размещения}
+
+\begin{longtable}[l]{l}
+$P_n = n!$ "--- перестановки;\\
 $A^k_n=\frac{n!}{(n-k)!}=n(n-1)(n-2)\dots(n-k+1)$ "--- размещения;
 \\
 $C^k_n=\binom{n}{k}=\frac{n!}{k!\,(n-k)!}=\frac{n(n-1)(n-2)\dots(n-k+1)}{k!}$ "--- сочетания;
+\end{longtable}
+
+\subsubsection{Бином Ньютона}
+\begin{longtable}[l]{l}
+	$(a+b)^n=\sum^{k}_n \binom{n}{k} a^k b^{n-k};$
+\end{longtable}
+
+\subsubsection{Другие свойства биномиального коэффициента}
+
+\begin{longtable}[l]{l l}
+$\binom{n}{k}=\binom{n}{n-k}; $
+&  $\binom{n+1}{k+1}=\binom{n}{k+1}+\binom{k}{n};$ 
 \\
-$\binom{n}{k}=\binom{n}{n-k};\qquad \binom{n+1}{k+1}=\binom{n}{k+1}+\binom{k}{n}; $
-\\
-$\sum^{k}_n \binom{n}{k}=2^n \quad \sum^{k}_n (-1)^k \binom{n}{k}=0.$
+$\sum^{k}_n \binom{n}{k}=2^n$ 
+& $\sum^{k}_n (-1)^k \binom{n}{k}=0.$
+\end{longtable}
+
+\section{Теория вероятностей}
+
+\subsubsection{Формула включений-исключений для вероятностей}
+
+\begin{longtable}[l]{l}
+	$\bbP(A_1\cup\dots\cup A_k)= \sum_{i} \bbP(A_i) - \sum_{i<j} \bbP(A_i\cap A_j)+\ldots + (-1)^{k-1}\bbP(A_1\cap\dots\cap A_k);$
 \end{longtable}
 
 \section{Суммирование}
@@ -688,9 +723,13 @@ $a_n=\frac{a_{n-1}+a_{n+1}}{2}, n\geq 2;$ & $b_kb_{n-k+1}=b_1b_n,\ k\in\overline
 $a_k+a_{n-k}=a_1+a_n,\ k\in\overline{1,n}.$ & Если $|q|<1$, то $S=\frac{b_1}{1-q}$
 \end{longtable}
 
-\subsubsection{Бином Ньютона}
+\subsubsection{Числовые неравенства}
+
 \begin{longtable}[l]{l}
-$(a+b)^n=\sum^{k}_n C^k_n a^k b^{n-k};$
+	1) $a^2+b^2 \ge 2ab;$ \\
+	2) Неравенство средних $\frac{a+b}{2} \ge \sqrt{ab}$ \qquad 
+	$\frac{a_1+a_2+\ldots+a_n}{n} \ge \sqrt[n]{a_1 a_2\ldots a_n}$; \\
+	3) Неравенство Коши"--~Буняковского $\left(\sum_{i=1}^n a_i b_i\right)^2 \le \left(\sum_{i=1}^n a_i^2\right) \left(\sum_{i=1}^n b_i^2\right)$.
 \end{longtable}
 
 \section{Некоторые замечательные пределы.}

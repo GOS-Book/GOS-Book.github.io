@@ -9,6 +9,7 @@
 %----------------------------------------------------------------------------------------
 
 \usepackage[margin=1.6cm, top=1.2cm,right=1.9cm,left=1.9cm, footskip = 1 cm, headheight=20pt,headsep=0.2cm]{geometry}
+%\geometry{showframe}
 
 \usepackage{graphicx} % Required for including pictures
 \graphicspath{{./pictures/}} % Specifies the directory where pictures are stored
@@ -86,7 +87,6 @@
 \defbibheading{bibempty}{}
 
 \usepackage{calc} % For simpler calculation - used for spacing the index letter headings correctly
-\usepackage{calc} 
 \usepackage[xindy]{imakeidx}
 \indexsetup{level=\chapter}
 \makeindex[program=texindy, options=-M mystyle.xdy -L russian -C utf8]
@@ -548,45 +548,36 @@ innerbottommargin=5pt]{cBox}
 %	CHAPTER HEADINGS
 %----------------------------------------------------------------------------------------
 
-\newif\ifusechapterimage
-\usechapterimagetrue
-\newcommand{\thechapterimage}{}%
-\newcommand{\chapterimage}[1]{\ifusechapterimage\renewcommand{\thechapterimage}{#1}\fi}%
 \def\@makechapterhead#1{%
-{\parindent \z@ \raggedright \normalfont
-\ifnum \c@secnumdepth >\m@ne
-\if@mainmatter
-\begin{tikzpicture}[remember picture,overlay]
-\node at (current page.north west)
-{\begin{tikzpicture}[remember picture,overlay]
-\node[anchor=north west,inner sep=0pt] at (0,0) {\ifusechapterimage\includegraphics[width=\paperwidth]{\thechapterimage}\fi};
-\draw[anchor=west] (\Gm@lmargin,-6cm) node [line width=2pt,rounded corners=15pt,draw=prpl,fill=white,fill opacity=0.5,inner sep=35pt]{\strut\makebox[22cm]{}};
-\draw[anchor=west] (\Gm@lmargin+.3cm,-6cm) node[text width=11cm] {\huge\sffamily\bfseries\color{black}\thechapter. #1\strut};
-\end{tikzpicture}};
-\end{tikzpicture}
-\else
-\begin{tikzpicture}[remember picture,overlay]
-\node at (current page.north west)
-{\begin{tikzpicture}[remember picture,overlay]
-\node[anchor=north west,inner sep=0pt] at (0,0) {\ifusechapterimage\includegraphics[width=\paperwidth]{\thechapterimage}\fi};
-\draw[anchor=west] (\Gm@lmargin,-6cm) node [line width=2pt,rounded corners=15pt,draw=prpl,fill=white,fill opacity=0.5,inner sep=35pt]{\strut\makebox[22cm]{}};
-\draw[anchor=west] (\Gm@lmargin+.3cm,-6cm) node[text width=11cm] {\huge\sffamily\bfseries\color{black}#1\strut};
-\end{tikzpicture}};
-\end{tikzpicture}
-\fi\fi\par\vspace*{200\p@}}}
+	{\noindent
+		\if@mainmatter
+		\begin{tikzpicture}[remember picture]
+		\node (n) at (\Gm@lmargin,-\Gm@tmargin) [ inner sep=3mm, fill=white, fill opacity=0.5, text width={\textwidth-0mm}, text opacity=1, font=\huge\sffamily\bfseries, text=black]{\thechapter. #1};
+		\end{tikzpicture}%
+		\begin{tikzpicture}[remember picture,overlay]
+		\draw [line width=2pt, rounded corners=14pt, prpl] (n.north -| current page.east) -| (n.south west) -- (n.south -| current page.east); 
+		\end{tikzpicture}%
+		\else
+		\begin{tikzpicture}[remember picture]
+		\node (n) at (\Gm@lmargin,-\Gm@tmargin) [ inner sep=3mm, fill=white, fill opacity=0.5, text width={\textwidth-0mm}, text opacity=1, font=\huge\sffamily\bfseries, text=black]{#1};
+		\end{tikzpicture}%
+		\begin{tikzpicture}[remember picture,overlay]
+		\draw [line width=2pt, rounded corners=14pt, prpl] (n.north -| current page.east) -| (n.south west) -- (n.south -| current page.east); 
+		\end{tikzpicture}%
+		\fi\bigskip\par
+}}
 
 %-------------------------------------------
 
 \def\@makeschapterhead#1{%
-\begin{tikzpicture}[remember picture,overlay]
-\node at (current page.north west)
-{\begin{tikzpicture}[remember picture,overlay]
-\node[anchor=north west,inner sep=0pt] at (0,0) {\ifusechapterimage\includegraphics[width=\paperwidth]{\thechapterimage}\fi};
-\draw[anchor=west] (\Gm@lmargin,-6cm) node [line width=2pt,rounded corners=15pt,draw=prpl,fill=white,fill opacity=0.5,inner sep=35pt]{\strut\makebox[22cm]{}};
-\draw[anchor=west] (\Gm@lmargin+.3cm,-6cm) node[text width=12.5cm] {\huge\sffamily\bfseries\color{black}#1\strut};
-\end{tikzpicture}};
-\end{tikzpicture}
-\par\vspace*{200\p@}}
+	\noindent
+	\begin{tikzpicture}[remember picture]
+	\node (n) at (\Gm@lmargin,-\Gm@tmargin) [ inner sep=3mm, fill=white, fill opacity=0.5, text width={\textwidth-0mm}, text opacity=1, font=\huge\sffamily\bfseries, text=black]{#1};
+	\end{tikzpicture}%
+	\begin{tikzpicture}[remember picture,overlay]
+	\draw [line width=2pt, rounded corners=14pt, prpl] (n.north -| current page.east) -| (n.south west) -- (n.south -| current page.east); 
+	\end{tikzpicture}%
+	\bigskip\par
+}
 \makeatother
 
-\chapterimage{pictures/chapterimage}%example-image-a
