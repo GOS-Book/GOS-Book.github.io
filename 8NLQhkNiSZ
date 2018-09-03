@@ -1,5 +1,0 @@
-(require "lang/general/latin9-lang.xdy")
-(require "tex/inputenc/latin.xdy")
-(require "c:/texlive/2018/texmf-dist/xindy/modules/base/texindy.xdy")
-(require "c:/texlive/2018/texmf-dist/xindy/modules/base/page-ranges.xdy")
-(require "c:/texlive/2018/texmf-dist/xindy/modules/base/word-order.xdy")
