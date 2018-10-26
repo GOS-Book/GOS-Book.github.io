@@ -21,20 +21,21 @@
 <link rel="stylesheet" href="css/main.css">
 
 <style type="text/css">
-@import url('https://fonts.googleapis.com/css?family=Inconsolata');
+@import url('https://fonts.googleapis.com/css?family=Inconsolata|Montserrat');
 .bodyfont,
 body {
-    font-family: 'Inconsolata', monospace;
+	font-family: 'Montserrat', sans-serif;
     text-rendering: optimizeLegibility;
 }
-
-@font-face { font-family: "EmojiSymbols"; src: url('/fonts/EmojiSymbols-Regular.woff') format('woff'); text-decoration: none; font-style: normal; }
+.inc {
+	font-family: 'Inconsolata', monospace;
+}
 </style>
 </head>
 
 <body>
 
-<div class="sidebar-menu" style="background-color: #000; z-index: 100">
+<div class="sidebar-menu inc" style="background-color: #000; z-index: 100">
         <ul class="inline-menu">
             <a  style="float: left; padding-left: 18px;" href="https://didenkoandre.github.io/">Didenko André</a>
             
@@ -54,7 +55,7 @@ body {
 <div class="bg">
 		<div class="row d-flex align-items-center justify-content-start">
 			<div class="banner-content col-lg-7">
-				<h1>GOSBook</h1>
+				<h1 class="inc">GOSBook</h1>
 				<p style='color: #fff'>
 					Пособие к подготовке к государственному экзамену по математическому анализу.
 				</p>
@@ -67,7 +68,7 @@ body {
 				        <div class="card">
 			                <div class="card-body">
 			                    <h3 class="card-title">Статус книги</h3>
-			                    <ul class="theList">Книга медленно переписывается под программу 2018. Однако срочно нужны люди для помощи. Если кто-то хочет заниматься этим - напишите мне.</ul>
+			                    <ul class="theList">Книга медленно переписывается под программу 2018. Однако срочно нужны люди для помощи. Если хотите помочь &mdash; напишите мне.</ul>
 			                </div>
 				        </div>
 				    </div>    
@@ -99,12 +100,12 @@ body {
 				    </div>    
 				</div>
 			</div>
-			<div class="banner-right" style='margin-top:50px'>
+			<div class="col-lg-5 banner-right" style='margin-top:50px'>
 				<img src="images/header-img.png">
 			</div>
 			<footer id="footer">
                     <div class="row">
-                        <div class="left-side">                                
+                        <div class="left-side inc">                                
                             <span class="copyright">&copy; Irène Adler &#x2764;&#xFE0E; Moscow, Novorossiysk</span>
                         </div>
                     </div>
