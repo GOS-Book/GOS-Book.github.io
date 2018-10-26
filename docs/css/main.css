@@ -56,12 +56,6 @@
   }
 }
 
-@media (max-width: 800px) {
-  .banner-right img {
-    width: 100%;
-  }
-}
-
 .navbar-nav {
     vertical-align: middle;
     padding-right: 18px;
@@ -681,6 +675,12 @@ body, html {
         flex: 0 0 58.333333%;
         max-width: 58.333333%
     }
+}
+
+@media (max-width: 800px) {
+  .col-lg-5 img {
+    width: 100%;
+  }
 }
 
 .justify-content-start {
