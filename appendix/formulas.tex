@@ -474,6 +474,7 @@ $\int x^\alpha \,dx = \frac{x^{\alpha+1}}{\alpha+1},\, \alpha\neq -1;$ & $ $
 \section{Вычисление объемов тел и площадей поверхностей}
 
 \section{Несобственные интегралы}
+\footnotesize
 \begin{longtable}{|c|c|c|}
 \hline Интеграл & сходится при & расходится при 
 \\\hline $\int\limits_{1}^{+\infty} \frac{dx}{x^a}$ 
@@ -496,6 +497,7 @@ $\int x^\alpha \,dx = \frac{x^{\alpha+1}}{\alpha+1},\, \alpha\neq -1;$ & $ $
 & $\alpha = 1$, $\beta \ge 1$
 \\\hline
 \end{longtable}
+\normalsize
 
 \section{Криволинейные интегралы}
 \subsubsection{Первого рода}
@@ -678,7 +680,7 @@ $\biggl | \bigcup_{i=1}^{n}A_i \biggl | = \sum_{i} | A_i | - \sum_{i<j} | A_i \c
 
 \begin{longtable}[l]{l}
 $P_n = n!$ "--- перестановки;\\
-$A^k_n=\frac{n!}{(n-k)!}=n(n-1)(n-2)\dots(n-k+1)$ "--- размещения;
+$A^k_n= (n)_k = \frac{n!}{(n-k)!}=n(n-1)(n-2)\dots(n-k+1)$ "--- размещения;
 \\
 $C^k_n=\binom{n}{k}=\frac{n!}{k!\,(n-k)!}=\frac{n(n-1)(n-2)\dots(n-k+1)}{k!}$ "--- сочетания;
 \end{longtable}
@@ -697,6 +699,31 @@ $\binom{n}{k}=\binom{n}{n-k}; $
 $\sum^{k}_n \binom{n}{k}=2^n$ 
 & $\sum^{k}_n (-1)^k \binom{n}{k}=0.$
 \end{longtable}
+
+\subsubsection{Известная задача про шары и ящики (\href{http://cns-web.bu.edu/~eric/EC500/attachments/ON(2d)LINE(20)READINGS/ballsinboxe.pdf}{Ссылка})}
+
+Пусть у нас есть $k$ шаров и $n$ ящиков. Необходимо подсчитать количество способов распределить шары по ящикам с выполнением некоторых из следующих условий:
+\begin{itemize}
+\item \textit{Упорядоченность шаров.} Шары могут быть как различимы друг от друга, так и неразличимы. 
+\item \textit{Упорядоченность ящиков.} Ящики могут быть как различимы друг от друга, так и неразличимы. 
+\item \textit{Исключения ящиков (Повторения шаров).} Если мы положили шар в ящик, то далее, мы можем исключаем этот ящик из рассмотрения и больше не кладем в него мячей. Иначе говоря, при этом условии ящики могут содержать не более, чем один шар.
+\item \textit{Пустота ящиков.} Ящики можно или нельзя оставлять пустыми.
+\end{itemize}
+
+\footnotesize
+\begin{longtable}[c]{|B{0.14}{0}|B{0.14}{0}|B{0.15}{0}|B{0.17}{0}|B{0.40}{0}|}
+\hline
+Шары & Ящики & Исключ.? & Нет пустых? &Количество размещений $k$ шаров в $n$ ящиков \tabularnewline\hline
+Разл. & Разл. & Да & & $\textstyle(n)_k$ \tabularnewline\hline
+Разл. & Разл. & Да & Да & $\textstyle\begin{cases} n!, \text{ если } k=n \\ 0, \text{ если } k\ne n. \end{cases}$  \tabularnewline\hline
+Разл. & Разл. & Нет &  & $\textstyle n^k$ \tabularnewline\hline
+Разл. & Разл. & Нет & Да & $\textstyle\sum_{i=0}^{n-1}(-1)^{i} \binom{n}{i} (n-i)^k$ \tabularnewline\hline
+Неразл. & Разл. & Да & & $\textstyle\binom{n}{k}$ \tabularnewline\hline
+Неразл. & Разл. & Да & Да & $\textstyle\begin{cases} 1, \text{ если } k=n \\ 0, \text{ если } k\ne n. \end{cases}$ \tabularnewline\hline
+Неразл. & Разл. & Нет & & $\textstyle\binom{n+k-1}{k}$ \tabularnewline\hline
+Неразл. & Разл. & Нет & Да & $\textstyle\binom{k-1}{n-1}$ \tabularnewline\hline
+\end{longtable}
+\normalsize 
 
 \section{Теория вероятностей}
 
@@ -727,8 +754,7 @@ $a_k+a_{n-k}=a_1+a_n,\ k\in\overline{1,n}.$ & Если $|q|<1$, то $S=\frac{b_
 
 \begin{longtable}[l]{l}
 	1) $a^2+b^2 \ge 2ab;$ \\
-	2) Неравенство средних $\frac{a+b}{2} \ge \sqrt{ab}$ \qquad 
-	$\frac{a_1+a_2+\ldots+a_n}{n} \ge \sqrt[n]{a_1 a_2\ldots a_n}$; \\
+	2) Неравенства средних $\frac{a+b}{2} \ge \sqrt{ab}$ и $\frac{a_1+a_2+\ldots+a_n}{n} \ge \sqrt[n]{a_1 a_2\ldots a_n}$; \\
 	3) Неравенство Коши"--~Буняковского $\left(\sum_{i=1}^n a_i b_i\right)^2 \le \left(\sum_{i=1}^n a_i^2\right) \left(\sum_{i=1}^n b_i^2\right)$.
 \end{longtable}
 
