@@ -58,9 +58,7 @@
 
 @media (max-width: 800px) {
   .banner-right img {
-    width: 55%;
-    margin-right: auto;
-    margin-left: auto;
+    width: 100%;
     display: block;
   }
 }
