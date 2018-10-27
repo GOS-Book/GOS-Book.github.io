@@ -482,7 +482,7 @@ a:not([href]):not([tabindex]) {
 .btn-download:before {
     position: absolute;
     content: "\f019";
-    font-family: FontAwesome;
+    font-family: "Font Awesome 5 Free";
     top: 8px;
     right: 12px;
     font-size: 24px;
