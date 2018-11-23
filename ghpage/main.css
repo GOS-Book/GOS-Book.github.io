@@ -8,7 +8,7 @@
   font-size: 72px;
   font-weight: 700;
   line-height: 1em;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 .banner-content h1 span {
@@ -56,7 +56,6 @@
   }
 }
 
-/*----- General ----*/
 html,
 body {
     height: 100%;
@@ -124,6 +123,58 @@ html {
 :after,
 :before {
     box-sizing: inherit
+}
+
+.row {
+    max-width: 97.5rem;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.row:after,
+.row:before {
+    content: ' ';
+    display: table
+}
+
+.row:after {
+    clear: both
+}
+
+.row .row.collapse {
+    margin-left: 0;
+    margin-right: 0
+}
+
+.row.expanded .row {
+    margin-left: auto;
+    margin-right: auto
+}
+.row {
+    max-width: 97.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap
+}
+
+.row .row {
+    max-width: none;
+    margin-left: -.625rem;
+    margin-right: -.625rem
+}
+
+@media screen and (min-width: 40.0625em) {
+    .row .row {
+        margin-left: -.9375rem;
+        margin-right: -.9375rem
+    }
+}
+
+.row.expanded {
+    max-width: none
 }
 
 div,
@@ -352,7 +403,6 @@ a:not([href]):not([tabindex]) {
     top: 0;
     width: 100%;
 }
-
 
 .card {
     border-radius: 1px;
