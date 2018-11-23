@@ -8,7 +8,7 @@
   font-size: 72px;
   font-weight: 700;
   line-height: 1em;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .banner-content h1 span {
@@ -54,24 +54,6 @@
   .banner-content {
     margin-top: 80px;
   }
-}
-
-.navbar-nav {
-    vertical-align: middle;
-    padding-right: 18px;
-
-    display: inline-block;
-    cursor: pointer;
-    color: #fff;
-}
-
-.navbar-nav {
-    float: right;
-}
-
-.navbar-nav>a  {
-    padding-left: 15px;
-    padding-right: 15px;
 }
 
 /*----- General ----*/
@@ -144,58 +126,6 @@ html {
     box-sizing: inherit
 }
 
-.row {
-    max-width: 97.5rem;
-    margin-left: auto;
-    margin-right: auto
-}
-
-.row:after,
-.row:before {
-    content: ' ';
-    display: table
-}
-
-.row:after {
-    clear: both
-}
-
-.row .row.collapse {
-    margin-left: 0;
-    margin-right: 0
-}
-
-.row.expanded .row {
-    margin-left: auto;
-    margin-right: auto
-}
-.row {
-    max-width: 97.5rem;
-    margin-left: auto;
-    margin-right: auto;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-flow: row wrap;
-    flex-flow: row wrap
-}
-
-.row .row {
-    max-width: none;
-    margin-left: -.625rem;
-    margin-right: -.625rem
-}
-
-@media screen and (min-width: 40.0625em) {
-    .row .row {
-        margin-left: -.9375rem;
-        margin-right: -.9375rem
-    }
-}
-
-.row.expanded {
-    max-width: none
-}
-
 div,
 h1,
 h3,
@@ -254,113 +184,6 @@ h6 {
     text-rendering: geometricPrecision;
     -webkit-font-smoothing: antialiased
 }
-
-.social {
-    vertical-align: middle;
-    -moz-transition: color .25s cubic-bezier(0.77, 0, 0.175, 1), background .25s cubic-bezier(0.77, 0, 0.175, 1), border .25s cubic-bezier(0.77, 0, 0.175, 1);
-    -o-transition: color .25s cubic-bezier(0.77, 0, 0.175, 1), background .25s cubic-bezier(0.77, 0, 0.175, 1), border .25s cubic-bezier(0.77, 0, 0.175, 1);
-    -webkit-transition: color .25s cubic-bezier(0.77, 0, 0.175, 1), background .25s cubic-bezier(0.77, 0, 0.175, 1), border .25s cubic-bezier(0.77, 0, 0.175, 1);
-    transition: color .25s cubic-bezier(0.77, 0, 0.175, 1), background .25s cubic-bezier(0.77, 0, 0.175, 1), border .25s cubic-bezier(0.77, 0, 0.175, 1)
-}
-
-.social:hover {
-    vertical-align: middle;
-    color: #9678B6
-}
-
-.row {
-    min-width: 100%
-}
-
-.row.max-width {
-    min-width: 0
-}
-
-@media only screen and (min-width: 64.063em) {
-    .row.masonry-blog .columns {
-        padding: 0 20px
-    }
-}
-
-.row.full-width-row {
-    max-width: none
-}
-
-.row.full-width-row.with-padding {
-    padding: 0 15px
-}
-
-@media only screen and (min-width: 48.063em) {
-    .row.full-width-row.with-padding {
-        padding: 0 20px
-    }
-}
-
-#footer {
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    padding: 0 9px 9px;
-    z-index: 50;
-    line-height: 1
-}
-
-@media only screen and (min-width: 641px) {
-    #footer {
-        padding: 0 14px 14px
-    }
-}
-
-#footer .row {
-    max-width: 100%;
-    margin: 0
-}
-
-#footer .row .columns {
-    padding: 0
-}
-
-#footer .left-side {
-    font-size: 20px;
-    vertical-align: bottom;
-    display: none;
-}
-
-.copyright {
-    font-size: 14px;
-    color: #fff;
-}
-
-@media only screen and (min-width: 641px) {
-    #footer .left-side {
-        display: block;
-        font-size: 40px;
-    }
-    .copyright {
-        font-size: 17px;
-    }
-}
-
-@media screen and (max-width: 1361px) and (min-width: 641px) 
-{
-    #footer .left-side {
-        display: block;
-        font-size: 15px;
-    }
-    .copyright {
-        font-size: 9px;
-    }
-}
-
-.inline-menu a:not(:hover):not(.btn):not(.button) {
-    color: #fff
-}
-
-/* -------------------------------------------------------------------
-
-                        0. General Styles
-
--------------------------------------------------------------------*/
 
 body {
     color: #727272;
@@ -523,76 +346,6 @@ a:not([href]):not([tabindex]) {
     transform: rotate(15deg);
 }
 
-/*-------------------------------------------------------------------
-
-                        3. Menu Styles
-
--------------------------------------------------------------------*/
-
-.inline-menu {
-    margin-right: 20px;
-    padding-top: 0px;
-    margin: 0;
-    width: 100%;
-}
-
-.sidebar-menu {
-    background: transparent; 
-    left: 0;
-    top: 0;
-    padding: 0;
-    position: fixed; 
-    width: 100%;
-    z-index: 1;
-    margin: 0;
-}
-
-.inline-menu a {
-    display: inline-block;
-    cursor: pointer;
-    padding-left: 0px;
-    font-color: blue;
-    font-size: 40px;
-    color: #9678b6;
-    margin: 0;
-    text-align: left;
-    float: left;
-}
-
-.right-menu {
-    float: right;
-}
-
-@media screen and (max-width: 1241px) {
-.inline-menu a {
-    font-size: 30px;
-}
-.mytopsocial {
-    height: 25px;
-    width: 25px;
-}
-}
-
-@media screen and (max-width: 1011px) and (min-width: 641px) {
-.inline-menu a {
-    font-size: 25px;
-}
-
-.mytopsocial {
-    height: 22px;
-    width: 22px;
-}
-}
-
-@media screen and (max-width: 641px) {
-.inline-menu a {
-    font-size: 18px;
-}
-.mytopsocial {
-    height: 18px;
-    width: 18px;
-}
-}
 
 .home-container {
     left: 0;
@@ -623,17 +376,17 @@ a:not([href]):not([tabindex]) {
     padding-bottom: 8px;
 }
 
-.eskimo-one-column {
+.one-column {
     float: left;
 }
 
-.eskimo-one-column .card-masonry {
+.one-column .card-masonry {
     margin-left: 5px;
     margin-right: 5px;
 }
 
 @media screen and (min-width: 641px) {
-.eskimo-one-column .card-masonry {
+.one-column .card-masonry {
     margin-left: 118px;
     margin-right: 118px;
 }

@@ -1,7 +1,7 @@
-## GOSBook
+## GOS-Book
 
 ### Актуальная версия в pdf-формате доступна по ссылке:
-[<img src="https://raw.githubusercontent.com/DidenkoAndre/didenkoandre.github.io/master/favicon.png" width="15" height="15"/>](https://didenkoandre.github.io/GOSBook/GOSBook.pdf) https://didenkoandre.github.io/GOSBook/GOSBook.pdf
+[<img src="./ghpage/GitORG.png" width="25" height="25"/>](https://GOS-Book.github.io/GOS-Book.pdf) https://GOS-Book.github.io/GOS-Book.pdf
 
 ### Web-site, посвященный данной книге:
-[<img src="https://raw.githubusercontent.com/DidenkoAndre/didenkoandre.github.io/master/favicon.png" width="15" height="15"/>](https://didenkoandre.github.io/GOSBook/GOSBook.pdf) https://didenkoandre.github.io/GOSBook/
+[<img src="./ghpage/GitORG.png" width="25" height="25"/>](https://GOS-Book.github.io) https://GOS-Book.github.io
