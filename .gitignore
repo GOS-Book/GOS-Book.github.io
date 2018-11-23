@@ -40,4 +40,4 @@
 **/*.sty
 
 # Allow
-!GOSBook.pdf
+!GOS-Book.pdf
