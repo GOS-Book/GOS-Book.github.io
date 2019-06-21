@@ -4,7 +4,7 @@
 \everymath{\displaystyle}
 \addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
 \addtocontents{ptc}{\protect\setcounter{tocdepth}{2}}
-
+	
 \part{Приложения}
 \chapter[Формулы к письменному ГОСу]{Формулы к письменному ГОСу\footnotemark}
 
@@ -610,7 +610,7 @@ $\int\limits_{\Gamma} \left(P\,dx+Q\,dy+R\,dz=\int\limits_{\alpha}^{\beta} P x'(
 
 
 \section{Вычеты}
-\noindent Определение (смотри точные формулировки в соответствующих параграфах):
+\noindent Определение:
 \begin{itemize}
 \item
 $\res_a f=\frac{1}{2\pi i} \int_{\Gamma_{\rho}^{+}} f(\xi)\, d\xi,\ a\in\bbC.$
@@ -676,23 +676,27 @@ $$\res_{\infty} f= \lim\limits_{z\to \infty} \left( f(\infty)-f(z)\right)\cdot z
 $\biggl | \bigcup_{i=1}^{n}A_i \biggl | = \sum_{i} | A_i | - \sum_{i<j} | A_i \cap A_j | + \ldots + (-1)^{n-1} | A_1 \cap A_2 \cap \ldots \cap A_n |.$
 \end{longtable}
 
-\subsubsection{Перестановки, сочетания и размещения}
+\subsubsection{Размещения, перестановки и сочетания}
 
 \begin{longtable}[l]{l}
-$P_n = n!$ "--- перестановки;\\
-$A^k_n= (n)_k = \frac{n!}{(n-k)!}=n(n-1)(n-2)\dots(n-k+1)$ "--- размещения;
+$\bullet$ $A^k_n= (n)_k = \frac{n!}{(n-k)!}=n(n-1)(n-2)\dots(n-k+1)$ "--- 
+размещения;
 \\
-$C^k_n=\binom{n}{k}=\frac{n!}{k!\,(n-k)!}=\frac{n(n-1)(n-2)\dots(n-k+1)}{k!}$ "--- сочетания;
+$\bullet$ $P_n = A^n_n = n!$ "--- перестановки;
+\\
+$\bullet$ 
+$C^k_n=\binom{n}{k}=\frac{n!}{k!\,(n-k)!}=\frac{n(n-1)(n-2)\dots(n-k+1)}{k!}$ 
+"--- сочетания;
 \end{longtable}
 
 \subsubsection{Бином Ньютона}
-\begin{longtable}[l]{l}
+\begin{longtable}[c]{c}
 	$(a+b)^n=\sum^{k}_n \binom{n}{k} a^k b^{n-k};$
 \end{longtable}
 
 \subsubsection{Другие свойства биномиального коэффициента}
 
-\begin{longtable}[l]{l l}
+\begin{longtable}{@{\extracolsep{\fill}} c c @{}}
 $\binom{n}{k}=\binom{n}{n-k}; $
 &  $\binom{n+1}{k+1}=\binom{n}{k+1}+\binom{k}{n};$ 
 \\
@@ -848,7 +852,7 @@ $p(x) =
 
 \newpage
 
-\section[Площади различных фигур]{Площади различных фигур\footnote{Добавил сюда, только потому что на ГОСе забыл формулу площади эллипса :-)}}
+\section[Площади различных фигур]{Площади различных фигур}
 \scriptsize
 \begin{longtable}[l]{|A{0.21}{0}|B{0.34}{0}|A{0.45}{0}|}
 \hline
