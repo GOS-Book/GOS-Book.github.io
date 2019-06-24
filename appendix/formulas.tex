@@ -12,7 +12,7 @@
 \section{Тригонометрические формулы}
 
 \subsubsection{Основные тригонометрические формулы}
-\begin{longtable}[l]{l l l}
+\begin{longtable}[l]{@{\extracolsep{\fill}}p{0.33\textwidth} p{0.33\textwidth} p{0.33\textwidth}}
 $\sin^2x+\cos^2x=1;$
 &
 $\tg^2x+1=\frac{1}{\cos^2x};$
@@ -21,7 +21,7 @@ $\tg x\cdot\ctg x=1.$
 \end{longtable}
 
 \subsubsection{Формула Эйлера и ее следствия}
-\begin{longtable}[l]{ l l l}
+\begin{longtable}[l]{@{\extracolsep{\fill}}p{0.33\textwidth} p{0.33\textwidth} p{0.33\textwidth}}
 $e^{ix} = \cos x + i \sin x;$
 &
 $\sin x = \frac{e^{ix}-e^{-ix}}{2i};$
@@ -30,7 +30,7 @@ $\cos x = \frac{e^{ix}+e^{-ix}}{2}.$
 \end{longtable}
 
 \subsubsection{Формулы сложения и вычитания аргументов}
-\begin{longtable}[l]{l l l}
+\begin{longtable}[l]{@{\extracolsep{\fill}}p{0.5\textwidth} p{0.5\textwidth}}
 $\sin(x\pm y)=\sin x \cos y \pm \cos x \sin y;$
 &
 $\tg(x\pm y)=\frac{\tg x \pm \tg y}{1 \mp \tg x\tg y};$
@@ -41,7 +41,7 @@ $\ctg(x\pm y)=\frac{\ctg x\ctg y \mp 1}{\ctg x \pm \ctg y}.$
 \end{longtable}
 
 \subsubsection{Формулы двойного угла}
-\begin{longtable}[l]{l l l}
+\begin{longtable}[l]{@{\extracolsep{\fill}}p{0.33\textwidth} p{0.33\textwidth} p{0.33\textwidth}}
 $\sin 2x = 2\sin x \cos x;$
 &
 $\cos 2x = \cos^2 x - \sin^2 x;$
@@ -50,7 +50,7 @@ $\tg 2x = \frac{2\tg x}{1-\tg^2x};$
 \end{longtable}
 
 \subsubsection{Формулы понижения степени}
-\begin{longtable}[l]{ l l }
+\begin{longtable}[l]{@{\extracolsep{\fill}}p{0.5\textwidth} p{0.5\textwidth}}
 $2\sin^2x=1-\cos 2x;$
 &
 $2\cos^2x=1+\cos 2x;$
@@ -61,7 +61,7 @@ $4\cos^3x=3\cos x+\cos 3x;$
 \end{longtable}
 
 \subsubsection{Формулы преобразования суммы}
-\begin{longtable}[l]{ l l}
+\begin{longtable}[l]{@{\extracolsep{\fill}}p{0.5\textwidth} p{0.5\textwidth}}
 $\sin x\pm \sin y =2 \sin \frac{x\pm y}{2} \cos \frac{x\mp y}{2};$
 &
 $\cos x + \cos y  = 2 \cos \frac{x + y}{2} \cos \frac{x - y}{2};$
@@ -72,7 +72,7 @@ $\cos x - \cos y  = -2 \sin \frac{x + y}{2} \sin\frac{x - y}{2};$
 \end{longtable}
 
 \subsubsection{Формулы преобразования произведения}
-\begin{longtable}[l]{l l}
+\begin{longtable}[l]{@{\extracolsep{\fill}}p{0.5\textwidth} p{0.5\textwidth}}
 $2\sin x \sin y = \cos (x-y)-\cos(x+y);$
 &
 $2\sin x \cos y = \sin (x-y)+\sin(x+y).$
@@ -193,7 +193,7 @@ $\ctg x$
 \section{Гиперболические функции}
 
 \subsubsection{Определение}
-\begin{longtable}[l]{l l}
+\begin{longtable}[l]{@{\extracolsep{\fill}}p{0.5\textwidth} p{0.5\textwidth}}
 $\sh x = \frac{e^{x}-e^{-x}}{2};$
 &
 $\th x = \frac{\sh x}{\ch x}=\frac{e^{x}-e^{-x}}{e^{x}+e^{-x}}=\frac{e^{2x}-1}{e^{2x}+1};$
@@ -204,12 +204,12 @@ $\cth x = \frac{1}{\th x};$
 \end{longtable}
 
 \subsubsection{Важное соотношение}
-\begin{longtable}[l]{l}
+\begin{longtable}[c]{c}
 $\ch^2 x - \sh^2 x = 1;$
 \end{longtable}
 
 \subsubsection{Связь с тригонометрическими функциями}
-\begin{longtable}[l]{l l l}
+\begin{longtable}[l]{@{\extracolsep{\fill}}p{0.33\textwidth} p{0.33\textwidth} p{0.33\textwidth}}
 $\ch (ix) = \cos x;$
 &
 $\sh (ix)= i \sin x;$
@@ -224,18 +224,18 @@ $\tg (ix) = i \th x.$
 \end{longtable}
 
 \subsubsection{Формулы сложения и вычитания аргументов}
-\begin{longtable}[l]{l l}
+\begin{longtable}[l]{@{\extracolsep{\fill}}p{0.5\textwidth} p{0.5\textwidth}}
 $\sh (x\pm y) =  \sh x \ch y \pm \sh y \ch x;$
 &
 $\th (x \pm y) = \frac{\th x \pm \th y}{1 \pm \th x \th y};$
-\\
+\tabularnewline
 $\ch (x\pm y) =  \ch x \ch y \pm \sh y \sh x;$
 &
 $\cth (x \pm y) = \frac{1 \pm \cth x \cth y}{\cth x \pm \cth y}.$
 \end{longtable}
 
 \subsubsection{Формулы двойного угла}
-\begin{longtable}[l]{l l}
+\begin{longtable}[l]{@{\extracolsep{\fill}}p{0.5\textwidth} p{0.5\textwidth}}
 $\sh 2x = 2\ch x\sh x$
 &
 $\th 2x = \frac{2\th x}{1 + \th^2 x}$
@@ -246,7 +246,7 @@ $\cth 2x = \frac{1}{2}(\th x + \cth x)$
 \end{longtable}
 
 \subsubsection{Формулы понижения степени}
-\begin{longtable}[l]{l l}
+\begin{longtable}[l]{@{\extracolsep{\fill}}p{0.5\textwidth} p{0.5\textwidth}}
 $2\ch^2 x = \ch 2x + 1$
 &
 $2\sh^2 x = \ch 2x - 1$
@@ -257,7 +257,7 @@ $4 \ch^3 x = \ch 3x + 3 \ch x$
 \end{longtable}
 
 \subsubsection{Формулы преобразования произведения}
-\begin{longtable}[l]{ l l}
+\begin{longtable}[l]{@{\extracolsep{\fill}}p{0.5\textwidth} p{0.5\textwidth}}
 $\sh x \sh y = \frac{\ch(x + y) - \ch (x - y)}{2}$
 &
 $\sh x \ch y = \frac{\sh(x + y) + \sh(x - y)}{2}$
@@ -266,7 +266,7 @@ $\ch x \ch y = \frac{\ch(x + y) + \ch(x - y)}{2}$
 \end{longtable}
 
 \subsubsection{Формулы преобразования суммы}
-\begin{longtable}[l]{l  l}
+\begin{longtable}[l]{@{\extracolsep{\fill}}p{0.5\textwidth} p{0.5\textwidth}}
 $\sh x \pm \sh y = 2 \sh\frac{x \pm y}{2} \ch\frac{x \mp y}{2}$
 &
 $\ch x + \ch y = 2 \ch\frac{x + y}{2}\ch\frac{x - y}{2}$
@@ -278,7 +278,7 @@ $\ch x - \ch y = 2 \sh\frac{x + y}{2}\sh\frac{x - y}{2}$
 
 \section{Обратные гиперболические функции}
 
-\begin{longtable}[l]{l l}
+\begin{longtable}[l]{@{\extracolsep{\fill}}p{0.5\textwidth} p{0.5\textwidth}}
 $\arsh x = \ln(x + \sqrt{x^2 + 1})$
 &
 $\arth x = \frac{1}{2}\ln \left(\frac{1 + x}{1 - x} \right),\ |x|<1.$
@@ -291,7 +291,7 @@ $\arcth x = \frac{1}{2}\ln \left( \frac{x+ 1}{x - 1} \right),\ |x|<1.$
 \section{Производные}
 
 \subsubsection{Формулы для производных элементарных функций}
-\begin{longtable}[l]{l l}
+\begin{longtable}[l]{@{\extracolsep{\fill}}p{0.5\textwidth} p{0.5\textwidth}}
 $(C)'=0$ ($C=const$); 
 &
 $(e^x)'=e^x;$
@@ -342,7 +342,7 @@ $(\arcth x)'=-\frac{1}{x^2-1};$
 \end{longtable}
 
 \subsubsection{Формула Лейбница}
-\begin{longtable}[l]{l}
+\begin{longtable}[c]{@{\extracolsep{\fill}}l}
 $(uv)^{(n)}=\sum\limits^n_{k=0} C^k_n u^{n-k} v^{k}$
 \end{longtable}
 
@@ -358,7 +358,7 @@ R = \lim\limits_{n \to + \infty} \left| \frac{c_n}{c_{n + 1}} \right|
 $$
 \end{notion}
 
-\begin{longtable}[l]{ l l }
+\begin{longtable}[l]{@{\extracolsep{\fill}}p{0.5\textwidth} p{0.5\textwidth}}
 $e^x=1+\frac{x}{1!}+\frac{x^2}{2!}+\frac{x^3}{3!}+o(x^3);$
 &
 $e^x=\sum\limits_{n=0}^{+\infty}\displaystyle\frac{x^n}{n!},\ R=\infty;$
@@ -373,7 +373,7 @@ $\cos x  = \sum\limits_{n=0}^{+\infty} (-1)^{n}\displaystyle\frac{x^{2n}}{(2n)!}
 \\
 $\tg x = x + \frac{x^3}{3}+\frac{2x^5}{15}+o(x^5)$
 &
-$\tg x  = \sum\limits_{n=0}^{+\infty} \frac{B_{2n}\cdot (-4)^n (1-4^n)}{(2n)!} x^{2n-1},\, R=\frac{\pi}{2};$ \footnote{В этой формуле $B_{2n}$ "--- это числа Бернулли. На самом деле, далеко не все формулы надо знать наизусть. Но левый столбец из формул Маклорена по-хорошему надо для ГОСа знать}
+$\tg x  = \sum\limits_{n=0}^{+\infty} \frac{B_{2n}\cdot (-4)^n (1-4^n)}{(2n)!} x^{2n-1},\, R=\frac{\pi}{2};$ \footnote{В этой формуле $B_{2n}$ "--- это числа Бернулли.}
 \\ 
 $\sh x = x +\frac{x^3}{3!}+\frac{x^5}{5!}+o(x^5);$
 &
@@ -431,7 +431,7 @@ $\arth x = \sum\limits_{n=0}^{+\infty} \frac{1}{2n + 1} x^{2n + 1}, R = 1;$
 \end{longtable}
 
 \subsubsection{Несколько рядов Лорана}
-\begin{longtable}[l]{ l l l }
+\begin{longtable}[l]{@{\extracolsep{\fill}}p{0.5\textwidth} p{0.5\textwidth}}
 $\cth x = \frac{1}{x} + \frac{x}{3}+\frac{x^3}{45}+o(x^3);$
 &
 $\cth x  = \sum\limits_{n=0}^{+\infty} \frac{2^{2n}B_{2n}x^{2n-1}}{(2n)!},\quad0<|x|<\pi;$
@@ -448,56 +448,77 @@ $\arcth x = \sum_{\infty}^{n=1}\frac{1}{(2n-1)x^{2n-1}}, x > 1.$
 \end{longtable}
 
 \section{Основные неопределенные интегралы}
-\begin{longtable}[l]{l l}
+\begin{longtable}[l]{@{\extracolsep{\fill}}p{0.5\textwidth} p{0.5\textwidth}}
 $\int x^\alpha \,dx = \frac{x^{\alpha+1}}{\alpha+1},\, \alpha\neq -1;$ & $ $ 
-\\ $\int\frac{dx}{x+a} = \ln|x+a|+C;$ & $ $ 
-\\ $\int a^x dx = \frac{a^x}{\ln a} + C, \, a>0,\, a\neq 1;$ & $ $ 
-\\ $\int \sin x\,dx =-\cos x + C; $ 
+\tabularnewline $\int\frac{dx}{x+a} = \ln|x+a|+C;$ & $ $ 
+\tabularnewline $\int a^x dx = \frac{a^x}{\ln a} + C, \, a>0,\, a\neq 1;$ & $ $ 
+\tabularnewline $\int \sin x\,dx =-\cos x + C; $ 
 & $\int \cos x \,dx = \sin x + C;$ 
-\\ $\int \frac{dx}{\cos^2 x} = \tg x + C;$ 
+\tabularnewline $\int \frac{dx}{\cos^2 x} = \tg x + C;$ 
 & $\int \frac{dx}{\sin^2 x} = -\ctg x + C;$ 
-\\ $\int \sh x \,dx = \ch x + C; $ 
+\tabularnewline $\int \sh x \,dx = \ch x + C; $ 
 & $\int \ch x \,dx = \sh x + C;$ 
-\\ $\int \frac{dx}{\ch^2 x} = \th x + C; $ 
+\tabularnewline $\int \frac{dx}{\ch^2 x} = \th x + C; $ 
 & $\int \frac{dx}{\sh^2 x} = -\cth x + C; $ 
-\\ \multicolumn{2}{l}{$\int\frac{dx}{x^2+a^2} = \frac{1}{a}\arctg\frac{x}{a} + C = -\frac{1}{a}\arctg\frac{x}{a} + C,\, a\neq 0; $}
-\\ \multicolumn{2}{l}{$\int\frac{dx}{x^2-a^2} = \frac{1}{2a}\ln\left|\frac{x-a}{x+a}\right| + C, \, a\neq 0 ;$ }
-\\ \multicolumn{2}{l}{$\int\frac{dx}{\sqrt{a^2-x^2}} = \arcsin\frac{x}{a} + C=-\arccos\frac{x}{a} + C$, $|x|<a$, $a\neq 0$;}
-\\ \multicolumn{2}{l}{$\int\frac{dx}{\sqrt{x^2+a^2}} = \ln|x+\sqrt{x^2+a^2}|+C$, $a\neq 0$;}
-\\\multicolumn{2}{l}{$\int\frac{dx}{\sqrt{x^2-a^2}}= \ln|x+\sqrt{x^2-a^2}|+C$, $a\neq 0$, $|x|<|a|$.}
+\tabularnewline \multicolumn{2}{@{\extracolsep{\fill}}l}{$\int\frac{dx}{x^2+a^2} = \frac{1}{a}\arctg\frac{x}{a} + C = -\frac{1}{a}\arctg\frac{x}{a} + C,\, a\neq 0; $}
+\tabularnewline \multicolumn{2}{@{\extracolsep{\fill}}l}{$\int\frac{dx}{x^2-a^2} = \frac{1}{2a}\ln\left|\frac{x-a}{x+a}\right| + C, \, a\neq 0 ;$ }
+\tabularnewline \multicolumn{2}{@{\extracolsep{\fill}}l}{$\int\frac{dx}{\sqrt{a^2-x^2}} = \arcsin\frac{x}{a} + C=-\arccos\frac{x}{a} + C$, $|x|<a$, $a\neq 0$;}
+\tabularnewline \multicolumn{2}{@{\extracolsep{\fill}}l}{$\int\frac{dx}{\sqrt{x^2+a^2}} = \ln|x+\sqrt{x^2+a^2}|+C$, $a\neq 0$;}
+\tabularnewline\multicolumn{2}{@{\extracolsep{\fill}}l}{$\int\frac{dx}{\sqrt{x^2-a^2}}= \ln|x+\sqrt{x^2-a^2}|+C$, $a\neq 0$, $|x|>|a|$.}
 \end{longtable}
 
 \section{Вычисление площадей плоских фигур и длин кривых}
 
-
+\begin{longtable}[l]{@{\extracolsep{\fill}}p{0.3\textwidth}  p{0.34\textwidth} p{0.36\textwidth}}
+$S=\int_{a}^{b}y(x)\,dx$
+& $S=\int_\alpha^\beta y(t)x'(t)\,dt$ 
+& $S=\frac{1}{2}\int_\alpha^\beta r^2(\phi)\,d\phi$
+\tabularnewline
+$l=\int_{a}^{b} \sqrt{1+y^{'2}(x)}\,dx$
+& $l=\int_\alpha^\beta \sqrt{x^{'2}(t) + y^{'2}(t) }\,dt$ 
+& $l=\int_\alpha^\beta \sqrt{r^{'2}(\phi) + r^{'2}(\phi) }\,d\phi$ 
+\end{longtable}
 
 \section{Вычисление объемов тел и площадей поверхностей}
 
+\begin{longtable}[l]{@{\extracolsep{\fill}}p{0.5\textwidth}  p{0.5\textwidth} }
+$V=\pi\int_{a}^{b} y^2(x)\,dx$,
+& $V=\pm\pi\int_\alpha^\beta y^2(t)x'(t)\,dt$;
+\tabularnewline
+$S=2\pi\int_{a}^{b}\abs{y(x)} \sqrt{1+y^{'2}(x)}\,dx$,
+& $S=\pm2\pi\int_\alpha^\beta y(t) \sqrt{x^{'2}(t) + y^{'2}(t) }\,dt$;
+\tabularnewline
+$S=2\pi\int_{\phi_1}^{\phi_2}r(\phi)\sqrt{r^2(\phi) +r^{'2}(\phi)}\sin\phi\,d\phi$,
+& $S=2\pi\int_{\phi_1}^{\phi_2}r(\phi)\sqrt{r^2(\phi) +r^{'2}(\phi)}\cos\phi\,d\phi$;
+\tabularnewline
+$S=2\int_{a}^{b} z(x) \sqrt{1+y^{'2}(x)}\,dx$,
+& $S=\int_\alpha^\beta z(t) \sqrt{x^{'2}(t) + y^{'2}(t) }\,dt$;
+\end{longtable}
+
 \section{Несобственные интегралы}
-\footnotesize
-\begin{longtable}{|c|c|c|}
-\hline Интеграл & сходится при & расходится при 
-\\\hline $\int\limits_{1}^{+\infty} \frac{dx}{x^a}$ 
+
+\begin{longtable}[c]{ |C{0.33\textwidth}|C{0.33\textwidth}|C{0.33\textwidth}|}
+\hline Интеграл & Сходится при & Расходится при 
+\tabularnewline\hline $\int\limits_{1}^{+\infty} \frac{dx}{x^a}$ 
 & $\alpha > 1$
 & $\alpha \le 1$
-\\\hline $\int\limits_{0}^{1} \frac{dx}{x^a}$
+\tabularnewline\hline $\int\limits_{0}^{1} \frac{dx}{x^a}$
 & $\alpha < 1$
 & $\alpha \ge 1$
-\\\hline \multirow{2}{*}{$\int\limits_{2}^{+\infty} \frac{dx}{x^a |\ln x|^{\beta}}$}
+\tabularnewline\hline \multirow{2}{*}{$\int\limits_{2}^{+\infty} \frac{dx}{x^a |\ln x|^{\beta}}$}
 & $\alpha > 1$, $\forall \beta$
 & $\alpha < 1$, $\forall \beta$
-\\\cline{2-3} 
+\tabularnewline\cline{2-3} 
 & $\alpha = 1$, $\beta > 1$
 & $\alpha = 1$, $\beta \le 1$
-\\\hline \multirow{2}{*}{$\int\limits_{0}^{2} \frac{dx}{x^a |\ln x|^{\beta}}$}
+\tabularnewline\hline \multirow{2}{*}{$\int\limits_{0}^{2} \frac{dx}{x^a |\ln x|^{\beta}}$}
 & $\alpha < 1$, $\forall \beta$
 & $\alpha > 1$, $\forall \beta$
-\\\cline{2-3} 
+\tabularnewline\cline{2-3} 
 & $\alpha = 1$, $\beta < 1$
 & $\alpha = 1$, $\beta \ge 1$
-\\\hline
+\tabularnewline\hline
 \end{longtable}
-\normalsize
 
 \section{Криволинейные интегралы}
 \subsubsection{Первого рода}
@@ -523,7 +544,7 @@ $ I=\iint \limits _{S}{f\left(x, y, z\right)dS } = \iint \limits _{D} f(x,y) \sq
 
 \qquad  \qquad  \qquad \qquad \qquad \qquad \qquad \qquad \qquad (считать как интеграл 1 рода)
 
-${\iint \limits _{S }{P\,dy\,dz+Q\,dz\,dx+R\,dx\,dy}} = {\iint \limits _{S }{((P,Q,R),n)}dS}) = \iint \limits _{S}{det \begin{vmatrix}P&Q&R\\x_u&y_u&z_u\\x_v&y_v&z_v\end{vmatrix}}dudv$
+${\iint \limits _{S }{P\,dy\,dz+Q\,dz\,dx+R\,dx\,dy}} = {\iint \limits _{S }{((P,Q,R),n)}dS}) = \iint \limits _{S}{\det \begin{vmatrix}P&Q&R\\x_u&y_u&z_u\\x_v&y_v&z_v\end{vmatrix}}dudv$
 
 
 $n = [r_u, r_v], \quad r = r(u,v) = (x(u,v), y(u,v), z(u,v),) , \quad n = \frac{-z_x i-z_y j+k}{\sqrt{(z_x)^2 + (z_y)^2 + 1}}, \quad z = z(x,y)$
@@ -696,10 +717,10 @@ $C^k_n=\binom{n}{k}=\frac{n!}{k!\,(n-k)!}=\frac{n(n-1)(n-2)\dots(n-k+1)}{k!}$
 
 \subsubsection{Другие свойства биномиального коэффициента}
 
-\begin{longtable}{@{\extracolsep{\fill}} c c @{}}
+\begin{longtable}[c]{ B{0.5}{0} B{0.5}{0}}
 $\binom{n}{k}=\binom{n}{n-k}; $
 &  $\binom{n+1}{k+1}=\binom{n}{k+1}+\binom{k}{n};$ 
-\\
+\tabularnewline
 $\sum^{k}_n \binom{n}{k}=2^n$ 
 & $\sum^{k}_n (-1)^k \binom{n}{k}=0.$
 \end{longtable}

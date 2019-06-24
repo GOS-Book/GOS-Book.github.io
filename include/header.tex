@@ -13,8 +13,9 @@
 \setlength{\LTpre}{0pt}
 \setlength{\LTpost}{0.5\bigskipamount}
 %to help to set longtable to fit the page-width
-\setlength\LTleft{0pt}
-\setlength\LTright{0pt}
+\setlength\LTcapwidth{\textwidth} % default: 4in (rather less than \textwidth...)
+\setlength\LTleft{0pt}            % default: \parindent
+\setlength\LTright{0pt}           % default: \fill
 
 \newcolumntype{A}[2]{% vertical alignment in longtable with certain width of column
     >{\minipage{\dimexpr#1\linewidth-2\tabcolsep-#2\arrayrulewidth\relax}\vspace\tabcolsep}%
@@ -23,6 +24,8 @@
 \newcolumntype{B}[2]{%
     >{\minipage{\dimexpr#1\linewidth-2\tabcolsep-#2\arrayrulewidth\relax}\vspace\tabcolsep}%
     c<{\centering\vspace\tabcolsep\endminipage}}
+
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
 
 \usepackage{emptypage}
 
