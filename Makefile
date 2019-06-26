@@ -1,5 +1,5 @@
 .PHONY: book chapter clean distclean check-env		
-MAINSRC = GOSBook.tex
+MAINSRC = GOS-Book.tex
 
 define delete
 	find . -depth -path "./.git/*" -prune -o -iregex $1 -type f -delete

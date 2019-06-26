@@ -2,35 +2,82 @@
 %%%%%%%%%%%%         WRAPPING PICTURES                 %%%%%%%%%%%% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+%%%%%%%%%%%%%%%%%%             RULES             %%%%%%%%%%%%%%%%%% 
+
+% *** \insertpicture[the number of supplementary lines to be shortened]{picturename without pictures/}{part of textwidth}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\newcounter{pictnumber}[chapter] 
+\renewcommand{\thepictnumber}{\thechapter.\arabic{pictnumber}}
+
+\newcommand\insertpicture[3][6]{%
+\strictpagecheck%
+\checkoddpage%
+\ifoddpage%
+\InsertBoxR{0}{\begin{threeparttable}\begin{tabular}{c@{}}\includegraphics[width=#3\textwidth]{pictures/#2}\refstepcounter{pictnumber}\label{#2}\end{tabular}\captionof{figure}{}\end{threeparttable}}[#1]%
+\else%
+\InsertBoxL{0}{\begin{threeparttable}\begin{tabular}{c@{}}\includegraphics[width=#3\textwidth]{pictures/#2}\refstepcounter{pictnumber}\label{#2}\end{tabular}\captionof{figure}{}\end{threeparttable}}[#1]%
+\fi%
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %RULES. Pls check it everytime.
-  %NOT WRAPPED BUT VERY EASY.
-  %\usepict[〈height of the textheight〉]{pictures/〈picture〉}	
+%NOT WRAPPED BUT VERY EASY.
+%\usepict[〈height of the textheight〉]{pictures/〈picture〉}	
 
-  %for ez text
-  %\mywrappict[〈number of narrow lines〉] [〈overhang〉] {〈width〉}
-  
-  % IT WORKS EVERYWHERE EXCEPT LISTS and beginning of theorems!
-  %\addpicture[〈number of narrow lines〉]{〈exactly picture〉}[〈after line〉]{〈width of \textwidth picture will occupy〉}
- 
-  %It is more complex and more cool variant than previous one.
-  %\InsertPict[〈number of narrow lines〉]{〈exactly picture〉}[〈after line〉]{〈width of \textwidth picture will occupy〉}
-  % do not forget about super function for lists: \wrapitem - just put it 
-  
-  %For Theorems and smth like proof. ONE PICTURE TO ONE text box
-  %\addmppict[〈this partial of 3 argument picture will occupy, correction!〉]{〈exactly picture〉}{〈width of \textwidth picture will occupy〉]}〈text of theorem〉}
+%for ez text
+%\mywrappict[〈number of narrow lines〉] [〈overhang〉] {〈width〉}
 
-    %SEE THE MOST POWERFUL CONSTRUCTION, but it is hard to set.
-  %\wrappicture[number of narrow lines of item]{textoffirstitem}[number of narrow lines in the second item]{ratio of textwidth}[text in the second item]{picture}[number of untouched lines]
-  
-    % NOW IT IS USELESS, but can work if nothing helps.
-  %\addpictureitem[number of narrow lines]{exactly picture}{width of \textwidth will picture occupy}{text}
-    
+% IT WORKS EVERYWHERE EXCEPT LISTS and beginning of theorems!
+%\addpicture[〈number of narrow lines〉]{〈exactly picture〉}[〈after line〉]{〈width of \textwidth picture will occupy〉}
+
+%It is more complex and more cool variant than previous one.
+%\InsertPict[〈number of narrow lines〉]{〈exactly picture〉}[〈after line〉]{〈width of \textwidth picture will occupy〉}
+% do not forget about super function for lists: \wrapitem - just put it 
+
+%For Theorems and smth like proof. ONE PICTURE TO ONE text box
+%\addmppict[〈this partial of 3 argument picture will occupy, correction!〉]{〈exactly picture〉}{〈width of \textwidth picture will occupy〉]}〈text of theorem〉}
+
+%SEE THE MOST POWERFUL CONSTRUCTION, but it is hard to set.
+%\wrappicture[number of narrow lines of item]{textoffirstitem}[number of narrow lines in the second item]{ratio of textwidth}[text in the second item]{picture}[number of untouched lines]
+
+% NOW IT IS USELESS, but can work if nothing helps.
+%\addpictureitem[number of narrow lines]{exactly picture}{width of \textwidth will picture occupy}{text}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  
+
+
 \usepackage{graphicx}
 \usepackage{caption}
 \usepackage{microtype}
@@ -48,16 +95,12 @@
 \newcount\narrowlinect
 \narrowlinect=0\relax 
     
-%РАБОТАЮЩИЙ ВЕЗДЕ В ТЕКСТЕ СЧЕТЧИК РИСУНОЧКОВ.
-\newcounter{pictnumber}[chapter] 
-\renewcommand{\thepictnumber}{\thechapter.\arabic{pictnumber}}
-    
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\usepict}[2][0.2]{
 \begin{center}
-\includegraphics[height=#1\textheight]{pictures/#2}\refstepcounter{pictnumber}\label{#2} {Рис. \thepictnumber}
+\includegraphics[width=#1\textwidth]{pictures/#2}\refstepcounter{pictnumber}\label{#2} {\footnotesize Рис.~\thepictnumber}
 \end{center}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -67,7 +110,7 @@
   \begin{wrapfigure}[#1]{o}{#3\textwidth}
   \includegraphics[width=#3\textwidth]{#2}
   \refstepcounter{pictnumber}
-  \caption*{Рис. \thepictnumber}
+  \caption*{\footnotesize Рис. \thepictnumber}
   \end{wrapfigure}}
   
     
@@ -114,7 +157,7 @@
 \setcounter{ct}{\numexpr((\narrowlinect)/\baselineskip+2)\relax}
 \InsertBoxR{#3}{\begin{threeparttable}%
 \begin{tabular}{c@{}}\includegraphics[width=#4\textwidth]{#2}\end{tabular}%
-\caption*{Рис. \thepictnumber}\end{threeparttable}}[\numexpr(\value{ct}/2+#1+1)]}
+\caption*{\footnotesize Рис. \thepictnumber}\end{threeparttable}}[\numexpr(\value{ct}/2+#1+1)]}
 
 \newcommandx\addpictureL[4][1=0,3=0]{\refstepcounter{pictnumber}%
 \settoheight\imageheight{\includegraphics[width=#4\textwidth]{#2}}
@@ -122,7 +165,7 @@
 \setcounter{ct}{\numexpr((\narrowlinect)/\baselineskip+2)\relax}
 \InsertBoxL{#3}{\begin{threeparttable}%
 \begin{tabular}{c@{}}\includegraphics[width=#4\textwidth]{#2}\end{tabular}%
-\caption*{Рис. \thepictnumber}\end{threeparttable}}[\numexpr(\value{ct}/2+#1+1)]}
+\caption*{\footnotesize Рис. \thepictnumber}\end{threeparttable}}[\numexpr(\value{ct}/2+#1+1)]}
 
 \newcommandx{\addpicture}[4][1=0,3=0]{%
 \strictpagecheck%
@@ -145,7 +188,7 @@
         \centering
         \vspace{-\baselineskip}
         \includegraphics[width=#3\textwidth]{#2}
-        \caption*{Рис. \thepictnumber}
+        \caption*{\footnotesize Рис. \thepictnumber}
       \end{wrapfigure}#4}}
 
 \newcommand{\addpictureitemR}[4][9]{
@@ -156,7 +199,7 @@
         \centering
         \vspace{-\baselineskip}
         \includegraphics[width=#3\textwidth]{#2}
-        \caption*{Рис. \thepictnumber}
+        \caption*{\footnotesize Рис. \thepictnumber}
       \end{wrapfigure}#4}}
 
 \newcommand{\addpictureitem}[4][9]{%
@@ -186,7 +229,7 @@
         		\InsertBoxL{#7}
         			{\begin{threeparttable}%
 						\begin{tabular}{c@{}}\includegraphics[width=#4\textwidth]{#6}\end{tabular}%
-						\caption*{Рис. \arabic{pictnumber}}{}\end{threeparttable}}      	
+						\caption*{\footnotesize Рис. \arabic{pictnumber}}{}\end{threeparttable}}      	
       		\end{wrapfigure}#2
       \parbox[t]{\dimexpr\textwidth-\leftmargin}{%
       \vspace{-2.5mm}
@@ -206,14 +249,14 @@
     \setlength{\leftskip}{\leftmargin}\mbox{}\vspace*{-\baselineskip}%
     \InsertBoxL{#1}{\begin{threeparttable}%
 \begin{tabular}{c@{}}\includegraphics[width=#4\textwidth]{#2}\end{tabular}%
-\caption*{Рис. \thepictnumber}\end{threeparttable}}[#3]\par \hspace{\itemindent}
+\caption*{{\footnotesize Рис. }\thepictnumber}\end{threeparttable}}[#3]\par \hspace{\itemindent}
     }%
     
     \newcommandx{\InsertPictR}[4][1=0,3=0]{\refstepcounter{pictnumber}%
     \mbox{}\vspace*{-\baselineskip}\setlength{\leftskip}{\leftmargin}%
     \InsertBoxR{#1}{\hskip-\leftmargin\begin{threeparttable}%
 \begin{tabular}{c@{}}\includegraphics[width=#4\textwidth]{#2}\end{tabular}%
-\caption*{Рис. \thepictnumber}\end{threeparttable}\hskip\leftmargin}[#3]
+\caption*{\footnotesize Рис. \thepictnumber}\end{threeparttable}\hskip\leftmargin}[#3]
     }%
 
 \newcommandx{\InsertPict}[4][1=0,3=0]{%
@@ -265,4 +308,5 @@
 %}
 %\newcommand*\my@parshape{}
 %\makeatother
+
  

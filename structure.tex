@@ -13,7 +13,7 @@
 
 \usepackage{graphicx} % Required for including pictures
 \graphicspath{{./pictures/}} % Specifies the directory where pictures are stored
-\usepackage[english, russian]{babel}
+
 \usepackage{lipsum} % Inserts dummy text
 
 \usepackage{tikz} % Required for drawing custom shapes
@@ -39,52 +39,11 @@
 \usepackage{cmap}
 \usepackage[utf8]{inputenc} % Required for including letters with accents
 \usepackage[T2A]{fontenc} % Use 8-bit encoding that has 256 glyphs
-
-\newcommand{\cyrfamily}[5]{%
-  \DeclareFontShape{#1}{#2}{#3}{#4}{
-    <-6>    #50500
-    <6-7>   #50600
-    <7-8>   #50700
-    <8-9>   #50800
-    <9-10>  #50900
-    <10-12> #51000
-    <12-17> #51200
-    <17-20> #51728
-    <20-23> #52074
-    <23-28> #52488
-    <28-34> #52986
-    <35->   #53583
-  }{}%
-}
-\DeclareFontFamily{T2A}{cmss}{}
-\cyrfamily{T2A}{cmss}{m}{n}{lass}
-\cyrfamily{T2A}{cmss}{m}{sl}{lasi}
-\cyrfamily{T2A}{cmss}{m}{it}{lasi}
-\cyrfamily{T2A}{cmss}{bx}{n}{lasx}
-\cyrfamily{T2A}{cmss}{bx}{it}{laso}
-\cyrfamily{T2A}{cmss}{bx}{sl}{laso}
-\DeclareFontShape{T2A}{cmss}{m}{sc}{<->sub*cmr/m/sc}{}
-\DeclareFontShape{T2A}{cmss}{sbc}{n}{<->lassdc10}{}
-
-\iffalse
-\DeclareFontFamily{T2A}{pag}{}
-\cyrfamily{T2A}{pag}{m}{n}{lass}
-\cyrfamily{T2A}{pag}{m}{sl}{lasi}
-\cyrfamily{T2A}{pag}{m}{it}{lasi}
-\cyrfamily{T2A}{pag}{bx}{n}{lasx}
-\cyrfamily{T2A}{pag}{bx}{it}{laso}
-\cyrfamily{T2A}{pag}{bx}{sl}{laso}
-\DeclareFontShape{T2A}{pag}{m}{sc}{<->sub*cmr/m/sc}{}
-\DeclareFontShape{T2A}{pag}{sbc}{n}{<->lassdc10}{}
-\fi
+\usepackage[english, russian]{babel}
 
 %----------------------------------------------------------------------------------------
-%	BIBLIOGRAPHY AND INDEX
+%	INDEX
 %----------------------------------------------------------------------------------------
-
-\usepackage[style=alphabetic,citestyle=numeric,sorting=nyt,sortcites=true,autopunct=true,babel=hyphen,hyperref=true,abbreviate=false,backref=true,backend=biber]{biblatex}
-\addbibresource{bibliography.bib} % BibTeX bibliography file
-\defbibheading{bibempty}{}
 
 \usepackage{calc} % For simpler calculation - used for spacing the index letter headings correctly
 \usepackage[xindy]{imakeidx}
