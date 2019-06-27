@@ -17,6 +17,7 @@
 \usepackage{lipsum} % Inserts dummy text
 
 \usepackage{tikz} % Required for drawing custom shapes
+\usetikzlibrary{calc,backgrounds}
 
 \usepackage{enumitem} % Customize lists
 %\setlist{noitemsep} % Reduce spacing between bullet points and numbered lists
@@ -66,32 +67,34 @@
 
 %Part text styling
 \titlecontents{part}[0cm]
-{\addvspace{20pt}\centering\large\bfseries}
+{\addvspace{5pt}\centering\large\bfseries}
 {}
 {}
 {}
+
+\addtocontents{toc}{\protect\setcounter{tocdepth}{0}} % only show up to \chapters in the ToC
 
 % Chapter text styling
-\titlecontents{chapter}[1.25cm] % Indentation
-{\addvspace{12pt}\large\sffamily\bfseries} % Spacing and font options for chapters
-{\color{prpl!60}\contentslabel[\Large\thecontentslabel]{1.25cm}\color{prpl}} % Chapter number
-{\color{prpl}}  
-{\color{prpl!60}\large\sffamily\bfseries\;\titlerule*[.5pc]{.}\;\thecontentspage} % Page number
+\titlecontents{chapter}[0.6cm] % Indentation
+{\addvspace{5pt}\large\sffamily} % Spacing and font options for chapters
+{\contentslabel[\Large\thecontentslabel]{0.6cm}} % Chapter number
+{}  
+{\large\sffamily\titlerule*[.5pc]{.}\;\thecontentspage} % Page number
 
 % Section text styling
-\titlecontents{section}[1.25cm] % Indentation
-{\addvspace{3pt}\sffamily\bfseries} % Spacing and font options for sections
-{\contentslabel[\thecontentslabel]{1.25cm}} % Section number
+\titlecontents{section}[0.6cm] % Indentation
+{\addvspace{3pt}\sffamily} % Spacing and font options for sections
+{\contentslabel[\thecontentslabel]{0.6cm}} % Section number
 {}
-{\sffamily\bfseries\ \titlerule*[.5pc]{.}\;\thecontentspage} % Page number
+{\sffamily\titlerule*[.5pc]{.}\;\thecontentspage} % Page number
 []
 
 % Subsection text styling
-\titlecontents{subsection}[1.25cm] % Indentation
+\titlecontents{subsection}[0.6cm] % Indentation
 {\addvspace{1pt}\sffamily\small} % Spacing and font options for subsections
 {\contentslabel[\thecontentslabel]{1.25cm}} % Subsection number
 {}
-{\ \titlerule*[.5pc]{.}\;\thecontentspage} % Page number
+{\titlerule*[.5pc]{.}\;\thecontentspage} % Page number
 []
 
 % List of figures
@@ -99,7 +102,7 @@
 {\addvspace{-5pt}\sffamily}
 {\thecontentslabel\hspace*{1em}}
 {}
-{\ \titlerule*[.5pc]{.}\;\thecontentspage}
+{\titlerule*[.5pc]{.}\;\thecontentspage}
 []
 
 % List of tables
@@ -107,16 +110,18 @@
 {\addvspace{-5pt}\sffamily}
 {\thecontentslabel\hspace*{1em}}
 {}
-{\ \titlerule*[.5pc]{.}\;\thecontentspage}
+{\titlerule*[.5pc]{.}\;\thecontentspage}
 []
 
 %----------------------------------------------------------------------------------------
 %	MINI TABLE OF CONTENTS IN PART HEADS
 %----------------------------------------------------------------------------------------
 
+\addtocontents{ptc}{\protect\setcounter{tocdepth}{2}}
+
 % Chapter text styling
 \titlecontents{lchapter}[0em] % Indenting
-{\addvspace{15pt}\large\sffamily\bfseries} % Spacing and font options for chapters
+{\addvspace{10pt}\large\sffamily\bfseries} % Spacing and font options for chapters
 {\color{prpl}\contentslabel[\Large\thecontentslabel]{1.25cm}\color{prpl}} % Chapter number
 {}  
 {\color{prpl}\large\sffamily\bfseries\;\titlerule*[.5pc]{.}\;\thecontentspage} % Page number
@@ -440,16 +445,20 @@ innerbottommargin=5pt]{cBox}
 %	PART HEADINGS
 %----------------------------------------------------------------------------------------
 
-% numbered part in the table of contents
+
+
+% Numbered part in the table of contents
 \newcommand{\@mypartnumtocformat}[2]{%
-\setlength\fboxsep{0pt}%
-\noindent\colorbox{prpl!20}{\strut\parbox[c][.7cm]{\ecart}{\color{prpl!70}\Large\sffamily\bfseries\centering#1}}\hskip\esp\colorbox{prpl!40}{\strut\parbox[c][.7cm]{\linewidth-\ecart-\esp}{\Large\sffamily\centering#2}}}%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% unnumbered part in the table of contents
+	\setlength\fboxsep{0pt}%
+	\noindent\colorbox{prpl!20}{\strut\parbox[c][.7cm]{\ecart}{\color{prpl!70}\Large\sffamily\bfseries\centering#1}}\hskip\esp\colorbox{prpl!40}{\strut\parbox[c][.7cm]{\linewidth-\ecart-\esp}{\Large\sffamily\centering#2}}%
+}
+
+% Unnumbered part in the table of contents
 \newcommand{\@myparttocformat}[1]{%
-\setlength\fboxsep{0pt}%
-\noindent\colorbox{prpl!40}{\strut\parbox[c][.7cm]{\linewidth}{\Large\sffamily\centering#1}}}%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\setlength\fboxsep{0pt}%
+	\noindent\colorbox{prpl!40}{\strut\parbox[c][.7cm]{\linewidth}{\Large\sffamily\centering#1}}%
+}
+
 \newlength\esp
 \setlength\esp{4pt}
 \newlength\ecart
@@ -457,39 +466,39 @@ innerbottommargin=5pt]{cBox}
 \newcommand{\thepartimage}{}%
 \newcommand{\partimage}[1]{\renewcommand{\thepartimage}{#1}}%
 \def\@part[#1]#2{%
-\ifnum \c@secnumdepth >-2\relax%
-\refstepcounter{part}%
-\addcontentsline{toc}{part}{\texorpdfstring{\protect\@mypartnumtocformat{\thepart}{#1}}{\partname~\thepart\ ---\ #1}}
-\else%
-\addcontentsline{toc}{part}{\texorpdfstring{\protect\@myparttocformat{#1}}{#1}}%
-\fi%
-\startcontents%
-\markboth{}{}%
-{\thispagestyle{empty}%
-\begin{tikzpicture}[remember picture,overlay]%
-\node at (current page.north west){\begin{tikzpicture}[remember picture,overlay]%	
-\fill[prpl!20](0cm,0cm) rectangle (\paperwidth,-\paperheight);
-\node[anchor=north, text width=14.3cm] at (7.5cm,-3.25cm){\raggedleft\color{prpl!40}\fontsize{220}{100}\raggedleft\sffamily\bfseries\raggedleft\@Roman\c@part}; 
-\node[anchor=south east] at (\paperwidth-1cm,-\paperheight+1cm){\parbox[t][][t]{9cm}{
-\printcontents{l}{0}{\setcounter{tocdepth}{2}}%
-}};
-\node[anchor=north east] at (\paperwidth-0.5cm,-1cm){\parbox[t][][t]{14cm}{\strut\raggedleft\color{white}\fontsize{30}{30}\sffamily\bfseries#2}};
-\end{tikzpicture}};
+	\ifnum \c@secnumdepth >-2\relax%
+	\refstepcounter{part}%
+	\addcontentsline{toc}{part}{\texorpdfstring{\protect\@mypartnumtocformat{\thepart}{#1}}{\partname~\thepart\ ---\ #1}}
+	\else%
+	\addcontentsline{toc}{part}{\texorpdfstring{\protect\@myparttocformat{#1}}{#1}}%
+	\fi%
+	\startcontents%
+	\markboth{}{}%
+	{\thispagestyle{empty}%
+		\begin{tikzpicture}[remember picture,overlay]%
+		\node at (current page.north west){\begin{tikzpicture}[remember picture,overlay]%	
+			\fill[prpl!20](0cm,0cm) rectangle (\paperwidth,-\paperheight);
+			\node[anchor=north] at (4cm,-0.75cm){\color{prpl!40}\resizebox*{!}{0.3\linewidth}{\sffamily\bfseries\thepart}}; 
+			\node[anchor=south east] at (\paperwidth-1cm,-\paperheight+1cm){\parbox[t][][t]{10.5cm}{
+					\printcontents{l}{0}{\setcounter{tocdepth}{1}}% The depth to which the Part mini table of contents displays headings; 0 for chapters only, 1 for chapters and sections and 2 for chapters, sections and subsections
+			}};
+			\node[anchor=north east] at (\paperwidth-0.5cm,-1cm){\parbox[t][][t]{14cm}{\strut\raggedleft\color{prpl}\fontsize{30}{30}\sffamily\bfseries#2}};
+			\end{tikzpicture}};
 \end{tikzpicture}}%
 \@endpart}
 \def\@spart#1{%
 \startcontents%
 \phantomsection
 {\thispagestyle{empty}%
-\begin{tikzpicture}[remember picture,overlay]%
-\node at (current page.north west){\begin{tikzpicture}[remember picture,overlay]%	
-\fill[prpl!20](0cm,0cm) rectangle (\paperwidth,-\paperheight);
-\node[anchor=north east] at (\paperwidth-1.5cm,-3.25cm){\parbox[t][][t]{15cm}{\strut\raggedleft\color{white}\fontsize{30}{30}\sffamily\bfseries#1}};
-\end{tikzpicture}};
+	\begin{tikzpicture}[remember picture,overlay]%
+	\node at (current page.north west){\begin{tikzpicture}[remember picture,overlay]%	
+		\fill[prpl!20](0cm,0cm) rectangle (\paperwidth,-\paperheight);
+		\node[anchor=north east] at (\paperwidth-1.5cm,-3.25cm){\parbox[t][][t]{15cm}{\strut\raggedleft\color{prpl}\fontsize{30}{30}\sffamily\bfseries#1}};
+		\end{tikzpicture}};
 \end{tikzpicture}}
 \addcontentsline{toc}{part}{\texorpdfstring{%
-\setlength\fboxsep{0pt}%
-\noindent\protect\colorbox{prpl!40}{\strut\protect\parbox[c][.7cm]{\linewidth}{\Large\sffamily\protect\centering #1\quad\mbox{}}}}{#1}}%
+	\setlength\fboxsep{0pt}%
+	\noindent\protect\colorbox{prpl!40}{\strut\protect\parbox[c][.7cm]{\linewidth}{\Large\sffamily\protect\centering #1\quad\mbox{}}}}{#1}}%
 \@endpart}
 \def\@endpart{\vfil\newpage
 \if@twoside
@@ -511,17 +520,17 @@ innerbottommargin=5pt]{cBox}
 	{\noindent
 		\if@mainmatter
 		\begin{tikzpicture}[remember picture]
-		\node (n) at (\Gm@lmargin,-\Gm@tmargin) [ inner sep=3mm, fill=white, fill opacity=0.5, text width={\textwidth-0mm}, text opacity=1, font=\huge\sffamily\bfseries, text=black]{\thechapter. #1};
-		\end{tikzpicture}%
-		\begin{tikzpicture}[remember picture,overlay]
-		\draw [line width=2pt, rounded corners=14pt, prpl] (n.north -| current page.east) -| (n.south west) -- (n.south -| current page.east); 
+		\node (n) at (\Gm@lmargin,-\Gm@tmargin) [ inner sep=3mm, text width={\textwidth}, text opacity=1, font=\huge\sffamily\bfseries, text=black]{\thechapter. #1};
+		\begin{scope}[on background layer]
+		\draw [line width=2pt, rounded corners=14pt, prpl, fill=prpl!20] (n.north -| current page.east) -| (n.south west) -- (n.south -| current page.east);
+		\end{scope}
 		\end{tikzpicture}%
 		\else
 		\begin{tikzpicture}[remember picture]
-		\node (n) at (\Gm@lmargin,-\Gm@tmargin) [ inner sep=3mm, fill=white, fill opacity=0.5, text width={\textwidth-0mm}, text opacity=1, font=\huge\sffamily\bfseries, text=black]{#1};
-		\end{tikzpicture}%
-		\begin{tikzpicture}[remember picture,overlay]
-		\draw [line width=2pt, rounded corners=14pt, prpl] (n.north -| current page.east) -| (n.south west) -- (n.south -| current page.east); 
+		\node (n) at (\Gm@lmargin,-\Gm@tmargin) [ inner sep=3mm, text width={\textwidth-0mm}, text opacity=1, font=\huge\sffamily\bfseries, text=black]{#1};
+		\begin{scope}[on background layer]
+		\draw [line width=2pt, rounded corners=14pt, prpl, fill=prpl!20] (n.north -| current page.east) -| (n.south west) -- (n.south -| current page.east);
+		\end{scope}
 		\end{tikzpicture}%
 		\fi\bigskip\par
 }}
@@ -531,10 +540,10 @@ innerbottommargin=5pt]{cBox}
 \def\@makeschapterhead#1{%
 	\noindent
 	\begin{tikzpicture}[remember picture]
-	\node (n) at (\Gm@lmargin,-\Gm@tmargin) [ inner sep=3mm, fill=white, fill opacity=0.5, text width={\textwidth-0mm}, text opacity=1, font=\huge\sffamily\bfseries, text=black]{#1};
-	\end{tikzpicture}%
-	\begin{tikzpicture}[remember picture,overlay]
-	\draw [line width=2pt, rounded corners=14pt, prpl] (n.north -| current page.east) -| (n.south west) -- (n.south -| current page.east); 
+	\node (n) at (\Gm@lmargin,-\Gm@tmargin) [ inner sep=3mm, text width={\textwidth-0mm}, text opacity=1, font=\huge\sffamily\bfseries, text=black]{#1};
+	\begin{scope}[on background layer]
+	\draw [line width=2pt, rounded corners=14pt, prpl, fill=prpl!20] (n.north -| current page.east) -| (n.south west) -- (n.south -| current page.east);
+	\end{scope}
 	\end{tikzpicture}%
 	\bigskip\par
 }

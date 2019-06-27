@@ -39,9 +39,9 @@ $$
 \begin{proof}
 Фиксируем произвольную точку $z \in G$. Функция $\frac{f(\zeta)}{\zeta - z}$ регулярна по переменному $\zeta$ в области $G \setminus \{z\}$. Выберем число $r_0 > 0$ такое, что выполнено включение $\overline{B_{r_0}(z)}\subset G$. 
 
-\usepict{ch34pict1}
+\usepict{ch36pict1}{0.2}
 
-Обозначим через $\gamma_r=\gamma_r^{+} \triangleq \{ \zeta \bigl| |\zeta - z| = r \}$ окружность радиуса $r \in (0, r_0)$ ориентированную против хода часовой стрелки. Обозначим множества $G_r \triangleq G \setminus \overline{B_r(z)}$ и $\Gamma_r \triangleq \Gamma \cup \gamma_r^{-}$. Очевидно, что множество $G_r$ есть область с кусочно-гладкой положительно ориентированной границей $\Gamma_r$(рис.\ref{ch34pict1}). 
+Обозначим через $\gamma_r=\gamma_r^{+} \triangleq \{ \zeta \bigl| |\zeta - z| = r \}$ окружность радиуса $r \in (0, r_0)$ ориентированную против хода часовой стрелки. Обозначим множества $G_r \triangleq G \setminus \overline{B_r(z)}$ и $\Gamma_r \triangleq \Gamma \cup \gamma_r^{-}$. Очевидно, что множество $G_r$ есть область с кусочно-гладкой положительно ориентированной границей $\Gamma_r$(рис.~\ref{ch36pict1}). 
 
 По обощенной интегральной теореме Коши \ref{abc28} из билета №33 получаем
 \begin{equation} \label{ch34eq2}
@@ -84,7 +84,7 @@ I^{(n)}(z) = \frac{n!}{2\pi i} \int_\gamma \frac{q(\zeta)}{(\zeta - z)^{n+1}}\,d
 
 \begin{proof}\leavevmode
 \begin{enumerate}[wide, labelwidth=!, labelindent=\parindent]
-\noindent\addpictureitem{pictures/ch34pict2}{0.2}{
+\noindent\addpictureitem{pictures/ch36pict2}{0.2}{
 \item     
 Докажем формулу $\eqref{ch34eq6}$ при $n = 1$. Так как функция $q(\zeta)$ непрерывна на контуре $\gamma$, то существует число $M < + \infty$ такое, что $|q(\zeta)| \le M$ при $\zeta \in \gamma$.
       
@@ -161,13 +161,13 @@ $\textit{Степенным рядом}$ называется функциона
 \begin{thm}[Абеля\rindex{теорема!Абеля}] \label{ch34.2Thm1}
 Если степенной ряд $\eqref{ch34.2eq1}$ сходится в точке $z_0 \not= a$, то ряд $\eqref{ch34.2eq1}$ сходится абсолютно в любой точке из круга $B_{|z_0 - a|}(a)$, а в любом замкнутом круге $\overline{B_{r}(a)}$, где $0 < r < |z_0 - a|$, этот ряд сходится равномерно.
 \end{thm}
-\usepict[0.15]{ch34pict3}
+\usepict{ch36pict3}{0.15}
 \begin{proof}
 Так как по условию числовой ряд $\sum_{n = 0}^{+\infty}\limits c_n (z - a)^n$ сходится, то из необходимого условия сходимости рядов следует, что $\lim\limits_{n \to \infty} |c_n(z_0 - a)^n| = 0$, поэтому существует число $\alpha > 0$ такое, что $|c_n(z_0 - a)^n| \le \alpha$ для всех $n$.
 \begin{enumerate}
 \item[1)] {\rightskip=3.5cm} { Пусть точка $z \in B_{|z_0 - a|}(a)$. Тогда $|c_n(z - a)^n| = |c_n(z_0 - a)^n| \cdot \left| \frac{z - a}{z_0 - a} \right|^n \le \alpha q^{n}_z$, где $q_z \triangleq \left| \frac{z - a}{z_0 - a} \right| < 1$. Так как числовой ряд $\sum_{n = 0}^{\infty}\limits q_{z}^n$ очевидно сходится, то по признаку сравнения ряд $\eqref{ch34.2eq1}$ сходится и абсолютно в точке $z$.
 }
-\item[2)] {\rightskip=0cm}Определим $q_0 \triangleq \frac{r}{|z_0 - a|}\ge\left|\frac{z - a}{z_0 - a}\right|$. Аналогично пункту 1 получаем оценку: $|c_n(z - a)^n| \le \alpha q^{n}_0$. Так как числовой ряд $\sum_{n = 0}^{\infty}\limits q_{0}^n$ очевидно сходится, то по признаку Вейештрасса(см. ниже) ряд $\eqref{ch34.2eq1}$ сходится равномерно на круге $\overline{B_{r}(a)}$.
+\item[2)] {\rightskip=0cm}Определим $q_0 \triangleq \frac{r}{|z_0 - a|}\ge\left|\frac{z - a}{z_0 - a}\right|$. Аналогично пункту 1 получаем оценку: $|c_n(z - a)^n| \le \alpha q^{n}_0$. Так как числовой ряд $\sum_{n = 0}^{\infty}\limits q_{0}^n$ очевидно сходится, то по признаку Вейештрасса~(см.~ниже) ряд $\eqref{ch34.2eq1}$ сходится равномерно на круге $\overline{B_{r}(a)}$.
 \end{enumerate}
 {\rightskip=-3.3cm} Теорема доказана.
 \end{proof}
@@ -178,7 +178,7 @@ $\textit{Степенным рядом}$ называется функциона
 
 Эта теорема \ref{ch34.2Thm1} позволяет получить представление об области сходимости степенного ряда $\eqref{ch34.2eq1}$.
 
-Определим для степенного ряда $\eqref{ch34.2eq1}$ понятие\textit{радиуса сходимости}:
+Определим для степенного ряда $\eqref{ch34.2eq1}$ понятие~\textit{радиуса сходимости}:
 \begin{equation} \label{ch34.2eq2}
 R \triangleq \sup \{ |z - a| \,\big|\, \sum_{n = 0}^{+\infty} c_n (z - a)^n \text{ сходится} \}.
 \end{equation}
@@ -221,11 +221,11 @@ c_n = \frac{f^{(n)}(a)}{n!}.
 \end{equation}
 
 \end{thm}
-\usepict{ch34pict4}
+\usepict{ch36pict4}{0.2}
 \begin{proof}
 Фиксируем произвольную точку $z \in B_r(a)$. Тогда существует число $r_1 > 0$ такое, что $|z - a| < r_1 < r$.
 
-Пусть $\gamma_{r_1} \triangleq \{\zeta \,\big|\, |\zeta - a| = r_1 \}$ — ориентированная движением против хода часовой стрелки окружность (см. рис. \ref{ch34pict4}). Запишем интегральную формулу Коши:
+Пусть $\gamma_{r_1} \triangleq \{\zeta \,\big|\, |\zeta - a| = r_1 \}$ — ориентированная движением против хода часовой стрелки окружность (см. рис.~\ref{ch36pict4}). Запишем интегральную формулу Коши:
 \begin{equation} \label{ch34.2eq7}
 f(z) = \frac{1}{2 \pi i} \int_{\gamma_{r_1}} \frac{f(\zeta)}{\zeta - z} \,d\zeta.
 \end{equation}
@@ -261,9 +261,9 @@ c_n = \frac{1}{2\pi i} \int_{\gamma_{r_1}} \frac{f(\zeta)}{(\zeta - a)^{n + 1}} 
 \begin{cons} \label{cons1}
 Пусть функция $f$ регулярна в области $G$ и пусть выбрана точка $a \in G$. Тогда функция $f$ представима в виде ряда Тейлора 
 
-\addpictureR{pictures/ch34pict5}{0.2} \label{ch34pict5}
+\addpictureR{pictures/ch36pict5}{0.2} \label{ch36pict5}
 $$
 f(z) = \sum\limits_{n = 0}^{+\infty} \frac{f^{(n)}(a)}{n!} (z - a)^n,
 $$
-который сходится по крайней мере в круге $B_R(a)$ максимального радиуса $R > 0$, при котором этот круг содержится в области $G$ (см. рис. $\ref{ch34pict5}$).
+который сходится по крайней мере в круге $B_R(a)$ максимального радиуса $R > 0$, при котором этот круг содержится в области $G$ (см. рис.~\ref{ch36pict5}).
 \end{cons}

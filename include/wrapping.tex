@@ -1,26 +1,62 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%         WRAPPING PICTURES                 %%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%             RULES             %%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+% \usepict : To use it outside of everything, the simliest construction:  
+% \usepict{picturename without pictures/}{part of textHEIGHT}
+
+% \insertpicture : To use inside environments like proof:  
+% \insertpicture[the number of supplementary lines to be shortened = 6 by default]{picturename without pictures/}{part of textWIDTH}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%           PACKAGES            %%%%%%%%%%%%%%%%%% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\usepackage{graphicx}
+\usepackage[font=footnotesize]{caption}
+\usepackage{microtype}
+\input{insbox.tex}
+\usepackage{threeparttable}
+\usepackage{changepage}
+\usepackage{xargs}
+\usepackage{wrapfig}
+\usepackage{printlen}   
 
-%%%%%%%%%%%%%%%%%%             RULES             %%%%%%%%%%%%%%%%%% 
+\newcounter{ct}
 
-% *** \insertpicture[the number of supplementary lines to be shortened]{picturename without pictures/}{part of textwidth}
+\newlength\imageheight
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+\newcount\narrowlinect
+\narrowlinect=0\relax 
 
 \newcounter{pictnumber}[chapter] 
 \renewcommand{\thepictnumber}{\thechapter.\arabic{pictnumber}}
 
-\newcommand\insertpicture[3][6]{%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%           COMMANDS            %%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\usepict}[2]{
+\begin{center}
+\captionsetup{type=figure}\includegraphics[height=#2\textheight]{pictures/#1}\refstepcounter{pictnumber}\label{#1}\captionof{figure}{}
+\end{center}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand\insertpicture[3][5]{%
 \strictpagecheck%
 \checkoddpage%
 \ifoddpage%
-\InsertBoxR{0}{\begin{threeparttable}\begin{tabular}{c@{}}\includegraphics[width=#3\textwidth]{pictures/#2}\refstepcounter{pictnumber}\label{#2}\end{tabular}\captionof{figure}{}\end{threeparttable}}[#1]%
+\InsertBoxR{0}{\begin{threeparttable}\begin{tabular}{c@{}}\captionsetup{type=figure}\includegraphics[width=#3\textwidth]{pictures/#2}\refstepcounter{pictnumber}\label{#2}\end{tabular}\captionof{figure}{}\end{threeparttable}}[#1]%
 \else%
-\InsertBoxL{0}{\begin{threeparttable}\begin{tabular}{c@{}}\includegraphics[width=#3\textwidth]{pictures/#2}\refstepcounter{pictnumber}\label{#2}\end{tabular}\captionof{figure}{}\end{threeparttable}}[#1]%
+\InsertBoxL{0}{\begin{threeparttable}\begin{tabular}{c@{}}\captionsetup{type=figure}\includegraphics[width=#3\textwidth]{pictures/#2}\refstepcounter{pictnumber}\label{#2}\end{tabular}\captionof{figure}{}\end{threeparttable}}[#1]%
 \fi%
+}
+
+\newcommand\insertpictureR[3][5]{%
+	\InsertBoxR{0}{\begin{threeparttable}\begin{tabular}{c@{}}\captionsetup{type=figure}\includegraphics[width=#3\textwidth]{pictures/#2}\refstepcounter{pictnumber}\label{#2}\end{tabular}\captionof{figure}{}\end{threeparttable}}[#1]%
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -78,40 +114,15 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\usepackage{graphicx}
-\usepackage{caption}
-\usepackage{microtype}
-\input{insbox.tex}
-\usepackage{threeparttable}
-\usepackage{changepage}
-\usepackage{xargs}
-\usepackage{wrapfig}
-\usepackage{printlen}   
- 
-\newcounter{ct}
 
-\newlength\imageheight
-
-\newcount\narrowlinect
-\narrowlinect=0\relax 
     
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\usepict}[2][0.2]{
-\begin{center}
-\includegraphics[width=#1\textwidth]{pictures/#2}\refstepcounter{pictnumber}\label{#2} {\footnotesize Рис.~\thepictnumber}
-\end{center}}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-
-\newcommand{\mywrappict}[3][]{
-  \begin{wrapfigure}[#1]{o}{#3\textwidth}
-  \includegraphics[width=#3\textwidth]{#2}
-  \refstepcounter{pictnumber}
-  \caption*{\footnotesize Рис. \thepictnumber}
-  \end{wrapfigure}}
   
     
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

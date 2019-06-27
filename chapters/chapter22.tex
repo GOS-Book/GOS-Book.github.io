@@ -8,10 +8,14 @@
 Отображение $\phi\colon L_1\rightarrow L_2$ называется \textit{линейным отображением}, если
 \begin{enumerate}
 \item $\forall x_1,x_2 \in L_1 \hookrightarrow \phi(x_1+x_2)=\phi(x_1)+\phi(x_2)$
-\item $\forall x \in L_1, \forall \lambda \in K \hookrightarrow \phi(\lambda x)=\lambda \phi(x)$
+\item $\forall x \in L_1,\ \forall \lambda \in K \hookrightarrow \phi(\lambda x)=\lambda \phi(x)$
 \end{enumerate}
 \end{defn}
-В частности, из определения следует, что $\phi(0_{L_1})=0_{L_2}$.
+В частности, из определения следует, что
+\begin{gather}\label{ch22:eq:eq1}
+\phi(0_{L_1}) =0_{L_2};\\
+\forall x_1,x_2\in L_1,\ \forall\lambda_1,\lambda_2\in K \hookrightarrow \phi(\lambda_1 x_1 + \lambda_2 x_2) = \lambda_1 \phi(x_1) + \lambda_2 \phi(x_2).
+\end{gather}
 \begin{defn}
 \textit{Образ} отображения "--- это множество 
 \begin{equation}
@@ -49,9 +53,10 @@
 \begin{proof} $ $
 \linebreak\vspace*{-\baselineskip}
 \begin{itemize}
-\item[\underline{$\Longrightarrow:$}]   Пусть $\phi$ инъективно, то есть выполняется \eqref{22.1.inject}. Тогда \\ $\forall x\in L_1:\phi(x)=0=\phi(0) \hookrightarrow x=0,$ то есть $\Ker\phi=\{0\}$.
+\item[\underline{$\Longrightarrow:$}] Пусть $\phi$ инъективно, т.е.~выполняется~\eqref{22.1.inject}. Если $x_0\in \Ker\phi$, то для него будет справедливо $\phi(x_0)=O_{L_2}$, но вспомним свойство линейного отображения~\eqref{ch22:eq:eq1}: $\phi(0_{L_1})=0_{L_2}$. Таким образом, имеем $\phi(x_0)=\phi(0_{L_1})=0_{L_2}$. Следовательно, из инъективности отображения получаем $x_0=O_{L_1}$. А значит только $O_{L_1}$ может принадлежать $\Ker\phi$, поэтому $\Ker\phi = \{0_{L_1}\}$.
+
 \item[\underline{$\Longleftarrow:$}] 
-Пусть $\Ker\phi=\{0\}$ и $\phi(x_1)=\phi(x_2)$. Тогда $\phi(x_1-x_2)=0 \Rightarrow x_1-x_2=0$. Таким образом, выполняется условие \eqref{22.1.inject}.
+Пусть $\Ker\phi=\{0_{L_1}\}$. Если $\phi(x_1)=\phi(x_2)$, то в силу линейности $\phi(x_1)-\phi(x_2)=\phi(x_1-x_2)=0$. Поскольку $\Ker\phi=\{0_{L_1}\}$, то $x_1-x_2=0$. Таким образом, выполняется условие~\eqref{22.1.inject}.
 \end{itemize}
 \vspace{-1.65\baselineskip}
 \end{proof}

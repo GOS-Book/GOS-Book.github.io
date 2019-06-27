@@ -6,11 +6,11 @@
 Выберем системы окрестностей для точек из $\bbC$, чтобы определить понятие сходимости (сделаем это аналогично $\bbR^2$).
 \begin{itemize}
 \item
-$B_r(z_0) \triangleq \{z \;\bigl|\; |z-z_0|<r \bigl.\}$ "--- выберем в качестве \textit{окрестности произвольной точки} $z_0$ радиуса $r>0.$
+$B_r(z_0) \triangleq \{z \;\bigl|\; |z-z_0|<r \bigl.\}$ "--- выберем в качестве \textit{окрестности произвольной точки} $z_0$ радиуса $r>0$.
 \item
-$\overset{\circ} {B}_r(z_0)\triangleq \{z \;\bigl|\; 0<|z-z_0|<r \bigl.\}$ "--- будем обозначать так \textit{проколотую окрестность точки} $z_0 \in \bbC$.
+$\overset{\circ} {B}_r(z_0)\triangleq \{z \;\bigl|\; 0<|z-z_0|<r \bigl.\}$ "--- будем обозначать так \textit{проколотую окрестность точки} $z_0 \in \bbC$ радиуса $r>0$
 \item
-$\overline{B_r(z_0)} \triangleq \{z \;\bigl|\; |z-z_0|\le r \bigl.\}$ "--- будем обозначать так замкнутый круг с центром в точке $z_0$ радиуса $r$. %см.рис1
+$\overline{B_r(z_0)} \triangleq \{z \;\bigl|\; |z-z_0|\le r \bigl.\}$ "--- будем обозначать так замкнутый круг с центром в точке $z_0$ радиуса $r>0$.
 \end{itemize}
 
 Пусть $\{z_n\}$ "--- последовательность чисел из $\bbC$, $z_n=x_n+iy_n, \, n \in \bbN$. 
@@ -127,7 +127,7 @@ $$
 $$
 Из теоремы \hyperref[th:ch1:threefuncs]{о трех функциях} из математического анализа для $\bboR$ следует: $\exists \lim_{\substack{\Delta x \to 0\\ \Delta y \to 0}}\limits \frac{|\alpha_1(\Delta x,\Delta y)|}{\sqrt{\Delta x ^2 + \Delta y^2}} = 0.$
 Аналогично, $\exists \lim_{\substack{\Delta x \to 0\\ \Delta y \to 0}}\limits \frac{|\alpha_2(\Delta x,\Delta y)|}{\sqrt{\Delta x^2 + \Delta y^2}} = 0$. 
-Отсюда и из равенства \eqref{exp15} следует дифференцируемость функций $u(x,y)$ и $v(x,y)$ в точке $(x_0,y_0) \in \bbR^2$, причем 
+Отсюда и из равенства~\eqref{exp15} следует дифференцируемость функций $u(x,y)$ и $v(x,y)$ в точке $(x_0,y_0) \in \bbR^2$, причем 
 \begin{equation}
 \label{exp16}
 \begin{split}
@@ -136,7 +136,7 @@ $$
 \end{split}
 \end{equation}
 
-Используя равенства \eqref{exp16} убеждаемся, что выполнены условия Коши-Римана \eqref{exp17}, причем 
+Используя равенства \eqref{exp16} убеждаемся, что выполнены условия Коши"--~Римана \eqref{exp17}, причем 
 $$
 f'(z_0) = a+ib = u'_x(x_0,y_0) + iv'_x(x_0,y_0)= v'_y(x_0,y_0) -iu'_y(x_0,y_0)
 $$ 
@@ -198,8 +198,7 @@ $$
 Пусть дан непрерывный контур $\gamma$ в $\bbC$ с параметризацией $z =z(t)$. Пусть существует конечное разбиение $\{\theta_k\}^m_{k=0}$ отрезка $[t_0 , t_1]$, т.е. $t_0 = \theta_0 < \theta_1 < ... < \theta_m = t_1$ такое, что контуры $\gamma_k$, определяемые функциями $z = z(t)$, $t \in [\theta_{k-1}, \theta_k]$, являются гладкими контурами с той же, что и у контура $\gamma$, ориентацией. Тогда контур $\gamma$ называется \textit{кусочном-гладким контуром}, или \textit{объединением гладких контуров } $\{\gamma_k\}$, т.е. $\gamma = \gamma_1 \cup \gamma_2 \cup\dots \cup\gamma_m$. 
 \end{defn}
 
-
-  \mywrappict{pictures/ch33pict1}{0.25}
+\insertpicture{ch35pict1}{0.25}
 Пусть дан кусочно-гладкий контур $\gamma$ с параметризацией $z=z(t)$, $t \in[t_0 , t_1]$, где $z(t_0)$ "--- начало, а $z(t_1)$ "--- конец контура $\gamma$. 
 
 Пусть выбрано конечное \textit{разбиение отрезка} $[t_0, t_1]$ вида
@@ -260,27 +259,23 @@ $$
 
 
 \section{Интегральная теорема Коши}
-\addmppict{pictures/ch33pict2}{0.2}{
-\begin{thm}[Коши\rindex{теорема!Коши}]
-\label{abc2}
+
+\begin{thm}[Коши\rindex{теорема!Коши}]\label{abc2}
 Для всякой регулярной функции $f\colon G\to\bbC$, заданной в односвязной области G, справедливо равенство
 \begin{equation}
 \label{abc3}
 \int_\gamma f(z)\,dz = 0,
 \end{equation}
-
-\parshape 2 
-0pt \dimexpr\textwidth\relax
-0pt \dimexpr(\textwidth)\relax
 где интеграл берется по любому замкнутому простому кусочно-гладкому контуру $\gamma$, лежащему в области $G$.
 \end{thm}
-}
+
+\usepict{ch35pict2}{0.1}
 \begin{proof}
-Для заданного в теореме контура $\gamma$ запишем формулу~\eqref{exp24}:
-\begin{equation}
+Для  заданного в теореме контура $\gamma$ запишем формулу~\eqref{exp24}:
+\begin{multline}
 \label{abc4}
-\int_\gamma f(z)\,dz = \int_\gamma (u+iv)\,(dx+idy) = \underbrace{\int _\gamma(u\,dx - v\,dy)}_{\textstyle\triangleq J_1} + i\underbrace{\int_\gamma (v\,dx +u\,dy)}_{\textstyle\triangleq J_2},
-\end{equation}
+\int_\gamma f(z)\,dz = \int_\gamma (u+iv)\,(dx+idy) =\\= \underbrace{\int _\gamma(u\,dx - v\,dy)}_{\textstyle\triangleq J_1} + i\underbrace{\int_\gamma (v\,dx +u\,dy)}_{\textstyle\triangleq J_2},
+\end{multline}
 
 Через $D$ обозначим односвязную область в $G$, границей которой является данный контур $\gamma$. Нам известна следующая формула Грина:
 \begin{equation}
@@ -297,10 +292,11 @@ $$
 &J_2 \xlongequal{\eqref{abc6}} \iint_D \left(\pd{u}{x}-\pd{v}{y}\right)\,dx\, dy \xlongequal{\text{\href{https://vk.com/id29839661}{\scriptsize \textcolor{black}{УКР}}}} 0,
 \end{split}
 \end{equation*} 
-т.е.\ равенство~\eqref{abc3} доказано, а значит теорема доказана.
+т.е.~равенство~\eqref{abc3} доказано, а значит теорема доказана.
 \end{proof}
-%\addmppict[0.8]{pictures/ch33pict3}{0.4}{
-\usepict[0.2]{ch33pict3}
+
+%\addmppict[0.8]{pictures/ch35pict3}{0.4}{
+\usepict{ch35pict3}{0.2}
 \begin{defn} \label{ch33defn1}
 \textit{Областью с кусочно-гладкой границей} будем называть область $G \subset \bboC$, граница $\partial G=\Gamma$ которой является объединением конечного числа гладких ограниченных кривых $\Gamma_1 , \dots , \Gamma_m$, любые две из которых могут иметь общими лишь концевые точки. 
 
@@ -346,7 +342,7 @@ $$
 Проще говоря, множество $G$ называется \textit{звездным}\rindex{множество!звездное}, если можно найти такую точку (\textit{центр зведного множества}), что все прямые отрезки, соединяющие ее с любой другой, целиком принадлежат $G$.
 \end{defn}
 \begin{center}
-\includegraphics[width=0.7\textwidth]{pictures/ch33pict4}\refstepcounter{pictnumber} Рис. \thepictnumber
+\includegraphics[width=0.7\textwidth]{pictures/ch35pict4}\refstepcounter{pictnumber} Рис. \thepictnumber
 \end{center}
 
 Доказательство достаточно провести для случая, когда $G$ есть звездное множество с центром в точке $z_0 = 0$. Покажем это. 
@@ -391,9 +387,9 @@ $$
 \int_{\Gamma} f(z)\,dz = 0.
 \end{equation}
 \end{thm}
-\usepict{ch33pict5}
+\usepict{ch35pict5}{0.2}
 \begin{proof}
-Поскольку область ограничена, то значит одна группа компонент, <<внешняя>> компонента, образует кусочно-гладкий замкнутый контур, который отделяет $G$ от бесконечности. (см. рис.~\ref{ch33pict5})
+Поскольку область ограничена, то значит одна группа компонент, <<внешняя>> компонента, образует кусочно-гладкий замкнутый контур, который отделяет $G$ от бесконечности. (см. рис.~\ref{ch35pict5})
 
 Добавим к каждой <<внутренней>> компоненте границы $\partial G$ дополнительный разрез, соединяющий его с <<внешней>> компонентой. 
 Итак, мы конечным числом дополнительных непересекающихся между собой разрезов $R_1,\dots R_p$ разбили область $G$ на  подмножества $G_1,\dots, G_m$. Эти подмножества, по построению, являются ограниченными односвязными областями с кусочно-гладкими границами. Тогда по интегральной теореме Коши для односвязных множеств:
