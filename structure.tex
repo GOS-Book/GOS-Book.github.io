@@ -146,10 +146,14 @@
 
 \usepackage{fancyhdr} % Required for header and footer configuration
 
-\pagestyle{fancy}
+\pagestyle{fancy} % Enable the custom headers and footers
+
 \renewcommand{\chaptermark}[1]{\markboth{\ifnum\value{secnumdepth}>-1 \sffamily\small #1 \fi}{}} % Chapter text font settings
+
 \renewcommand{\sectionmark}[1]{\markright{\sffamily\small \thesection\hspace{5pt}#1}{}} % Section text font settings
-\fancyhf{} \fancyhead[LE,RO]{\sffamily\normalsize\thepage} % Font setting for the page number in the header
+
+\fancyhf{} % Clear default headers and footers 
+\fancyhead[LE,RO]{\sffamily\normalsize\thepage} % Font setting for the page number in the header
 \fancyhead[LO]{\nouppercase{\footnotesize \rightmark}} % Print the nearest section name on the left side of odd pages
 \fancyhead[RE]{\nouppercase{\footnotesize \leftmark}} % Print the current chapter name on the right side of even pages
 \renewcommand{\headrulewidth}{0.5pt} % Width of the rule under the header

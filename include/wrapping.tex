@@ -2,12 +2,51 @@
 %%%%%%%%%%%%%%%%%%             RULES             %%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
-% \usepict : To use it outside of everything, the simliest construction:  
-% \usepict{picturename without pictures/}{part of textHEIGHT}
+% \usepict : To use it outside of everything, the simliest construction, not even wrapped:  
+% \usepict[the number of supplementary lines to be \vspace*{-#1\baselineskip}]{picturename without pictures/}{part of textHEIGHT}
+% Example from chapter35, defintion16:
+\iffalse
+\usepict{ch35pict4}{0.15}
+Доказательство достаточно провести для случая, когда $G$ есть звездное множество с центром в точке $z_0 = 0$. Покажем это. 
+\fi
 
 % \insertpicture : To use inside environments like proof:  
-% \insertpicture[the number of supplementary lines to be shortened = 6 by default]{picturename without pictures/}{part of textWIDTH}
+% \insertpicture[the number of supplementary lines to be shortened = 5 by default]{picturename without pictures/}{part of textWIDTH occupied by picture}
+% TIPS 
+% 1. Sometimes you need to use \newpage in order to make correct spacing
+% Example from chapter9, inside proof:
+\iffalse
+\insertpicture{ch9pict1}{0.42}
+Отсюда следует, что $F(x,a)<0<F(x,b)$ для любого $x$ из интервала $\Delta = \Delta'\cap\Delta''$. А так как функция $F(x,y)$ при каждом фиксированном $x\in\Delta$ по $y$ непрерывна и строго монотонна, то для каждого $x\in \Delta$ существует единственное $y$, которое обозначим $f(x)$, такое что $f(x)\in(a;b)$ и $F(x,f(x))=0$. Следовательно, на прямоугольнике $\Delta\times(a;b)$ уравнение $F(x,y)=0$ определяет единственную неявную функцию $y=f(x)$. Докажем, что она непрерывна в точке $x_0$.
+\fi
 
+% \proofpicture : To use right after the bery first line in proof envinronemnt.
+% \proofpicture[the number of supplementary lines to be shortened = 5 by default]{picturename without pictures/}{part of textWIDTH occupied by picture}{the very first line of proof which needs to fit space between word Доказательство and end of the line}}
+% Example from chapter35, theorem3:
+\iffalse
+ \begin{proof}
+ \proofpicture{ch35pict2}{0.2}{Для  заданного в теореме контура $\gamma$ запишем форму-}
+ лу~\eqref{exp24} в виде:
+\fi
+
+% \itempicture : To use in lists. You need to use it together with 
+% \wrapitemenumi; \wrapitemi: item with wrapped image (two version for enumarate and itemize respectively)
+% \contitem : the following items which should be also affected by image.
+% \MoreInsert : the following numbers of text lines afterthe list the which should be also affected by image.
+% \proofpicture[the number of supplementary lines to be shortened = 5 by default]{picturename without pictures/}{part of textWIDTH occupied by picture}
+% TIPS
+% Also dont forget to use \end{enumerate}\vspace*{-\baselineskip}\begin{enumerate}[resume*] between \itempicture's if you use several \itempicture in one list 
+% use \EndInsert to reset margins when it doesnt do it automatically, for example when lists are in proof
+% Example from chapter35, definiton14:
+\iffalse
+\begin{enumerate}
+	\itempicture{ch35pict3}{0.3}
+	Кривая $\Gamma_k$ "--- \textit{правильной гладкой компонентой} $\Gamma$, если в каждой окрестности каждой точки $z_0 \in \Gamma_k$ находятся как точки из области $G$, так и из $\bbC \setminus G\cup\Gamma$.
+	\contitem Кривая $\Gamma_k$ "--- \textit{разрезом}, если для каждой точки $z_0 \in\buildrel\circ\over\Gamma_k$ (обозначение $\buildrel\circ\over\Gamma_k$ "--- кривая $\Gamma_k$ без концевых точек) существует окрестность $B_\epsilon(z_0)$ такая, что $B_\epsilon(z_0)\setminus\Gamma_k \subset G$. Причем каждая точка $z_0 \in\buildrel\circ\over\Gamma_k$ называется внутренней точкой разреза.
+\end{enumerate}
+\MoreInsert{1}%FOR EXAMPLE
+\lipsum[1-2]%FOR EXAMPLE
+\fi
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%           PACKAGES            %%%%%%%%%%%%%%%%%% 
@@ -30,18 +69,16 @@
 \newcount\narrowlinect
 \narrowlinect=0\relax 
 
-\newcounter{pictnumber}[chapter] 
-\renewcommand{\thepictnumber}{\thechapter.\arabic{pictnumber}}
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%           COMMANDS            %%%%%%%%%%%%%%%%%% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\usepict}[2]{
+\newcommand{\usepict}[3][0]{
+\vspace*{-\baselineskip}
 \begin{center}
-\captionsetup{type=figure}\includegraphics[height=#2\textheight]{pictures/#1}\refstepcounter{pictnumber}\label{#1}\captionof{figure}{}
-\end{center}}
+\captionsetup{type=figure}\includegraphics[height=#3\textheight]{pictures/#2}\captionof{figure}{}\label{#2}
+\end{center}
+\vspace*{-#1\baselineskip}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -49,44 +86,279 @@
 \strictpagecheck%
 \checkoddpage%
 \ifoddpage%
-\InsertBoxR{0}{\begin{threeparttable}\begin{tabular}{c@{}}\captionsetup{type=figure}\includegraphics[width=#3\textwidth]{pictures/#2}\refstepcounter{pictnumber}\label{#2}\end{tabular}\captionof{figure}{}\end{threeparttable}}[#1]%
+\InsertBoxR{0}{\begin{threeparttable}\begin{tabular}{c@{}}\captionsetup{type=figure}\includegraphics[width=#3\textwidth]{pictures/#2}\end{tabular}\captionof{figure}{}\label{#2}\end{threeparttable}}[#1]%
 \else%
-\InsertBoxL{0}{\begin{threeparttable}\begin{tabular}{c@{}}\captionsetup{type=figure}\includegraphics[width=#3\textwidth]{pictures/#2}\refstepcounter{pictnumber}\label{#2}\end{tabular}\captionof{figure}{}\end{threeparttable}}[#1]%
+\InsertBoxL{0}{\begin{threeparttable}\begin{tabular}{c@{}}\captionsetup{type=figure}\includegraphics[width=#3\textwidth]{pictures/#2}\end{tabular}\captionof{figure}{}\label{#2}\end{threeparttable}}[#1]%
 \fi%
 }
 
-\newcommand\insertpictureR[3][5]{%
-	\InsertBoxR{0}{\begin{threeparttable}\begin{tabular}{c@{}}\captionsetup{type=figure}\includegraphics[width=#3\textwidth]{pictures/#2}\refstepcounter{pictnumber}\label{#2}\end{tabular}\captionof{figure}{}\end{threeparttable}}[#1]%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand\proofpicture[4][5]{%
+\makebox[\textwidth-\widthof{\textit{Доказательство. }}][s]{#4}\par%
+\insertpicture[#1]{#2}{#3}%
+\noindent%
 }
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newlength\wrapskiplength
+\newlength\itemskiplenght
+\newlength\picturewidth
+
+\newlength\leftinsertbord
+\newlength\rightinsertbord
+
+\newcommand*\wrapitem{%
+	\apptocmd\labelitemi{\hskip-\wrapskiplength}{}{}% add a correction
+	\apptocmd\labelenumi{\hskip-\wrapskiplength}{}{}% add a correction
+	\item
+	\patchcmd\labelenumi{\hskip-\wrapskiplength}{}{}{}% remove the added hskip
+	\patchcmd\labelitemi{\hskip-\wrapskiplength}{}{}{}% remove the added hskip
+}
+
+\newlength\InsertListPrevWidth
+\makeatletter
+\newcommand{\InsertListR}[3][0]
+{%
+	\mbox{}%
+	\vspace*{-\baselineskip}%
+	\setlength{\leftskip}{\leftmargin}%
+	\InsertBoxR{#2}{\hskip-\leftmargin#3\hskip\leftmargin}[#1]%
+	\global\InsertListPrevWidth\@framewidth
+	
+	\setlength{\leftinsertbord}{0cm}
+	\setlength{\rightinsertbord}{\InsertListPrevWidth}
+}%
+
+\newcommand{\InsertListL}[3][0]{%
+	\mbox{}%
+	\vspace*{-\baselineskip}%
+	\setlength{\leftskip}{0cm}%
+	\InsertBoxL{#2}{\hskip0\leftmargin#3\hskip\leftmargin}[#1]%
+	\global\InsertListPrevWidth\@framewidth
+	
+	\setlength{\leftinsertbord}{\picturewidth}
+	\addtolength{\leftinsertbord}{\leftmargin}
+	\addtolength{\leftinsertbord}{\labelsep}
+	\setlength{\rightinsertbord}{0cm}
+}%
+
+\newcommand*\contitem[1][\the\count1]
+{%
+	\item
+	\bgroup  % to keep some changes local
+	% let's calculate parameters for \ParShape
+	\def\reserved@a{#1}%
+	\def\reserved@b{\the\count1}%
+	\ifx\reserved@a\reserved@b
+	% Below calculation is copied from \@@InsertBox of insbox
+	\dimen0 = \@wherebottom
+	\advance \dimen0 by -\pagetotal
+	\divide \dimen0 by \baselineskip
+	\count1 = \dimen0
+	\advance \count1 by 1
+	\advance \count1 by -\@numnormal
+	\fi
+	\MoreInsert{#1}%
+	\egroup
+}
+\newcommand*\EndInsert
+{%
+	\@restore@
+	\@ifstar{\@afterindentfalse\@afterheading}{}%
+}
+\newcommand*\MoreInsert[1]
+{%
+	\ParShape = 2
+	{#1}   {\the\leftinsertbord}  {\the\rightinsertbord}
+	1      0cm   0cm
+}
+\makeatother
+
+\makeatletter
+\newif\ifwide
+\patchcmd\enitkv@enumitem@wide
+{\enit@align@left}% <- Search
+{\widetrue\enit@align@left}% <- Replace
+{}{\FailedToPatch}
+\makeatother
+
+\newcommand{\itempicture}[3][5]{	
+	\strictpagecheck%
+	\checkoddpage%
+	\ifoddpage%
+	\setlength{\wrapskiplength}{-\leftmargin}
+	\ifwide
+	\setlength{\wrapskiplength}{-\labelsep}
+	\else\fi
+	\setlength{\picturewidth}{0cm}
+	\wrapitem
+	\InsertListR[#1]{0}{\begin{threeparttable}\begin{tabular}{c@{}}\captionsetup{type=figure}\includegraphics[width=#3\textwidth]{#2}\end{tabular}\captionof{figure}{}\label{#2}\end{threeparttable}}
+	\ifwide
+	\setlength{\itemskiplenght}{\widthof{\hbox{\number\value{enumi}.\,}}}
+	\hskip\itemskiplenght
+	\else\fi
+	\else%
+	\setlength{\picturewidth}{\widthof{\hbox{\begin{threeparttable}\begin{tabular}{c@{}}\captionsetup{type=figure}\includegraphics[width=#3\textwidth]{#2}\end{tabular}\captionof{figure}{}\label{#2}\end{threeparttable}}}}
+	\ifwide
+	\item[]
+	\else
+	\setlength{\wrapskiplength}{\picturewidth}
+	\addtolength{\wrapskiplength}{\labelsep}
+	\wrapitem
+	\fi
+	\InsertListL[#1]{0}{\begin{threeparttable}\begin{tabular}{c@{}}\captionsetup{type=figure}\includegraphics[width=#3\textwidth]{#2}\end{tabular}\captionof{figure}{}\label{#2}\end{threeparttable}}
+	\ifwide
+	\addtocounter{enumi}{1}\hskip-0.5px\number\value{enumi}.~\hskip1px
+	\else\fi
+	\fi	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\iffalse
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%        OLD AND OUTDATED CONSTRACTIONS ARE THERE             %%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% \wrappicture : To use it when you want to wrap a picture inside list environemnts:
+% \wrappicture[number of narrow lines of item]{textoffirstitem}[number of narrow lines in the second item]{ratio of textwidth}[text in the second item]{picture}[number of untouched lines]
+% Example from chapter35, definition14:
+\iffalse
+\begin{enumerate}
+	\wrappicture{
+		\item Кривая $\Gamma_k$ "--- \textit{правильной гладкой компонентой} $\Gamma$, если в каждой окрестности каждой точки $z_0 \in \Gamma_k$ находятся как точки из области $G$, так и из $\bbC \setminus G\cup\Gamma$.}
+	{0.3}[
+	\item Кривая $\Gamma_k$ "--- \textit{разрезом}, если для каждой точки $z_0 \in\buildrel\circ\over\Gamma_k$ (обозначение $\buildrel\circ\over\Gamma_k$ "--- кривая $\Gamma_k$ без концевых точек) существует окрестность $B_\epsilon(z_0)$ такая, что $B_\epsilon(z_0)\setminus\Gamma_k \subset G$. Причем каждая точка $z_0 \in\buildrel\circ\over\Gamma_k$ называется внутренней точкой разреза.]
+	{ch35pict3}
+\end{enumerate}
+\fi
+
+\newcommandx{\wrappicture}[7][1=12,3=8,5=\mbox{},7=0]
+{\vspace*{-\baselineskip}
+\parbox[t]{\dimexpr\textwidth-\leftmargin}
+{%
+\vspace{-2.5mm}
+\begin{wrapfigure}[#1]{o}{#4\textwidth}
+\centering
+\vspace{-\baselineskip}
+\InsertBoxL{#7}
+{\begin{threeparttable}%
+\begin{tabular}{c@{}}\captionsetup{type=figure}\includegraphics[width=#4\textwidth]{pictures/#6}\end{tabular}\captionof{figure}{}\label{#6}\end{threeparttable}}%[#extraargument?]%  
+\end{wrapfigure}#2
+\parbox[t]{\dimexpr\textwidth-\leftmargin}{%
+\vspace{-2.5mm}
+\begin{wrapfigure}[#3]{r}{#4\textwidth}
+\end{wrapfigure}
+#5}}}
+		
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%		
+
+
+
+\newcommand{\addpictureitemL}[4][9]{
+	\refstepcounter{pictnumber}
+	\parbox[t]{\dimexpr\textwidth-\leftmargin}{%
+		\vspace{-2.5mm}
+		\begin{wrapfigure}[#1]{l}{#3\textwidth}
+			\centering
+			\vspace{-\baselineskip}
+			\includegraphics[width=#3\textwidth]{#2}
+			\caption*{\footnotesize Рис. \thepictnumber}
+		\end{wrapfigure}#4}}
+
+\newcommand{\addpictureitemR}[4][9]{
+	\refstepcounter{pictnumber}
+	\parbox[t]{\dimexpr\textwidth-\leftmargin}{%
+		\vspace{-2.5mm}
+		\begin{wrapfigure}[#1]{r}{#3\textwidth}
+			\centering
+			\vspace{-\baselineskip}
+			\includegraphics[width=#3\textwidth]{#2}
+			\caption*{\footnotesize Рис. \thepictnumber}
+		\end{wrapfigure}#4}}
+
+\newcommand{\addpictureitem}[4][9]{%
+	\strictpagecheck%
+	\checkoddpage%
+	\ifoddpage%
+	\addpictureitemR[#1]{#2}{#3}{#4}%
+	\else%
+	\addpictureitemL[#1]{#2}{#3}{#4}%
+	\fi%
+}      
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%        OLD AND OUTDATED CONSTRACTIONS ARE THERE             %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %RULES. Pls check it everytime.
 %NOT WRAPPED BUT VERY EASY.
@@ -111,22 +383,11 @@
 % NOW IT IS USELESS, but can work if nothing helps.
 %\addpictureitem[number of narrow lines]{exactly picture}{width of \textwidth will picture occupy}{text}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-    
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-  
-    
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   
 \newcommand{\addmppictL}[4][1]{%
 \noindent
@@ -191,62 +452,14 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\addpictureitemL}[4][9]{
-\refstepcounter{pictnumber}
-  \parbox[t]{\dimexpr\textwidth-\leftmargin}{%
-      \vspace{-2.5mm}
-      \begin{wrapfigure}[#1]{l}{#3\textwidth}
-        \centering
-        \vspace{-\baselineskip}
-        \includegraphics[width=#3\textwidth]{#2}
-        \caption*{\footnotesize Рис. \thepictnumber}
-      \end{wrapfigure}#4}}
 
-\newcommand{\addpictureitemR}[4][9]{
-\refstepcounter{pictnumber}
-  \parbox[t]{\dimexpr\textwidth-\leftmargin}{%
-      \vspace{-2.5mm}
-      \begin{wrapfigure}[#1]{r}{#3\textwidth}
-        \centering
-        \vspace{-\baselineskip}
-        \includegraphics[width=#3\textwidth]{#2}
-        \caption*{\footnotesize Рис. \thepictnumber}
-      \end{wrapfigure}#4}}
-
-\newcommand{\addpictureitem}[4][9]{%
-\strictpagecheck%
-\checkoddpage%
-\ifoddpage%
-\addpictureitemR[#1]{#2}{#3}{#4}%
-\else%
-\addpictureitemL[#1]{#2}{#3}{#4}%
-\fi%
-}      
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
           
 %you can add CT-FUNCTION HERE  IF IT IS NECESSARY
           
-\newcommandx{\wrappicture}[7][1=12,3=8,5=\mbox{},7=0]
-	{
-\refstepcounter{pictnumber}  
-  	\parbox[t]{\dimexpr\textwidth-\leftmargin}
-		{%
-      	\vspace{-2.5mm}
-     		\begin{wrapfigure}[#1]{o}{#4\textwidth}
-        	\centering
-        	\vspace{-\baselineskip}
-        		\InsertBoxL{#7}
-        			{\begin{threeparttable}%
-						\begin{tabular}{c@{}}\includegraphics[width=#4\textwidth]{#6}\end{tabular}%
-						\caption*{\footnotesize Рис. \arabic{pictnumber}}{}\end{threeparttable}}      	
-      		\end{wrapfigure}#2
-      \parbox[t]{\dimexpr\textwidth-\leftmargin}{%
-      \vspace{-2.5mm}
-      \begin{wrapfigure}[#3]{r}{#4\textwidth}
-      \end{wrapfigure}
-       #5}}}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
        
@@ -254,7 +467,7 @@
     %\usepackage{nccmath}
     %\usepackage{etoolbox}
       
-    \newcommand*{\wrapitem}{\apptocmd{\labelenumi}{\hskip\leftmargin}{}{}\item\apptocmd{\labelenumi}{\hskip-\leftmargin}{}{}}
+    %\newcommand*{\wrapitem}{\apptocmd{\labelenumi}{\hskip\leftmargin}{}{}\item\apptocmd{\labelenumi}{\hski5p-\leftmargin}{}{}}
     %
     \newcommandx{\InsertPictL}[4][1=0,3=0]{\refstepcounter{pictnumber}%
     \setlength{\leftskip}{\leftmargin}\mbox{}\vspace*{-\baselineskip}%
@@ -279,45 +492,6 @@
 \InsertPictL[#1]{#2}[#3]{#4}
 \fi%
 }    
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%       END OF  WRAPPING PICTURES           %%%%%%%%%%%% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- 
-\newcommand{\nopar}% obviates end-of-paragraph effects
-{\rule{\linewidth}{0pt}\vspace*{-\baselineskip}}
-% \usepackage{picins}
-%\usepackage{mdwlist}
 
-%%%%%%%%%%%%%%%%%
-%\begin{enumerate}
-%\parpic[r]{\includegraphics[width=3cm]{image.jpg}}
-%\item it had line after line but didn't touch the image...
-%\item it had line after line but didn't touch the image...
-%\item it had line after line but didn't touch the image...
-%\item it had line after line but didn't touch the image...
-%\suspend{enumerate}
-%\resume{enumerate}
-%\item ...and filled the remaining space
-%\end{enumerate}
 
-%\makeatletter
-%\newcommand*\replicate[1]{%
-%  \expandafter\replicate@aux\romannumeral\number\numexpr #1\relax000Q{}
-%}
-%\newcommand*\replicate@aux[1]{\csname replicate@aux@#1\endcsname}
-%\newcommand\replicate@aux@m{}
-%\long\def\replicate@aux@m#1Q#2#3{\replicate@aux#1Q{#2#3}{#3}}
-%\newcommand\replicate@aux@Q[2]{#1}
-%\DeclareRobustCommand*\MyParShape[3]{%
-%    \parshape = #1
-%      \replicate{#1 -1}{#2\textwidth #3\textwidth}%
-%      0pt\textwidth
-%}
-%\newcommand*\my@parshape{}
-%\makeatother
-
- 
+\fi

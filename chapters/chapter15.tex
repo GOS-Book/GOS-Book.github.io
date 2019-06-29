@@ -33,14 +33,13 @@ G = \{\, (x,y,z) \in \bbR^3\,\big|\, (x,y) \in g, \quad \phi_1(x,y) < z < \phi_2
 \end{lemm}
 
 \begin{proof}
-Область $G$ задана условием $(\ref{ch15eq1}) \; \Rightarrow \; \partial G = S_1 \cup S_2 \cup S_0$, 
-\addpicture{pictures/ch15pict1}{0.25}
-где $S_{1,2} = \{ (x,y) \in \overline{g}, \; z = \phi_{1,2}(x,y) \}$, $S_0 = \{ (x,y) \in \partial g, \phi_1(x,y) \le z \le \phi_2(x,y) \}$ 
+Область $G$ задана условием $(\ref{ch15eq1}) \; \Rightarrow \; \partial G = S_1 \cup S_2 \cup S_0$, где $S_{1,2} = \{ (x,y) \in \overline{g}, \; z = \phi_{1,2}(x,y) \}$, $S_0 = \{ (x,y) \in \partial g, \phi_1(x,y) \le z \le \phi_2(x,y) \}$ 
 
 $G = \{ (x,y,z) \in \bbR^3: \; (x,y) \in g, \; \phi_1(x,y) < z < \phi_2(x,y) \; \forall (x,y) \in g \} \; \Rightarrow \; \partial G$ "--- кусочно-гладкая поверхность.
 
 $\displaystyle\iint\limits_{S_{2_{\textit{внеш}}}} f \,dx\,dy = \displaystyle\iint\limits_g f(x,y,\phi_2(x,y)) \,dx\,dy$
 
+\insertpicture{ch15pict1}{0.3}
 $\displaystyle\iint\limits_{S_{1_{\textit{внеш}}}} f \,dx\,dy = - \displaystyle\iint\limits_g f(x,y,\phi_1(x,y)) \,dx\,dy$
 
 $\displaystyle\iint\limits_{S_{0_{\textit{внеш}}}} f \,dx\,dy = 0$, так как на $S_0 \; \vv{n}_{\textit{внеш}(x,y,z) = (n_x, n_y, 0)}$
@@ -89,7 +88,7 @@ $\partial G_{\textit{внеш}} = \partial G'_{\textit{внеш}} \cup \partial 
  \Sigma_{2_{\textit{внеш}}}
 \end{aligned} \right\} \quad  \textit{это поверхности } \Sigma \textit{с противоположными ориентациями}.
 \end{equation*}
-\addpicture{pictures/ch15pict2}{0.12}
+\insertpicture{ch15pict2}{0.12}
 \begin{equation} \label{ch15eqA}
 \iint\limits_{\partial G_{1_{\textit{внеш}}}} f \,dx\,dy + \iint\limits_{\partial G_{2_{\textit{внеш}}}} f \,dx\,dy = \iint\limits_{G_{\textit{внеш}}} f\,dx\,dy
 \end{equation}

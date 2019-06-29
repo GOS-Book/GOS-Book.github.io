@@ -36,20 +36,18 @@ $$
  f(z) = \frac{1}{2\pi i}\int_\Gamma \frac{f(\zeta)}{\zeta - z}\,d\zeta.
  \end{equation}
 \end{thm}
-\begin{proof}
-Фиксируем произвольную точку $z \in G$. Функция $\frac{f(\zeta)}{\zeta - z}$ регулярна по переменному $\zeta$ в области $G \setminus \{z\}$. Выберем число $r_0 > 0$ такое, что выполнено включение $\overline{B_{r_0}(z)}\subset G$. 
-
-\usepict{ch36pict1}{0.2}
-
+\begin{proof} Фиксируем произвольную точку $z \in G$. Функция $\frac{f(\zeta)}{\zeta - z}$ регулярна по переменному $\zeta$ в области $G \setminus \{z\}$. Выберем число $r_0 > 0$ такое, что выполнено включение $\overline{B_{r_0}(z)}\subset G$. 
+\newpage%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\insertpicture[8]{ch36pict1}{0.3}
 Обозначим через $\gamma_r=\gamma_r^{+} \triangleq \{ \zeta \bigl| |\zeta - z| = r \}$ окружность радиуса $r \in (0, r_0)$ ориентированную против хода часовой стрелки. Обозначим множества $G_r \triangleq G \setminus \overline{B_r(z)}$ и $\Gamma_r \triangleq \Gamma \cup \gamma_r^{-}$. Очевидно, что множество $G_r$ есть область с кусочно-гладкой положительно ориентированной границей $\Gamma_r$(рис.~\ref{ch36pict1}). 
 
-По обощенной интегральной теореме Коши \ref{abc28} из билета №33 получаем
+По обощенной интегральной теореме Коши \ref{abc28} из билета №35 получаем
 \begin{equation} \label{ch34eq2}
  0 = \int_{\Gamma_r} \frac{f(\zeta)}{\zeta - z}\,d\zeta = \int_\Gamma \frac{f(\zeta)}{\zeta - z}\,d\zeta - \int_{\gamma_r} \frac{f(\zeta)}{\zeta - z}\,d\zeta.
 \end{equation}
 Итак,
 \begin{equation} \label{ch34eq3}
-J \triangleq \frac{1}{2\pi i} \int_\Gamma \frac{f(\zeta)}{\zeta - z}\,d\zeta \xlongequal{\eqref{ch34eq2}} \frac{1}{2\pi i} \int_{\gamma_r} \frac{f(\zeta)}{\zeta - z}\,d\zeta,  \quad  \forall r\cquad 0 < r < r_0
+J \triangleq \frac{1}{2\pi i} \int_\Gamma \frac{f(\zeta)}{\zeta - z}\,d\zeta \xlongequal{\eqref{ch34eq2}}\xlongequal{\eqref{ch34eq2}} \frac{1}{2\pi i} \int_{\gamma_r} \frac{f(\zeta)}{\zeta - z}\,d\zeta,  \quad  \forall r\cquad 0 < r < r_0
 \end{equation}
 
 Как показано в примере \ref{exmpl1}, справедливо равенство $1 = \frac{1}{2\pi i} \int_{\gamma_r} \frac{1}{\zeta - z}\,d\zeta$, откуда 
@@ -81,14 +79,13 @@ I(z) \triangleq \frac{1}{2 \pi i} \int_\gamma \frac{q(\zeta)}{\zeta - z}\,d\zeta
 I^{(n)}(z) = \frac{n!}{2\pi i} \int_\gamma \frac{q(\zeta)}{(\zeta - z)^{n+1}}\,d\zeta, \quad n \in \bbN
 \end{equation}
 \end{thm}
-
-\begin{proof}\leavevmode
-\begin{enumerate}[wide, labelwidth=!, labelindent=\parindent]
-\noindent\addpictureitem{pictures/ch36pict2}{0.2}{
-\item     
-Докажем формулу $\eqref{ch34eq6}$ при $n = 1$. Так как функция $q(\zeta)$ непрерывна на контуре $\gamma$, то существует число $M < + \infty$ такое, что $|q(\zeta)| \le M$ при $\zeta \in \gamma$.
-      
-\indent Фиксируем точку $z \notin \gamma$. Пусть $d \triangleq \dist(z, \gamma)$. Очевидно, что $d > 0$. Выберем число $r \in (0, \frac{d}{2})$ и возьмем произвольное число $\Delta z \in \bbC$ так, чтобы $0 < |\Delta z| < r$. Тогда для $\forall \zeta \in \gamma$ получаем}
+\newpage%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{proof}\leavevmode\vspace*{-0.5\baselineskip}
+\begin{enumerate}[wide]
+\itempicture{ch36pict2}{0.2}
+Докажем формулу $\eqref{ch34eq6}$ при $n = 1$. Так как функция $q(\zeta)$ непрерывна на контуре $\gamma$, то существует число $M < + \infty$ такое, что $|q(\zeta)| \le M$ при $\zeta \in \gamma$. % ch36pict2 
+    
+Фиксируем точку $z \notin \gamma$. Пусть $d \triangleq \dist(z, \gamma)$. Очевидно, что $d > 0$. Выберем число $r \in (0, \frac{d}{2})$ и возьмем произвольное число $\Delta z \in \bbC$ так, чтобы $0 < |\Delta z| < r$. Тогда для $\forall \zeta \in \gamma$ получаем
 \begin{equation} \label{ch34eq7}
 |\zeta - (z + \Delta z)| \ge |\zeta - z| - |\Delta z| \ge d - \frac{d}{2} = \frac{d}{2}
 \end{equation}
@@ -104,8 +101,7 @@ I^{(n)}(z) = \frac{n!}{2\pi i} \int_\gamma \frac{q(\zeta)}{(\zeta - z)^{n+1}}\,d
 \frac{(\zeta - z)-(\Delta z- (\zeta-z))}{(\zeta - z)^2(\Delta z- (\zeta-z) )}
 =\frac{\Delta z}{(\zeta - z)^2 (\zeta - z - \Delta z)} .
 \end{multline*}
-Поэтому для $\eqref{ch34eq8}$ получаем оценку 
-
+Поэтому для~\eqref{ch34eq8} получаем оценку 
 \begin{multline*}
 \left| \frac{\Delta I}{\Delta z} - \frac{1}{2\pi i} \int_\gamma \frac{q(\zeta)}{(\zeta - z)^2}\,d\zeta \right| 
 \le \frac{1}{2\pi} \int_\gamma \frac{|q(\zeta)||\Delta z||\,d\zeta|}{|\zeta - z|^2|\zeta - z - \Delta z|} \le \\
@@ -144,6 +140,8 @@ f^{(n)}(z) = \frac{n!}{2\pi i} \int_{\gamma_{r_0}} \frac{f(\zeta)}{(\zeta - z)^{
 \end{equation}
 
 Так как точка $z_0 \in G$ была произвольной, то функция $f$ бесконечно дифференцируема во всей области G.
+
+Теорема доказана.
 \end{proof}
 
 \section{Разложение функции, регулярной в окрестности точки, в ряд Тейлора}
@@ -158,18 +156,19 @@ $\textit{Степенным рядом}$ называется функциона
 где точка $a \in \bbC$ и коэффициенты $c_n \in \bbC$ фиксированы.
 \end{defn}
 
-\begin{thm}[Абеля\rindex{теорема!Абеля}] \label{ch34.2Thm1}
+\begin{thm}[Абеля\rindex{теорема!Абеля}]\label{ch34.2Thm1}
 Если степенной ряд $\eqref{ch34.2eq1}$ сходится в точке $z_0 \not= a$, то ряд $\eqref{ch34.2eq1}$ сходится абсолютно в любой точке из круга $B_{|z_0 - a|}(a)$, а в любом замкнутом круге $\overline{B_{r}(a)}$, где $0 < r < |z_0 - a|$, этот ряд сходится равномерно.
 \end{thm}
-\usepict{ch36pict3}{0.15}
 \begin{proof}
 Так как по условию числовой ряд $\sum_{n = 0}^{+\infty}\limits c_n (z - a)^n$ сходится, то из необходимого условия сходимости рядов следует, что $\lim\limits_{n \to \infty} |c_n(z_0 - a)^n| = 0$, поэтому существует число $\alpha > 0$ такое, что $|c_n(z_0 - a)^n| \le \alpha$ для всех $n$.
 \begin{enumerate}
-\item[1)] {\rightskip=3.5cm} { Пусть точка $z \in B_{|z_0 - a|}(a)$. Тогда $|c_n(z - a)^n| = |c_n(z_0 - a)^n| \cdot \left| \frac{z - a}{z_0 - a} \right|^n \le \alpha q^{n}_z$, где $q_z \triangleq \left| \frac{z - a}{z_0 - a} \right| < 1$. Так как числовой ряд $\sum_{n = 0}^{\infty}\limits q_{z}^n$ очевидно сходится, то по признаку сравнения ряд $\eqref{ch34.2eq1}$ сходится и абсолютно в точке $z$.
-}
-\item[2)] {\rightskip=0cm}Определим $q_0 \triangleq \frac{r}{|z_0 - a|}\ge\left|\frac{z - a}{z_0 - a}\right|$. Аналогично пункту 1 получаем оценку: $|c_n(z - a)^n| \le \alpha q^{n}_0$. Так как числовой ряд $\sum_{n = 0}^{\infty}\limits q_{0}^n$ очевидно сходится, то по признаку Вейештрасса~(см.~ниже) ряд $\eqref{ch34.2eq1}$ сходится равномерно на круге $\overline{B_{r}(a)}$.
+\itempicture[2]{ch36pict3}{0.15} Пусть точка $z \in B_{|z_0 - a|}(a)$ (см.~рис.~\ref{ch36pict3}). Тогда $|c_n(z - a)^n| = |c_n(z_0 - a)^n| \cdot \left| \frac{z - a}{z_0 - a} \right|^n \le \alpha q^{n}_z$, где $q_z \triangleq \left| \frac{z - a}{z_0 - a} \right| < 1$. Так как числовой ряд $\sum_{n = 0}^{\infty}\limits q_{z}^n$ очевидно сходится, то по признаку сравнения ряд $\eqref{ch34.2eq1}$ сходится и абсолютно в точке $z$.
+\end{enumerate}\vspace*{0\baselineskip}\begin{enumerate}[resume*]
+\item Определим $q_0 \triangleq \frac{r}{|z_0 - a|}\ge\left|\frac{z - a}{z_0 - a}\right|$. Аналогично пункту 1 получаем оценку: $|c_n(z - a)^n| \le \alpha q^{n}_0$. Так как числовой ряд $\sum_{n = 0}^{\infty}\limits q_{0}^n$ очевидно сходится, то по признаку Вейештрасса~(см.~ниже) ряд $\eqref{ch34.2eq1}$ сходится равномерно на круге $\overline{B_{r}(a)}$.
 \end{enumerate}
-{\rightskip=-3.3cm} Теорема доказана.
+
+\EndInsert
+Теорема доказана.
 \end{proof}
 
 \begin{stt}[Признак Вейерштрасса\rindex{признак!Вейерштрасса}]
@@ -219,17 +218,17 @@ f(z) = \sum\limits_{n = 0}^{\infty} c_n(z - a)^n, \quad \forall z \in B_r(a),
 \begin{equation} \label{ch34.2eq6}
 c_n = \frac{f^{(n)}(a)}{n!}.
 \end{equation}
-
 \end{thm}
-\usepict{ch36pict4}{0.2}
+\vspace*{-\baselineskip}
 \begin{proof}
-Фиксируем произвольную точку $z \in B_r(a)$. Тогда существует число $r_1 > 0$ такое, что $|z - a| < r_1 < r$.
+\proofpicture{ch36pict4}{0.27}{Фиксируем произвольную точку $z \in B_r(a)$. Тогда суще-}ствует число $r_1 > 0$ такое, что $|z - a| < r_1 < r$.
 
-Пусть $\gamma_{r_1} \triangleq \{\zeta \,\big|\, |\zeta - a| = r_1 \}$ — ориентированная движением против хода часовой стрелки окружность (см. рис.~\ref{ch36pict4}). Запишем интегральную формулу Коши:
+Пусть $\gamma_{r_1} \triangleq \{\zeta \,\big|\, |\zeta - a| = r_1 \}$ — ориентированная движением против хода часовой стрелки окружность (см.~рис.~\ref{ch36pict4}). Запишем интегральную формулу Коши:
 \begin{equation} \label{ch34.2eq7}
 f(z) = \frac{1}{2 \pi i} \int_{\gamma_{r_1}} \frac{f(\zeta)}{\zeta - z} \,d\zeta.
 \end{equation}
 
+\EndInsert
 Преобразуем функцию $\zeta \to \frac{1}{\zeta - z}$, где $\zeta \in \gamma_{r_1}$, к виду
 $$
 \frac{1}{\zeta - z} = \frac{1}{(\zeta - a) - (z - a)} = \frac{1}{(\zeta - a)\left( 1 - \frac{z - a}{\zeta - a}\right)}.
@@ -260,10 +259,9 @@ c_n = \frac{1}{2\pi i} \int_{\gamma_{r_1}} \frac{f(\zeta)}{(\zeta - a)^{n + 1}} 
 
 \begin{cons} \label{cons1}
 Пусть функция $f$ регулярна в области $G$ и пусть выбрана точка $a \in G$. Тогда функция $f$ представима в виде ряда Тейлора 
-
-\addpictureR{pictures/ch36pict5}{0.2} \label{ch36pict5}
 $$
 f(z) = \sum\limits_{n = 0}^{+\infty} \frac{f^{(n)}(a)}{n!} (z - a)^n,
 $$
 который сходится по крайней мере в круге $B_R(a)$ максимального радиуса $R > 0$, при котором этот круг содержится в области $G$ (см. рис.~\ref{ch36pict5}).
 \end{cons}
+\usepict{ch36pict5}{0.15}
