@@ -2,6 +2,7 @@
 %\titlespacing{\section}{0pt}{1mm plus 2mm minus 1mm}{1pt plus 2mm minus 1mm}  
 \renewcommand*{\arraystretch}{1.5}
 \everymath{\displaystyle}
+\normalsize
 	
 \part{Приложения}
 \chapter[Формулы к письменному ГОСу]{Формулы к письменному ГОСу\footnotemark}
@@ -71,109 +72,24 @@ $\cos x - \cos y  = -2 \sin \frac{x + y}{2} \sin\frac{x - y}{2};$
 
 \subsubsection{Формулы преобразования произведения}
 \begin{longtable}[l]{@{\extracolsep{\fill}}p{0.5\textwidth} p{0.5\textwidth}}
-$2\sin x \sin y = \cos (x-y)-\cos(x+y);$
-&
-$2\sin x \cos y = \sin (x-y)+\sin(x+y).$
+$2\sin x \sin y = \cos (x-y)-\cos(x+y);$ & $2\sin x \cos y = \sin (x-y)+\sin(x+y).$
 \\
 $2\cos x \cos y = \cos (x-y)+\cos(x+y);$
 \end{longtable}
 
 \subsubsection{Формулы приведения}
-\tiny
+\footnotesize
 \begin{longtable}{|c|c|c|c|c|c|c|c|c|}
 \hline
-&
-$\pi/2-x$
-&
-$\pi/2+x$
-&
-$\pi-x$
-&
-$\pi+x$
-&
-$3\pi/2-x$
-&
-$3\pi/2+x$
-&
-$2\pi-x$
-&
-$2\pi+x$
-\\\hline
-$\sin$
-&
-$\cos x$
-&
-$\cos x$
-&
-$\sin x$
-&
-$-\sin x$
-&
-$-\cos x$
-&
-$-\cos x$
-&
-$-\sin x$
-&
-$\sin x$
-\\\hline
-$\cos$
-&
-$\sin x$
-&
-$-\sin x$
-&
-$-\cos x$
-&
-$-\cos x$
-&
-$-\sin x$
-&
-$\sin x$
-&
-$\cos x$
-&
-$\cos x$
-\\\hline
-$\tg$
-&
-$\ctg x$
-&
-$-\ctg x$
-&
-$-\tg x$
-&
-$\tg x$
-&
-$\ctg x$
-&
-$-\ctg x$
-&
-$-\tg x$
-&
-$\tg x$
-\\\hline
-$\ctg$
-&
-$\tg x$
-&
-$-\tg x$
-&
-$-\ctg x$
-&
-$\ctg x$
-&
-$\tg x$
-&
-$-\tg x$
-&
-$-\ctg x$
-&
-$\ctg x$
+& $\pi/2-x$ & $\pi/2+x$ & $\pi-x$ & $\pi+x$ & $3\pi/2-x$ & $3\pi/2+x$ & $2\pi-x$ & $2\pi+x$ \\\hline
+$\sin$ & $\cos x$ & $\cos x$ & $\sin x$ & $-\sin x$ & $-\cos x$ & $-\cos x$ & $-\sin x$ & $\sin x$ \\\hline
+$\cos$ & $\sin x$ & $-\sin x$ & $-\cos x$ & $-\cos x$ & $-\sin x$ & $\sin x$ & $\cos x$ & $\cos x$ \\\hline
+$\tg$ & $\ctg x$ & $-\ctg x$ & $-\tg x$ & $\tg x$ & $\ctg x$ & $-\ctg x$ & $-\tg x$ & $\tg x$ \\\hline
+$\ctg$ & $\tg x$ & $-\tg x$ & $-\ctg x$ & $\ctg x$ & $\tg x$ & $-\tg x$ & $-\ctg x$ & $\ctg x$
 \\\hline
 \end{longtable}
-
 \normalsize
+
 Алгоритм действий, который здесь работает:
 \begin{enumerate}
 \item
@@ -495,7 +411,7 @@ $S=2\int_{a}^{b} z(x) \sqrt{1+y^{'2}(x)}\,dx$,
 
 \section{Несобственные интегралы}
 
-\begin{longtable}[c]{ |C{0.33\textwidth}|C{0.33\textwidth}|C{0.33\textwidth}|}
+\begin{longtable}[c]{ |B{0.33}{0}|B{0.33}{0}|B{0.33}{0}|}
 \hline Интеграл & Сходится при & Расходится при 
 \tabularnewline\hline $\int\limits_{1}^{+\infty} \frac{dx}{x^a}$ 
 & $\alpha > 1$
@@ -627,16 +543,24 @@ $\int\limits_{\Gamma} \left(P\,dx+Q\,dy+R\,dz=\int\limits_{\alpha}^{\beta} P x'(
 
 \section{Все для Фурье}
 
+Прошу прощения ребята, когда-нибудь напишем)
 
 \section{Вычеты}
-\noindent Определение:
 \begin{itemize}
+\item 
+Формульные определения вычета регулярной функции:
+\footnotesize
+\begin{longtable}[c]{|B{0.5}{0}|B{0.5}{0}|}
+\hline
+изолированная особая точка $a\in\bbC$ & $\res_a f=\frac{1}{2\pi i} \int_{\Gamma_{\rho}^{+}} f(\xi)\, d\xi$ \tabularnewline\hline
+бесконечность $a=\infty$ &  $\res_a f=\frac{1}{2\pi i} \int_{\Gamma_{\rho}^{-}} f(\xi)\, d\xi$ \tabularnewline\hline
+\end{longtable}
+\normalsize
 \item
-$\res_a f=\frac{1}{2\pi i} \int_{\Gamma_{\rho}^{+}} f(\xi)\, d\xi,\ a\in\bbC.$
-\item
-$\res_a f=\frac{1}{2\pi i} \int_{\Gamma_{\rho}^{-}} f(\xi)\, d\xi,\ a=\infty.$
-\item
-$\sum _{k=1}^{n}\mathop {\mathrm {res} } \limits _{z=a_{k}}f(z) + \mathop {\mathrm {res}} \limits _{\infty } f(z) = 0 $
+Свойство, исходящее из формульных определений:
+$$
+\sum _{k=1}^{n}\mathop {\mathrm {res} } \limits _{z=a_{k}}f(z) + \mathop {\mathrm {res}} \limits _{\infty } f(z) = 0
+$$
 \end{itemize}
 
 \subsubsection{Формулы для подсчета вычета в конечной точке $a \in \bbC$.}
@@ -645,31 +569,22 @@ $\sum _{k=1}^{n}\mathop {\mathrm {res} } \limits _{z=a_{k}}f(z) + \mathop {\math
 Общая формула с использованием ряда Лорана:
 $$\res_a f = c_{-1}.$$
 \item
-Если $a$ "--- устранимая особая точка, то
-$$\res_a f=0.$$
-\item 
-Если $a$ "--- полюс первого порядка, то
-$$\res_a f=\lim_{z\to a}{f(z)\cdot(z-a)}.$$
-\item
-Если $a$ "--- полюс первого порядка, причем $f=\frac{g(z)}{h(z)}$, где $g(z),\ h(z)$ "--- регулярные в точке $a$, $g(a)\neq 0,\ h(a)=0. \ h'(a)\neq 0,$ то 
-$$\res_a f=\frac{g(a)}{h'(a)}.$$
-\item
-Если $a$ "--- все еще полюс первого порядка и эта $h(z)=z-a$, т.е. $f=\frac{g(z)}{z-a},$ то
-$$\res_a f=g(a).$$
-\item
-Если $a$ "--- полюс порядка $n\in\bbN$, то
-$$
-\res_a f = \frac{1}{(n-1)!}\cdot \lim\limits_{z\to a} \frac{d^{n-1}}{dz^{n-1}}\left(f(z)(z-a)^n\right).
-$$
-\item
-Если $a$ "--- полюс порядка $n\in\bbN$, то, в частности, если $f(z)=\frac{h(z)}{(z-a)^m},$ где $h(z)$ "--- регулярная в точке $a$, то 
-$$\res_a f(z) = \frac{1}{(m-1)!} h^{(m-1)}(a),$$
-т.е.~вычет функции $f(z)$ в точке $a$ равен коэффициенту при $(z-a)^{m-1}$ ряда Тейлора $h(z)=\sum\limits_{n=0}^{\infty} c_n (z-a)^n$
-
-\item
-Если  $a$ "--- существенно особая точка, то, подчеркну, что 
-$$\res_a f = c_{-1}.$$
+Некоторые частные случаи:
+\footnotesize
+\begin{longtable}[c]{|B{0.32}{0}|B{0.38}{0}|B{0.40}{0}|}
+\hline
+Если $a\in \bbC$ "--- \ldots& Причем & Формула $\res_a f$ \tabularnewline\hline
+устранимая особая точка &  & $\res_a f=0$ \tabularnewline\hline
+полюс первого порядка &  & $\res_a f=\lim_{z\to a}{f(z)\cdot(z-a)}$ \tabularnewline\hline
+полюс первого порядка & $f=\frac{g(z)}{h(z)}$, где $g(z),\ h(z)$ "--- регулярные в точке $a$, $g(a)\neq 0,\ h(a)=0. \ h'(a)\neq 0$ & $\res_a f=\frac{g(a)}{h'(a)}$ \tabularnewline\hline
+полюс первого порядка & в примере~$\uparrow$ выше $h(z)=z-a$ , т.е. $f=\frac{g(z)}{z-a}$ & $\res_a f=g(a)$ \tabularnewline\hline
+полюс порядка $n\in\bbN$ & & $\res_a f = \frac{1}{(n-1)!}\cdot \lim\limits_{z\to a} \frac{d^{n-1}}{dz^{n-1}}\left(f(z)(z-a)^n\right)$ \tabularnewline\hline
+полюс порядка $n\in\bbN$ & $f(z)=\frac{h(z)}{(z-a)^m},$ где $h(z)$ "--- регулярная в точке $a$ & $\res_a f(z) = \frac{1}{(m-1)!} h^{(m-1)}(a),$ т.е.\footnotemark  \tabularnewline\hline
+существенно особая точка & & $\res_a f = c_{-1}$ \tabularnewline\hline
+\end{longtable}
 \end{itemize}
+\footnotetext{т.е.~вычет функции $f(z)$ в точке $a$ равен коэффициенту при $(z-a)^{m-1}$ ряда Тейлора $h(z)=\sum\limits_{n=0}^{\infty} c_n (z-a)^n$}
+\normalsize
 
 \subsubsection{Формулы для подсчета вычета в бесконечности}
 \begin{itemize}
@@ -725,28 +640,28 @@ $\sum^{k}_n \binom{n}{k}=2^n$
 
 \subsubsection{Известная задача про шары и ящики (\href{http://cns-web.bu.edu/~eric/EC500/attachments/ON(2d)LINE(20)READINGS/ballsinboxe.pdf}{Ссылка})}
 
-Пусть у нас есть $k$ шаров и $n$ ящиков. Необходимо подсчитать количество способов распределить шары по ящикам с выполнением некоторых из следующих условий:
+Пусть у нас есть~$k$ шаров и~$n$ ящиков. Необходимо подсчитать количество способов распределить шары по ящикам с выполнением некоторых из следующих условий:
 \begin{itemize}
-\item \textit{Упорядоченность шаров.} Шары могут быть как различимы друг от друга, так и неразличимы. 
-\item \textit{Упорядоченность ящиков.} Ящики могут быть как различимы друг от друга, так и неразличимы. 
-\item \textit{Исключения ящиков (Повторения шаров).} Если мы положили шар в ящик, то далее, мы можем исключаем этот ящик из рассмотрения и больше не кладем в него мячей. Иначе говоря, при этом условии ящики могут содержать не более, чем один шар.
-\item \textit{Пустота ящиков.} Ящики можно или нельзя оставлять пустыми.
+\item \textit{Упорядоченность шаров.} Различимы ли шары друг от друга?
+\item \textit{Упорядоченность ящиков.} Различимы ли ящики друг от друга?
+\item \textit{Исключения ящиков (Повторения шаров).} Если мы положили шар в ящик, то далее, исключаем ли мы этот ящик из рассмотрения и больше не кладем в него мячей? Иначе говоря, при этом условии ящики могут содержать не более, чем один шар.
+\item \textit{Пустота ящиков.} Можно ли оставлять ящики пустыми?
 \end{itemize}
-
+Тогда после постановки условий ответы к этим задачам можно оформить в виде таблицы:
 \footnotesize
 \begin{longtable}[c]{|B{0.14}{0}|B{0.14}{0}|B{0.15}{0}|B{0.17}{0}|B{0.40}{0}|}
 \hline
-Шары & Ящики & Исключ.? & Нет пустых? &Количество размещений $k$ шаров в $n$ ящиков \tabularnewline\hline
-Разл. & Разл. & Да & & $\textstyle(n)_k$ \tabularnewline\hline
-Разл. & Разл. & Да & Да & $\textstyle\begin{cases} n!, \text{ если } k=n \\ 0, \text{ если } k\ne n. \end{cases}$  \tabularnewline\hline
-Разл. & Разл. & Нет &  & $\textstyle n^k$ \tabularnewline\hline
-Разл. & Разл. & Нет & Да & $\textstyle\sum_{i=0}^{n-1}(-1)^{i} \binom{n}{i} (n-i)^k$ \tabularnewline\hline
-Неразл. & Разл. & Да & & $\textstyle\binom{n}{k}$ \tabularnewline\hline
-Неразл. & Разл. & Да & Да & $\textstyle\begin{cases} 1, \text{ если } k=n \\ 0, \text{ если } k\ne n. \end{cases}$ \tabularnewline\hline
-Неразл. & Разл. & Нет & & $\textstyle\binom{n+k-1}{k}$ \tabularnewline\hline
-Неразл. & Разл. & Нет & Да & $\textstyle\binom{k-1}{n-1}$ \tabularnewline\hline
+Шары & Ящики & Исключ.? & Можно пустые? &Количество размещений $k$ шаров в $n$ ящиков \tabularnewline\hline
+Разл. & Разл. & Да & Да & $\textstyle(n)_k$ \tabularnewline\hline
+Разл. & Разл. & Да & Нет & $\textstyle\begin{cases} n!, \text{ если } k=n \\ 0, \text{ если } k\ne n. \end{cases}$  \tabularnewline\hline
+Разл. & Разл. & Нет & Да & $\textstyle n^k$ \tabularnewline\hline
+Разл. & Разл. & Нет & Нет & $\textstyle\sum_{i=0}^{n-1}(-1)^{i} \binom{n}{i} (n-i)^k$ \tabularnewline\hline
+Неразл. & Разл. & Да & Да & $\textstyle\binom{n}{k}$ \tabularnewline\hline
+Неразл. & Разл. & Да & Нет & $\textstyle\begin{cases} 1, \text{ если } k=n \\ 0, \text{ если } k\ne n. \end{cases}$ \tabularnewline\hline
+Неразл. & Разл. & Нет & Да & $\textstyle\binom{n+k-1}{k}$ \tabularnewline\hline
+Неразл. & Разл. & Нет & Нет & $\textstyle\binom{k-1}{n-1}$ \tabularnewline\hline
 \end{longtable}
-\normalsize 
+\normalsize
 
 \section{Теория вероятностей}
 
@@ -758,9 +673,9 @@ $\sum^{k}_n \binom{n}{k}=2^n$
 
 \section{Суммирование}
 \begin{longtable}[l]{l l}
-{\normalfont\small\sffamily\bfseries Арифметическая прогрессия}
+{\normalfont\normalsize\sffamily\bfseries Арифметическая прогрессия}
 &
-{\normalfont\small\sffamily\bfseries Геометрическая прогрессия}
+{\normalfont\normalsize\sffamily\bfseries Геометрическая прогрессия}
 \\
 $a_{n+1}=a_n+d;$ & $b_n=b_1 q^{n-1};$
 \\
@@ -785,7 +700,7 @@ $a_k+a_{n-k}=a_1+a_n,\ k\in\overline{1,n}.$ & Если $|q|<1$, то $S=\frac{b_
 \begin{longtable}[l]{l}
 $\lim\limits_{x\to0}\frac{\sin x}{x}=1;$
 \\
-$\lim\limits_{x\to0} (1+x)^{1/x}=e.$
+$\lim\limits_{x\to0} (1+x)^{\frac{1}{x}}=e.$
 \end{longtable}
 
 \section{Асимптоты графиков}
