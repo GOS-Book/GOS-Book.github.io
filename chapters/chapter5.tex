@@ -280,11 +280,11 @@ f(x) = \sum_{k = 0}^{n} \frac{f^{(k)}(x_0)}{k!} \cdot (x - x_0)^k + o((x - x_0)^
 \end{equation}
 В \eqref{eq5.3.eq5} левая и правая часть имеют пределы при $x \to x_0$, которые равны между собой.
 
-$\frac{f^{(0)}(x)}{0!} - a_0 = 0 \quad \Rightarrow \quad a_0 = \frac{f^{(0)}(x)}{0!}$
+$\frac{f^{(0)}(x_0)}{0!} - a_0 = 0 \quad \Rightarrow \quad a_0 = \frac{f^{(0)}(x_0)}{0!}$
 
 $\eqref{eq5.3eq4} \quad \Rightarrow \quad \sum\limits_{k = 1}^{n} \left( \frac{f^{(k)}(x_0)}{k!} - a_k \right) (x - x_0)^{k - 1} = o((x - x_0)^{n - 1})$
 
-$\lim\limits_{x \to x_0} \quad \Rightarrow \quad \frac{f^{(1)}(x_0)}{1!} - a_1 = 0 \quad \Rightarrow \quad a_1 = \frac{f^{(1)}(x)}{1!}$
+$\lim\limits_{x \to x_0} \quad \Rightarrow \quad \frac{f^{(1)}(x_0)}{1!} - a_1 = 0 \quad \Rightarrow \quad a_1 = \frac{f^{(1)}(x_0)}{1!}$
 
 Делая так $n$ раз, получим $a_n = \frac{f^{(n)}(x_0)}{n!}$.
 \end{proof}
