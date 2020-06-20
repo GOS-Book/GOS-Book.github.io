@@ -23,7 +23,7 @@ $$
 $$
 \sum_{i = 1}^{N}m_i|\Delta_i| \quad \text{и} \quad \sum_{i = 1}^{N}M_i|\Delta_i|
 $$
-называются \textit{интегральными суммами Дарбу} (соответственно, \textit{нижней и верхней}) и обозначаются $s(f; \tau)$ и $S(f; \tau)$.
+называются \textit{интегральными суммами Дарбу}\rindex{сумма!Дарбу} (соответственно, \textit{нижней и верхней}) и обозначаются $s(f; \tau)$ и $S(f; \tau)$.
 \end{defn}
 
 Очевидно, что для $\forall f(x), \ x \in \Delta$, и $\forall \tau(\Delta)$ справедливо неравенство 
@@ -36,7 +36,7 @@ $$
 $$
 \sum_{i = 1}^{N} f(\xi_i)|\Delta_i|,
 $$
-где $\xi_i \in \Delta_i$ называется \textit{интегральной суммой Римана функции $f$} и обозначается $\sigma(f; \tau)$ или $\sigma(f; \tau; \xi)$, где $\xi = (\xi_1, \ldots, \xi_N)$. $\xi$ будем называть выборкой точек, подчиненной разбиению $\tau$.
+где $\xi_i \in \Delta_i$ называется \textit{интегральной суммой Римана}\rindex{сумма!интегральная Римана} функции $f$ и обозначается $\sigma(f; \tau)$ или $\sigma(f; \tau; \xi)$, где $\xi = (\xi_1, \ldots, \xi_N)$. $\xi$ будем называть выборкой точек, подчиненной разбиению $\tau$.
 \end{defn}
 
 Очевидно, для любого разбиения $\tau(\Delta) = \{ \Delta_1, \ldots, \Delta_N\}$ справедливы неравенства
@@ -49,7 +49,7 @@ s(f; \tau) = \inf_{\xi} \sigma(f; \tau; \xi), \quad S(f; \tau) = \sup_{\xi} \sig
 $$
 
 \begin{defn}
-Точные грани $\sup\limits_{\tau} s(f; \tau)$ и $\inf\limits_{\tau} S(f; \tau)$ называются \textit{интегралами Дарбу} (соответственно, \textit{нижним и верхним}) \textit{от функции $f$ по промежутку $\Delta$} и обозначаются $\underline{J}(f)$ и $\overline{J}(f)$. Таким образом,
+Точные грани $\sup\limits_{\tau} s(f; \tau)$ и $\inf\limits_{\tau} S(f; \tau)$ называются \textit{интегралами Дарбу}\rindex{интеграл!Дарбу} (соответственно, \textit{нижним и верхним}) \textit{от функции $f$ по промежутку $\Delta$} и обозначаются $\underline{J}(f)$ и $\overline{J}(f)$. Таким образом,
 $$
 \underline{J}(f) = \sup_{\tau} s(f; \tau), \quad \overline{J}(f) = \inf_{\tau} S(f; \tau),
 $$
@@ -63,7 +63,7 @@ $\Delta$.
 $$
 J(f) = \underline{J}(f) = \overline{J}(f)
 $$
-называется \textit{интегралом Римана от функции $f$ по промежутку $\Delta$} и обозначается $\int_{\Delta} f(x) \,dx$.
+называется \textit{интегралом Римана от функции $f$ по промежутку $\Delta$}\rindex{интеграл!Римана} и обозначается $\int_{\Delta} f(x) \,dx$.
 \end{defn}
 
 Из этого определения следует, что если функция $f$ интегрируема на промежутке $\Delta$, то
@@ -140,7 +140,7 @@ $$
 \forall \epsilon > 0 \quad \exists \delta > 0 : \quad \forall x \in O_\delta(x_0) \cap \Delta \quad |f(x) - f(x_0)| < \epsilon.
 $$
 
-Отсюда из равенства $\eqref{ch11.2eq3}$ следует, что 
+Отсюда из равенства~\eqref{ch11.2eq3} следует, что 
 $$
 \left| \frac{\Delta F}{\Delta x} - f(x_0) \right| \le \frac{1}{|\Delta x|} \left| \int_{x_0}^{x} \epsilon \,dt\right| = \epsilon
 $$
@@ -148,7 +148,7 @@ $\forall x \in \overset{\circ}{O}_\delta(x_0) \cap \Delta$, и поэтому $F
 \end{proof}
 
 \begin{defn}
-Функция $F(x)$ называется \textit{первообразной} (или \textit{точной первообразной}) для функции $f(x)$ на промежутке~$\Delta$, если $F(x)$ дифференцируема на~$\Delta$ и
+Функция $F(x)$ называется \textit{первообразной}\rindex{функция!первообразная} (или \textit{точной первообразной}) для функции $f(x)$ на промежутке~$\Delta$, если $F(x)$ дифференцируема на~$\Delta$ и
 $$
 F'(x) = f(x) \quad \forall x \in \Delta.
 $$
