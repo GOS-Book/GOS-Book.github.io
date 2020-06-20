@@ -1,6 +1,5 @@
-\chapter{Интегральная формула Коши. Разложение функции, регулярной в окрестности точки, в ряд Тейлора.}
+\chapter{Интегральная формула Коши. Разложение функции, регулярной в окрестности точки, в ряд Тейлора.}\label{chapter36}
 \section{Интегральная формула Коши}
-
 
 \begin{exmpl}
 \label{exmpl1}
@@ -26,8 +25,7 @@ $$
 I_k = i r^{k + 1} \left( \int_{0}^{2 \pi} \cos(k + 1) \varphi \,d \varphi + i \int_{0}^{2 \pi} \sin(k + 1) \varphi \,d\varphi \right) = 0.
 $$
 \end{enumerate}
-Ответ: $I_k=\begin{cases}2\pi i, \quad &k=-1,\\0, \quad &k\ne -1. 
-\end{cases}$\qedhere
+Ответ: $I_k=\begin{cases}2\pi i, \quad &k=-1,\\0, \quad &k\ne -1.\end{cases}$\qedhere
 \end{solution}
 
 \begin{thm}[Интегральная формула Коши\rindex{формула!Коши, интегральная}] \label{ch34thm1}
@@ -41,7 +39,7 @@ $$
 \insertpicture[8]{ch36pict1}{0.3}
 Обозначим через $\gamma_r=\gamma_r^{+} \triangleq \{ \zeta \bigl| |\zeta - z| = r \}$ окружность радиуса $r \in (0, r_0)$ ориентированную против хода часовой стрелки. Обозначим множества $G_r \triangleq G \setminus \overline{B_r(z)}$ и $\Gamma_r \triangleq \Gamma \cup \gamma_r^{-}$. Очевидно, что множество $G_r$ есть область с кусочно-гладкой положительно ориентированной границей $\Gamma_r$(рис.~\ref{ch36pict1}). 
 
-По обощенной интегральной теореме Коши \ref{abc28} из билета №35 получаем
+По обобщенной интегральной теореме Коши~\ref{abc28} из главы~\textnumero\ref{chapter35} получаем
 \begin{equation} \label{ch34eq2}
  0 = \int_{\Gamma_r} \frac{f(\zeta)}{\zeta - z}\,d\zeta = \int_\Gamma \frac{f(\zeta)}{\zeta - z}\,d\zeta - \int_{\gamma_r} \frac{f(\zeta)}{\zeta - z}\,d\zeta.
 \end{equation}
