@@ -272,76 +272,108 @@ R = \lim\limits_{n \to + \infty} \left| \frac{c_n}{c_{n + 1}} \right|
 $$
 \end{notion}
 
-\begin{longtable}[l]{@{\extracolsep{\fill}}p{0.5\textwidth} p{0.5\textwidth}}
-$e^x=1+\frac{x}{1!}+\frac{x^2}{2!}+\frac{x^3}{3!}+o(x^3);$
+\begin{longtable}[l]{@{\extracolsep{\fill}}|p{0.41\textwidth}|p{0.46\textwidth}|p{0.08\textwidth}|}
+$e^x=1+\frac{x}{1!}+\frac{x^2}{2!}+\frac{x^3}{3!}+o(x^3)$
 &
-$e^x=\sum\limits_{n=0}^{+\infty}\displaystyle\frac{x^n}{n!},\ R=\infty;$
+$e^x=\sum\limits_{n=0}^{+\infty}\displaystyle\frac{x^n}{n!}$
+&
+$R=\infty$
 \\
-$\sin x = x - \frac{x^3}{3!} + \frac{x^5}{5!}+o(x^5);$
+$\sin x = x - \frac{x^3}{3!} + \frac{x^5}{5!}+o(x^5)$
 &
-$\sin x = \sum\limits_{n=0}^{+\infty} (-1)^{n}\displaystyle\frac{x^{2n+1}}{(2n+1)!},\, R=\infty;$
+$\sin x = \sum\limits_{n=0}^{+\infty} (-1)^{n}\displaystyle\frac{x^{2n+1}}{(2n+1)!}$
+&
+$R=\infty$
 \\
-$\cos x = 1 - \frac{x^2}{2!} + \frac{x^4}{4!}+o(x^4);$
+$\cos x = 1 - \frac{x^2}{2!} + \frac{x^4}{4!}+o(x^4)$
 &
-$\cos x  = \sum\limits_{n=0}^{+\infty} (-1)^{n}\displaystyle\frac{x^{2n}}{(2n)!},\, R=\infty;$
+$\cos x  = \sum\limits_{n=0}^{+\infty} (-1)^{n}\displaystyle\frac{x^{2n}}{(2n)!}$
+&
+$R=\infty$
 \\
 $\tg x = x + \frac{x^3}{3}+\frac{2x^5}{15}+o(x^5)$
 &
-$\tg x  = \sum\limits_{n=0}^{+\infty} \frac{B_{2n}\cdot (-4)^n (1-4^n)}{(2n)!} x^{2n-1},\, R=\frac{\pi}{2};$ \footnote{В этой формуле $B_{2n}$ "--- это числа Бернулли.}
+$\tg x  = \sum\limits_{n=0}^{+\infty} \frac{B_{2n} (-4)^n (1-4^n)}{(2n)!} x^{2n-1}$, где $B_{2n}$ "--- это числа Бернулли
+&
+$R=\frac{\pi}{2}$
 \\ 
-$\sh x = x +\frac{x^3}{3!}+\frac{x^5}{5!}+o(x^5);$
+$\sh x = x +\frac{x^3}{3!}+\frac{x^5}{5!}+o(x^5)$
 &
-$\sh x =\sum\limits_{n=0}^{+\infty}\displaystyle\frac{x^{2n+1}}{(2n+1)!},\ R=\infty;$
+$\sh x =\sum\limits_{n=0}^{+\infty}\displaystyle\frac{x^{2n+1}}{(2n+1)!}$
+&
+$R=\infty$
 \\
-$\ch x = 1 + \frac{x^2}{2!}+\frac{x^4}{4!}+o(x^4);$
+$\ch x = 1 + \frac{x^2}{2!}+\frac{x^4}{4!}+o(x^4)$
 &
-$\ch x  = \sum\limits_{n=0}^{+\infty}\displaystyle\frac{x^{2n}}{(2n)!},\ R=\infty;$
+$\ch x  = \sum\limits_{n=0}^{+\infty}\displaystyle\frac{x^{2n}}{(2n)!}$
+&
+$ R=\infty$
 \\
-$\th x = x - \frac{x^3}{3}+\frac{2x^5}{15}+o(x^5);$
+$\th x = x - \frac{x^3}{3}+\frac{2x^5}{15}+o(x^5)$
 &
-$\th x  = \sum\limits_{n=0}^{+\infty} \frac{B_{2n} 4^n (4^n-1)}{(2n)!} x^{2n-1}, R=\frac{\pi}{2};$
+$\th x  = \sum\limits_{n=0}^{+\infty} \frac{B_{2n} 4^n (4^n-1)}{(2n)!} x^{2n-1}$
+&
+$R=\frac{\pi}{2}$
 \\
-$\arcsin x = x + \frac{x^3}{6}+\frac{3x^5}{40}+o(x^5);$
+$\arcsin x = x + \frac{x^3}{6}+\frac{3x^5}{40}+o(x^5)$
 &
-$\arcsin x=\sum\limits_{n=0}^{+\infty} \frac{(2n)!}{4^n(n!)^2(2n + 1)}x^{2n + 1},  R = 1 ;$
+$\arcsin x=\sum\limits_{n=0}^{+\infty} \frac{(2n)!}{4^n(n!)^2(2n + 1)}x^{2n + 1}$
+&
+$R = 1$
 \\
-$\arccos x= \frac{\pi}{2} - \arcsin x;$
+$\arccos x= \frac{\pi}{2} - \arcsin x$
 &
-$\arcctg x = \frac{\pi}{2} - \arctg x;$
+$\arcctg x = \frac{\pi}{2} - \arctg x$
+&
 \\
-$\arctg x = x - \frac{x^3}{3}+\frac{x^5}{5}+o(x^5);$
+$\arctg x = x - \frac{x^3}{3}+\frac{x^5}{5}+o(x^5)$
 &
-$\arctg x = \sum\limits_{n=0}^{+\infty} (-1)^n\displaystyle\frac{x^{2n+1}}{2n+1},\ R=1;$
+$\arctg x = \sum\limits_{n=0}^{+\infty} (-1)^n\dfrac{x^{2n+1}}{2n+1}$
+&
+$R=1$
 \\
-$\ln(1+x)=x-\frac{x^2}{2}+\frac{x^3}{3}+o(x^3);$
+$\ln(1+x)=x-\frac{x^2}{2}+\frac{x^3}{3}+o(x^3)$
 &
-$\ln(1+x)= \sum\limits_{n=1}^{+\infty} \frac{(-1)^{n+1}}{n} x^n, R=1;$
+$\ln(1+x)= \sum\limits_{n=1}^{+\infty} \frac{(-1)^{n+1}}{n} x^n$
+&
+$R=1$
 \\
-$\ln(1-x)=-x-\frac{x^2}{2}-\frac{x^3}{3}+o(x^3);$
+$\ln(1-x)=-x-\frac{x^2}{2}-\frac{x^3}{3}+o(x^3)$
 &
-$\ln(1-x)= -\sum\limits_{n=1}^{+\infty} \frac{1}{n} x^n, R=1;$
+$\ln(1-x)= -\sum\limits_{n=1}^{+\infty} \frac{1}{n} x^n$
+&
+$R=1$
 \\
 $
-(1+x)^{a}=1+ax+\displaystyle\frac{a(a-1)}{2!}x^2+
+(1+x)^{a}=1+ax+\dfrac{a(a-1)}{2!}x^2+
 $
 &
 $(1+x)^{a}= \sum\limits_{n=0}^{+\infty} C^{n}_{a} x^n$, где
-\\
-$\qquad+\displaystyle\frac{a(a-1)(a-2)}{3!}x^3+o(x^3);$
 &
-$\quad C^{n}_{a}=\frac{a(a-1)\dots(a-n+1)}{n!},\, R=1;$
 \\
-$\frac{1}{1-x}=1+x+x^2+x^3+o(x^3);$
+$\qquad+\dfrac{a(a-1)(a-2)}{3!}x^3+o(x^3)$
 &
-$\frac{1}{1-x}= \sum\limits_{n=0}^{+\infty} x^{n};$
+$\quad C^{n}_{a}=\frac{a(a-1)\dots(a-n+1)}{n!}$
+&
+$R=1$
 \\
-$\arsh x = x - \frac{x^3}{6}+\frac{3x^5}{40}+o(x^5);$
+$\frac{1}{1-x}=1+x+x^2+x^3+o(x^3)$
 &
-$\arsh x = \sum\limits_{n=0}^{+\infty} \frac{(-1)^n(2n)!}{4^n (n!)^2 (2n + 1)} x^{2n + 1}, R = 1;$
+$\frac{1}{1-x}= \sum\limits_{n=0}^{+\infty} x^{n}$
+&
+$R = 1$
 \\
-$\arth x = x + \frac{x^3}{3}+\frac{x^5}{5}+o(x^5);$
+$\arsh x = x - \frac{x^3}{6}+\frac{3x^5}{40}+o(x^5)$
 &
-$\arth x = \sum\limits_{n=0}^{+\infty} \frac{1}{2n + 1} x^{2n + 1}, R = 1;$
+$\arsh x = \sum\limits_{n=0}^{+\infty} \frac{(-1)^n(2n)!}{4^n (n!)^2 (2n + 1)} x^{2n + 1}$
+&
+$R = 1$
+\\
+$\arth x = x + \frac{x^3}{3}+\frac{x^5}{5}+o(x^5)$
+&
+$\arth x = \sum\limits_{n=0}^{+\infty} \frac{1}{2n + 1} x^{2n + 1}$
+&
+$R = 1$
 \end{longtable}
 
 \subsubsection{Несколько рядов Лорана}
