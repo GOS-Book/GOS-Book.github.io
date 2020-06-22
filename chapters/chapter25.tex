@@ -1,93 +1,95 @@
 \chapter{Приведение квадратичных форм в линейном пространстве к каноническому виду.}\label{chapter25}
 
 \section[Билинейные и квадратичные формы.]{Билинейные и квадратичные формы\footnote{Рекомендую ознакомиться с написанными самим Чубаровым И.А. материалами по этой главе по этой ссылке: \href{https://drive.google.com/drive/u/0/folders/0BzuzEyNkpwYDcFhhV1l2N1lhY2s}{$https://drive.google.com/drive/...$}}.}
-  \begin{defn}  
-  Пусть $L$ "--- линейное пространство над полем $K$ (при изложении вопроса достаточно считать поле скаляров $K$ множеством действительных чисел $\bbR$). 
-Функция $b(x,y): L\rightarrow L$ называется \textit{билинейной функцией}, если она линейна по каждому аргументу, то есть
-
-(1) $b(\alpha_1 x_1+\alpha_2 x_2,y)=\alpha_1 b(x_1,y)+\alpha_2 b(x_2,y) \forall x_1,x_2,y \in L, \alpha_1,\alpha_2 \in K$,
-
-(2) $b(x,\beta_1 y_1+\beta_2 y_2)=\beta_1 b(x,y_1)+\beta_2 b(x,y_2)  \forall x,y_1,y_2 \in L, \beta_1,\beta_2 \in K$.
-  \end{defn}
-  Пусть $\dim L=n, \overline{e}=\norm{e_1 \ldots e_n}$ "--- базис $L$. Обозначим $b_{ij}=b(e_i,e_j), 1\le i,j \le n$.
-  \begin{defn}
-  Матрицу $B=B_e=(b_{ij})$ называют \textit{матрицей билинейной 	функции} $B$ в базисе $e_1,...,e_n$.
-  \end{defn}
+Пусть $L$ "--- линейное пространство над полем $K$. При изложении вопроса достаточно считать поле скаляров $K$ множеством действительных чисел~$\bbR$.
+\begin{defn}  
+Функция $b(x,y)\colon L\times L\rightarrow K$ называется \textit{билинейной функцией}, если она линейна по каждому аргументу, то есть
+\begin{enumerate}
+\item 
+$b(\alpha_1 x_1+\alpha_2 x_2,y)=\alpha_1 b(x_1,y)+\alpha_2 b(x_2,y)$ $\forall x_1,x_2,y \in L, \alpha_1,\alpha_2 \in K$,
+\item 
+$b(x,\beta_1 y_1+\beta_2 y_2)=\beta_1 b(x,y_1)+\beta_2 b(x,y_2)$  $\forall x,y_1,y_2 \in L, \beta_1,\beta_2 \in K$.
+\end{enumerate}
+\end{defn}
+Пусть $\dim L=n, \overline{e}=\norm{e_1 \ldots e_n}$ "--- базис $L$. Обозначим $b_{ij}=b(e_i,e_j), 1\le i,j \le n$.
+\begin{defn}
+Матрицу $B=B_e=(b_{ij})$ называют \textit{матрицей билинейной функции} $B$ в базисе $e_1$, \ldots,~$e_n$.
+\end{defn}
   
-  Получим координатную запись. Пусть $x=\sum\limits_{i=1}^nx_ie_i,y=\sum\limits_{j=1}^ny_je_j$, тогда
-  \begin{equation}\label{24.1.bilform}
-  b(x,y)=b(\sum_{i=1}^nx_ie_i,\sum_{j=1}^ny_je_j)=\sum_{i,j=1}^nx_iy_jb(e_i,e_j)=\sum_{i,j=1}^nx_ib_{ij}y_j=X^TBY,
-  \end{equation}
+Получим координатную запись. Пусть $x=\sum\limits_{i=1}^nx_ie_i,y=\sum\limits_{j=1}^ny_je_j$, тогда
+\begin{equation}\label{24.1.bilform}
+b(x,y)=b(\sum_{i=1}^nx_ie_i,\sum_{j=1}^ny_je_j)=\sum_{i,j=1}^nx_iy_jb(e_i,e_j)=\sum_{i,j=1}^nx_ib_{ij}y_j=X^TBY,
+\end{equation}
 где $X=\begin{pmatrix}
 x_1 \\ \vdots \\ x_n
 \end{pmatrix} Y=\begin{pmatrix}
 y_1 \\ \vdots \\ y_n
 \end{pmatrix}$.
-  \begin{defn}
-  Запись билинейной функции в виде многочлена~\eqref{24.1.bilform} называют \textit{билинейной формой}.
-  \end{defn}
+\begin{defn}
+Запись билинейной функции в виде многочлена~\eqref{24.1.bilform} называют \textit{билинейной формой}.
+\end{defn}
 
-  \begin{notion} 
-  По традиции билинейной формой называют и саму функцию.
-  \end{notion}
+\begin{notion} 
+По традиции билинейной формой называют и саму функцию.
+\end{notion}
 
-  \begin{stt}
-  Пусть $e=(e_1,...,e_n), e'=(e'_1,...,e'_n)$ "--- два разных базиса пространства $L$, $S=S_{e\rightarrow e'}$ "--- матрица перехода от базиса $e$ к базису $e'$, а $B$ и $B'$ "--- матрицы билинейной формы $b$ в базисах $e$ и $e'$ соответственно. Тогда 
-  \begin{equation}\label{24.1.transformation}
-  B'=S^TBS
-  \end{equation}
-  
-  \end{stt}
-  Из формулы \eqref{24.1.transformation} следует, что ранг матрицы $B$ и знак её определителя (если он не равен нулю) не зависят от выбора базиса.
-  \begin{defn}
-  Билинейная форма $b(x,y)$ называется \textit{симметрической}, если $\forall x,y \in L \hookrightarrow b(x,y)=b(y,x)$.
-  \end{defn}
-  \begin{stt}
-  Матрица симметрической билинейной формы в любом базисе является симметрической, т.е. $B^T=B$.
-  \end{stt}
-  
-  \begin{defn}
-  \textit{Квадратичной функцией (формой)}, порождённой симметрической билинейной формой $ b(x,y) $, называется функция $k(x)=b(x,x)$  $\forall x \in L$.
-  \end{defn}
-  \begin{stt}
-  Для любой квадратичной функции $k(x)$ существует единственная симметрическая билинейная форма $b(x,y)$, такая, что $k(x)=b(x,x), \forall x \in L$
-  \end{stt}
-  \begin{proof}
-  $k(x+y)=b(x+y,x+y)=b(x,x)+2b(x,y)+b(y,y)=k(x)+k(y)+2b(x,y) \Rightarrow b(x,y)=\dfrac{k(x+y)-k(x)-k(y)}{2}$.
-  \end{proof}
-  \begin{defn}
-  \textit{Матрицей квадратичной формы} называют матрицу породившей её симметричной билинейной формы.
-  \end{defn}
-  Квадратичная форма записываема в виде 			  \begin{equation}\label{24.1.common}
-  k(x)=b_{11}x_1^2+\ldots+b_{nn}x_n^2+2\sum\limits_{1\le i<j\le n} b_{ij}x_ix_j.
-  \end{equation} 
-  \section{Приведение квадратичных форм в линейном пространстве к каноническому виду}
-  \begin{defn}
-  Квадратичная форма вида $q(x)=\sum\limits_{i=1}^n\alpha_ix_i^2$ называется \textit{диагональной}. Она называется \textit{канонической}, если $\alpha_i=\pm 1;0$ и 
-  \begin{equation}\label{24.2.canonical}
-  q(x)=\sum\limits_{i=1}^py_i^2-\sum\limits_{i=p+1}^{p+q}y_i^2
-  \end{equation} 
-  Числа $p$ и $q$ называются \textit{положительным} и \textit{отрицательным индексами инерции}, $\sigma=p-q$ "--- \textit{сигнатурой}.
-  \end{defn}
-  \begin{thm}[о приведении квадратичной формы к каноническому виду]
-  Для любой квадратичной формы~\eqref{24.1.common} существует такая невырожденая $(\det S \neq 0)$ замена переменных $X=SY$, что в новых переменных она принимает канонический вид~\eqref{24.2.canonical}.
-  \end{thm}
-  \begin{proof} Воспользуемся \textit{алгоритмом Лагранжа} выделения полных квадратов.\\
-  (1) Допустим,	что $\exists i$: $b_{ii} \neq 0$. При 	необходимости перенумеровав переменные, можем считать, что $b_{11} \neq 0$. Тогда выделим в квадратичной форме все одночлены, содержащие $x_1$, и дополним это выражение до квадрата:
-  \begin{equation*}\begin{array}{crl}
-  k(x)=b_{11}x_1^2+2\sum\limits_{j=2}^nb_{1j}x_1x_j+(\sum\limits_{i=2}^nb_{ii}x_i^2+2\sum\limits_{2\le i<j\le n} b_{ij}x_ix_j)=\\
-  =b_{11}(x_1+\sum\limits_{j=2}^n\dfrac{b_{1j}}{b_{11}}x_j)^2+(\sum\limits_{i=2}^nb_{ii}x_i^2+2\sum\limits_{2\le i<j\le n} b_{ij}x_ix_j-(\sum\limits_{j=2}^n\dfrac{b_{1j}}{b_{11}}x_j)^2)=\\
-  =b_{11}(x_1+\sum\limits_{j=2}^n\dfrac{b_{1j}}{b_{11}}x_j)^2+k_1(x_2,\ldots, x_n)
-  \end{array}\end{equation*}
-  Тогда сделаем замену $\widetilde{x_1}=x_1+\sum\limits_{j=2}^n\dfrac{b_{1j}}{b_{11}}x_j, \widetilde{x_2}=x_2,\ldots \widetilde{x_n}=x_n$. Квадратичная форма $k_1(\widetilde{x_2},\ldots, \widetilde{x_n})$ не зависит от $\widetilde{x_1}$, и к ней можно применить тот же метод, и так далее, в результате получится квадратичная форма $\sum\limits_{i=1}^r\alpha_i\widetilde{x_i}^2 (\alpha_1\alpha_2\ldots\alpha_r \neq 0, r=\rg B)$. Остаётся сделать замену $y_i=\sqrt{\abs{\alpha_i}}\widetilde{x_i}, i=\overline{1,r}; y_k=\widetilde{x_k}, k=\overline{r+1,n}$.\\
-  (2) Препятствие к выделению квадратов может возникнуть, если на каком-то этапе получена форма, все диагональные элементы матрицы которой равны нулю, но есть ненулевые элементы вне диагонали. Перенумеровав при необходимости переменные, добьёмся $b_{12} \neq 0$. Тогда сделаем подготовительную замену $x_1=x'_1-x'_2,x_2=x'_1+x'_2,x_j=x'_j (j \ge 3)$:
-  \begin{equation*}
-  k(x')=2b_{12}({x'}_1^2-{x'}_2^2)+q'(x'),
-  \end{equation*}
-  причём форма $q'(x')$ не содержит с члена с ${x'}_1^2$. Теперь условие пункта 1 выполняется.
-  \end{proof}
-  
-  \begin{thm}\label{24.2.thm2}
-  Пусть невырожденная замена $X=SY$ приводит квадратичную форму $k(x)$ к каноническому виду \eqref{24.2.canonical}. Если другая невырожденная замена $X=TZ$ приводит форму к каноническому виду $\widetilde q(x)=\sum\limits_{i=1}^sz_i^2-\sum\limits_{i=s+1}^{s+t}z_i^2$, то $p=s,q=t,$ причём $p+q=\rg B$
-  \end{thm} 
-  Теорему \ref{24.2.thm2} оставим без доказательства, только заметим, что равенство $p+q=\rg B$ следует из сохранения ранга матрицы $B$ при замене базиса.
+\begin{stt}
+Пусть $e=(e_1,...,e_n), e'=(e'_1,...,e'_n)$ "--- два разных базиса пространства $L$, $S=S_{e\rightarrow e'}$ "--- матрица перехода от базиса $e$ к базису $e'$, а $B$ и $B'$ "--- матрицы билинейной формы $b$ в базисах $e$ и $e'$ соответственно. Тогда 
+\begin{equation}\label{24.1.transformation}
+B'=S^TBS
+\end{equation}
+
+\end{stt}
+Из формулы \eqref{24.1.transformation} следует, что ранг матрицы $B$ и знак её определителя (если он не равен нулю) не зависят от выбора базиса.
+\begin{defn}
+Билинейная форма $b(x,y)$ называется \textit{симметрической}, если $\forall x,y \in L \hookrightarrow b(x,y)=b(y,x)$.
+\end{defn}
+\begin{stt}
+Матрица симметрической билинейной формы в любом базисе является симметрической, т.е.~$B^T=B$.
+\end{stt}
+
+\begin{defn}
+\textit{Квадратичной функцией (формой)}, порождённой симметрической билинейной формой $ b(x,y) $, называется функция $k(x)=b(x,x)$  $\forall x \in L$.
+\end{defn}
+\begin{stt}
+Для любой квадратичной функции $k(x)$ существует единственная симметрическая билинейная форма $b(x,y)$, такая, что $k(x)=b(x,x), \forall x \in L$
+\end{stt}
+\begin{proof}
+$k(x+y)=b(x+y,x+y)=b(x,x)+2b(x,y)+b(y,y)=k(x)+k(y)+2b(x,y) \Rightarrow b(x,y)=\dfrac{k(x+y)-k(x)-k(y)}{2}$.
+\end{proof}
+\begin{defn}
+\textit{Матрицей квадратичной формы} называют матрицу породившей её симметричной билинейной формы.
+\end{defn}
+Квадратичная форма записываема в виде 			  \begin{equation}\label{24.1.common}
+k(x)=b_{11}x_1^2+\ldots+b_{nn}x_n^2+2\sum\limits_{1\le i<j\le n} b_{ij}x_ix_j.
+\end{equation} 
+\section{Приведение квадратичных форм в линейном пространстве к каноническому виду}
+\begin{defn}
+Квадратичная форма вида $q(x)=\sum\limits_{i=1}^n\alpha_ix_i^2$ называется \textit{диагональной}. Она называется \textit{канонической}, если $\alpha_i=\pm 1;0$ и 
+\begin{equation}\label{24.2.canonical}
+q(x)=\sum\limits_{i=1}^py_i^2-\sum\limits_{i=p+1}^{p+q}y_i^2
+\end{equation} 
+Числа $p$ и $q$ называются \textit{положительным} и \textit{отрицательным индексами инерции}, $\sigma=p-q$ "--- \textit{сигнатурой}.
+\end{defn}
+\begin{thm}[о приведении квадратичной формы к каноническому виду]
+Для любой квадратичной формы~\eqref{24.1.common} существует такая невырожденая $(\det S \neq 0)$ замена переменных $X=SY$, что в новых переменных она принимает канонический вид~\eqref{24.2.canonical}.
+\end{thm}
+\begin{proof} Воспользуемся \textit{алгоритмом Лагранжа} выделения полных квадратов.\\
+(1) Допустим,	что $\exists i$: $b_{ii} \neq 0$. При 	необходимости перенумеровав переменные, можем считать, что $b_{11} \neq 0$. Тогда выделим в квадратичной форме все одночлены, содержащие $x_1$, и дополним это выражение до квадрата:
+\begin{equation*}\begin{array}{crl}
+k(x)=b_{11}x_1^2+2\sum\limits_{j=2}^nb_{1j}x_1x_j+(\sum\limits_{i=2}^nb_{ii}x_i^2+2\sum\limits_{2\le i<j\le n} b_{ij}x_ix_j)=\\
+=b_{11}(x_1+\sum\limits_{j=2}^n\dfrac{b_{1j}}{b_{11}}x_j)^2+(\sum\limits_{i=2}^nb_{ii}x_i^2+2\sum\limits_{2\le i<j\le n} b_{ij}x_ix_j-(\sum\limits_{j=2}^n\dfrac{b_{1j}}{b_{11}}x_j)^2)=\\
+=b_{11}(x_1+\sum\limits_{j=2}^n\dfrac{b_{1j}}{b_{11}}x_j)^2+k_1(x_2,\ldots, x_n)
+\end{array}\end{equation*}
+Тогда сделаем замену $\widetilde{x_1}=x_1+\sum\limits_{j=2}^n\dfrac{b_{1j}}{b_{11}}x_j, \widetilde{x_2}=x_2,\ldots \widetilde{x_n}=x_n$. Квадратичная форма $k_1(\widetilde{x_2},\ldots, \widetilde{x_n})$ не зависит от $\widetilde{x_1}$, и к ней можно применить тот же метод, и так далее, в результате получится квадратичная форма $\sum\limits_{i=1}^r\alpha_i\widetilde{x_i}^2 (\alpha_1\alpha_2\ldots\alpha_r \neq 0, r=\rg B)$. Остаётся сделать замену $y_i=\sqrt{\abs{\alpha_i}}\widetilde{x_i}, i=\overline{1,r}; y_k=\widetilde{x_k}, k=\overline{r+1,n}$.\\
+(2) Препятствие к выделению квадратов может возникнуть, если на каком-то этапе получена форма, все диагональные элементы матрицы которой равны нулю, но есть ненулевые элементы вне диагонали. Перенумеровав при необходимости переменные, добьёмся $b_{12} \neq 0$. Тогда сделаем подготовительную замену $x_1=x'_1-x'_2,x_2=x'_1+x'_2,x_j=x'_j (j \ge 3)$:
+\begin{equation*}
+k(x')=2b_{12}({x'}_1^2-{x'}_2^2)+q'(x'),
+\end{equation*}
+причём форма $q'(x')$ не содержит с члена с ${x'}_1^2$. Теперь условие пункта 1 выполняется.
+\end{proof}
+
+\begin{thm}\label{24.2.thm2}
+Пусть невырожденная замена $X=SY$ приводит квадратичную форму $k(x)$ к каноническому виду \eqref{24.2.canonical}. Если другая невырожденная замена $X=TZ$ приводит форму к каноническому виду $\widetilde q(x)=\sum\limits_{i=1}^sz_i^2-\sum\limits_{i=s+1}^{s+t}z_i^2$, то $p=s,q=t,$ причём $p+q=\rg B$
+\end{thm} 
+Теорему \ref{24.2.thm2} оставим без доказательства, только заметим, что равенство $p+q=\rg B$ следует из сохранения ранга матрицы $B$ при замене базиса.
