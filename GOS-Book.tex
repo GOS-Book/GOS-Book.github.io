@@ -3,7 +3,7 @@
 \include{include/header}
 \include{include/macros}
 \begin{document}
-\frontmatter
+%\frontmatter
 \include{frontmatter/titlepageTMB}
 \tableofcontents
 \include{frontmatter/litra}
@@ -11,12 +11,11 @@
 \include{frontmatter/aboutGOS}
 \include{frontmatter/notations}
 \include{frontmatter/epigraph}
-\mainmatter
-\setcounter{chapter}{0}
+%\mainmatter
 \foreach \n in {1,...,38}{\include{chapters/chapter\n}}
 \appendix
 \include{appendix/formulas}
 \printindex
-\backmatter
+%\backmatter
 \include{backmatter/theend}
 \end{document}
