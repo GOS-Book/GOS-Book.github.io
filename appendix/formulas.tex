@@ -668,7 +668,7 @@ $\sum^{k}_n \binom{n}{k}=2^n$
 & $\sum^{k}_n (-1)^k \binom{n}{k}=0.$
 \end{longtable}
 
-\subsubsection{Известная задача про шары и ящики (\href{http://cns-web.bu.edu/~eric/EC500/attachments/ON(2d)LINE(20)READINGS/ballsinboxe.pdf}{Ссылка})}
+\subsubsection{Известная задача про шары и ящики (\href{https://www.elcamino.edu/faculty/gfry/210/DistributeBallsBoxes.pdf}{Ссылка})}
 
 Пусть у нас есть~$k$ шаров и~$n$ ящиков. Необходимо подсчитать количество способов распределить шары по ящикам с выполнением некоторых из следующих условий:
 \begin{itemize}
@@ -701,23 +701,45 @@ $\sum^{k}_n \binom{n}{k}=2^n$
 	$\bbP(A_1\cup\dots\cup A_k)= \sum_{i} \bbP(A_i) - \sum_{i<j} \bbP(A_i\cap A_j)+\ldots + (-1)^{k-1}\bbP(A_1\cap\dots\cap A_k);$
 \end{longtable}
 
-\section{Суммирование, прогрессии и числовые неравенства}
+\section{Арифметическая и геометрические прогрессии}
 \begin{longtable}[l]{l l}
-{\normalfont\small\sffamily\bfseries Арифметическая прогрессия}
+{\subsubfont Арифметическая прогрессия, опр.}
 &
-{\normalfont\small\sffamily\bfseries Геометрическая прогрессия}
+{\subsubfont Геометрическая прогрессия, опр.}
 \\
-$a_{n+1}=a_n+d;$ & $b_n=b_1 q^{n-1};$
+{$a_1,a_2,\ldots,a_n,\dots$, где $a_{n}=a_{n-1}+d;$}
+&
+{$b_1,b_2,\ldots,b_n,\dots$, где $b_n=b_{n-1} q;$}
 \\
-$a_n=a_1+(n-1)d;$ & $S_n=b_1\frac{1-q^n}{1-q}=\frac{b_n q-b_1}{q-1}, q\ne 1$;
-\\ 
-$S_n=\frac{a_1+a_n}{2}\cdot n=\frac{2a_1+d(n-1)}{2}\cdot n;$ & $b^2_n=b_{n-1}b_{n+1}, n\geq2,$
+{\subsubfont Общий член арифм. прогрессии}
+&
+{\subsubfont Общий член геом. прогрессии}
 \\
-$a_n=\frac{a_{n-1}+a_{n+1}}{2}, n\geq 2;$ & $b_kb_{n-k+1}=b_1b_n,\ k\in\overline{1,n};$
+$a_n=a_1+(n-1)d;$ & $b_n=b_1 q^{n-1};$
 \\
-$a_k+a_{n-k}=a_1+a_n,\ k\in\overline{1,n}.$ & Если $|q|<1$, то $S=\frac{b_1}{1-q}$
+$a_n=a_m+(n-m)d;$ & $b_n=b_m q^{n-m};$
+\\
+$a_k+a_{n-k}=a_1+a_n,\ k\in\overline{1,n}.$ & $b_kb_{n-k+1}=b_1b_n,\ k\in\overline{1,n};$
+\\
+{\subsubfont Характеристическое свойство}
+&
+{\subsubfont Характеристическое свойство}
+\\
+$a_n=\frac{a_{n-1}+a_{n+1}}{2}, n\geq 2;$ &
+$b^2_n=b_{n-1}b_{n+1}, n\geq2$;
+\\
+{\subsubfont Сумма первых $n$ членов арифм.}
+&
+{\subsubfont Сумма первых $n$ членов геом.}
+\\
+$S_n=\sum_{i=1}^{n}a_i=\frac{a_1+a_n}{2}\cdot n$; & 
+$S_n=\sum_{i=1}^{n}b_i=b_1\frac{1-q^n}{1-q}=\frac{b_n q-b_1}{q-1}, q\ne 1$
+\\
+$S_n=\frac{2a_1+d(n-1)}{2}\cdot n;$ & Если $|q|<1$, то $S=\frac{b_1}{1-q}$
+\\
 \end{longtable}
 
+\section{Суммирование и числовые неравенств}
 \subsubsection{Числовые неравенства}
 
 \begin{longtable}[l]{l}
@@ -727,48 +749,67 @@ $a_k+a_{n-k}=a_1+a_n,\ k\in\overline{1,n}.$ & Если $|q|<1$, то $S=\frac{b_
 \end{longtable}
 
 \section{Некоторые замечательные пределы.}
-\begin{longtable}[l]{l}
-$\lim\limits_{x\to0}\frac{\sin x}{x}=1;$
+\begin{longtable}[l]{l l l}
+первый & 
+$\lim\limits_{x\to0}\frac{\sin x}{x}=1$;
+&
 \\
-$\lim\limits_{x\to0} (1+x)^{\frac{1}{x}}=e.$
+второй & 
+$\lim\limits_{x\to0} (1+x)^{\frac{1}{x}}=e$; &
+$\lim\limits_{n\to\infty}\left(1+n\right)^{\frac{1}{n}}=e$;
 \end{longtable}
 
 \section{Асимптоты графиков}
-\textbullet \quad
+\begin{itemize}[wide, labelindent = 0pt]
+\item
 Прямая $x=x_0$ "--- вертикальная асимптота графика $f(x)$, если $$\lim\limits_{x\to x_0-0}f(x)=\infty\ \text{или}\ \lim\limits_{x\to x_0+0}f(x)=\infty.$$ 
-
-\textbullet \quad
+\item
 Прямая $y=kx+b$ "--- наклонная асимптота графика $f(x), x\to\pm\infty$, если $$\lim\limits_{x\to\pm\infty}\frac{f(x)}{x}=k; \quad \lim\limits_{x\to\pm\infty} (f(x)-kx)=b.$$
-
-\textbullet \quad
+\item
 Прямая $y=b$ "--- горизонтальная асимптота графика $f(x), x\to\pm\infty$ (случай $k=0$), если $$ \lim\limits_{x\to\pm\infty} f(x)=b.$$
-
-
-\section{Дифференциальные уравнения}
-\subsubsection {Точки равновесия}
-
-\begin{itemize}
-	\item
-	Узел: $\lambda _1 \lambda _2 > 0, \quad \rm{Im}\lambda _1 = \rm{Im}\lambda _2 = 0$ (на графике касается прямой с меньшим |$\lambda$|)
-	
-	\begin{itemize}
-		\item Устойчивый $\lambda _{1,2} < 0$)
-		
-		\item Дикритический $\lambda _1 = \lambda _2$ (кратность 2)
-		
-		\item Вырожденный $\lambda _1 = \lambda _2$ (кратность 1)
-	\end{itemize}
-	
-	\item
-	Седло: $\lambda _1 \lambda _2 < 0, \quad \rm{Im}\lambda _1 = \rm{Im}\lambda _2 = 0$ 
-	
-	\item
-	Фокус: $\rm{Re}\lambda _1 = \rm{Re}\lambda _2 \ne 0$ 
-	
-	\item
-	Центр: $\rm{Re}\lambda _1 = \rm{Re}\lambda _2 = 0$ 
 \end{itemize}
 
+\section{Дифференциальные уравнения}
+\subsubsection {Особые точки равновесия}
+Рассматривается линейная однородная система уравнений
+\begin{equation}\label{formulasDE}
+\begin{cases}
+\dot x = a x + b y;\\
+\dot y = c x + d y,
+\end{cases}
+\end{equation}
+где $a,b,c,d\in\bbR$. Введем матрицу $A=\big(\begin{smallmatrix}
+	a & b\\
+	c & d
+\end{smallmatrix}\big)$.
+\begin{enumerate}[wide]
+\item
+\textit{Узел}: Числа $\lambda _1, \lambda _2$ вещественны, различны, одного знака и отличны от нуля (т.е. произведение $\lambda_1\lambda_2>0$) "--- на графике траектории, сходные с дугами парабол, которые касаются прямой, соответствующей собственному вектору с меньшим модулем |$\lambda$|. 
+
+\item Дикритический (или звездный) узел: $\lambda _1 = \lambda _2$ и существует базис из собственных векторов  
+
+\item Вырожденный узел: $\lambda _1 = \lambda _2$ (кратность 1)
+
+
+\item
+Седло: действительные $\lambda _1, \lambda _2$ разного знака: $\lambda_1<0<\lambda_2$ "--- на графике траектории, сходные с дугами гипербол.
+
+сепаратрисы 
+
+\item 
+\item Комплексные $\lambda_1,\lambda_2\in\bbC$, $\lambda_{1,2} = \alpha\pm i\beta$, $\beta$
+
+\item
+Фокус: $\rm{Re}\lambda _1 = \rm{Re}\lambda _2 \ne 0$ 
+
+\item
+Центр: $\rm{Re}\lambda _1 = \rm{Re}\lambda _2 = 0$ 
+\end{enumerate}
+
+При отрицательных значениях собственных чисел узел является \textit{устойчивым} положением равновесия и поэтому происходит движение траекторий к точке равновесия, а при положительных значениях собственных чисел узел является \textit{неустойчивым} и наблюдается движение от точки равновесия. Выделяют несколько типов узлов:
+
+В таком случае положения равновесия системы \ref{formulasDE} являются корнями системы $A$
+ 
 \section{Некоторые дискретные распределения}
 \footnotesize
 \begin{longtable}[l]{|A{0.20}{0}|B{0.33}{0}|A{0.23}{0}|B{0.1}{0}|B{0.14}{0}|}
@@ -814,7 +855,59 @@ $p(x) =
 \tabularnewline\hline
 \end{longtable}
 
-\newpage
+
+\section{Квадратное уравнение}
+
+Квадратное уравнение "--~ алгебраическое уравнение общего вида $ax^2+bx^2+c = 0$, $a\ne 0$. \textit{Приведённым} называют квадратное уравнение вида $x^2+px+q=0$, т.е.~в котором старший коэффициент равен единице (можно получить делением всего выражения квадратного уравнения на $a$: $p=\frac{b}{a}$, $p=\frac{c}{a}$). Некоторые свойства квадратных уравнений:
+
+\begin{itemize}
+\item
+Дискриминант $D$ квадратного уравнения равен 
+$$D = b^2-4ac.$$
+\item
+Корни уравнения: 
+$$x_{1,2} = \frac{-b\pm\sqrt{b^2-4ac}}{2a}.$$
+\item
+Если $b$ является четным числом $b=2k$, то удобнее пользоваться четвертью дискриминанта. Тогда корни могут быть найдены по формуле:
+$$x_{1,2} = \frac{-k\pm\sqrt{k^2-ac}}{a},$$
+что принимает еще более приятный вид в случае приведенного уравнения $a=1$: $x_{1,2}=-k\pm\sqrt{k^2-c}$
+\item
+\textbf{Теорема Виета.} Для приведенного квадратного уравнения $x^2+px+q=0$ и для общего квадратного уравнения соответственно выполняется
+$$
+\begin{cases}
+x_1+x_2 = -p;\\
+x_1\cdot x_2 = q
+\end{cases}\qquad\begin{cases}
+x_1+x_2 = -\frac{b}{a};\\
+x_1\cdot x_2 = \frac{c}{a}.
+\end{cases}
+$$
+\item
+Если известны оба корня квадратного трехчлена, его можно разложить по формуле:
+$$
+ax^2+bx+c = a(x-x_1)(x-x_2).
+$$
+\end{itemize}
+
+
+
+
+\section{Выпуклые функции, определение и неравенство Йенсена}
+\footnotesize
+\begin{longtable}[c]{|B{0.25}{0}|B{0.5}{0}|B{0.16}{0}|B{0.09}{0}|}
+\hline
+выпуклая\\(выпуклая вниз)\\convex\\(convex down, concave  \textbf{U}p)& 
+$f(\alpha x + (1-\alpha)y) \leq \alpha f(x)+(1-\alpha)f(y)$, $0\leq\alpha\leq1$  & 
+$f''(x)\geq0$ & 
+$x^2$ 
+\tabularnewline\hline
+вогнутая\\(выпуклая вверх)\\concave\\(convex up, concave down)&  
+$f(\alpha x + (1-\alpha)y) \geq \alpha f(x)+(1-\alpha)f(y)$, $0\leq\alpha\leq1$ &
+$f''(x)\leq0$ 
+& $-x^2$
+\tabularnewline\hline
+\end{longtable}
+\normalsize
 
 \section[Площади различных фигур]{Площади различных фигур}
 \scriptsize
