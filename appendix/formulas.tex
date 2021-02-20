@@ -254,9 +254,65 @@ $(\arsh x)'=\frac{1}{\sqrt{x^2+1}}$ & $(\arch x)'=\frac{1}{\sqrt{x^2-1}}$
 $(\arth x)'=\frac{1}{1-x^2}$ & $(\arcth x)'=-\frac{1}{x^2-1}$
 \end{longtable}
 
-\section{Ряд Тейлора}
+\newpage
 
-\begin{notion}
+\section{Ряд Тейлора (короткая версия)}
+Короткая версия в том смысле, что здесь указаны формулы как в шпаргалке для простого запоминания и без лишнего текста, как например, остаточных членов. Скорей всего этих формул хватит вам для 95\% задач с формулой Тейлора, но, конечно же, рекомендую выучить и полные версии формул в следующем параграфе.
+
+В третьей колонке указан радиус сходимости.
+
+PS. Я даже попытался расставить формулы так, чтобы знаки было проще запомнить. Например, $\sin$ расположен в одной колонке с $\arsh$ и $\arccos$, потому что $x^3/6$ в этих формулах имеет одинаковый знак.
+
+\begin{longtable}[l]{@{\extracolsep{\fill}}|p{0.45\textwidth}|p{0.45\textwidth}|p{0.015\textwidth}|}
+	\hline
+	\multicolumn{2}{@{\extracolsep{\fill}}|c|}{$e^x=1+\frac{x}{1}+\frac{x^2}{2}+\frac{x^3}{6}$}
+	&
+	$\infty$
+	\\\hline
+	$\sin x = x - \frac{x^3}{6}$	&	$\sh x = x +\frac{x^3}{6}$	&	$\infty$		\\
+	$\cos x = 1 - \frac{x^2}{2}$	&	$\ch x = 1 + \frac{x^2}{2}$	&	$\infty$		\\
+	$\tg x = x + \frac{x^3}{3}$		&	$\th x = x - \frac{x^3}{3}$	&	$\frac{\pi}{2}$	\\\hline
+	$\arsh x = x - \frac{x^3}{6}$
+	&
+	$\arcsin x = x + \frac{x^3}{6}$
+	&
+	$1$
+	\\
+	$\arth x = x + \frac{x^3}{3}$
+	&
+	$\arctg x = x - \frac{x^3}{3}$
+	&
+	$1$
+	\\\hline
+	$\arccos x= \frac{\pi}{2} - \arcsin x$
+	&
+	&
+	$1$
+	\\
+	$\arcctg x = \frac{\pi}{2} - \arctg x$
+	&
+	&
+	$1$
+	\\\hline
+	$\ln(1+x)=x-\frac{x^2}{2}+\frac{x^3}{3}$
+	&
+	$\ln(1-x)=-x-\frac{x^2}{2}-\frac{x^3}{3}$
+	&
+	$1$
+	\\\hline
+	\multicolumn{2}{@{\extracolsep{\fill}}|l|}{
+		$(1+x)^{a}=1+ax+\dfrac{a(a-1)}{2}x^2+\dfrac{a(a-1)(a-2)}{6}x^3$}
+	&
+	$1$
+	\\
+	\multicolumn{2}{@{\extracolsep{\fill}}|l|}{
+		 напр. $\frac{1}{1-x}=1+x+x^2+x^3$}
+	&
+	\\\hline
+\end{longtable}
+
+\section{Ряд Тейлора (полная версия)}
+
 Здесь указаны ряды Тейлора при $x \to 0$, т.е.~ряды Маклорена. За $R$ обозначен радиус сходимости. Для ряда $\sum\limits_{n=-\infty}^{+\infty} c_n (z-z_0)^n $ его можно определить по формуле Коши"--~Адамара:
 $$
 R = \frac{1}{\overline{\lim\limits_{n \to + \infty}} \sqrt[n]{|c_n|}}
@@ -264,9 +320,9 @@ $$
 Более удобная, но менее универсальная формула:$$
 R = \lim\limits_{n \to + \infty} \left| \frac{c_n}{c_{n + 1}} \right|
 $$
-\end{notion}
-
+\newpage
 \begin{longtable}[l]{@{\extracolsep{\fill}}|p{0.41\textwidth}|p{0.46\textwidth}|p{0.08\textwidth}|}
+\hline
 $e^x=1+\frac{x}{1!}+\frac{x^2}{2!}+\frac{x^3}{3!}+o(x^3)$
 &
 $e^x=\sum\limits_{n=0}^{+\infty}\displaystyle\frac{x^n}{n!}$
@@ -368,10 +424,11 @@ $\arth x = x + \frac{x^3}{3}+\frac{x^5}{5}+o(x^5)$
 $\arth x = \sum\limits_{n=0}^{+\infty} \frac{1}{2n + 1} x^{2n + 1}$
 &
 $R = 1$
+\\\hline
 \end{longtable}
 
 \subsubsection{Несколько рядов Лорана}
-\begin{longtable}[l]{@{\extracolsep{\fill}}|p{0.5\textwidth}|p{0.5\textwidth}|}
+\begin{longtable}[l]{@{\extracolsep{\fill}}|p{0.5\textwidth}|p{0.5\textwidth}|}\hline
 $\cth x = \frac{1}{x} + \frac{x}{3}+\frac{x^3}{45}+o(x^3)$
 &
 $\cth x  = \sum\limits_{n=0}^{+\infty} \frac{2^{2n}B_{2n}x^{2n-1}}{(2n)!}$, $0<|x|<\pi$
@@ -382,7 +439,7 @@ $\arch x = \ln 2x -\sum_{n=1}^\infty \left( \frac {(2n)!} {2^{2n}(n!)^2} \right)
 \\
 $\arcth x = =\frac{1}{x}+\frac{1}{3x^3}+\frac{1}{5x^5}+o\left(\frac{1}{x^5}\right)$
 &
-$\arcth x = \sum_{\infty}^{n=1}\frac{1}{(2n-1)x^{2n-1}}$, $x > 1$
+$\arcth x = \sum_{\infty}^{n=1}\frac{1}{(2n-1)x^{2n-1}}$, $x > 1$\\\hline
 \end{longtable}
 
 \section{Основные неопределенные интегралы}

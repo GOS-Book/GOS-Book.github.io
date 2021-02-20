@@ -45,6 +45,8 @@
      
 \usepackage{forloop}
 
+% \usepackage{pgffor}
+
 \newcommand{\boxtitle}[2]
 {\setlength\fboxsep{0pt}%
 \noindent\colorbox{prpl!20}{\strut\parbox[c][.6cm]{\ecart}{\color{prpl!70}\Large\sffamily\bfseries\centering#1}}\hskip\esp\colorbox{prpl!40}{\strut\parbox[c][.6cm]{\linewidth-\ecart-\esp}{\Large\sffamily\centering\bfseries#2}}}
@@ -77,6 +79,26 @@
 \usepackage{rmathbr}
 
 \usepackage{embrac} % upright brackets in emphasized text
+\ExplSyntaxOn
+\cs_set_protected:Npn \__embrac_replace:Nnnnn #1#2#3#4#5
+{
+	\tl_replace_all:Nnn #1 {#3}
+	{
+		\mode_if_math:TF
+		{#3} %<---instead of #4
+		{
+			\embrac_nobreak:
+			\embrac_kern:n {#2}
+			\embrac_nobreak:
+			\embrac_braces_format:n {#3}
+			\embrac_nobreak:
+			\embrac_kern:n {#4}
+			#5
+		}
+	}
+}
+\ExplSyntaxOff
+
 
 \usepackage[style=russian]{csquotes}
 
