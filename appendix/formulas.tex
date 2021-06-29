@@ -269,51 +269,20 @@ PS. Я даже попытался расставить формулы так, �
 	&
 	$\infty$
 	\\\hline
-	$\sin x = x - \frac{x^3}{6}$	&	$\sh x = x +\frac{x^3}{6}$	&	$\infty$		\\
-	$\cos x = 1 - \frac{x^2}{2}$	&	$\ch x = 1 + \frac{x^2}{2}$	&	$\infty$		\\
-	$\tg x = x + \frac{x^3}{3}$		&	$\th x = x - \frac{x^3}{3}$	&	$\frac{\pi}{2}$	\\\hline
-	$\arsh x = x - \frac{x^3}{6}$
-	&
-	$\arcsin x = x + \frac{x^3}{6}$
-	&
-	$1$
-	\\
-	$\arth x = x + \frac{x^3}{3}$
-	&
-	$\arctg x = x - \frac{x^3}{3}$
-	&
-	$1$
-	\\\hline
-	$\arccos x= \frac{\pi}{2} - \arcsin x$
-	&
-	&
-	$1$
-	\\
-	$\arcctg x = \frac{\pi}{2} - \arctg x$
-	&
-	&
-	$1$
-	\\\hline
-	$\ln(1+x)=x-\frac{x^2}{2}+\frac{x^3}{3}$
-	&
-	$\ln(1-x)=-x-\frac{x^2}{2}-\frac{x^3}{3}$
-	&
-	$1$
-	\\\hline
-	\multicolumn{2}{@{\extracolsep{\fill}}|l|}{
-		$(1+x)^{a}=1+ax+\dfrac{a(a-1)}{2}x^2+\dfrac{a(a-1)(a-2)}{6}x^3$}
-	&
-	$1$
-	\\
-	\multicolumn{2}{@{\extracolsep{\fill}}|l|}{
-		 напр. $\frac{1}{1-x}=1+x+x^2+x^3$}
-	&
-	\\\hline
+	$\sh x = x +\frac{x^3}{6}$		&	$\sin x = x - \frac{x^3}{6}$			&		$\infty$		\\
+	$\ch x = 1 + \frac{x^2}{2}$		&	$\cos x = 1 - \frac{x^2}{2}$			&		$\infty$		\\
+	$\th x = x - \frac{x^3}{3}$		&	$\tg x = x + \frac{x^3}{3}$				&		$\frac{\pi}{2}$	\\\hline
+	$\arcsin x = x + \frac{x^3}{6}$ &	$\arccos x= \frac{\pi}{2} - \arcsin x$ 	& 		$1$				\\
+	$\arctg x = x - \frac{x^3}{3}$	&	$\arcctg x = \frac{\pi}{2} - \arctg x$	&		$1$				\\\hline
+									&	$\arsh x = x - \frac{x^3}{6}$			&		$1$				\\
+									&	$\arth x = x + \frac{x^3}{3}$			&		$1$				\\\hline
+	$\ln(1-x)=-x-\frac{x^2}{2}-\frac{x^3}{3}$	&	$\ln(1+x)=x-\frac{x^2}{2}+\frac{x^3}{3}$	&	$1$	\\\hline
+	\multicolumn{2}{@{\extracolsep{\fill}}|l|}{$(1+x)^{a}=1+ax+\tfrac{a(a-1)}{2}x^2+\tfrac{a(a-1)(a-2)}{6}x^3$, напр. $\tfrac{1}{1-x}=1+x+x^2+x^3$}	&	$1$				\\\hline
 \end{longtable}
 
 \section{Ряд Тейлора (полная версия)}
 
-Здесь указаны ряды Тейлора при $x \to 0$, т.е.~ряды Маклорена. За $R$ обозначен радиус сходимости. Для ряда $\sum\limits_{n=-\infty}^{+\infty} c_n (z-z_0)^n $ его можно определить по формуле Коши"--~Адамара:
+Здесь указаны ряды Тейлора при $x \to 0$, т.е.~ряды Маклорена. В третьей колонке приведены радиусы сходимости. Для ряда $\sum\limits_{n=-\infty}^{+\infty} c_n (z-z_0)^n $ его можно определить по формуле Коши"--~Адамара:
 $$
 R = \frac{1}{\overline{\lim\limits_{n \to + \infty}} \sqrt[n]{|c_n|}}
 $$
@@ -321,55 +290,55 @@ $$
 R = \lim\limits_{n \to + \infty} \left| \frac{c_n}{c_{n + 1}} \right|
 $$
 \newpage
-\begin{longtable}[l]{@{\extracolsep{\fill}}|p{0.41\textwidth}|p{0.46\textwidth}|p{0.08\textwidth}|}
+\begin{longtable}[l]{@{\extracolsep{\fill}}|p{0.41\textwidth}|p{0.52\textwidth}|p{0.02\textwidth}|}
 \hline
 $e^x=1+\frac{x}{1!}+\frac{x^2}{2!}+\frac{x^3}{3!}+o(x^3)$
 &
 $e^x=\sum\limits_{n=0}^{+\infty}\displaystyle\frac{x^n}{n!}$
 &
-$R=\infty$
+$\infty$
 \\
 $\sin x = x - \frac{x^3}{3!} + \frac{x^5}{5!}+o(x^5)$
 &
 $\sin x = \sum\limits_{n=0}^{+\infty} (-1)^{n}\displaystyle\frac{x^{2n+1}}{(2n+1)!}$
 &
-$R=\infty$
+$\infty$
 \\
 $\cos x = 1 - \frac{x^2}{2!} + \frac{x^4}{4!}+o(x^4)$
 &
 $\cos x  = \sum\limits_{n=0}^{+\infty} (-1)^{n}\displaystyle\frac{x^{2n}}{(2n)!}$
 &
-$R=\infty$
+$\infty$
 \\
 $\tg x = x + \frac{x^3}{3}+\frac{2x^5}{15}+o(x^5)$
 &
 $\tg x  = \sum\limits_{n=0}^{+\infty} \frac{B_{2n} (-4)^n (1-4^n)}{(2n)!} x^{2n-1}$, где $B_{2n}$ "--- это числа Бернулли
 &
-$R=\frac{\pi}{2}$
+$\frac{\pi}{2}$
 \\ 
 $\sh x = x +\frac{x^3}{3!}+\frac{x^5}{5!}+o(x^5)$
 &
 $\sh x =\sum\limits_{n=0}^{+\infty}\displaystyle\frac{x^{2n+1}}{(2n+1)!}$
 &
-$R=\infty$
+$\infty$
 \\
 $\ch x = 1 + \frac{x^2}{2!}+\frac{x^4}{4!}+o(x^4)$
 &
 $\ch x  = \sum\limits_{n=0}^{+\infty}\displaystyle\frac{x^{2n}}{(2n)!}$
 &
-$ R=\infty$
+$\infty$
 \\
 $\th x = x - \frac{x^3}{3}+\frac{2x^5}{15}+o(x^5)$
 &
 $\th x  = \sum\limits_{n=0}^{+\infty} \frac{B_{2n} 4^n (4^n-1)}{(2n)!} x^{2n-1}$
 &
-$R=\frac{\pi}{2}$
+$\frac{\pi}{2}$
 \\
 $\arcsin x = x + \frac{x^3}{6}+\frac{3x^5}{40}+o(x^5)$
 &
 $\arcsin x=\sum\limits_{n=0}^{+\infty} \frac{(2n)!}{4^n(n!)^2(2n + 1)}x^{2n + 1}$
 &
-$R = 1$
+$1$
 \\
 $\arccos x= \frac{\pi}{2} - \arcsin x$
 &
@@ -380,19 +349,19 @@ $\arctg x = x - \frac{x^3}{3}+\frac{x^5}{5}+o(x^5)$
 &
 $\arctg x = \sum\limits_{n=0}^{+\infty} (-1)^n\dfrac{x^{2n+1}}{2n+1}$
 &
-$R=1$
+$1$
 \\
 $\ln(1+x)=x-\frac{x^2}{2}+\frac{x^3}{3}+o(x^3)$
 &
 $\ln(1+x)= \sum\limits_{n=1}^{+\infty} \frac{(-1)^{n+1}}{n} x^n$
 &
-$R=1$
+$1$
 \\
 $\ln(1-x)=-x-\frac{x^2}{2}-\frac{x^3}{3}+o(x^3)$
 &
 $\ln(1-x)= -\sum\limits_{n=1}^{+\infty} \frac{1}{n} x^n$
 &
-$R=1$
+$1$
 \\
 $
 (1+x)^{a}=1+ax+\dfrac{a(a-1)}{2!}x^2+
@@ -405,25 +374,25 @@ $\qquad+\dfrac{a(a-1)(a-2)}{3!}x^3+o(x^3)$
 &
 $\quad C^{n}_{a}=\frac{a(a-1)\dots(a-n+1)}{n!}$
 &
-$R=1$
+$1$
 \\
 $\frac{1}{1-x}=1+x+x^2+x^3+o(x^3)$
 &
 $\frac{1}{1-x}= \sum\limits_{n=0}^{+\infty} x^{n}$
 &
-$R = 1$
+$1$
 \\
 $\arsh x = x - \frac{x^3}{6}+\frac{3x^5}{40}+o(x^5)$
 &
 $\arsh x = \sum\limits_{n=0}^{+\infty} \frac{(-1)^n(2n)!}{4^n (n!)^2 (2n + 1)} x^{2n + 1}$
 &
-$R = 1$
+$1$
 \\
 $\arth x = x + \frac{x^3}{3}+\frac{x^5}{5}+o(x^5)$
 &
 $\arth x = \sum\limits_{n=0}^{+\infty} \frac{1}{2n + 1} x^{2n + 1}$
 &
-$R = 1$
+$1$
 \\\hline
 \end{longtable}
 
@@ -444,7 +413,7 @@ $\arcth x = \sum_{\infty}^{n=1}\frac{1}{(2n-1)x^{2n-1}}$, $x > 1$\\\hline
 
 \section{Основные неопределенные интегралы}
 \begin{longtable}[l]{@{\extracolsep{\fill}}p{0.5\textwidth} p{0.5\textwidth}}
-$\int x^\alpha \,dx = \frac{x^{\alpha+1}}{\alpha+1}$, $\alpha\neq -1$ & $ $ 
+$\int x^\alpha \,dx = \frac{x^{\alpha+1}}{\alpha+1} + C$, $\alpha\neq -1$ & $ $ 
 \\ 
 $\int\frac{dx}{x+a} = \ln|x+a|+C$ & $ $ 
 \\
