@@ -38,4 +38,194 @@ f(x)=\sum_{n=1}^{\infty}\limits u_n(x) \quad\forall x \in E,
 
 \section{Непрерывность, интегрируемость и дифференцируемость суммы равномерно сходящегося ряда}
 
-Прошу прощения, пока что данный материал пока что отсутствует. В текущий момент вы можете посмотреть \S~42, теоремы 7-12 в книге Шабунина, Тер-Крикорова. Если кто-то хочет проявить энтузиазм и написать этот параграф в \LaTeX "--- буду рад помощи. 
+\subsection{Непрерывность суммы равномерно сходящегося ряда}
+
+\begin{thm}
+	\label{ch12:th:continuity}
+	Если все члены ряда~\eqref{ya9ch1_1n3} --- непрерывные на отрезке $[a, b]$ функции,
+	а ряд~\eqref{ya9ch1_1n3} сходится равномерно на $[a, b]$, то его сумма $S(x)$
+	также непрерывна на отрезке $[a, b]$.
+\end{thm}
+\begin{proof}
+	Пусть $x_0$ --- произвольная точка отрезка $[a, b]$. Для определенности будем считать,
+	что $x_0 \in (a, b)$.
+
+	Нужно доказать, что функция
+	$$
+		S(x) = \sum_{n=1}^{\infty} u_n(x)
+	$$
+	непрерывна в точке $x_0$, т. е.
+	\begin{equation}
+		\label{ch12:eq:1}
+		\forall \epsilon > 0 \quad \exists \delta = \delta(\epsilon) > 0 \cquad
+			\forall x \in U_{\delta}(x_0) \quad |S(x) - S(x_0)| < \epsilon,
+	\end{equation}
+	где $U_{\delta}(x_0) = (x_0 - \delta, x_0 + \delta) \subset [a, b]$.
+
+	По условию $S_n(x) \rightrightarrows S(x)$, $x \in [a, b]$,
+	где $S_n(x) = \sum_{k=1}^{n}\limits u_k(x)$, т. е.
+	\begin{equation}
+		\label{ch12:eq:2}
+		\forall \epsilon > 0 \quad \exists N_{\epsilon} \cquad \forall n \ge N_{\epsilon} \quad
+			\forall x \in [a, b] \quad |S(x) - S_n(x)| < \frac{\epsilon}{3}
+	\end{equation}
+	Фиксируем номер $n_0 \ge N_{\epsilon}$. Тогда из~\eqref{ch12:eq:2} при $n = n_0$ получаем
+	\begin{equation}
+		\label{ch12:eq:3}
+		|S(x) - S_{n_0}(x)| < \frac{\epsilon}{3}
+	\end{equation}
+	и, в частности, при $x = x_0$ находим
+	\begin{equation}
+		\label{ch12:eq:4}
+		|S(x_0) - S_{n_0}(x_0)| < \frac{\epsilon}{3}
+	\end{equation}
+	Функция $S_{n_0}(x)$ непрерывна в точке $x_0$ как сумма конечного числа непрерывных функций
+	$u_k(x)$, $k = \overline{1, n_0}$. По определению непрерывности
+	\begin{equation}
+		\label{ch12:eq:5}
+		\forall \epsilon > 0 \quad \exists \delta = \delta(\epsilon) > 0 \cquad
+			\forall x \in U_\delta(x_0) \subset [a, b] \quad |S_{n_0}(x) - S_{n_0}(x_0)| < \frac{\epsilon}{3}
+	\end{equation}
+	Воспользуемся равенством
+	$$
+		S(x) - S(x_0) = (S(x) - S_{n_0}(x)) + (S_{n_0}(x) - S_{n_0}(x_0)) + (S_{n_0}(x_0) - S(x_0)).
+	$$
+	Из этого равенства, используя оценки~\eqref{ch12:eq:3}--\eqref{ch12:eq:5}, получаем
+	$$
+		|S(x) - S(x_0)| = |S(x) - S_{n_0}(x)| + |S_{n_0}(x) - S_{n_0}(x_0)| + |S_{n_0}(x_0) - S(x_0)| < \epsilon
+	$$
+	для любого $x \in U_\delta(x_0) \subset [a, b]$, т. е. справедливо утверждение~\eqref{ch12:eq:1}.
+
+	Так как $x_0$ --- произвольная точка отрезка $[a, b]$, то функция $S(x)$ непрерывна на отрезке $[a, b]$.
+\end{proof}
+
+\begin{cons}
+	Согласно теореме~\eqref{ch12:th:continuity}
+	$$
+		\lim_{x \to x_0} \sum_{n = 1}^{\infty} u_n(x) = \sum_{n = 1}^{\infty} \lim_{x \to x_0} u_n(x),
+	$$
+	т. е. при условиях теоремы~\eqref{ch12:th:continuity} возможен почленный предельный переход.
+\end{cons}
+
+\subsection{Почленное интегрирование функционального ряда}
+
+\begin{thm}
+	\label{ch12:th:integration}
+	Если все члены ряда~\eqref{ya9ch1_1n3} --- непрерывные на отрезке $[a, b]$ функции,
+	а ряд~\eqref{ya9ch1_1n3} сходится равномерно на $[a, b]$, то ряд
+	\begin{equation}
+		\label{ch12:eq:6}
+		\sum_{n=1}^{\infty} \int_a^x u_n(t)dt
+	\end{equation}
+	также равномерно сходится на $[a, b]$, и если
+	\begin{equation}
+		\label{ch12:eq:7}
+		S(x) = \sum_{n=1}^{\infty} u_n(x),
+	\end{equation}
+	то
+	\begin{equation}
+		\label{ch12:eq:8}
+		\int_a^x S(t)dt = \sum_{n=1}^{\infty} \int_a^x u_n(t)dt, \quad x \in [a, b],
+	\end{equation}
+	т. е. ряд~\eqref{ch12:eq:7} можно почленно интегрировать
+\end{thm}
+\begin{proof}
+	По условию ряд~\eqref{ch12:eq:7} сходится равномерно к $S(x)$ на отрезке $[a, b]$,
+	т. е. $S_n(x) = \sum_{k=1}^{n}\limits u_k(x) \rightrightarrows S(x), x \in [a, b]$.
+	Это означает, что
+	\begin{equation}
+		\label{ch12:eq:9}
+		\forall \epsilon > 0 \quad \exists N_{\epsilon} \cquad \forall n \ge N_{\epsilon} \quad
+			\forall t \in [a, b] \quad |S(t) - S_n(t)| < \frac{\epsilon}{b - a}
+	\end{equation}
+	Пусть $\sigma(x) = \int_a^x\limits S(t)dt$, а $\sigma_n(x) = \sum_{k=1}^n\limits \int_a^x\limits u_k(t)dt$ ---
+	$n$-я частичная сумма ряда~\eqref{ch12:eq:6}.
+
+	Функции $u_k(x), k \in \bbN$, по условию непрерывны на отрезке $[a, b]$, и поэтому
+	они интегрируемы на $[a, b]$. Функция $S(x)$ также интегрируема на $[a, b]$, так как
+	она непрерывна на этом отрезке (теорема~\ref{ch12:th:continuity}).
+	Используя свойства интеграла, получаем
+	$$
+		\sigma_n(x) = \int_a^x \sum_{k=1}^n u_k(t)dt = \int_a^x S_n(t)dt.
+	$$
+	Следовательно,
+	$$
+		\sigma(x) - \sigma_n(x) = \int_a^x (S(t) - S_n(t))dt,
+	$$
+	откуда в силу условия~\eqref{ch12:eq:9} получаем
+	$$
+		|\sigma(x) - \sigma_n(x)| < \frac{\epsilon}{b - a} \int_a^x dt = \frac{\epsilon}{b - a} (x - a) \le \epsilon,
+	$$
+	причем это неравенство выполняется для всех $n \ge N_{\epsilon}$ и для всех $x \in [a, b]$.
+	Это означает, что ряд~\eqref{ch12:eq:6} сходится равномерно на отрезке $[a, b]$,
+	и выполняется равенство~\eqref{ch12:eq:8}.
+\end{proof}
+
+\subsection{Почленное дифференцирование функционального ряда}
+
+\begin{thm}
+	Если функции $u_n(x), n \in \bbN$, имеют непрерывные производные на отрезке $[a, b]$, ряд
+	\begin{equation}
+		\label{ch12:eq:10}
+		\sum_{n=1}^{\infty} u'_n(x)
+	\end{equation}
+	сходится равномерно на отрезке $[a, b]$, а ряд
+	\begin{equation}
+		\label{ch12:eq:11}
+		\sum_{n=1}^{\infty} u_n(x)
+	\end{equation}
+	сходится хотя бы в одной точке $x_0 \in [a, b]$, т. е. сходится ряд
+	\begin{equation}
+		\label{ch12:eq:12}
+		\sum_{n=1}^{\infty} u_n(x_0),
+	\end{equation}
+	то ряд~\eqref{ch12:eq:11} сходится равномерно на отрезке $[a, b]$,
+	и его можно почленно дифференцировать, т. е.
+	\begin{equation}
+		\label{ch12:eq:13}
+		S'(x) = \sum_{n=1}^{\infty} u'_n(x),
+	\end{equation}
+	где
+	\begin{equation}
+		\label{ch12:eq:14}
+		S(x) = \sum_{n=1}^{\infty} u_n(x)
+	\end{equation}
+\end{thm}
+\begin{proof}
+	Обозначим через $\tau(x)$ сумму ряда~\eqref{ch12:eq:10}, т. е.
+	\begin{equation}
+		\label{ch12:eq:15}
+		\tau(x) = \sum_{n=1}^{\infty} u'_n(x)
+	\end{equation}
+	По теореме~\ref{ch12:th:integration} ряд~\eqref{ch12:eq:15} можно почленно интегрировать, т. е.
+	\begin{equation}
+		\label{ch12:eq:16}
+		\int_{x_0}^x \tau(t)dt = \sum_{n=1}^{\infty} \int_{x_0}^x u'_n(t)dt,
+	\end{equation}
+	где $x_0, x \in [a, b]$, причем ряд~\eqref{ch12:eq:16} сходится равномерно на отрезке $[a, b]$.
+	Так как $\int_{x_0}^x\limits u'_n(t)dt = u_n(x) - u_n(x_0)$, то равенство~\eqref{ch12:eq:16}
+	можно записать в виде
+	\begin{equation}
+		\label{ch12:eq:17}
+		\int_{x_0}^x \tau(t)dt = \sum_{n=1}^{\infty} \upsilon_n(x),
+	\end{equation}
+	где
+	\begin{equation}
+		\label{ch12:eq:18}
+		\upsilon_n(x) = u_n(x) - u_n(x_0).
+	\end{equation}
+	Ряд~\eqref{ch12:eq:17} сходится равномерно, а ряд~\eqref{ch12:eq:12} сходится
+	(а значит, и равномерно сходится на $[a, b]$). Поэтому ряд~\eqref{ch12:eq:11}
+	сходится равномерно на $[a, b]$ как разность равномерно сходящихся рядов.
+
+	Из равенств \eqref{ch12:eq:17}, \eqref{ch12:eq:18} и \eqref{ch12:eq:14} следует, что
+	\begin{equation}
+		\label{ch12:eq:19}
+		\int_{x_0}^x \tau(t)dt = S(x) - S(x_0)
+	\end{equation}
+	Так как функция $\tau(t)$ непрерывна на отрезке $[a, b]$ по теореме~\ref{ch12:th:continuity},
+	то в силу свойств интеграла с переменным верхним пределом левая часть равенства~\eqref{ch12:eq:19}
+	имеет производную, которая равна $\tau(x)$. Следовательно, правая часть~\eqref{ch12:eq:19} ---
+	дифференцируемая функция, а её производная равна $S'(x)$. Итак, доказано, что $\tau(x) = S'(x)$,
+	т. е. справедливо равенство~\eqref{ch12:eq:13} для всех $x \in [a, b]$
+\end{proof}
