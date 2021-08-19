@@ -2,25 +2,141 @@
 
 \section{Равномерная сходимость функциональных последовательностей и рядов}
 
-\subsection{Сходимость функциональных последовательностей и рядов}
+\subsection{Равномерная сходимость функциональных последовательностей}
 
 Пусть задана последовательность функций $\{f_n\}$
-\begin{equation} \label{ya9ch1_1n1}
-f_n(x),\ n\in \bbN, 
+\begin{equation}
+	\label{ch12:p1:eq:1}
+	f_n(x),\ n\in \bbN,
 \end{equation}
 определенных на некотором множестве $E$.
-\begin{defn} Функциональная последовательность называется \textit{сходящейся в точке} $x_0 \in E$, если числовая последовательность $\{f_n(x_0)\}$ сходится.
 
-Последовательность $\{f_n\}$ называется сходящейся на множестве $E$, если она сходится в каждой точке множества $E$.
+\begin{defn}
+	Функциональная последовательность $\{f_n(x)\}_{n=1}^\infty$ называется \textit{сходящейся в точке} $x_0 \in E$,
+	если числовая последовательность $\{f_n(x_0)\}_{n=1}^\infty$ сходится.
 
-Если
-\begin{equation} \label{ya9ch1_1n2}
-\lim_{n \to \infty} f_n(x) = f(x)\quad \forall x\in E,
-\end{equation}
-то говорят, что \textit{последовательность \eqref{ya9ch1_1n1} на множестве $E$ сходится к функции} $f(x)$, и пишут <<$f_n(x)\to f(x)$ на $E$>> или <<$f_n(x) \xrightarrow{E} f(x)$ при $n \to +\infty $>>.
+	Последовательность $\{f_n\}$ называется сходящейся на множестве $E$, если она сходится в каждой точке множества $E$.
 
-Эта функция $f(x)$ называется пределом или предельной функцией последовательности. В этом случае иногда говорят, что \textit{последовательность $\{f_n\}$ сходится к функции~$f(x)$ поточечно}.
+	Если
+	$$
+		\lim_{n \to \infty} f_n(x) = f(x)\quad \forall x\in E,
+	$$
+	т. е.
+	\begin{equation}
+		\label{ch12:p1:eq:2}
+		\forall x \in E \quad \forall \epsilon > 0 \quad \exists N \in \bbN \cquad
+			\forall n \ge N \quad |f_n(x) - f(x)| \le \epsilon
+	\end{equation}
+	то говорят, что \textit{последовательность \eqref{ch12:p1:eq:1} на множестве $E$ сходится к функции} $f(x)$,
+	и пишут <<$f_n(x) \to f(x)$ на $E$>> или <<$f_n(x) \xrightarrow{E} f(x)$ при $n \to +\infty$>>.
+
+	Эта функция $f(x)$ называется пределом или предельной функцией последовательности.
+	В этом случае иногда говорят, что \textit{последовательность $\{f_n\}$ сходится к функции~$f(x)$ поточечно}.
 \end{defn}
+
+\begin{defn}
+	Будем говорить, что функциональная последовательность $\{f_n(x)\}_{n=1}^\infty$ \textit{равномерно сходится} к функции $f(x)$
+	на множестве $E$ и писать <<$f_n(x) \rightrightarrows f(x)$ на $E$>>, если
+	\begin{equation}
+		\label{ch12:p1:eq:3}
+		\forall \epsilon > 0 \quad \exists N \in \bbN \cquad
+			\forall n \ge N \quad \forall x \in E \quad |f_n(x) - f(x)| \le \epsilon
+	\end{equation}
+\end{defn}
+
+Отличие условий \eqref{ch12:p1:eq:2} и \eqref{ch12:p1:eq:3} состоит в том,
+что в условии~\eqref{ch12:p1:eq:2} число $N$ свое для каждого $x$, а в условии~\eqref{ch12:p1:eq:3}
+число $N$ не зависит от $x$. Поэтому из равномерной сходимости следует поточечная сходимость.
+
+\begin{thm}[Критерий равномерной сходимости]
+	Функциональная последовательность $\{f_n(x)\}_{n=1}^\infty$ равномерно сходится к функции $f(x)$
+	на множестве $E$ при $n \to +\infty$ тогда и только тогда, когда
+	$$
+		\sup_{x \in E} |f_n(x) - f(x)| \to 0 \quad \text{при} \quad n \to +\infty
+	$$
+\end{thm}
+\begin{proof}
+	Поскольку условие $\forall x \in E \quad |f_n(x) - f(x)| \le \epsilon$ эквивалентно
+	условию $\sup_{x \in E}\limits |f_n(x) - f(x)| \le \epsilon$, то условие~\eqref{ch12:p1:eq:3}
+	эквивалентно условию
+	$$
+		\forall \epsilon > 0 \quad \exists N \in \bbN \cquad \forall n \ge N \quad
+			\sup_{x \in E} |f_n(x) - f(x)| \le \epsilon,
+	$$
+	т. е. $\sup_{x \in E}\limits |f_n(x) - f(x)| \to 0$ при  $n \to +\infty$
+\end{proof}
+\begin{cons}
+	Последовательность $\{f_n(x)\}$ сходится к функции $f(x)$ равномерно на множестве $E$
+	тогда и только тогда, когда существует числовая последовательность $\{a_n\}$:
+	\begin{equation}
+		\label{ch12:p1:eq:4}
+		\forall x \in E \quad \forall n \in \bbN \quad |f_n(x) - f(x)| \le a_n \quad
+			\text{и} \quad \lim_{n \to \infty} a_n = 0
+	\end{equation}
+\end{cons}
+
+\begin{thm}[Критерий Коши]
+	\label{ch12:th:cauchy_criteria}
+	Последовательность $\{f_n(x)\}$ сходится к функции $f(x)$ равномерно на множестве $E$
+	тогда и только тогда, когда выполняется условие Коши равномерной сходимости последовательности:
+	\begin{equation}
+		\label{ch12:p1:eq:cauchy_cond}
+		\forall \epsilon > 0 \quad \exists N \in \bbN \cquad
+			\forall n \ge N \quad \forall p \in \bbN \quad \forall x \in E \quad
+			|f_n(x) - f_{n+p}(x)| \le \epsilon
+	\end{equation}
+\end{thm}
+\begin{proof}\leavevmode
+\begin{itemize}[wide, labelwidth=!, labelindent=0pt]
+	\item[$\Longrightarrow$:]
+	Пусть $f_n(x) \rightrightarrows f(x)$ при $n \to \infty$, тогда 
+	$$
+		\forall \epsilon > 0 \quad \exists N \in \bbN \cquad
+			\forall n \ge N \quad \forall x \in E \quad |f_n(x) - f(x)| \le \frac{\epsilon}{2}
+	$$
+	Поскольку $\forall p \in \bbN \quad n + p > n \ge N$, то
+	$\forall x \in E \quad |f_{n+p} - f(x)| \le \frac{\epsilon}{2}$.\\
+	Следовательно,
+	$$
+		\forall x \in E \quad |f_n(x) - f_{n+p}(x)| \le |f_n(x) - f(x)| + |f_{n+p}(x) - f(x)| \le
+			\frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon,
+	$$
+	т. е. выполняется условие~\eqref{ch12:p1:eq:cauchy_cond}.
+
+	\item[$\Longleftarrow$:]
+	Пусть выполняется условие~\eqref{ch12:p1:eq:cauchy_cond}. Следовательно,
+	$$
+		\forall x \in E \quad \forall \epsilon > 0 \quad \exists N \in \bbN \cquad
+			\forall n \ge N \quad \forall p \in \bbN \quad
+			|f_n(x) - f_{n+p}(x)| \le \epsilon
+	$$
+	т. е. для любого фиксированного $x \in E$ выполняется условие Коши сходимости
+	числовой последовательности $\{f_n(x)\}$. В силу критерия Коши для числовых
+	последовательностей~\eqref{ch1:eq:fundamen} $\forall x \in E$
+	последовательность $\{f_n(x)\}$ сходится.
+	Обозначим $f(x) = \lim_{n \to \infty}\limits f_n(x)$.
+
+	Перепишем условие~\eqref{ch12:p1:eq:cauchy_cond} в виде
+	$$
+		\forall \epsilon > 0 \quad \exists N \in \bbN \cquad
+			\forall n \ge N \quad \forall x \in E \quad \forall p \in \bbN \quad 
+			|f_n(x) - f_{n+p}(x)| \le \epsilon
+	$$
+	и рассмотрим отдельно условие $\forall p \in \bbN \quad |f_n(x) - f_{n+p}(x)| \le \epsilon$.
+	Поскольку $\lim_{p \to \infty}\limits |f_n(x) - f_{n+p}(x)| = |f_n(x) - f(x)|$, то
+	по теореме о предельном переходе в неравенствах $|f_n(x) - f(x)| \le \epsilon$.
+
+	Итак, из условия~\eqref{ch12:p1:eq:cauchy_cond} следует, что
+	$$
+		\forall \epsilon > 0 \quad \exists N \in \bbN \cquad
+			\forall n \ge N \quad \forall x \in E \quad |f_n(x) - f(x)| \le \epsilon,
+	$$
+	т. е. $f_n(x) \rightrightarrows f(x)$ при $n \to \infty$.
+\end{itemize}
+\end{proof}
+
+
+\subsection{Равномерная сходимость функциональных рядов}
 
 Соответствующим образом определяется и сходимость функционального ряда
 \begin{equation} \label{ya9ch1_1n3}
