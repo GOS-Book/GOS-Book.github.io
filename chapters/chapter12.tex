@@ -138,19 +138,70 @@
 
 \subsection{Равномерная сходимость функциональных рядов}
 
-Соответствующим образом определяется и сходимость функционального ряда
-\begin{equation} \label{ya9ch1_1n3}
-\sum_{n=1}^{\infty}\limits u_n(x)
-\end{equation}
-члены которого определены на множестве $E$.
-\begin{defn} Ряд \eqref{ya9ch1_1n3} называется \textit{сходящимся в точке} $x_0 \in E$, если числовой ряд $\sum_{n=1}^{\infty}\limits u_n(x_0)$ сходится.
-
-Ряд \eqref{ya9ch1_1n3} \textit{называется сходящимся на множестве} $E$, если он сходится в любой точке множества $E$. Если
-\begin{equation} \label{ya9ch1_1n4}
-f(x)=\sum_{n=1}^{\infty}\limits u_n(x) \quad\forall x \in E,
-\end{equation}
-то функция $f(x)$ называется \textit{суммой ряда} \eqref{ya9ch1_1n3}.
+\begin{defn}
+	Пусть на множестве $E$ задана функциональная последовательность $\{u_k(x)\}_{k=1}^\infty$.
+	Функциональный ряд
+	\begin{equation}
+		\label{ch12:p2:eq:fun_series}
+		\sum_{k=1}^{\infty} u_k(x)
+	\end{equation}
+	называется \textit{равномерно сходящимся} на множестве $E$, если последовательность его
+	частичных сумм $S_n(x) = \sum_{k=1}^{n}\limits u_k(x)$ сходится равномерно на множестве $E$
+	к сумме $S(x)$ этого ряда. Аналогично определяется \textit{поточечная сходимость} ряда.
 \end{defn}
+
+Поскольку из равномерной сходимости последовательности следует поточечная сходимость последовательности,
+то из равномерной сходимости ряда следует поточечная сходимость этого ряда.
+
+\begin{defn}
+	\textit{Остатком} поточечно сходящегося ряда $\sum_{k=1}^{\infty}\limits u_k(x)$ называется
+	$$
+		r_n(x) = S(x) - S_n(x) = \sum_{k=n+1}^{\infty} u_k(x)
+	$$
+\end{defn}
+
+Непосредственно из определения равномерной сходимости ряда и критерия равномерной сходимости
+функциональной последовательности следует
+
+\begin{thm}[Критерий равномерной сходимости ряда]
+	\label{ch12:th:ce_series_criteria}
+	Поточечно сходящийся функциональный ряд $\sum_{k=1}^{\infty}\limits u_k(x)$ сходится
+	равномерно на множестве $E$ тогда и только тогда, когда
+	$$
+		r_n(x) \rightrightarrows 0 \quad \text{на } E \quad \text{при } n \to \infty,
+	$$
+	$$
+		\text{т.е.} \quad \sup_{x \in E} |r_n(x)| \to 0 \quad \text{при } n \to \infty.
+	$$
+\end{thm}
+
+\begin{thm}[Критерий Коши]
+	\label{ch12:th:cauchy_criteria_series}
+	Ряд $\sum_{k=1}^{\infty}\limits u_k(x)$ сходится равномерно на множестве $E$ тогда
+	и только тогда, когда выполняется условие Коши равномерной сходимости ряда
+	\begin{equation}
+		\label{ch12:p1:eq:cauchy_cond_series}
+		\forall \epsilon > 0 \quad \exists N \in \bbN \cquad
+			\forall n \ge N \quad \forall p \in \bbN \quad \forall x \in E \quad
+			|\sum_{k=n+1}^{n+p} u_k(x)| \le \epsilon
+	\end{equation}
+\end{thm}
+\begin{proof}
+	Необходимо применить критерий Коши равномерной сходимости последовательности
+	(теорема~\ref{ch12:th:cauchy_criteria}) к последовательности частичных сумм ряда.
+\end{proof}
+\begin{cons}[Необходимое условие равномерной сходимости ряда]
+	Если ряд $\sum_{k=1}^{\infty}\limits u_k(x)$ сходится равномерно на множестве $E$,
+	то
+	$$
+		u_n(x) \rightrightarrows 0 \quad \text{на } E \quad \text{при } n \to \infty
+	$$
+\end{cons}
+
+
+\subsection{Признаки равномерной сходимости функциональных рядов}
+
+
 
 \section{Непрерывность, интегрируемость и дифференцируемость суммы равномерно сходящегося ряда}
 
@@ -158,8 +209,8 @@ f(x)=\sum_{n=1}^{\infty}\limits u_n(x) \quad\forall x \in E,
 
 \begin{thm}
 	\label{ch12:th:continuity}
-	Если все члены ряда~\eqref{ya9ch1_1n3} --- непрерывные на отрезке $[a, b]$ функции,
-	а ряд~\eqref{ya9ch1_1n3} сходится равномерно на $[a, b]$, то его сумма $S(x)$
+	Если все члены ряда~\eqref{ch12:p2:eq:fun_series} --- непрерывные на отрезке $[a, b]$ функции,
+	а ряд~\eqref{ch12:p2:eq:fun_series} сходится равномерно на $[a, b]$, то его сумма $S(x)$
 	также непрерывна на отрезке $[a, b]$.
 \end{thm}
 \begin{proof}
@@ -227,8 +278,8 @@ f(x)=\sum_{n=1}^{\infty}\limits u_n(x) \quad\forall x \in E,
 
 \begin{thm}
 	\label{ch12:th:integration}
-	Если все члены ряда~\eqref{ya9ch1_1n3} --- непрерывные на отрезке $[a, b]$ функции,
-	а ряд~\eqref{ya9ch1_1n3} сходится равномерно на $[a, b]$, то ряд
+	Если все члены ряда~\eqref{ch12:p2:eq:fun_series} --- непрерывные на отрезке $[a, b]$ функции,
+	а ряд~\eqref{ch12:p2:eq:fun_series} сходится равномерно на $[a, b]$, то ряд
 	\begin{equation}
 		\label{ch12:eq:6}
 		\sum_{n=1}^{\infty} \int_a^x u_n(t)dt
