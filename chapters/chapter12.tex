@@ -171,7 +171,7 @@
 		r_n(x) \rightrightarrows 0 \quad \text{на } E \quad \text{при } n \to \infty,
 	$$
 	$$
-		\text{т.е.} \quad \sup_{x \in E} |r_n(x)| \to 0 \quad \text{при } n \to \infty.
+		\text{т. е.} \quad \sup_{x \in E} |r_n(x)| \to 0 \quad \text{при } n \to \infty.
 	$$
 \end{thm}
 
@@ -201,6 +201,64 @@
 
 \subsection{Признаки равномерной сходимости функциональных рядов}
 
+\begin{thm}[Обобщенный признак сравнения]
+	Пусть
+	$$
+		\forall k \in \bbN \quad \forall x \in E \quad |u_k(x)| \le v_k(x)
+	$$
+	и ряд $\sum_{k=1}^{\infty}\limits v_k(x)$ сходится равномерно на множестве $E$.
+	Тогда ряд $\sum_{k=1}^{\infty}\limits u_k(x)$ сходится равномерно на множестве $E$.
+\end{thm}
+\begin{cons}
+	Если ряд $\sum_{k=1}^{\infty}\limits |u_k(x)|$ сходится равномерно на множестве $E$,
+	то $\sum_{k=1}^{\infty}\limits u_k(x)$ сходится равномерно на множестве $E$.
+\end{cons}
+
+\begin{thm}[Признак Вейерштрасса]
+	Если
+	$$
+		\forall k \in \bbN \quad \forall x \in E \quad |u_k(x)| \le a_k
+	$$
+	и числовой ряд $\sum_{k=1}^{\infty}\limits a_k$ сходится, то
+	ряд $\sum_{k=1}^{\infty}\limits u_k(x)$ сходится равномерно на множестве $E$.
+\end{thm}
+
+\begin{thm}[Признак Дирихле]
+	Пусть на множестве $E$ заданы две функциональные последовательности
+	$\{a_k(x)\}_{k=1}^\infty$ и $\{b_k(x)\}_{k=1}^\infty$, удовлетворяющие условиям:
+	\begin{enumerate}
+		\item последовательность частичных сумм $A_n(x) = \sum_{k=1}^{n}\limits a_k(x)$\\
+			ряда $\sum_{k=1}^{\infty}\limits a_k(x)$ равномерно ограничена, т. е.
+			существует число $C$, не зависящее от $x$ и от $n$:
+			$$
+				\forall n \in \bbN \quad \forall x \in E \quad |A_n(x)| \le C
+			$$
+		\item $b_k(x) \rightrightarrows 0$ на $E$ при $k \to \infty$
+		\item $\forall x \in E \quad \forall k \in \bbN \quad b_{k+1}(x) \le b_k(x)$
+	\end{enumerate}
+	Тогда ряд $\sum_{k=1}^{\infty}\limits a_k(x)b_k(x)$ равномерно сходится на $E$.
+\end{thm}
+
+\begin{thm}[Признак Лейбница]
+	Пусть $\forall k \in \bbN \quad \forall x \in E \quad b_{k+1}(x) \le b_k(x)$
+	и $b_k(x) \rightrightarrows 0$ на $E$ при $k \to \infty$. Тогда ряд Лейбница
+	$\sum_{k=1}^{\infty}\limits (-1)^k b_k(x)$ равномерно сходится.
+\end{thm}
+
+\begin{thm}[Признак Абеля]
+	Пусть на множестве $E$ заданы две функциональные последовательности
+	$\{a_k(x)\}_{k=1}^\infty$ и $\{b_k(x)\}_{k=1}^\infty$, удовлетворяющие условиям:
+	\begin{enumerate}
+		\item ряд $\sum_{k=1}^{\infty}\limits a_k(x)$ равномерно сходится на множестве $E$
+		\item последовательность $\{b_k(x)\}$ равномерно ограничена, т. е.
+			$$
+				\exists C \in \bbR \cquad \forall k \in \bbN \quad \forall x \in E
+					\quad |b_k(x)| \le C
+			$$
+		\item $\forall x \in E \quad \forall k \in \bbN \quad b_{k+1}(x) \le b_k(x)$
+	\end{enumerate}
+	Тогда ряд $\sum_{k=1}^{\infty}\limits a_k(x)b_k(x)$ равномерно сходится на $E$.
+\end{thm}
 
 
 \section{Непрерывность, интегрируемость и дифференцируемость суммы равномерно сходящегося ряда}
