@@ -50,6 +50,8 @@
 \usepackage[xindy]{imakeidx}
 \indexsetup{level=\chapter}
 \makeindex[program=texindy, options=-M mystyle.xdy -L russian -C utf8]
+% the command is 
+% texindy -M mystyle.xdy -L russian -C utf8 GOS-Book.idx
 
 \makeatletter
 \newcommand{\rindex}[2][\imki@jobname]{%

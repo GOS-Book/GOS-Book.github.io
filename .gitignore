@@ -34,10 +34,12 @@
 **/*.bcf
 **/*.ps
 *.mst
+**/*.synctex(busy)
 
 # Other
 **/*.pdf
 **/*.sty
 
 # Allow
+!docs/GOS-Book.pdf
 README.htm
