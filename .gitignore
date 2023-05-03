@@ -40,5 +40,4 @@
 **/*.sty
 
 # Allow
-!GOS-Book.pdf
 README.htm
